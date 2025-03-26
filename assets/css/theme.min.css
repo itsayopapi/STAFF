@@ -1,10 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&amp;display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 
 
- body{
+body{
     overflow-x: hidden;
- }
+    font-family: "Quicksand", sans-serif;
+}
+
 .text-reset:hover {
     color: var(--bs-white) !important
 }
@@ -22,7 +25,12 @@
 }
 
 .text-inverse {
-    filter: brightness(1) invert(0)
+    filter: brightness(1) invert(0);
+    width: 150px;
+}
+
+.text-inverse img {
+    width: 100%;
 }
 
 .text-white-inverse {
@@ -2395,7 +2403,7 @@ h5,
 h6 {
     color: var(--bs-heading-color);
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1;
     margin-bottom: .5rem;
     margin-top: 0
 }
@@ -2409,7 +2417,7 @@ h1 {
 
     .h1,
     h1 {
-        font-size: 2.5rem
+        font-size: 3rem
     }
 }
 
@@ -2777,7 +2785,6 @@ progress {
 
 .lead {
     font-size: 1.25rem;
-    font-weight: 500
 }
 
 .display-1 {
@@ -5835,7 +5842,7 @@ textarea.form-control.is-invalid {
     --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
     background-color: var(--bs-btn-bg);
     border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
-    border-radius: var(--bs-btn-border-radius);
+    
     color: var(--bs-btn-color);
     cursor: pointer;
     display: inline-block;
@@ -5914,7 +5921,7 @@ fieldset:disabled .btn {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #6b63ff;
+    --bs-btn-bg: blue;
     --bs-btn-border-color-p: #6b63ff;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #6b63ff;
@@ -6599,11 +6606,11 @@ fieldset:disabled .btn {
 .dropdown-item:disabled {
     background-color: transparent;
     color: var(--bs-dropdown-link-disabled-color);
-    pointer-events: none
+    pointer-events: none;
 }
 
 .dropdown-menu.show {
-    display: block
+    display: block;
 }
 
 .dropdown-header {
@@ -6612,13 +6619,13 @@ fieldset:disabled .btn {
     font-size: .875rem;
     margin-bottom: 0;
     padding: var(--bs-dropdown-header-padding-y) var(--bs-dropdown-header-padding-x);
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .dropdown-item-text {
     color: var(--bs-dropdown-link-color);
     display: block;
-    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x)
+    padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
 }
 
 .dropdown-menu-dark {
@@ -6935,7 +6942,7 @@ fieldset:disabled .btn {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
-    position: relative
+    position: relative;
 }
 
 .navbar>.container,
@@ -6976,28 +6983,28 @@ fieldset:disabled .btn {
     flex-direction: column;
     list-style: none;
     margin-bottom: 0;
-    padding-left: 0
+    padding-left: 0;
 }
 
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show {
-    color: var(--bs-navbar-active-color)
+    color: var(--bs-navbar-active-color);
 }
 
 .navbar-nav .dropdown-menu {
-    position: static
+    position: static;
 }
 
 .navbar-text {
     color: var(--bs-navbar-color);
     padding-bottom: .5rem;
-    padding-top: .5rem
+    padding-top: .5rem;
 }
 
 .navbar-text a,
 .navbar-text a:focus,
 .navbar-text a:hover {
-    color: var(--bs-navbar-active-color)
+    color: var(--bs-navbar-active-color);
 }
 
 .navbar-collapse {
@@ -7284,7 +7291,8 @@ fieldset:disabled .btn {
     }
 
     .navbar-expand-xxl .navbar-nav {
-        flex-direction: row
+        flex-direction: row;
+
     }
 
     .navbar-expand-xxl .navbar-nav .dropdown-menu {
@@ -7706,9 +7714,9 @@ fieldset:disabled .btn {
 }
 
 .accordion-item {
-    background-color: var(--bs-accordion-bg);
-   
-    color: var(--bs-accordion-color)
+    background-color: blue;
+    color: white;
+    border-radius: .3rem;
 }
 
 .accordion-item:first-of-type {
@@ -7745,13 +7753,13 @@ fieldset:disabled .btn {
 }
 
 .accordion-flush .accordion-collapse {
-    border-width: 0
+    border-width: 0;
 }
 
 .accordion-flush .accordion-item {
     border-left: 0;
-    border-radius: 0;
-    border-right: 0
+    border-radius: 0.3rem;
+    border-right: 0;
 }
 
 .accordion-flush .accordion-item:first-child {
@@ -12502,7 +12510,7 @@ fieldset:disabled .btn {
 }
 
 .text-center {
-    text-align: center !important
+    text-align: left !important
 }
 
 .text-decoration-none {
@@ -24317,9 +24325,8 @@ button:focus {
 
 .navbar .navbar-nav .nav-item .nav-link {
     border-radius: .25rem;
-    color: black !important; 
+    color: grey !important; 
     font-size: .9375rem;
-    font-weight: 700;
     padding: .5rem 1rem
 }
 
@@ -24373,11 +24380,7 @@ button:focus {
 .navbar-dark {
     transition: all .3s ease-in-out
 }
-.mainlogo img{
-    width: 150px;
-    height: 50px;
-}
- 
+
 .navbar-dark .navbar-nav .nav-link {
     color: var(--bs-gray-300) !important
 }
@@ -24404,7 +24407,6 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-item .nav-link {
     color: var(--bs-gray-500);
-    font-weight: 700
 }
 
 .navbar-light .navbar-nav .nav-item .nav-link.active,
@@ -26203,13 +26205,7 @@ a.plyr__control:before {
 
 /*###########> Custom Css Start <##########  */
 
-.signbtn{
-    border: 2px solid #6B63FF;
-    color: #6B63FF;
-}
-.signbtn:hover{
-    border: 2px solid #6B63FF !important;
-}
+
 .hostingcard h4{
     color: #6B63FF !important;
     font-weight: 800;
@@ -26228,18 +26224,19 @@ a.plyr__control:before {
     margin-right: 5px;
 }
 .paymentcard{
-    border-color: #6b63ff;
+    border-color: blue;
+    border: none;
     position: relative;
 }
 .offerpop{
     text-align: center;
-    padding-block: 10px;
-    width: 250px;
+    padding-block: 8px;
+    width: 150px;
     background-color: #333333;
     transform: rotate(-40deg);
     position: absolute;
-    top: 25px;
-    left: -75px;
+    top: 45px;
+    left: -7px;
 }
 .webplanpadding{
     padding-left: 32px !important;
@@ -26251,7 +26248,7 @@ a.plyr__control:before {
 }
 
 .paymentcardmain h3{
-    color: #6b63ff ;
+    color: #6b63ff;
     font-weight: 700;
 } 
 .paymentcardmain h2{
@@ -26259,24 +26256,19 @@ a.plyr__control:before {
     font-weight: 700;
 } 
 
-
 .whitetic{
     display: none;
 }
 .paymentcard:hover .whitetic{
     display: block;
-    
-
 }
 .paymentcard:hover .purpletic{
     display: none;
-
-
 }
+
 .paymentcard:hover{
-    
-    background-color:#6b63ff;
-    transform: scale(1.2);
+    background-color: blue;
+    transform: scale(1);
     border: none !important;
     transition: 0.5s;
     z-index: 1000 !important;
@@ -26311,7 +26303,7 @@ a.plyr__control:before {
 } 
 .paymentcard:hover .btnpayment  a{
     background-color: white !important;
-    color: #6b63ff !important;
+    color: blue;
     font-weight: 700;
 } 
 .markeypay{
