@@ -37,9 +37,9 @@
 <!-- Navbar Start -->
 
 <header class="custom-header">
-<nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
+    <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
         <div class="container mainlogo px-3">
-            <a class="navbar-brand" href="./index.html">
+            <a class="" href="#">
                 <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
             </a>
             <button class="navbar-toggler offcanvas-nav-btn" type="button">
@@ -55,18 +55,24 @@
                 <div class="offcanvas-body pt-0 align-items-center">
                     <ul class="navbar-nav mx-auto align-items-lg-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html">HOME</a>
+                            <a class="nav-link" href="./index.html">Home <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./web-hosting.html">WEB HOSTING</a>
+                            <a class="nav-link" href="./web-hosting.html">Web Hosting <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./domain-names.html">DOMAIN NAMES</a>
+                            <a class="nav-link" href="./domain-names.html">Domains <i class="fa-solid fa-angle-down mx-1"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./domain-names.html">Email <i class="fa-solid fa-angle-down mx-1"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./domain-names.html">Security <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                     </ul>
-                    <div class="mt-3 mt-lg-0 d-flex align-items-center">
-                        <a href="./register.html" data-shop-href="basket-summary-login" class="btn btn-primary mx-2">Get Started</a>
-                        <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn px-5">Sign In</a>
+                    <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn btn-primary">Get Started</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn ">Sign In</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +82,10 @@
 
 <style>
     .custom-header, .custom-header .navbar {
-        background-color: #2a52be !important; /* Replace with your color */
+        background-color: white;
+        justify-content: space-between;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        font-family: "Quicksand", sans-serif;
     }
     .custom-header .nav-link, 
     .custom-header .navbar-brand,
@@ -85,6 +94,30 @@
     }
     .custom-header .navbar-toggler {
         border-color: white !important; /* Toggler border color */
+    }
+    
+    .signbtn {
+        background-color: transparent;
+        border: 1px solid #2a52be !important;
+        color: black;
+        transition: all 0.3s ease;
+    }
+    .signbtn:hover {
+        background-color: #2a52be !important;
+        color: white;
+    }
+
+    .navbar {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .navbar.scrolled {
+        background-color: #fff !important; /* Solid color when scrolling */
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .buttons {
+        border: 1px solid blue;
     }
 </style>
 <!-- Navbar End -->
@@ -846,7 +879,7 @@
 
 <!-- FAQs -->
 
-<section class="mt-7">
+<section class="mt-7 faqs">
     <div class="container w-md-75">
         <div class="row">
             <div class="col-md-12" data-cue="fadeIn">
@@ -893,6 +926,14 @@
     </div>
 </section>
 
+<style>
+    .faqs {
+        font-family: "Quicksand", "sans-serif";
+    }
+
+    
+</style>
+
 <!-- FAQs End -->
 
     </div>
@@ -902,7 +943,7 @@
 
  <footer class="pt-7 mainfooterstart mb-0">
     <div class="container">
-        <div class="mb-4 text-center text-lg-start">
+        <div class="mb-4 text-lg-start">
             <a href="#">
                 <img src="./Logo_Wefithost_03.png" alt="logo" class="text-inverse" />
             </a>
@@ -950,7 +991,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-5 text-center text-md-start">
+                    <div class="col-md-5 text-left">
                         <h5 class="mb-3 text-inverse">Follow Us</h5>
                         <div class="d-flex justify-content-center justify-content-md-start gap-3">
                             <a href="#"><img src="./assets/img/Home page/instagram.svg" alt="Instagram"></a>
@@ -972,7 +1013,7 @@
                 <span class="text-inverse">© 2025 Copyright WefitHost</span>
             </div>
             <div class="col-md-6 mt-md-3">
-                <ul class="d-flex flex-row justify-content-md-end gap-3 align-items-center">
+                <ul class="d-flex flex-row justify-content-md-end gap-3 align-items-center" style="list-style-type: none;">
                     <li><a href="#" class="text-inverse">Privacy Policy</a></li>
                     <li><a href="#" class="text-inverse">Terms of Use</a></li>
                     <li><a href="#" class="text-inverse">Contact</a></li>
@@ -1000,8 +1041,13 @@
 
 }
 
+.text-center {
+    text-align: center;
+}
 
-
+*{
+    font-family: "Quicksand", "sans-serif";
+}
 </style>
 
 
@@ -1019,6 +1065,20 @@
    <script src="assets/js/init.js?t=20240403"></script>
    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
    <script src="assets/js/vendors/scrollcue.js"></script>
+
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
+        
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) { // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
 </body>
 
 <!-- Mirrored from block.codescandy.com/landing-conference.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Mar 2024 17:23:04 GMT -->
