@@ -37,9 +37,9 @@
 <!-- Navbar Start -->
 
 <header class="custom-header">
-<nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
+    <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
         <div class="container mainlogo px-3">
-            <a class="navbar-brand" href="./index.html">
+            <a class="" href="#">
                 <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
             </a>
             <button class="navbar-toggler offcanvas-nav-btn" type="button">
@@ -55,18 +55,24 @@
                 <div class="offcanvas-body pt-0 align-items-center">
                     <ul class="navbar-nav mx-auto align-items-lg-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html">HOME</a>
+                            <a class="nav-link" href="./index.html">Home <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./web-hosting.html">WEB HOSTING</a>
+                            <a class="nav-link" href="./web-hosting.html">Web Hosting <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./domain-names.html">DOMAIN NAMES</a>
+                            <a class="nav-link" href="./domain-names.html">Domains <i class="fa-solid fa-angle-down mx-1"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./domain-names.html">Email <i class="fa-solid fa-angle-down mx-1"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./domain-names.html">Security <i class="fa-solid fa-angle-down mx-1"></i></a>
                         </li>
                     </ul>
-                    <div class="mt-3 mt-lg-0 d-flex align-items-center">
-                        <a href="./register.html" data-shop-href="basket-summary-login" class="btn btn-primary mx-2">Get Started</a>
-                        <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn px-5">Sign In</a>
+                    <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn btn-primary">Get Started</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn ">Sign In</a>
                     </div>
                 </div>
             </div>
@@ -76,7 +82,10 @@
 
 <style>
     .custom-header, .custom-header .navbar {
-        background-color: #2a52be !important; /* Replace with your color */
+        background-color: white;
+        justify-content: space-between;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        font-family: "Quicksand", sans-serif;
     }
     .custom-header .nav-link, 
     .custom-header .navbar-brand,
@@ -85,6 +94,30 @@
     }
     .custom-header .navbar-toggler {
         border-color: white !important; /* Toggler border color */
+    }
+    
+    .signbtn {
+        background-color: transparent;
+        border: 1px solid #2a52be !important;
+        color: black;
+        transition: all 0.3s ease;
+    }
+    .signbtn:hover {
+        background-color: #2a52be !important;
+        color: white;
+    }
+
+    .navbar {
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .navbar.scrolled {
+        background-color: #fff !important; /* Solid color when scrolling */
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .buttons {
+        border: 1px solid blue;
     }
 </style>
 <!-- Navbar End -->
@@ -98,20 +131,24 @@
             <div class="row pt-5 mt-md-5">
                 <div class="col-md-6">
                     <div class="" data-cue="zoomIn">
-                        <div class="mt-5">
+                        <div class="">
                             <span class="prohost">HOSTING PLAN</span>
-                            <h1 class="text-black-stable display-5 mb-3">Super fast and secure web hosting</h1>
+                            <h1 class="text-black-stable display-5 mb-3">Blazing-Fast, Reliable & Secure Web Hosting at Unbeatable Prices </h1>
                             <p class="mb-0 lead text-black-stable">
                                 UK-based web hosting services, domains and virtual private servers.
                             </p>
                         </div>
-                        <div class="mt-6 d-grid d-md-inline-flex ">
-                            <a href="" data-shop-href="basket-summary-login" class="btn btn-primary px-5 mb-3 mb-md-0">Get Started</a>
-                            <a href="./Regitser.html" data-shop-href="basket-summary-login" class="btn mx-5 signbtn px-5">Our Plans</a>
+                        <div class="mt-6 d-grid gap-2 d-md-flex justify-content-md-start">
+                            <a href="" data-shop-href="basket-summary-login" 
+                               class="btn btn-primary w-75 px-5 mb-3 mb-md-0 w-md-auto">Get Started</a>
+                               
+                            <a href="./Register.html" data-shop-href="basket-summary-login" 
+                               class="btn signbtn px-5 w-75 w-md-auto">Our Plans</a>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-5">
                     <div class="position-relative">
                         <img src="./assets/img/Product page/versatile-powerful-web-hosting.svg" class="w-100" alt="">
                         <div class="productoffer">
@@ -457,32 +494,32 @@
 
 <section class="pt-8">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8" data-cue="fadeIn">
+        <div class="row mx-md-5">
+            <div class="col-md-8 text-center mx-auto" data-cue="fadeIn">
                 <div class="pb-2">
                     <h2 class="">Why choose us?</h2>
                     <p class="mb-0 lead">UK-based web hosting services, domains and virtual private servers.</p>
                 </div>
             </div>
         </div>
-        <div class="row pt-5 mt-md-5">
-            <div class="col-md-5">
+        <div class="row pt-5 mt-md-5 g-4">
+            <div class="col-md-5 ">
                 <div class="" data-cue="zoomIn">
                     <img src="./assets/img/Product page/why-choose-us.svg" class="w-100" alt="">
                 </div>
             </div>
             <div class="col-md-7 whychhoscontrny">
                 <div class="pb-3">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
+                    <h4>Autoscaling Cloud Hosting </h4>
+                    <p>Our hosting dynamically adjusts resources in real-time, ensuring your websites stay lightning-fast even during traffic surges. Your websites perform at peak efficiency, offering low-latency and faster processing times, no matter the load. </p>
                 </div>
                 <div class="pb-3">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
+                    <h4>State-of-the-Art Security </h4>
+                    <p>Security is baked into our platform. With real-time DDoS protection, an intelligent Web Application Firewall (WAF), and automated malware scanning, your websites will be shielded from malicious threats without compromising on speed. We include free SSL certificates for all hosted domains, ensuring data integrity with end-to-end encryption. </p>
                 </div>
                 <div class="pb-3">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
+                    <h4>Built For Business Hosting </h4>
+                    <p>Our platform is PCI compliant, meeting the strict security standards required for ecommerce and handling sensitive payment data. </p>
                 </div>
             </div>
         </div>
@@ -501,7 +538,7 @@
                         <p class="mb-0 text-white-stable">UK-based web hosting services, domains and virtual private servers.</p>
 
                         <div class="row pt-5">
-                            <div class="col-3 col-md-2 col-lg-12 p-0">
+                            <div class="col-12 col-md-2 col-lg-12 p-0">
                                 <div style="position: relative;">
                                     <input type="email" class="form-control py-3" id="subscribeEmail" style="padding-right: 130px;" />
                                     <div style="position: absolute; top: 7px; right: 5px;">
@@ -543,18 +580,18 @@
         <section class="py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8" data-cue="fadeIn">
-                        <div class="mb-7 pb-2">
+                    <div class="col-md-8 mx-auto" data-cue="fadeIn">
+                        <div class="mb-7 pb-2 text-center">
                             <h2 class="">Key Features</h2>
                             <p class="mb-0 lead">UK-based web hosting services, domains and virtual private servers.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 d-flex align-items-end justify-content-end" data-cue="fadeIn">
-                    </div>
+                    <!-- <div class="col-md-4 d-flex align-items-end justify-content-end" data-cue="fadeIn">
+                    </div> -->
                 </div>
             <div class="table-responsive-xl">
              <!-- Feature 1 -->
-               <div class="row row-cols-xl-3 row-cols-sm-2   g-4   px-md-5  pb-4 pb-xl-0   me-lg-0" data-cues="fadeIn">
+               <div class="d-flex flex-column flex-lg-row gap-3" data-cues="fadeIn">
                   <div class="col" data-cue="fadeIn">
                      <a href="#">
                         <div class="card  px-md-5  border-0 card-lift">
@@ -734,10 +771,10 @@
 
 <!-- Feature Rich Control Panel -->
 
-<section class="pt-8">
+<section class="pt-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-8" data-cue="fadeIn">
+            <div class="col-md-8 text-md-center mx-md-auto" data-cue="fadeIn">
                 <div class="pb-2">
                     <h3 class="">Feature Rich Control Panel</h3>
                 </div>
@@ -834,91 +871,7 @@
                     </div>
                 <div class="col-md-2"></div>
             </div>
-            <div class="row mt-3">
-                <div class="col-md-2"></div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                    </div>
-                    <div class="col-3 col-md-2 col-lg-1">
-                        <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                    </div>
-                <div class="col-md-2"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-2"></div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                        </div>
-                        <div class="col-3 col-md-2 col-lg-1">
-                            <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                        </div>
-                    <div class="col-md-2"></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-2"></div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/wordpress.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/joomla.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/drupal.svg" class="w-100" alt="">
-                            </div>
-                            <div class="col-3 col-md-2 col-lg-1">
-                                <img src="./assets/img/Product page/magento.svg" class="w-100" alt="">
-                            </div>
-                        <div class="col-md-2"></div>
-                    </div>
-                </div>
+           
              <div class="col-md-1"></div>
          </div>
     </div>
@@ -926,52 +879,60 @@
 
 <!-- FAQs -->
 
-<section class="mt-5">
-    <div class="container">
+<section class="mt-7 faqs">
+    <div class="container w-md-75">
         <div class="row">
             <div class="col-md-12" data-cue="fadeIn">
-                <div class="mb-7 pb-2 text-center">
+                <div class="mb-4 pb-2 text-center">
                     <h2 class="">FAQ's</h2>
                     <p class="mb-0 lead">UK-based web hosting services, domains, and virtual private servers.</p>
                 </div>
             </div>
         </div>
-        <div class="pb-5">
+        <div class="pb-5 px-3">
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            Point 1
+                            Why buy a domain name from WefitHost?
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ipsam eius aut, quia cumque quo excepturi iste vero omnis iure temporibus incidunt architecto fugiat obcaecati sequi doloremque esse maiores ex voluptates voluptas sapiente ipsum! Tenetur minus quae saepe quisquam vel autem? Nemo similique illo soluta corporis laboriosam vitae veritatis doloribus ex aliquam consectetur nulla, voluptatum nam mollitia fuga fugiat aliquid, quasi architecto et aut tempore deserunt unde tempora autem? Deserunt voluptatum id iusto voluptas dicta sequi possimus harum, recusandae nisi, error labore velit debitis itaque, alias similique pariatur at dolor! Deserunt numquam, iste quaerat consectetur illum accusantium dolores facilis! Debitis!</div>
+                        <div class="accordion-body"> Above all else, we strive to deliver outstanding customer experiences. When you buy a domain name from WefitHost, we guarantee it will be handed over.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Point 2
+                            How does domain registration work?
                         </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                        <div class="accordion-body">Above all else, we strive to deliver outstanding customer experiences. When you buy a domain name from hostie, we guarantee it will be handed over.</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            Point 3
+                            Why is domain name registration required?
                         </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        <div class="accordion-body">Above all else, we strive to deliver outstanding customer experiences. When you buy a domain name from hostie, we guarantee it will be handed over.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .faqs {
+        font-family: "Quicksand", "sans-serif";
+    }
+
+    
+</style>
 
 <!-- FAQs End -->
 
@@ -980,136 +941,115 @@
 
  <!-- Footer -->
 
- <footer class="pt-7 mainfooterstart">
+ <footer class="pt-7 mainfooterstart mb-0">
     <div class="container">
-        <div class="mb-4">
+        <div class="mb-4 text-lg-start">
             <a href="#">
                 <img src="./Logo_Wefithost_03.png" alt="logo" class="text-inverse" />
             </a>
         </div>
         <div class="row">
-            <div class="col-xxl-6 col-lg-6 col-md-4">
+            <div class="col-lg-6 col-md-12">
                 <div class="row footerlinkcoor" id="ft-links">
-                    <div class="col-lg-3 col-12">
-                        <div class="position-relative">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                <h5>Services</h5>
-                                <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse" href="#collapseLanding" role="button" aria-expanded="false" aria-controls="collapseLanding">
-                                    <i class="bi bi-chevron-down"></i>
-                                </a>
-                            </div>
-                            <div class="collapse d-lg-block" id="collapseLanding" data-bs-parent="#ft-links">
-                                <ul class="list-unstyled mb-0 py-3 py-lg-0">
-                                    <li class="mb-2">
-                                        <a href="index.html" class="text-decoration-none text-reset">Web Hosting</a>
-                                    </li>
-                                    <li class="mb-2">
-                                        <a href="domain-names.html" class="text-decoration-none text-reset">Domain Names</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-12">
-                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                            <h5>Company</h5>
-                            <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse" href="#collapseAccounts" role="button" aria-expanded="false" aria-controls="collapseAccounts">
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
-                            <ul class="list-unstyled mb-0 py-3 py-lg-0">
-                                <li class="mb-2">
-                                    <a href="./about.html" class="text-decoration-none text-reset">About</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Blog</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Platform</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Customer Reviews</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="./contact-us.html" class="text-decoration-none text-reset">Contact Us</a>
-                                </li>
+                    <div class="col-md-4 col-12 mb-4">
+                        <div>
+                            <h5 class="mb-3">Services</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html" class="text-decoration-none text-reset">Web Hosting</a></li>
+                                <li><a href="domain-names.html" class="text-decoration-none text-reset">Domain Names</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                            <h5>About Us</h5>
-                        </div>
+                    <div class="col-md-4 col-12 mb-4">
                         <div>
-                            <p>Include a brief description about your company and the unique selling points it offers. <a href="./about.html" class="readdmore">Read more</a></p>
+                            <h5 class="mb-3">Company</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="./about.html" class="text-decoration-none text-reset">About</a></li>
+                                <li><a href="#" class="text-decoration-none text-reset">Blog</a></li>
+                                <li><a href="#" class="text-decoration-none text-reset">Platform</a></li>
+                                <li><a href="#" class="text-decoration-none text-reset">Customer Reviews</a></li>
+                                <li><a href="./contact-us.html" class="text-decoration-none text-reset">Contact Us</a></li>
+                            </ul>
                         </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <h5 class="mb-3">About Us</h5>
+                        <p>We’re on a mission to make life easier for web developers & small businesses. 
+                            <a href="./about.html" class="readdmore">Read more</a>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-6 col-lg-6 col-md-7">
+            <div class="col-lg-6 col-md-12">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-7 mb-4">
                         <form class="needs-validation footerlinkcoor">
-                            <h5 class="mb-3">Keep up to date with news and offers!</h5>
-                            <div class="row">
-                                <div class="col-lg-9 col-8 p-0 subscrive">
-                                    <input type="email" class="form-control" id="subscribeEmail" />
-                                </div>
-                                <div class="col-lg-3 col-4 p-0 subscrive">
-                                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                                </div>
+                            <h5 class="mb-3">Stay Updated!</h5>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email" />
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-4 offset-md-1 footerlinkcoor col-12">
-                        <div class="position-relative">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                <h5>Follow our Socials</h5>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/instagram.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/facebook.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/linkedin.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/x.svg" alt="">
-                                </a>
-                            </div>
+                    <div class="col-md-5 text-left">
+                        <h5 class="mb-3 text-inverse">Follow Us</h5>
+                        <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                            <a href="#"><img src="./assets/img/Home page/instagram.svg" alt="Instagram"></a>
+                            <a href="#"><img src="./assets/img/Home page/facebook.svg" alt="Facebook"></a>
+                            <a href="#"><img src="./assets/img/Home page/linkedin.svg" alt="LinkedIn"></a>
+                            <a href="#"><img src="./assets/img/Home page/x.svg" alt="Twitter"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mt-7 mb-3">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="small mb-3 mb-md-0">
-                    <span style="color: white;">© 2025 Copyright WefitHost</span>
-                </div>
+
+    <hr class="my-4">
+
+    <div class="container">
+        <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <span class="text-inverse">© 2025 Copyright WefitHost</span>
             </div>
-            <div class="col-md-6">
-                <ul class="px-0 d-flex justify-content-md-end text-white">
-                    <li class="mx-3 list-unstyled">
-                        <a href="#" class="text-white">Privacy Policy</a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="#" class="text-white">Terms of Use</a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="#" class="text-white">Contact</a>
-                    </li>
+            <div class="col-md-6 mt-md-3">
+                <ul class="d-flex flex-row justify-content-md-end gap-3 align-items-center" style="list-style-type: none;">
+                    <li><a href="#" class="text-inverse">Privacy Policy</a></li>
+                    <li><a href="#" class="text-inverse">Terms of Use</a></li>
+                    <li><a href="#" class="text-inverse">Contact</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
+
+
+<style>
+    .footerlinkcoor input.form-control {
+    background-color: inherit; 
+    color: white; 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+
+.footerlinkcoor input::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+.footerlinkcoor button.btn {
+    background-color: white;
+    color: #6B63FF; 
+
+}
+
+.text-center {
+    text-align: center;
+}
+
+*{
+    font-family: "Quicksand", "sans-serif";
+}
+</style>
+
 
 <!-- Footer End -->
 
@@ -1125,6 +1065,20 @@
    <script src="assets/js/init.js?t=20240403"></script>
    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
    <script src="assets/js/vendors/scrollcue.js"></script>
+
+   <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
+        
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) { // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
 </body>
 
 <!-- Mirrored from block.codescandy.com/landing-conference.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 26 Mar 2024 17:23:04 GMT -->
