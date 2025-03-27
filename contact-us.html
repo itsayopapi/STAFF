@@ -11,7 +11,7 @@
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
-    
+
     <!-- BOOTSTRAP JS SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -27,7 +27,7 @@
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
-    
+
     <!-- FAV ICON -->
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png">
 
@@ -42,402 +42,435 @@
 
 <body data-bs-theme="light">
 
-                                        <!-- Navbar Start -->
-                                        <header class="custom-header">
-                                            <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
-                                                <div class="container mainlogo px-3">
-                                                    <a class="" href="home.html">
-                                                        <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
-                                                    </a>
-                                                    <button class="navbar-toggler offcanvas-nav-btn" type="button">
-                                                        <i class="bi bi-list"></i>
-                                                    </button>
-                                                    <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem;">
-                                                        <div class="offcanvas-header">
-                                                            <a href="home.html" class="text-inverse">
-                                                                <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
-                                                            </a>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="offcanvas-body pt-0 align-items-center">
-                                                            <ul class="navbar-nav mx-auto align-items-lg-center">
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" href="home.html">Home</a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" href="/web-hosting.html">Web Hosting <i class="fa-solid fa-angle-down mx-1"></i></a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" href="/domain-names.html">Domains <i class="fa-solid fa-angle-down mx-1"></i></a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" href="/">Email <i class="fa-solid fa-angle-down mx-1"></i></a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a class="nav-link" href="/">Security <i class="fa-solid fa-angle-down mx-1"></i></a>
-                                                                </li>
-                                                            </ul>
-                                                            <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
-                                                                    <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login" class="btn btn-primary">Get Started</a>
-                                                                    <a href="https://my.wefithost.com/login" data-shop-href="basket-summary-login" class="btn signbtn ">Sign In</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+    <!-- Navbar Start -->
+    <header class="custom-header">
+        <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
+            <div class="container mainlogo px-3">
+                <a class="" href="home.html">
+                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+                </a>
+                <button class="navbar-toggler offcanvas-nav-btn" type="button">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem;">
+                    <div class="offcanvas-header">
+                        <a href="home.html" class="text-inverse">
+                            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pt-0 align-items-center">
+                        <ul class="navbar-nav mx-auto align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/web-hosting.html">Web Hosting <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/domain-names.html">Domains <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Email <i class="fa-solid fa-angle-down mx-1"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Security <i class="fa-solid fa-angle-down mx-1"></i></a>
+                            </li>
+                        </ul>
+                        <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
+                            <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login"
+                                class="btn btn-primary">Get Started</a>
+                            <a href="https://my.wefithost.com/login" data-shop-href="basket-summary-login"
+                                class="btn signbtn ">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <style>
+        .custom-header,
+        .custom-header .navbar {
+            background-color: white;
+            justify-content: space-between;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .custom-header .nav-link,
+        .custom-header .navbar-brand,
+        .custom-header .bi-list {
+            color: white !important;
+            /* Ensures text/icons are visible */
+        }
+
+        .custom-header .navbar-toggler {
+            border-color: white !important;
+            /* Toggler border color */
+        }
+
+        .signbtn {
+            background-color: transparent;
+            border: 1px solid #2a52be !important;
+            color: black;
+            transition: all 0.3s ease;
+        }
+
+        .signbtn:hover {
+            background-color: #2a52be !important;
+            color: white;
+        }
+
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .navbar.scrolled {
+            background-color: #fff !important;
+            /* Solid color when scrolling */
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .buttons {
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) { // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+    <!-- Navbar End -->
+
+    <main>
+
+        <!--Contact Us Hero Start-->
+
+        <div data-cue="fadeIn"
+            style="background-image: url(./assets/img/BG-WAVE.svg); background-position: center; background-size: cover; background-repeat: no-repeat;">
+            <section class="py-10">
+                <div class="container">
+                    <div class="row mt-md-5">
+                        <div class="col-md-6" data-cue="zoomIn">
+                            <span class="prohost">CONTACT US</span>
+                            <h1 class="text-black-stable display-5 mb-3">Get in touch</h1>
+                            <p class="mb-0 lead text-black-stable">
+                                Our friendly sales and support team are ready to help you.
+                            </p>
+                            <div class="mt-6">
+                                <img src="./assets/img/Contact us/get-in-touch.svg" alt="" class="w-100">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="contactmainus p-3 p-md-5">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h3>We are here to help</h3>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="pt-2"><b>Call us on</b> <a href=""
+                                                style="color: #6b63ff; padding-left: 8px;"
+                                                class="text-decoration-underline">1234 567 890</a></p>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p>Fill in the form below and tell us more about what you're looking for or to
+                                            ask a question about our hosting. </p>
+                                    </div>
+
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="nameInput" class="pb-2 text-black"><b>Name</b></label>
+                                            <input type="text" class="form-control contactborder" id="nameInput">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="form-group">
+                                            <label for="emailInput" class="pb-2 text-black"><b>Email Address</b></label>
+                                            <input type="email" class="form-control contactborder" id="emailInput">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="messageInput" class="pb-2 text-black"><b>Message</b></label>
+                                            <textarea id="messageInput" class="w-100 contactborder" rows="4"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mt-6 d-grid d-md-inline-flex">
+                                            <a href="" class="btn btn-primary px-5 mb-3 mb-md-0">Submit</a>
+                                            <a href="register.html" data-shop-href="basket-summary-login"
+                                                class="btn mx-5 signbtn px-5">Book a call</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!--Contact Us Hero End-->
+
+
+        <!-- What Our Customer Say -->
+
+        <section class="my-md-5" id="speaker">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8" data-cue="fadeIn">
+                        <div class="mb-7 pb-2">
+                            <h2>What our customers say</h2>
+                            <p class="mb-0 lead">UK-based web hosting services, domains and virtual private servers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end justify-content-end" data-cue="fadeIn">
+                    </div>
+                </div>
+                <div class="table-responsive-xl">
+                    <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 pb-4 pb-xl-0 me-lg-0" data-cues="fadeIn">
+                        <div class="col" data-cue="fadeIn">
+                            <a href="#">
+                                <div class="card border-0 card-lift">
+                                    <div class="card-body">
+                                        <div class="mb-2">
+                                            <img src="./assets/img/Home page/what-our-customers-say.svg"
+                                                alt="testimonial" class="w-100" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col" data-cue="fadeIn">
+                            <a href="#">
+                                <div class="card shadow-sm border-0 card-lift">
+                                    <div class="card-body">
+                                        <div class="mb-2 d-flex startsetting">
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                        </div>
+                                        <div class="mb-2 hostingcard">
+                                            <span class="small">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum. Stet clita</span>
+                                            <div class="d-flex mt-3">
+                                                <div>
+                                                    <img src="./assets/img/Home page/melinda-musk.svg" alt="">
                                                 </div>
-                                            </nav>
-                                        </header>
-                                    
-                                    <style>
-                                        .custom-header, .custom-header .navbar {
-                                            background-color: white;
-                                            justify-content: space-between;
-                                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
-                                            font-family: "Quicksand", sans-serif;
-                                        }
-                                        .custom-header .nav-link, 
-                                        .custom-header .navbar-brand,
-                                        .custom-header .bi-list {
-                                            color: white !important; /* Ensures text/icons are visible */
-                                        }
-                                        .custom-header .navbar-toggler {
-                                            border-color: white !important; /* Toggler border color */
-                                        }
-                                        
-                                        .signbtn {
-                                            background-color: transparent;
-                                            border: 1px solid #2a52be !important;
-                                            color: black;
-                                            transition: all 0.3s ease;
-                                        }
-                                        .signbtn:hover {
-                                            background-color: #2a52be !important;
-                                            color: white;
-                                        }
-                                    
-                                        .navbar {
-                                            transition: background-color 0.3s ease-in-out;
-                                        }
-                                    
-                                        .navbar.scrolled {
-                                            background-color: #fff !important; /* Solid color when scrolling */
-                                            font-family: "Quicksand", sans-serif;
-                                        }
-                                    
-                                        .buttons {
-                                            border: 1px solid blue;
-                                        }
-                                    </style>
-                                    <script>
-                                    document.addEventListener("DOMContentLoaded", function () {
-                                        let navbar = document.querySelector(".navbar");
-                                    
-                                        window.addEventListener("scroll", function () {
-                                            if (window.scrollY > 50) { // Change when scrolled 50px
-                                                navbar.classList.add("scrolled");
-                                            } else {
-                                                navbar.classList.remove("scrolled");
-                                            }
-                                        });
-                                    });
-                                    </script>
-                                    <!-- Navbar End -->
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0">Melinda Musk</p>
+                                                    <h4 class="mb-0 h5">wehost4u</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col" data-cue="fadeIn">
+                            <a href="#">
+                                <div class="card shadow-sm border-0 card-lift">
+                                    <div class="card-body">
+                                        <div class="mb-2 d-flex startsetting">
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                            <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
+                                        </div>
+                                        <div class="mb-2 hostingcard">
+                                            <span class="small">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                                                dolores et ea rebum. Stet clita</span>
+                                            <div class="d-flex mt-3">
+                                                <div>
+                                                    <img src="./assets/img/Home page/andrew-fox.svg" alt="">
+                                                </div>
+                                                <div class="ps-2">
+                                                    <p class="text-black mb-0">Andrew Fox</p>
+                                                    <h4 class="mb-0 h5">Hostspecial</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<main>
+        <!-- What Our Customer Say End -->
 
-<!--Contact Us Hero Start-->
+        </div>
+    </main>
 
-<div data-cue="fadeIn" style="background-image: url(./assets/img/BG-WAVE.svg); background-position: center; background-size: cover; background-repeat: no-repeat;">
-    <section class="py-10">
+    <!-- Footer -->
+
+    <footer class="pt-7 mainfooterstart">
         <div class="container">
-            <div class="row mt-md-5">
-                <div class="col-md-6" data-cue="zoomIn">
-                    <span class="prohost">CONTACT US</span>
-                    <h1 class="text-black-stable display-5 mb-3">Get in touch</h1>
-                    <p class="mb-0 lead text-black-stable">
-                        Our friendly sales and support team are ready to help you.
-                    </p>
-                    <div class="mt-6">
-                        <img src="./assets/img/Contact us/get-in-touch.svg" alt="" class="w-100">
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="contactmainus p-3 p-md-5">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3>We are here to help</h3>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="pt-2"><b>Call us on</b> <a href="" style="color: #6b63ff; padding-left: 8px;" class="text-decoration-underline">1234 567 890</a></p>
-                            </div>
-
-                            <div class="col-12">
-                                <p>Fill in the form below and tell us more about what you're looking for or to ask a question about our hosting. </p>
-                            </div>
-
-                            <div class="col-md-12 mb-3">
-                                <div class="form-group">
-                                    <label for="nameInput" class="pb-2 text-black"><b>Name</b></label>
-                                    <input type="text" class="form-control contactborder" id="nameInput">
+            <div class="mb-4">
+                <a href="#">
+                    <img src="./assets/img/Home page/logohost.png" alt="logo" class="text-inverse" />
+                </a>
+            </div>
+            <div class="row">
+                <div class="col-xxl-6 col-lg-6 col-md-4">
+                    <div class="row footerlinkcoor" id="ft-links">
+                        <div class="col-lg-3 col-12">
+                            <div class="position-relative">
+                                <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
+                                    <h5>Services</h5>
+                                    <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse"
+                                        href="#collapseLanding" role="button" aria-expanded="false"
+                                        aria-controls="collapseLanding">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="col-md-12 mb-3">
-                                <div class="form-group">
-                                    <label for="emailInput" class="pb-2 text-black"><b>Email Address</b></label>
-                                    <input type="email" class="form-control contactborder" id="emailInput">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="messageInput" class="pb-2 text-black"><b>Message</b></label>
-                                    <textarea id="messageInput" class="w-100 contactborder" rows="4"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mt-6 d-grid d-md-inline-flex">
-                                    <a href="" class="btn btn-primary px-5 mb-3 mb-md-0">Submit</a>
-                                    <a href="register.html" data-shop-href="basket-summary-login" class="btn mx-5 signbtn px-5">Book a call</a>
+                                <div class="collapse d-lg-block" id="collapseLanding" data-bs-parent="#ft-links">
+                                    <ul class="list-unstyled mb-0 py-3 py-lg-0">
+                                        <li class="mb-2">
+                                            <a href="index.html" class="text-decoration-none text-reset">Web Hosting</a>
+                                        </li>
+                                        <li class="mb-2">
+                                            <a href="domain-names.html" class="text-decoration-none text-reset">Domain
+                                                Names</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
-
-<!--Contact Us Hero End-->
-
-
-<!-- What Our Customer Say -->
-
-<section class="my-md-5" id="speaker">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8" data-cue="fadeIn">
-                <div class="mb-7 pb-2">
-                    <h2>What our customers say</h2>
-                    <p class="mb-0 lead">UK-based web hosting services, domains and virtual private servers.</p>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex align-items-end justify-content-end" data-cue="fadeIn">
-            </div>
-        </div>
-        <div class="table-responsive-xl">
-            <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 pb-4 pb-xl-0 me-lg-0" data-cues="fadeIn">
-                <div class="col" data-cue="fadeIn">
-                    <a href="#">
-                        <div class="card border-0 card-lift">
-                            <div class="card-body">
-                                <div class="mb-2">
-                                    <img src="./assets/img/Home page/what-our-customers-say.svg" alt="testimonial" class="w-100" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col" data-cue="fadeIn">
-                    <a href="#">
-                        <div class="card shadow-sm border-0 card-lift">
-                            <div class="card-body">
-                                <div class="mb-2 d-flex startsetting">
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                </div>
-                                <div class="mb-2 hostingcard">
-                                    <span class="small">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita</span>
-                                    <div class="d-flex mt-3">
-                                        <div>
-                                            <img src="./assets/img/Home page/melinda-musk.svg" alt="">
-                                        </div>
-                                        <div class="ps-2">
-                                            <p class="text-black mb-0">Melinda Musk</p>
-                                            <h4 class="mb-0 h5">wehost4u</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col" data-cue="fadeIn">
-                    <a href="#">
-                        <div class="card shadow-sm border-0 card-lift">
-                            <div class="card-body">
-                                <div class="mb-2 d-flex startsetting">
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                    <img src="./assets/img/Home page/star.svg" alt="testimonial" class="" />
-                                </div>
-                                <div class="mb-2 hostingcard">
-                                    <span class="small">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita</span>
-                                    <div class="d-flex mt-3">
-                                        <div>
-                                            <img src="./assets/img/Home page/andrew-fox.svg" alt="">
-                                        </div>
-                                        <div class="ps-2">
-                                            <p class="text-black mb-0">Andrew Fox</p>
-                                            <h4 class="mb-0 h5">Hostspecial</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-   </div>
-  </section>
-
- <!-- What Our Customer Say End -->
-
-</div>
-</main>
-
-<!-- Footer -->
-
- <footer class="pt-7 mainfooterstart">
-    <div class="container">
-        <div class="mb-4">
-            <a href="#">
-                <img src="./assets/img/Home page/logohost.png" alt="logo" class="text-inverse" />
-            </a>
-        </div>
-        <div class="row">
-            <div class="col-xxl-6 col-lg-6 col-md-4">
-                <div class="row footerlinkcoor" id="ft-links">
-                    <div class="col-lg-3 col-12">
-                        <div class="position-relative">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                <h5>Services</h5>
-                                <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse" href="#collapseLanding" role="button" aria-expanded="false" aria-controls="collapseLanding">
+                        <div class="col-lg-3 col-12">
+                            <div
+                                class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                                <h5>Company</h5>
+                                <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse"
+                                    href="#collapseAccounts" role="button" aria-expanded="false"
+                                    aria-controls="collapseAccounts">
                                     <i class="bi bi-chevron-down"></i>
                                 </a>
                             </div>
-                            <div class="collapse d-lg-block" id="collapseLanding" data-bs-parent="#ft-links">
+                            <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
                                 <ul class="list-unstyled mb-0 py-3 py-lg-0">
                                     <li class="mb-2">
-                                        <a href="index.html" class="text-decoration-none text-reset">Web Hosting</a>
+                                        <a href="./about.html" class="text-decoration-none text-reset">About</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="domain-names.html" class="text-decoration-none text-reset">Domain Names</a>
+                                        <a href="#" class="text-decoration-none text-reset">Blog</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none text-reset">Platform</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none text-reset">Customer Reviews</a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="./contact-us.html" class="text-decoration-none text-reset">Contact
+                                            Us</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-12">
-                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                            <h5>Company</h5>
-                            <a class="d-block d-lg-none stretched-link text-inherit" data-bs-toggle="collapse" href="#collapseAccounts" role="button" aria-expanded="false" aria-controls="collapseAccounts">
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
-                            <ul class="list-unstyled mb-0 py-3 py-lg-0">
-                                <li class="mb-2">
-                                    <a href="./about.html" class="text-decoration-none text-reset">About</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Blog</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Platform</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#" class="text-decoration-none text-reset">Customer Reviews</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="./contact-us.html" class="text-decoration-none text-reset">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-12">
-                        <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
-                            <h5>About Us</h5>
-                        </div>
-                        <div>
-                            <p>Include a brief description about your company and the unique selling points it offers. <a href="./about.html" class="readdmore">Read more</a></p>
+                        <div class="col-lg-6 col-12">
+                            <div
+                                class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0 position-relative">
+                                <h5>About Us</h5>
+                            </div>
+                            <div>
+                                <p>Include a brief description about your company and the unique selling points it
+                                    offers. <a href="./about.html" class="readdmore">Read more</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xxl-6 col-lg-6 col-md-7">
-                <div class="row">
-                    <div class="col-md-7">
-                        <form class="needs-validation footerlinkcoor">
-                            <h5 class="mb-3">Keep up to date with news and offers!</h5>
-                            <div class="row">
-                                <div class="col-lg-9 col-8 p-0 subscrive">
-                                    <input type="email" class="form-control" id="subscribeEmail" />
+                <div class="col-xxl-6 col-lg-6 col-md-7">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form class="needs-validation footerlinkcoor">
+                                <h5 class="mb-3">Keep up to date with news and offers!</h5>
+                                <div class="row">
+                                    <div class="col-lg-9 col-8 p-0 subscrive">
+                                        <input type="email" class="form-control" id="subscribeEmail" />
+                                    </div>
+                                    <div class="col-lg-3 col-4 p-0 subscrive">
+                                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-4 p-0 subscrive">
-                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4 offset-md-1 footerlinkcoor col-12">
+                            <div class="position-relative">
+                                <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
+                                    <h5>Follow our Socials</h5>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4 offset-md-1 footerlinkcoor col-12">
-                        <div class="position-relative">
-                            <div class="mb-3 pb-2 d-flex justify-content-between border-bottom border-bottom-lg-0">
-                                <h5>Follow our Socials</h5>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/instagram.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/facebook.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/linkedin.svg" alt="">
-                                </a>
-                                <a href="" class="mx-1">
-                                    <img src="./assets/img/Home page/x.svg" alt="">
-                                </a>
+                                <div class="d-flex justify-content-between">
+                                    <a href="" class="mx-1">
+                                        <img src="./assets/img/Home page/instagram.svg" alt="">
+                                    </a>
+                                    <a href="" class="mx-1">
+                                        <img src="./assets/img/Home page/facebook.svg" alt="">
+                                    </a>
+                                    <a href="" class="mx-1">
+                                        <img src="./assets/img/Home page/linkedin.svg" alt="">
+                                    </a>
+                                    <a href="" class="mx-1">
+                                        <img src="./assets/img/Home page/x.svg" alt="">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container mt-7 mb-3">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="small mb-3 mb-md-0">
-                    <span style="color: white;">© 2023 Copyright Izhosts</span>
+        <div class="container mt-7 mb-3">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="small mb-3 mb-md-0">
+                        <span style="color: white;">© 2023 Copyright Izhosts</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="px-0 d-flex justify-content-md-end text-white">
+                        <li class="mx-3 list-unstyled">
+                            <a href="#" class="text-white">Privacy Policy</a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="#" class="text-white">Terms of Use</a>
+                        </li>
+                        <li class="mx-3">
+                            <a href="#" class="text-white">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-6">
-                <ul class="px-0 d-flex justify-content-md-end text-white">
-                    <li class="mx-3 list-unstyled">
-                        <a href="#" class="text-white">Privacy Policy</a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="#" class="text-white">Terms of Use</a>
-                    </li>
-                    <li class="mx-3">
-                        <a href="#" class="text-white">Contact</a>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Footer End -->
+    <!-- Footer End -->
 
     <!-- Libs JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
