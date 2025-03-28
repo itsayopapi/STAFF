@@ -26495,7 +26495,7 @@ left: -10px;
 }
 
 .rts-pricing-plan__tab .tab__button {
-    background: var(--color-white);
+    background: white;
     box-shadow: 0px 4px 30px 0px #EDF5FF;
     padding: 5px;
     border-radius: 6px;
@@ -26562,7 +26562,7 @@ left: -10px;
 
 .rts-pricing-plan .price__content .yearly .single-plan:hover,
 .rts-pricing-plan .price__content .yearly .single-plan.active {
-    color: var(--color-white);
+    color: white;
 }
 
 .rts-pricing-plan .price__content .yearly .single-plan:hover .single-plan__content .plan-icon svg path,
@@ -26589,7 +26589,7 @@ left: -10px;
 
 .rts-pricing-plan .tab__content .yearly .single-plan:hover,
 .rts-pricing-plan .tab__content .yearly .single-plan.active {
-    color: var(--color-white);
+    color: white;
 }
 
 .rts-pricing-plan .tab__content .yearly .single-plan:hover .single-plan__content .plan-icon svg path,
@@ -26658,6 +26658,7 @@ left: -10px;
     transition: var(--transition);
     border: 1px solid transparent;
     position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .16);
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
@@ -26668,7 +26669,7 @@ left: -10px;
 
 .rts-pricing-plan .card-plan:hover,
 .rts-pricing-plan .card-plan.active {
-    border-color: var(--color-primary);
+    border-color: blue;
 }
 
 .rts-pricing-plan .card-plan:hover .card-plan__offer .offer-given,
@@ -26679,7 +26680,7 @@ left: -10px;
 .rts-pricing-plan .card-plan:hover .card-plan__cartbtn a,
 .rts-pricing-plan .card-plan.active .card-plan__cartbtn a {
     background: var(--color-third);
-    color: var(--color-secondary);
+    color: black;
 }
 
 .rts-pricing-plan .card-plan:hover .card-plan__feature--list-trigered,
@@ -26697,7 +26698,7 @@ left: -10px;
     font-size: 14px;
     line-height: 100%;
     border-radius: 30px;
-    color: var(--color-secondary);
+    color: black;
     text-transform: capitalize;
 }
 
@@ -26729,7 +26730,7 @@ left: -10px;
 .rts-pricing-plan .card-plan__package .package__name {
     font-size: 20px;
     font-weight: 700;
-    color: var(--color-secondary);
+    color: black;
     margin: 0;
     white-space: nowrap;
 }
@@ -26768,7 +26769,7 @@ left: -10px;
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: var(--color-secondary);
+    color: black;
 }
 
 .rts-pricing-plan .card-plan__price sup,
@@ -26868,7 +26869,7 @@ left: -10px;
 
 .rts-pricing-plan .card-plan__feature--list-trigered.active {
     margin-bottom: 25px;
-    color: var(--color-third);
+    color: blue;
 }
 
 .rts-pricing-plan .card-plan__feature--list.more__feature {
@@ -26880,7 +26881,7 @@ left: -10px;
 }
 
 .rts-pricing-plan .card-plan.style-with-bg {
-    background: #F5FAFF;
+    background: white;
 }
 
 .rts-pricing-plan .card-plan.style-with-bg .card-plan__content {
@@ -26890,7 +26891,8 @@ left: -10px;
 
 .rts-pricing-plan .card-plan.style-with-bg.active,
 .rts-pricing-plan .card-plan.style-with-bg:hover {
-    color: var(--color-white);
+    color: white;
+    background: blue;
 }
 
 .rts-pricing-plan .card-plan.style-with-bg.active::before,
@@ -27050,7 +27052,7 @@ left: -10px;
 }
 
 .rts-pricing-plan .single-plan {
-    background: var(--color-white);
+    background: white;
     padding: 60px;
     border-radius: 20px;
     position: relative;
@@ -27102,7 +27104,7 @@ left: -10px;
 
 .rts-pricing-plan .single-plan:hover,
 .rts-pricing-plan .single-plan.active {
-    color: var(--color-white);
+    color: white;
 }
 
 .rts-pricing-plan .single-plan:hover .single-plan__content .plan-icon svg path,
@@ -27127,8 +27129,8 @@ left: -10px;
 
 .rts-pricing-plan .single-plan:hover .single-plan__content .buy__plan,
 .rts-pricing-plan .single-plan.active .single-plan__content .buy__plan {
-    background: var(--color-white);
-    color: var(--color-secondary);
+    background: white;
+    color: black;
 }
 
 .rts-pricing-plan .single-plan:hover::after,
@@ -27278,4 +27280,24 @@ left: -10px;
     .rts-section .rts-section-description p {
         text-align: left;
     }
+}
+
+
+
+.row.g-30.monthly {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-plan {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-plan__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
