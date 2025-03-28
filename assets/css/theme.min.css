@@ -6,6 +6,10 @@
     font-family: "Quicksand", "sans-serif";
 }
 
+:root {
+    --fontawesome: "Font Awesome 6 Pro";
+}
+
 /* Dropdown hover effect for desktop */
 @media (min-width: 992px) {
     .navbar .dropdown:hover .dropdown-menu {
@@ -26281,6 +26285,10 @@ a.plyr__control:before {
     border-color: blue;
     border: none;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: nowrap;
 }
 
 .index .paymentcard {
@@ -26385,12 +26393,12 @@ a.plyr__control:before {
     border-radius: 100px;
     
     background-color: #6b63ff;
-text-align: center;
-padding: 10px;
-padding-top: 35px;
-position: absolute;
-bottom: 50px;
-left: -10px;
+    text-align: center;
+    padding: 10px;
+    padding-top: 35px;
+    position: absolute;
+    bottom: -20px;
+    left: -50px;
 
 }
 
@@ -26613,3 +26621,51 @@ left: -10px;
 .mainfooterstart .text-center {
     text-align: center
 }
+
+
+/* Features list styling */
+@media (min-width: 768px) {
+    .feature__list {
+      column-count: 2;
+      column-gap: 40px;
+    }
+}
+
+.feature__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .feature__list .feature__item {
+    position: relative;
+    padding-left: 35px; /* Space for the icon */
+    font-family: var(--font-secondary);
+    font-weight: var(--medium);
+  }
+  
+  .feature__list .feature__item::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "\f00c"; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    font-size: 14px;
+    color: white; 
+    background: #007bff; 
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  
+  
+  
