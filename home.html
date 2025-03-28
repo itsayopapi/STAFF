@@ -12,9 +12,6 @@
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
 
-    <!-- BOOTSTRAP JS SCRIPT -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Libs CSS -->
     <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
     <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
@@ -46,7 +43,7 @@
     <header class="custom-header">
         <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
             <div class="container mainlogo px-3">
-                <a class="" href="home.html">
+                <a class="text-inverse" href="#">
                     <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
                 </a>
                 <button class="navbar-toggler offcanvas-nav-btn" type="button">
@@ -54,7 +51,7 @@
                 </button>
                 <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem;">
                     <div class="offcanvas-header">
-                        <a href="home.html" class="text-inverse">
+                        <a href="#" class="text-inverse">
                             <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
                         </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -62,28 +59,31 @@
                     <div class="offcanvas-body pt-0 align-items-center">
                         <ul class="navbar-nav mx-auto align-items-lg-center">
                             <li class="nav-item">
-                                <a class="nav-link" href="home.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/web-hosting.html">Web Hosting <i
+                                <a class="nav-link" href="./index.html">Home <i
                                         class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/domain-names.html">Domains <i
+                                <a class="nav-link" href="./web-hosting.html">Web Hosting <i
                                         class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Email <i class="fa-solid fa-angle-down mx-1"></i></a>
+                                <a class="nav-link" href="./domain-names.html">Domains <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/">Security <i class="fa-solid fa-angle-down mx-1"></i></a>
+                                <a class="nav-link" href="./domain-names.html">Email <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./domain-names.html">Security <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
                         </ul>
                         <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
-                            <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login"
-                                class="btn btn-primary">Get Started</a>
-                            <a href="https://my.wefithost.com/login" data-shop-href="basket-summary-login"
-                                class="btn signbtn ">Sign In</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn getstarted">Get
+                                Started</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn ">Sign
+                                In</a>
                         </div>
                     </div>
                 </div>
@@ -112,15 +112,35 @@
             /* Toggler border color */
         }
 
+        .buttons {
+            background: #6B63FF;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        }
+
+        .buttons:hover {
+            background: white;
+            color: black;
+        }
+
+        .getstarted {
+            color: black;
+        }
+
+        .getstarted:hover {
+            background-color: #6B63FF;
+            color: white;
+        }
+
         .signbtn {
-            background-color: transparent;
-            border: 1px solid #2a52be !important;
+            background-color: white;
+            border-left: 1px solid #6B63FF;
             color: black;
             transition: all 0.3s ease;
         }
 
         .signbtn:hover {
-            background-color: #2a52be !important;
+            background-color: #6B63FF;
             color: white;
         }
 
@@ -132,10 +152,6 @@
             background-color: #fff !important;
             /* Solid color when scrolling */
             font-family: "Quicksand", sans-serif;
-        }
-
-        .buttons {
-            border: 1px solid blue;
         }
     </style>
     <script>
@@ -158,10 +174,10 @@
 
         <!-- Hero start -->
 
-        <section class="pt-8 pb-4">
+        <section class="py-9">
             <div class="container">
-                <div class="intro mt-5 d-flex flex-column flex-md-row align-items-center">
-                    <div class="col-md-5">
+                <div class="intro mt-7">
+                    <div class="col-md-6">
                         <div class="text-center" data-cue="zoomIn">
                             <div class="mt-5 mx-xl-1">
                                 <h1>Get your <span class="intro-text px-2">business online</span> ideas in a second</h1>
@@ -170,16 +186,12 @@
                                     server.
                                 </p>
                             </div>
-                            <div class="mt-4 d-grid d-md-inline-flex mx-1 " style="width:50%;">
-                                <a href="https://wefithost.com/manage"
-                                    class="btn btn-primary px-5 mb-3 mb-md-0 intro-btn">Get Started</a>
+                            <div class="mt-4 d-grid d-md-inline-flex mx-1">
+                                <a href="https://wefithost.com/manage" class="btn intro-btn">Get Started</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-7 d-flex justify-content-center mt-4 mt-md-0">
-                        <img src="illustration.jpg" alt="illustration image" class="img-fluid"
-                            style="max-width: 80%; height: auto;">
-                    </div>
+                    <div class="intro-image"><img src="/home-image.jpg" alt=""></div>
                 </div>
             </div>
         </section>
@@ -187,271 +199,996 @@
         <style>
             .intro {
                 font-family: "Quicksand", sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
             .intro-btn {
-                border-radius: 50px;
+                background: #6B63FF;
+                color: white;
+                padding: .8rem 2rem;
             }
-        </style>
 
-        <!-- Web Hosting Plans -->
+            .intro-btn:hover {
+                background: #6B63FF;
+                color: white;
+                transform: scale(1.1);
+            }
 
-        <section class="web-hosting">
-            <div class="container">
-                <div>
-                    <div class="row  me-md-5 me-lg-0">
-                        <!-- Web Hosting Plan 1 -->
-                        <div class="col-lg-4 p-2 col-md-6 col-12 maindicpy index" data-cue="zoomIn">
-                            <div class="card border-3 mb-5 mb-xl-0 paymentcard">
-                                <div class="card-body webplanpadding py-5 shadow rounded-2">
-                                    <div class="mb-5 paymentcardmain text-center">
-                                        <h3><span>Web Hosting 1</span></h3>
-                                        <h3 class="h6 mb-3">From Only</h3>
-                                        <h2><span>$29.00</span><sub style="font-size: 15px;">/month</sub></h2>
-                                    </div>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Powerful</b><span class="markeypay"> market-leading
-                                                    technology</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>User-friendly</b><span class="markeypay"> control
-                                                    panel with 80+ one-click apps</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Secure</b><span class="markeypay"> state-of-the-art UK
-                                                    data centre</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Choice of</b><span class="markeypay"> Windows or Linux
-                                                    hosting</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Friendly</b><span class="markeypay"> UK
-                                                    support</span></span>
-                                        </li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-6">
-                                            <div class="d-grid mt-5 btnpayment">
-                                                <a href="https://my.wefithost.com/manage"
-                                                    class="btn btn-primary paymentcard-btn">Get Started</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Web Hosting Plan 1 End -->
+            .intro-image {
+                width: 600px;
+            }
 
-                        <!-- Web Hosting Plan 2 -->
-                        <div class="col-lg-4 p-2 col-md-6 col-12 maindicpy index" data-cue="zoomIn">
-                            <div class="card border-3 mb-5 mb-xl-0 paymentcard">
-                                <div class="card-body webplanpadding py-5 shadow rounded-2">
+            .intro-image img {
+                width: 100%;
+            }
 
-                                    <div class="offerpop">
-                                        <h6>MOST POPULAR</h6>
-                                    </div>
-
-                                    <div class="mb-5 paymentcardmain text-center">
-                                        <h3><span>Web Hosting 3</span></h3>
-                                        <h3 class="h6 mb-3">From Only</h3>
-                                        <h2><span>$49.00</span><sub style="font-size: 15px;">/month</sub></h2>
-                                    </div>
-
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Powerful</b><span class="markeypay"> market-leading
-                                                    technology</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>User-friendly</b><span class="markeypay"> control
-                                                    panel with 80+ one-click apps</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Secure</b><span class="markeypay"> state-of-the-art UK
-                                                    data centre</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Choice of</b><span class="markeypay"> Windows or Linux
-                                                    hosting</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Friendly</b><span class="markeypay"> UK
-                                                    support</span></span>
-                                        </li>
-                                    </ul>
-
-                                    <div class="row">
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-6">
-                                            <div class="d-grid mt-5 btnpayment">
-                                                <a href="#" class="btn btn-primary paymentcard-btn">Get Started</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Web Hosting Plan 2 End -->
-
-                        <!-- Web Hosting Plan 3 -->
-                        <div class="col-lg-4 p-2 col-md-6 col-12 maindicpy index" data-cue="zoomIn">
-                            <div class="card border-3 mb-5 mb-xl-0 paymentcard">
-                                <div class="card-body webplanpadding py-5 shadow rounded-2">
-                                    <div class="mb-5 paymentcardmain text-center">
-                                        <h3><span>Web Hosting 3</span></h3>
-                                        <h3 class="h6 mb-3">From Only</h3>
-                                        <h2><span>$99.00</span><sub style="font-size: 15px;">/month</sub></h2>
-                                    </div>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Powerful</b><span class="markeypay"> market-leading
-                                                    technology</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>User-friendly</b><span class="markeypay"> control
-                                                    panel with 80+ one-click apps</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Secure</b><span class="markeypay"> state-of-the-art UK
-                                                    data centre</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Choice of</b><span class="markeypay">Windows or Linux
-                                                    hosting</span></span>
-                                        </li>
-                                        <li class="mb-3 d-flex paymasterhover">
-                                            <div>
-                                                <img src="./assets/img/Home page/purple-tick.svg" class="purpletic"
-                                                    alt="">
-                                                <img src="./assets/img/Home page/white-tick.svg" class="whitetic"
-                                                    alt="">
-                                            </div>
-                                            <span class="ms-2"><b>Friendly</b><span class="markeypay"> UK
-                                                    support</span></span>
-                                        </li>
-                                    </ul>
-                                    <div class="row">
-                                        <div class="col-md-3"></div>
-                                        <div class="col-md-6">
-                                            <div class="d-grid mt-5 btnpayment">
-                                                <a href="#" class="btn btn-primary paymentcard-btn">Get Started</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Web Hosting Plan 3 End -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        <style>
             .web-hosting {
                 font-family: "Quicksand", "sans-serif";
+                display: none;
             }
 
             .paymentcard-btn {
                 border-radius: .3rem;
             }
+
+            .hosting-plan {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab__button .tab__btn {
+                border: none;
+            }
+
+            .hosting {
+                font-family: "Quicksand", "sans-serif";
+            }
         </style>
+
+        <div class="rts-pricing-plan bg-white section__padding hosting">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="rts-section text-center hosting-plan">
+                        <h2 class="" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">Choose
+                            Hosting Plan</h2>
+                        <p class="rts-section__description w-420" data-sal="slide-down" data-sal-delay="300"
+                            data-sal-duration="800">Globally incubate next-generation e-services via state of the art
+                            technology.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row justify-content-center" data-sal="slide-down" data-sal-delay="500"
+                        data-sal-duration="800">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="rts-pricing-plan__tab color-primary">
+                                <div class="tab__button">
+                                    <div class="tab__button__item">
+                                        <button class="tab__btn active" data-tab="monthly">monthly</button>
+                                        <button class="tab__btn" data-tab="yearly">yearly</button>
+                                    </div>
+                                </div>
+                                <div class="discount">
+                                    <span class="line"><img src="assets/images/pricing/offer__vactor.svg" height="20"
+                                            width="85" alt=""></span>
+                                    <p>20% save</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PRICING PLAN -->
+                    <div class="tab__content open" id="monthly">
+                        <div class="row g-30 monthly">
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/basic.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">WefitValue</h4>
+                                        </div>
+                                        <p class="card-plan__desc">Power your website with everything needed for success
+                                            online.
+                                        </p>
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup>15.63 <sub>/ month</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="https://my.wefithost.com/manage">Sign Up Now</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 18.99 /month when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 2 WordPress
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Standard
+                                                        Performance</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+
+
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg active">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/premium.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">WefitPro</h4>
+                                        </div>
+                                        <p class="card-plan__desc">A growth engine tailored for your WordPress site,
+                                            fueling
+                                            your business or blog.</p>
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup> 19.63 <sub>/ month</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="https://my.wefithost.com/manage">Sign Up Now</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 23.99 /month when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 5
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Level Up
+                                                        Performance</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+
+
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/business.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">WefitCloud Startup</h4>
+                                        </div>
+                                        <p class="card-plan__desc">A high-capacity architecture built for extreme
+                                            performance,
+                                            tailored for WordPress sites.</p>
+
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup> 68.63 <sub>/ month</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="https://my.wefithost.com/manage">Sign Up Now</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 72.99 /month when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 1
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Get started
+                                                        with your
+                                                        own
+                                                        virtual serve</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 200 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+
+
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 200 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                        </div>
+                    </div>
+
+                    <!-- PRICING PLAN -->
+                    <div class="tab__content" id="yearly">
+                        <div class="row g-30 yearly">
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/basic.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">Basic</h4>
+                                        </div>
+                                        <p class="card-plan__desc">Everything need to your website</p>
+
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup> 36.63 <sub>/ year</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="https://my.wefithost.com">add to cart</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 79.99 /year when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 1
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Standard
+                                                        Performance</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+
+
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg active">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/premium.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">Premium</h4>
+                                        </div>
+                                        <p class="card-plan__desc">Level-up more power features</p>
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup> 79.56 <sub>/ year</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="https://my.wefithost.com">add to cart</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 151.99 /year when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 1
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Standard
+                                                        Performance</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+
+
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                            <!-- single card -->
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="card-plan style-with-bg">
+                                    <div class="card-plan__content">
+                                        <div class="card-plan__package">
+                                            <div class="icon">
+                                                <img src="assets/images/pricing/business.svg" height="30" width="30"
+                                                    alt="">
+                                            </div>
+                                            <h4 class="package__name">Cloud Startup</h4>
+                                        </div>
+                                        <p class="card-plan__desc">Everything need to your website</p>
+                                        <h5 class="card-plan__price">
+                                            <sup>$</sup> 103.63 <sub>/ year</sub>
+                                        </h5>
+                                        <div class="card-plan__cartbtn">
+                                            <a href="#">add to cart</a>
+                                        </div>
+                                        <p class="card-plan__renew-price">
+                                            $ 235.99 /month when you renew
+                                        </p>
+                                        <div class="card-plan__feature">
+                                            <ul class="card-plan__feature--list">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 1
+                                                        Website</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Standard
+                                                        Performance</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
+                                                        Support</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Free
+                                                        Email</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
+                                                        Bandwidth</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Elevate your online presence with Wefithost, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">More Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="card-plan__feature--list more__feature">
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
+                                                        Storage</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
+                                                        SSL</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Secure your website with Wefithost's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
+                                                        Guarantee</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Wefithost guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-item">
+                                                    <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
+                                                        Firewall</span>
+                                                    <span class="tolltip" data-bs-toggle="tooltip"
+                                                        data-bs-placement="bottom"
+                                                        data-bs-original-title="Enhance your website's security with Wefithost's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
+                                                            class="fa-solid fa-circle-question"></i></span>
+                                                </li>
+                                                <li class="card-plan__feature--list-trigered">
+                                                    <span class="text">See less Features <i
+                                                            class="fa-sharp fa-solid fa-chevron-up"></i>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- single card end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Domain Search -->
         <section class="my-lg-7 py-5 domain-search">
             <div class="container" data-cue="fadeIn">
-                <div class="row bg-pattern bg-primary rounded-5 py-lg-7 py-5 g-0">
-                    <div class="col-md-8 offset-md-2">
+                <div class="row bg-pattern rounded-5 py-lg-7 py-5 g-0 domain">
+                    <div class="col-md-8 offset-md-2 ">
                         <div class="position-relative z-1 px-5" data-cue="zoomIn">
                             <div class="mb-5">
                                 <h3 class="h2 mb-3">Find your dream domain name</h3>
@@ -469,7 +1206,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" style="overflow-x: auto;">
+                            <div class="row logos" style="overflow-x: auto;">
                                 <div class="col-md-1"></div>
                                 <div class="col-4 col-sm-2 my-3 d-flex align-items-center">
                                     <img src="./assets/img/Home page/couk.svg" class="w-75" alt="">
@@ -497,11 +1234,22 @@
             .domain-search {
                 font-family: "Quicksand", "sans-serif";
                 text-align: center;
-                color: #fff;
+                color: white;
             }
 
             .domain-search h3 {
-                color: #fff;
+                color: white;
+            }
+
+            .domain {
+                background: #6B63FF;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+            }
+
+            .domain-search .domain input {
+                color: black;
+                border: none;
+                outline: none;
             }
         </style>
 
@@ -558,7 +1306,7 @@
                                         <div class="mb-2 hostingcard">
                                             <h4 class="mb-2 h5">Cloud Hosting</h4>
                                             <span class="small">Build, deploy, and scale your websites and apps
-                                                effortlessly with Wefithost’s lightning-fast,
+                                                effortlessly with Wefithost’s solidning-fast,
                                                 multi-platform cloud hosting. Ideal for agencies, eCommerce stores,
                                                 developers, and high-traffic websites</span>
                                         </div>
@@ -685,6 +1433,11 @@
         <style>
             .hosting-services {
                 font-family: "Quicksand", "sans-serif";
+                padding-top: 15rem;
+                padding-bottom: 8rem;
+                margin-top: -16rem;
+                background: #F6F6F6;
+                color: black;
             }
 
             .hosting-text {
@@ -693,6 +1446,7 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
+                
             }
 
             .hosting-services .button {
@@ -703,11 +1457,23 @@
 
             .hosting-services .button .btn {
                 border-radius: .3rem;
+                background: #6B63FF;
+                color: white;
+            }
+
+            .hosting-services .button .btn:hover {
+                background: white;
+                color: #6B63FF;
+                transform: scale(1.1);
             }
 
             .hosting-features {
                 display: flex;
                 justify-content: stretch;
+            }
+
+            .hosting-features .card-body {
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
             }
         </style>
 
@@ -730,7 +1496,7 @@
                         data-cues="fadeIn">
                         <div class="col" data-cue="fadeIn">
                             <a href="#">
-                                <div class="card  px-md-5  border-0 bg-transparent">
+                                <div class="card px-md-5  border-0 bg-transparent">
                                     <div class="card-body">
                                         <div class="mb-2 mainimgfeature">
                                             <img src="./assets/img/Home page/better-security-and-features.svg"
@@ -882,7 +1648,7 @@
                     </div>
                     <div class="col" data-cue="fadeIn">
                         <a href="#">
-                            <div class="card  px-md-5  border-0 bg-transparent">
+                            <div class="card px-md-5  border-0 bg-transparent">
                                 <div class="card-body">
                                     <div class="mb-2 mainimgfeature">
                                         <img src="./assets/img/Home page/better-plans-for-more-panel-power.svg"
@@ -1066,6 +1832,14 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .key-features .card-body {
+                height: 100%;
+            }
+
+            .key-features .card-body:hover {
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+            }
         </style>
 
         <!-- What Our Customers Say -->
@@ -1202,38 +1976,47 @@
 
             .testimonials .button .btn {
                 border-radius: .3rem;
+                background: #6B63FF;
+                color: white;
+            }
+
+            .testimonials .button .btn:hover {
+                background: white;
+                color: #6B63FF;
+                transform: scale(1.1);
             }
         </style>
 
 
         <!-- FAQs -->
-
-        <section class="mt-7 faqs">
-            <div class="container w-md-75">
+        <section class="mt-10 mb-8 faqs" id="speaker">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12" data-cue="fadeIn">
-                        <div class="mb-4 pb-2 header">
+                        <div class="mb-5 pb-2 faq-text">
                             <h2 class="">FAQ's</h2>
                             <p class="mb-0 lead">UK-based web hosting services, domains, and virtual private servers.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="pb-5 px-3">
+                <div class="pb-5">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingOne">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    Why buy a domain name from WefitHost?
+                                    Why buy a domain name from Wefithost?
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body"> Above all else, we strive to deliver outstanding customer
-                                    experiences. When you buy a domain name from WefitHost, we guarantee it will be
-                                    handed over.</div>
+                                <div class="accordion-body">At WeFitHost, we offer affordable domain prices, instant
+                                    registration, and reliable support. Our domains come with WHOIS
+                                    privacy protection, easy management tools, and seamless integration with hosting
+                                    services. Plus, our expert team is
+                                    always ready to assist you. Secure your perfect domain with WeFitHost today!</div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -1246,9 +2029,11 @@
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Above all else, we strive to deliver outstanding customer
-                                    experiences. When you buy a domain name from hostie, we guarantee it will be handed
-                                    over.</div>
+                                <div class="accordion-body">Domain registration involves selecting a unique domain name
+                                    and purchasing it through a domain registrar. Once
+                                    registered, the domain is linked to your website and remains active as long as you
+                                    renew it before expiration. You can
+                                    also update DNS settings to connect the domain to your hosting service.</div>
                             </div>
                         </div>
                         <div class="accordion-item">
@@ -1261,9 +2046,29 @@
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Above all else, we strive to deliver outstanding customer
-                                    experiences. When you buy a domain name from hostie, we guarantee it will be handed
-                                    over.</div>
+                                <div class="accordion-body">Domain name registration is required to secure a unique web
+                                    address for your website. It ensures that no one else can
+                                    use the same domain name and allows users to find your site online. Registration
+                                    also provides essential ownership
+                                    details and helps maintain internet security and accountability.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
+                                    What is the importance of hosting a website?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Website hosting is essential because it makes your website
+                                    accessible online. A reliable hosting service ensures fast
+                                    loading speeds, security, uptime, and scalability, allowing visitors to access your
+                                    site anytime. It also provides
+                                    storage for your website files, emails, and databases, ensuring smooth functionality
+                                    and a professional online presence.</div>
                             </div>
                         </div>
                     </div>
@@ -1276,10 +2081,17 @@
                 font-family: "Quicksand", "sans-serif";
             }
 
-            .faqs .header {
+            .faq-text {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .faqs .accordion-item {
+                display: flex;
+                flex-direction: column;
+                width: 700px;
+                margin: 0 auto;
             }
         </style>
 
@@ -1287,7 +2099,7 @@
     </main>
 
     <!-- Footer -->
-
+    
     <footer class="pt-7 mainfooterstart mb-0">
         <div class="container">
             <div class="mb-4 text-lg-start">
@@ -1354,9 +2166,9 @@
                 </div>
             </div>
         </div>
-
+    
         <hr class="my-4">
-
+    
         <div class="container">
             <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-6 mb-3 mb-md-0">
@@ -1373,30 +2185,30 @@
             </div>
         </div>
     </footer>
-
-
+    
+    
     <style>
         .footerlinkcoor input.form-control {
             background-color: inherit;
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
-
+    
         .footerlinkcoor input::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
-
+    
         .footerlinkcoor button.btn {
             background-color: white;
             color: #6B63FF;
-
+    
         }
-
+    
         .mainfooterstart .text-center {
             text-align: center
         }
     </style>
-
+    
     <!-- Footer End -->
 
     <!-- Libs JS -->
