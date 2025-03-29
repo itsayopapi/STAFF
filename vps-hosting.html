@@ -44,12 +44,11 @@
 
 <body class="vps-hosting page-template">
 
-    <!-- HEADER AREA START-->
     <!-- Navbar Start -->
     <header class="custom-header">
         <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
             <div class="container mainlogo px-3">
-                <a class="" href="./home">
+                <a class="text-inverse" href="#">
                     <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
                 </a>
                 <button class="navbar-toggler offcanvas-nav-btn" type="button">
@@ -57,7 +56,7 @@
                 </button>
                 <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem;">
                     <div class="offcanvas-header">
-                        <a href="./home" class="text-inverse">
+                        <a href="#" class="text-inverse">
                             <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
                         </a>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -65,69 +64,114 @@
                     <div class="offcanvas-body pt-0 align-items-center">
                         <ul class="navbar-nav mx-auto align-items-lg-center">
                             <li class="nav-item">
-                                <a class="nav-link" href="./home.html">Home</a>
+                                <a class="nav-link" href="./index.html">Home <i class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
-    
-                            <!-- Web Hosting Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./web-hosting" id="webHostingDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Web Hosting
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="webHostingDropdown">
-                                    <li><a class="dropdown-item" href="./shared-hosting.html">Shared Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./vps-hosting.html">VPS Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./wordpress-hosting.html">WordPress Hosting</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./web-hosting.html">Web Hosting <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
-    
-                            <!-- Domains Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./domain-names" id="domainsDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Domains
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
-                                    <li><a class="dropdown-item" href="./domain-registration.html">Domain Registration</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="./domain-transfer.html">Domain Transfer</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./domain-names.html">Domains <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
-    
-                            <!-- Email Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./email" id="emailDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Email
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="emailDropdown">
-                                    <li><a class="dropdown-item" href="./business-email">Business Email</a></li>
-                                    <li><a class="dropdown-item" href="./email-hosting">Email Hosting</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./domain-names.html">Email <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
-    
-                            <!-- Security Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./security" id="securityDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Security
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="securityDropdown">
-                                    <li><a class="dropdown-item" href="./ssl-certificates">SSL Certificates</a></li>
-                                    <li><a class="dropdown-item" href="./website-security">Website Security</a></li>
-                                </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./domain-names.html">Security <i
+                                        class="fa-solid fa-angle-down mx-1"></i></a>
                             </li>
                         </ul>
                         <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
-                            <a href="./register" class="btn btn-primary">Get Started</a>
-                            <a href="./login" class="btn signbtn">Sign In</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn getstarted">Get
+                                Started</a>
+                            <a href="./register.html" data-shop-href="basket-summary-login" class="btn signbtn ">Sign
+                                In</a>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- HEADER AREA END -->
+    
+    <style>
+        .custom-header,
+        .custom-header .navbar {
+            background-color: white;
+            justify-content: space-between;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+            font-family: "Quicksand", sans-serif;
+        }
+    
+        .custom-header .nav-link,
+        .custom-header .navbar-brand,
+        .custom-header .bi-list {
+            color: white !important;
+            /* Ensures text/icons are visible */
+        }
+    
+        .custom-header .navbar-toggler {
+            border-color: white !important;
+            /* Toggler border color */
+        }
+    
+        .buttons {
+            background: #6B63FF;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        }
+    
+        .buttons:hover {
+            background: white;
+            color: black;
+        }
+    
+        .getstarted {
+            color: black;
+        }
+    
+        .getstarted:hover {
+            background-color: #6B63FF;
+            color: white;
+        }
+    
+        .signbtn {
+            background-color: white;
+            border-left: 1px solid #6B63FF;
+            color: black;
+            transition: all 0.3s ease;
+        }
+    
+        .signbtn:hover {
+            background-color: #6B63FF;
+            color: white;
+        }
+    
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .navbar.scrolled {
+            background-color: #fff !important;
+            /* Solid color when scrolling */
+            font-family: "Quicksand", sans-serif;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) { // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
+        });
+    </script>
+    <!-- Navbar End -->
 
     <!-- shared hosting banner -->
     <div class="rts-hosting-banner rts-hosting-banner-bg banner-default-height">
@@ -146,26 +190,35 @@
                         <div class="hosting-action">
                             <a href="https://My.wefithost.com/order-vps"
                                 class="btn__two secondary__bg secondary__color">Buy VPS <i
-                                    class="fa-regular fa-arrow-right"></i></a>
+                                    class="fa-solid fa-arrow-right"></i></a>
                             <a href="" class="btn__white">Starting @ $10.00/mo</a>
                         </div>
                     </div>
                     <div class="rts-hosting-banner__image vps">
-                        <img src="assets/images/banner/banner__vps__image.svg" alt="">
-                        <img class="shape-image one top-bottom2" src="assets/images/banner/banner__vps__image-sm1.svg"
-                            alt="">
+                        <img src="/vps-image.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- shared hosting banner end-->
+    <style>
+        .rts-hosting-banner__image {
+            width: 500px;
+        }
+        .rts-hosting-banner__image img {
+            width: 100%;
+        }
+        .features {
+            margin-top: -10rem;
+        }
+    </style>
 
     <!-- WeFitHost QUICK FEATURE -->
-    <section class="rts-feature section__padding">
+    <section class="rts-feature section__padding features">
         <div class="container">
             <div class="row g-30">
-                <div class="">
+                <div class="section__padding-text">
                     <div class="rts-feature-section">
                         <h2 class="title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
                             Get complete control and flexibility with our<br> high-performance VPS solutions
@@ -176,7 +229,7 @@
                             or manage a complex network, our VPS can handle it all.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="300"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="300"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -198,7 +251,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="400"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="400"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -232,7 +285,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="500"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="500"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -254,7 +307,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="600"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="600"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -276,7 +329,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="700"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="700"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -298,7 +351,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6" data-sal="slide-down" data-sal-delay="800"
+                <div class="col-lg-4 col-md-4 col-sm-6 mb-5" data-sal="slide-down" data-sal-delay="800"
                     data-sal-duration="800">
                     <div class="card-feature">
                         <div class="card-feature__single">
@@ -330,11 +383,27 @@
         </div>
     </section>
     <!-- WeFitHost QUICK FEATURE END -->
+
+    <style>
+        .section__padding-text {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .rts-pricing-plan .choose {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+
     <!-- PRICING PLAN START -->
     <div class="rts-pricing-plan section__padding">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="rts-section  text-center">
+                <div class="mt-10 rts-section text-center choose">
                     <h2 class="rts-section__title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
                         Choose Hosting Plan</h2>
                     <p class="rts-section__description w-450" data-sal="slide-down" data-sal-delay="300"
@@ -362,6 +431,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- PRICING PLAN -->
                 <div class="price__content open" id="monthly" style="">
                     <div class="row g-30 monthly">
@@ -394,14 +464,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -409,7 +479,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -417,14 +487,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -432,7 +502,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 60 GB SSD
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> 60 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -442,7 +512,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -450,7 +520,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -458,7 +528,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -467,13 +537,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -481,7 +551,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -489,7 +559,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -497,7 +567,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -506,7 +576,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -544,14 +614,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -559,7 +629,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -567,14 +637,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -582,7 +652,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -592,7 +662,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -600,7 +670,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -608,7 +678,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -617,13 +687,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -631,7 +701,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -639,7 +709,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -647,7 +717,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -656,7 +726,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -692,14 +762,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -707,7 +777,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -715,14 +785,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -730,7 +800,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -740,7 +810,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -748,7 +818,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -756,7 +826,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -765,13 +835,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -779,7 +849,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -787,7 +857,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -795,7 +865,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -804,7 +874,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -840,14 +910,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -855,7 +925,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -863,14 +933,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -878,7 +948,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -888,7 +958,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -896,7 +966,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -904,7 +974,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -913,13 +983,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -927,7 +997,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -935,7 +1005,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -943,7 +1013,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -952,7 +1022,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -992,14 +1062,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1007,7 +1077,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1015,14 +1085,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1030,7 +1100,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1040,7 +1110,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1048,7 +1118,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1056,7 +1126,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1065,13 +1135,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1079,7 +1149,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1087,7 +1157,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1095,7 +1165,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1104,7 +1174,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -1138,14 +1208,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1153,7 +1223,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1161,14 +1231,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1176,7 +1246,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1186,7 +1256,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1194,7 +1264,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1202,7 +1272,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1211,13 +1281,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1225,7 +1295,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1233,7 +1303,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1241,7 +1311,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1250,7 +1320,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -1285,14 +1355,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1300,7 +1370,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1308,14 +1378,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1323,7 +1393,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1333,7 +1403,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1341,7 +1411,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1349,7 +1419,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1358,13 +1428,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1372,7 +1442,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1380,7 +1450,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1388,7 +1458,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-xmark"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1397,7 +1467,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -1431,14 +1501,14 @@
                                 <div class="card-plan__feature">
                                     <ul class="card-plan__feature--list">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> 1 Website</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="Explore, discover, and learn on our innovative and informative website."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
+                                            <span class="text"><i class="fa-solid fa-check"></i> Standard
                                                 Performance</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1446,7 +1516,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
+                                            <span class="text"><i class="fa-solid fa-check"></i> 24/7/365
                                                 Support</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1454,14 +1524,14 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Free Email</span>
+                                            <span class="text"><i class="fa-solid fa-check"></i> Free Email</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
                                                 data-bs-original-title="WeFitHost offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited
                                                 Bandwidth</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1469,7 +1539,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1479,7 +1549,7 @@
 
 
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1487,7 +1557,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1495,7 +1565,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1504,13 +1574,13 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-down"></i>
                                             </span>
                                         </li>
                                     </ul>
                                     <ul class="card-plan__feature--list more__feature">
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
+                                            <span class="text"><i class="fa-solid fa-check"></i> 100 GB SSD
                                                 Storage</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1518,7 +1588,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
+                                            <span class="text"><i class="fa-solid fa-check"></i> Unlimited Free
                                                 SSL</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1526,7 +1596,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
+                                            <span class="text"><i class="fa-solid fa-check"></i> 99.9% Uptime
                                                 Guarantee</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1534,7 +1604,7 @@
                                                     class="fa-light fa-circle-question"></i></span>
                                         </li>
                                         <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
+                                            <span class="text"><i class="fa-solid fa-check"></i> Web Application
                                                 Firewall</span>
                                             <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                 title=""
@@ -1543,7 +1613,7 @@
                                         </li>
                                         <li class="card-plan__feature--list-trigered">
                                             <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
+                                                    class="fa-sharp fa-solid fa-chevron-up"></i>
                                             </span>
                                         </li>
                                     </ul>
@@ -1554,7 +1624,7 @@
                     </div>
                 </div>
             </div>
-            <div class="view-plan-btn">
+            <div class="view-plan-btn mb-8">
                 <a href="https://My.wefithost.com/order-vps" class="btn long-btn">view all plans</a>
             </div>
         </div>
@@ -1578,53 +1648,53 @@
                     <div class="rts-performance-tab" data-sal="slide-down" data-sal-delay="200" data-sal-duration="800">
                         <div class="single-tab">
                             <button class="tab__button tab__btn active" data-tab="nginx">Apache or Nginx <i
-                                    class="fa-regular fa-arrow-right"></i></button>
+                                    class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         <div class="single-tab">
                             <button class="tab__button tab__btn" data-tab="sftp">Unlimited SFTP Users <i
-                                    class="fa-regular fa-arrow-right"></i></button>
+                                    class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         <div class="single-tab">
                             <button class="tab__button tab__btn" data-tab="unlimited">Unlimited SFTP Users <i
-                                    class="fa-regular fa-arrow-right"></i></button>
+                                    class="fa-solid fa-arrow-right"></i></button>
                         </div>
                         <div class="single-tab">
                             <button class="tab__button tab__btn" data-tab="ssh">Secure Shell (SSH) Access <i
-                                    class="fa-regular fa-arrow-right"></i></button>
+                                    class="fa-solid fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8 col-xl-7 col-md-12 d-md-flex justify-content-md-center">
                     <div class="performance-tab-content tab__content open" id="nginx">
                         <div class="image-one">
-                            <img src="assets/images/feature/vps/vps-small.png" alt="" height="545" width="307">
+                            <img src="assets/images/feature/vps-small.png" alt="" height="545" width="307">
                         </div>
                         <div class="image-two">
-                            <img src="assets/images/feature/vps/vps-big.png" alt="" height="545" width="420">
+                            <img src="assets/images/feature/vps-big.png" alt="" height="545" width="420">
                         </div>
                     </div>
                     <div class="performance-tab-content tab__content" id="sftp">
                         <div class="image-one">
-                            <img src="assets/images/feature/vps/vps-small.png" alt="" height="545" width="307">
+                            <img src="assets/images/feature/vps-small.png" alt="" height="545" width="307">
                         </div>
                         <div class="image-two">
-                            <img src="assets/images/feature/vps/vps-big.png" alt="" height="545" width="420">
+                            <img src="assets/images/feature/vps-big.png" alt="" height="545" width="420">
                         </div>
                     </div>
                     <div class="performance-tab-content tab__content" id="unlimited">
                         <div class="image-one">
-                            <img src="assets/images/feature/vps/vps-small.png" alt="" height="545" width="307">
+                            <img src="assets/images/feature/vps-small.png" alt="" height="545" width="307">
                         </div>
                         <div class="image-two">
-                            <img src="assets/images/feature/vps/vps-big.png" alt="" height="545" width="420">
+                            <img src="assets/images/feature/vps-big.png" alt="" height="545" width="420">
                         </div>
                     </div>
                     <div class="performance-tab-content tab__content" id="ssh">
                         <div class="image-one">
-                            <img src="assets/images/feature/vps/vps-small.png" alt="" height="545" width="307">
+                            <img src="assets/images/feature/vps-small.png" alt="" height="545" width="307">
                         </div>
                         <div class="image-two">
-                            <img src="assets/images/feature/vps/vps-big.png" alt="" height="545" width="420">
+                            <img src="assets/images/feature/vps-big.png" alt="" height="545" width="420">
                         </div>
                     </div>
                 </div>
@@ -1634,7 +1704,7 @@
     <!-- VPS PERFORMANCE END -->
 
     <!-- HOSTING FEATURE -->
-    <div class="rts-hosting-feature section__padding">
+    <div class="rts-hosting-feature section__padding mt-7 py-8">
         <div class="container">
             <div class="row gy-30">
                 <div class="col-lg-6 d-md-flex justify-content-md-center">
@@ -1677,10 +1747,10 @@
     <!-- HOSTING FEATURE END -->
 
     <!-- WeFitHost CLIENT FEEDBACK AREA -->
-    <div class="rts-client-feedback section__padding">
+    <div class="rts-client-feedback section__padding mt-8">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="rts-section w-500 text-center">
+                <div class="rts-section w-500 text-center client">
                     <h2 class="rts-section__title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
                         Our Client Feedback</h2>
                     <p class="rts-section__description" data-sal="slide-down" data-sal-delay="300"
@@ -1745,7 +1815,7 @@
                                                 alt="">
                                         </div>
                                         <div class="author__meta">
-                                            <h6>Sarah T</h6>
+                                            <h6>Michael R</h6>
                                             <span>Managing Director</span>
                                         </div>
                                     </div>
@@ -1805,7 +1875,7 @@
                                                 alt="">
                                         </div>
                                         <div class="author__meta">
-                                            <h6>Michael R</h6>
+                                            <h6>Sarah T</h6>
                                             <span>Managing Director</span>
                                         </div>
                                     </div>
@@ -1819,13 +1889,13 @@
         </div>
     </div>
     <!-- WeFitHost CLIENT FEEDBACK AREA END -->
-
+    
     <!-- SHARED HOSTING FAQ -->
-    <div class="rts-hosting-faq section__padding">
+    <div class="rts-hosting-faq section__padding mt-8">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="rts-section text-center">
+                    <div class="rts-section faq-text">
                         <h2 class="rts-section__title mb-0" data-sal="slide-down" data-sal-delay="100"
                             data-sal-duration="800">Frequently asked questions</h2>
                     </div>
@@ -1920,7 +1990,7 @@
     </div>
     <!-- SHARED HOSTING FAQ END -->
     <!-- WeFitHost CTA -->
-    <div class="rts-cta-two shared-page-bg">
+    <div class="rts-cta-two shared-page-bg py-8">
         <div class="container">
             <div class="row">
                 <div class="rts-cta-two__wrapper">
