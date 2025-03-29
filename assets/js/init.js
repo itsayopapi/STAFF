@@ -70,7 +70,7 @@ $(function() {
       return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 
-    // PRICING FEATURE SHOW HIDE
+        // PRICING FEATURE SHOW HIDE
     try {
       $(document).ready(function () {
         $(".card-plan__feature--list-trigered").click(function () {
@@ -85,7 +85,5 @@ $(function() {
     } catch (error) {
       console.log('Feature show hide js code not working this page')
     }
-   
-  
   })(jQuery, window)
 
