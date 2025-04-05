@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
     <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/favicon/tile.xml"
-    />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
 
@@ -15,14 +18,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Libs CSS -->
-    <link
-      href="assets/libs/simplebar/dist/simplebar.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
@@ -34,315 +31,181 @@
     <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
 
     <!-- FAV ICON -->
-    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png">
 
     <!-- FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>WeFitHost</title>
-  </head>
-  <body data-bs-theme="light">
+
+</head>
+
+<body data-bs-theme="light">
+
     <!-- Navbar Start -->
     <header class="custom-header">
-      <nav
-        class="navbar navbar-expand-lg transparent navbar-transparent navbar-light"
-      >
-        <div class="container mainlogo px-3">
-          <a class="" href="#">
-            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" />
-          </a>
-          <button
-            class="navbar-toggler offcanvas-nav-btn"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNav"
-          >
-            <i class="bi bi-list"></i>
-          </button>
-          <div
-            class="offcanvas offcanvas-start offcanvas-nav"
-            id="offcanvasNav"
-            style="width: 20rem"
-          >
-            <div class="offcanvas-header">
-              <a href="#" class="">
-                <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" />
-              </a>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
+        <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
+            <div class="container mainlogo px-3">
+                <a class="" href="#">
+                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+                </a>
+                <button class="navbar-toggler offcanvas-nav-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+                    <i class="bi bi-list"></i>
+                </button>
+                <div class="offcanvas offcanvas-start offcanvas-nav" id="offcanvasNav" style="width: 20rem;">
+                    <div class="offcanvas-header">
+                        <a href="#" class="">
+                            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+                        </a>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body pt-0 align-items-center">
+                        <ul class="navbar-nav mx-auto align-items-lg-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./home.html">Home</a>
+                            </li>
+                            
+                            <!-- Web Hosting Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="./web-hosting.html" id="webHostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Hosting
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="webHostingDropdown">
+                                    <li><a class="dropdown-item" href="./web-hosting.html">Web Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./shared-hosting.html">Shared Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./vps-hosting.html">VPS Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./wordpress-hosting.html">WordPress Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./reseller-hosting.html">Reseller Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./dedicated-hosting.html">Dedicated Hosting</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Domains Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="./domain-names.html" id="domainsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Domains
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
+                                    <li><a class="dropdown-item" href="#">Domain Registration</a></li>
+                                    <li><a class="dropdown-item" href="#">Domain Transfer</a></li>
+                                    <li><a class="dropdown-item" href="#">Domain Pricing</a></li>
+                                    <li><a class="dropdown-item" href="#">WHOIS Lookup</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Email Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="./email.html" id="emailDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Email
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="emailDropdown">
+                                    <li><a class="dropdown-item" href="./business-email.html">Business Email</a></li>
+                                    <li><a class="dropdown-item" href="./email.html">Email Hosting</a></li>
+                                    <li><a class="dropdown-item" href="./microsoft-365.html">Microsoft 365</a></li>
+                                    <li><a class="dropdown-item" href="./google-workspace.html">Google Workspace</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- Security Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="./security.html" id="securityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Security
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="securityDropdown">
+                                    <li><a class="dropdown-item" href="./ssl-certificates.html">SSL Certificates</a></li>
+                                    <li><a class="dropdown-item" href="./website-security.html">Website Security</a></li>
+                                    <li><a class="dropdown-item" href="./backup-solutions.html">Backup Solutions</a></li>
+                                    <li><a class="dropdown-item" href="./ddos-protection.html">DDoS Protection</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
+                            <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login" class="btn getstarted">Get Started</a>
+                            <a href="https//:my.wefithost.com/login" data-shop-href="basket-summary-login" class="btn signbtn">Log In</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="offcanvas-body pt-0 align-items-center">
-              <ul class="navbar-nav mx-auto align-items-lg-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="./home.html">Home</a>
-                </li>
-
-                <!-- Web Hosting Dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="./web-hosting.html"
-                    id="webHostingDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Hosting
-                  </a>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="webHostingDropdown"
-                  >
-                    <li>
-                      <a class="dropdown-item" href="./web-hosting.html"
-                        >Web Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./shared-hosting.html"
-                        >Shared Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./vps-hosting.html"
-                        >VPS Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./wordpress-hosting.html"
-                        >WordPress Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./reseller-hosting.html"
-                        >Reseller Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./dedicated-hosting.html"
-                        >Dedicated Hosting</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-                <!-- Domains Dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="./domain-names.html"
-                    id="domainsDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Domains
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
-                    <li>
-                      <a class="dropdown-item" href="./domain-registration.html"
-                        >Domain Registration</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./domain-transfer.html"
-                        >Domain Transfer</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./domain-pricing.html"
-                        >Domain Pricing</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./whois-lookup.html"
-                        >WHOIS Lookup</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-                <!-- Email Dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="./email.html"
-                    id="emailDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Email
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="emailDropdown">
-                    <li>
-                      <a class="dropdown-item" href="./business-email.html"
-                        >Business Email</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./email.html"
-                        >Email Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./microsoft-365.html"
-                        >Microsoft 365</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./google-workspace.html"
-                        >Google Workspace</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-
-                <!-- Security Dropdown -->
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="./security.html"
-                    id="securityDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Security
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="securityDropdown">
-                    <li>
-                      <a class="dropdown-item" href="./ssl-certificates.html"
-                        >SSL Certificates</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./website-security.html"
-                        >Website Security</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./backup-solutions.html"
-                        >Backup Solutions</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="./ddos-protection.html"
-                        >DDoS Protection</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
-                <a
-                  href="./register.html"
-                  data-shop-href="basket-summary-login"
-                  class="btn getstarted"
-                  >Get Started</a
-                >
-                <a
-                  href="./register.html"
-                  data-shop-href="basket-summary-login"
-                  class="btn signbtn"
-                  >Sign In</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
     </header>
 
     <style>
-      .custom-header,
-      .custom-header .navbar {
-        background-color: white;
-        justify-content: space-between;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
-        font-family: "Quicksand", sans-serif;
-      }
+        .custom-header,
+        .custom-header .navbar {
+            background-color: white;
+            justify-content: space-between;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+            font-family: "Quicksand", sans-serif;
+        }
 
-      .custom-header .nav-link,
-      .custom-header .navbar-brand,
-      .custom-header .bi-list {
-        color: white !important;
-        /* Ensures text/icons are visible */
-      }
+        .custom-header .nav-link,
+        .custom-header .navbar-brand,
+        .custom-header .bi-list {
+            color: white !important;
+            /* Ensures text/icons are visible */
+        }
 
-      .custom-header .navbar-toggler {
-        border-color: white !important;
-        /* Toggler border color */
-      }
+        .custom-header .navbar-toggler {
+            border-color: white !important;
+            /* Toggler border color */
+        }
 
-      .buttons {
-        background: #6b63ff;
-        color: white;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
-      }
+        .buttons {
+            background: #6B63FF;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+        }
 
-      .buttons:hover {
-        background: white;
-        color: black;
-      }
+        .buttons:hover {
+            background: white;
+            color: black;
+        }
 
-      .getstarted {
-        color: black;
-      }
+        .getstarted {
+            color: black;
+        }
 
-      .getstarted:hover {
-        background-color: #6b63ff;
-        color: white;
-      }
+        .getstarted:hover {
+            background-color: #6B63FF;
+            color: white;
+        }
 
-      .signbtn {
-        background-color: white;
-        border-left: 1px solid #6b63ff;
-        color: black;
-        transition: all 0.3s ease;
-      }
+        .signbtn {
+            background-color: white;
+            border-left: 1px solid #6B63FF;
+            color: black;
+            transition: all 0.3s ease;
+        }
 
-      .signbtn:hover {
-        background-color: #6b63ff;
-        color: white;
-      }
+        .signbtn:hover {
+            background-color: #6B63FF;
+            color: white;
+        }
 
-      .navbar {
-        transition: background-color 0.3s ease-in-out;
-      }
+        .navbar {
+            transition: background-color 0.3s ease-in-out;
+        }
 
-      .navbar.scrolled {
-        background-color: #fff !important;
-        /* Solid color when scrolling */
-        font-family: "Quicksand", sans-serif;
-      }
-
-      .tab__button .tab__btn {
-        border: none;
-      }
+        .navbar.scrolled {
+            background-color: #fff !important;
+            /* Solid color when scrolling */
+            font-family: "Quicksand", sans-serif;
+        }
     </style>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let navbar = document.querySelector(".navbar");
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
 
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            // Change when scrolled 50px
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) { // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
         });
-      });
     </script>
     <!-- Navbar End -->
 
@@ -1474,156 +1337,129 @@
       </section>
     </main>
 
-    <!-- Footer -->
-
-    <footer class="pt-7 mainfooterstart mb-0">
-      <div class="container">
-        <div class="mb-4 text-lg-start">
-          <a href="#">
-            <img
-              src="./Logo_Wefithost_03.png"
-              alt="logo"
-              class="text-inverse"
-            />
-          </a>
-        </div>
+<!-- Footer -->
+<footer class="pt-7 mainfooterstart mb-0" style="background-color: #6b63ff; color: white;">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-12">
-            <div class="row footerlinkcoor" id="ft-links">
-              <div class="col-md-4 col-12 mb-4">
-                <div>
-                  <h5 class="mb-3">Services</h5>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a
-                        href="index.html"
-                        class="text-decoration-none text-reset"
-                        >Web Hosting</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="domain-names.html"
-                        class="text-decoration-none text-reset"
-                        >Domain Names</a
-                      >
-                    </li>
-                  </ul>
+            <!-- Logo Column -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="mb-4">
+                    <a href="#">
+                        <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3" style="max-height: 40px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-4 col-12 mb-4">
-                <div>
-                  <h5 class="mb-3">Company</h5>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a
-                        href="./about.html"
-                        class="text-decoration-none text-reset"
-                        >About</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Blog</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Platform</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#" class="text-decoration-none text-reset"
-                        >Customer Reviews</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="./contact-us.html"
-                        class="text-decoration-none text-reset"
-                        >Contact Us</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-4 col-12">
-                <h5 class="mb-3">About Us</h5>
-                <p>
-                  We’re on a mission to make life easier for web developers &
-                  small businesses.
-                  <a href="./about.html" class="readdmore">Read more</a>
-                </p>
-              </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-12">
-            <div class="row">
-              <div class="col-md-7 mb-4">
-                <form class="needs-validation footerlinkcoor">
-                  <h5 class="mb-3">Stay Updated!</h5>
-                  <div class="input-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Enter your email"
-                    />
-                    <button type="submit" class="btn btn-primary">
-                      Subscribe
-                    </button>
-                  </div>
-                </form>
-              </div>
-              <div class="col-md-5 text-left">
-                <h5 class="mb-3 text-inverse">Follow Us</h5>
-                <div
-                  class="d-flex justify-content-center justify-content-md-start gap-3"
-                >
-                  <a href="#"
-                    ><img
-                      src="./assets/img/Home page/instagram.svg"
-                      alt="Instagram"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="./assets/img/Home page/facebook.svg"
-                      alt="Facebook"
-                  /></a>
-                  <a href="#"
-                    ><img
-                      src="./assets/img/Home page/linkedin.svg"
-                      alt="LinkedIn"
-                  /></a>
-                  <a href="#"
-                    ><img src="./assets/img/Home page/x.svg" alt="Twitter"
-                  /></a>
-                </div>
-              </div>
+
+            <!-- Hosting Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Hosting</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="shared-hosting.html" style="color: white; text-decoration: none;">Shared Hosting</a></li>
+                    <li class="mb-2"><a href="wordpress-hosting.html" style="color: white; text-decoration: none;">WordPress Hosting</a></li>
+                    <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS Hosting</a></li>
+                    <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud Hosting</a></li>
+                    <li class="mb-2"><a href="reseller-hosting.html" style="color: white; text-decoration: none;">Reseller Hosting</a></li>
+                </ul>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <hr class="my-4" />
+            <!-- Domains Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Domains</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="domain-registration.html" style="color: white; text-decoration: none;">Register Domain</a></li>
+                    <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
+                    <li class="mb-2"><a href="domain-pricing.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
+                    <li class="mb-2"><a href="whois-lookup.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
+                    <li class="mb-2"><a href="ssl-certificates.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
+                </ul>
+            </div>
 
-      <div class="container">
-        <div class="row align-items-center text-center text-md-start">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <span class="text-inverse">© 2025 Copyright WefitHost</span>
-          </div>
-          <div class="col-md-6 mt-md-3">
-            <ul
-              class="d-flex flex-row justify-content-md-end gap-3 align-items-center"
-              style="list-style-type: none"
-            >
-              <li><a href="#" class="text-inverse">Privacy Policy</a></li>
-              <li><a href="#" class="text-inverse">Terms of Use</a></li>
-              <li><a href="#" class="text-inverse">Contact</a></li>
-            </ul>
-          </div>
+            <!-- Support Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="knowledgebase.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
+                    <li class="mb-2"><a href="tutorials.html" style="color: white; text-decoration: none;">Tutorials</a></li>
+                    <li class="mb-2"><a href="status.html" style="color: white; text-decoration: none;">System Status</a></li>
+                    <li class="mb-2"><a href="contact.html" style="color: white; text-decoration: none;">Contact Support</a></li>
+                    <li class="mb-2"><a href="migration.html" style="color: white; text-decoration: none;">Free Migration</a></li>
+                </ul>
+            </div>
+
+            <!-- Company & Newsletter Column -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="mb-4">
+                    <h5 style="color: white; font-weight: 600;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
+                        <li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li>
+                        <li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li>
+                        <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 style="color: white; font-weight: 600;">Newsletter</h5>
+                    <form class="mb-2">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
+                            <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #6B63FF;">Subscribe</button>
+                        </div>
+                    </form>
+                    <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                </div>
+            </div>
         </div>
-      </div>
-    </footer>
+
+        <hr style="border-color: rgba(255,255,255,0.2);">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
+            </div>
+            <div class="col-md-6">
+                <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
+                    <li><a href="privacy.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
+                    <li><a href="terms.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
+                    <li><a href="aup.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
+                    <li><a href="sla.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
+                    <li><a href="dmca.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footerlinkcoor input.form-control {
+        background-color: inherit;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .footerlinkcoor input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footerlinkcoor button.btn {
+        background-color: white;
+        color: #6B63FF;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
+
+<!-- Footer End -->
 
     <style>
       .footerlinkcoor input.form-control {
