@@ -86,7 +86,7 @@
                                     Domains
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
-                                    <li><a class="dropdown-item" href="./domain-names.html">Domain Names</a></li>
+                                    <li><a class="dropdown-item" href="./domain-names.html">Domain Names</a></li>+
                                    <!-- <li><a class="dropdown-item" href="#">Domain Registration</a></li>
                                     <li><a class="dropdown-item" href="#">Domain Transfer</a></li>
                                     <li><a class="dropdown-item" href="#">Domain Pricing</a></li>
@@ -226,24 +226,84 @@
                         <div class="col-md-7">
 
                             <!-- Domain Search -->
+<section class="my-lg-7 py-5" data-cue="fadeIn">
+    <div class="px-md-4">
+        <div class="row bg-pattern bg-primary rounded-5 g-0 w-100"
+            style="padding-block: 24px; padding-inline: 12px;">
+            <div class="col-md-12">
+                <div class="text-center position-relative z-1 px-3 px-md-4"
+                    data-cue="zoomIn">
+                    <div class="mb-5">
+                        <form id="domainSearchForm" action="https://my.wefithost.com/domain-search" method="GET" onsubmit="return validateDomainSearch()">
+                            <div class="row">
+                                <div class="col-lg-12 p-0" style="position: relative;">
+                                    <input type="text" class="form-control py-3"
+                                        id="searchDomain" name="domain" placeholder="Search for a domain"
+                                        style="padding-right: 130px;" required />
+                                    <div style="position: absolute; top: 7px; right: 5px;">
+                                        <button type="submit"
+                                            class="btn rounded-1 py-2 px-5 btn-primary">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" style="overflow-x: auto;">
+                        <div class="col-4 col-sm-2 my-3 d-flex align-items-center">
+                            <a href="https://my.wefithost.com/domain-search?domain=.com" class="d-flex align-items-center justify-content-center w-100">
+                                <img src="./assets/img/Home page/com.svg" class="w-100" alt=".com domain">
+                            </a>
+                        </div>
+                        <div class="col-4 col-sm-2 my-3 d-flex align-items-center">
+                            <a href="https://my.wefithost.com/domain-search?domain=.co.uk" class="d-flex align-items-center justify-content-center w-100">
+                                <img src="./assets/img/Home page/couk.svg" class="w-75" alt=".co.uk domain">
+                            </a>
+                        </div>
+                        <div class="col-4 col-sm-2 my-3 d-flex align-items-center">
+                            <a href="https://my.wefithost.com/domain-search?domain=.net" class="d-flex align-items-center justify-content-center w-100">
+                                <img src="./assets/img/Home page/net.svg" class="w-75" alt=".net domain">
+                            </a>
+                        </div>
+                        <div class="col-4 col-sm-2 my-3 d-flex align-items-center">
+                            <a href="https://my.wefithost.com/domain-search?domain=.org" class="d-flex align-items-center justify-content-center w-100">
+                                <img src="./assets/img/Home page/org.svg" class="w-75" alt=".org domain">
+                            </a>
+                        </div>
+               <!--<div class="col-4 col-sm-2 my-3 d-flex align-items-center">
+                            <a href="https://my.wefithost.com/domain-search?domain=.io" class="d-flex align-items-center justify-content-center w-100">
+                                <img src="./assets/img/Home page/io.svg" class="w-75" alt=".io domain">
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                            <section class="my-lg-7 py-5" data-cue="fadeIn">
-                                <div class="px-md-4">
-                                    <div class="row bg-pattern bg-primary rounded-5 g-0 w-100"
-                                        style="padding-block: 24px; padding-inline: 12px;">
-                                        <div class="col-md-12">
-                                            <div class="text-center position-relative z-1 px-3 px-md-4"
-                                                data-cue="zoomIn">
-                                                <div class="mb-5">
-                                                    <div class="row">
-                                                        <div class="col-lg-12 p-0" style="position: relative;">
-                                                            <input type="email" class="form-control py-3"
-                                                                id="searchDomain" placeholder="Search for a domain"
-                                                                style="padding-right: 130px;" />
-                                                            <div style="position: absolute; top: 7px; right: 5px;">
-                                                                <button type="submit"
-                                                                    class="btn rounded-1 py-2 px-5 btn-primary">Search</button>
-                                                            </div>
+<script>
+function validateDomainSearch() {
+    const input = document.getElementById('searchDomain');
+    let domain = input.value.trim();
+    
+    // Remove http:// or https:// if present
+    domain = domain.replace(/^https?:\/\//i, '');
+    
+    // Remove www. if present
+    domain = domain.replace(/^www\./i, '');
+    
+    // If the input doesn't contain a dot, we'll let the search page handle it
+    if (domain.length > 0) {
+        // Update the input value with cleaned domain
+        input.value = domain;
+        return true;
+    }
+    
+    alert('Please enter a valid domain name');
+    return false;
+}
+</script>
+<!-- Domain Search End -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -373,75 +433,67 @@
             style="background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url(./assets/img/BG-WAVE.svg);      background-position: center; background-size: cover; background-repeat: no-repeat">
 
 
-            <!-- Feature Rich Control Panel -->
+           <!-- Domain Management Made Easy -->
 
-            <section class="pt-8" id="speaker">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8" data-cue="fadeIn">
-                            <div class="pb-2">
-                                <h3 class="">Feature Rich Control Panel</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pt-5 mt-md-5 g-4">
-                        <div class="col-md-5" data-cue="zoomIn">
-                            <img src="assets/images/feature/domain-control-panel.jpg" class="w-100 rounded" alt="">
-                        </div>
-                        <div class="col-md-7 whychhoscontrny">
-                            <div class="pb-3">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium
-                                    similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus
-                                    debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
-                            </div>
-                            <div class="pb-3">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium
-                                    similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus
-                                    debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
-                            </div>
-                        </div>
-                    </div>
+<section class="pt-8" id="speaker">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" data-cue="fadeIn">
+                <div class="pb-2">
+                    <h3 class="">Domain Management Made Easy</h3>
                 </div>
-            </section>
-
-            <!-- Feature Rich Control Panel End -->
-
-            <!-- Predictable Pricing -->
-
-            <section class="pt-8" id="speaker">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8" data-cue="fadeIn">
-                            <div class="pb-2">
-                                <h3 class="">Predictable Pricing</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row pt-5 mt-md-5 g-4">
-                        <div class="col-md-5" data-cue="zoomIn">
-                            <img src="assets/images/feature/domain-pricing.jpg" class="w-100 rounded" alt="">
-                        </div>
-                        <div class="col-md-7 whychhoscontrny">
-                            <div class="pb-3">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium
-                                    similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus
-                                    debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
-                            </div>
-                            <div class="pb-3">
-                                <h4>Lorem ipsum dolor sit amet.</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis accusantium
-                                    similique totam quam officiis quibusdam quae earum ipsa qui voluptas doloribus
-                                    debitis temporibus id deleniti mollitia vel, quod, accusamus explicabo.</p>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="row pt-5 mt-md-5 g-4">
+            <div class="col-md-5" data-cue="zoomIn">
+                <img src="assets/images/feature/domain-control-panel.jpg" class="w-100 rounded" alt="User-friendly domain control panel interface">
+            </div>
+            <div class="col-md-7 whychhoscontrny">
+                <div class="pb-3">
+                    <h4>Intuitive Control Panel</h4>
+                    <p>Manage all your domains from one centralized dashboard with our user-friendly control panel. Easily update DNS settings, configure email forwarding, set up subdomains, and manage renewals with just a few clicks.</p>
                 </div>
-            </section>
+                <div class="pb-3">
+                    <h4>Bulk Management Tools</h4>
+                    <p>Save time when managing multiple domains with our powerful bulk tools. Update nameservers, renew domains, or modify contact information across all your domains simultaneously with our time-saving features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <!-- Predictable Pricing End -->
+<!-- Domain Management Made Easy End -->
+
+<!-- Transparent Domain Pricing -->
+
+<section class="pt-8" id="speaker">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" data-cue="fadeIn">
+                <div class="pb-2">
+                    <h3 class="">Transparent Domain Pricing</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-5 mt-md-5 g-4">
+            <div class="col-md-5" data-cue="zoomIn">
+                <img src="assets/images/feature/domain-pricing.jpg" class="w-100 rounded" alt="Clear domain pricing structure">
+            </div>
+            <div class="col-md-7 whychhoscontrny">
+                <div class="pb-3">
+                    <h4>No Hidden Fees</h4>
+                    <p>We believe in straightforward pricing with no surprises. What you see is what you pay - no hidden charges or unexpected renewal price hikes. Our transparent pricing structure helps you budget with confidence.</p>
+                </div>
+                <div class="pb-3">
+                    <h4>Competitive Rates Across All TLDs</h4>
+                    <p>Whether you're registering a .com, .net, or one of hundreds of specialty extensions, we offer consistently competitive pricing. Enjoy fair rates for both new registrations and renewals across all top-level domains.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Transparent Domain Pricing End -->
 
             <!-- FAQs -->
 
@@ -520,93 +572,106 @@
         </div>
     </main>
 
-    <!-- Footer -->
-
-    <footer class="pt-7 mainfooterstart mb-0">
-        <div class="container">
-            <div class="mb-4 text-lg-start">
-                <a href="#">
-                    <img src="./Logo_Wefithost_03.png" alt="logo" class="text-inverse" />
-                </a>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <div class="row footerlinkcoor" id="ft-links">
-                        <div class="col-md-4 col-12 mb-4">
-                            <div>
-                                <h5 class="mb-3">Services</h5>
-                                <ul class="list-unstyled">
-                                    <li><a href="index.html" class="text-decoration-none text-reset">Web Hosting</a>
-                                    </li>
-                                    <li><a href="domain-names.html" class="text-decoration-none text-reset">Domain
-                                            Names</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12 mb-4">
-                            <div>
-                                <h5 class="mb-3">Company</h5>
-                                <ul class="list-unstyled">
-                                    <li><a href="./about.html" class="text-decoration-none text-reset">About</a></li>
-                                    <li><a href="#" class="text-decoration-none text-reset">Blog</a></li>
-                                    <li><a href="#" class="text-decoration-none text-reset">Platform</a></li>
-                                    <li><a href="#" class="text-decoration-none text-reset">Customer Reviews</a></li>
-                                    <li><a href="./contact-us.html" class="text-decoration-none text-reset">Contact
-                                            Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <h5 class="mb-3">About Us</h5>
-                            <p>We’re on a mission to make life easier for web developers & small businesses.
-                                <a href="./about.html" class="readdmore">Read more</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="row">
-                        <div class="col-md-7 mb-4">
-                            <form class="needs-validation footerlinkcoor">
-                                <h5 class="mb-3">Stay Updated!</h5>
-                                <div class="input-group">
-                                    <input type="email" class="form-control" placeholder="Enter your email" />
-                                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-md-5 text-left">
-                            <h5 class="mb-3 text-inverse">Follow Us</h5>
-                            <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                                <a href="#"><img src="./assets/img/Home page/instagram.svg" alt="Instagram"></a>
-                                <a href="#"><img src="./assets/img/Home page/facebook.svg" alt="Facebook"></a>
-                                <a href="#"><img src="./assets/img/Home page/linkedin.svg" alt="LinkedIn"></a>
-                                <a href="#"><img src="./assets/img/Home page/x.svg" alt="Twitter"></a>
-                            </div>
-                        </div>
+<!-- Footer -->
+<footer class="pt-7 mainfooterstart mb-0" style="background-color: #6b63ff; color: white;">
+    <div class="container">
+        <div class="row">
+            <!-- Logo Column -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="mb-4">
+                    <a href="#">
+                        <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3" style="max-height: 40px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <hr class="my-4">
+            <!-- Hosting Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Hosting</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="shared-hosting.html" style="color: white; text-decoration: none;">Shared Hosting</a></li>
+                    <li class="mb-2"><a href="wordpress-hosting.html" style="color: white; text-decoration: none;">WordPress Hosting</a></li>
+                    <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS Hosting</a></li>
+                    <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud Hosting</a></li>
+                    <li class="mb-2"><a href="reseller-hosting.html" style="color: white; text-decoration: none;">Reseller Hosting</a></li>
+                </ul>
+            </div>
 
-        <div class="container">
-            <div class="row align-items-center text-center text-md-start">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <span class="text-inverse">© 2025 Copyright WefitHost</span>
-                </div>
-                <div class="col-md-6 mt-md-3">
-                    <ul class="d-flex flex-row justify-content-md-end gap-3 align-items-center"
-                        style="list-style-type: none;">
-                        <li><a href="#" class="text-inverse">Privacy Policy</a></li>
-                        <li><a href="#" class="text-inverse">Terms of Use</a></li>
-                        <li><a href="#" class="text-inverse">Contact</a></li>
+            <!-- Domains Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Domains</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="domain-registration.html" style="color: white; text-decoration: none;">Register Domain</a></li>
+                    <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
+                    <li class="mb-2"><a href="domain-pricing.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
+                    <li class="mb-2"><a href="whois-lookup.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
+                    <li class="mb-2"><a href="ssl-certificates.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Column -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="knowledgebase.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
+                    <li class="mb-2"><a href="tutorials.html" style="color: white; text-decoration: none;">Tutorials</a></li>
+                    <li class="mb-2"><a href="status.html" style="color: white; text-decoration: none;">System Status</a></li>
+                    <li class="mb-2"><a href="contact.html" style="color: white; text-decoration: none;">Contact Support</a></li>
+                    <li class="mb-2"><a href="migration.html" style="color: white; text-decoration: none;">Free Migration</a></li>
+                </ul>
+            </div>
+
+            <!-- Company & Newsletter Column -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="mb-4">
+                    <h5 style="color: white; font-weight: 600;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                        <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
+                        <li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li>
+                        <li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li>
+                        <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
                     </ul>
                 </div>
+
+                <div>
+                    <h5 style="color: white; font-weight: 600;">Newsletter</h5>
+                    <form class="mb-2">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
+                            <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #6B63FF;">Subscribe</button>
+                        </div>
+                    </form>
+                    <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                </div>
             </div>
         </div>
-    </footer>
+
+        <hr style="border-color: rgba(255,255,255,0.2);">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
+            </div>
+            <div class="col-md-6">
+                <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
+                    <li><a href="privacy.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
+                    <li><a href="terms.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
+                    <li><a href="aup.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
+                    <li><a href="sla.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
+                    <li><a href="dmca.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
     <style>
