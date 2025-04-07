@@ -1,15 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
@@ -18,8 +22,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Libs CSS -->
-    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
-    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
@@ -31,103 +41,112 @@
     <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
 
     <!-- FAV ICON -->
-    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png">
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>WeFitHost</title>
+  </head>
 
-</head>
+  <body data-bs-theme="light">
+ <!-- Navbar Start -->
+<header class="custom-header">
+  <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
+      <div class="container mainlogo px-3">
+          <a class="" href="./home.html">
+              <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+          </a>
+          <button class="navbar-toggler offcanvas-nav-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+              <i class="bi bi-list"></i>
+          </button>
+          <div class="offcanvas offcanvas-start offcanvas-nav" id="offcanvasNav" style="width: 20rem;">
+              <div class="offcanvas-header">
+                  <a href="./home.html" class="">
+                      <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
+                  </a>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body pt-0 align-items-center">
+                  <ul class="navbar-nav mx-auto align-items-lg-center">
+                      <li class="nav-item">
+                          <a class="nav-link" href="./home.html">Home</a>
+                      </li>
+                      
+                      <!-- Web Hosting Dropdown -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="./web-hosting.html" id="webHostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Hosting
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="webHostingDropdown">
+                              <li><a class="dropdown-item" href="./web-hosting.html">Web Hosting</a></li>
+                              <li><a class="dropdown-item" href="./shared-hosting.html">Shared Hosting</a></li>
+                              <li><a class="dropdown-item" href="./vps-hosting.html">VPS Hosting</a></li>
+                              <li><a class="dropdown-item" href="./wordpress-hosting.html">WordPress Hosting</a></li>
+                              <li><a class="dropdown-item" href="./reseller-hosting.html">Reseller Hosting</a></li>
+                              <li><a class="dropdown-item" href="./dedicated-hosting.html">Dedicated Hosting</a></li>
+                          </ul>
+                      </li>
+                      
+                      <!-- Domains Dropdown -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="./domain-search.html" id="domainsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Domains
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
+                              <li><a class="dropdown-item" href="./domain-search.html">Search For A Domain</a></li>
+                             <!-- <li><a class="dropdown-item" href="#">Domain Registration</a></li>
+                              <li><a class="dropdown-item" href="#">Domain Transfer</a></li>
+                              <li><a class="dropdown-item" href="#">Domain Pricing</a></li>
+                              <li><a class="dropdown-item" href="#">WHOIS Lookup</a></li> -->
+                          </ul>
+                      </li>
+                      
+                      <!-- Email Dropdown 
+                      
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="./email.html" id="emailDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Email
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="emailDropdown">
+                              <li><a class="dropdown-item" href="./email.html">Email Hosting</a></li>
+                          </ul>
+                      </li>
+                      
+                      <!-- Security Dropdown -->
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="./security.html" id="securityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Security
+                          </a>
+                          <ul class="dropdown-menu" aria-labelledby="securityDropdown">
+                         <!-- <li><a class="dropdown-item" href="./ssl-certificates.html">SSL Certificates</a></li>
+                              <li><a class="dropdown-item" href="./website-security.html">Website Security</a></li>
+                              <li><a class="dropdown-item" href="./backup-solutions.html">Backup Solutions</a></li>
+                              <li><a class="dropdown-item" href="./ddos-protection.html">DDoS Protection</a></li> -->
+                          </ul>
+                      </li>
+                      
+                      <!-- About Us Link -->
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">SSL Certificate</a>
+                      </li>
+                  </ul>
 
-<body data-bs-theme="light">
-
-      <!-- Navbar Start -->
-      <header class="custom-header">
-        <nav class="navbar navbar-expand-lg transparent navbar-transparent navbar-light">
-            <div class="container mainlogo px-3">
-                <a class="" href="#">
-                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
-                </a>
-                <button class="navbar-toggler offcanvas-nav-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                    <i class="bi bi-list"></i>
-                </button>
-                <div class="offcanvas offcanvas-start offcanvas-nav" id="offcanvasNav" style="width: 20rem;">
-                    <div class="offcanvas-header">
-                        <a href="#" class="">
-                            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo">
-                        </a>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body pt-0 align-items-center">
-                        <ul class="navbar-nav mx-auto align-items-lg-center">
-                            <li class="nav-item">
-                                <a class="nav-link" href="./home.html">Home</a>
-                            </li>
-                            
-                            <!-- Web Hosting Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./web-hosting.html" id="webHostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Hosting
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="webHostingDropdown">
-                                    <li><a class="dropdown-item" href="./web-hosting.html">Web Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./shared-hosting.html">Shared Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./vps-hosting.html">VPS Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./wordpress-hosting.html">WordPress Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./reseller-hosting.html">Reseller Hosting</a></li>
-                                    <li><a class="dropdown-item" href="./dedicated-hosting.html">Dedicated Hosting</a></li>
-                                </ul>
-                            </li>
-                            
-                            <!-- Domains Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./domain-names.html" id="domainsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Domains
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="domainsDropdown">
-                                    <li><a class="dropdown-item" href="./domain-names.html">Domain Names</a></li>
-                                   <!-- <li><a class="dropdown-item" href="#">Domain Registration</a></li>
-                                    <li><a class="dropdown-item" href="#">Domain Transfer</a></li>
-                                    <li><a class="dropdown-item" href="#">Domain Pricing</a></li>
-                                    <li><a class="dropdown-item" href="#">WHOIS Lookup</a></li> -->
-                                </ul>
-                            </li>
-                            
-                            <!-- Email Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./email.html" id="emailDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Email
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="emailDropdown">
-                                    <li><a class="dropdown-item" href="./email.html">Email Hosting</a></li>
-                                </ul>
-                            </li>
-                            
-                            <!-- Security Dropdown -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="./security.html" id="securityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Security
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="securityDropdown">
-                               <!-- <li><a class="dropdown-item" href="./ssl-certificates.html">SSL Certificates</a></li>
-                                    <li><a class="dropdown-item" href="./website-security.html">Website Security</a></li>
-                                    <li><a class="dropdown-item" href="./backup-solutions.html">Backup Solutions</a></li>
-                                    <li><a class="dropdown-item" href="./ddos-protection.html">DDoS Protection</a></li> -->
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
-                            <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login" class="btn getstarted">Get Started</a>
-                            <a href="https//:my.wefithost.com/login" data-shop-href="basket-summary-login" class="btn signbtn">Log In</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+                  <div class="mt-3 mt-lg-0 d-flex align-items-center buttons">
+                      <a href="https://my.wefithost.com/manage" data-shop-href="basket-summary-login" class="btn getstarted">Get Started</a>
+                      <a href="https//:my.wefithost.com/login" data-shop-href="basket-summary-login" class="btn signbtn">Log In</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+</header>
 
     <style>
         .custom-header,
@@ -206,7 +225,6 @@
         });
     </script>
     <!-- Navbar End -->
-
     <main>
       <!-- Hero -->
       <div
@@ -261,7 +279,9 @@
                     />
                     <div class="productoffer">
                       <h6>From Only</h6>
-                      <h3>$9.00/<sub>mo</sub></h3>
+                      <h3>
+                          $9.00/ <sub> month</sub>
+                          </h3>
                     </div>
                   </div>
                 </div>
@@ -374,7 +394,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">4 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$167.00/mo</td>
+                    <td class="price">$167.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -389,7 +409,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">8 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$199.00/mo</td>
+                    <td class="price">$199.00month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -404,7 +424,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$299.00/mo</td>
+                    <td class="price">$299.00month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -419,7 +439,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$399.00/mo</td>
+                    <td class="price">$399.00month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -434,7 +454,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">32 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$499.00/mo</td>
+                    <td class="price">$499.00month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -449,7 +469,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">64 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$599.00/mo</td>
+                    <td class="price">$599.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -464,7 +484,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">240 GB SSD</td>
-                    <td class="price">$299.00/mo</td>
+                    <td class="price">$299.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -479,7 +499,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">64 GB</td>
                     <td class="storage">240 GB SSD</td>
-                    <td class="price">$399.00/mo</td>
+                    <td class="price">$399.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -512,7 +532,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">4 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$367.00/mo</td>
+                    <td class="price">$367.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -527,7 +547,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">8 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$499.00/mo</td>
+                    <td class="price">$499.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -542,7 +562,7 @@
                     <td class="process">Intel Xeon 4-Core 8-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">1 TB HDD</td>
-                    <td class="price">$599.00/mo</td>
+                    <td class="price">$599.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -557,7 +577,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$499.00/mo</td>
+                    <td class="price">$499.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -572,7 +592,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">32 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$699.00/mo</td>
+                    <td class="price">$699.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -587,7 +607,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">64 GB</td>
                     <td class="storage">2 TB HDD</td>
-                    <td class="price">$899.00/mo</td>
+                    <td class="price">$899.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -602,7 +622,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">16 GB</td>
                     <td class="storage">240 GB SSD</td>
-                    <td class="price">$499.00/mo</td>
+                    <td class="price">$499.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -617,7 +637,7 @@
                     <td class="process">Intel Xeon 12-Core 24-Thread</td>
                     <td class="ram">64 GB</td>
                     <td class="storage">240 GB SSD</td>
-                    <td class="price">$599.00/mo</td>
+                    <td class="price">$599.00/month</td>
                     <td>
                       <a
                         href="https://my.wefithost.com/manage"
@@ -1339,16 +1359,30 @@
 <footer class="pt-7 mainfooterstart mb-0" style="background-color: #6b63ff; color: white;">
     <div class="container">
         <div class="row">
-            <!-- Logo Column -->
+            <!-- Newsletter & Logo Column (Now first column) -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="mb-4">
                     <a href="#">
                         <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3" style="max-height: 40px; filter: brightness(0) invert(1);">
                     </a>
                     <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+                    
+                    <!-- Newsletter Form (Moved up) -->
+                    <div class="mb-4">
+                        <h5 style="color: white; font-weight: 600;">Newsletter</h5>
+                        <form class="mb-2">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
+                                <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #6B63FF;">Subscribe</button>
+                            </div>
+                        </form>
+                        <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                    </div>
+                    
+                    <!-- Social Icons with updated X icon -->
                     <div class="d-flex gap-3 mt-3">
                         <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-x-twitter"></i></a>
                         <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -1367,7 +1401,9 @@
                 </ul>
             </div>
 
-            <!-- Domains Column -->
+           
+            <!-- Domains Column 
+            
             <div class="col-lg-2 col-md-6 mb-4">
                 <h5 style="color: white; font-weight: 600;">Domains</h5>
                 <ul class="list-unstyled">
@@ -1377,7 +1413,7 @@
                     <li class="mb-2"><a href="whois-lookup.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
                     <li class="mb-2"><a href="ssl-certificates.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- Support Column -->
             <div class="col-lg-2 col-md-6 mb-4">
@@ -1391,29 +1427,16 @@
                 </ul>
             </div>
 
-            <!-- Company & Newsletter Column -->
+            <!-- Company Column (Now last column) -->
             <div class="col-lg-3 col-md-6 mb-4">
-                <div class="mb-4">
-                    <h5 style="color: white; font-weight: 600;">Company</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                        <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
-                        <li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li>
-                        <li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li>
-                        <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 style="color: white; font-weight: 600;">Newsletter</h5>
-                    <form class="mb-2">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
-                            <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #6B63FF;">Subscribe</button>
-                        </div>
-                    </form>
-                    <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
-                </div>
+                <h5 style="color: white; font-weight: 600;">Company</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
+                    <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
+                    <li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li>
+                    <li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li>
+                    <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
+                </ul>
             </div>
         </div>
 
@@ -1458,7 +1481,6 @@
 </style>
 
 <!-- Footer End -->
-
     <style>
       .footerlinkcoor input.form-control {
         background-color: inherit;
