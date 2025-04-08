@@ -6811,9 +6811,11 @@ fieldset:disabled .btn {
     border-top-right-radius: 0
 }
 
+/* Converts white to black */
+/* Adjust the size */
 .navbar-brand img {
-    filter: brightness(0) invert(1); /* Converts white to black */
-    max-height: 50px; /* Adjust the size */
+    filter: brightness(1) invert(0);     
+    max-height: 50px;  
 }
 
 .nav {
@@ -24386,9 +24388,16 @@ button:focus {
 
 .navbar .navbar-nav .nav-item .nav-link {
     border-radius: .25rem;
-    color: grey !important; 
+    color: var(--bs-gray-200) !important; 
     font-size: .9375rem;
-    padding: .5rem 1rem
+    padding: 1rem 1rem
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    border-radius: .25rem;
+    color: black !important; 
+    font-size: .9375rem;
+    padding: 1rem 1rem
 }
 
 @media (max-width:992px) {
@@ -27499,7 +27508,7 @@ a.plyr__control:before {
 
 .rts-hosting-banner.banner-default-height {
     max-height: 700px;
-    min-height: 700px;
+    min-height: 500px;
     display: flex;
     align-items: center;
 }
