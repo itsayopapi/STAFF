@@ -631,28 +631,112 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <main>
 
-        <!-- Hero start -->
-
-        <section class="hero-section py-9">
-            <div class="container">
-              <div class="intro">
-                <div class="intro-text-box" data-cue="zoomIn">
-                  <div class="mt-5">
-                    <h1>Get your <span class="intro-text px-2">business and idea's</span> online in a second</h1>
-                    <p class="mb-0 lead text-black-stable">
-                      Your business can be up and running in a second with our fast and reliable server.
-                    </p>
-                  </div>
-                  <div class="mt-4">
-                    <a href="./wordpress-hosting.html" class="btn intro-btn">Get Started</a>
-                  </div>
+<!-- Hero Section for Home Page -->
+<section class="hero-section py-5 py-lg-7">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 order-2">
+                <div class="pe-lg-5">
+                    <h1 class="display-4 fw-bold mb-4">Get Your <span class="text-primary px-2 bg-light rounded">Business and Ideas</span> Online in Seconds</h1>
+                    <p class="lead mb-4">Launch your digital presence with lightning-fast hosting that grows with your ambitions. Our optimized servers ensure your website is always available and performing at its best.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="./wordpress-hosting.html" class="btn btn-primary btn-lg px-4">Get Started</a>
+                        <a href="#features" class="btn btn-outline-primary btn-lg px-4">Explore Features</a>
+                    </div>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="d-flex me-4">
+                            <div class="me-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small">99.9% Uptime</p>
+                            </div>
+                        </div>
+                        <div class="d-flex me-4">
+                            <div class="me-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small">Free SSL</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small">24/7 Support</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="intro-image">
-                  <img src="/home-image.jpg" alt="Hero Image" />
-                </div>
-              </div>
             </div>
-        </section>
+            <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
+                <div class="position-relative">
+                    <img src="/home-image.jpg" alt="Business Website Hosting" class="img-fluid rounded-3 shadow floating">
+                    <div class="position-absolute top-0 start-0 translate-middle">
+                        <div class="bg-primary text-white rounded-circle p-3 shadow" style="width: 60px; height: 60px;">
+                            <i class="bi bi-lightning-charge-fill fs-4"></i>
+                        </div>
+                    </div>
+                    <div class="position-absolute bottom-0 end-0 translate-middle">
+                        <div class="bg-success text-white rounded-circle p-3 shadow" style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-lock fs-4"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        background-color: #f8f9fa;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 100%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(107, 99, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+        z-index: 0;
+    }
+    
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    .text-primary {
+        color: #6B63FF !important;
+    }
+    
+    .btn-primary {
+        background-color: #6B63FF;
+        border-color: #6B63FF;
+    }
+    
+    .btn-outline-primary {
+        color: #6B63FF;
+        border-color: #6B63FF;
+    }
+    
+    .btn-outline-primary:hover {
+        background-color: #6B63FF;
+        color: white;
+    }
+</style>
           
         <style>
         .hero-section {
