@@ -13,6 +13,8 @@
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
 
+
+  
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -41,770 +43,808 @@
 </head>
 
 <body data-bs-theme="light">
- <!-- Navbar Start -->
- <header class="custom-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="./home.html">
-                <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40">
-            </a>
-            
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- Navigation Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Hosting Mega Dropdown -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="hostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Hosting
-                        </a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="hostingDropdown">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-wordpress me-2"></i>WordPress Solutions</h6>
-                                        <a class="dropdown-item" href="wordpress-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>WordPress Hosting</strong>
-                                                <small class="text-muted">Automated updates and plugins</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="cloud-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Cloud Hosting</strong>
-                                                <small class="text-muted">Lightning-fast with 100% uptime SLA</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="managed-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Managed Hosting</strong>
-                                                <small class="text-muted">Lag-free, managed WordPress hosting</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Secure Hosting</strong>
-                                                <small class="text-muted">Everything needed to securely launch your website</small>
-                                            </div>
-                                        </a>
+    <!-- Navbar Start -->
+    <header class="custom-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="./home.html">
+                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40">
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Content -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Hosting Mega Dropdown -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="hostingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hosting
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="hostingDropdown">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-wordpress me-2"></i>WordPress
+                                                Solutions</h6>
+                                            <a class="dropdown-item" href="wordpress-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>WordPress Hosting</strong>
+                                                    <small class="text-muted">Automated updates and plugins</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="cloud-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Cloud Hosting</strong>
+                                                    <small class="text-muted">Lightning-fast with 100% uptime
+                                                        SLA</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="managed-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Managed Hosting</strong>
+                                                    <small class="text-muted">Lag-free, managed WordPress
+                                                        hosting</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Secure Hosting</strong>
+                                                    <small class="text-muted">Everything needed to securely launch your
+                                                        website</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-cart me-2"></i>eCommerce Solutions</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>WooCommerce</strong>
-                                                <small class="text-muted">Secure, online store with built-in tools</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Websites & Stores</strong>
-                                                <small class="text-muted">Powerful site tools and WooCommerce</small>
-                                            </div>
-                                        </a>
-                                        
-                                        <h6 class="dropdown-header mt-3"><i class="bi bi-shield-lock me-2"></i>Security & Backup</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>SSL Certificates</strong>
-                                                <small class="text-muted">Lock up your data with Premium SSL</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Website Security</strong>
-                                                <small class="text-muted">Minimize cyberthreats with SiteLock</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Website Backup</strong>
-                                                <small class="text-muted">Back up your site with CodeGuard</small>
-                                            </div>
-                                        </a>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-cart me-2"></i>eCommerce
+                                                Solutions</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>WooCommerce</strong>
+                                                    <small class="text-muted">Secure, online store with built-in
+                                                        tools</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Websites & Stores</strong>
+                                                    <small class="text-muted">Powerful site tools and
+                                                        WooCommerce</small>
+                                                </div>
+                                            </a>
+
+                                            <h6 class="dropdown-header mt-3"><i
+                                                    class="bi bi-shield-lock me-2"></i>Security & Backup</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>SSL Certificates</strong>
+                                                    <small class="text-muted">Lock up your data with Premium SSL</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Website Security</strong>
+                                                    <small class="text-muted">Minimize cyberthreats with
+                                                        SiteLock</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Website Backup</strong>
+                                                    <small class="text-muted">Back up your site with CodeGuard</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-server me-2"></i>Traditional Hosting</h6>
-                                        <a class="dropdown-item" href="shared-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Shared Hosting</strong>
-                                                <small class="text-muted">Affordable hosting for small websites</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="vps-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>VPS Hosting</strong>
-                                                <small class="text-muted">Scalable virtual private servers</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="web-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Web Hosting</strong>
-                                                <small class="text-muted">Reliable web hosting solutions</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="dedicated-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Dedicated Hosting</strong>
-                                                <small class="text-muted">Full control with enterprise hardware</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="reseller-hosting.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Reseller Hosting</strong>
-                                                <small class="text-muted">Start your own hosting business</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <!-- Domains Mega Dropdown -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="domainDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Domains
-                        </a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="domainDropdown">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-globe me-2"></i>Domain Services</h6>
-                                        <a class="dropdown-item" href="domain-search.html">
-                                            <div class="d-flex flex-column">
-                                                <strong>Domain Search</strong>
-                                                <small class="text-muted">Find your perfect domain name</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Domain Transfer</strong>
-                                                <small class="text-muted">Move your domain to us easily</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Bulk Domain Search</strong>
-                                                <small class="text-muted">Search for multiple domains at once</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Domain Security</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Domain Privacy</strong>
-                                                <small class="text-muted">Protect your personal information</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Domain Lock</strong>
-                                                <small class="text-muted">Prevent unauthorized transfers</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Two-Factor Authentication</strong>
-                                                <small class="text-muted">Extra security for your domains</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-tags me-2"></i>Domain Extensions</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>.com Domains</strong>
-                                                <small class="text-muted">The world's most popular extension</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>.net Domains</strong>
-                                                <small class="text-muted">Great for tech and networks</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>.org Domains</strong>
-                                                <small class="text-muted">Perfect for organizations</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>New TLDs</strong>
-                                                <small class="text-muted">.tech, .store, .online and more</small>
-                                            </div>
-                                        </a>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-server me-2"></i>Traditional
+                                                Hosting</h6>
+                                            <a class="dropdown-item" href="shared-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Shared Hosting</strong>
+                                                    <small class="text-muted">Affordable hosting for small
+                                                        websites</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="vps-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>VPS Hosting</strong>
+                                                    <small class="text-muted">Scalable virtual private servers</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="web-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Web Hosting</strong>
+                                                    <small class="text-muted">Reliable web hosting solutions</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="dedicated-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Dedicated Hosting</strong>
+                                                    <small class="text-muted">Full control with enterprise
+                                                        hardware</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="reseller-hosting.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Reseller Hosting</strong>
+                                                    <small class="text-muted">Start your own hosting business</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    
-                    <!-- Services Mega Dropdown -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-palette me-2"></i>Design Services</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Web Design</strong>
-                                                <small class="text-muted">Custom WordPress sites built for you</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Logo Design</strong>
-                                                <small class="text-muted">Professional branding for your business</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>UX/UI Design</strong>
-                                                <small class="text-muted">Optimized user experiences</small>
-                                            </div>
-                                        </a>
+                        </li>
+
+                        <!-- Domains Mega Dropdown -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="domainDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Domains
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="domainDropdown">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-globe me-2"></i>Domain Services
+                                            </h6>
+                                            <a class="dropdown-item" href="domain-search.html">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Domain Search</strong>
+                                                    <small class="text-muted">Find your perfect domain name</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Domain Transfer</strong>
+                                                    <small class="text-muted">Move your domain to us easily</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Bulk Domain Search</strong>
+                                                    <small class="text-muted">Search for multiple domains at
+                                                        once</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-megaphone me-2"></i>Marketing Services</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Digital Marketing</strong>
-                                                <small class="text-muted">SEO and PPC campaigns done for you</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Content Marketing</strong>
-                                                <small class="text-muted">Engaging content that converts</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Social Media Management</strong>
-                                                <small class="text-muted">Grow your social presence</small>
-                                            </div>
-                                        </a>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Domain
+                                                Security</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Domain Privacy</strong>
+                                                    <small class="text-muted">Protect your personal information</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Domain Lock</strong>
+                                                    <small class="text-muted">Prevent unauthorized transfers</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Two-Factor Authentication</strong>
+                                                    <small class="text-muted">Extra security for your domains</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-headset me-2"></i>Support Services</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Pro Design Live Support</strong>
-                                                <small class="text-muted">On-demand, WordPress expert support</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Website SEO Checker (FREE)</strong>
-                                                <small class="text-muted">Get a free analysis and learn how to improve</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>24/7 Priority Support</strong>
-                                                <small class="text-muted">Dedicated help when you need it</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Migration Services</strong>
-                                                <small class="text-muted">We'll move your site for you</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <!-- Agency Hub Mega Dropdown -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="agencyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Agency Hub
-                        </a>
-                        <div class="dropdown-menu mega-menu" aria-labelledby="agencyDropdown">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>For Agencies</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Agency Hosting</strong>
-                                                <small class="text-muted">Specialized hosting for agencies</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Client Management</strong>
-                                                <small class="text-muted">Tools to manage all your clients</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>White Label Solutions</strong>
-                                                <small class="text-muted">Brand our services as your own</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Growth Tools</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Partner Program</strong>
-                                                <small class="text-muted">Earn commissions for referrals</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Marketing Resources</strong>
-                                                <small class="text-muted">Templates and guides</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Sales Training</strong>
-                                                <small class="text-muted">Close more hosting deals</small>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="p-3">
-                                        <h6 class="dropdown-header"><i class="bi bi-gear me-2"></i>Developer Tools</h6>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>API Access</strong>
-                                                <small class="text-muted">Integrate with our platform</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Staging Environments</strong>
-                                                <small class="text-muted">Test changes safely</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>Git Integration</strong>
-                                                <small class="text-muted">Version control for your sites</small>
-                                            </div>
-                                        </a>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex flex-column">
-                                                <strong>WP-CLI Enabled</strong>
-                                                <small class="text-muted">Command line control</small>
-                                            </div>
-                                        </a>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-tags me-2"></i>Domain Extensions
+                                            </h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>.com Domains</strong>
+                                                    <small class="text-muted">The world's most popular extension</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>.net Domains</strong>
+                                                    <small class="text-muted">Great for tech and networks</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>.org Domains</strong>
+                                                    <small class="text-muted">Perfect for organizations</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>New TLDs</strong>
+                                                    <small class="text-muted">.tech, .store, .online and more</small>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
-                
-                <!-- Right-side buttons -->
-                <div class="d-flex align-items-center">
-                    <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
-                    <a href="https://my.wefithost.com/login" class="btn btn-link text-dark me-3"><i class="bi bi-person"></i> Log In</a>
-                    <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
+                        </li>
+
+                        <!-- Services Mega Dropdown -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-palette me-2"></i>Design
+                                                Services</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Web Design</strong>
+                                                    <small class="text-muted">Custom WordPress sites built for
+                                                        you</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Logo Design</strong>
+                                                    <small class="text-muted">Professional branding for your
+                                                        business</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>UX/UI Design</strong>
+                                                    <small class="text-muted">Optimized user experiences</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-megaphone me-2"></i>Marketing
+                                                Services</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Digital Marketing</strong>
+                                                    <small class="text-muted">SEO and PPC campaigns done for you</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Content Marketing</strong>
+                                                    <small class="text-muted">Engaging content that converts</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Social Media Management</strong>
+                                                    <small class="text-muted">Grow your social presence</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-headset me-2"></i>Support
+                                                Services</h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Pro Design Live Support</strong>
+                                                    <small class="text-muted">On-demand, WordPress expert
+                                                        support</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Website SEO Checker (FREE)</strong>
+                                                    <small class="text-muted">Get a free analysis and learn how to
+                                                        improve</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>24/7 Priority Support</strong>
+                                                    <small class="text-muted">Dedicated help when you need it</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Migration Services</strong>
+                                                    <small class="text-muted">We'll move your site for you</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Agency Hub Mega Dropdown -->
+                        <li class="nav-item dropdown mega-dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="agencyDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Agency Hub
+                            </a>
+                            <div class="dropdown-menu mega-menu" aria-labelledby="agencyDropdown">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>For Agencies
+                                            </h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Agency Hosting</strong>
+                                                    <small class="text-muted">Specialized hosting for agencies</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Client Management</strong>
+                                                    <small class="text-muted">Tools to manage all your clients</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>White Label Solutions</strong>
+                                                    <small class="text-muted">Brand our services as your own</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Growth Tools
+                                            </h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Partner Program</strong>
+                                                    <small class="text-muted">Earn commissions for referrals</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Marketing Resources</strong>
+                                                    <small class="text-muted">Templates and guides</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Sales Training</strong>
+                                                    <small class="text-muted">Close more hosting deals</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="p-3">
+                                            <h6 class="dropdown-header"><i class="bi bi-gear me-2"></i>Developer Tools
+                                            </h6>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>API Access</strong>
+                                                    <small class="text-muted">Integrate with our platform</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Staging Environments</strong>
+                                                    <small class="text-muted">Test changes safely</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>Git Integration</strong>
+                                                    <small class="text-muted">Version control for your sites</small>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column">
+                                                    <strong>WP-CLI Enabled</strong>
+                                                    <small class="text-muted">Command line control</small>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Right-side buttons -->
+                    <div class="d-flex align-items-center">
+                        <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+                        <a href="https://my.wefithost.com/login" class="btn btn-link text-dark me-3"><i
+                                class="bi bi-person"></i> Log In</a>
+                        <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-<style>
-    .custom-header {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1020;
-        background-color: white;
-    }
-    
-    .navbar {
-        padding: 0.5rem 0;
-    }
-    
-    .nav-link {
-        font-weight: 500;
-        color: #333;
-        padding: 1rem 1.25rem;
-        transition: all 0.2s ease;
-    }
-    
-    .nav-link:hover, .nav-link:focus {
-        color: #6B63FF;
-    }
-    
-    /* Mega dropdown styles */
-    .mega-dropdown {
-        position: static !important;
-    }
-    
-    .mega-menu {
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        margin-top: 0;
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 8px 8px;
-    }
-    
-    .dropdown-menu {
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-    }
-    
-    .dropdown-item {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-        color: #333;
-        transition: all 0.2s ease;
-        border-radius: 4px;
-        margin: 0.15rem 0.5rem;
-    }
-    
-    .dropdown-item:hover {
-        background-color: #f8f9fa;
-        color: #6B63FF;
-    }
-    
-    .dropdown-header {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #6c757d;
-        text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
-        margin-top: 0.5rem;
-    }
-    
-    .btn-primary {
-        background-color: #6B63FF;
-        border-color: #6B63FF;
-        padding: 0.5rem 1.25rem;
-        font-weight: 500;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-    }
-    
-    .btn-primary:hover {
-        background-color: #5a52e0;
-        border-color: #5a52e0;
-        transform: translateY(-1px);
-    }
-    
-    .btn-link {
-        text-decoration: none;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 991.98px) {
-        .navbar-collapse {
-            padding: 1rem 0;
+    <style>
+        .custom-header {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background-color: white;
         }
-        
+
+        .navbar {
+            padding: 0.5rem 0;
+        }
+
         .nav-link {
-            padding: 0.75rem 1rem;
+            font-weight: 500;
+            color: #333;
+            padding: 1rem 1.25rem;
+            transition: all 0.2s ease;
         }
-        
-        .mega-menu {
-            position: static !important;
-            width: 100%;
-            box-shadow: none;
-            padding: 0;
-        }
-        
-        .mega-menu .row {
-            flex-direction: column;
-        }
-        
-        .mega-menu .col-md-4 {
-            width: 100%;
-            padding: 0;
-        }
-        
-        .dropdown-menu {
-            box-shadow: none;
-            border-radius: 0;
-            margin-top: 0;
-            border-left: 3px solid #6B63FF;
-        }
-    }
-</style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Add sticky behavior on scroll
-    const header = document.querySelector('.custom-header');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            header.classList.remove('scrolled-up');
-            return;
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #6B63FF;
         }
-        
-        if (currentScroll > lastScroll && !header.classList.contains('scrolled-down')) {
-            // Scroll down
-            header.classList.remove('scrolled-up');
-            header.classList.add('scrolled-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scrolled-down')) {
-            // Scroll up
-            header.classList.remove('scrolled-down');
-            header.classList.add('scrolled-up');
+
+        /* Mega dropdown styles */
+        .mega-dropdown {
+            position: static !important;
         }
-        
-        lastScroll = currentScroll;
-    });
-    
-    // Keep dropdown open when hovering
-    const megaDropdowns = document.querySelectorAll('.mega-dropdown');
-    
-    megaDropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle');
-        const menu = dropdown.querySelector('.dropdown-menu');
-        
-        dropdown.addEventListener('mouseenter', function() {
-            const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
-            if (!dropdownInstance) {
-                new bootstrap.Dropdown(toggle).show();
-            } else {
-                dropdownInstance.show();
+
+        .mega-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            margin-top: 0;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 0.15rem 0.5rem;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #6B63FF;
+        }
+
+        .dropdown-header {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #6c757d;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: #6B63FF;
+            border-color: #6B63FF;
+            padding: 0.5rem 1.25rem;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #5a52e0;
+            border-color: #5a52e0;
+            transform: translateY(-1px);
+        }
+
+        .btn-link {
+            text-decoration: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                padding: 1rem 0;
             }
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
-            if (dropdownInstance) {
-                dropdownInstance.hide();
+
+            .nav-link {
+                padding: 0.75rem 1rem;
             }
+
+            .mega-menu {
+                position: static !important;
+                width: 100%;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .mega-menu .row {
+                flex-direction: column;
+            }
+
+            .mega-menu .col-md-4 {
+                width: 100%;
+                padding: 0;
+            }
+
+            .dropdown-menu {
+                box-shadow: none;
+                border-radius: 0;
+                margin-top: 0;
+                border-left: 3px solid #6B63FF;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Add sticky behavior on scroll
+            const header = document.querySelector('.custom-header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', function () {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.classList.remove('scrolled-up');
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !header.classList.contains('scrolled-down')) {
+                    // Scroll down
+                    header.classList.remove('scrolled-up');
+                    header.classList.add('scrolled-down');
+                } else if (currentScroll < lastScroll && header.classList.contains('scrolled-down')) {
+                    // Scroll up
+                    header.classList.remove('scrolled-down');
+                    header.classList.add('scrolled-up');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Keep dropdown open when hovering
+            const megaDropdowns = document.querySelectorAll('.mega-dropdown');
+
+            megaDropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                const menu = dropdown.querySelector('.dropdown-menu');
+
+                dropdown.addEventListener('mouseenter', function () {
+                    const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
+                    if (!dropdownInstance) {
+                        new bootstrap.Dropdown(toggle).show();
+                    } else {
+                        dropdownInstance.show();
+                    }
+                });
+
+                dropdown.addEventListener('mouseleave', function () {
+                    const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
+                    if (dropdownInstance) {
+                        dropdownInstance.hide();
+                    }
+                });
+            });
         });
-    });
-});
-</script>
-<!-- Navbar End -->
+    </script>
+    <!-- Navbar End -->
 
 
 
     <main>
 
-<!-- Hero Section for Home Page -->
-<section class="hero-section py-5 py-lg-9">
-    <div class="container position-relative">
-        <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-1 order-2">
-                <div class="pe-lg-5">
-                    <h1 class="display-4 fw-bold mb-4">Get Your <span class="text-primary px-2 bg-light rounded">Business and Ideas</span> Online in Seconds</h1>
-                    <p class="lead mb-4">Launch your digital presence with lightning-fast hosting that grows with your ambitions. Our optimized servers ensure your website is always available and performing at its best.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="./wordpress-hosting.html" class="btn btn-primary btn-lg px-4">Get Started</a>
-                        <a href="#features" class="btn btn-outline-primary btn-lg px-4">Explore Features</a>
+        <!-- Hero Section for Home Page -->
+        <section class="hero-section pt-6 pb-5">
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-1 order-2">
+                        <div class="pe-lg-5">
+                            <h1 class="display-4 fw-bold mb-4">Get Your <span
+                                    class="text-primary px-2 bg-light rounded">Business and Ideas</span> Online in
+                                Seconds</h1>
+                            <p class="lead mb-4">Launch your digital presence with lightning-fast hosting that grows
+                                with your ambitions. Our optimized servers ensure your website is always available and
+                                performing at its best.</p>
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="./wordpress-hosting.html" class="btn btn-primary btn-lg px-4">Get Started</a>
+                                <a href="#features" class="btn btn-outline-primary btn-lg px-4">Explore Features</a>
+                            </div>
+                            <div class="d-flex align-items-center mt-4">
+                                <div class="d-flex me-4">
+                                    <div class="me-3">
+                                        <i class="bi bi-check-circle-fill text-success"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 small">99.9% Uptime</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex me-4">
+                                    <div class="me-3">
+                                        <i class="bi bi-check-circle-fill text-success"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 small">Free SSL</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="bi bi-check-circle-fill text-success"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mb-0 small">24/7 Support</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center mt-4">
-                        <div class="d-flex me-4">
-                            <div class="me-3">
-                                <i class="bi bi-check-circle-fill text-success"></i>
+                    <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
+                        <div class="position-relative">
+                            <img src="/home-image.jpg" alt="Business Website Hosting"
+                                class="img-fluid rounded-3 shadow floating">
+                            <div class="position-absolute top-0 start-0 translate-middle">
+                                <div class="bg-primary text-white rounded-circle p-3 shadow"
+                                    style="width: 60px; height: 60px;">
+                                    <i class="bi bi-lightning-charge-fill fs-4"></i>
+                                </div>
                             </div>
-                            <div>
-                                <p class="mb-0 small">99.9% Uptime</p>
-                            </div>
-                        </div>
-                        <div class="d-flex me-4">
-                            <div class="me-3">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                            </div>
-                            <div>
-                                <p class="mb-0 small">Free SSL</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="me-3">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                            </div>
-                            <div>
-                                <p class="mb-0 small">24/7 Support</p>
+                            <div class="position-absolute bottom-0 end-0 translate-middle">
+                                <div class="bg-success text-white rounded-circle p-3 shadow"
+                                    style="width: 60px; height: 60px;">
+                                    <i class="bi bi-shield-lock fs-4"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                <div class="position-relative">
-                    <img src="/home-image.jpg" alt="Business Website Hosting" class="img-fluid rounded-3 shadow floating">
-                    <div class="position-absolute top-0 start-0 translate-middle">
-                        <div class="bg-primary text-white rounded-circle p-3 shadow" style="width: 60px; height: 60px;">
-                            <i class="bi bi-lightning-charge-fill fs-4"></i>
-                        </div>
-                    </div>
-                    <div class="position-absolute bottom-0 end-0 translate-middle">
-                        <div class="bg-success text-white rounded-circle p-3 shadow" style="width: 60px; height: 60px;">
-                            <i class="bi bi-shield-lock fs-4"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<style>
-    .hero-section {
-        background-color: #f8f9fa;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .hero-section::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -50%;
-        width: 100%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(107, 99, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-        z-index: 0;
-    }
-    
-    .floating {
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-    }
-    
-    .text-primary {
-        color: #6B63FF !important;
-    }
-    
-    .btn-primary {
-        background-color: #6B63FF;
-        border-color: #6B63FF;
-    }
-    
-    .btn-outline-primary {
-        color: #6B63FF;
-        border-color: #6B63FF;
-    }
-    
-    .btn-outline-primary:hover {
-        background-color: #6B63FF;
-        color: white;
-    }
-</style>
-          
         <style>
-        .hero-section {
-            font-family: "Quicksand", sans-serif;
-            padding: 3rem 1rem;
-        }
-        
-        .intro {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .intro-text-box {
-            max-width: 600px;
-            text-align: center;
-        }
-        
-        .intro-btn {
-            background: #6B63FF;
-            color: white;
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-        
-        .intro-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .intro-image {
-            max-width: 100%;
-        }
-        
-        .intro-image img {
-            width: 100%;
-            height: auto;
-        }
-        
-        /* Medium screens and up */
-        @media (min-width: 768px) {
-            .intro {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
+            .hero-section {
+                background-color: #f8f9fa;
+
+                
             }
-        
-            .intro-text-box {
-            max-width: 50%;
-            text-align: left;
+
+
+            .floating {
+                animation: float 6s ease-in-out infinite;
             }
-        
-            .intro-image {
-            max-width: 600px;
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-15px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
             }
-            
-        }
+
+            .text-primary {
+                color: #6B63FF !important;
+            }
+
+            .btn-primary {
+                background-color: #6B63FF;
+                border-color: #6B63FF;
+            }
+
+            .btn-outline-primary {
+                color: #6B63FF;
+                border-color: #6B63FF;
+            }
+
+            .btn-outline-primary:hover {
+                background-color: #6B63FF;
+                color: white;
+            }
         </style>
-        
+
+        <style>
+            .hero-section {
+                font-family: "Quicksand", sans-serif;
+                padding: 3rem 1rem;
+            }
+
+            .intro {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .intro-text-box {
+                max-width: 600px;
+                text-align: center;
+            }
+
+            .intro-btn {
+                background: #6B63FF;
+                color: white;
+                padding: 0.8rem 2rem;
+                text-decoration: none;
+                display: inline-block;
+                transition: transform 0.2s ease;
+            }
+
+            .intro-btn:hover {
+                transform: scale(1.1);
+            }
+
+            .intro-image {
+                max-width: 100%;
+            }
+
+            .intro-image img {
+                width: 100%;
+                height: auto;
+            }
+
+            /* Medium screens and up */
+            @media (min-width: 768px) {
+                .intro {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: left;
+                }
+
+                .intro-text-box {
+                    max-width: 50%;
+                    text-align: left;
+                }
+
+                .intro-image {
+                    max-width: 600px;
+                }
+
+            }
+        </style>
+
 
         <div class="rts-pricing-plan py-5 py-lg-7 hosting ">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="rts-section text-center hosting-plan">
-                        <h2 class="" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">Choose
+                        <h2 class="fs-2" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">Choose
                             Hosting Plan</h2>
                         <p class="rts-section__description w-420 lead" data-sal="slide-down" data-sal-delay="300"
                             data-sal-duration="800">Globally incubate next-generation e-services via state of the art
@@ -934,7 +974,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1085,7 +1125,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1239,7 +1279,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1396,7 +1436,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1546,7 +1586,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1694,7 +1734,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             class="fa-solid fa-circle-question"></i></span>
                                                 </li>
 
-                                                   <!-- More Features -->
+                                                <!-- More Features -->
                                                 <!-- <li class="card-plan__feature--list-trigered">
                                                     <span class="text">More Features <i
                                                             class="fa-sharp fa-solid fa-chevron-down"></i>
@@ -1752,7 +1792,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
 
         <!-- Domain Search -->
-        <section class="my-lg-7 py-5 domain-search">
+        <section class="pt-5 pb-7 domain-search">
             <div class="container" data-cue="fadeIn">
                 <div class="row bg-pattern rounded-5 py-lg-7 py-5 g-0 domain">
                     <div class="col-md-8 offset-md-2">
@@ -1824,7 +1864,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <!-- Our Hosting Services -->
 
-        <section class="hosting-services">
+        <section class="hosting-services pt-5 pb-5" style="background: #F6F6F6;">
             <div class="container">
                 <div class="hosting-text">
                     <div class="col-md-8" data-cue="fadeIn">
@@ -1842,7 +1882,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                 </div>
 
-                <div class="table-responsive-xl">
+                <div class="">
                     <div class="row row-cols-xl-4 row-cols-md-2 row-cols-1  g-4  pb-4 pb-xl-0  me-lg-0"
                         data-cues="fadeIn">
                         <div class="col hosting-features" data-cue="fadeIn">
@@ -2000,14 +2040,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </section>
         <!-- Our Hosting Services End -->
         <style>
-            .hosting-services {
-                font-family: "Quicksand", "sans-serif";
-                padding-top: 15rem;
-                padding-bottom: 8rem;
-                margin-top: -16rem;
-                background: #F6F6F6;
-                color: black;
-            }
+          
 
             .hosting-text {
                 display: flex;
@@ -2048,7 +2081,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <!-- Key Features -->
 
-        <section class="py-10 key-features" id="speaker">
+        <section class="py-5 key-features" id="speaker">
             <div class="container">
                 <div class="">
                     <div class="col-md-8 mx-auto text-center" data-cue="fadeIn">
@@ -2060,8 +2093,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="col-md-4 d-flex align-items-end justify-content-end " data-cue="fadeIn"></div>
                 </div>
-                <div class="table-responsive-xl">
-                    <div class="row row-cols-xl-3 row-cols-sm-2   g-4   px-md-5  pb-4 pb-xl-0   me-lg-0"
+                <div class="">
+                    <div class="row row-cols-xl-3 row-cols-sm-2 g-4 px-md-5 me-lg-0"
                         data-cues="fadeIn">
                         <div class="col" data-cue="fadeIn">
                             <a href="#">
@@ -2429,7 +2462,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive-xl">
+                <div class="">
                     <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 pb-4 pb-xl-0 me-lg-0" data-cues="fadeIn">
                         <div class="col" data-cue="fadeIn">
                             <a href="#">
@@ -2558,7 +2591,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         <!-- FAQs -->
-        <section class="mt-10 mb-8 faqs" id="speaker">
+        <section class="mt-5 mb-2 faqs" id="speaker">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12" data-cue="fadeIn">
@@ -2645,6 +2678,9 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </section>
         <!-- FAQs End -->
+
+
+        
         <style>
             .faqs {
                 font-family: "Quicksand", "sans-serif";
@@ -2659,7 +2695,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .faqs .accordion-item {
                 display: flex;
                 flex-direction: column;
-                width: 700px;
+                max-width: 700px;
                 margin: 0 auto;
             }
         </style>
