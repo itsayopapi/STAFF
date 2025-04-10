@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Your existing header content -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Libs CSS -->
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>WooCommerce Hosting | WeFitHost</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Your existing header styles */
+        .custom-header {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background-color: white;
+        }
+        
+        .navbar {
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: 1rem 1.25rem;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover, .nav-link:focus {
+            color: #6B63FF;
+        }
+        
+        /* Mega dropdown styles */
+        .mega-dropdown {
+            position: static !important;
+        }
+        
+        .mega-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            margin-top: 0;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+        }
+        
+        /* ... (keep all your existing header styles) ... */
+
+        /* WooCommerce Hosting Page Styles */
+        :root {
+            --primary: #6B63FF;
+            --primary-dark: #554fd9;
+            --secondary: #f5a623;
+            --dark: #2e1a6e;
+            --light: #f8f9fa;
+        }
+        
+        .woocommerce-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .woocommerce-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/800x600/6B63FF/FFFFFF?text=WooCommerce');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-toggle {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.25rem;
+            display: inline-flex;
+            margin: 1.5rem 0;
+        }
+        
+        .btn-period {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-period.active {
+            background: white;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .btn-woocommerce {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-woocommerce:hover {
+            background-color: #e0951f;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+        }
+        
+        .trust-badges {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card .card-body {
+            padding: 2rem;
+        }
+        
+        .performance-meter {
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e9ecef;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .pricing-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--secondary);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card .card-header {
+            background-color: var(--light);
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+        
+        .pricing-card .card-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            margin-right: 0.75rem;
+        }
+        
+        .comparison-table th {
+            background-color: var(--light);
+            font-weight: 600;
+        }
+        
+        .comparison-table td, .comparison-table th {
+            padding: 1rem;
+            vertical-align: middle;
+        }
+        
+        .comparison-table .feature-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .check-mark {
+            color: var(--primary);
+            font-size: 1.25rem;
+        }
+        
+        .testimonial-card {
+            border: none;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .testimonial-rating {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .faq-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-header {
+            background-color: white;
+            border: none;
+        }
+        
+        .faq-button {
+            width: 100%;
+            text-align: left;
+            padding: 1.25rem;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-button:not(.collapsed) {
+            color: var(--primary);
+            background-color: var(--light);
+        }
+        
+        .faq-button::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-button:not(.collapsed)::after {
+            transform: rotate(180deg);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            border-radius: 12px;
+            margin: 5rem 0;
+        }
+        
+        @media (max-width: 767.98px) {
+            .woocommerce-hero {
+                padding: 3rem 0;
+                text-align: center;
+            }
+            
+            .woocommerce-hero::before {
+                display: none;
+            }
+            
+            .trust-badges {
+                justify-content: center;
+            }
+            
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-bs-theme="light">
+
+<!-- Your existing header/navbar -->
+<header class="custom-header">
+    <!-- ... (your entire header/navbar code) ... -->
+</header>
+
+<!-- WooCommerce Hosting Hero Section -->
+<section class="woocommerce-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <span class="hero-badge">
+                    <i class="fas fa-bolt me-2"></i>Optimized for WooCommerce
+                </span>
+                <h1 class="display-4 fw-bold mb-3">High-Performance WooCommerce Hosting</h1>
+                <p class="lead mb-4">Launch your online store with blazing-fast speeds, enhanced security, and everything you need to sell online.</p>
+                
+                <div class="pricing-toggle">
+                    <button class="btn-period active" data-period="monthly">Monthly</button>
+                    <button class="btn-period" data-period="yearly">Yearly (Save 50%)</button>
+                </div>
+                
+                <a href="#plans" class="btn btn-woocommerce me-2">
+                    <i class="fas fa-shopping-cart me-2"></i>Get Started
+                </a>
+                <a href="#features" class="btn btn-outline-light">
+                    <i class="fas fa-info-circle me-2"></i>Learn More
+                </a>
+                
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <i class="fas fa-star text-warning"></i>
+                        <span>4.9/5 Rating</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-alt text-success"></i>
+                        <span>99.9% Uptime</span>
+                    </div>
+                    <div class="trust-badge">
+                        <i class="fas fa-users text-info"></i>
+                        <span>10,000+ Stores</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <img src="https://via.placeholder.com/600x450/6B63FF/FFFFFF?text=WooCommerce+Store" alt="WooCommerce Store" class="img-fluid rounded-3 shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 py-lg-7" id="features">
+    <div class="container">
+        <h2 class="section-title">Everything Your Online Store Needs</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="h5">Lightning Fast</h3>
+                        <p class="text-muted">Optimized servers with NVMe SSD storage and LiteSpeed caching for faster page loads.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 95%"></div>
+                        </div>
+                        <small class="text-muted">95% faster than standard hosting</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3 class="h5">Enhanced Security</h3>
+                        <p class="text-muted">Free SSL, DDoS protection, and malware scanning to keep your store safe.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 100%"></div>
+                        </div>
+                        <small class="text-muted">100% secure transactions</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="h5">Easy Scaling</h3>
+                        <p class="text-muted">Easily upgrade resources as your store grows without any downtime.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 90%"></div>
+                        </div>
+                        <small class="text-muted">90% faster scaling</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="h5">WooCommerce Experts</h3>
+                        <p class="text-muted">24/7 support from our WooCommerce specialists when you need help.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 98%"></div>
+                        </div>
+                        <small class="text-muted">98% satisfaction rate</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WooCommerce Optimized Section -->
+<section class="py-5 py-lg-7 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="https://via.placeholder.com/600x450/f8f9fa/6B63FF?text=WooCommerce+Optimized" alt="WooCommerce Optimized" class="img-fluid rounded-3 shadow">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title text-start">Optimized for WooCommerce</h2>
+                <p class="lead">We've fine-tuned our servers specifically for WooCommerce stores to ensure maximum performance.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Pre-installed WooCommerce</h4>
+                                <p class="small text-muted mb-0">Get started instantly with WooCommerce pre-installed.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Auto Updates</h4>
+                                <p class="small text-muted mb-0">Automatic updates for WooCommerce and plugins.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Built-in Caching</h4>
+                                <p class="small text-muted mb-0">Server-level caching for faster product pages.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">PCI Compliance</h4>
+                                <p class="small text-muted mb-0">Secure environment for processing payments.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Staging Environment</h4>
+                                <p class="small text-muted mb-0">Test changes before going live.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="h6 mb-1">Daily Backups</h4>
+                                <p class="small text-muted mb-0">Automatic daily backups of your store.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Plans Section -->
+<section class="py-5 py-lg-7" id="plans">
+    <div class="container">
+        <h2 class="section-title">Choose Your WooCommerce Hosting Plan</h2>
+        <p class="lead text-center mb-5">All plans include our WooCommerce optimization features</p>
+        
+        <div class="row g-4">
+            <!-- Starter Plan -->
+            <div class="col-md-4">
+                <div class="pricing-card card h-100">
+                    <div class="card-header text-center">
+                        <h3 class="h4">Starter</h3>
+                        <p class="text-muted mb-0">Perfect for new stores</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <span class="price">$9.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="feature-list text-start mb-4">
+                            <li>1 WooCommerce Store</li>
+                            <li>10 GB NVMe Storage</li>
+                            <li>Unmetered Bandwidth</li>
+                            <li>Free SSL Certificate</li>
+                            <li>100,000 Visits Monthly</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Business Plan (Popular) -->
+            <div class="col-md-4">
+                <div class="pricing-card card h-100 popular">
+                    <span class="popular-badge">Most Popular</span>
+                    <div class="card-header text-center">
+                        <h3 class="h4">Business</h3>
+                        <p class="text-muted mb-0">Growing online stores</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <span class="price">$19.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="feature-list text-start mb-4">
+                            <li>3 WooCommerce Stores</li>
+                            <li>50 GB NVMe Storage</li>
+                            <li>Unmetered Bandwidth</li>
+                            <li>Free SSL Certificate</li>
+                            <li>300,000 Visits Monthly</li>
+                            <li>Free CDN</li>
+                            <li>Daily Backups</li>
+                            <li>24/7 Priority Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enterprise Plan -->
+            <div class="col-md-4">
+                <div class="pricing-card card h-100">
+                    <div class="card-header text-center">
+                        <h3 class="h4">Enterprise</h3>
+                        <p class="text-muted mb-0">High-traffic stores</p>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-4">
+                            <span class="price">$39.99</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="feature-list text-start mb-4">
+                            <li>Unlimited WooCommerce Stores</li>
+                            <li>100 GB NVMe Storage</li>
+                            <li>Unmetered Bandwidth</li>
+                            <li>Free SSL Certificate</li>
+                            <li>Unlimited Visits</li>
+                            <li>Free CDN + Edge Caching</li>
+                            <li>Daily Backups</li>
+                            <li>Staging Environment</li>
+                            <li>24/7 VIP Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature Comparison Section -->
+<section class="py-5 py-lg-7 bg-light">
+    <div class="container">
+        <h2 class="section-title">Plan Comparison</h2>
+        
+        <div class="table-responsive">
+            <table class="table comparison-table">
+                <thead>
+                    <tr>
+                        <th class="feature-name">Feature</th>
+                        <th>Starter</th>
+                        <th>Business</th>
+                        <th>Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">WooCommerce Stores</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">NVMe Storage</td>
+                        <td>10 GB</td>
+                        <td>50 GB</td>
+                        <td>100 GB</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Monthly Visits</td>
+                        <td>100,000</td>
+                        <td>300,000</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Free SSL</td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Free CDN</td>
+                        <td><i class="fas fa-times text-muted"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Daily Backups</td>
+                        <td><i class="fas fa-times text-muted"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Staging</td>
+                        <td><i class="fas fa-times text-muted"></i></td>
+                        <td><i class="fas fa-times text-muted"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Priority Support</td>
+                        <td><i class="fas fa-times text-muted"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                        <td><i class="fas fa-check check-mark"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5 py-lg-7">
+    <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Since moving my WooCommerce store to WeFitHost, my page load times improved by 3x and my conversion rate increased by 15%. Their support team is incredibly knowledgeable about WooCommerce."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="author-avatar">
+                        <div>
+                            <h5 class="mb-0">Sarah J.</h5>
+                            <small class="text-muted">Fashion Boutique Owner</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The WooCommerce optimizations are real! My store handles traffic spikes during sales much better now. The automatic updates give me peace of mind that my store is always secure."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="author-avatar">
+                        <div>
+                            <h5 class="mb-0">Michael T.</h5>
+                            <small class="text-muted">Electronics Store</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Migrating my existing WooCommerce store was seamless with their free migration service. The performance difference was noticeable immediately. Highly recommend for any serious online store."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M." class="author-avatar">
+                        <div>
+                            <h5 class="mb-0">Lisa M.</h5>
+                            <small class="text-muted">Home Goods Store</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 py-lg-7 bg-light">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="accordion" id="faqAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-card card mb-3">
+                        <div class="faq-header card-header" id="faqHeading1">
+                            <button class="faq-button btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                                Is WooCommerce included with hosting?
+                            </button>
+                        </div>
+                        <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                            <div class="card-body">
+                                Yes! WooCommerce comes pre-installed with all our WooCommerce hosting plans. You can start building your store immediately after signing up.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-card card mb-3">
+                        <div class="faq-header card-header" id="faqHeading2">
+                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                                Can I migrate my existing WooCommerce store?
+                            </button>
+                        </div>
+                        <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                            <div class="card-body">
+                                Absolutely! We offer free migration services for all our WooCommerce hosting plans. Our experts will handle the entire migration process for you, ensuring no downtime for your store.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-card card mb-3">
+                        <div class="faq-header card-header" id="faqHeading3">
+                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                                How does your hosting improve WooCommerce performance?
+                            </button>
+                        </div>
+                        <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                            <div class="card-body">
+                                Our WooCommerce hosting includes several optimizations: NVMe SSD storage for faster database queries, LiteSpeed web server with built-in caching specifically tuned for WooCommerce, PHP optimizations for better cart performance, and a CDN to deliver your product images quickly worldwide.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-card card mb-3">
+                        <div class="faq-header card-header" id="faqHeading4">
+                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                                Do you offer SSL certificates for secure checkout?
+                            </button>
+                        </div>
+                        <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                            <div class="card-body">
+                                Yes, all our WooCommerce hosting plans include free Let's Encrypt SSL certificates to ensure your checkout process is secure. This is essential for PCI compliance when processing payments.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-card card mb-3">
+                        <div class="faq-header card-header" id="faqHeading5">
+                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                                What if I need help with my WooCommerce store?
+                            </button>
+                        </div>
+                        <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                            <div class="card-body">
+                                Our support team includes WooCommerce experts available 24/7 to help with any issues. For Business and Enterprise plans, you get priority support with faster response times. We can assist with hosting-related WooCommerce issues, plugin conflicts, performance optimization, and more.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold mb-4">Ready to Boost Your Online Store?</h2>
+                <p class="lead mb-5">Join thousands of successful WooCommerce stores powered by WeFitHost</p>
+                <a href="#" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-shopping-cart me-2"></i>Get Started Now
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-phone-alt me-2"></i>Talk to an Expert
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3">
+                <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40" class="mb-3">
+                <p>High-performance hosting solutions for your WooCommerce store. Built for speed, security, and scalability.</p>
+                <div class="social-icons mt-3">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3">
+                <h5 class="mb-4">Hosting</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white-50">WooCommerce Hosting</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">WordPress Hosting</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Cloud Hosting</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">VPS Hosting</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Dedicated Servers</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3">
+                <h5 class="mb-4">Company</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white-50">About Us</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Contact</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Blog</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Careers</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Affiliate Program</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-6 col-lg-3">
+                <h5 class="mb-4">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white-50">Help Center</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Knowledge Base</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">System Status</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Tutorials</a></li>
+                    <li class="mb-2"><a href="#" class="text-white-50">Submit a Ticket</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4 bg-secondary">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <p class="small text-white-50 mb-3 mb-md-0">© 2023 WeFitHost. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="#" class="text-white-50 small me-3">Terms of Service</a>
+                <a href="#" class="text-white-50 small me-3">Privacy Policy</a>
+                <a href="#" class="text-white-50 small">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your existing navbar JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // ... (your existing navbar JavaScript code) ...
+        
+        // Pricing toggle functionality
+        const pricingToggle = document.querySelector('.pricing-toggle');
+        const monthlyPrices = document.querySelectorAll('.price.monthly');
+        const yearlyPrices = document.querySelectorAll('.price.yearly');
+        
+        if (pricingToggle) {
+            pricingToggle.addEventListener('click', function(e) {
+                if (e.target.classList.contains('btn-period')) {
+                    // Update active state
+                    document.querySelector('.btn-period.active').classList.remove('active');
+                    e.target.classList.add('active');
+                    
+                    // Toggle prices
+                    const isMonthly = e.target.dataset.period === 'monthly';
+                    
+                    monthlyPrices.forEach(el => {
+                        el.style.display = isMonthly ? 'inline' : 'none';
+                    });
+                    
+                    yearlyPrices.forEach(el => {
+                        el.style.display = isMonthly ? 'none' : 'inline';
+                    });
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
