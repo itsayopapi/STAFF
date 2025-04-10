@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Your existing header content -->
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -33,13 +33,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>WooCommerce Hosting | WeFitHost</title>
+    <title>WeFitHost</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <style>
-        /* Your existing header styles */
         .custom-header {
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
@@ -79,327 +75,238 @@
             border-radius: 0 0 8px 8px;
         }
         
-        /* ... (keep all your existing header styles) ... */
-
-        /* WooCommerce Hosting Page Styles */
-        :root {
-            --primary: #6B63FF;
-            --primary-dark: #554fd9;
-            --secondary: #f5a623;
-            --dark: #2e1a6e;
-            --light: #f8f9fa;
-        }
-        
-        .woocommerce-hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: white;
-            padding: 5rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .woocommerce-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background-image: url('https://via.placeholder.com/800x600/6B63FF/FFFFFF?text=WooCommerce');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-        }
-        
-        .hero-badge {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-toggle {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            padding: 0.25rem;
-            display: inline-flex;
-            margin: 1.5rem 0;
-        }
-        
-        .btn-period {
-            background: transparent;
+        .dropdown-menu {
             border: none;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-period.active {
-            background: white;
-            color: var(--dark);
-            font-weight: 600;
-        }
-        
-        .btn-woocommerce {
-            background-color: var(--secondary);
-            color: white;
-            font-weight: 600;
-            padding: 0.75rem 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-woocommerce:hover {
-            background-color: #e0951f;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
-        }
-        
-        .trust-badges {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .section-title {
-            color: var(--dark);
-            font-weight: 700;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .feature-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .feature-card .card-body {
-            padding: 2rem;
-        }
-        
-        .performance-meter {
-            height: 8px;
-            border-radius: 4px;
-            background-color: #e9ecef;
-            overflow: hidden;
-            margin: 1rem 0;
-        }
-        
-        .meter-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-        
-        .pricing-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .pricing-card.popular {
-            border: 2px solid var(--secondary);
-            position: relative;
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            right: 20px;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .pricing-card .card-header {
-            background-color: var(--light);
-            border-bottom: none;
-            padding: 1.5rem;
-        }
-        
-        .pricing-card .card-body {
-            padding: 2rem;
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--dark);
-        }
-        
-        .price-period {
-            font-size: 1rem;
-            color: #6c757d;
-        }
-        
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .feature-list li {
             padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
+            margin-top: 0.5rem;
         }
         
-        .feature-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--primary);
-            margin-right: 0.75rem;
+        .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 0.15rem 0.5rem;
         }
         
-        .comparison-table th {
-            background-color: var(--light);
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #6B63FF;
+        }
+        
+        .dropdown-header {
+            font-size: 0.75rem;
             font-weight: 600;
+            color: #6c757d;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
         }
         
-        .comparison-table td, .comparison-table th {
-            padding: 1rem;
-            vertical-align: middle;
-        }
-        
-        .comparison-table .feature-name {
+        .btn-primary {
+            background-color: #6B63FF;
+            border-color: #6B63FF;
+            padding: 0.5rem 1.25rem;
             font-weight: 500;
-            color: var(--dark);
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
         
-        .check-mark {
-            color: var(--primary);
-            font-size: 1.25rem;
+        .btn-primary:hover {
+            background-color: #5a52e0;
+            border-color: #5a52e0;
+            transform: translateY(-1px);
         }
         
-        .testimonial-card {
-            border: none;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            height: 100%;
-        }
-        
-        .testimonial-rating {
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 1rem;
-        }
-        
-        .faq-card {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 1rem;
-        }
-        
-        .faq-header {
-            background-color: white;
-            border: none;
-        }
-        
-        .faq-button {
-            width: 100%;
-            text-align: left;
-            padding: 1.25rem;
-            font-weight: 500;
-            color: var(--dark);
+        .btn-link {
             text-decoration: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         
-        .faq-button:not(.collapsed) {
-            color: var(--primary);
-            background-color: var(--light);
-        }
-        
-        .faq-button::after {
-            content: '\f078';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-button:not(.collapsed)::after {
-            transform: rotate(180deg);
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            border-radius: 12px;
-            margin: 5rem 0;
-        }
-        
-        @media (max-width: 767.98px) {
-            .woocommerce-hero {
-                padding: 3rem 0;
+        /* Enhanced Mobile Styles - Bluehost-like implementation */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                position: fixed;
+                top: 68px; /* Height of navbar */
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+                padding: 0;
+                max-height: calc(100vh - 68px);
+                overflow-y: auto;
+                transition: transform 0.3s ease;
+                transform: translateX(-100%);
+                z-index: 1000;
+                border-top: 1px solid #eee;
+            }
+            
+            .navbar-collapse.show {
+                transform: translateX(0);
+            }
+            
+            .navbar-nav {
+                padding: 0;
+            }
+            
+            .nav-item {
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .nav-link {
+                padding: 1rem 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 0.5rem;
+                transition: transform 0.2s ease;
+            }
+            
+            .dropdown-toggle[aria-expanded="true"]::after {
+                transform: rotate(180deg);
+            }
+            
+            .mega-menu, .dropdown-menu {
+                position: static !important;
+                width: 100%;
+                box-shadow: none;
+                padding: 0;
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                background-color: #f9f9f9;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+            
+            .dropdown-menu.show, .mega-menu.show {
+                max-height: 1000px;
+                padding: 0.5rem 0;
+            }
+            
+            .mega-menu .row {
+                flex-direction: column;
+            }
+            
+            .mega-menu .col-md-4, 
+            .mega-menu .col-md-6 {
+                width: 100%;
+                padding: 0;
+            }
+            
+            .dropdown-item {
+                padding: 0.75rem 2rem;
+                margin: 0;
+                font-size: 0.9rem;
+                color: #555;
+            }
+            
+            .dropdown-header {
+                padding: 0.75rem 2rem;
+                margin: 0;
+                font-size: 0.8rem;
+            }
+            
+            /* Right-aligned buttons stack on mobile */
+            .d-flex.align-items-center {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 1rem 1.5rem;
+                background-color: #f9f9f9;
+                margin-top: auto;
+            }
+            
+            .d-flex.align-items-center .btn {
+                width: 100%;
+                margin: 0.5rem 0;
                 text-align: center;
+                padding: 0.75rem;
             }
             
-            .woocommerce-hero::before {
-                display: none;
+            .btn-link {
+                display: block;
+                padding: 0.75rem;
+                text-align: center;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                margin: 0.5rem 0;
             }
             
-            .trust-badges {
-                justify-content: center;
+            /* Mobile menu backdrop */
+            .mobile-menu-backdrop {
+                position: fixed;
+                top: 68px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
             }
             
-            .pricing-card {
-                margin-bottom: 2rem;
+            .mobile-menu-backdrop.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            /* Navbar toggler animation */
+            .navbar-toggler {
+                transition: all 0.3s ease;
+                border: none;
+                padding: 0.5rem;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+            
+            .navbar-toggler .navbar-toggler-icon {
+                background-image: none;
+                position: relative;
+                width: 24px;
+                height: 2px;
+                background-color: #333;
+                transition: all 0.3s ease;
+            }
+            
+            .navbar-toggler .navbar-toggler-icon::before,
+            .navbar-toggler .navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                width: 24px;
+                height: 2px;
+                background-color: #333;
+                transition: all 0.3s ease;
+            }
+            
+            .navbar-toggler .navbar-toggler-icon::before {
+                transform: translateY(-6px);
+            }
+            
+            .navbar-toggler .navbar-toggler-icon::after {
+                transform: translateY(6px);
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+                background-color: transparent;
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+                transform: rotate(45deg);
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+                transform: rotate(-45deg);
             }
         }
     </style>
@@ -407,10 +314,1022 @@
 
 <body data-bs-theme="light">
 
-<!-- Your existing header/navbar -->
+<!-- Navbar Start -->
 <header class="custom-header">
-    <!-- ... (your entire header/navbar code) ... -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="./home.html">
+                <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40">
+            </a>
+
+            <!-- Mobile Toggle - Enhanced with animation -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Mobile menu backdrop -->
+            <div class="mobile-menu-backdrop"></div>
+
+            <!-- Navigation Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Hosting Mega Dropdown -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="hostingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Hosting
+                            <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="hostingDropdown">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-wordpress me-2"></i>WordPress
+                                            Solutions</h6>
+                                        <a class="dropdown-item" href="wordpress-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>WordPress Hosting</strong>
+                                                <small class="text-muted">Automated updates and plugins</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="cloud-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Cloud Hosting</strong>
+                                                <small class="text-muted">Lightning-fast with 100% uptime
+                                                    SLA</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="managed-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Managed Hosting</strong>
+                                                <small class="text-muted">Lag-free, managed WordPress
+                                                    hosting</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Secure Hosting</strong>
+                                                <small class="text-muted">Everything needed to securely launch your
+                                                    website</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-cart me-2"></i>eCommerce
+                                            Solutions</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>WooCommerce</strong>
+                                                <small class="text-muted">Secure, online store with built-in
+                                                    tools</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Websites & Stores</strong>
+                                                <small class="text-muted">Powerful site tools and
+                                                    WooCommerce</small>
+                                            </div>
+                                        </a>
+
+                                        <h6 class="dropdown-header mt-3"><i
+                                                class="bi bi-shield-lock me-2"></i>Security & Backup</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>SSL Certificates</strong>
+                                                <small class="text-muted">Lock up your data with Premium SSL</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Website Security</strong>
+                                                <small class="text-muted">Minimize cyberthreats with
+                                                    SiteLock</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Website Backup</strong>
+                                                <small class="text-muted">Back up your site with CodeGuard</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-server me-2"></i>Traditional
+                                            Hosting</h6>
+                                        <a class="dropdown-item" href="shared-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Shared Hosting</strong>
+                                                <small class="text-muted">Affordable hosting for small
+                                                    websites</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="vps-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>VPS Hosting</strong>
+                                                <small class="text-muted">Scalable virtual private servers</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="web-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Web Hosting</strong>
+                                                <small class="text-muted">Reliable web hosting solutions</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="dedicated-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Dedicated Hosting</strong>
+                                                <small class="text-muted">Full control with enterprise
+                                                    hardware</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="reseller-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Reseller Hosting</strong>
+                                                <small class="text-muted">Start your own hosting business</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Domains Mega Dropdown -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="domainDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Domains
+                            <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="domainDropdown">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-globe me-2"></i>Domain Services
+                                        </h6>
+                                        <a class="dropdown-item" href="domain-search.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Domain Search</strong>
+                                                <small class="text-muted">Find your perfect domain name</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Domain Transfer</strong>
+                                                <small class="text-muted">Move your domain to us easily</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Bulk Domain Search</strong>
+                                                <small class="text-muted">Search for multiple domains at
+                                                    once</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Domain
+                                            Security</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Domain Privacy</strong>
+                                                <small class="text-muted">Protect your personal information</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Domain Lock</strong>
+                                                <small class="text-muted">Prevent unauthorized transfers</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Two-Factor Authentication</strong>
+                                                <small class="text-muted">Extra security for your domains</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-tags me-2"></i>Domain Extensions
+                                        </h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>.com Domains</strong>
+                                                <small class="text-muted">The world's most popular extension</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>.net Domains</strong>
+                                                <small class="text-muted">Great for tech and networks</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>.org Domains</strong>
+                                                <small class="text-muted">Perfect for organizations</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>New TLDs</strong>
+                                                <small class="text-muted">.tech, .store, .online and more</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Services Mega Dropdown -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                            <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-palette me-2"></i>Design
+                                            Services</h6>
+                                        <a class="dropdown-item" href="managed-hosting.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Web Design</strong>
+                                                <small class="text-muted">Custom WordPress sites built for
+                                                    you</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex flex-column">
+                                                <strong>Logo Design</strong>
+                                                <small class="text-muted">Professional branding for your
+                                                    business</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>UX/UI Design</strong>
+                                                <small class="text-muted">Optimized user experiences</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-megaphone me-2"></i>Marketing
+                                            Services</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Digital Marketing</strong>
+                                                <small class="text-muted">SEO and PPC campaigns done for you</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Content Marketing</strong>
+                                                <small class="text-muted">Engaging content that converts</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Social Media Management</strong>
+                                                <small class="text-muted">Grow your social presence</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-headset me-2"></i>Support
+                                            Services</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Pro Design Live Support</strong>
+                                                <small class="text-muted">On-demand, WordPress expert
+                                                    support</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex flex-column">
+                                                <strong>Website SEO Checker (FREE)</strong>
+                                                <small class="text-muted">Get a free analysis and learn how to
+                                                    improve</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>24/7 Priority Support</strong>
+                                                <small class="text-muted">Dedicated help when you need it</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Migration Services</strong>
+                                                <small class="text-muted">We'll move your site for you</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Agency Hub Mega Dropdown -->
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="agencyDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Agency Hub
+                            <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="agencyDropdown">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>For Agencies
+                                        </h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Agency Hosting</strong>
+                                                <small class="text-muted">Specialized hosting for agencies</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Client Management</strong>
+                                                <small class="text-muted">Tools to manage all your clients</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>White Label Solutions</strong>
+                                                <small class="text-muted">Brand our services as your own</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Growth Tools
+                                        </h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Partner Program</strong>
+                                                <small class="text-muted">Earn commissions for referrals</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Marketing Resources</strong>
+                                                <small class="text-muted">Templates and guides</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Sales Training</strong>
+                                                <small class="text-muted">Close more hosting deals</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-gear me-2"></i>Developer Tools
+                                        </h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>API Access</strong>
+                                                <small class="text-muted">Integrate with our platform</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Staging Environments</strong>
+                                                <small class="text-muted">Test changes safely</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Git Integration</strong>
+                                                <small class="text-muted">Version control for your sites</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>WP-CLI Enabled</strong>
+                                                <small class="text-muted">Command line control</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mega-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="emailDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Email
+                            <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="emailDropdown">
+                            <div class="row g-0">
+                                <div class="col-md-6">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-envelope me-2"></i>Email Services</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Professional Email</strong>
+                                                <small class="text-muted">you@yourdomain.com</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Microsoft 365</strong>
+                                                <small class="text-muted">Premium Office suite with email</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Google Workspace</strong>
+                                                <small class="text-muted">Gmail for your domain</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="p-3">
+                                        <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Email Security</h6>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Email Protection</strong>
+                                                <small class="text-muted">Block spam and malware</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Email Forwarding</strong>
+                                                <small class="text-muted">Forward emails to other accounts</small>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="maintenance.html">
+                                            <div class="d-flex flex-column">
+                                                <strong>Email Migration</strong>
+                                                <small class="text-muted">Move your existing emails</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Right-side buttons -->
+                <div class="d-flex align-items-center">
+                    <a href="https://my.wefithost.com/login" class="btn btn-link text-dark me-3"><i
+                            class="bi bi-person"></i> Log In</a>
+                    <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 </header>
+
+<style>
+/* WooCommerce Hosting Page Styles */
+:root {
+    --primary: #6B63FF;
+    --primary-dark: #554fd9;
+    --secondary: #f5a623;
+    --dark: #2e1a6e;
+    --light: #f8f9fa;
+}
+
+/* Hero Section */
+.woocommerce-hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    color: white;
+    padding: 6rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hero-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: all 0.5s ease;
+    border: 8px solid white;
+}
+
+.hero-image:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.pricing-toggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.25rem;
+    display: inline-flex;
+    margin: 1.5rem 0;
+}
+
+.btn-period {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-period.active {
+    background: white;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.btn-woocommerce {
+    background-color: var(--secondary);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-woocommerce:hover {
+    background-color: #e0951f;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+}
+
+.trust-badges {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Sections */
+.section-title {
+    color: var(--dark);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 3px;
+}
+
+/* Features */
+.feature-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 10px 20px rgba(107, 99, 255, 0.2);
+}
+
+.feature-icon {
+    color: white;
+    font-size: 2rem;
+}
+
+.feature-card .card-body {
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Performance Meter */
+.performance-meter {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* Pricing Cards */
+.pricing-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--secondary);
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricing-card .card-header {
+    background-color: var(--light);
+    border-bottom: none;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.pricing-card .card-body {
+    padding: 2rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.price-period {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary);
+    margin-right: 0.75rem;
+}
+
+/* Comparison Table */
+.comparison-table th {
+    background-color: var(--light);
+    font-weight: 600;
+}
+
+.comparison-table td, .comparison-table th {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.comparison-table .feature-name {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.check-mark {
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+/* Testimonials */
+.testimonial-card {
+    border: none;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    background: white;
+}
+
+.testimonial-rating {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+/* FAQ */
+.faq-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    background: white;
+}
+
+.faq-header {
+    background-color: white;
+    border: none;
+}
+
+.faq-button {
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-button:not(.collapsed) {
+    color: var(--primary);
+    background-color: var(--light);
+}
+
+.faq-button::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: all 0.3s ease;
+}
+
+.faq-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+    border-radius: 12px;
+    margin: 5rem 0;
+}
+
+/* Dashboard Preview */
+.dashboard-preview {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Performance Graph */
+.performance-graph {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+    .woocommerce-hero {
+        padding: 4rem 0 3rem;
+        text-align: center;
+    }
+    
+    .trust-badges {
+        justify-content: center;
+    }
+    
+    .pricing-card {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
+</style>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get all necessary elements
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+        
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+        
+        // Hamburger menu toggle functionality
+        navbarToggler.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            backdrop.classList.toggle('show', !isExpanded);
+            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            
+            // Manually trigger show/hide to sync with our backdrop
+            if (!isExpanded) {
+                bsCollapse.show();
+            } else {
+                bsCollapse.hide();
+            }
+        });
+        
+        // Backdrop click closes menu
+        backdrop.addEventListener('click', function() {
+            navbarToggler.setAttribute('aria-expanded', 'false');
+            bsCollapse.hide();
+            this.classList.remove('show');
+            document.body.style.overflow = '';
+            closeAllDropdowns();
+        });
+        
+        // Enhanced dropdown functionality for mobile
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                if (window.innerWidth < 992) { // Mobile only
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const dropdownMenu = this.nextElementSibling;
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other dropdowns first
+                    closeAllDropdownsExcept(this);
+                    
+                    // Toggle current dropdown
+                    if (isExpanded) {
+                        dropdownMenu.classList.remove('show');
+                        this.setAttribute('aria-expanded', 'false');
+                    } else {
+                        dropdownMenu.classList.add('show');
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        });
+        
+        // Close menu when clicking regular nav links (not dropdown toggles)
+        navLinks.forEach(link => {
+            if (!link.classList.contains('dropdown-toggle')) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 992) {
+                        bsCollapse.hide();
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                        backdrop.classList.remove('show');
+                        document.body.style.overflow = '';
+                        closeAllDropdowns();
+                    }
+                });
+            }
+        });
+        
+        // Close all dropdowns except one
+        function closeAllDropdownsExcept(exceptToggle) {
+            dropdownToggles.forEach(toggle => {
+                if (toggle !== exceptToggle) {
+                    const menu = toggle.nextElementSibling;
+                    menu.classList.remove('show');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+        
+        // Close all dropdowns
+        function closeAllDropdowns() {
+            dropdownToggles.forEach(toggle => {
+                const menu = toggle.nextElementSibling;
+                menu.classList.remove('show');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth < 992 && 
+                !e.target.closest('.navbar') && 
+                navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+                navbarToggler.setAttribute('aria-expanded', 'false');
+                backdrop.classList.remove('show');
+                document.body.style.overflow = '';
+                closeAllDropdowns();
+            }
+        });
+        
+        // Close menu when resizing to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 992) {
+                if (navbarCollapse.classList.contains('show')) {
+                    bsCollapse.hide();
+                    navbarToggler.setAttribute('aria-expanded', 'false');
+                    backdrop.classList.remove('show');
+                    document.body.style.overflow = '';
+                    closeAllDropdowns();
+                }
+            }
+        });
+    });
+</script>
+<!-- Navbar End -->
 
 <!-- WooCommerce Hosting Hero Section -->
 <section class="woocommerce-hero">
@@ -428,7 +1347,7 @@
                     <button class="btn-period" data-period="yearly">Yearly (Save 50%)</button>
                 </div>
                 
-                <a href="#plans" class="btn btn-woocommerce me-2">
+                <a href="#plans" class="btn btn-woocommerce me-3">
                     <i class="fas fa-shopping-cart me-2"></i>Get Started
                 </a>
                 <a href="#features" class="btn btn-outline-light">
@@ -451,95 +1370,26 @@
                 </div>
             </div>
             <div class="col-lg-6 d-none d-lg-block">
-                <img src="https://via.placeholder.com/600x450/6B63FF/FFFFFF?text=WooCommerce+Store" alt="WooCommerce Store" class="img-fluid rounded-3 shadow">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section class="py-5 py-lg-7" id="features">
-    <div class="container">
-        <h2 class="section-title">Everything Your Online Store Needs</h2>
-        
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="h5">Lightning Fast</h3>
-                        <p class="text-muted">Optimized servers with NVMe SSD storage and LiteSpeed caching for faster page loads.</p>
-                        <div class="performance-meter">
-                            <div class="meter-fill" style="width: 95%"></div>
-                        </div>
-                        <small class="text-muted">95% faster than standard hosting</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h3 class="h5">Enhanced Security</h3>
-                        <p class="text-muted">Free SSL, DDoS protection, and malware scanning to keep your store safe.</p>
-                        <div class="performance-meter">
-                            <div class="meter-fill" style="width: 100%"></div>
-                        </div>
-                        <small class="text-muted">100% secure transactions</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3 class="h5">Easy Scaling</h3>
-                        <p class="text-muted">Easily upgrade resources as your store grows without any downtime.</p>
-                        <div class="performance-meter">
-                            <div class="meter-fill" style="width: 90%"></div>
-                        </div>
-                        <small class="text-muted">90% faster scaling</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card card">
-                    <div class="card-body text-center">
-                        <div class="feature-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <h3 class="h5">WooCommerce Experts</h3>
-                        <p class="text-muted">24/7 support from our WooCommerce specialists when you need help.</p>
-                        <div class="performance-meter">
-                            <div class="meter-fill" style="width: 98%"></div>
-                        </div>
-                        <small class="text-muted">98% satisfaction rate</small>
-                    </div>
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="WooCommerce Store Dashboard" class="hero-image img-fluid">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- WooCommerce Optimized Section -->
+<!-- Performance Section -->
 <section class="py-5 py-lg-7 bg-light">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <img src="https://via.placeholder.com/600x450/f8f9fa/6B63FF?text=WooCommerce+Optimized" alt="WooCommerce Optimized" class="img-fluid rounded-3 shadow">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="section-title text-start">Optimized for WooCommerce</h2>
-                <p class="lead">We've fine-tuned our servers specifically for WooCommerce stores to ensure maximum performance.</p>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 class="section-title text-start">Built for Speed & Performance</h2>
+                <p class="lead">Our WooCommerce-optimized hosting delivers significantly faster page loads compared to standard hosting solutions.</p>
+                
+                <div class="performance-meter mt-4">
+                    <div class="meter-fill" style="width: 95%"></div>
+                </div>
+                <p class="text-muted">Average page load time: <strong>0.8s</strong> (vs 3.2s on standard hosting)</p>
                 
                 <div class="row mt-4">
                     <div class="col-md-6 mb-3">
@@ -548,8 +1398,8 @@
                                 <i class="fas fa-check-circle fa-lg"></i>
                             </div>
                             <div>
-                                <h4 class="h6 mb-1">Pre-installed WooCommerce</h4>
-                                <p class="small text-muted mb-0">Get started instantly with WooCommerce pre-installed.</p>
+                                <h4 class="h6 mb-1">NVMe SSD Storage</h4>
+                                <p class="small text-muted mb-0">Up to 10x faster than traditional SSDs</p>
                             </div>
                         </div>
                     </div>
@@ -560,8 +1410,8 @@
                                 <i class="fas fa-check-circle fa-lg"></i>
                             </div>
                             <div>
-                                <h4 class="h6 mb-1">Auto Updates</h4>
-                                <p class="small text-muted mb-0">Automatic updates for WooCommerce and plugins.</p>
+                                <h4 class="h6 mb-1">LiteSpeed Server</h4>
+                                <p class="small text-muted mb-0">Optimized for WooCommerce</p>
                             </div>
                         </div>
                     </div>
@@ -573,7 +1423,7 @@
                             </div>
                             <div>
                                 <h4 class="h6 mb-1">Built-in Caching</h4>
-                                <p class="small text-muted mb-0">Server-level caching for faster product pages.</p>
+                                <p class="small text-muted mb-0">Faster product pages & checkout</p>
                             </div>
                         </div>
                     </div>
@@ -584,35 +1434,118 @@
                                 <i class="fas fa-check-circle fa-lg"></i>
                             </div>
                             <div>
-                                <h4 class="h6 mb-1">PCI Compliance</h4>
-                                <p class="small text-muted mb-0">Secure environment for processing payments.</p>
+                                <h4 class="h6 mb-1">Global CDN</h4>
+                                <p class="small text-muted mb-0">Fast worldwide delivery</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Staging Environment</h4>
-                                <p class="small text-muted mb-0">Test changes before going live.</p>
-                            </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="performance-graph">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Performance comparison" class="img-fluid rounded-3">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 py-lg-7" id="features">
+    <div class="container">
+        <h2 class="section-title">Everything Your Online Store Needs</h2>
+        <p class="lead text-center mb-5">Specialized features to help your WooCommerce store succeed</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body">
+                        <div class="feature-icon-container">
+                            <i class="fas fa-bolt feature-icon"></i>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6 mb-3">
-                        <div class="d-flex">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-lg"></i>
-                            </div>
-                            <div>
-                                <h4 class="h6 mb-1">Daily Backups</h4>
-                                <p class="small text-muted mb-0">Automatic daily backups of your store.</p>
-                            </div>
+                        <h3 class="h5 text-center">Lightning Fast</h3>
+                        <p class="text-muted text-center">Optimized servers with NVMe SSD storage and LiteSpeed caching for faster page loads.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 95%"></div>
                         </div>
+                        <small class="text-muted d-block text-center">95% faster than standard hosting</small>
                     </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body">
+                        <div class="feature-icon-container">
+                            <i class="fas fa-lock feature-icon"></i>
+                        </div>
+                        <h3 class="h5 text-center">Enhanced Security</h3>
+                        <p class="text-muted text-center">Free SSL, DDoS protection, and malware scanning to keep your store safe.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 100%"></div>
+                        </div>
+                        <small class="text-muted d-block text-center">100% secure transactions</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body">
+                        <div class="feature-icon-container">
+                            <i class="fas fa-rocket feature-icon"></i>
+                        </div>
+                        <h3 class="h5 text-center">Easy Scaling</h3>
+                        <p class="text-muted text-center">Easily upgrade resources as your store grows without any downtime.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 90%"></div>
+                        </div>
+                        <small class="text-muted d-block text-center">90% faster scaling</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="feature-card card">
+                    <div class="card-body">
+                        <div class="feature-icon-container">
+                            <i class="fas fa-headset feature-icon"></i>
+                        </div>
+                        <h3 class="h5 text-center">WooCommerce Experts</h3>
+                        <p class="text-muted text-center">24/7 support from our WooCommerce specialists when you need help.</p>
+                        <div class="performance-meter">
+                            <div class="meter-fill" style="width: 98%"></div>
+                        </div>
+                        <small class="text-muted d-block text-center">98% satisfaction rate</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WooCommerce Dashboard Section -->
+<section class="py-5 py-lg-7 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h2 class="section-title text-start">Optimized WooCommerce Dashboard</h2>
+                <p class="lead">We've customized our hosting environment specifically for WooCommerce stores to give you the best performance and easiest management.</p>
+                
+                <ul class="feature-list mt-4">
+                    <li>Pre-installed WooCommerce with optimized settings</li>
+                    <li>One-click staging environment for testing</li>
+                    <li>Automatic updates for WooCommerce core and plugins</li>
+                    <li>Built-in caching specifically tuned for WooCommerce</li>
+                    <li>Daily backups with one-click restore</li>
+                    <li>Real-time performance monitoring</li>
+                </ul>
+                
+                <a href="#plans" class="btn btn-primary mt-3">View Plans</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="dashboard-preview">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="WooCommerce Dashboard" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -646,7 +1579,7 @@
                             <li>100,000 Visits Monthly</li>
                             <li>24/7 Support</li>
                         </ul>
-                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -702,7 +1635,7 @@
                             <li>Staging Environment</li>
                             <li>24/7 VIP Support</li>
                         </ul>
-                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                        <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -848,90 +1781,6 @@
         </div>
     </div>
 </section>
-
-<!-- FAQ Section -->
-<section class="py-5 py-lg-7 bg-light">
-    <div class="container">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <div class="accordion" id="faqAccordion">
-                    <!-- FAQ Item 1 -->
-                    <div class="faq-card card mb-3">
-                        <div class="faq-header card-header" id="faqHeading1">
-                            <button class="faq-button btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-                                Is WooCommerce included with hosting?
-                            </button>
-                        </div>
-                        <div id="faqCollapse1" class="collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                            <div class="card-body">
-                                Yes! WooCommerce comes pre-installed with all our WooCommerce hosting plans. You can start building your store immediately after signing up.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-card card mb-3">
-                        <div class="faq-header card-header" id="faqHeading2">
-                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                                Can I migrate my existing WooCommerce store?
-                            </button>
-                        </div>
-                        <div id="faqCollapse2" class="collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                            <div class="card-body">
-                                Absolutely! We offer free migration services for all our WooCommerce hosting plans. Our experts will handle the entire migration process for you, ensuring no downtime for your store.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-card card mb-3">
-                        <div class="faq-header card-header" id="faqHeading3">
-                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                                How does your hosting improve WooCommerce performance?
-                            </button>
-                        </div>
-                        <div id="faqCollapse3" class="collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                            <div class="card-body">
-                                Our WooCommerce hosting includes several optimizations: NVMe SSD storage for faster database queries, LiteSpeed web server with built-in caching specifically tuned for WooCommerce, PHP optimizations for better cart performance, and a CDN to deliver your product images quickly worldwide.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-card card mb-3">
-                        <div class="faq-header card-header" id="faqHeading4">
-                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                                Do you offer SSL certificates for secure checkout?
-                            </button>
-                        </div>
-                        <div id="faqCollapse4" class="collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-                            <div class="card-body">
-                                Yes, all our WooCommerce hosting plans include free Let's Encrypt SSL certificates to ensure your checkout process is secure. This is essential for PCI compliance when processing payments.
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 5 -->
-                    <div class="faq-card card mb-3">
-                        <div class="faq-header card-header" id="faqHeading5">
-                            <button class="faq-button btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-                                What if I need help with my WooCommerce store?
-                            </button>
-                        </div>
-                        <div id="faqCollapse5" class="collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-                            <div class="card-body">
-                                Our support team includes WooCommerce experts available 24/7 to help with any issues. For Business and Enterprise plans, you get priority support with faster response times. We can assist with hosting-related WooCommerce issues, plugin conflicts, performance optimization, and more.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
