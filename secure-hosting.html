@@ -7,18 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Enterprise-grade security for your website with malware scanning, DDoS protection, and automated backups. Keep your site safe with WeFitHost Secure Hosting.">
-    <meta name="keywords" content="secure hosting, website security, malware protection, DDoS protection, web hosting security">
+    <meta name="description"
+        content="Enterprise-grade security for your website with malware scanning, DDoS protection, and automated backups. Keep your site safe with WeFitHost Secure Hosting.">
+    <meta name="keywords"
+        content="secure hosting, website security, malware protection, DDoS protection, web hosting security">
 
     <!-- Libs CSS -->
     <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <title>Secure Hosting | WeFitHost - Enterprise-Grade Website Protection</title>
 
@@ -31,86 +38,111 @@
             --dark: #212529;
             --danger: #dc3545;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         /* Header Styles */
         .custom-header {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
-            z-index: 1030;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1020;
+            background-color: white;
+            transition: transform 0.3s ease;
         }
-        
+
+        .custom-header.scrolled-up {
+            transform: translateY(0);
+        }
+
+        .custom-header.scrolled-down {
+            transform: translateY(-100%);
+        }
+
         .navbar {
             padding: 0.8rem 0;
         }
-        
+
         .navbar-brand img {
             transition: all 0.3s ease;
         }
-        
+
         .navbar-brand:hover img {
             transform: scale(1.05);
         }
-        
+
         .nav-link {
             font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            color: var(--dark) !important;
+            color: #333;
+            padding: 1rem 1.25rem;
             transition: all 0.2s ease;
         }
-        
-        .nav-link:hover, .nav-link:focus {
-            color: var(--primary) !important;
+
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #6B63FF;
         }
-        
+
         .dropdown-toggle::after {
             display: none;
         }
-        
+
         .dropdown-menu {
             border: none;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-            padding: 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
             margin-top: 0.5rem;
         }
-        
-        .mega-dropdown .dropdown-menu {
+
+        .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            color: #333;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            margin: 0.15rem 0.5rem;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #6B63FF;
+        }
+
+        .mega-dropdown {
+            position: static !important;
+        }
+
+        .mega-menu {
             width: 100%;
             left: 0;
             right: 0;
+            padding: 1rem;
+            margin-top: 0;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
         }
-        
-        .mega-menu {
-            padding: 1.5rem;
-        }
-        
+
         .dropdown-header {
-            font-size: 0.85rem;
-            color: var(--primary);
+            font-size: 0.75rem;
             font-weight: 600;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: #6c757d;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            margin-top: 0.5rem;
         }
-        
-        .dropdown-item {
-            padding: 0.75rem 1.5rem;
-            transition: all 0.2s ease;
-            border-radius: 6px;
-            margin-bottom: 0.25rem;
-        }
-        
-        .dropdown-item:hover, .dropdown-item:focus {
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
             background-color: rgba(107, 99, 255, 0.1);
             color: var(--primary);
         }
-        
+
         .mobile-menu-backdrop {
             position: fixed;
             top: 0;
@@ -123,12 +155,12 @@
             visibility: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .mobile-menu-backdrop.show {
             opacity: 1;
             visibility: visible;
         }
-        
+
         @media (max-width: 991.98px) {
             .navbar-collapse {
                 position: fixed;
@@ -143,52 +175,53 @@
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
-            
+
             .navbar-collapse.show {
                 transform: translateX(0);
             }
-            
+
             .dropdown-menu {
                 box-shadow: none;
                 border-left: 3px solid var(--primary);
                 margin-left: 1rem;
             }
-            
+
             .mega-dropdown .dropdown-menu {
                 width: auto;
             }
-            
+
             .mega-menu .row {
                 flex-direction: column;
             }
-            
-            .mega-menu .col-md-4, .mega-menu .col-md-6 {
+
+            .mega-menu .col-md-4,
+            .mega-menu .col-md-6 {
                 width: 100%;
                 padding: 0;
             }
-            
+
             .mega-menu .p-3 {
                 padding: 1rem 0 !important;
             }
-            
+
             .dropdown-toggle i.bi-chevron-down {
                 transition: transform 0.3s ease;
             }
-            
+
             .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
                 transform: rotate(180deg);
             }
         }
-        
+
         /* Hero and other styles remain the same */
         .hero-section {
-            background: linear-gradient(135deg, #383892 0%, #19337b 100%);
+            background: #6B63FF;
             color: white;
-            padding: 6rem 0 5rem;
+            padding: 4rem 0 5rem;
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero-section::before {
             content: '';
             position: absolute;
@@ -200,21 +233,21 @@
             background-size: cover;
             opacity: 0.15;
         }
-        
+
         .hero-title {
             font-weight: 800;
             font-size: 3.2rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
         }
-        
+
         .hero-subtitle {
             font-size: 1.3rem;
             opacity: 0.9;
             margin-bottom: 2rem;
             max-width: 600px;
         }
-        
+
         .security-badge {
             display: inline-flex;
             align-items: center;
@@ -225,12 +258,12 @@
             margin-bottom: 0.75rem;
             backdrop-filter: blur(5px);
         }
-        
+
         .security-badge i {
             margin-right: 0.5rem;
             color: var(--primary);
         }
-        
+
         .feature-icon {
             width: 70px;
             height: 70px;
@@ -242,7 +275,7 @@
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
-        
+
         .feature-card {
             border-radius: 16px;
             border: 1px solid rgba(0, 0, 0, 0.05);
@@ -252,18 +285,18 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
-        
+
         .feature-img {
             height: 180px;
             background-size: cover;
             background-position: center;
         }
-        
+
         .security-level {
             height: 10px;
             border-radius: 5px;
@@ -271,13 +304,13 @@
             position: relative;
             margin: 2rem 0;
         }
-        
+
         .security-level-marker {
             position: absolute;
             top: -15px;
             transform: translateX(-50%);
         }
-        
+
         .security-level-marker i {
             font-size: 1.8rem;
             color: var(--primary);
@@ -288,9 +321,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .security-level-marker p {
             position: absolute;
             top: 35px;
@@ -300,38 +333,37 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
-        
+
         .threat-card {
             border-left: 4px solid var(--danger);
             border-radius: 8px;
             transition: all 0.3s ease;
             background-color: #fff9fa;
         }
-        
+
         .protection-card {
             border-left: 4px solid var(--primary);
             border-radius: 8px;
             transition: all 0.3s ease;
             background-color: #f8f9ff;
         }
-        
+
         .btn-primary {
             background-color: var(--primary);
             border-color: var(--primary);
-            padding: 0.9rem 2rem;
             font-weight: 600;
             border-radius: 10px;
             transition: all 0.3s ease;
             font-size: 1.05rem;
         }
-        
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             border-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(107, 99, 255, 0.3);
         }
-        
+
         .btn-outline-primary {
             border-color: var(--primary);
             color: var(--primary);
@@ -341,14 +373,14 @@
             transition: all 0.3s ease;
             font-size: 1.05rem;
         }
-        
+
         .btn-outline-primary:hover {
             background-color: var(--primary);
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(107, 99, 255, 0.2);
         }
-        
+
         .section-title {
             font-weight: 700;
             font-size: 2.3rem;
@@ -356,7 +388,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -367,25 +399,25 @@
             background-color: var(--primary);
             border-radius: 3px;
         }
-        
+
         .stat-number {
             font-size: 3.5rem;
             font-weight: 700;
             color: var(--primary);
             line-height: 1;
         }
-        
+
         .stat-label {
             font-size: 1.1rem;
             color: #6c757d;
             font-weight: 500;
         }
-        
+
         .timeline {
             position: relative;
             padding-left: 2.5rem;
         }
-        
+
         .timeline::before {
             content: '';
             position: absolute;
@@ -396,12 +428,12 @@
             background-color: var(--primary);
             opacity: 0.2;
         }
-        
+
         .timeline-item {
             position: relative;
             padding-bottom: 2.5rem;
         }
-        
+
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -414,7 +446,7 @@
             border: 5px solid white;
             box-shadow: 0 0 0 2px var(--primary);
         }
-        
+
         .timeline-img {
             height: 200px;
             background-size: cover;
@@ -422,14 +454,14 @@
             border-radius: 12px;
             margin-bottom: 1.5rem;
         }
-        
+
         .faq-item {
             margin-bottom: 1.2rem;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .faq-header button {
             font-weight: 600;
             padding: 1.5rem;
@@ -440,7 +472,7 @@
             position: relative;
             font-size: 1.1rem;
         }
-        
+
         .faq-header button::after {
             content: '+';
             position: absolute;
@@ -450,40 +482,40 @@
             transform: translateY(-50%);
             color: var(--primary);
         }
-        
+
         .faq-header button.collapsed::after {
             content: '+';
         }
-        
+
         .faq-header button:not(.collapsed)::after {
             content: '-';
         }
-        
+
         .faq-body {
             padding: 1.5rem;
             background-color: white;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .plan-card {
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
-        
+
         .plan-card.popular {
             border: 2px solid var(--primary);
             box-shadow: 0 15px 35px rgba(107, 99, 255, 0.2);
         }
-        
+
         .plan-header {
             padding: 2rem;
             background-color: var(--light);
             text-align: center;
         }
-        
+
         .popular-badge {
             position: absolute;
             top: -15px;
@@ -496,85 +528,83 @@
             font-weight: 600;
             box-shadow: 0 5px 15px rgba(107, 99, 255, 0.3);
         }
-        
+
         .price-amount {
             font-size: 2.8rem;
             font-weight: 700;
             color: var(--primary);
             line-height: 1;
         }
-        
+
         .price-period {
             color: #6c757d;
             font-size: 1rem;
         }
-        
+
         .plan-body {
             padding: 2rem;
         }
-        
+
         .plan-feature {
             margin-bottom: 1.2rem;
             padding-left: 1.8rem;
             position: relative;
         }
-        
+
         .plan-feature i {
             position: absolute;
             left: 0;
             top: 3px;
         }
-        
+
         .security-visual {
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         @media (max-width: 767.98px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .hero-subtitle {
                 font-size: 1.15rem;
             }
-            
+
             .hero-section::before {
                 display: none;
             }
-            
+
             .stat-number {
                 font-size: 2.8rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
         }
     </style>
+   
 </head>
 
 <body data-bs-theme="light">
-    <!--Navbar start-->
+    <!-- Navbar Start -->
     <header class="custom-header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1E293B;">
             <div class="container">
                 <!-- Logo -->
                 <a class="navbar-brand" href="./home.html">
                     <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40">
                 </a>
-    
-                <!-- Mobile Toggle - Enhanced with animation -->
+
+                <!-- Mobile Toggle -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
-                <!-- Mobile menu backdrop -->
-                <div class="mobile-menu-backdrop"></div>
-    
+
                 <!-- Navigation Content -->
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -583,7 +613,6 @@
                             <a class="nav-link dropdown-toggle" href="#" id="hostingDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Hosting
-                                <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
                             </a>
                             <div class="dropdown-menu mega-menu" aria-labelledby="hostingDropdown">
                                 <div class="row g-0">
@@ -620,7 +649,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-cart me-2"></i>eCommerce
@@ -639,7 +668,7 @@
                                                         WooCommerce</small>
                                                 </div>
                                             </a>
-    
+
                                             <h6 class="dropdown-header mt-3"><i
                                                     class="bi bi-shield-lock me-2"></i>Security & Backup</h6>
                                             <a class="dropdown-item" href="maintenance.html">
@@ -663,7 +692,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-server me-2"></i>Traditional
@@ -705,13 +734,12 @@
                                 </div>
                             </div>
                         </li>
-    
+
                         <!-- Domains Mega Dropdown -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="domainDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Domains
-                                <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
                             </a>
                             <div class="dropdown-menu mega-menu" aria-labelledby="domainDropdown">
                                 <div class="row g-0">
@@ -740,7 +768,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Domain
@@ -765,7 +793,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-tags me-2"></i>Domain Extensions
@@ -799,13 +827,12 @@
                                 </div>
                             </div>
                         </li>
-    
+
                         <!-- Services Mega Dropdown -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Services
-                                <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
                             </a>
                             <div class="dropdown-menu mega-menu" aria-labelledby="servicesDropdown">
                                 <div class="row g-0">
@@ -835,7 +862,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-megaphone me-2"></i>Marketing
@@ -860,7 +887,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-headset me-2"></i>Support
@@ -896,13 +923,12 @@
                                 </div>
                             </div>
                         </li>
-    
+
                         <!-- Agency Hub Mega Dropdown -->
                         <li class="nav-item dropdown mega-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="agencyDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Agency Hub
-                                <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
                             </a>
                             <div class="dropdown-menu mega-menu" aria-labelledby="agencyDropdown">
                                 <div class="row g-0">
@@ -930,7 +956,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Growth Tools
@@ -955,7 +981,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="col-md-4">
                                         <div class="p-3">
                                             <h6 class="dropdown-header"><i class="bi bi-gear me-2"></i>Developer Tools
@@ -990,15 +1016,16 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown mega-dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="emailDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="emailDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Email
-                                <i class="bi bi-chevron-down ms-1 d-lg-none"></i>
                             </a>
                             <div class="dropdown-menu mega-menu" aria-labelledby="emailDropdown">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-envelope me-2"></i>Email Services</h6>
+                                            <h6 class="dropdown-header"><i class="bi bi-envelope me-2"></i>Email
+                                                Services</h6>
                                             <a class="dropdown-item" href="maintenance.html">
                                                 <div class="d-flex flex-column">
                                                     <strong>Professional Email</strong>
@@ -1019,10 +1046,11 @@
                                             </a>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-md-6">
                                         <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Email Security</h6>
+                                            <h6 class="dropdown-header"><i class="bi bi-shield-lock me-2"></i>Email
+                                                Security</h6>
                                             <a class="dropdown-item" href="maintenance.html">
                                                 <div class="d-flex flex-column">
                                                     <strong>Email Protection</strong>
@@ -1047,10 +1075,11 @@
                             </div>
                         </li>
                     </ul>
-    
+
                     <!-- Right-side buttons -->
                     <div class="d-flex align-items-center">
-                        <a href="https://my.wefithost.com/login" class="btn btn-link text-dark me-3"><i
+                        <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+                        <a href="https://my.wefithost.com/login" class="btn btn-link text-light me-3"><i
                                 class="bi bi-person"></i> Log In</a>
                         <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
                     </div>
@@ -1058,31 +1087,31 @@
             </div>
         </nav>
     </header>
-    
+
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Get all necessary elements
             const navbarToggler = document.querySelector('.navbar-toggler');
             const navbarCollapse = document.querySelector('.navbar-collapse');
             const backdrop = document.querySelector('.mobile-menu-backdrop');
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
             const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
-            
+
             // Initialize Bootstrap Collapse
             const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
                 toggle: false
             });
-            
+
             // Hamburger menu toggle functionality
-            navbarToggler.addEventListener('click', function() {
+            navbarToggler.addEventListener('click', function () {
                 const isExpanded = this.getAttribute('aria-expanded') === 'true';
                 this.setAttribute('aria-expanded', !isExpanded);
                 backdrop.classList.toggle('show', !isExpanded);
                 document.body.style.overflow = !isExpanded ? 'hidden' : '';
-                
+
                 // Manually trigger show/hide to sync with our backdrop
                 if (!isExpanded) {
                     bsCollapse.show();
@@ -1090,29 +1119,29 @@
                     bsCollapse.hide();
                 }
             });
-            
+
             // Backdrop click closes menu
-            backdrop.addEventListener('click', function() {
+            backdrop.addEventListener('click', function () {
                 navbarToggler.setAttribute('aria-expanded', 'false');
                 bsCollapse.hide();
                 this.classList.remove('show');
                 document.body.style.overflow = '';
                 closeAllDropdowns();
             });
-            
+
             // Enhanced dropdown functionality for mobile
             dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function(e) {
+                toggle.addEventListener('click', function (e) {
                     if (window.innerWidth < 992) { // Mobile only
                         e.preventDefault();
                         e.stopPropagation();
-                        
+
                         const dropdownMenu = this.nextElementSibling;
                         const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                        
+
                         // Close all other dropdowns first
                         closeAllDropdownsExcept(this);
-                        
+
                         // Toggle current dropdown
                         if (isExpanded) {
                             dropdownMenu.classList.remove('show');
@@ -1124,11 +1153,11 @@
                     }
                 });
             });
-            
+
             // Close menu when clicking regular nav links (not dropdown toggles)
             navLinks.forEach(link => {
                 if (!link.classList.contains('dropdown-toggle')) {
-                    link.addEventListener('click', function() {
+                    link.addEventListener('click', function () {
                         if (window.innerWidth < 992) {
                             bsCollapse.hide();
                             navbarToggler.setAttribute('aria-expanded', 'false');
@@ -1139,7 +1168,7 @@
                     });
                 }
             });
-            
+
             // Close all dropdowns except one
             function closeAllDropdownsExcept(exceptToggle) {
                 dropdownToggles.forEach(toggle => {
@@ -1150,7 +1179,7 @@
                     }
                 });
             }
-            
+
             // Close all dropdowns
             function closeAllDropdowns() {
                 dropdownToggles.forEach(toggle => {
@@ -1159,11 +1188,11 @@
                     toggle.setAttribute('aria-expanded', 'false');
                 });
             }
-            
+
             // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth < 992 && 
-                    !e.target.closest('.navbar') && 
+            document.addEventListener('click', function (e) {
+                if (window.innerWidth < 992 &&
+                    !e.target.closest('.navbar') &&
                     navbarCollapse.classList.contains('show')) {
                     bsCollapse.hide();
                     navbarToggler.setAttribute('aria-expanded', 'false');
@@ -1172,9 +1201,9 @@
                     closeAllDropdowns();
                 }
             });
-            
+
             // Close menu when resizing to desktop
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 if (window.innerWidth >= 992) {
                     if (navbarCollapse.classList.contains('show')) {
                         bsCollapse.hide();
@@ -1194,30 +1223,36 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="hero-title">Fortify Your Website Against Cyber Threats</h1>
-                    <p class="hero-subtitle">Enterprise-grade security that actively protects your site from hackers, malware, and DDoS attacks with real-time monitoring.</p>
-                    
+                    <h1 class="hero-title text-light">Fortify Your Website Against Cyber Threats</h1>
+                    <p class="hero-subtitle">Enterprise-grade security that actively protects your site from hackers,
+                        malware, and DDoS attacks with real-time monitoring.</p>
+
                     <div class="mb-4">
-                        <span class="security-badge"><i class="bi bi-shield-lock-fill"></i> Malware Scanning</span>
-                        <span class="security-badge"><i class="bi bi-robot"></i> DDoS Protection</span>
-                        <span class="security-badge"><i class="bi bi-file-earmark-lock2-fill"></i> SSL Certificates</span>
-                        <span class="security-badge"><i class="bi bi-cloud-arrow-down-fill"></i> Automated Backups</span>
+                        <span class="security-badge text-light"><i class="bi bi-shield-lock-fill text-light"></i>
+                            Malware Scanning</span>
+                        <span class="security-badge"><i class="bi bi-robot text-light"></i> DDoS Protection</span>
+                        <span class="security-badge"><i class="bi bi-file-earmark-lock2-fill text-light"></i> SSL
+                            Certificates</span>
+                        <span class="security-badge"><i class="bi bi-cloud-arrow-down-fill text-light"></i> Automated
+                            Backups</span>
                     </div>
-                    
+
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="#plans" class="btn btn-primary btn-lg px-4 py-3">Get Protected Today</a>
+                        <a href="#plans" class="btn btn-secondary btn-lg px-4 py-3">Get Protected Today</a>
                         <a href="#features" class="btn btn-outline-light btn-lg px-4 py-3">Explore Features</a>
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
-                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Secure Server Room" class="img-fluid rounded-3 shadow" style="border: 2px solid rgba(255,255,255,0.1);">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        alt="Secure Server Room" class="img-fluid rounded-3 shadow"
+                        style="border: 2px solid rgba(255,255,255,0.1);">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Trust Badges -->
-    <section class="py-4 bg-light">
+    <!-- <section class="py-4 bg-light">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-auto text-center px-4 py-2">
@@ -1238,7 +1273,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Security Stats -->
     <section class="py-5 py-lg-7 bg-white">
@@ -1247,22 +1282,26 @@
                 <div class="col-md-3">
                     <div class="stat-number">99.9%</div>
                     <div class="stat-label">Uptime Guarantee</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/3161/3161837.png" alt="Uptime" height="60" class="mt-3 opacity-75">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3161/3161837.png" alt="Uptime" height="60"
+                        class="mt-3 opacity-75">
                 </div>
                 <div class="col-md-3">
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Security Monitoring</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913100.png" alt="Monitoring" height="60" class="mt-3 opacity-75">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913100.png" alt="Monitoring" height="60"
+                        class="mt-3 opacity-75">
                 </div>
                 <div class="col-md-3">
                     <div class="stat-number">5 min</div>
                     <div class="stat-label">DDoS Response Time</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Response Time" height="60" class="mt-3 opacity-75">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Response Time" height="60"
+                        class="mt-3 opacity-75">
                 </div>
                 <div class="col-md-3">
                     <div class="stat-number">100k+</div>
                     <div class="stat-label">Threats Blocked Daily</div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/2491/2491905.png" alt="Threats Blocked" height="60" class="mt-3 opacity-75">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2491/2491905.png" alt="Threats Blocked" height="60"
+                        class="mt-3 opacity-75">
                 </div>
             </div>
         </div>
@@ -1274,59 +1313,72 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <h2 class="section-title">Comprehensive Website Protection</h2>
-                    <p class="lead">Our Secure Hosting includes everything you need to protect your website and customer data from evolving cyber threats.</p>
+                    <p class="lead">Our Secure Hosting includes everything you need to protect your website and customer
+                        data from evolving cyber threats.</p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="feature-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        </div>
                         <div class="p-4">
                             <div class="feature-icon">
                                 <i class="bi bi-shield-lock fs-3"></i>
                             </div>
                             <h3>Malware Protection</h3>
-                            <p class="text-muted">Daily scans detect and remove malware, viruses, and suspicious code before they can harm your site.</p>
+                            <p class="text-muted">Daily scans detect and remove malware, viruses, and suspicious code
+                                before they can harm your site.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="feature-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        </div>
                         <div class="p-4">
                             <div class="feature-icon">
                                 <i class="bi bi-shield-check fs-3"></i>
                             </div>
                             <h3>Web Application Firewall</h3>
-                            <p class="text-muted">Advanced WAF blocks SQL injections, XSS attacks, and other OWASP Top 10 threats in real-time.</p>
+                            <p class="text-muted">Advanced WAF blocks SQL injections, XSS attacks, and other OWASP Top
+                                10 threats in real-time.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                        <div class="feature-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                        </div>
                         <div class="p-4">
                             <div class="feature-icon">
                                 <i class="bi bi-lightning-charge fs-3"></i>
                             </div>
                             <h3>DDoS Mitigation</h3>
-                            <p class="text-muted">Enterprise-grade protection against layer 3/4 and layer 7 DDoS attacks with automatic detection.</p>
+                            <p class="text-muted">Enterprise-grade protection against layer 3/4 and layer 7 DDoS attacks
+                                with automatic detection.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                        <div class="feature-img"
+                            style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');">
+                        </div>
                         <div class="p-4">
                             <div class="feature-icon">
                                 <i class="bi bi-cloud-arrow-down fs-3"></i>
                             </div>
                             <h3>Automated Backups</h3>
-                            <p class="text-muted">Daily encrypted backups with 30-day retention and one-click restore functionality.</p>
+                            <p class="text-muted">Daily encrypted backups with 30-day retention and one-click restore
+                                functionality.</p>
                         </div>
                     </div>
                 </div>
@@ -1340,8 +1392,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h2 class="section-title">How Secure Is Your Current Hosting?</h2>
-                    <p>Most hosting providers offer basic security that leaves your site vulnerable to sophisticated threats. Our Secure Hosting provides enterprise-grade protection that adapts to new attack vectors.</p>
-                    
+                    <p>Most hosting providers offer basic security that leaves your site vulnerable to sophisticated
+                        threats. Our Secure Hosting provides enterprise-grade protection that adapts to new attack
+                        vectors.</p>
+
                     <div class="security-level mt-5">
                         <div class="security-level-marker" style="left: 20%;">
                             <i class="bi bi-shield"></i>
@@ -1356,7 +1410,7 @@
                             <p>WeFitHost</p>
                         </div>
                     </div>
-                    
+
                     <div class="row mt-4">
                         <div class="col-4">
                             <small class="text-muted">Shared Hosting</small>
@@ -1371,7 +1425,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="security-visual">
-                        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Security Dashboard" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                            alt="Security Dashboard" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -1384,10 +1439,11 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <h2 class="section-title">Threats vs. Our Protection</h2>
-                    <p class="lead">We don't just detect threats - we actively prevent them before they can impact your site.</p>
+                    <p class="lead">We don't just detect threats - we actively prevent them before they can impact your
+                        site.</p>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="threat-card bg-white p-4 mb-4">
@@ -1397,7 +1453,8 @@
                             </div>
                             <div class="col-md-4">
                                 <h4 class="mb-1">Malware Infections</h4>
-                                <p class="mb-0 text-muted">Malicious code that can steal data or take control of your site</p>
+                                <p class="mb-0 text-muted">Malicious code that can steal data or take control of your
+                                    site</p>
                             </div>
                             <div class="col-md-1 text-center">
                                 <i class="bi bi-arrow-right fs-1 text-muted d-none d-md-block"></i>
@@ -1412,7 +1469,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="threat-card bg-white p-4 mb-4">
                         <div class="row align-items-center">
                             <div class="col-md-2 text-center">
@@ -1435,7 +1492,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="threat-card bg-white p-4">
                         <div class="row align-items-center">
                             <div class="col-md-2 text-center">
@@ -1469,57 +1526,73 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-lg-8 text-center">
                     <h2 class="section-title">Our Security in Action</h2>
-                    <p class="lead">A multi-layered defense system that works around the clock to protect your website</p>
+                    <p class="lead">A multi-layered defense system that works around the clock to protect your website
+                    </p>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="row align-items-center">
                                 <div class="col-md-4 mb-3 mb-md-0">
-                                    <div class="timeline-img" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                                    <div class="timeline-img"
+                                        style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4>1. Threat Detection</h4>
-                                    <p>Our AI-powered systems continuously monitor for suspicious activity, malware signatures, and attack patterns using machine learning and global threat intelligence feeds.</p>
+                                    <p>Our AI-powered systems continuously monitor for suspicious activity, malware
+                                        signatures, and attack patterns using machine learning and global threat
+                                        intelligence feeds.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="timeline-item">
                             <div class="row align-items-center">
                                 <div class="col-md-4 mb-3 mb-md-0">
-                                    <div class="timeline-img" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                                    <div class="timeline-img"
+                                        style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4>2. Immediate Response</h4>
-                                    <p>When a threat is detected, our systems automatically block malicious traffic, quarantine infected files, and alert our security team for further investigation.</p>
+                                    <p>When a threat is detected, our systems automatically block malicious traffic,
+                                        quarantine infected files, and alert our security team for further
+                                        investigation.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="timeline-item">
                             <div class="row align-items-center">
                                 <div class="col-md-4 mb-3 mb-md-0">
-                                    <div class="timeline-img" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');"></div>
+                                    <div class="timeline-img"
+                                        style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4>3. Attack Mitigation</h4>
-                                    <p>For DDoS attacks, traffic is routed through our global scrubbing centers where malicious packets are filtered out before reaching your server, ensuring uninterrupted service.</p>
+                                    <p>For DDoS attacks, traffic is routed through our global scrubbing centers where
+                                        malicious packets are filtered out before reaching your server, ensuring
+                                        uninterrupted service.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="timeline-item">
                             <div class="row align-items-center">
                                 <div class="col-md-4 mb-3 mb-md-0">
-                                    <div class="timeline-img" style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');"></div>
+                                    <div class="timeline-img"
+                                        style="background-image: url('https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');">
+                                    </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4>4. Recovery & Reporting</h4>
-                                    <p>If any damage occurs, automated backups can restore your site within minutes. Detailed security reports provide insights to help prevent future attacks.</p>
+                                    <p>If any damage occurs, automated backups can restore your site within minutes.
+                                        Detailed security reports provide insights to help prevent future attacks.</p>
                                 </div>
                             </div>
                         </div>
@@ -1538,7 +1611,7 @@
                     <p class="lead">All plans include our 30-day money-back guarantee and 24/7 security monitoring.</p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="plan-card h-100">
@@ -1549,22 +1622,29 @@
                         </div>
                         <div class="plan-body">
                             <p class="text-muted mb-4">Basic protection for personal websites and blogs</p>
-                            
+
                             <ul class="list-unstyled mb-4">
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Malware Scanning (Weekly)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Basic Web Application Firewall</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free SSL Certificate</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Automated Backups (7-day)</li>
-                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> DDoS Protection</li>
-                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> PCI Compliance</li>
-                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> Emergency Hack Repair</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Malware Scanning (Weekly)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Basic
+                                    Web Application Firewall</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free
+                                    SSL Certificate</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Automated Backups (7-day)</li>
+                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> DDoS Protection
+                                </li>
+                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> PCI Compliance
+                                </li>
+                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> Emergency Hack
+                                    Repair</li>
                             </ul>
-                            
+
                             <a href="#" class="btn btn-outline-primary w-100">Get Essential</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="plan-card h-100 popular">
                         <div class="popular-badge">RECOMMENDED</div>
@@ -1575,22 +1655,29 @@
                         </div>
                         <div class="plan-body">
                             <p class="text-muted mb-4">Complete protection for business websites and e-commerce</p>
-                            
+
                             <ul class="list-unstyled mb-4">
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Malware Scanning (Daily)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Advanced Web Application Firewall</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free SSL Certificate</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Automated Backups (30-day)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> DDoS Protection (10Gbps)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> PCI Compliance</li>
-                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> Emergency Hack Repair</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Malware Scanning (Daily)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Advanced Web Application Firewall</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free
+                                    SSL Certificate</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Automated Backups (30-day)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> DDoS
+                                    Protection (10Gbps)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> PCI
+                                    Compliance</li>
+                                <li class="plan-feature"><i class="bi bi-x-circle text-muted me-2"></i> Emergency Hack
+                                    Repair</li>
                             </ul>
-                            
+
                             <a href="#" class="btn btn-primary w-100">Get Business</a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="plan-card h-100">
                         <div class="plan-header">
@@ -1600,25 +1687,33 @@
                         </div>
                         <div class="plan-body">
                             <p class="text-muted mb-4">Maximum protection for high-value websites and applications</p>
-                            
+
                             <ul class="list-unstyled mb-4">
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Malware Scanning (Real-time)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Premium Web Application Firewall</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free SSL Certificate</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Automated Backups (90-day)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> DDoS Protection (100Gbps)</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> PCI Compliance</li>
-                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Emergency Hack Repair</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Malware Scanning (Real-time)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Premium Web Application Firewall</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> Free
+                                    SSL Certificate</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Automated Backups (90-day)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> DDoS
+                                    Protection (100Gbps)</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i> PCI
+                                    Compliance</li>
+                                <li class="plan-feature"><i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    Emergency Hack Repair</li>
                             </ul>
-                            
+
                             <a href="#" class="btn btn-outline-primary w-100">Get Enterprise</a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="text-center mt-5">
-                <p class="text-muted">Need custom security solutions? <a href="#" class="text-primary">Contact our security team</a> for enterprise-grade protection.</p>
+                <p class="text-muted">Need custom security solutions? <a href="#" class="text-primary">Contact our
+                        security team</a> for enterprise-grade protection.</p>
             </div>
         </div>
     </section>
@@ -1632,7 +1727,7 @@
                     <p class="lead">Thousands of websites rely on our Secure Hosting for peace of mind.</p>
                 </div>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-card p-4 h-100">
@@ -1643,9 +1738,12 @@
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
-                        <p class="testimonial-quote">"After our e-commerce site was hacked, we switched to WeFitHost Secure Hosting. Their malware protection and daily backups gave us the confidence to focus on growing our business."</p>
+                        <p class="testimonial-quote">"After our e-commerce site was hacked, we switched to WeFitHost
+                            Secure Hosting. Their malware protection and daily backups gave us the confidence to focus
+                            on growing our business."</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." width="50" height="50" class="rounded-circle me-3">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." width="50"
+                                height="50" class="rounded-circle me-3">
                             <div>
                                 <h6 class="mb-0">Sarah Johnson</h6>
                                 <small class="text-muted">CEO, Boutique Retail</small>
@@ -1653,7 +1751,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="feature-card p-4 h-100">
                         <div class="mb-4">
@@ -1663,9 +1761,11 @@
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
-                        <p class="testimonial-quote">"The DDoS protection saved us during a major attack that would have taken our site down for days. WeFitHost's security team handled everything seamlessly."</p>
+                        <p class="testimonial-quote">"The DDoS protection saved us during a major attack that would have
+                            taken our site down for days. WeFitHost's security team handled everything seamlessly."</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." width="50" height="50" class="rounded-circle me-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." width="50"
+                                height="50" class="rounded-circle me-3">
                             <div>
                                 <h6 class="mb-0">Michael Thompson</h6>
                                 <small class="text-muted">CTO, SaaS Platform</small>
@@ -1673,7 +1773,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col-md-4">
                     <div class="feature-card p-4 h-100">
                         <div class="mb-4">
@@ -1683,9 +1783,12 @@
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
                         </div>
-                        <p class="testimonial-quote">"As a financial services company, security is non-negotiable. WeFitHost's PCI-compliant hosting and regular audits meet all our compliance requirements."</p>
+                        <p class="testimonial-quote">"As a financial services company, security is non-negotiable.
+                            WeFitHost's PCI-compliant hosting and regular audits meet all our compliance requirements."
+                        </p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="David L." width="50" height="50" class="rounded-circle me-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="David L." width="50"
+                                height="50" class="rounded-circle me-3">
                             <div>
                                 <h6 class="mb-0">Lisa Chen</h6>
                                 <small class="text-muted">Security Officer, FinTech</small>
@@ -1706,83 +1809,115 @@
                     <p class="lead">Get answers to common questions about website security and hosting.</p>
                 </div>
             </div>
-            
+
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="accordion" id="faqAccordion">
                         <div class="faq-item">
                             <div class="faq-header" id="headingOne">
-                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     What's the difference between Secure Hosting and regular hosting?
                                 </button>
                             </div>
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#faqAccordion">
                                 <div class="faq-body">
-                                    <p>Secure Hosting includes additional layers of protection like web application firewalls, malware scanning, DDoS mitigation, and automated backups that aren't typically included with regular hosting plans. It's designed specifically to prevent security breaches rather than just host your website.</p>
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security Difference" class="img-fluid rounded mt-3">
+                                    <p>Secure Hosting includes additional layers of protection like web application
+                                        firewalls, malware scanning, DDoS mitigation, and automated backups that aren't
+                                        typically included with regular hosting plans. It's designed specifically to
+                                        prevent security breaches rather than just host your website.</p>
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Security Difference" class="img-fluid rounded mt-3">
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="faq-item">
                             <div class="faq-header" id="headingTwo">
-                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     Do I still need an SSL certificate with Secure Hosting?
                                 </button>
                             </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#faqAccordion">
                                 <div class="faq-body">
-                                    <p>No, all Secure Hosting plans include a free SSL certificate to encrypt data between your visitors and your website. We automatically install and renew it for you, ensuring your site always shows the secure padlock icon in browsers.</p>
-                                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SSL Certificate" class="img-fluid rounded mt-3">
+                                    <p>No, all Secure Hosting plans include a free SSL certificate to encrypt data
+                                        between your visitors and your website. We automatically install and renew it
+                                        for you, ensuring your site always shows the secure padlock icon in browsers.
+                                    </p>
+                                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="SSL Certificate" class="img-fluid rounded mt-3">
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="faq-item">
                             <div class="faq-header" id="headingThree">
-                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     How quickly can you restore my site if it gets hacked?
                                 </button>
                             </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#faqAccordion">
                                 <div class="faq-body">
-                                    <p>With our automated backups, we can typically restore your site to a clean state within minutes. For Enterprise plans with Emergency Hack Repair, our security team will personally clean and restore your site within 2 hours of detection, including malware removal and vulnerability patching.</p>
-                                    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Backup Restoration" class="img-fluid rounded mt-3">
+                                    <p>With our automated backups, we can typically restore your site to a clean state
+                                        within minutes. For Enterprise plans with Emergency Hack Repair, our security
+                                        team will personally clean and restore your site within 2 hours of detection,
+                                        including malware removal and vulnerability patching.</p>
+                                    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                                        alt="Backup Restoration" class="img-fluid rounded mt-3">
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="faq-item">
                             <div class="faq-header" id="headingFour">
-                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     Can I add Secure Hosting to my existing WeFitHost plan?
                                 </button>
                             </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#faqAccordion">
                                 <div class="faq-body">
-                                    <p>Yes! Secure Hosting can be added to any existing hosting plan for an additional monthly fee. Our security team will handle the migration of your security settings and ensure all protections are properly configured. Contact our support team to discuss upgrade options.</p>
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Upgrade Process" class="img-fluid rounded mt-3">
+                                    <p>Yes! Secure Hosting can be added to any existing hosting plan for an additional
+                                        monthly fee. Our security team will handle the migration of your security
+                                        settings and ensure all protections are properly configured. Contact our support
+                                        team to discuss upgrade options.</p>
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="Upgrade Process" class="img-fluid rounded mt-3">
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="faq-item">
                             <div class="faq-header" id="headingFive">
-                                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     What happens if my site gets DDoSed?
                                 </button>
                             </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#faqAccordion">
                                 <div class="faq-body">
-                                    <p>Our DDoS protection automatically detects and mitigates attacks in real-time, routing malicious traffic away from your server while allowing legitimate visitors through. Business plans include protection against attacks up to 10Gbps, while Enterprise plans handle up to 100Gbps - enough to withstand even the largest attacks.</p>
-                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="DDoS Protection" class="img-fluid rounded mt-3">
+                                    <p>Our DDoS protection automatically detects and mitigates attacks in real-time,
+                                        routing malicious traffic away from your server while allowing legitimate
+                                        visitors through. Business plans include protection against attacks up to
+                                        10Gbps, while Enterprise plans handle up to 100Gbps - enough to withstand even
+                                        the largest attacks.</p>
+                                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="DDoS Protection" class="img-fluid rounded mt-3">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="text-center mt-5">
-                        <p>Have more questions? <a href="#" class="text-primary">Contact our security experts</a> for personalized advice.</p>
+                        <p>Have more questions? <a href="#" class="text-primary">Contact our security experts</a> for
+                            personalized advice.</p>
                     </div>
                 </div>
             </div>
@@ -1790,90 +1925,182 @@
     </section>
 
     <!-- CTA -->
-    <section class="py-5 py-lg-7" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white;">
+    <section class="py-5 py-lg-7" style="background: #6B63FF; color: white;">
         <div class="container">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center text-center align-items-center">
                 <div class="col-lg-8">
-                    <h2 class="mb-4">Ready to Secure Your Website?</h2>
-                    <p class="lead mb-5">Don't wait until you're hacked - proactive protection costs less than recovery.</p>
+                    <h2 class="mb-4 text-light text-center">Ready to Secure Your Website?</h2>
+                    <p class="lead mb-5">Don't wait until you're hacked - proactive protection costs less than recovery.
+                    </p>
                     <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <a href="#plans" class="btn btn-primary btn-lg px-5 py-3">Choose Your Plan</a>
+                        <a href="#plans" class="btn btn-light btn-lg px-5 py-3">Choose Your Plan</a>
                         <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">Chat With Security Expert</a>
                     </div>
-                    <p class="mt-4 text-white-50"><i class="bi bi-shield-check me-2"></i>30-day money-back guarantee</p>
+                    <p class="mt-4 text-white-50 col-12 col-lg-5 mx-auto"><i class="bi bi-shield-check me-2"></i>30-day money-back
+                        guarantee</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <footer class="pt-7 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40" class="mb-3">
-                    <p>Enterprise-grade hosting solutions with unmatched security and performance for businesses of all sizes.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-twitter fs-5"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+            <div class="row">
+                <!-- Newsletter & Logo Column (Now first column) -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="mb-4">
+                        <a href="#">
+                            <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
+                                style="max-height: 40px; filter: brightness(0) invert(1);">
+                        </a>
+                        <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+
+                        <!-- Newsletter Form (Moved up) -->
+                        <div class="mb-4">
+                            <h5 style="color: white; font-weight: 600;">Newsletter</h5>
+                            <form class="mb-2">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email"
+                                        style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
+                                    <button class="btn btn-primary" type="submit"
+                                        style="background-color: white; border-color: white; color: #1E293B;">Subscribe</button>
+                                </div>
+                            </form>
+                            <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                        </div>
+
+                         <!-- Social Icons with updated X icon -->
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="mb-4">Hosting</h5>
+
+                <!-- Hosting Column -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Hosting</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">WordPress Hosting</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Secure Hosting</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Cloud Hosting</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">VPS Hosting</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Dedicated Servers</a></li>
+                        <li class="mb-2"><a href="shared-hosting.html"
+                                style="color: white; text-decoration: none;">Shared Hosting</a></li>
+                        <li class="mb-2"><a href="wordpress-hosting.html"
+                                style="color: white; text-decoration: none;">WordPress Hosting</a></li>
+                        <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS
+                                Hosting</a></li>
+                        <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud
+                                Hosting</a></li>
+                        <li class="mb-2"><a href="reseller-hosting.html"
+                                style="color: white; text-decoration: none;">Reseller Hosting</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="mb-4">Security</h5>
+
+
+                <!-- Domains Column 
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Domains</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="domain-registration.html" style="color: white; text-decoration: none;">Register Domain</a></li>
+                    <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
+                    <li class="mb-2"><a href="domain-pricing.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
+                    <li class="mb-2"><a href="whois-lookup.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
+                    <li class="mb-2"><a href="ssl-certificates.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
+                </ul>
+            </div> -->
+
+                <!-- Support Column
+            
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 style="color: white; font-weight: 600;">Support</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="knowledgebase.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
+                    <li class="mb-2"><a href="tutorials.html" style="color: white; text-decoration: none;">Tutorials</a></li>
+                    <li class="mb-2"><a href="status.html" style="color: white; text-decoration: none;">System Status</a></li>
+                    <li class="mb-2"><a href="contact.html" style="color: white; text-decoration: none;">Contact Support</a></li>
+                    <li class="mb-2"><a href="migration.html" style="color: white; text-decoration: none;">Free Migration</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Column (Now last column) -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Company</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">Malware Protection</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">DDoS Protection</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Web Application Firewall</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">SSL Certificates</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Backup Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="mb-4">Support</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">Help Center</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Knowledge Base</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">System Status</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Community</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Tutorials</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2">
-                    <h5 class="mb-4">Legal</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-white-50">Terms of Service</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Cookie Policy</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">GDPR</a></li>
+                        <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                        </li>
+                        <!--<li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li> -->
+                        <!--<li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li> -->
+                        <!--<li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li> -->
+                        <!--<li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li> -->
                     </ul>
                 </div>
             </div>
-            <hr class="my-4 bg-secondary">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2023 WeFitHost. All rights reserved.</p>
+
+            <hr style="border-color: rgba(255,255,255,0.2);">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Proudly protecting websites in 100+ countries</p>
+                <div class="col-md-6">
+                    <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
+                        <li><a href="privacy.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a>
+                        </li>
+                        <li><a href="terms.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms
+                                of Service</a></li>
+                        <li><a href="aup.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a>
+                        </li>
+                        <li><a href="sla.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service
+                                Level Agreement</a></li>
+                        <li><a href="dmca.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </footer>
+    <style>
+        .footerlinkcoor input.form-control {
+            background-color: inherit;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .footerlinkcoor input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footerlinkcoor button.btn {
+            background-color: white;
+            color: #6B63FF;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <!-- Libs JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
 </body>
 
 </html>
