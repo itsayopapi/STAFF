@@ -6814,7 +6814,7 @@ fieldset:disabled .btn {
 /* Converts white to black */
 /* Adjust the size */
 .navbar-brand img {
-    filter: brightness(0) invert(1);     
+    filter: brightness(1) invert(0);     
     max-height: 50px;  
 }
 
@@ -12573,7 +12573,7 @@ fieldset:disabled .btn {
 }
 
 .text-center {
-    text-align: center !important 
+    text-align: left 
 }
 
 .text-decoration-none {
@@ -29663,7 +29663,7 @@ table {
     overflow: hidden;
 }
 
-/* .cloud-hero::before {
+.cloud-hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -29673,7 +29673,7 @@ table {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.03)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
     background-size: cover;
     opacity: 0.1;
-} */
+}
 
 .cloud-hero img {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -29732,3 +29732,76 @@ table {
     }
 }
 
+/* Reseller pahe revamped */
+
+:root {
+    --dark-text: #212529;
+    --medium-text: #495057;
+    --light-bg: #f8f9fa;
+    --primary-color: #6e8efb;
+}
+
+body {
+    color: var(--dark-text);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+}
+
+.bg-light-custom {
+    background-color: var(--light-bg);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.benefit-card {
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.person-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.text-muted-custom {
+    color: var(--medium-text) !important;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--dark-text);
+    background-color: rgba(110, 142, 251, 0.1);
+}
+
+.comparison-table th {
+    background-color: var(--light-bg);
+}
+
+.icon-square {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
