@@ -29733,7 +29733,6 @@ table {
 }
 
 /* Reseller pahe revamped */
-
 :root {
     --dark-text: #212529;
     --medium-text: #495057;
@@ -29804,4 +29803,127 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Blog Page*/
+:root {
+    --dark-text: #212529;
+    --medium-text: #495057;
+    --light-bg: #f8f9fa;
+    --primary-color: #6e8efb;
+    --primary-light: rgba(110, 142, 251, 0.1);
+}
+
+body {
+    color: var(--dark-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.blog-header {
+    background: linear-gradient(135deg, var(--primary-color), #a777e3);
+    color: white;
+    padding: 4rem 0;
+}
+
+.blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.badge-tag {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.sidebar-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.popular-post {
+    transition: background-color 0.3s ease;
+    border-left: 0;
+    border-right: 0;
+}
+
+.popular-post:first-child {
+    border-top: 0;
+}
+
+.popular-post:hover {
+    background-color: var(--light-bg);
+}
+
+.newsletter-form {
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary-color);
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.article-content h2, 
+.article-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.back-to-blog {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .blog-header {
+        padding: 2.5rem 0;
+    }
 }
