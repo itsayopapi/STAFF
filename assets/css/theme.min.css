@@ -29927,3 +29927,677 @@ body {
         padding: 2.5rem 0;
     }
 }
+
+/* DOMAIN TRANSFER */
+/* ==============================================
+   Core Text Visibility Protection
+   ============================================== */
+   .hero-section,
+   .support-section,
+   .cta-section {
+       color: #fff;
+   }
+   
+   .hero-section h1,
+   .hero-section .lead,
+   .hero-section .text-white-50,
+   .hero-section a,
+   .support-section h2,
+   .support-section p,
+   .support-section span,
+   .support-section a,
+   .cta-section h2,
+   .cta-section p,
+   .cta-section a {
+       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+   }
+   
+   /* Make sure links stand out */
+   .hero-section a,
+   .support-section a {
+       text-decoration: underline;
+       text-underline-offset: 3px;
+   }
+   
+   /* ==============================================
+      Section-Specific Styling
+      ============================================== */
+   
+   /* Hero Section */
+   .hero-section {
+       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+       padding: 6rem 0;
+   }
+   
+   /* Feature Cards */
+   .feature-card {
+       border: none;
+       transition: all 0.3s ease;
+       height: 100%;
+       background: #fff;
+   }
+   
+   .feature-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+   }
+   
+   .feature-icon {
+       color: #0d6efd;
+   }
+   
+  /* Pricing Section - Full Visibility Fix */
+.pricing-section {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+.pricing-section h2 {
+    color: #212529;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: none;
+}
+
+.pricing-section .lead {
+    color: #495057;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-table {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table th {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+}
+
+.pricing-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+    color: #212529;
+}
+
+.pricing-table tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.tld {
+    font-weight: 600;
+    color: #212529;
+}
+
+.transfer-price, .renewal-price {
+    color: #0d6efd;
+    font-weight: 600;
+    text-align: center;
+}
+
+.privacy-icon {
+    color: #198754;
+    font-size: 1.25rem;
+    text-align: center;
+    display: block;
+}
+
+.btn-outline-primary {
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    font-weight: 500;
+    margin-top: 2rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Fix for invisible section header */
+section.py-5.bg-light .text-center h2 {
+    color: white !important; /* Dark gray for maximum contrast */
+    font-weight: 700;
+    text-shadow: none !important;
+}
+
+section.py-5.bg-light .text-center .lead.text-muted {
+    color: #495057 !important; /* Slightly darker than Bootstrap's muted */
+    font-size: 1.25rem;
+    opacity: 1 !important;
+}
+
+/* Additional contrast protection */
+.bg-light {
+    background-color: #f8f9fa !important; /* Ensure light background */
+}
+   
+   /* Process Steps */
+   .process-step {
+       position: relative;
+       padding-left: 3rem;
+       height: 100%;
+   }
+   
+   .process-step:before {
+       content: attr(data-step);
+       position: absolute;
+       left: 0;
+       top: 0;
+       font-size: 2rem;
+       font-weight: bold;
+       color: #0d6efd;
+       line-height: 1;
+   }
+   
+   /* Support Section */
+   .support-section {
+       background-color: #212529;
+       border-radius: 0.5rem;
+   }
+   
+   .support-img {
+       max-height: 300px;
+       object-fit: cover;
+       border-radius: 0.3rem;
+   }
+   
+   /* Accordion */
+   .accordion-button:not(.collapsed) {
+       background-color: rgba(13, 110, 253, 0.1);
+       color: #0a58ca;
+   }
+   
+   /* CTA Section */
+   .cta-section {
+       background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+       border-radius: 0.5rem;
+   }
+   
+   /* ==============================================
+      Responsive Adjustments
+      ============================================== */
+   @media (max-width: 767.98px) {
+       .hero-section {
+           padding: 3rem 0;
+           text-align: center;
+       }
+       
+       .process-step {
+           padding-left: 0;
+           padding-top: 2.5rem;
+           text-align: center;
+           margin-bottom: 2rem;
+       }
+       
+       .process-step:before {
+           left: 50%;
+           top: 0;
+           transform: translateX(-50%);
+       }
+       
+       .support-section .col-lg-5 {
+           margin-top: 2rem;
+       }
+   }
+   
+   /* ==============================================
+      Text Contrast Utilities
+      ============================================== */
+   .text-on-dark {
+       color: #fff !important;
+       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+   }
+   
+   .text-on-light {
+       color: #212529 !important;
+   }
+
+
+           --primary: #2c3eaa;
+        --secondary: #1a73e8;
+        --dark: #202124;
+        --light: #f8f9fa;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+      }
+      
+      /* Hero Section */
+      .hero-reseller {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0 5rem;
+      }
+      
+      .hero-title {
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      /* Features Section */
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 8px;
+        height: 100%;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+      
+      /* Pricing Plans */
+      .plan-card {
+        border: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .popular-plan {
+        border: 2px solid var(--primary);
+        position: relative;
+      }
+      
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: var(--primary);
+        color: white;
+        padding: 3px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      
+      .plan-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      
+      /* Dashboard Preview */
+      .dashboard-section {
+        background-color: #f8f9fa;
+      }
+      
+      .dashboard-img {
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      
+      .client-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+      }
+      
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+      }
+      
+      .btn-primary:hover {
+        background-color: #1a237e;
+        border-color: #1a237e;
+      }
+      
+      .btn-outline-primary {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 767.98px) {
+        .hero-reseller {
+          padding: 4rem 0 3rem;
+          text-align: center;
+        }
+        
+        .dashboard-img {
+          margin-top: 2rem;
+        }
+      }
+
+
+       :root {
+        --primary: #2c3eaa;
+        --secondary: #1a73e8;
+        --dark: #202124;
+        --light: #f8f9fa;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+      }
+      
+      /* Hero Section */
+      .hero-reseller {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0 5rem;
+      }
+      
+      .hero-title {
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      /* Features Section */
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 8px;
+        height: 100%;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+      
+      /* Pricing Plans */
+      .plan-card {
+        border: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .popular-plan {
+        border: 2px solid var(--primary);
+        position: relative;
+      }
+      
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: var(--primary);
+        color: white;
+        padding: 3px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      
+      .plan-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      
+      /* Dashboard Preview */
+      .dashboard-section {
+        background-color: #f8f9fa;
+      }
+      
+      .dashboard-img {
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      
+      .client-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+      }
+      
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+      }
+      
+      .btn-primary:hover {
+        background-color: #1a237e;
+        border-color: #1a237e;
+      }
+      
+      .btn-outline-primary {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 767.98px) {
+        .hero-reseller {
+          padding: 4rem 0 3rem;
+          text-align: center;
+        }
+        
+        .dashboard-img {
+          margin-top: 2rem;
+        }
+      }
+
+
+      /* Reseller Plansa*/
+
+      :root {
+        --primary: #2c3eaa;
+        --secondary: #1a73e8;
+        --dark: #202124;
+        --light: #f8f9fa;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+      }
+      
+      /* Hero Section */
+      .hero-reseller {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0 5rem;
+      }
+      
+      .hero-title {
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      /* Features Section */
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 8px;
+        height: 100%;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+      
+      /* Pricing Plans */
+      .plan-card {
+        border: none;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+      
+      .popular-plan {
+        border: 2px solid var(--primary);
+        position: relative;
+      }
+      
+      .popular-badge {
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background: var(--primary);
+        color: white;
+        padding: 3px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      
+      .plan-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      
+      /* Dashboard Preview */
+      .dashboard-section {
+        background-color: #f8f9fa;
+      }
+      
+      .dashboard-img {
+        border-radius: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      
+      .client-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        color: white;
+      }
+      
+      /* Buttons */
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+      }
+      
+      .btn-primary:hover {
+        background-color: #1a237e;
+        border-color: #1a237e;
+      }
+      
+      .btn-outline-primary {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+      
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 767.98px) {
+        .hero-reseller {
+          padding: 4rem 0 3rem;
+          text-align: center;
+        }
+        
+        .dashboard-img {
+          margin-top: 2rem;
+        }
+      }
