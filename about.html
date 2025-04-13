@@ -830,115 +830,350 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <div  style="background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url(./assets/img/BG-WAVE.svg);      background-position: center; background-size: cover; background-repeat: no-repeat">
 
-<!-- Our Team -->
-<section class="pt-19 pb-5" id="speaker">
+<!-- Team Section with Blur-on-Hover Effect -->
+<section class="py-9" id="team">
     <div class="container">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6" data-cue="fadeIn">
-                <div class="pb-2 text-center">
-                    <h3>Our Team</h3>
-                    <p>We wouldn't be where we are without our team!</p>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center mb-8" data-cue="fadeIn">
+                <span class="text-primary fw-semibold mb-3 d-block">OUR EXPERT TEAM</span>
+                <h2 class="display-5 mb-4">The Professionals Behind WeFitHost</h2>
+                <p class="lead text-muted">Hover to learn more about each team member</p>
             </div>
-            <div class="col-md-3"></div>
         </div>
-        <div class="row pt-5 mt-md-5">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/Mr Shola.jpg" 
-                                 alt="Adeshola Adeyeye - CEO & Founder" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0">Adeshola Adeyeye</h5>
-                                <h4>CEO & Founder</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/Ayo.jpg" 
-                                 alt="Ayomide Hassan - Head of Developers" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0">Ayomide Hassan</h5>
-                                <h4>Head of Developers</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/Micheal.jpg" 
-                                 alt="Uchechukwu Michael Ekeh - QA Tester Lead" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0">Uchechukwu Michael Ekeh </h5>
-                                <h4>QA Tester Lead</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/Wale.jpg" 
-                                 alt="" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0"> Wale Emmauel</h5>
-                                <h4></h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/divine.jpg" 
-                                 alt="Divine - Developer" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0">Divine Success</h5>
-                                <h4>Developer</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 mt-3">
-                        <div class="text-center" data-cue="zoomIn">
-                            <img src="./assets/img/About page/Uchenna.jpg" 
-                                 alt="Uchenna Agwunobi - Marketing Manager" 
-                                 class="img-fluid rounded-circle team-photo"
-                                 width="300"
-                                 height="300"
-                                 loading="lazy">
-                            <div class="teamname pt-3">
-                                <h5 class="mb-0">Uchenna Agwunobi</h5>
-                                <h4>QA Tester</h4>
-                            </div>
+        
+        <div class="row g-4 g-lg-5">
+            <!-- Team Member 1 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/Mr Shola.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Adeshola Adeyeye"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Adeshola Adeyeye</h4>
+                            <p class="text-dark mb-4">CTO & Co-Founder</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="adeshola">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
+            
+            <!-- Team Member 2 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/Ayo.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Ayomide Hassan"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Ayomide Hassan</h4>
+                            <p class="text-dark mb-4">Head of Developers</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="ayomide">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 3 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/Micheal.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Uchechukwu Michael Ekeh"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Uchechukwu Michael Ekeh</h4>
+                            <p class="text-dark mb-4">QA Tester Lead</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="michael">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 4 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/Wale.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Wale Emmanuel"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Wale Emmanuel</h4>
+                            <p class="text-dark mb-4">Support Lead</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="wale">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 5 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/divine.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Divine Success"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Divine Success</h4>
+                            <p class="text-dark mb-4">Frontend Developer</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="divine">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Member 6 -->
+            <div class="col-md-6 col-lg-4" data-cue="zoomIn">
+                <div class="team-member-card position-relative overflow-hidden rounded-4">
+                    <img src="./assets/img/About page/Uchenna.jpg" 
+                         class="img-fluid w-100 team-member-img" 
+                         alt="Uchenna Agwunobi"
+                         loading="lazy">
+                    <div class="team-member-overlay d-flex flex-column justify-content-center align-items-center">
+                        <div class="text-center px-4">
+                            <h4 class="text-dark mb-2">Uchenna Agwunobi</h4>
+                            <p class="text-dark mb-4">QA Tester</p>
+                            <button class="btn btn-primary px-4 py-2 rounded-pill view-profile-btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#profileModal"
+                                    data-member="uchenna">
+                                View Profile <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<!-- Our Team End -->
 
+<!-- Profile Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+                <button type="button" class="btn-close bg-white rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4 p-md-5">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <img id="modalMemberImage" src="" class="img-fluid rounded-circle shadow" alt="" style="width: 200px; height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="col-md-8">
+                        <h2 id="modalMemberName" class="display-6 mb-2"></h2>
+                        <p id="modalMemberTitle" class="text-primary fw-semibold mb-4 fs-5"></p>
+                        <div id="modalMemberBio" class="text-muted fs-5">
+                            <!-- Bio content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-center pb-4 pb-md-5">
+                <button type="button" class="btn btn-outline-primary px-4 py-2 rounded-pill" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Team Member Card Styles */
+    .team-member-card {
+        aspect-ratio: 1/1;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    
+    .team-member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(107, 99, 255, 0.15);
+    }
+    
+    .team-member-img {
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.4s ease;
+    }
+    
+    .team-member-card:hover .team-member-img {
+        filter: blur(5px) brightness(0.7);
+        transform: scale(1.05);
+    }
+    
+    .team-member-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        background: rgba(107, 99, 255, 0.3);
+        backdrop-filter: blur(2px);
+        transition: all 0.4s ease;
+        padding: 1.5rem;
+    }
+    
+    .team-member-card:hover .team-member-overlay {
+        opacity: 1;
+    }
+    
+    /* Modal Styles */
+    .modal-content {
+        border-radius: 1rem;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        background-color: #f8f9fa;
+    }
+    
+    .modal-header .btn-close {
+        opacity: 1;
+        background-size: 60%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .modal-header .btn-close:hover {
+        background-color: #f0f0f0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 767.98px) {
+        .team-member-card {
+            aspect-ratio: 3/4;
+        }
+        
+        .modal-body {
+            padding: 2rem 1rem;
+        }
+        
+        .modal-body .row {
+            flex-direction: column;
+        }
+        
+        #modalMemberImage {
+            width: 150px !important;
+            height: 150px !important;
+        }
+        
+        #modalMemberName {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        #modalMemberTitle {
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+// Team member data
+const teamMembers = {
+    "adeshola": {
+        name: "Adeshola Adeyeye",
+        title: "CTO & Co-Founder",
+        image: "./assets/img/About page/Mr Shola.jpg",
+        bio: `
+            <p>"As the CTO, my role is to oversee our technical strategy and ensure our platform delivers exceptional performance and reliability. I'm passionate about creating innovative solutions that solve real problems for our customers."</p>
+            <p class="mb-0">When I'm not coding, you can find me mentoring young developers or exploring new technologies that can benefit our customers.</p>
+        `
+    },
+    "ayomide": {
+        name: "Ayomide Hassan",
+        title: "Head of Developers",
+        image: "./assets/img/About page/Ayo.jpg",
+        bio: `
+            <p>"Leading our development team is both a privilege and a responsibility I take seriously. We focus on building robust, scalable solutions while fostering a collaborative environment where every team member can thrive."</p>
+            <p class="mb-0">Outside of work, I enjoy contributing to open-source projects and spending time with my family.</p>
+        `
+    },
+    "michael": {
+        name: "Uchechukwu Michael Ekeh",
+        title: "QA Tester Lead",
+        image: "./assets/img/About page/Micheal.jpg",
+        bio: `
+            <p>"Quality assurance is at the heart of what we do. My team works diligently to ensure every feature we release meets the highest standards of reliability and user experience."</p>
+            <p class="mb-0">In my free time, I enjoy photography and exploring new testing methodologies.</p>
+        `
+    },
+    "wale": {
+        name: "Wale Emmanuel",
+        title: "Support Lead",
+        image: "./assets/img/About page/Wale.jpg",
+        bio: `
+            <p>"Our support team is committed to providing exceptional service to every customer. I believe that great support can turn a good product into an excellent one."</p>
+            <p class="mb-0">When not helping customers, I enjoy reading and playing chess.</p>
+        `
+    },
+    "divine": {
+        name: "Divine Success",
+        title: "Frontend Developer",
+        image: "./assets/img/About page/divine.jpg",
+        bio: `
+            <p>"Creating beautiful, intuitive interfaces is my passion. I love transforming complex requirements into user-friendly experiences that delight our customers."</p>
+            <p class="mb-0">Outside of coding, I'm an avid traveler and amateur photographer.</p>
+        `
+    },
+    "uchenna": {
+        name: "Uchenna Agwunobi",
+        title: "QA Tester",
+        image: "./assets/img/About page/Uchenna.jpg",
+        bio: `
+            <p>"Testing is more than just finding bugs - it's about ensuring the best possible experience for our users. I take pride in being the last line of defense before features reach our customers."</p>
+            <p class="mb-0">In my spare time, I enjoy video games and learning about new testing tools.</p>
+        `
+    }
+};
+
+// Initialize modal with team member data
+document.addEventListener('DOMContentLoaded', function() {
+    const profileModal = document.getElementById('profileModal');
+    
+    if (profileModal) {
+        profileModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const memberId = button.getAttribute('data-member');
+            const member = teamMembers[memberId];
+            
+            if (member) {
+                document.getElementById('modalMemberName').textContent = member.name;
+                document.getElementById('modalMemberTitle').textContent = member.title;
+                document.getElementById('modalMemberImage').src = member.image;
+                document.getElementById('modalMemberImage').alt = member.name;
+                document.getElementById('modalMemberBio').innerHTML = member.bio;
+            }
+        });
+    }
+});
+</script>
   <!-- What Our Customers Say -->
 
     <section class="testimonials" id="speaker">
