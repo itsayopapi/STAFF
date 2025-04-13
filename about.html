@@ -20,6 +20,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <!-- Libs CSS -->
     <link
@@ -1230,23 +1233,33 @@ const teamMembers = {
 
 // Initialize modal with team member data
 document.addEventListener('DOMContentLoaded', function() {
-  const profileModal = document.getElementById('profileModal');
-  
-  if (profileModal) {
-    profileModal.addEventListener('show.bs.modal', function(event) {
-      const button = event.relatedTarget;
-      const memberId = button.getAttribute('data-member');
-      const member = teamMembers[memberId];
-      
-      if (member) {
-        document.getElementById('modalMemberName').textContent = member.name;
-        document.getElementById('modalMemberTitle').textContent = member.title;
-        document.getElementById('modalMemberImage').src = member.image;
-        document.getElementById('modalMemberImage').alt = member.name;
-        document.getElementById('modalMemberBio').innerHTML = member.bio;
-      }
-    });
-  }
+    const profileModal = document.getElementById('profileModal');
+    
+    if (profileModal) {
+        // Event listener for showing the modal
+        profileModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;  // Button that triggered the modal
+            const memberId = button.getAttribute('data-member');
+            const member = teamMembers[memberId];
+            
+            if (member) {
+                document.getElementById('modalMemberName').textContent = member.name;
+                document.getElementById('modalMemberTitle').textContent = member.title;
+                document.getElementById('modalMemberImage').src = member.image;
+                document.getElementById('modalMemberImage').alt = member.name;
+                document.getElementById('modalMemberBio').innerHTML = member.bio;
+            }
+        });
+
+        // Close button functionality
+        const closeButton = profileModal.querySelector('.close-modal-btn'); // Assuming the close button has a class of '.close-modal-btn'
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                const modalInstance = bootstrap.Modal.getInstance(profileModal); // Gets the modal instance
+                modalInstance.hide(); // Hides the modal
+            });
+        }
+    }
 });
 </script>
   <!-- What Our Customers Say -->
@@ -1488,30 +1501,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
             </div>
 
-           
-            <!-- Domains Column 
+            <!-- Domains Column -->
             
             <div class="col-lg-2 col-md-6 mb-4">
                 <h5 style="color: white; font-weight: 600;">Domains</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="domain-registration.html" style="color: white; text-decoration: none;">Register Domain</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Register Domain</a></li>
                     <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
-                    <li class="mb-2"><a href="domain-pricing.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
-                    <li class="mb-2"><a href="whois-lookup.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
                     <li class="mb-2"><a href="ssl-certificates.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
                 </ul>
-            </div> -->
+            </div>
 
-            <!-- Support Column
-            
+            <!-- Support Column -->
             <div class="col-lg-2 col-md-6 mb-4">
                 <h5 style="color: white; font-weight: 600;">Support</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="knowledgebase.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
-                    <li class="mb-2"><a href="tutorials.html" style="color: white; text-decoration: none;">Tutorials</a></li>
-                    <li class="mb-2"><a href="status.html" style="color: white; text-decoration: none;">System Status</a></li>
-                    <li class="mb-2"><a href="contact.html" style="color: white; text-decoration: none;">Contact Support</a></li>
-                    <li class="mb-2"><a href="migration.html" style="color: white; text-decoration: none;">Free Migration</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Tutorials</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">System Status</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Contact Support</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Free Migration</a></li>
                 </ul>
             </div>
 
@@ -1520,10 +1531,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h5 style="color: white; font-weight: 600;">Company</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <!--<li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li> -->
-                    <!--<li class="mb-2"><a href="careers.html" style="color: white; text-decoration: none;">Careers</a></li> -->
-                    <!--<li class="mb-2"><a href="partners.html" style="color: white; text-decoration: none;">Partners</a></li> -->
-                    <!--<li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li> -->
+                    <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Careers</a></li>
+                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Partners</a></li>
+                    <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
                 </ul>
             </div>
         </div>
@@ -1536,11 +1547,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="col-md-6">
                 <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
-                    <li><a href="privacy.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
-                    <li><a href="terms.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
-                    <li><a href="aup.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
-                    <li><a href="sla.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
-                    <li><a href="dmca.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
+                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
+                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
+                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
+                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
+                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
                 </ul>
             </div>
         </div>
@@ -1570,8 +1581,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Footer End -->
 
+
+    
+
     <!-- Libs JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -1582,6 +1600,19 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
     <script src="assets/js/vendors/scrollcue.js"></script>
 
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
 
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
