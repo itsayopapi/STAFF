@@ -30596,4 +30596,618 @@ section.py-5.bg-light .text-center .lead.text-muted {
         }
       };
 
-      
+      /*Secure Hosting Page*/
+      /* Custom CSS - Minimal additions to Bootstrap */
+.security-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);
+  padding: 5rem 0;
+  color: white;
+}
+
+.hero-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.security-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.badge-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.security-overlay-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(107, 99, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+}
+
+/* Metrics Section */
+.security-metrics {
+  padding: 4rem 0;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  line-height: 1;
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0.5rem 0 1rem;
+}
+
+.metric-icon img {
+  filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover .metric-icon img {
+  filter: grayscale(0) opacity(1);
+}
+
+/* Features Section */
+.security-features {
+  padding: 5rem 0;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-header .lead {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.feature-image {
+  height: 150px;
+  overflow: hidden;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+.feature-content {
+  padding: 1.5rem;
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Security Comparison */
+.security-comparison {
+  padding: 5rem 0;
+}
+
+.security-meter {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.meter-bar {
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 5px;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.meter-level {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5 0%, #6b63ff 100%);
+  border-radius: 5px;
+}
+
+.meter-tooltip {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  background: #6b63ff;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.meter-tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #6b63ff;
+}
+
+.meter-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.meter-markers {
+  position: absolute;
+  width: 100%;
+  top: -15px;
+}
+
+.marker {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.marker i {
+  font-size: 1.5rem;
+  color: #9ca3af;
+}
+
+.marker:nth-child(3) i {
+  color: #6b63ff;
+}
+
+.security-feature-list {
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Threat Protection */
+.threat-protection {
+  padding: 5rem 0;
+  background-color: #f9fafb;
+}
+
+.threat-table {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.threat-row {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.threat-info, .protection-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.threat-icon, .protection-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.threat-icon {
+  background-color: #ef4444;
+}
+
+.protection-icon {
+  background-color: #6b63ff;
+}
+
+.threat-arrow {
+  padding: 0 1rem;
+  color: #9ca3af;
+  font-size: 1.5rem;
+}
+
+/* Process Steps */
+.security-process {
+  padding: 5rem 0;
+}
+
+.process-steps {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.process-step {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #6b63ff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.step-content {
+  flex: 1;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.step-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.step-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.step-text {
+  padding: 1.5rem;
+}
+
+.step-text h3 {
+  margin-bottom: 0.75rem;
+}
+
+/* Pricing Plans */
+.pricing-plans {
+  padding: 5rem 0;
+}
+
+.plan-card {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.plan-card.featured {
+  border-top: 4px solid #6b63ff;
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  background: #6b63ff;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plan-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.plan-header h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.plan-price {
+  margin: 1rem 0 0.25rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.period {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.plan-body {
+  padding: 1.5rem;
+}
+
+.plan-description {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.plan-features {
+  margin-bottom: 2rem;
+}
+
+.plan-features li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 5rem 0;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.rating {
+  color: #f59e0b;
+  margin-bottom: 1rem;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.quote:before {
+  content: '"';
+  font-size: 3rem;
+  color: #e5e7eb;
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  z-index: 0;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h6 {
+  margin-bottom: 0.25rem;
+}
+
+.author-info span {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 5rem 0;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.faq-header button {
+  width: 100%;
+  text-align: left;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-header button:after {
+  content: '+';
+  font-size: 1.25rem;
+}
+
+.faq-header button.collapsed:after {
+  content: '+';
+}
+
+.faq-header button:not(.collapsed):after {
+  content: '-';
+}
+
+.faq-body {
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* CTA Section */
+.security-cta {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+  
+  .threat-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .threat-arrow {
+    transform: rotate(90deg);
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .security-hero, 
+  .security-metrics,
+  .security-features,
+  .security-comparison,
+  .threat-protection,
+  .security-process,
+  .pricing-plans,
+  .testimonials,
+  .faq-section,
+  .security-cta {
+    padding: 3rem 0;
+  }
+  
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+  
+  .process-step {
+    flex-direction: column;
+  }
+  
+  .step-number {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
