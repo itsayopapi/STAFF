@@ -1858,8 +1858,103 @@
 
 <!-- Footer End -->
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle yearly/monthly pricing
+        document.addEventListener('DOMContentLoaded', function () {
 
-    
+            const toggleButtons = document.querySelectorAll('.tab__price');
+            const pricingCards = document.querySelectorAll('.card-plan');
+
+            const pricingData = [
+                { monthly: 29, yearly: (29 * 12 * 0.8).toFixed(0) }, // Starter
+                { monthly: 59, yearly: (59 * 12 * 0.8).toFixed(0)}, // Professional
+                { monthly: 99, yearly: (99 * 12 * 0.8).toFixed(0)} // Business
+            ]
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function(){
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const selectedPlan = this.getAttribute('data-tab');
+
+                    console.log(selectedPlan);
+                    pricingCards.forEach((card, index) => {
+                        const priceWrapper = card.querySelector('.card-plan__price');
+                        console.log(priceWrapper)
+                        const priceSpan = priceWrapper.querySelector('span');
+                        const periodSub = priceWrapper.querySelector('sub');
+
+                       
+
+                        if (selectedPlan === 'yearly') {
+                            priceSpan.textContent = pricingData[index].yearly;
+                            periodSub.textContent = '/YEAR';
+
+                            console.log("the price span is: ", priceSpan);
+                            console.log("the period sub is: ", periodSub);
+                        }
+
+                        else {
+                            priceSpan.textContent = pricingData[index].monthly;
+                            periodSub.textContent = '/MONTH';
+                        }
+                    })
+                })
+            })
+
+            // Navbar scroll behavior from your provided code
+            const header = document.querySelector('.custom-header');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', function () {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.classList.remove('scrolled-up');
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !header.classList.contains('scrolled-down')) {
+                    // Scroll down
+                    header.classList.remove('scrolled-up');
+                    header.classList.add('scrolled-down');
+                } else if (currentScroll < lastScroll && header.classList.contains('scrolled-down')) {
+                    // Scroll up
+                    header.classList.remove('scrolled-down');
+                    header.classList.add('scrolled-up');
+                }
+
+                lastScroll = currentScroll;
+            });
+
+            // Keep dropdown open when hovering
+            const megaDropdowns = document.querySelectorAll('.mega-dropdown');
+
+            megaDropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                const menu = dropdown.querySelector('.dropdown-menu');
+
+                dropdown.addEventListener('mouseenter', function () {
+                    const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
+                    if (!dropdownInstance) {
+                        new bootstrap.Dropdown(toggle).show();
+                    } else {
+                        dropdownInstance.show();
+                    }
+                });
+
+                dropdown.addEventListener('mouseleave', function () {
+                    const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
+                    if (dropdownInstance) {
+                        dropdownInstance.hide();
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Libs JS -->
     <script
