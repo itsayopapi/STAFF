@@ -3442,7 +3442,333 @@ document.addEventListener("DOMContentLoaded", function() {
         color: white;
         border: 1px solid #6b63ff;
       }
+
+      /* Modern Pricing Section Styling */
+.pricing-section {
+  background: #f8f9fa;
+}
+
+.pricing-toggle {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.toggle-container {
+  display: flex;
+  background: #e9ecef;
+  border-radius: 50px;
+  padding: 5px;
+  position: relative;
+}
+
+.toggle-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  color: #fff;
+}
+
+.toggle-highlight {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: calc(50% - 5px);
+  height: calc(100% - 10px);
+  background: #4e66f8;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.discount-badge {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.discount-badge img {
+  margin-right: 5px;
+}
+
+/* New Scroller Design */
+.pricing-scroller {
+  position: relative;
+  padding: 20px 0;
+}
+
+.scroller-inner {
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #4e66f8 #f1f1f1;
+}
+
+.scroller-inner::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroller-inner::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scroller-inner::-webkit-scrollbar-thumb {
+  background-color: #4e66f8;
+  border-radius: 10px;
+}
+
+.plan-cards {
+  display: inline-flex;
+  gap: 25px;
+  padding: 0 15px;
+  min-width: 100%;
+}
+
+.plan-cards:not(.active) {
+  display: none;
+}
+
+/* Pricing Card Design */
+.pricing-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  width: 280px;
+  padding: 25px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.pricing-card.popular {
+  border: 2px solid #4e66f8;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  background: #4e66f8;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-icon {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.card-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2a2a2a;
+}
+
+.card-header p {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.card-pricing {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.price-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.discount-badge {
+  background: #f8f9fa;
+  color: #4e66f8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.current-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  line-height: 1;
+}
+
+.current-price sup {
+  font-size: 1rem;
+  top: -1em;
+}
+
+.current-price sub {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.renewal-price {
+  font-size: 13px;
+  color: #6c757d;
+  margin-top: 5px;
+}
+
+.card-features {
+  margin-bottom: 25px;
+}
+
+.card-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-features li {
+  padding: 8px 0;
+  color: #495057;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.card-features li i {
+  color: #4e66f8;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.more-features-toggle {
+  text-align: center;
+  margin-top: 15px;
+  cursor: pointer;
+  color: #4e66f8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.more-features-toggle i {
+  transition: transform 0.3s ease;
+}
+
+.more-features {
+  display: none;
+  padding-top: 10px;
+}
+
+.signup-btn {
+  display: block;
+  text-align: center;
+  background: #4e66f8;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #3a56f5;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pricing-toggle {
+    max-width: 250px;
+  }
+  
+  .discount-badge {
+    right: -70px;
+  }
+  
+  .pricing-card {
+    width: 260px;
+  }
+}
     </style>
+    <script>
+      // Tab Switching Functionality
+      document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const planType = btn.getAttribute('data-plan');
+          
+          // Update active button
+          document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          // Move highlight
+          const highlight = document.querySelector('.toggle-highlight');
+          highlight.style.left = btn === document.querySelector('.toggle-btn[data-plan="managed"]') ? '5px' : 'calc(50% + 5px)';
+          
+          // Show correct plans
+          document.querySelectorAll('.plan-cards').forEach(cards => {
+            cards.classList.remove('active');
+          });
+          document.getElementById(`${planType}-plans`).classList.add('active');
+        });
+      });
+      
+      // More Features Toggle
+      document.querySelectorAll('.more-features-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+          const features = this.nextElementSibling;
+          const icon = this.querySelector('i');
+          
+          if (features.style.display === 'block') {
+            features.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)';
+            this.innerHTML = `More Features <i class="fas fa-chevron-down"></i>`;
+          } else {
+            features.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)';
+            this.innerHTML = `Less Features <i class="fas fa-chevron-up"></i>`;
+          }
+        });
+      });
+      </script>
 
     <!-- VPS PERFORMANCE -->
     <div class="rts-vps-performance pt--120" data-cue="fadeIn">
