@@ -753,232 +753,6 @@
                 border-left: 3px solid #6B63FF;
             }
         }
-
-        .hero-section {
-            background: linear-gradient(135deg, #6B63FF 0%, #4A42D6 100%);
-            color: white;
-            padding: 5rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section .manage-header {
-            color: #fff;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.1;
-        }
-
-        /* Additional SSL-specific styles */
-        .ssl-hero {
-            background: linear-gradient(135deg, #6B63FF 0%, #8b3dff 100%);
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ssl-hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .ssl-hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .ssl-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .ssl-plans {
-            padding: 4rem 0;
-            background-color: #f9f9ff;
-        }
-
-      
-
-        .ssl-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #6B63FF;
-            margin-bottom: 1.5rem;
-        }
-
-        .ssl-price span {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 400;
-        }
-
-        .ssl-features {
-            margin: 2rem 0;
-        }
-
-        .ssl-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .ssl-features li i {
-            color: #6B63FF;
-            margin-right: 0.75rem;
-            margin-top: 0.2rem;
-        }
-
-        .ssl-benefits {
-            padding: 4rem 0;
-            background-color: white;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(107, 99, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-
-        .benefit-icon i {
-            color: #6B63FF;
-            font-size: 2rem;
-        }
-
-        .ssl-faq {
-            padding: 4rem 0;
-            background-color: #f9f9ff;
-        }
-
-        .faq-item {
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-header {
-            background-color: white;
-            padding: 1.25rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .faq-header:hover {
-            background-color: #f8f9fa;
-        }
-
-        .faq-header i {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-header.collapsed i {
-            transform: rotate(0deg);
-        }
-
-        .faq-header:not(.collapsed) i {
-            transform: rotate(180deg);
-        }
-
-        .faq-body {
-            padding: 1.5rem;
-            background-color: white;
-            border-top: 1px solid #eee;
-        }
-
-        .ssl-cta {
-            background: linear-gradient(135deg, #6B63FF 0%, #8b3dff 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .ssl-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .ssl-cta p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-       
-
-        .ssl-features {
-
-            flex-grow: 1;
-        }
-
-        .validation-level {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .validation-domain {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-
-        .validation-organization {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .validation-extended {
-            background-color: #fff8e1;
-            color: #ff8f00;
-        }
-
-        @media (max-width: 767.98px) {
-            .ssl-hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .ssl-hero p {
-                font-size: 1.1rem;
-            }
-
-          
-
-            .ssl-cta h2 {
-                font-size: 2rem;
-            }
-        }
     </style>
 
     <script>
@@ -1035,743 +809,1141 @@
     </script>
     <!-- Navbar End -->
 
-    <main class="customer-reviews-page">
+    <style>
+        /* ===== Global Styles ===== */
+        :root {
+            --primary: #4a6bff;
+            --primary-dark: #3a56d4;
+            --primary-light: #eef1ff;
+            --secondary: #00c9a7;
+            --secondary-dark: #00a58a;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        html {
+            scroll-behavior: smooth;
+        }
+    
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: white;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            border: 2px solid transparent;
+        }
+    
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 107, 255, 0.3);
+            outline: none;
+        }
+    
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+    
+        .btn-outline:hover,
+        .btn-outline:focus {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 107, 255, 0.2);
+            outline: none;
+        }
+    
+        /* ===== Section Headings ===== */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+    
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+    
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 20px;
+        }
+    
+        .hero-image {
+            flex: 1;
+            max-width: 50%;
+            padding: 20px;
+        }
+    
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: block;
+        }
+    
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+    
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+    
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+    
+        /* ===== Pricing Scroller ===== */
+        .pricing-scroller-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+    
+        .scroller-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    
+        .scroller-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    
+        .scroller-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+    
+        .scroller-nav {
+            display: flex;
+            gap: 10px;
+        }
+    
+        .scroller-nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+    
+        .scroller-nav-btn:hover:not([disabled]),
+        .scroller-nav-btn:focus:not([disabled]) {
+            background: var(--primary);
+            color: white;
+            outline: none;
+        }
+    
+        .scroller-nav-btn[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    
+        .scroller-nav-btn[disabled]:hover {
+            background: var(--light-gray);
+            color: inherit;
+        }
+    
+        .price-scroller {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+    
+        .price-scroller::-webkit-scrollbar {
+            display: none;
+        }
+    
+        .price-card {
+            flex: 0 0 340px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            transition: var(--transition);
+            border: 1px solid #eaeaea;
+            position: relative;
+        }
+    
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+    
+        .price-card:focus-within {
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+    
+        .price-card.popular {
+            border: 2px solid var(--primary);
+        }
+    
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    
+        .price-card-header {
+            margin-bottom: 20px;
+        }
+    
+        .price-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    
+        .price-card-subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    
+        .price-card-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 20px 0;
+            color: var(--primary);
+        }
+    
+        .price-card-price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: var(--gray);
+        }
+    
+        .price-card-features {
+            margin-bottom: 25px;
+        }
+    
+        .price-card-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+    
+        .price-card-feature i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+    
+        .price-card-button {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    
+        /* ===== Features Section ===== */
+        .features-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+    
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+    
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+    
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .feature-card:focus-within {
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+    
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+    
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+    
+        .feature-description {
+            color: var(--gray);
+        }
+    
+        /* ===== How It Works ===== */
+        .how-it-works {
+            padding: 100px 0;
+            background: white;
+        }
+    
+        .steps-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+    
+        .step-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: center;
+        }
+    
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+    
+        .step-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+            display: block;
+        }
+    
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+    
+        /* ===== Technology Stack ===== */
+        .tech-stack {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+    
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+    
+        .tech-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+    
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .tech-card:focus-within {
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+    
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .tech-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    
+        .tech-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    
+        .tech-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    
+        /* ===== Performance Metrics ===== */
+        .performance-section {
+            padding: 100px 0;
+            background: white;
+        }
+    
+        .metrics-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+    
+        .metric-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+    
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+    
+        .metric-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+    
+        /* ===== Case Studies ===== */
+        .case-studies {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+    
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+    
+        .case-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+    
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+    
+        .case-card:focus-within {
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+    
+        .case-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+    
+        .case-content {
+            padding: 25px;
+        }
+    
+        .case-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+    
+        .case-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+    
+        .case-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+    
+        .stat-item {
+            text-align: center;
+        }
+    
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+    
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+    
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+    
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+    
+        .cta-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+    
+        /* ===== FAQ Section ===== */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+        }
+    
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+    
+        .faq-question {
+            padding: 20px;
+            background: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+    
+        .faq-question:hover,
+        .faq-question:focus {
+            background: var(--primary-light);
+            outline: none;
+        }
+    
+        .faq-question::after {
+            content: '+';
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+    
+        .faq-question[aria-expanded="true"]::after {
+            content: '-';
+        }
+    
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+    
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+    
+        /* ===== Skip Link ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+    
+        .skip-link:focus {
+            top: 0;
+        }
+    
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+    
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+    
+            .section-title {
+                font-size: 2rem;
+            }
+    
+            .steps-container {
+                flex-wrap: wrap;
+            }
+    
+            .metrics-container {
+                flex-wrap: wrap;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 80px;
+                flex-direction: column;
+            }
+    
+            .hero-title {
+                font-size: 2.2rem;
+            }
+    
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .hero-image {
+                max-width: 80%;
+                margin-top: 30px;
+            }
+    
+            .price-card {
+                flex: 0 0 300px;
+            }
+    
+            .scroller-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+    
+            .hero-subtitle,
+            .section-subtitle {
+                font-size: 1rem;
+            }
+    
+            .price-card {
+                flex: 0 0 280px;
+                padding: 20px;
+            }
+    
+            .cta-title {
+                font-size: 2rem;
+            }
+    
+            .hero-image {
+                max-width: 100%;
+            }
+    
+            .feature-card,
+            .tech-card,
+            .metric-card,
+            .case-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+    
+    <main class="autoscale-content">
+        <!-- Skip link for keyboard users -->
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+    
         <!-- Hero Section -->
-        <section class="reviews-hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Trusted by Thousands of Satisfied Customers</h1>
-                <p class="hero-subtitle">
-                    Don't just take our word for it - hear from businesses who've experienced the WeFitHost difference firsthand.
-                </p>
-                <div class="rating-badge">
-                    <div class="stars">★★★★★</div>
-                    <div class="rating-details">
-                        <strong>4.8/5</strong> from 122 verified reviews
-                    </div>
-                    <div class="trustpilot-badge">
-                        <img src="https://cdn.trustpilot.net/brand-assets/1.6.0/logo-white.svg" alt="Trustpilot" width="120">
+        <section class="hero" id="main-content">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Scale Seamlessly with Intelligent Auto-Scaling Cloud Hosting</h1>
+                    <p class="hero-subtitle">Experience unparalleled performance and reliability as our AI-powered auto-scaling technology dynamically adjusts resources in real-time to handle any traffic surge.</p>
+    
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn btn-primary">Explore Auto-Scaling Plans</a>
+                        <a href="#how-it-works" class="btn btn-outline">Discover How It Works</a>
                     </div>
                 </div>
-            </div>
-            <div class="hero-illustration">
-                <img src="https://media.istockphoto.com/id/1368965646/photo/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-happy-life-style-friendship.jpg?b=1&s=612x612&w=0&k=20&c=8varqjy2VLQHBm658rl2hS7MMakLA5iXd7Qvr7L8bx4=" alt="Happy customers" width="400">
+    
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1518770660439-464c4c19b725?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dynamic cloud servers visualization" loading="lazy" />
+                </div>
             </div>
         </section>
-        
-        <!-- Review Filters -->
-        <div class="review-filters-container">
-            <div class="review-filters">
-                <div class="filter-group">
-                    <label for="sort-reviews">Sort by:</label>
-                    <select id="sort-reviews" class="filter-select">
-                        <option value="newest">Newest First</option>
-                        <option value="highest">Highest Rated</option>
-                        <option value="lowest">Lowest Rated</option>
-                        <option value="oldest">Oldest First</option>
-                    </select>
+    
+        <!-- Pricing Scroller -->
+        <section class="pricing-scroller-section" id="pricing">
+            <div class="container">
+                <div class="scroller-header">
+                    <h2 class="scroller-title">Flexible Auto-Scaling Plans</h2>
+                    <div class="scroller-nav">
+                        <button class="scroller-nav-btn" aria-label="Previous" disabled>&lt;</button>
+                        <button class="scroller-nav-btn" aria-label="Next">&gt;</button>
+                    </div>
                 </div>
-                
-                <div class="filter-group">
-                    <label for="filter-rating">Rating:</label>
-                    <select id="filter-rating" class="filter-select">
-                        <option value="all">All Ratings</option>
-                        <option value="5">5 Stars Only</option>
-                        <option value="4">4+ Stars</option>
-                        <option value="3">3+ Stars</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group search-group">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Search reviews..." class="search-input">
-                    <button class="search-button">Search</button>
+                <div class="price-scroller">
+                    <article class="price-card popular">
+                        <div class="popular-badge">Popular</div>
+                        <header class="price-card-header">
+                            <h3 class="price-card-title">Pro</h3>
+                            <p class="price-card-subtitle">For growing businesses</p>
+                        </header>
+                        <div class="price-card-price">$49<span>/month</span></div>
+                        <div class="price-card-features">
+                            <div class="price-card-feature"><i>✔</i> Unlimited websites</div>
+                            <div class="price-card-feature"><i>✔</i> Auto-scaling resources</div>
+                            <div class="price-card-feature"><i>✔</i> 24/7 priority support</div>
+                        </div>
+                        <a href="#" class="btn btn-primary price-card-button">Get Started</a>
+                    </article>
+                    <article class="price-card">
+                        <header class="price-card-header">
+                            <h3 class="price-card-title">Basic</h3>
+                            <p class="price-card-subtitle">For personal projects</p>
+                        </header>
+                        <div class="price-card-price">$19<span>/month</span></div>
+                        <div class="price-card-features">
+                            <div class="price-card-feature"><i>✔</i> Single website</div>
+                            <div class="price-card-feature"><i>✔</i> Auto-scaling resources</div>
+                            <div class="price-card-feature"><i>✔</i> Email support</div>
+                        </div>
+                        <a href="#" class="btn btn-primary price-card-button">Get Started</a>
+                    </article>
+                    <article class="price-card">
+                        <header class="price-card-header">
+                            <h3 class="price-card-title">Enterprise</h3>
+                            <p class="price-card-subtitle">For large-scale needs</p>
+                        </header>
+                        <div class="price-card-price">Contact Us</div>
+                        <div class="price-card-features">
+                            <div class="price-card-feature"><i>✔</i> Custom scaling solutions</div>
+                            <div class="price-card-feature"><i>✔</i> Dedicated support team</div>
+                            <div class="price-card-feature"><i>✔</i> Service Level Agreement (SLA)</div>
+                        </div>
+                        <a href="#" class="btn btn-primary price-card-button">Contact Sales</a>
+                    </article>
+                    <article class="price-card">
+                        <header class="price-card-header">
+                            <h3 class="price-card-title">Startup</h3>
+                            <p class="price-card-subtitle">Perfect for new ventures</p>
+                        </header>
+                        <div class="price-card-price">$29<span>/month</span></div>
+                        <div class="price-card-features">
+                            <div class="price-card-feature"><i>✔</i> Up to 5 websites</div>
+                            <div class="price-card-feature"><i>✔</i> Auto-scaling resources</div>
+                            <div class="price-card-feature"><i>✔</i> Community support</div>
+                        </div>
+                        <a href="#" class="btn btn-primary price-card-button">Get Started</a>
+                    </article>
                 </div>
             </div>
-            
-            <div class="review-stats">
-                <div class="stat-item">
-                    <div class="stat-value">99.9%</div>
-                    <div class="stat-label">Uptime Satisfaction</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">24/7</div>
-                    <div class="stat-label">Support Praise</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">93%</div>
-                    <div class="stat-label">Would Recommend</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Reviews Grid -->
-        <div class="reviews-container">
-            <!-- Review Card 1 (Featured) -->
-            <div class="review-card featured-review">
-                <div class="review-badge">Featured Review</div>
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Andrew Fox" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">Andrew Fox</div>
-                            <div class="customer-title">CEO, HostSpecial</div>
-                        </div>
+        </section>
+    
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Key Features of Our Auto-Scaling Platform</h2>
+                <p class="section-subtitle">Explore the robust features designed to keep your applications running smoothly, no matter the demand.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Instant Resource Allocation</h3>
+                        <p class="feature-description">Our platform immediately allocates the necessary resources to handle spikes in traffic, ensuring your site remains responsive.</p>
                     </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★★</div>
-                        <div class="review-date">March 15, 2025</div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">Advanced Security Measures</h3>
+                        <p class="feature-description">We employ cutting-edge security protocols to protect your data and infrastructure from threats, providing a secure hosting environment.</p>
                     </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Game-Changing Performance for My Business</h3>
-                    <p>Switching to WeFitHost was the best decision for my business. My website loads incredibly fast now (under 1s consistently), the security features give me peace of mind, and their support team is always available when I need help. The migration process was seamless - they handled everything!</p>
-                    <div class="review-response">
-                        <div class="response-avatar">
-                            <img src="./Wefithost Logo Icon-01.png" alt="WeFitHost" width="32">
-                        </div>
-                        <div class="response-content">
-                            <strong>WeFitHost Team</strong>
-                            <p>Thank you, Andrew! We're thrilled to support HostSpecial's growth and appreciate you taking the time to share your experience.</p>
-                        </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3 class="feature-title">AI-Driven Optimization</h3>
+                        <p class="feature-description">Leverage the power of artificial intelligence to dynamically optimize resource usage, reducing costs and improving performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3 class="feature-title">Global Content Delivery</h3>
+                        <p class="feature-description">With our integrated CDN, deliver content faster to users around the world, improving their experience and your SEO ranking.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Real-Time Monitoring</h3>
+                        <p class="feature-description">Gain insights into your website's performance with our comprehensive monitoring tools, allowing you to make data-driven decisions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3 class="feature-title">Expert 24/7 Support</h3>
+                        <p class="feature-description">Our dedicated support team is available around the clock to assist with any questions or issues, ensuring a seamless hosting experience.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Review Card 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">Sarah Johnson</div>
-                            <div class="customer-title">Blogger, TechTrends</div>
-                        </div>
+        </section>
+    
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How Our Auto-Scaling Works</h2>
+                <p class="section-subtitle">Effortlessly manage traffic fluctuations with our automated scaling process, designed for simplicity and effectiveness.</p>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <img src="https://images.unsplash.com/photo-1555255336-8304c4039222?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Traffic analysis" class="step-image" loading="lazy" />
+                        <h3 class="step-title">Continuous Traffic Analysis</h3>
+                        <p>Our system constantly analyzes incoming traffic to identify trends and potential surges.</p>
                     </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★☆</div>
-                        <div class="review-date">February 28, 2025</div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <img src="https://images.unsplash.com/photo-1610737247949-d7ffc34649d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Automated scaling" class="step-image" loading="lazy" />
+                        <h3 class="step-title">Automated Resource Scaling</h3>
+                        <p>Based on the analysis, resources are automatically scaled up or down to match demand.</p>
                     </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Reliable Hosting with Excellent Uptime</h3>
-                    <p>I've been with WeFitHost for 2 years now and their uptime is exceptional (99.99% in my experience). The control panel is user-friendly and their WordPress hosting is optimized perfectly. The only reason I'm not giving 5 stars is that their live chat could be available 24/7 instead of just business hours.</p>
-                </div>
-                <div class="review-tags">
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Uptime</span>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe93c57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Performance optimization" class="step-image" loading="lazy" />
+                        <h3 class="step-title">Ongoing Performance Optimization</h3>
+                        <p>Our AI algorithms continuously optimize resource allocation for peak performance and cost efficiency.</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Review Card 3 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Chen" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">Michael Chen</div>
-                            <div class="customer-title">Web Developer</div>
-                        </div>
+        </section>
+    
+        <!-- Technology Stack -->
+        <section class="tech-stack">
+            <div class="container">
+                <h2 class="section-title">Underlying Technologies</h2>
+                <p class="section-subtitle">Discover the advanced technologies that power our auto-scaling cloud hosting solutions.</p>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" loading="lazy" /></div>
+                        <h3 class="tech-name">Docker</h3>
+                        <p class="tech-description">Containerized environments ensure consistent and scalable deployments.</p>
                     </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★★</div>
-                        <div class="review-date">February 10, 2025</div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo" loading="lazy" /></div>
+                        <h3 class="tech-name">Kubernetes</h3>
+                        <p class="tech-description">Orchestrates and manages container scaling for optimal performance.</p>
                     </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Perfect for Developers Managing Multiple Sites</h3>
-                    <p>As a web developer, I host dozens of client sites with WeFitHost. Their reseller hosting plans are fantastic - great performance, easy management through their custom dashboard, and excellent value. Their support team actually understands technical issues, which is rare in this industry!</p>
-                </div>
-                <div class="review-tags">
-                    <span class="tag">Reseller Hosting</span>
-                    <span class="tag">Developer Friendly</span>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx logo" loading="lazy" /></div>
+                        <h3 class="tech-name">NGINX</h3>
+                        <p class="tech-description">High-performance web server and reverse proxy for efficient traffic management.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo" loading="lazy" /></div>
+                        <h3 class="tech-name">Linux</h3>
+                        <p class="tech-description">The stable and secure foundation of our hosting environment.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" loading="lazy" /></div>
+                        <h3 class="tech-name">Python</h3>
+                        <p class="tech-description">Used for automation and AI-driven optimization tasks.</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" loading="lazy" /></div>
+                        <h3 class="tech-name">JavaScript</h3>
+                        <p class="tech-description">Enhances the interactivity and monitoring capabilities of our platform.</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Review Card 4 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">Emily Rodriguez</div>
-                            <div class="customer-title">E-commerce Store Owner</div>
-                        </div>
+        </section>
+    
+        <!-- Performance Metrics -->
+        <section class="performance-section">
+            <div class="container">
+                <h2 class="section-title">Proven Performance</h2>
+                <p class="section-subtitle">See how our auto-scaling technology delivers exceptional results for our clients.</p>
+                <div class="metrics-container">
+                    <div class="metric-card">
+                        <div class="metric-value">99.99%</div>
+                        <div class="metric-label">Guaranteed Uptime</div>
                     </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★★</div>
-                        <div class="review-date">January 22, 2025</div>
+                    <div class="metric-card">
+                        <div class="metric-value">3x</div>
+                        <div class="metric-label">Average Faster Load Times</div>
                     </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Worth Every Penny for My Online Store</h3>
-                    <p>The VPS hosting from WeFitHost has been rock solid during peak sales periods. I was with another provider before and the difference in performance is night and day. Their managed services save me hours every week - I don't have to worry about server maintenance at all.</p>
-                </div>
-                <div class="review-tags">
-                    <span class="tag">VPS</span>
-                    <span class="tag">E-commerce</span>
+                    <div class="metric-card">
+                        <div class="metric-value">90%</div>
+                        <div class="metric-label">Customer Satisfaction Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">24/7</div>
+                        <div class="metric-label">Around-the-Clock Support</div>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Review Card 5 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="David Wilson" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">David Wilson</div>
-                            <div class="customer-title">Small Business Owner</div>
+        </section>
+    
+        <!-- Case Studies -->
+        <section class="case-studies">
+            <div class="container">
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">Explore real-world examples of how our auto-scaling solutions have transformed businesses.</p>
+                <div class="case-grid">
+                    <article class="case-card">
+                        <img src="https://images.unsplash.com/photo-1517245386980-97625861fff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce analytics" class="case-image" loading="lazy" />
+                        <div class="case-content">
+                            <h3 class="case-title">E-commerce Platform Enhancement</h3>
+                            <p class="case-description">Achieved a 50% reduction in server costs while maintaining peak performance during flash sales.</p>
+                            <div class="case-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">50%</div>
+                                    <div class="stat-label">Cost Reduction</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">100%</div>
+                                    <div class="stat-label">Uptime</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★★</div>
-                        <div class="review-date">January 5, 2025</div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Seamless Migration & Immediate Performance Boost</h3>
-                    <p>I was hesitant to switch from my old host, but WeFitHost made the process so easy with their free migration service. My site loads twice as fast now (confirmed by GTmetrix), and I haven't had any downtime in the 6 months I've been with them. Highly recommend!</p>
-                </div>
-                <div class="review-tags">
-                    <span class="tag">Migration</span>
-                    <span class="tag">Speed</span>
+                    </article>
+                    <article class="case-card">
+                        <img src="https://images.unsplash.com/photo-1583508916869-029aa9414413?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SaaS interface" class="case-image" loading="lazy" />
+                        <div class="case-content">
+                            <h3 class="case-title">SaaS Application Scalability</h3>
+                            <p class="case-description">Successfully scaled resources to support a sudden influx of new users without any service interruptions.</p>
+                            <div class="case-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value">2x</div>
+                                    <div class="stat-label">User Base</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value">0</div>
+                                    <div class="stat-label">Downtime Incidents</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-            
-            <!-- Review Card 6 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-info">
-                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Jessica Lee" class="customer-avatar">
-                        <div class="reviewer-details">
-                            <div class="customer-name">Jessica Lee</div>
-                            <div class="customer-title">Photographer</div>
-                        </div>
-                    </div>
-                    <div class="review-meta">
-                        <div class="stars">★★★★☆</div>
-                        <div class="review-date">December 18, 2024</div>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <h3 class="review-title">Great Value for Portfolio Sites</h3>
-                    <p>Great hosting at a reasonable price. The shared hosting plans have all the features I need for my photography portfolio site. The only minor issue I've had is that their knowledge base could be more comprehensive, but their support team makes up for it with quick responses.</p>
-                </div>
-                <div class="review-tags">
-                    <span class="tag">Shared Hosting</span>
-                    <span class="tag">Portfolio</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Pagination -->
-        <div class="reviews-pagination">
-            <button class="pagination-button prev" disabled>
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="pagination-button active">1</button>
-            <button class="pagination-button">2</button>
-            <button class="pagination-button">3</button>
-            <span class="pagination-ellipsis">...</span>
-            <button class="pagination-button">8</button>
-            <button class="pagination-button next">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-        
+        </section>
+    
         <!-- CTA Section -->
-        <section class="review-cta-section">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Experience the Difference?</h2>
-                <p class="cta-text">Join thousands of satisfied customers who trust WeFitHost for their web hosting needs.</p>
-                <div class="cta-buttons">
-                    <button class="cta-button primary" onclick="location.href='/plans'">View Hosting Plans</button>
-                    <button class="cta-button secondary" onclick="location.href='/submit-review'">Share Your Experience</button>
-                </div>
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Ready to Scale Your Business?</h2>
+                <p class="cta-subtitle">Take the next step towards seamless scalability and superior performance with our intelligent auto-scaling solutions. Contact us today to get started.</p>
+                <a href="#" class="btn btn-primary">Get a Free Consultation</a>
             </div>
-            <div class="cta-badge">
-                <div class="badge-content">
-                    <div class="badge-stars">★★★★★</div>
-                    <div class="badge-text">Rated Excellent</div>
+        </section>
+    
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our auto-scaling platform and how it can benefit your business.</p>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                            What is auto-scaling and how does it work?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq1" class="faq-answer">
+                            Auto-scaling is a method of dynamically adjusting the amount of computing resources that are allocated to a server to match the amount of traffic it is receiving. Our system automatically adds or removes resources based on real-time analysis of your website's traffic.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                            How does your platform ensure security during scaling?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq2" class="faq-answer">
+                            We employ advanced security measures, including firewalls, intrusion detection systems, and regular security audits, to protect your data and infrastructure during scaling events.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                            Can I customize the auto-scaling settings for my specific needs?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq3" class="faq-answer">
+                            Yes, our platform offers a range of customizable settings to tailor the auto-scaling behavior to your specific requirements. You can define scaling thresholds, resource limits, and more.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                            What kind of support is available?
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq4" class="faq-answer">
+                            We offer 24/7 support via phone, email, and chat. Our team of experts is always available to assist with any questions or issues you may encounter.
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     
-    <style>
-    /* Base Styles */
-    .customer-reviews-page {
-        font-family: 'Inter', sans-serif;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        color: #333;
-    }
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !expanded);
+                const answer = button.nextElementSibling;
+                answer.classList.toggle('active');
+            });
+        });
     
-    /* Hero Section */
-    .reviews-hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 3rem;
-        padding: 2rem 0;
-    }
+        // Price scroller navigation
+        const scroller = document.querySelector('.price-scroller');
+        const prevBtn = document.querySelector('.scroller-nav-btn[aria-label="Previous"]');
+        const nextBtn = document.querySelector('.scroller-nav-btn[aria-label="Next"]');
     
-    .hero-content {
-        flex: 1;
-        max-width: 600px;
-    }
+        if (scroller && prevBtn && nextBtn) {
+            const scrollAmount = 360; // Width of card + gap
+            
+            nextBtn.addEventListener('click', () => {
+                scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                updateNavButtons();
+            });
     
-    .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
-    }
+            prevBtn.addEventListener('click', () => {
+                scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                updateNavButtons();
+            });
     
-    .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 2rem;
-    }
+            function updateNavButtons() {
+                prevBtn.disabled = scroller.scrollLeft <= 0;
+                nextBtn.disabled = scroller.scrollLeft >= (scroller.scrollWidth - scroller.clientWidth - 1);
+            }
     
-    .rating-badge {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        background: #f8f9fa;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        width: fit-content;
-    }
-    
-    .stars {
-        color: #ffb800;
-        font-size: 1.2rem;
-    }
-    
-    .rating-details {
-        font-size: 0.95rem;
-    }
-    
-    .trustpilot-badge {
-        margin-left: 1rem;
-        padding-left: 1rem;
-        border-left: 1px solid #ddd;
-    }
-    
-    .hero-illustration {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    /* Review Filters */
-    .review-filters-container {
-        margin-bottom: 3rem;
-    }
-    
-    .review-filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        align-items: center;
-    }
-    
-    .filter-group {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .filter-select {
-        padding: 0.5rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        background-color: white;
-        font-size: 0.95rem;
-    }
-    
-    .search-group {
-        flex: 1;
-        max-width: 400px;
-        position: relative;
-        margin-left: auto;
-    }
-    
-    .search-input {
-        padding: 0.5rem 1rem 0.5rem 2.5rem;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        width: 100%;
-        font-size: 0.95rem;
-    }
-    
-    .search-group .fa-search {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #777;
-    }
-    
-    .search-button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        padding: 0 1rem;
-        background: #4a6bff;
-        color: white;
-        border: none;
-        border-radius: 0 6px 6px 0;
-        cursor: pointer;
-    }
-    
-    .review-stats {
-        display: flex;
-        gap: 2rem;
-        padding: 1.5rem;
-        background: #f8f9fa;
-        border-radius: 8px;
-        margin-top: 1.5rem;
-    }
-    
-    .stat-item {
-        text-align: center;
-        flex: 1;
-    }
-    
-    .stat-value {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #4a6bff;
-        margin-bottom: 0.3rem;
-    }
-    
-    .stat-label {
-        font-size: 0.9rem;
-        color: #666;
-    }
-    
-    /* Reviews Grid */
-    .reviews-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 3rem;
-    }
-    
-    .review-card {
-        background: white;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        padding: 1.5rem;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    
-    .review-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-    
-    .featured-review {
-        grid-column: 1 / -1;
-        border: 2px solid #4a6bff;
-        position: relative;
-    }
-    
-    .review-badge {
-        position: absolute;
-        top: -12px;
-        right: 20px;
-        background: #4a6bff;
-        color: white;
-        padding: 0.3rem 1rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-    
-    .review-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
-    
-    .reviewer-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    
-    .customer-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-    
-    .customer-name {
-        font-weight: 600;
-    }
-    
-    .customer-title {
-        font-size: 0.85rem;
-        color: #666;
-    }
-    
-    .review-meta {
-        text-align: right;
-    }
-    
-    .review-date {
-        font-size: 0.85rem;
-        color: #888;
-        margin-top: 0.3rem;
-    }
-    
-    .review-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.8rem;
-        color: #1a1a1a;
-    }
-    
-    .review-content p {
-        line-height: 1.6;
-        color: #444;
-        margin-bottom: 1rem;
-    }
-    
-    .review-tags {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
-    
-    .tag {
-        background: #f0f4ff;
-        color: #4a6bff;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-    
-    .review-response {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        display: flex;
-        gap: 1rem;
-    }
-    
-    .response-avatar {
-        flex-shrink: 0;
-    }
-    
-    .response-content {
-        font-size: 0.9rem;
-    }
-    
-    .response-content strong {
-        display: block;
-        margin-bottom: 0.3rem;
-    }
-    
-    /* Pagination */
-    .reviews-pagination {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 3rem;
-    }
-    
-    .pagination-button {
-        width: 40px;
-        height: 40px;
-        border: 1px solid #ddd;
-        background: white;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-    
-    .pagination-button:hover:not(.active):not(:disabled) {
-        background: #f5f5f5;
-    }
-    
-    .pagination-button.active {
-        background: #4a6bff;
-        color: white;
-        border-color: #4a6bff;
-    }
-    
-    .pagination-button:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-    
-    .pagination-ellipsis {
-        display: flex;
-        align-items: center;
-        padding: 0 0.5rem;
-    }
-    
-    /* CTA Section */
-    .review-cta-section {
-        background: linear-gradient(135deg, #4a6bff 0%, #3a56d4 100%);
-        color: white;
-        padding: 3rem 2rem;
-        border-radius: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .cta-content {
-        position: relative;
-        z-index: 2;
-        max-width: 600px;
-    }
-    
-    .cta-title {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-    }
-    
-    .cta-text {
-        font-size: 1.05rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
-    }
-    
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-    }
-    
-    .cta-button {
-        padding: 0.8rem 1.5rem;
-        border-radius: 6px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-    
-    .cta-button.primary {
-        background: white;
-        color: #4a6bff;
-        border: none;
-    }
-    
-    .cta-button.primary:hover {
-        background: #f0f0f0;
-    }
-    
-    .cta-button.secondary {
-        background: transparent;
-        color: white;
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-    
-    .cta-button.secondary:hover {
-        background: rgba(255,255,255,0.1);
-    }
-    
-    .cta-badge {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-width: 150px;
-    }
-    
-    .badge-content {
-        text-align: center;
-    }
-    
-    .badge-stars {
-        color: #ffb800;
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .badge-text {
-        color: #4a6bff;
-        font-weight: 600;
-    }
-    
-    /* Responsive */
-    @media (max-width: 992px) {
-        .reviews-hero {
-            flex-direction: column;
-            text-align: center;
+            scroller.addEventListener('scroll', updateNavButtons);
+            window.addEventListener('resize', updateNavButtons);
+            updateNavButtons();
         }
-        
-        .hero-content {
-            max-width: 100%;
-            margin-bottom: 2rem;
-        }
-        
-        .rating-badge {
-            margin: 0 auto;
-        }
-        
-        .hero-illustration {
-            justify-content: center;
-        }
-        
-        .review-cta-section {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .cta-content {
-            margin-bottom: 2rem;
-        }
-        
-        .cta-buttons {
-            justify-content: center;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .review-filters {
-            flex-direction: column;
-            align-items: stretch;
-        }
-        
-        .search-group {
-            margin-left: 0;
-            max-width: 100%;
-        }
-        
-        .reviews-container {
-            grid-template-columns: 1fr;
-        }
-        
-        .review-stats {
-            flex-direction: column;
-            gap: 1rem;
-        }
-    }
-    </style>
-
-  <!-- Footer -->
+    </script>
+    <!-- Footer -->
 <footer class="pt-7 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
     <div class="container">
         <div class="row">
@@ -1913,8 +2085,6 @@
     <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
     <script src="assets/js/init.js?t=20240403"></script>
-    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
-    <script src="assets/js/vendors/scrollcue.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1930,5 +2100,44 @@
         });
       });
     </script>
-  </body>
-</html>
+
+<script>
+    // Price Scroller Functionality
+    const priceScroller = document.getElementById('priceScroller');
+    const scrollerPrev = document.getElementById('scrollerPrev');
+    const scrollerNext = document.getElementById('scrollerNext');
+    
+    // Navigation buttons
+    scrollerPrev.addEventListener('click', () => {
+        priceScroller.scrollBy({
+            left: -300,
+            behavior: 'smooth'
+        });
+    });
+    
+    scrollerNext.addEventListener('click', () => {
+        priceScroller.scrollBy({
+            left: 300,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Disable buttons when at ends
+    priceScroller.addEventListener('scroll', () => {
+        const maxScroll = priceScroller.scrollWidth - priceScroller.clientWidth;
+        
+        if (priceScroller.scrollLeft <= 10) {
+            scrollerPrev.disabled = true;
+        } else {
+            scrollerPrev.disabled = false;
+        }
+        
+        if (priceScroller.scrollLeft >= maxScroll - 10) {
+            scrollerNext.disabled = true;
+        } else {
+            scrollerNext.disabled = false;
+        }
+    });
+</script>
+    </body>
+    </html>

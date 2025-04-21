@@ -642,42 +642,95 @@
         text-decoration: none;
     }
     
-    /* Responsive adjustments */
-    @media (max-width: 991.98px) {
-        .navbar-collapse {
-            padding: 1rem 0;
+      /* Enhanced Mobile Responsiveness (added) */
+      @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: white;
+                padding: 1rem;
+                margin-top: 1rem;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+            
+            .mega-menu .row {
+                flex-direction: column;
+            }
+            
+            .mega-menu .col-md-4, 
+            .mega-menu .col-md-6 {
+                width: 100%;
+                padding: 0;
+            }
+            
+            .dropdown-menu {
+                position: static !important;
+                transform: none !important;
+                width: 100%;
+                margin: 0.5rem 0;
+                border-left: 3px solid #6B63FF;
+            }
+            
+            .dropdown-item {
+                padding: 0.75rem 1rem;
+            }
+            
+            .d-flex.align-items-center {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 1rem 0;
+                margin-top: 1rem;
+                border-top: 1px solid #eee;
+            }
+            
+            .btn-link.me-3 {
+                margin-right: 0 !important;
+                margin-bottom: 0.5rem;
+            }
+            
+            /* Better mobile dropdown toggle indicators */
+            .dropdown-toggle::after {
+                float: right;
+                margin-top: 0.5rem;
+            }
         }
-        
-        .nav-link {
-            padding: 0.75rem 1rem;
-        }
-        
-        .mega-menu {
-            position: static !important;
-            width: 100%;
-            box-shadow: none;
-            padding: 0;
-        }
-        
-        .mega-menu .row {
-            flex-direction: column;
-        }
-        
-        .mega-menu .col-md-4 {
-            width: 100%;
-            padding: 0;
-        }
-        
-        .dropdown-menu {
-            box-shadow: none;
-            border-radius: 0;
-            margin-top: 0;
-            border-left: 3px solid #6B63FF;
-        }
-    }
 </style>
 
+
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Enhanced mobile dropdown handling
+        if (window.innerWidth < 992) {
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            navItems.forEach(item => {
+                const toggle = item.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const menu = item.querySelector('.dropdown-menu');
+                        const isShown = menu.classList.contains('show');
+                        
+                        // Close all other open dropdowns
+                        document.querySelectorAll('.dropdown-menu').forEach(d => {
+                            if (d !== menu) d.classList.remove('show');
+                        });
+                        
+                        // Toggle current
+                        menu.classList.toggle('show');
+                    });
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.navbar-collapse')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(d => {
+                        d.classList.remove('show');
+                    });
+                }
+            });
+        }
 document.addEventListener("DOMContentLoaded", function() {
     // Add sticky behavior on scroll
     const header = document.querySelector('.custom-header');
@@ -730,6 +783,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 <!-- Navbar End -->
+
 <style>
     :root {
         --primary: #6b63ff;
@@ -1293,7 +1347,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="col-lg-6" data-cue="fadeIn">
                     <div class="pe-lg-5">
                         <span class="prohost">ABOUT US</span>
-                        <h1 class="display-5 text-white-90 fw-bold mb-4">Hosting That's Fast, Secure & Built for Growth</h1>
+                        <h1 class="display-5 text-dark fw-bold mb-4">Hosting That's Fast, Secure & Built for Growth</h1>
                         <p class="lead mb-5">
                             At Wefithost, we go beyond traditional web hosting to offer a powerful, scalable, and secure platform designed for businesses, developers, and entrepreneurs. Whether you're launching a personal blog, an eCommerce store, or a high-traffic website, our cutting-edge technology ensures lightning-fast performance, rock-solid security, and effortless scalability.
                         </p>
@@ -1441,7 +1495,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="col-lg-8 text-center mb-7" data-cue="fadeIn">
                     <span class="text-primary fw-bold mb-3 d-block">OUR FOUNDING PRINCIPLES</span>
                     <h2 class="display-5 text-dark mb-4">The Core Values That Drive Us</h2>
-                    <p class="text-dark-50">These principles guide every decision we make at Wefithost</p>
+                    <p class="text-dark">These principles guide every decision we make at Wefithost</p>
                 </div>
             </div>
             
@@ -1453,7 +1507,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             <i class="fas fa-server"></i>
                         </div>
                         <h4 class="mb-3 text-dark">Best-in-Class Technology</h4>
-                        <p class="mb-0 text-dark-50">We believe everyone deserves access to powerful hosting—no matter the plan. Our advanced autoscaling cloud technology comes standard with every package.</p>
+                        <p class="mb-0 text-dark">We believe everyone deserves access to powerful hosting—no matter the plan. Our advanced autoscaling cloud technology comes standard with every package.</p>
                     </div>
                 </div>
                 
@@ -1463,8 +1517,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="principle-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <h4 class="mb-3 text-white">Always Improving</h4>
-                        <p class="mb-0 text-white-50">We don't just keep up—we lead. Innovation is in our DNA, and we're constantly improving our platform, features, and user experience.</p>
+                        <h4 class="mb-3 text-dark">Always Improving</h4>
+                        <p class="mb-0 text-dark">We don't just keep up—we lead. Innovation is in our DNA, and we're constantly improving our platform, features, and user experience.</p>
                     </div>
                 </div>
                 
@@ -1474,8 +1528,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="principle-icon">
                             <i class="fas fa-microchip"></i>
                         </div>
-                        <h4 class="mb-3 text-white">Premium Hardware</h4>
-                        <p class="mb-0 text-white-50">We don't do "good enough." Every server runs on 100% SSD storage and enterprise-grade hardware to ensure maximum reliability.</p>
+                        <h4 class="mb-3 text-dark">Premium Hardware</h4>
+                        <p class="mb-0 text-dark">We don't do "good enough." Every server runs on 100% SSD storage and enterprise-grade hardware to ensure maximum reliability.</p>
                     </div>
                 </div>
                 
@@ -1485,8 +1539,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="principle-icon">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h4 class="mb-3 text-white">Simplicity</h4>
-                        <p class="mb-0 text-white-50">Tech should be powerful—but never complicated. From our clean, intuitive control panels to one-click tools, we design everything to be frustration-free.</p>
+                        <h4 class="mb-3 text-dark">Simplicity</h4>
+                        <p class="mb-0 text-dark">Tech should be powerful—but never complicated. From our clean, intuitive control panels to one-click tools, we design everything to be frustration-free.</p>
                     </div>
                 </div>
                 
@@ -1496,8 +1550,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="principle-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h4 class="mb-3 text-white">Security First</h4>
-                        <p class="mb-0 text-white-50">We take security seriously. Every hosting plan comes with robust, built-in protection at no extra cost—so you can focus on your site, not threats.</p>
+                        <h4 class="mb-3 text-dark">Security First</h4>
+                        <p class="mb-0 text-dark">We take security seriously. Every hosting plan comes with robust, built-in protection at no extra cost—so you can focus on your site, not threats.</p>
                     </div>
                 </div>
                 
@@ -1507,8 +1561,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="principle-icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <h4 class="mb-3 text-white">Independent by Choice</h4>
-                        <p class="mb-0 text-white-50">Wefithost is proudly independent—and staying that way. Our loyalty is to our users, not shareholders. We answer to our mission, not outside influence.</p>
+                        <h4 class="mb-3 text-dark">Independent by Choice</h4>
+                        <p class="mb-0 text-dark">Wefithost is proudly independent—and staying that way. Our loyalty is to our users, not shareholders. We answer to our mission, not outside influence.</p>
                     </div>
                 </div>
             </div>
@@ -1522,7 +1576,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0" data-cue="fadeIn">
                     <span class="text-primary fw-semibold mb-3 d-block">OUR LEGACY</span>
-                    <h2 class="display-5 mb-4">20+ Years of Hosting Innovation</h2>
+                    <h2 class="display-5 mb-4 text-dark">20+ Years of Hosting Innovation</h2>
                     <p class="lead mb-4">Wefithost stands on over 20 years of leadership in web hosting, cybersecurity, and domain industries.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <div class="stat-box">
@@ -1541,20 +1595,20 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div class="col-lg-6" data-cue="zoomIn" data-delay="0.3s">
                     <div class="legacy-card">
-                        <h3 class="mb-4">A Legacy of Innovation</h3>
-                        <p class="text-white-50">The journey began with Adeshola Adeyeye, a pioneer in the tech world, who recognized the challenges small businesses faced when establishing an online presence.</p>
+                        <h3 class="text-dark mb-4">A Legacy of Innovation</h3>
+                        <p class="text-dark">The journey began with Adeshola Adeyeye, a pioneer in the tech world, who recognized the challenges small businesses faced when establishing an online presence.</p>
                         <ul class="list-unstyled timeline">
                             <li class="mb-3 position-relative ps-4">
-                                <h5 class="mb-1 text-white">1999</h5>
-                                <p class="mb-0 text-white-50">Founded Fitshost, one of the UK's first user-friendly hosting platforms</p>
+                                <h5 class="mb-1 text-dark">1999</h5>
+                                <p class="mb-0 text-dark">Founded Fitshost, one of the UK's first user-friendly hosting platforms</p>
                             </li>
                             <li class="mb-3 position-relative ps-4">
-                                <h5 class="mb-1 text-white">2000</h5>
-                                <p class="mb-0 text-white-50">Launched Solutionbite, revolutionizing domain pricing in the UK</p>
+                                <h5 class="mb-1 text-dark">2000</h5>
+                                <p class="mb-0 text-dark">Launched Solutionbite, revolutionizing domain pricing in the UK</p>
                             </li>
                             <li class="position-relative ps-4">
-                                <h5 class="mb-1 text-white">Today</h5>
-                                <p class="mb-0 text-white-50">Continues to shape the future of secure hosting and cybersecurity</p>
+                                <h5 class="mb-1 text-dark">Today</h5>
+                                <p class="mb-0 text-dark">Continues to shape the future of secure hosting and cybersecurity</p>
                             </li>
                         </ul>
                     </div>
@@ -1570,7 +1624,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div class="col-lg-8 text-center mb-8" data-cue="fadeIn">
                     <span class="text-primary fw-semibold mb-3 d-block">OUR EXPERT TEAM</span>
                     <h2 class="display-5 mb-4">The Professionals Behind WeFitHost</h2>
-                    <p class="lead text-muted">Hover to learn more about each team member</p>
+                    <!-- <p class="lead text-muted">Hover to learn more about each team member</p> -->
                 </div>
             </div>
             
@@ -1622,11 +1676,11 @@ document.addEventListener("DOMContentLoaded", function() {
                                     View Profile <i class="fas fa-arrow-right ms-2"></i>
                                 </button>
                                 <div class="social-icons mt-3">
-                                    <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                                    <!--<a href="https://x.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
                                     <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a> -->
+                                    <a href="https://linkedin.com/in/ayo-hassan-a11734262/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://github.com/itsayopapi" target="_blank"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
