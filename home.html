@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Media queries Css -->
-     <link rel="stylesheet" href="./assets/css/media-queries.css">
+    <link rel="stylesheet" href="./assets/css/media-queries.css">
 
     <title>WeFitHost</title>
 
@@ -820,7 +820,7 @@
                     <!-- Right-side buttons -->
                     <div class="d-flex align-items-center">
                         <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
-                        <a href="https://my.wefithost.com/login" class="btn btn-link text-light me-3"><i
+                        <a href="https://my.wefithost.com/login" class="btn btn-link text-secondary me-3"><i
                                 class="bi bi-person"></i> Log In</a>
                         <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
                     </div>
@@ -1600,10 +1600,16 @@
                                 </div>
                                 <!-- single card end -->
                             </div>
+
+                             <!-- Swiper Navigation -->
+                            <div class="swiper-button-prev d-md-none"></div>
+                            <div class="swiper-button-next d-md-none"></div>
                         </div>
 
                         <!-- Swiper Pagination -->
                         <div class="swiper-pagination"></div>
+
+                       
                     </div>
 
                 </div>
@@ -1670,12 +1676,52 @@
                 }
             }
 
-            .swiper {
-                cursor: grab;
+            /* Swiper Navigation Buttons */
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 40px;
+                height: 40px;
+                background-color: #4e66f8;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 35px;
+                transform: translateY(0);
+                z-index: 10;
             }
 
-            .swiper:active {
-                cursor: grabbing;
+            .swiper-button-prev {
+                right: 64px;
+                left: auto;
+            }
+
+            .swiper-button-next {
+                right: 10px;
+                left: auto;
+            }
+
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                font-size: 12px;
+                color: #fff;
+            }
+
+            /* Adjust button positioning for responsiveness */
+            @media (max-width: 768px) {
+                .swiper-button-prev {
+                    right: 50px;
+                }
+
+                .swiper-button-next {
+                    right: 6px;
+                }
+            }
+
+            .pricing-swiper {
+                position: relative;
+                padding-top: 58px;
             }
         </style>
 
@@ -1785,7 +1831,8 @@
                                             <h4 class="mb-2 h5">WordPress Hosting</h4>
                                             <span class="small">Powerful WordPress hosting for bloggers, eCommerce
                                                 stores, and agencies. Deploy instantly on Wefithostâ€™s UK-based,
-                                                cloud-optimized platformâ€”engineered for maximum speed, performance, and
+                                                cloud-optimized platformâ€”engineered for maximum speed, performance,
+                                                and
                                                 reliability.</span>
                                         </div>
                                     </div>
@@ -2720,6 +2767,7 @@
                 slidesPerView: 1,
                 spaceBetween: 10,
                 loop: false,
+
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',

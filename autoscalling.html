@@ -36,6 +36,8 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css">
     <title>WeFitHost</title>
 
 
@@ -231,10 +233,12 @@
             transition: all 0.3s ease;
             font-size: 1.05rem;
         }
-		
-		
 
-        
+        @media (max-width: 1140px)and (min-width: 992px) {
+            .nav-link {
+                padding: 1rem 0.1rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -511,10 +515,11 @@
                                             </a>
                                         </div>
                                     </div>
-      
+
                                     <div class="col-md-4">
                                         <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>Client Management
+                                            <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>Client
+                                                Management
                                             </h6>
                                             <a class="dropdown-item" href="maintenance.html">
                                                 <div class="d-flex flex-column">
@@ -536,10 +541,11 @@
                                             </a>
                                         </div>
                                     </div>
-      
+
                                     <div class="col-md-4">
                                         <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Business Growth
+                                            <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Business
+                                                Growth
                                             </h6>
                                             <a class="dropdown-item" href="maintenance.html">
                                                 <div class="d-flex flex-column">
@@ -970,23 +976,23 @@
             --gray: #6c757d;
             --light-gray: #e9ecef;
             --border-radius: 12px;
-            --box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            --box-shadow-hover: 0 15px 40px rgba(0,0,0,0.12);
+            --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --box-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, #4cc9f0 100%);
         }
-    
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-    
+
         html {
             scroll-behavior: smooth;
         }
-    
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -994,24 +1000,27 @@
             background-color: var(--lighter);
             -webkit-font-smoothing: antialiased;
         }
-    
+
         @supports (font-variation-settings: normal) {
             body {
                 font-family: 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             }
         }
-    
+
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 32px;
         }
-    
-        h1, h2, h3, h4 {
+
+        h1,
+        h2,
+        h3,
+        h4 {
             font-weight: 700;
             line-height: 1.2;
         }
-    
+
         /* ===== Buttons ===== */
         .btn {
             display: inline-flex;
@@ -1030,23 +1039,23 @@
             overflow: hidden;
             z-index: 1;
         }
-    
+
         .btn:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
         }
-    
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
             box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
         }
-    
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
         }
-    
+
         .btn-primary::after {
             content: '';
             position: absolute;
@@ -1059,25 +1068,25 @@
             z-index: -1;
             transition: var(--transition);
         }
-    
+
         .btn-primary:hover::after {
             opacity: 1;
         }
-    
+
         .btn-outline {
             background-color: transparent;
             color: var(--primary);
             border: 2px solid var(--primary);
             padding: 12px 26px;
         }
-    
+
         .btn-outline:hover {
             background-color: var(--primary);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(74, 107, 255, 0.2);
         }
-    
+
         /* ===== Section Headings ===== */
         .section-title {
             font-size: 2.75rem;
@@ -1090,7 +1099,7 @@
             color: transparent;
             line-height: 1.2;
         }
-    
+
         .section-subtitle {
             font-size: 1.15rem;
             color: var(--gray);
@@ -1099,7 +1108,7 @@
             margin: 0 auto 3.5rem;
             line-height: 1.6;
         }
-    
+
         /* ===== Hero Section ===== */
         .hero {
             background: linear-gradient(135deg, #f5f7ff 0%, #f0f2ff 100%);
@@ -1107,7 +1116,7 @@
             position: relative;
             overflow: hidden;
         }
-    
+
         .hero::before {
             content: '';
             position: absolute;
@@ -1115,10 +1124,10 @@
             right: -50%;
             width: 100%;
             height: 200%;
-            background: radial-gradient(circle, rgba(67, 97, 238, 0.08) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(67, 97, 238, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
             z-index: 0;
         }
-    
+
         .hero-container {
             display: flex;
             align-items: center;
@@ -1126,17 +1135,17 @@
             z-index: 2;
             gap: 60px;
         }
-    
+
         .hero-content {
             flex: 1;
             max-width: 600px;
         }
-    
+
         .hero-image {
             flex: 1;
             position: relative;
         }
-    
+
         .hero-image img {
             width: 100%;
             height: auto;
@@ -1146,12 +1155,12 @@
             transform: perspective(1000px) rotateY(-10deg);
             transition: var(--transition);
         }
-    
+
         .hero-image:hover img {
             transform: perspective(1000px) rotateY(-5deg);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
@@ -1159,28 +1168,28 @@
             line-height: 1.1;
             color: var(--darker);
         }
-    
+
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--gray);
             margin-bottom: 2.5rem;
             line-height: 1.6;
         }
-    
+
         .hero-buttons {
             display: flex;
             gap: 16px;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
-    
+
         /* ===== Pricing Scroller ===== */
         .pricing-scroller-section {
             padding: 120px 0;
             background-color: var(--lighter);
             position: relative;
         }
-    
+
         .pricing-scroller-section::before {
             content: '';
             position: absolute;
@@ -1191,14 +1200,14 @@
             background: linear-gradient(to bottom, rgba(241, 243, 255, 0.5) 0%, rgba(241, 243, 255, 0) 100%);
             z-index: 0;
         }
-    
+
         .scroller-container {
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
             z-index: 1;
         }
-    
+
         .scroller-header {
             display: flex;
             justify-content: space-between;
@@ -1207,24 +1216,24 @@
             flex-wrap: wrap;
             gap: 24px;
         }
-    
+
         .scroller-title {
             font-size: 2.25rem;
             font-weight: 800;
             margin: 0;
             color: var(--darker);
         }
-    
+
         .scroller-description {
             color: var(--gray);
             max-width: 500px;
         }
-    
+
         .scroller-nav {
             display: flex;
             gap: 12px;
         }
-    
+
         .scroller-nav-btn {
             width: 48px;
             height: 48px;
@@ -1236,9 +1245,9 @@
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
-    
+
         .scroller-nav-btn:hover:not([disabled]),
         .scroller-nav-btn:focus:not([disabled]) {
             background: var(--primary);
@@ -1248,19 +1257,19 @@
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
             outline: none;
         }
-    
+
         .scroller-nav-btn[disabled] {
             opacity: 0.5;
             cursor: not-allowed;
         }
-    
+
         .scroller-nav-btn[disabled]:hover {
             background: white;
             color: inherit;
             transform: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
-    
+
         .price-scroller {
             display: flex;
             overflow-x: auto;
@@ -1270,11 +1279,11 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-    
+
         .price-scroller::-webkit-scrollbar {
             display: none;
         }
-    
+
         .price-card {
             flex: 0 0 360px;
             scroll-snap-align: start;
@@ -1283,11 +1292,11 @@
             box-shadow: var(--box-shadow);
             padding: 36px;
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
-    
+
         .price-card::before {
             content: '';
             position: absolute;
@@ -1297,24 +1306,24 @@
             height: 4px;
             background: var(--light-gray);
         }
-    
+
         .price-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .price-card:focus-within {
             box-shadow: 0 0 0 3px var(--primary-light);
         }
-    
+
         .price-card.popular {
             border-color: var(--primary);
         }
-    
+
         .price-card.popular::before {
             background: var(--gradient-primary);
         }
-    
+
         .popular-badge {
             position: absolute;
             top: 20px;
@@ -1327,23 +1336,23 @@
             font-weight: 600;
             box-shadow: 0 4px 10px rgba(67, 97, 238, 0.2);
         }
-    
+
         .price-card-header {
             margin-bottom: 24px;
         }
-    
+
         .price-card-title {
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 8px;
             color: var(--darker);
         }
-    
+
         .price-card-subtitle {
             color: var(--gray);
             font-size: 0.95rem;
         }
-    
+
         .price-card-price {
             font-size: 2.75rem;
             font-weight: 800;
@@ -1352,7 +1361,7 @@
             display: flex;
             align-items: flex-start;
         }
-    
+
         .price-card-price span {
             font-size: 1rem;
             font-weight: normal;
@@ -1360,39 +1369,39 @@
             margin-top: 8px;
             margin-left: 4px;
         }
-    
+
         .price-card-features {
             margin-bottom: 32px;
         }
-    
+
         .price-card-feature {
             display: flex;
             align-items: flex-start;
             margin-bottom: 16px;
             font-size: 0.95rem;
             padding-bottom: 16px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-    
+
         .price-card-feature:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
-    
+
         .price-card-feature i {
             color: var(--secondary);
             margin-right: 12px;
             font-size: 0.9rem;
             margin-top: 2px;
         }
-    
+
         .price-card-button {
             width: 100%;
             display: block;
             text-align: center;
         }
-    
+
         /* ===== Features Section ===== */
         .features-section {
             padding: 120px 0;
@@ -1400,7 +1409,7 @@
             position: relative;
             overflow: hidden;
         }
-    
+
         .features-section::after {
             content: '';
             position: absolute;
@@ -1411,31 +1420,31 @@
             background: radial-gradient(circle, rgba(114, 9, 183, 0.1) 0%, rgba(114, 9, 183, 0) 70%);
             z-index: 0;
         }
-    
+
         .features-container {
             position: relative;
             z-index: 1;
         }
-    
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin-top: 60px;
         }
-    
+
         .feature-card {
             background: white;
             border-radius: var(--border-radius);
             padding: 40px 32px;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
             z-index: 1;
         }
-    
+
         .feature-card::before {
             content: '';
             position: absolute;
@@ -1448,20 +1457,20 @@
             z-index: -1;
             transition: var(--transition);
         }
-    
+
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .feature-card:hover::before {
             opacity: 0.03;
         }
-    
+
         .feature-card:focus-within {
             box-shadow: 0 0 0 3px var(--primary-light);
         }
-    
+
         .feature-icon {
             font-size: 2.75rem;
             margin-bottom: 24px;
@@ -1471,26 +1480,26 @@
             color: transparent;
             display: inline-block;
         }
-    
+
         .feature-title {
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--darker);
         }
-    
+
         .feature-description {
             color: var(--gray);
             line-height: 1.6;
         }
-    
+
         /* ===== How It Works ===== */
         .how-it-works {
             padding: 120px 0;
             background: white;
             position: relative;
         }
-    
+
         .how-it-works::before {
             content: '';
             position: absolute;
@@ -1501,7 +1510,7 @@
             background: linear-gradient(to bottom, rgba(241, 243, 255, 0.5) 0%, rgba(241, 243, 255, 0) 100%);
             z-index: 0;
         }
-    
+
         .steps-container {
             display: flex;
             justify-content: center;
@@ -1511,7 +1520,7 @@
             position: relative;
             z-index: 1;
         }
-    
+
         .step-card {
             flex: 1;
             min-width: 300px;
@@ -1519,7 +1528,7 @@
             text-align: center;
             position: relative;
         }
-    
+
         .step-card::before {
             content: '';
             position: absolute;
@@ -1529,11 +1538,11 @@
             height: 2px;
             background: var(--light-gray);
         }
-    
+
         .step-card:first-child::before {
             display: none;
         }
-    
+
         .step-number {
             width: 60px;
             height: 60px;
@@ -1548,7 +1557,7 @@
             margin: 0 auto 24px;
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.2);
         }
-    
+
         .step-image {
             width: 100%;
             height: 220px;
@@ -1559,24 +1568,24 @@
             display: block;
             transition: var(--transition);
         }
-    
+
         .step-card:hover .step-image {
             transform: scale(1.02);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .step-title {
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--darker);
         }
-    
+
         .step-description {
             color: var(--gray);
             line-height: 1.6;
         }
-    
+
         /* ===== Technology Stack Carousel ===== */
         .tech-stack {
             padding: 120px 0;
@@ -1584,7 +1593,7 @@
             position: relative;
             overflow: hidden;
         }
-    
+
         .tech-stack::before {
             content: '';
             position: absolute;
@@ -1595,14 +1604,14 @@
             background: linear-gradient(to bottom, rgba(6, 214, 160, 0.05) 0%, rgba(6, 214, 160, 0) 100%);
             z-index: 0;
         }
-    
+
         .tech-carousel-container {
             position: relative;
             max-width: 1200px;
             margin: 60px auto 0;
             padding: 0 60px;
         }
-    
+
         .tech-carousel {
             display: flex;
             overflow-x: auto;
@@ -1612,11 +1621,11 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
-    
+
         .tech-carousel::-webkit-scrollbar {
             display: none;
         }
-    
+
         .tech-card {
             flex: 0 0 280px;
             scroll-snap-align: start;
@@ -1626,18 +1635,18 @@
             text-align: center;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-    
+
         .tech-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .tech-card:focus-within {
             box-shadow: 0 0 0 3px var(--primary-light);
         }
-    
+
         .tech-icon {
             width: 80px;
             height: 80px;
@@ -1648,9 +1657,9 @@
             background: var(--light);
             border-radius: 50%;
             padding: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
         }
-    
+
         .tech-icon img {
             max-width: 100%;
             max-height: 100%;
@@ -1659,25 +1668,25 @@
             opacity: 0.8;
             transition: var(--transition);
         }
-    
+
         .tech-card:hover .tech-icon img {
             filter: grayscale(0) contrast(1);
             opacity: 1;
         }
-    
+
         .tech-name {
             font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 12px;
             color: var(--darker);
         }
-    
+
         .tech-description {
             color: var(--gray);
             font-size: 0.95rem;
             line-height: 1.6;
         }
-    
+
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -1688,7 +1697,7 @@
             pointer-events: none;
             z-index: 2;
         }
-    
+
         .carousel-btn {
             width: 48px;
             height: 48px;
@@ -1700,10 +1709,10 @@
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             pointer-events: auto;
         }
-    
+
         .carousel-btn:hover:not([disabled]) {
             background: var(--primary);
             color: white;
@@ -1711,26 +1720,26 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
         }
-    
+
         .carousel-btn[disabled] {
             opacity: 0.5;
             cursor: not-allowed;
         }
-    
+
         .carousel-btn[disabled]:hover {
             background: white;
             color: inherit;
             transform: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
-    
+
         /* ===== Performance Metrics ===== */
         .performance-section {
             padding: 120px 0;
             background: white;
             position: relative;
         }
-    
+
         .performance-section::before {
             content: '';
             position: absolute;
@@ -1741,7 +1750,7 @@
             background: linear-gradient(to bottom, rgba(241, 243, 255, 0.5) 0%, rgba(241, 243, 255, 0) 100%);
             z-index: 0;
         }
-    
+
         .metrics-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1750,22 +1759,22 @@
             position: relative;
             z-index: 1;
         }
-    
+
         .metric-card {
             background: white;
             border-radius: var(--border-radius);
             padding: 40px 32px;
             text-align: center;
             box-shadow: var(--box-shadow);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-    
+
         .metric-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .metric-value {
             font-size: 2.75rem;
             font-weight: 800;
@@ -1776,45 +1785,45 @@
             background-clip: text;
             color: transparent;
         }
-    
+
         .metric-label {
             font-size: 1.15rem;
             font-weight: 600;
             color: var(--darker);
         }
-    
+
         /* ===== Case Studies ===== */
         .case-studies {
             padding: 120px 0;
             background-color: var(--light);
             position: relative;
         }
-    
+
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin-top: 60px;
         }
-    
+
         .case-card {
             background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-    
+
         .case-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .case-card:focus-within {
             box-shadow: 0 0 0 3px var(--primary-light);
         }
-    
+
         .case-image {
             width: 100%;
             height: 220px;
@@ -1822,51 +1831,51 @@
             display: block;
             transition: var(--transition);
         }
-    
+
         .case-card:hover .case-image {
             transform: scale(1.02);
         }
-    
+
         .case-content {
             padding: 32px;
         }
-    
+
         .case-title {
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--darker);
         }
-    
+
         .case-description {
             color: var(--gray);
             margin-bottom: 24px;
             line-height: 1.6;
         }
-    
+
         .case-stats {
             display: flex;
             justify-content: space-between;
             padding-top: 24px;
             border-top: 1px solid var(--light-gray);
         }
-    
+
         .stat-item {
             text-align: center;
         }
-    
+
         .stat-value {
             font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 4px;
         }
-    
+
         .stat-label {
             font-size: 0.85rem;
             color: var(--gray);
         }
-    
+
         /* ===== CTA Section ===== */
         .cta-section {
             padding: 120px 0;
@@ -1876,7 +1885,7 @@
             position: relative;
             overflow: hidden;
         }
-    
+
         .cta-section::before {
             content: '';
             position: absolute;
@@ -1884,22 +1893,22 @@
             right: -50%;
             width: 100%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
             z-index: 0;
         }
-    
+
         .cta-container {
             position: relative;
             z-index: 1;
         }
-    
+
         .cta-title {
             font-size: 2.75rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
-    
+
         .cta-subtitle {
             font-size: 1.25rem;
             max-width: 700px;
@@ -1907,50 +1916,50 @@
             opacity: 0.9;
             line-height: 1.6;
         }
-    
+
         .cta-buttons {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
-    
+
         .btn-cta-secondary {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(5px);
         }
-    
+
         .btn-cta-secondary:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-    
+
         /* ===== FAQ Section ===== */
         .faq-section {
             padding: 120px 0;
             background: white;
         }
-    
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-    
+
         .faq-item {
             margin-bottom: 16px;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: var(--transition);
         }
-    
+
         .faq-item:hover {
             box-shadow: var(--box-shadow-hover);
         }
-    
+
         .faq-question {
             width: 100%;
             padding: 24px;
@@ -1966,24 +1975,24 @@
             font-size: 1.05rem;
             color: var(--darker);
         }
-    
+
         .faq-question:hover,
         .faq-question:focus {
             background: var(--primary-light);
             outline: none;
         }
-    
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
             transition: var(--transition);
             color: var(--primary);
         }
-    
+
         .faq-question[aria-expanded="true"]::after {
             content: '-';
         }
-    
+
         .faq-answer {
             padding: 0 24px;
             max-height: 0;
@@ -1992,12 +2001,12 @@
             color: var(--gray);
             line-height: 1.6;
         }
-    
+
         .faq-answer.active {
             padding: 0 24px 24px;
             max-height: 500px;
         }
-    
+
         /* ===== Skip Link ===== */
         .skip-link {
             position: absolute;
@@ -2011,222 +2020,240 @@
             border-radius: 0 0 4px 0;
             font-weight: 600;
         }
-    
+
         .skip-link:focus {
             top: 0;
         }
-    
+
         /* ===== Animations ===== */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-    
+
         .fade-in {
             animation: fadeIn 0.6s ease-out forwards;
         }
-    
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-    
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
         /* ===== Responsive Styles ===== */
         @media (max-width: 1200px) {
             .hero-title {
                 font-size: 3rem;
             }
-    
+
             .section-title {
                 font-size: 2.5rem;
             }
         }
-    
+
         @media (max-width: 992px) {
             .hero-container {
                 flex-direction: column;
                 gap: 40px;
             }
-    
+
             .hero-content {
                 max-width: 100%;
                 text-align: center;
             }
-    
+
             .hero-image {
                 width: 100%;
                 max-width: 600px;
                 margin: 0 auto;
             }
-    
+
             .hero-buttons {
                 justify-content: center;
             }
-    
+
             .section-title {
                 font-size: 2.25rem;
             }
-    
+
             .steps-container {
                 gap: 30px;
             }
-    
+
             .step-card::before {
                 display: none;
             }
-    
+
             .tech-carousel-container {
                 padding: 0 40px;
             }
         }
-    
+
         @media (max-width: 768px) {
             .hero {
                 padding: 100px 0 80px;
             }
-    
+
             .hero-title {
                 font-size: 2.5rem;
             }
-    
+
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-    
+
             .section-title {
                 font-size: 2rem;
             }
-    
+
             .section-subtitle {
                 font-size: 1.05rem;
                 margin-bottom: 2.5rem;
             }
-    
+
             .price-card {
                 flex: 0 0 320px;
                 padding: 30px;
             }
-    
+
             .scroller-header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 gap: 20px;
             }
-    
+
             .scroller-title {
                 font-size: 2rem;
             }
-    
+
             .scroller-description {
                 text-align: center;
             }
-    
+
             .cta-title {
                 font-size: 2.25rem;
             }
-    
+
             .cta-subtitle {
                 font-size: 1.1rem;
             }
-    
+
             .tech-carousel-container {
                 padding: 0 20px;
             }
-    
+
             .carousel-btn {
                 width: 40px;
                 height: 40px;
             }
         }
-    
+
         @media (max-width: 576px) {
             .container {
                 padding: 0 24px;
             }
-    
+
             .hero-title {
                 font-size: 2rem;
             }
-    
+
             .hero-subtitle {
                 font-size: 1rem;
             }
-    
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 12px;
             }
-    
+
             .btn {
                 width: 100%;
             }
-    
+
             .section-title {
                 font-size: 1.75rem;
             }
-    
+
             .price-card {
                 flex: 0 0 280px;
                 padding: 24px;
             }
-    
+
             .features-grid,
             .tech-grid {
                 grid-template-columns: 1fr;
             }
-    
+
             .cta-title {
                 font-size: 2rem;
             }
-    
+
             .cta-buttons {
                 flex-direction: column;
                 gap: 12px;
             }
-    
+
             .tech-carousel-container {
                 padding: 0 10px;
             }
-    
+
             .carousel-btn {
                 width: 36px;
                 height: 36px;
             }
         }
     </style>
-    
+
     <main class="autoscale-content">
         <!-- Skip link for keyboard users -->
         <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
         <!-- Hero Section -->
         <section class="hero" id="main-content">
             <div class="container">
                 <div class="hero-container">
                     <div class="hero-content fade-in">
                         <h1 class="hero-title">Intelligent Auto-Scaling for Modern Cloud Applications</h1>
-                        <p class="hero-subtitle">Dynamically adapt to traffic surges with our AI-powered infrastructure that scales resources in real-time, ensuring optimal performance and cost-efficiency.</p>
-                        
+                        <p class="hero-subtitle">Dynamically adapt to traffic surges with our AI-powered infrastructure
+                            that scales resources in real-time, ensuring optimal performance and cost-efficiency.</p>
+
                         <div class="hero-buttons">
                             <a href="#pricing" class="btn btn-primary">Get Started for Free</a>
                             <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
                         </div>
                     </div>
-    
+
                     <div class="hero-image fade-in delay-1">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1685&q=80" alt="Cloud computing visualization with network connections" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1685&q=80"
+                            alt="Cloud computing visualization with network connections" loading="lazy" />
                     </div>
                 </div>
             </div>
         </section>
-    
+
         <!-- Pricing Scroller -->
         <section class="pricing-scroller-section" id="pricing">
             <div class="container fade-in">
                 <div class="scroller-header">
                     <div>
                         <h2 class="scroller-title">Flexible Pricing for Every Scale</h2>
-                        <p class="scroller-description">Choose the perfect plan for your needs with transparent pricing and no hidden fees.</p>
+                        <p class="scroller-description">Choose the perfect plan for your needs with transparent pricing
+                            and no hidden fees.</p>
                     </div>
                     <div class="scroller-nav">
                         <button class="scroller-nav-btn" aria-label="Previous" disabled>&lt;</button>
@@ -2298,115 +2325,148 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- Features Section -->
         <section class="features-section">
             <div class="container">
                 <h2 class="section-title fade-in">Powerful Features Built for Scale</h2>
-                <p class="section-subtitle fade-in delay-1">Our platform combines cutting-edge technology with intuitive tools to give you complete control over your infrastructure.</p>
+                <p class="section-subtitle fade-in delay-1">Our platform combines cutting-edge technology with intuitive
+                    tools to give you complete control over your infrastructure.</p>
                 <div class="features-grid">
                     <div class="feature-card fade-in delay-1">
                         <div class="feature-icon">⚡</div>
                         <h3 class="feature-title">Instant Resource Allocation</h3>
-                        <p class="feature-description">Our platform immediately provisions the necessary resources to handle traffic spikes, ensuring your applications remain responsive under any load.</p>
+                        <p class="feature-description">Our platform immediately provisions the necessary resources to
+                            handle traffic spikes, ensuring your applications remain responsive under any load.</p>
                     </div>
                     <div class="feature-card fade-in delay-2">
                         <div class="feature-icon">🛡️</div>
                         <h3 class="feature-title">Enterprise-Grade Security</h3>
-                        <p class="feature-description">Protect your applications with DDoS protection, web application firewalls, and automated security patches that keep your infrastructure secure.</p>
+                        <p class="feature-description">Protect your applications with DDoS protection, web application
+                            firewalls, and automated security patches that keep your infrastructure secure.</p>
                     </div>
                     <div class="feature-card fade-in delay-3">
                         <div class="feature-icon">🤖</div>
                         <h3 class="feature-title">AI-Powered Optimization</h3>
-                        <p class="feature-description">Our machine learning algorithms analyze traffic patterns to predict scaling needs and optimize resource allocation for maximum efficiency.</p>
+                        <p class="feature-description">Our machine learning algorithms analyze traffic patterns to
+                            predict scaling needs and optimize resource allocation for maximum efficiency.</p>
                     </div>
                     <div class="feature-card fade-in delay-1">
                         <div class="feature-icon">🌐</div>
                         <h3 class="feature-title">Global Edge Network</h3>
-                        <p class="feature-description">With 50+ edge locations worldwide, we deliver content with ultra-low latency no matter where your users are located.</p>
+                        <p class="feature-description">With 50+ edge locations worldwide, we deliver content with
+                            ultra-low latency no matter where your users are located.</p>
                     </div>
                     <div class="feature-card fade-in delay-2">
                         <div class="feature-icon">📊</div>
                         <h3 class="feature-title">Real-Time Analytics</h3>
-                        <p class="feature-description">Monitor performance metrics, traffic patterns, and resource utilization through our comprehensive dashboard with real-time updates.</p>
+                        <p class="feature-description">Monitor performance metrics, traffic patterns, and resource
+                            utilization through our comprehensive dashboard with real-time updates.</p>
                     </div>
                     <div class="feature-card fade-in delay-3">
                         <div class="feature-icon">🔌</div>
                         <h3 class="feature-title">Seamless Integrations</h3>
-                        <p class="feature-description">Connect with your favorite tools and services through our API and pre-built integrations for CI/CD, monitoring, and more.</p>
+                        <p class="feature-description">Connect with your favorite tools and services through our API and
+                            pre-built integrations for CI/CD, monitoring, and more.</p>
                     </div>
                 </div>
             </div>
         </section>
-    
+
         <!-- How It Works -->
         <section class="how-it-works" id="how-it-works">
             <div class="container">
                 <h2 class="section-title fade-in">How Auto-Scaling Works</h2>
-                <p class="section-subtitle fade-in delay-1">Our intelligent system continuously monitors and adjusts resources to match your application's needs in real-time.</p>
+                <p class="section-subtitle fade-in delay-1">Our intelligent system continuously monitors and adjusts
+                    resources to match your application's needs in real-time.</p>
                 <div class="steps-container">
                     <div class="step-card fade-in delay-1">
                         <div class="step-number">1</div>
-                        <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Monitoring dashboard showing traffic analysis" class="step-image" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+                            alt="Monitoring dashboard showing traffic analysis" class="step-image" loading="lazy" />
                         <h3 class="step-title">Continuous Monitoring</h3>
-                        <p class="step-description">Our system constantly analyzes traffic patterns, resource utilization, and performance metrics across your infrastructure.</p>
+                        <p class="step-description">Our system constantly analyzes traffic patterns, resource
+                            utilization, and performance metrics across your infrastructure.</p>
                     </div>
                     <div class="step-card fade-in delay-2">
                         <div class="step-number">2</div>
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1685&q=80" alt="Cloud servers automatically scaling" class="step-image" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1685&q=80"
+                            alt="Cloud servers automatically scaling" class="step-image" loading="lazy" />
                         <h3 class="step-title">Intelligent Scaling</h3>
-                        <p class="step-description">Based on real-time analysis, resources are automatically provisioned or decommissioned to match current demand.</p>
+                        <p class="step-description">Based on real-time analysis, resources are automatically provisioned
+                            or decommissioned to match current demand.</p>
                     </div>
                     <div class="step-card fade-in delay-3">
                         <div class="step-number">3</div>
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1574&q=80" alt="Performance optimization dashboard" class="step-image" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1574&q=80"
+                            alt="Performance optimization dashboard" class="step-image" loading="lazy" />
                         <h3 class="step-title">Continuous Optimization</h3>
-                        <p class="step-description">Machine learning algorithms fine-tune resource allocation for optimal performance and cost efficiency.</p>
+                        <p class="step-description">Machine learning algorithms fine-tune resource allocation for
+                            optimal performance and cost efficiency.</p>
                     </div>
                 </div>
             </div>
         </section>
-    
+
         <!-- Technology Stack Carousel -->
         <section class="tech-stack">
             <div class="container">
                 <h2 class="section-title fade-in">Built on Cutting-Edge Technology</h2>
-                <p class="section-subtitle fade-in delay-1">We leverage the most advanced technologies to deliver unparalleled performance and reliability.</p>
-                
+                <p class="section-subtitle fade-in delay-1">We leverage the most advanced technologies to deliver
+                    unparalleled performance and reliability.</p>
+
                 <div class="tech-carousel-container">
                     <div class="tech-carousel">
                         <div class="tech-card fade-in delay-1">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                                    alt="Docker logo" loading="lazy" /></div>
                             <h3 class="tech-name">Docker</h3>
-                            <p class="tech-description">Containerized environments ensure consistent deployments across all stages of development.</p>
+                            <p class="tech-description">Containerized environments ensure consistent deployments across
+                                all stages of development.</p>
                         </div>
                         <div class="tech-card fade-in delay-2">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+                                    alt="Kubernetes logo" loading="lazy" /></div>
                             <h3 class="tech-name">Kubernetes</h3>
-                            <p class="tech-description">Automated container orchestration that scales seamlessly with your application needs.</p>
+                            <p class="tech-description">Automated container orchestration that scales seamlessly with
+                                your application needs.</p>
                         </div>
                         <div class="tech-card fade-in delay-3">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg"
+                                    alt="Terraform logo" loading="lazy" /></div>
                             <h3 class="tech-name">Terraform</h3>
-                            <p class="tech-description">Infrastructure as code for reliable, repeatable environment provisioning.</p>
+                            <p class="tech-description">Infrastructure as code for reliable, repeatable environment
+                                provisioning.</p>
                         </div>
                         <div class="tech-card fade-in delay-1">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg"
+                                    alt="Prometheus logo" loading="lazy" /></div>
                             <h3 class="tech-name">Prometheus</h3>
-                            <p class="tech-description">Powerful monitoring and alerting system that provides real-time insights.</p>
+                            <p class="tech-description">Powerful monitoring and alerting system that provides real-time
+                                insights.</p>
                         </div>
                         <div class="tech-card fade-in delay-2">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg"
+                                    alt="Grafana logo" loading="lazy" /></div>
                             <h3 class="tech-name">Grafana</h3>
-                            <p class="tech-description">Beautiful dashboards that visualize your infrastructure metrics and performance.</p>
+                            <p class="tech-description">Beautiful dashboards that visualize your infrastructure metrics
+                                and performance.</p>
                         </div>
                         <div class="tech-card fade-in delay-3">
-                            <div class="tech-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible logo" loading="lazy" /></div>
+                            <div class="tech-icon"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg"
+                                    alt="Ansible logo" loading="lazy" /></div>
                             <h3 class="tech-name">Ansible</h3>
-                            <p class="tech-description">Automation tool for configuration management and application deployment.</p>
+                            <p class="tech-description">Automation tool for configuration management and application
+                                deployment.</p>
                         </div>
                     </div>
-                    
+
                     <div class="carousel-nav">
                         <button class="carousel-btn" aria-label="Previous technology">&lt;</button>
                         <button class="carousel-btn" aria-label="Next technology">&gt;</button>
@@ -2414,12 +2474,13 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- Performance Metrics -->
         <section class="performance-section">
             <div class="container">
                 <h2 class="section-title fade-in">Proven Performance</h2>
-                <p class="section-subtitle fade-in delay-1">Our technology delivers measurable results that help businesses grow without infrastructure worries.</p>
+                <p class="section-subtitle fade-in delay-1">Our technology delivers measurable results that help
+                    businesses grow without infrastructure worries.</p>
                 <div class="metrics-container">
                     <div class="metric-card fade-in delay-1">
                         <div class="metric-value">99.99%</div>
@@ -2440,18 +2501,21 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- Case Studies -->
         <section class="case-studies">
             <div class="container">
                 <h2 class="section-title fade-in">Success Stories</h2>
-                <p class="section-subtitle fade-in delay-1">See how businesses like yours have transformed their operations with our auto-scaling solutions.</p>
+                <p class="section-subtitle fade-in delay-1">See how businesses like yours have transformed their
+                    operations with our auto-scaling solutions.</p>
                 <div class="case-grid">
                     <article class="case-card fade-in delay-1">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="E-commerce website on multiple devices" class="case-image" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                            alt="E-commerce website on multiple devices" class="case-image" loading="lazy" />
                         <div class="case-content">
                             <h3 class="case-title">E-commerce Platform Handles Black Friday Surge</h3>
-                            <p class="case-description">A mid-sized retailer seamlessly scaled to handle 10x normal traffic during peak shopping events with zero downtime.</p>
+                            <p class="case-description">A mid-sized retailer seamlessly scaled to handle 10x normal
+                                traffic during peak shopping events with zero downtime.</p>
                             <div class="case-stats">
                                 <div class="stat-item">
                                     <div class="stat-value">10x</div>
@@ -2469,10 +2533,12 @@
                         </div>
                     </article>
                     <article class="case-card fade-in delay-2">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Business analytics dashboard" class="case-image" loading="lazy" />
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+                            alt="Business analytics dashboard" class="case-image" loading="lazy" />
                         <div class="case-content">
                             <h3 class="case-title">SaaS Startup Scales for Viral Growth</h3>
-                            <p class="case-description">A productivity tool automatically scaled to accommodate 500% user growth after a popular influencer endorsement.</p>
+                            <p class="case-description">A productivity tool automatically scaled to accommodate 500%
+                                user growth after a popular influencer endorsement.</p>
                             <div class="case-stats">
                                 <div class="stat-item">
                                     <div class="stat-value">5x</div>
@@ -2492,24 +2558,26 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="cta-container">
                 <h2 class="cta-title fade-in">Ready to Scale Without Limits?</h2>
-                <p class="cta-subtitle fade-in delay-1">Join thousands of businesses that trust our auto-scaling platform to handle their growth effortlessly.</p>
+                <p class="cta-subtitle fade-in delay-1">Join thousands of businesses that trust our auto-scaling
+                    platform to handle their growth effortlessly.</p>
                 <div class="cta-buttons fade-in delay-2">
                     <a href="#pricing" class="btn btn-primary">Get Started for Free</a>
                     <a href="#" class="btn btn-cta-secondary">Schedule a Demo</a>
                 </div>
             </div>
         </section>
-    
+
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="container">
                 <h2 class="section-title fade-in">Frequently Asked Questions</h2>
-                <p class="section-subtitle fade-in delay-1">Find answers to common questions about our auto-scaling platform.</p>
+                <p class="section-subtitle fade-in delay-1">Find answers to common questions about our auto-scaling
+                    platform.</p>
                 <div class="faq-container">
                     <div class="faq-item fade-in delay-1">
                         <button class="faq-question" aria-expanded="false" aria-controls="faq1">
@@ -2517,7 +2585,9 @@
                             <span aria-hidden="true">+</span>
                         </button>
                         <div id="faq1" class="faq-answer">
-                            <p>Our system detects traffic changes within seconds and begins scaling resources immediately. Most scaling actions complete within 1-2 minutes, ensuring your application maintains optimal performance even during sudden surges.</p>
+                            <p>Our system detects traffic changes within seconds and begins scaling resources
+                                immediately. Most scaling actions complete within 1-2 minutes, ensuring your application
+                                maintains optimal performance even during sudden surges.</p>
                         </div>
                     </div>
                     <div class="faq-item fade-in delay-2">
@@ -2526,7 +2596,9 @@
                             <span aria-hidden="true">+</span>
                         </button>
                         <div id="faq2" class="faq-answer">
-                            <p>Absolutely. While our AI provides intelligent default scaling parameters, you have full control to define custom rules based on CPU usage, memory consumption, request rates, or any other metric that matters for your application.</p>
+                            <p>Absolutely. While our AI provides intelligent default scaling parameters, you have full
+                                control to define custom rules based on CPU usage, memory consumption, request rates, or
+                                any other metric that matters for your application.</p>
                         </div>
                     </div>
                     <div class="faq-item fade-in delay-3">
@@ -2535,7 +2607,9 @@
                             <span aria-hidden="true">+</span>
                         </button>
                         <div id="faq3" class="faq-answer">
-                            <p>We bill based on actual resource usage per second, so you only pay for what you use. Our platform also provides cost optimization recommendations to help you balance performance and budget effectively.</p>
+                            <p>We bill based on actual resource usage per second, so you only pay for what you use. Our
+                                platform also provides cost optimization recommendations to help you balance performance
+                                and budget effectively.</p>
                         </div>
                     </div>
                     <div class="faq-item fade-in delay-1">
@@ -2544,7 +2618,9 @@
                             <span aria-hidden="true">+</span>
                         </button>
                         <div id="faq4" class="faq-answer">
-                            <p>All plans include 24/7 monitoring and email support. Higher tiers add live chat, phone support, and dedicated account managers. Enterprise customers receive a personal support team with guaranteed response times.</p>
+                            <p>All plans include 24/7 monitoring and email support. Higher tiers add live chat, phone
+                                support, and dedicated account managers. Enterprise customers receive a personal support
+                                team with guaranteed response times.</p>
                         </div>
                     </div>
                     <div class="faq-item fade-in delay-2">
@@ -2553,21 +2629,22 @@
                             <span aria-hidden="true">+</span>
                         </button>
                         <div id="faq5" class="faq-answer">
-                            <p>Yes! We offer a 14-day free trial with full access to all features of the Pro plan. No credit card required to start, and you can upgrade, downgrade, or cancel anytime.</p>
+                            <p>Yes! We offer a 14-day free trial with full access to all features of the Pro plan. No
+                                credit card required to start, and you can upgrade, downgrade, or cancel anytime.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <script>
         // Technology Carousel Navigation
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const carousel = document.querySelector('.tech-carousel');
             const prevBtn = document.querySelector('.carousel-nav .carousel-btn:first-child');
             const nextBtn = document.querySelector('.carousel-nav .carousel-btn:last-child');
-            
+
             // Calculate scroll amount based on card width + gap
             const scrollAmount = () => {
                 const card = document.querySelector('.tech-card');
@@ -2575,7 +2652,7 @@
                 const gap = 32; // matches the gap in CSS
                 return cardWidth + gap;
             };
-            
+
             // Previous button click handler
             prevBtn.addEventListener('click', () => {
                 carousel.scrollBy({
@@ -2583,7 +2660,7 @@
                     behavior: 'smooth'
                 });
             });
-            
+
             // Next button click handler
             nextBtn.addEventListener('click', () => {
                 carousel.scrollBy({
@@ -2591,76 +2668,76 @@
                     behavior: 'smooth'
                 });
             });
-            
+
             // Disable/enable buttons based on scroll position
             carousel.addEventListener('scroll', () => {
                 const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                
+
                 if (carousel.scrollLeft <= 0) {
                     prevBtn.disabled = true;
                 } else {
                     prevBtn.disabled = false;
                 }
-                
+
                 if (carousel.scrollLeft >= maxScroll) {
                     nextBtn.disabled = true;
                 } else {
                     nextBtn.disabled = false;
                 }
             });
-            
+
             // Initialize button states
             carousel.dispatchEvent(new Event('scroll'));
-            
+
             // Pricing scroller navigation
             const priceScroller = document.querySelector('.price-scroller');
             const pricePrevBtn = document.querySelector('.scroller-nav .scroller-nav-btn:first-child');
             const priceNextBtn = document.querySelector('.scroller-nav .scroller-nav-btn:last-child');
-            
+
             pricePrevBtn.addEventListener('click', () => {
                 priceScroller.scrollBy({
                     left: -360, // matches card width
                     behavior: 'smooth'
                 });
             });
-            
+
             priceNextBtn.addEventListener('click', () => {
                 priceScroller.scrollBy({
                     left: 360, // matches card width
                     behavior: 'smooth'
                 });
             });
-            
+
             priceScroller.addEventListener('scroll', () => {
                 const maxScroll = priceScroller.scrollWidth - priceScroller.clientWidth;
-                
+
                 if (priceScroller.scrollLeft <= 0) {
                     pricePrevBtn.disabled = true;
                 } else {
                     pricePrevBtn.disabled = false;
                 }
-                
+
                 if (priceScroller.scrollLeft >= maxScroll) {
                     priceNextBtn.disabled = true;
                 } else {
                     priceNextBtn.disabled = false;
                 }
             });
-            
+
             // Initialize pricing scroller button states
             priceScroller.dispatchEvent(new Event('scroll'));
-            
+
             // FAQ accordion functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
-            
+
             faqQuestions.forEach(question => {
                 question.addEventListener('click', () => {
                     const isExpanded = question.getAttribute('aria-expanded') === 'true';
                     const answer = document.getElementById(question.getAttribute('aria-controls'));
-                    
+
                     // Toggle the expanded state
                     question.setAttribute('aria-expanded', !isExpanded);
-                    
+
                     // Toggle the answer visibility
                     if (isExpanded) {
                         answer.classList.remove('active');
@@ -2671,7 +2748,7 @@
             });
         });
     </script>
-    
+
     <script>
         // FAQ toggle functionality
         document.querySelectorAll('.faq-question').forEach(button => {
@@ -2682,170 +2759,198 @@
                 answer.classList.toggle('active');
             });
         });
-    
+
         // Price scroller navigation
         const scroller = document.querySelector('.price-scroller');
         const prevBtn = document.querySelector('.scroller-nav-btn[aria-label="Previous"]');
         const nextBtn = document.querySelector('.scroller-nav-btn[aria-label="Next"]');
-    
+
         if (scroller && prevBtn && nextBtn) {
             const scrollAmount = 360; // Width of card + gap
-            
+
             nextBtn.addEventListener('click', () => {
                 scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 updateNavButtons();
             });
-    
+
             prevBtn.addEventListener('click', () => {
                 scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                 updateNavButtons();
             });
-    
+
             function updateNavButtons() {
                 prevBtn.disabled = scroller.scrollLeft <= 0;
                 nextBtn.disabled = scroller.scrollLeft >= (scroller.scrollWidth - scroller.clientWidth - 1);
             }
-    
+
             scroller.addEventListener('scroll', updateNavButtons);
             window.addEventListener('resize', updateNavButtons);
             updateNavButtons();
         }
     </script>
     <!-- Footer -->
-<footer class="pt-7 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
-    <div class="container">
-        <div class="row">
-            <!-- Newsletter & Logo Column (Now first column) -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="mb-4">
-                    <a href="#">
-                        <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3" style="max-height: 40px; filter: brightness(0) invert(1);">
-                    </a>
-                    <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
-                    
-                    <!-- Newsletter Form (Moved up) -->
+    <footer class="pt-7 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
+        <div class="container">
+            <div class="row">
+                <!-- Newsletter & Logo Column (Now first column) -->
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="mb-4">
-                        <h5 style="color: white; font-weight: 600;">Newsletter</h5>
-                        <form class="mb-2">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
-                                <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #1E293B;">Subscribe</button>
-                            </div>
-                        </form>
-                        <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                        <a href="#">
+                            <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
+                                style="max-height: 40px; filter: brightness(0) invert(1);">
+                        </a>
+                        <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+
+                        <!-- Newsletter Form (Moved up) -->
+                        <div class="mb-4">
+                            <h5 style="color: white; font-weight: 600;">Newsletter</h5>
+                            <form class="mb-2">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Your email"
+                                        style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
+                                    <button class="btn btn-primary" type="submit"
+                                        style="background-color: white; border-color: white; color: #1E293B;">Subscribe</button>
+                                </div>
+                            </form>
+                            <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
+                        </div>
+
+                        <!-- Social Icons with updated X icon -->
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
-                    
-                    <!-- Social Icons with updated X icon -->
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
-                    </div>
+                </div>
+
+                <!-- Hosting Column -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Hosting</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="shared-hosting.html"
+                                style="color: white; text-decoration: none;">Shared Hosting</a></li>
+                        <li class="mb-2"><a href="wordpress-hosting.html"
+                                style="color: white; text-decoration: none;">WordPress Hosting</a></li>
+                        <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS
+                                Hosting</a></li>
+                        <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud
+                                Hosting</a></li>
+                        <li class="mb-2"><a href="reseller-hosting.html"
+                                style="color: white; text-decoration: none;">Reseller Hosting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Domains Column -->
+
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Domains</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="maintenance.html"
+                                style="color: white; text-decoration: none;">Register Domain</a></li>
+                        <li class="mb-2"><a href="domain-transfer.html"
+                                style="color: white; text-decoration: none;">Transfer Domain</a></li>
+                        <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Domain
+                                Pricing</a></li>
+                        <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">WHOIS
+                                Lookup</a></li>
+                        <li class="mb-2"><a href="ssl-certificate.html" style="color: white; text-decoration: none;">SSL
+                                Certificates</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Column -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="maintenance.html"
+                                style="color: white; text-decoration: none;">Knowledge Base</a></li>
+                        <li class="mb-2"><a href="maintenance.html"
+                                style="color: white; text-decoration: none;">Tutorials</a></li>
+                        <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">System
+                                Status</a></li>
+                        <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Contact
+                                Support</a></li>
+                        <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Free
+                                Migration</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Column (Now last column) -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 style="color: white; font-weight: 600;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
+                        <li class="mb-2"><a href="maintenance.html"
+                                style="color: white; text-decoration: none;">Careers</a></li>
+                        <li class="mb-2"><a href="maintenance.html"
+                                style="color: white; text-decoration: none;">Partners</a></li>
+                        <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer
+                                Reviews</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Hosting Column -->
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Hosting</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="shared-hosting.html" style="color: white; text-decoration: none;">Shared Hosting</a></li>
-                    <li class="mb-2"><a href="wordpress-hosting.html" style="color: white; text-decoration: none;">WordPress Hosting</a></li>
-                    <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS Hosting</a></li>
-                    <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud Hosting</a></li>
-                    <li class="mb-2"><a href="reseller-hosting.html" style="color: white; text-decoration: none;">Reseller Hosting</a></li>
-                </ul>
-            </div>
+            <hr style="border-color: rgba(255,255,255,0.2);">
 
-            <!-- Domains Column -->
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Domains</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Register Domain</a></li>
-                    <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
-                    <li class="mb-2"><a href="ssl-certificate.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
-                </ul>
-            </div>
-
-            <!-- Support Column -->
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Support</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Tutorials</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">System Status</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Contact Support</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Free Migration</a></li>
-                </ul>
-            </div>
-
-            <!-- Company Column (Now last column) -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Company</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Careers</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Partners</a></li>
-                    <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
-                </ul>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
+                </div>
+                <div class="col-md-6">
+                    <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
+                        <li><a href="maintenance.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a>
+                        </li>
+                        <li><a href="maintenance.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a>
+                        </li>
+                        <li><a href="maintenance.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a>
+                        </li>
+                        <li><a href="maintenance.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level
+                                Agreement</a></li>
+                        <li><a href="maintenance.html"
+                                style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <hr style="border-color: rgba(255,255,255,0.2);">
+    <style>
+        .footerlinkcoor input.form-control {
+            background-color: inherit;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
 
-        <div class="row align-items-center">
-            <div class="col-md-6 mb-3 mb-md-0">
-                <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
-            </div>
-            <div class="col-md-6">
-                <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+        .footerlinkcoor input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-<style>
-    .footerlinkcoor input.form-control {
-        background-color: inherit;
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-    }
+        .footerlinkcoor button.btn {
+            background-color: white;
+            color: #6B63FF;
+        }
 
-    .footerlinkcoor input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-    }
+        .text-center {
+            text-align: center;
+        }
+    </style>
 
-    .footerlinkcoor button.btn {
-        background-color: white;
-        color: #6B63FF;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-</style>
-
-<!-- Footer End -->
+    <!-- Footer End -->
 
 
-    
+
 
     <!-- Libs JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
@@ -2855,57 +2960,58 @@
     <script src="assets/js/init.js?t=20240403"></script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let navbar = document.querySelector(".navbar");
+        document.addEventListener("DOMContentLoaded", function () {
+            let navbar = document.querySelector(".navbar");
 
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            // Change when scrolled 50px
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    // Change when scrolled 50px
+                    navbar.classList.add("scrolled");
+                } else {
+                    navbar.classList.remove("scrolled");
+                }
+            });
         });
-      });
     </script>
 
-<script>
-    // Price Scroller Functionality
-    const priceScroller = document.getElementById('priceScroller');
-    const scrollerPrev = document.getElementById('scrollerPrev');
-    const scrollerNext = document.getElementById('scrollerNext');
-    
-    // Navigation buttons
-    scrollerPrev.addEventListener('click', () => {
-        priceScroller.scrollBy({
-            left: -300,
-            behavior: 'smooth'
+    <script>
+        // Price Scroller Functionality
+        const priceScroller = document.getElementById('priceScroller');
+        const scrollerPrev = document.getElementById('scrollerPrev');
+        const scrollerNext = document.getElementById('scrollerNext');
+
+        // Navigation buttons
+        scrollerPrev.addEventListener('click', () => {
+            priceScroller.scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
         });
-    });
-    
-    scrollerNext.addEventListener('click', () => {
-        priceScroller.scrollBy({
-            left: 300,
-            behavior: 'smooth'
+
+        scrollerNext.addEventListener('click', () => {
+            priceScroller.scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
         });
-    });
-    
-    // Disable buttons when at ends
-    priceScroller.addEventListener('scroll', () => {
-        const maxScroll = priceScroller.scrollWidth - priceScroller.clientWidth;
-        
-        if (priceScroller.scrollLeft <= 10) {
-            scrollerPrev.disabled = true;
-        } else {
-            scrollerPrev.disabled = false;
-        }
-        
-        if (priceScroller.scrollLeft >= maxScroll - 10) {
-            scrollerNext.disabled = true;
-        } else {
-            scrollerNext.disabled = false;
-        }
-    });
-</script>
-    </body>
-    </html>
+
+        // Disable buttons when at ends
+        priceScroller.addEventListener('scroll', () => {
+            const maxScroll = priceScroller.scrollWidth - priceScroller.clientWidth;
+
+            if (priceScroller.scrollLeft <= 10) {
+                scrollerPrev.disabled = true;
+            } else {
+                scrollerPrev.disabled = false;
+            }
+
+            if (priceScroller.scrollLeft >= maxScroll - 10) {
+                scrollerNext.disabled = true;
+            } else {
+                scrollerNext.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>
