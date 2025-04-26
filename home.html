@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +38,9 @@
 
     <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Media queries Css -->
+     <link rel="stylesheet" href="./assets/css/media-queries.css">
 
     <title>WeFitHost</title>
 
@@ -818,7 +820,7 @@
                     <!-- Right-side buttons -->
                     <div class="d-flex align-items-center">
                         <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
-                        <a href="https://my.wefithost.com/login" class="btn btn-link text-secondary me-3"><i
+                        <a href="https://my.wefithost.com/login" class="btn btn-link text-light me-3"><i
                                 class="bi bi-person"></i> Log In</a>
                         <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
                     </div>
@@ -1120,7 +1122,7 @@
                     </div>
                     <!-- PRICING PLAN -->
                     <div class=" open" id="monthly">
-                        <div class="swiper pricing-swiper">
+                        <div class="row g-3 monthly swiper pricing-swiper">
                             <div class="swiper-wrapper">
                                 <!-- single card -->
                                 <div class="col-lg-4 col-md-6 col-sm-6 swiper-slide" data-cue="zoomIn">
@@ -1598,16 +1600,10 @@
                                 </div>
                                 <!-- single card end -->
                             </div>
-
-                            <!-- Swiper Pagination -->
-                            <div class="swiper-pagination"></div>
-
-                            <!-- Swiper Navigation -->
-                            <div class="swiper-button-prev d-md-none"></div>
-                            <div class="swiper-button-next d-md-none"></div>
                         </div>
 
-                       
+                        <!-- Swiper Pagination -->
+                        <div class="swiper-pagination"></div>
                     </div>
 
                 </div>
@@ -1674,52 +1670,12 @@
                 }
             }
 
-            /* Swiper Navigation Buttons */
-            .swiper-button-prev,
-            .swiper-button-next {
-                width: 40px;
-                height: 40px;
-                background-color: #4e66f8;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                top: 25px;
-                transform: translateY(0);
-                z-index: 10;
+            .swiper {
+                cursor: grab;
             }
 
-            .swiper-button-prev {
-                right: 64px;
-                left: auto;
-            }
-
-            .swiper-button-next {
-                right: 10px;
-                left: auto;
-            }
-
-
-            .swiper-button-prev::after,
-            .swiper-button-next::after {
-                font-size: 12px;
-                color: #fff;
-            }
-
-            /* Adjust button positioning for responsiveness */
-            @media (max-width: 768px) {
-                .swiper-button-prev {
-                    right: 50px;
-                }
-
-                .swiper-button-next {
-                    right: 6px;
-                }
-            }
-
-            .pricing-swiper {
-                position: relative;
-                padding-top: 58px;
+            .swiper:active {
+                cursor: grabbing;
             }
         </style>
 
@@ -1828,8 +1784,8 @@
                                         <div class="mb-2 hostingcard">
                                             <h4 class="mb-2 h5">WordPress Hosting</h4>
                                             <span class="small">Powerful WordPress hosting for bloggers, eCommerce
-                                                stores, and agencies. Deploy instantly on Wefithost’s UK-based,
-                                                cloud-optimized platform—engineered for maximum speed, performance, and
+                                                stores, and agencies. Deploy instantly on Wefithostâ€™s UK-based,
+                                                cloud-optimized platformâ€”engineered for maximum speed, performance, and
                                                 reliability.</span>
                                         </div>
                                     </div>
@@ -1847,7 +1803,7 @@
                                         <div class="mb-2 hostingcard">
                                             <h4 class="mb-2 h5">Cloud Hosting</h4>
                                             <span class="small">Build, deploy, and scale your websites and apps
-                                                effortlessly with Wefithost’s solidning-fast,
+                                                effortlessly with Wefithostâ€™s solidning-fast,
                                                 multi-platform cloud hosting. Ideal for agencies, eCommerce stores,
                                                 developers, and high-traffic websites</span>
                                         </div>
@@ -1867,7 +1823,7 @@
                                             <h4 class="mb-2 h5">Website Hosting</h4>
                                             <span class="small">Fast, secure, and scalable website hosting. Wefithost
                                                 delivers lightning-fast performance, unlimited bandwidth,
-                                                free daily backups, and 24/7 support—perfect for businesses, bloggers,
+                                                free daily backups, and 24/7 supportâ€”perfect for businesses, bloggers,
                                                 and developers.</span>
                                         </div>
                                     </div>
@@ -1885,7 +1841,7 @@
                                             <h4 class="mb-2 h5">Cloud VPS</h4>
                                             <span class="small">High-performance Cloud VPS hosting with full control,
                                                 scalability, and security. Get dedicated resources,
-                                                lightning-fast SSD storage, and seamless scalability—perfect for
+                                                lightning-fast SSD storage, and seamless scalabilityâ€”perfect for
                                                 developers, businesses, and high-traffic websites.</span>
                                         </div>
                                     </div>
@@ -1903,7 +1859,7 @@
                                             <h4 class="mb-2 h5">Free Domain</h4>
                                             <span class="small">Get a free domain with your hosting plan! Wefithost
                                                 makes it easy to launch your website with a free domain name,
-                                                fast and secure hosting, and 24/7 expert support—all in one
+                                                fast and secure hosting, and 24/7 expert supportâ€”all in one
                                                 place.</span>
                                         </div>
                                     </div>
@@ -1957,8 +1913,8 @@
                                         </div>
                                         <div class="mb-2 hostingcard">
                                             <h4 class="mb-2 h5">Agency Hub</h4>
-                                            <span class="small">Streamline your workflow with Wefithost’s Agency
-                                                Hub—designed for web agencies, freelancers, and developers.
+                                            <span class="small">Streamline your workflow with Wefithostâ€™s Agency
+                                                Hubâ€”designed for web agencies, freelancers, and developers.
                                                 Manage multiple client sites effortlessly with centralized control,
                                                 automated updates, and scalable cloud hosting</span>
                                         </div>
@@ -2653,7 +2609,7 @@
 
             <div class="row align-items-center">
                 <div class="col-md-6 mb-3 mb-md-0">
-                    <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
+                    <span style="color: white;">Â© 2025 WefitHost. All rights reserved.</span>
                 </div>
                 <div class="col-md-6">
                     <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
@@ -2702,12 +2658,13 @@
 
     <script>
         // Toggle yearly/monthly pricing
-
-        function togglePrice() {
+        document.addEventListener('DOMContentLoaded', function () {
 
             const toggleButtons = document.querySelectorAll('.tab__price');
             const pricingCards = document.querySelectorAll('.card-plan');
 
+            console.log(toggleButtons)
+            console.log(pricingCards)
 
             const pricingData = [
                 { monthly: 15.63, yearly: (15.63 * 12 * 0.8).toFixed(2) }, // Starter
@@ -2715,53 +2672,41 @@
                 { monthly: 68.63, yearly: (68.63 * 12 * 0.8).toFixed(2) } // Business
             ]
 
-            function updatePricing(selectedPlan) {
-                toggleButtons.forEach((btn) => btn.classList.remove('active'))
-
-                const activeButton = Array.from(toggleButtons).find((btn) => btn.getAttribute('data-tab') === selectedPlan)
-
-                if (activeButton) {
-                    activeButton.classList.add('active')
-                }
-
-                pricingCards.forEach((card, index) => {
-                    const priceWrapper = card.querySelector('.card-plan__price');
-                    const priceSpan = priceWrapper.querySelector('span');
-                    const periodSub = priceWrapper.querySelector('sub');
-
-
-
-                    if (selectedPlan === 'yearly') {
-                        priceSpan.textContent = pricingData[index].yearly;
-                        periodSub.textContent = '/YEAR';
-
-                        console.log("the price span is: ", priceSpan);
-                        console.log("the period sub is: ", periodSub);
-                    }
-
-                    else {
-                        priceSpan.textContent = pricingData[index].monthly;
-                        periodSub.textContent = '/MONTH';
-                    }
-                })
-            }
-
-            updatePricing('monthly')
-
-
             toggleButtons.forEach(button => {
                 button.addEventListener('click', function () {
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
 
                     const selectedPlan = this.getAttribute('data-tab');
 
-                    updatePricing(selectedPlan)
+                    console.log(selectedPlan);
+                    pricingCards.forEach((card, index) => {
+                        const priceWrapper = card.querySelector('.card-plan__price');
+                        const priceSpan = priceWrapper.querySelector('span');
+                        const periodSub = priceWrapper.querySelector('sub');
+                        console.log(priceWrapper)
+                        console.log(priceSpan)
+                        console.log(periodSub)
 
+
+
+                        if (selectedPlan === 'yearly') {
+                            priceSpan.textContent = pricingData[index].yearly;
+                            periodSub.textContent = '/YEAR';
+
+                            console.log("the price span is: ", priceSpan);
+                            console.log("the period sub is: ", periodSub);
+                        }
+
+                        else {
+                            priceSpan.textContent = pricingData[index].monthly;
+                            periodSub.textContent = '/MONTH';
+                        }
+                    })
                 })
             })
 
-        }
-        
-        document.addEventListener('DOMContentLoaded', togglePrice);
+        });
     </script>
 
     <!-- Swiper.js JS -->
@@ -2775,7 +2720,6 @@
                 slidesPerView: 1,
                 spaceBetween: 10,
                 loop: false,
-                grabCursor: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -2784,7 +2728,8 @@
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-
+                observer: true,
+                observeParents: true,
                 breakpoints: {
                     768: {
                         slidesPerView: 2,
@@ -2796,7 +2741,14 @@
             });
         });
 
-
+        //Fix sizing when switching tabs
+        document.querySelectorAll('.tab__price').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTimeout(() => {
+                    swiper.update(); // force recalculate size
+                }, 100); // short delay to let DOM render
+            });
+        });
 
     </script>
 
@@ -2831,8 +2783,3 @@
 </body>
 
 </html>
-=======
-version https://git-lfs.github.com/spec/v1
-oid sha256:14da17a34f1c0bd251341a5e04cfe59e2a3b12a430fd895dd9a70fe3eb3bacc2
-size 169748
->>>>>>> 974e674dc6221aa4883ba85b5e0babd1d8d0d6a2
