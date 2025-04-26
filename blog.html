@@ -1,3 +1,3138 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6d9482931a05b98c58b46430c8e6cc34a41b0a64561814939d57f64970dd046
-size 148410
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>WeFitHost</title>
+
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+            display: none;
+        } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header">
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #1e293b"
+      >
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./home.html">
+            <img
+              src="./Logo_Wefithost_03.png"
+              alt="WeFitHost Logo"
+              height="40"
+            />
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Hosting Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="hostingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hosting
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="hostingDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-wordpress me-2"></i>WordPress
+                          Solutions
+                        </h6>
+                        <a class="dropdown-item" href="wordpress-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>WordPress Hosting</strong>
+                            <small class="text-muted"
+                              >Automated updates and plugins</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="cloud-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Cloud Hosting</strong>
+                            <small class="text-muted"
+                              >Lightning-fast with 100% uptime SLA</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="managed-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Managed Hosting</strong>
+                            <small class="text-muted"
+                              >Lag-free, managed WordPress hosting</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="secure-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Secure Hosting</strong>
+                            <small class="text-muted"
+                              >Everything needed to securely launch your
+                              website</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-cart me-2"></i>eCommerce Solutions
+                        </h6>
+                        <a class="dropdown-item" href="woocommerce.html">
+                          <div class="d-flex flex-column">
+                            <strong>WooCommerce</strong>
+                            <small class="text-muted"
+                              >Secure, online store with built-in tools</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Websites & Stores</strong>
+                            <small class="text-muted"
+                              >Powerful site tools and WooCommerce</small
+                            >
+                          </div>
+                        </a>
+
+                        <h6 class="dropdown-header mt-3">
+                          <i class="bi bi-shield-lock me-2"></i>Security &
+                          Backup
+                        </h6>
+                        <a class="dropdown-item" href="ssl-certificate.html">
+                          <div class="d-flex flex-column">
+                            <strong>SSL Certificates</strong>
+                            <small class="text-muted"
+                              >Lock up your data with Premium SSL</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Website Security</strong>
+                            <small class="text-muted"
+                              >Minimize cyberthreats with SiteLock</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Website Backup</strong>
+                            <small class="text-muted"
+                              >Back up your site with CodeGuard</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-server me-2"></i>Traditional Hosting
+                        </h6>
+                        <a class="dropdown-item" href="shared-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Shared Hosting</strong>
+                            <small class="text-muted"
+                              >Affordable hosting for small websites</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="vps-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>VPS Hosting</strong>
+                            <small class="text-muted"
+                              >Scalable virtual private servers</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="web-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Web Hosting</strong>
+                            <small class="text-muted"
+                              >Reliable web hosting solutions</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="dedicated-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Dedicated Hosting</strong>
+                            <small class="text-muted"
+                              >Full control with enterprise hardware</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Domains Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="domainDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Domains
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="domainDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-globe me-2"></i>Domain Services
+                        </h6>
+                        <a class="dropdown-item" href="domain-search.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Search</strong>
+                            <small class="text-muted"
+                              >Find your perfect domain name</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="domain-transfer.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Transfer</strong>
+                            <small class="text-muted"
+                              >Move your domain to us easily</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Bulk Domain Search</strong>
+                            <small class="text-muted"
+                              >Search for multiple domains at once</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-shield-lock me-2"></i>Domain Security
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Privacy</strong>
+                            <small class="text-muted"
+                              >Protect your personal information</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Lock</strong>
+                            <small class="text-muted"
+                              >Prevent unauthorized transfers</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Two-Factor Authentication</strong>
+                            <small class="text-muted"
+                              >Extra security for your domains</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-tags me-2"></i>Domain Extensions
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.com Domains</strong>
+                            <small class="text-muted"
+                              >The world's most popular extension</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.net Domains</strong>
+                            <small class="text-muted"
+                              >Great for tech and networks</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.org Domains</strong>
+                            <small class="text-muted"
+                              >Perfect for organizations</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>New TLDs</strong>
+                            <small class="text-muted"
+                              >.tech, .store, .online and more</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Reseller Mega Dropdown (New Section) -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="resellerDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Reseller
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="resellerDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-gear me-2"></i>Reseller Hosting
+                        </h6>
+
+                        <a class="dropdown-item" href="reseller-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Hosting</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+
+                        <a class="dropdown-item" href="reseller-plans.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Plans</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WHMCS Integration</strong>
+                            <small class="text-muted"
+                              >Complete billing automation</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label</strong>
+                            <small class="text-muted"
+                              >Brand as your own service</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>Client Management
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Accounts</strong>
+                            <small class="text-muted"
+                              >Manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Automated Billing</strong>
+                            <small class="text-muted"
+                              >Recurring invoices & payments</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Support System</strong>
+                            <small class="text-muted"
+                              >Handle client tickets</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Business Growth
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Tools</strong>
+                            <small class="text-muted"
+                              >Grow your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted">Earn commissions</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Resources</strong>
+                            <small class="text-muted">Guides & tutorials</small>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Services Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="servicesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Services
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="servicesDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-palette me-2"></i>Design Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Web Design</strong>
+                            <small class="text-muted"
+                              >Custom WordPress sites built for you</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Logo Design</strong>
+                            <small class="text-muted"
+                              >Professional branding for your business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>UX/UI Design</strong>
+                            <small class="text-muted"
+                              >Optimized user experiences</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-megaphone me-2"></i>Marketing Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Digital Marketing</strong>
+                            <small class="text-muted"
+                              >SEO and PPC campaigns done for you</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Content Marketing</strong>
+                            <small class="text-muted"
+                              >Engaging content that converts</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Social Media Management</strong>
+                            <small class="text-muted"
+                              >Grow your social presence</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-headset me-2"></i>Support Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Pro Design Live Support</strong>
+                            <small class="text-muted"
+                              >On-demand, WordPress expert support</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <div class="d-flex flex-column">
+                            <strong>Website SEO Checker (FREE)</strong>
+                            <small class="text-muted"
+                              >Get a free analysis and learn how to
+                              improve</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>24/7 Priority Support</strong>
+                            <small class="text-muted"
+                              >Dedicated help when you need it</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Migration Services</strong>
+                            <small class="text-muted"
+                              >We'll move your site for you</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Agency Hub Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="agencyDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Agency Hub
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="agencyDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>For Agencies
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Agency Hosting</strong>
+                            <small class="text-muted"
+                              >Specialized hosting for agencies</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Management</strong>
+                            <small class="text-muted"
+                              >Tools to manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label Solutions</strong>
+                            <small class="text-muted"
+                              >Brand our services as your own</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Growth Tools
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted"
+                              >Earn commissions for referrals</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Resources</strong>
+                            <small class="text-muted"
+                              >Templates and guides</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Sales Training</strong>
+                            <small class="text-muted"
+                              >Close more hosting deals</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-gear me-2"></i>Developer Tools
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>API Access</strong>
+                            <small class="text-muted"
+                              >Integrate with our platform</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Staging Environments</strong>
+                            <small class="text-muted"
+                              >Test changes safely</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Git Integration</strong>
+                            <small class="text-muted"
+                              >Version control for your sites</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WP-CLI Enabled</strong>
+                            <small class="text-muted"
+                              >Command line control</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="emailDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Email
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="emailDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-6">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-envelope me-2"></i>Email Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Professional Email</strong>
+                            <small class="text-muted">you@yourdomain.com</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Microsoft 365</strong>
+                            <small class="text-muted"
+                              >Premium Office suite with email</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Google Workspace</strong>
+                            <small class="text-muted"
+                              >Gmail for your domain</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-shield-lock me-2"></i>Email Security
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Protection</strong>
+                            <small class="text-muted"
+                              >Block spam and malware</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Forwarding</strong>
+                            <small class="text-muted"
+                              >Forward emails to other accounts</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Migration</strong>
+                            <small class="text-muted"
+                              >Move your existing emails</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Right-side buttons -->
+            <div class="d-flex align-items-center">
+              <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+              <a
+                href="https://my.wefithost.com/login"
+                class="btn btn-link text-secondary me-3"
+                ><i class="bi bi-person"></i> Log In</a
+              >
+              <a href="https://my.wefithost.com/manage" class="btn btn-primary"
+                >Sign Up</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all necessary elements
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+        const navLinks = document.querySelectorAll(
+          ".nav-link:not(.dropdown-toggle)"
+        );
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Hamburger menu toggle functionality
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+          backdrop.classList.toggle("show", !isExpanded);
+          document.body.style.overflow = !isExpanded ? "hidden" : "";
+
+          // Manually trigger show/hide to sync with our backdrop
+          if (!isExpanded) {
+            bsCollapse.show();
+          } else {
+            bsCollapse.hide();
+          }
+        });
+
+        // Backdrop click closes menu
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+          closeAllDropdowns();
+        });
+
+        // Enhanced dropdown functionality for mobile
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            if (window.innerWidth < 992) {
+              // Mobile only
+              e.preventDefault();
+              e.stopPropagation();
+
+              const dropdownMenu = this.nextElementSibling;
+              const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+              // Close all other dropdowns first
+              closeAllDropdownsExcept(this);
+
+              // Toggle current dropdown
+              if (isExpanded) {
+                dropdownMenu.classList.remove("show");
+                this.setAttribute("aria-expanded", "false");
+              } else {
+                dropdownMenu.classList.add("show");
+                this.setAttribute("aria-expanded", "true");
+              }
+            }
+          });
+        });
+
+        // Close menu when clicking regular nav links (not dropdown toggles)
+        navLinks.forEach((link) => {
+          if (!link.classList.contains("dropdown-toggle")) {
+            link.addEventListener("click", function () {
+              if (window.innerWidth < 992) {
+                bsCollapse.hide();
+                navbarToggler.setAttribute("aria-expanded", "false");
+                backdrop.classList.remove("show");
+                document.body.style.overflow = "";
+                closeAllDropdowns();
+              }
+            });
+          }
+        });
+
+        // Close all dropdowns except one
+        function closeAllDropdownsExcept(exceptToggle) {
+          dropdownToggles.forEach((toggle) => {
+            if (toggle !== exceptToggle) {
+              const menu = toggle.nextElementSibling;
+              menu.classList.remove("show");
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+
+        // Close all dropdowns
+        function closeAllDropdowns() {
+          dropdownToggles.forEach((toggle) => {
+            const menu = toggle.nextElementSibling;
+            menu.classList.remove("show");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            window.innerWidth < 992 &&
+            !e.target.closest(".navbar") &&
+            navbarCollapse.classList.contains("show")
+          ) {
+            bsCollapse.hide();
+            navbarToggler.setAttribute("aria-expanded", "false");
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+            closeAllDropdowns();
+          }
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            if (navbarCollapse.classList.contains("show")) {
+              bsCollapse.hide();
+              navbarToggler.setAttribute("aria-expanded", "false");
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+              closeAllDropdowns();
+            }
+          }
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+        <style>
+            :root {
+                --primary: #0d6efd;
+                --secondary: #6c757d;
+                --success: #198754;
+                --danger: #dc3545;
+                --warning: #ffc107;
+                --info: #0dcaf0;
+            }
+            
+            body {
+                font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                line-height: 1.6;
+            }
+            
+            .blog-header {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .blog-header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle at 80% 50%, rgba(13, 110, 253, 0.1) 0%, transparent 70%);
+            }
+            
+            .text-gradient-primary {
+                background: linear-gradient(90deg, #0d6efd, #6610f2);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            .search-container {
+                background: white;
+                border-radius: 10px;
+                padding: 1.5rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            }
+            
+            .search-form .input-group {
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            
+            .search-form .form-control {
+                border-right: 0;
+                padding-left: 1.5rem;
+            }
+            
+            .search-form .btn {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            .featured-post {
+                transition: transform 0.3s ease;
+            }
+            
+            .featured-post:hover {
+                transform: translateY(-5px);
+            }
+            
+            .card {
+                transition: all 0.3s ease;
+                border: none;
+            }
+            
+            .card:hover {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+            }
+            
+            .object-cover {
+                object-fit: cover;
+            }
+            
+            .badge-tag {
+                background-color: #f8f9fa;
+                color: #495057;
+                font-weight: 500;
+                padding: 0.35em 0.65em;
+            }
+            
+            .author-img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+            }
+            
+            .article-img {
+                height: 400px;
+                object-fit: cover;
+            }
+            
+            .article-content img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 8px;
+                margin: 1.5rem 0;
+            }
+            
+            .article-content h2 {
+                margin-top: 2.5rem;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+            }
+            
+            .article-content h3 {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                font-weight: 600;
+            }
+            
+            .article-content ul, .article-content ol {
+                padding-left: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .article-content li {
+                margin-bottom: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Blog Header -->
+        <header class="blog-header py-5">
+          <div class="container text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3 text-gradient-primary">Hosting Insights & Guides</h1>
+                <p class="lead mb-4 text-muted">
+                  Expert tips to grow your hosting business and improve server performance
+                </p>
+                <div class="search-container">
+                  <form class="search-form" id="searchForm">
+                    <div class="input-group">
+                      <input
+                        type="search"
+                        class="form-control form-control-lg ps-4"
+                        placeholder="Search articles..."
+                        id="searchInput"
+                        aria-label="Search articles"
+                      />
+                      <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-search me-2"></i> Search
+                      </button>
+                    </div>
+                  </form>
+                  <div class="search-tags mt-3">
+                    <span class="text-muted me-2">Popular:</span>
+                    <a href="#" class="badge bg-light text-dark me-2">WordPress</a>
+                    <a href="#" class="badge bg-light text-dark me-2">Security</a>
+                    <a href="#" class="badge bg-light text-dark me-2">Performance</a>
+                    <a href="#" class="badge bg-light text-dark">Migration</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+    
+        <!-- Main Content -->
+        <main class="container py-5">
+          <div class="row g-4">
+            <!-- Blog Posts Column -->
+            <div class="col-lg-8">
+              <!-- Blog Listing -->
+              <div id="blogListing">
+                <!-- Featured Post -->
+                <div class="card featured-post mb-5 border-0 shadow-sm overflow-hidden">
+                  <div class="row g-0">
+                    <div class="col-md-6">
+                      <img
+                        src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="img-fluid h-100 object-cover"
+                        alt="Scaling hosting business"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-body p-4 p-lg-5">
+                        <div class="d-flex align-items-center mb-3">
+                          <span class="badge bg-primary me-2">Featured</span>
+                          <small class="text-muted">June 15, 2023 • 8 min read</small>
+                        </div>
+                        <h2 class="card-title mb-3">
+                          How to Scale Your Reseller Hosting Business in 2023
+                        </h2>
+                        <p class="card-text mb-4">
+                          Discover proven strategies to grow your hosting client base, optimize server resources, and maximize profits in today's competitive market.
+                        </p>
+                        <div class="d-flex align-items-center">
+                          <img
+                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="rounded-circle me-2 author-img"
+                            alt="Michael Chen"
+                          />
+                          <div class="me-auto">
+                            <small class="d-block">Michael Chen</small>
+                            <small class="text-muted">Hosting Expert</small>
+                          </div>
+                          <button class="btn btn-outline-primary read-article" data-id="1">
+                            Read Article <i class="bi bi-arrow-right ms-2"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <!-- Blog Post Grid -->
+                <div class="row row-cols-1 row-cols-md-2 g-4" id="blogPostsContainer">
+                  <!-- Posts will be loaded here dynamically -->
+                </div>
+    
+                <!-- Pagination -->
+                <nav aria-label="Blog pagination" class="mt-5">
+                  <ul class="pagination justify-content-center" id="pagination">
+                    <!-- Pagination will be loaded here dynamically -->
+                  </ul>
+                </nav>
+              </div>
+    
+              <!-- Article View (Hidden by default) -->
+              <div id="articleContent" style="display: none;">
+                <!-- Article content will be loaded here dynamically -->
+              </div>
+            </div>
+    
+            <!-- Sidebar Column -->
+            <div class="col-lg-4">
+              <!-- About Card -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body text-center p-4">
+                  <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" width="80" height="80" alt="Blog logo">
+                  <h3 class="h5 card-title mb-3">About Our Blog</h3>
+                  <p class="card-text text-muted mb-4">
+                    Welcome to Hosting Pro where we share expert knowledge to help you succeed in the hosting business.
+                  </p>
+                  <a href="#" class="btn btn-primary w-100">Learn About Us</a>
+                </div>
+              </div>
+    
+              <!-- Popular Posts -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <h3 class="h5 card-title mb-3 d-flex align-items-center">
+                    <i class="bi bi-fire text-danger me-2"></i> Trending Posts
+                  </h3>
+                  <div class="list-group list-group-flush" id="popularPosts">
+                    <!-- Popular posts will be loaded here dynamically -->
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Categories -->
+              <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                  <h3 class="h5 card-title mb-3 d-flex align-items-center">
+                    <i class="bi bi-bookmarks text-primary me-2"></i> Categories
+                  </h3>
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="whitelabel">
+                      <i class="bi bi-tag-fill text-primary me-1"></i> White Labeling
+                    </a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="business">
+                      <i class="bi bi-tag-fill text-success me-1"></i> Business Growth
+                    </a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="servers">
+                      <i class="bi bi-tag-fill text-info me-1"></i> Server Management
+                    </a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="security">
+                      <i class="bi bi-tag-fill text-danger me-1"></i> Security
+                    </a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="marketing">
+                      <i class="bi bi-tag-fill text-warning me-1"></i> Marketing
+                    </a>
+                    <a href="#" class="badge bg-light text-dark text-decoration-none px-3 py-2 category-filter" data-category="tutorials">
+                      <i class="bi bi-tag-fill text-secondary me-1"></i> Tutorials
+                    </a>
+                  </div>
+                </div>
+              </div>
+    
+              <!-- Newsletter -->
+              <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="text-center mb-4">
+                    <i class="bi bi-envelope-fill text-primary fs-1"></i>
+                    <h3 class="h5 card-title mt-2 mb-1">Subscribe to Newsletter</h3>
+                    <p class="card-text text-muted small">
+                      Get the latest hosting tips and business insights
+                    </p>
+                  </div>
+                  <form id="newsletterForm">
+                    <div class="mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="Your email address"
+                        required
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                      Subscribe Now
+                    </button>
+                    <div class="form-text mt-2 text-center">
+                      We'll never share your email. Unsubscribe anytime.
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Blog Data
+            const blogData = [
+                {
+                    id: 1,
+                    title: "How to Scale Your Reseller Hosting Business in 2023",
+                    excerpt: "Discover proven strategies to grow your hosting client base, optimize server resources, and maximize profits in today's competitive market.",
+                    category: "business",
+                    tags: ["Featured", "Business Growth"],
+                    date: "June 15, 2023",
+                    readTime: "8 min read",
+                    author: {
+                        name: "Michael Chen",
+                        title: "Hosting Expert",
+                        image: "https://randomuser.me/api/portraits/men/32.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: true,
+                    content: `
+                        <p class="lead">Scaling a reseller hosting business requires strategic planning and execution. In this comprehensive guide, we'll explore the most effective methods to grow your hosting client base while maintaining excellent service quality.</p>
+                        
+                        <h2>Optimize Your Pricing Strategy</h2>
+                        <p>Your pricing model can make or break your hosting business. Consider these approaches:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">Tiered Pricing</h3>
+                                        <p class="text-muted">Offer multiple packages (Basic, Professional, Enterprise) with increasing resources</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">Annual Discounts</h3>
+                                        <p class="text-muted">Encourage longer commitments with 10-20% discounts for annual payments</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">Add-on Services</h3>
+                                        <p class="text-muted">Provide value-added services like SSL certificates, backups, or premium support</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Leverage White-Label Branding</h2>
+                        <p>Full white-label capabilities allow you to present a completely professional image:</p>
+                        <ul>
+                            <li>Configure custom nameservers (ns1.yourcompany.com)</li>
+                            <li>Brand the client control panel with your logo and colors</li>
+                            <li>Use your company name in all communications</li>
+                            <li>Offer branded support emails (support@yourcompany.com)</li>
+                        </ul>
+                        
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid rounded" alt="Business growth chart">
+                        
+                        <h2>Implement Automated Marketing</h2>
+                        <p>Automation can help you scale your marketing efforts:</p>
+                        <ul>
+                            <li><strong>Email Sequences:</strong> Welcome series, renewal reminders, upgrade suggestions</li>
+                            <li><strong>Affiliate Program:</strong> Encourage clients to refer others with incentives</li>
+                            <li><strong>Retention Campaigns:</strong> Reduce churn with targeted offers before renewal dates</li>
+                        </ul>
+                        
+                        <div class="alert alert-primary mt-4">
+                            <strong>Pro Tip:</strong> Focus on customer lifetime value rather than just acquiring new clients. A 5% increase in retention can boost profits by 25-95%.
+                        </div>
+                    `
+                },
+                {
+                    id: 2,
+                    title: "White Label Hosting: Build Your Brand",
+                    excerpt: "Step-by-step guide to configuring your white-label hosting with custom branding elements.",
+                    category: "whitelabel",
+                    tags: ["White Labeling"],
+                    date: "May 28, 2023",
+                    readTime: "6 min read",
+                    author: {
+                        name: "Sarah Johnson",
+                        title: "Branding Specialist",
+                        image: "https://randomuser.me/api/portraits/women/44.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">White-label hosting allows you to offer hosting services under your own brand, creating a seamless experience for your customers. Here's how to do it right.</p>
+                        
+                        <h2>Choosing the Right White-Label Solution</h2>
+                        <p>Not all white-label hosting solutions are created equal. Look for these essential features:</p>
+                        <ul>
+                            <li>Custom nameservers (ns1.yourdomain.com)</li>
+                            <li>Fully branded control panel</li>
+                            <li>White-label billing system</li>
+                            <li>Customizable email templates</li>
+                            <li>Branded support system</li>
+                        </ul>
+                        
+                        <h2>Configuring Your Branding</h2>
+                        <p>Once you've selected your platform, follow these steps to establish your brand:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Custom Nameservers</h3>
+                                        <p>Set up DNS hostnames that reflect your brand (ns1.yourcompany.com, ns2.yourcompany.com)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Branded Control Panel</h3>
+                                        <p>Customize the login page, dashboard, and all client-facing interfaces with your logo and colors</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Email Branding</h3>
+                                        <p>Configure all automated emails to come from your domain with your branding</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Support System</h3>
+                                        <p>Set up a helpdesk that uses your domain and branding</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Marketing Your White-Label Service</h2>
+                        <p>Position your hosting as a premium service with these strategies:</p>
+                        <ul>
+                            <li>Highlight your local support and expertise</li>
+                            <li>Offer bundled services (hosting + website design)</li>
+                            <li>Provide exclusive features not available with big providers</li>
+                            <li>Focus on personalized customer service</li>
+                        </ul>
+                        
+                        <div class="alert alert-success mt-4">
+                            <strong>Success Story:</strong> "After implementing white-label hosting, we increased our hosting revenue by 300% in one year by positioning ourselves as the local experts." - Mark T., Hosting Reseller
+                        </div>
+                    `
+                },
+                {
+                    id: 3,
+                    title: "Essential Security Practices for Resellers",
+                    excerpt: "Protect your clients' websites with these must-implement security measures.",
+                    category: "security",
+                    tags: ["Security"],
+                    date: "May 15, 2023",
+                    readTime: "10 min read",
+                    author: {
+                        name: "David Kim",
+                        title: "Security Analyst",
+                        image: "https://randomuser.me/api/portraits/men/22.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">As a hosting reseller, security should be your top priority. A single security breach can damage your reputation and cost you clients. Here are the essential practices you need to implement.</p>
+                        
+                        <h2>Server-Level Security</h2>
+                        <p>Start with these fundamental server security measures:</p>
+                        <ul>
+                            <li><strong>Firewall Configuration:</strong> Set up proper firewall rules to block unauthorized access</li>
+                            <li><strong>Regular Updates:</strong> Keep all server software updated with security patches</li>
+                            <li><strong>SSH Hardening:</strong> Disable root login and use key-based authentication</li>
+                            <li><strong>Malware Scanning:</strong> Implement regular automated malware scans</li>
+                        </ul>
+                        
+                        <h2>Client Account Security</h2>
+                        <p>Protect your clients with these account-level measures:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Two-Factor Authentication</h3>
+                                        <p>Require 2FA for all client accounts to prevent unauthorized access</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Strong Password Policies</h3>
+                                        <p>Enforce minimum password requirements and regular password changes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Login Attempt Limits</h3>
+                                        <p>Block IPs after multiple failed login attempts</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Activity Monitoring</h3>
+                                        <p>Log and monitor all account activity for suspicious behavior</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Website Security Features</h2>
+                        <p>Offer these security features to your clients:</p>
+                        <ul>
+                            <li>Free SSL certificates for all websites</li>
+                            <li>Automated daily backups with off-server storage</li>
+                            <li>Web Application Firewall (WAF) protection</li>
+                            <li>DDoS mitigation services</li>
+                            <li>Malware scanning and removal</li>
+                        </ul>
+                        
+                        <div class="alert alert-danger mt-4">
+                            <strong>Warning:</strong> 43% of cyber attacks target small businesses. Don't let your clients become statistics.
+                        </div>
+                    `
+                },
+                {
+                    id: 4,
+                    title: "Hosting Business Marketing Strategies",
+                    excerpt: "Effective ways to attract and retain hosting clients in a competitive market.",
+                    category: "marketing",
+                    tags: ["Marketing"],
+                    date: "April 30, 2023",
+                    readTime: "7 min read",
+                    author: {
+                        name: "Emily Rodriguez",
+                        title: "Marketing Director",
+                        image: "https://randomuser.me/api/portraits/women/63.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1599658880436-c61792e70672?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">In today's crowded hosting market, effective marketing is essential to stand out and attract quality clients. Here are proven strategies that work for hosting businesses.</p>
+                        
+                        <h2>Targeting the Right Audience</h2>
+                        <p>Focus your marketing efforts on these high-value segments:</p>
+                        <ul>
+                            <li><strong>Web Design Agencies:</strong> They need reliable hosting for their clients</li>
+                            <li><strong>Local Businesses:</strong> Often underserved by big hosting companies</li>
+                            <li><strong>E-commerce Stores:</strong> Need specialized hosting with good support</li>
+                            <li><strong>Developers:</strong> Appreciate advanced features and SSH access</li>
+                        </ul>
+                        
+                        <h2>Effective Marketing Channels</h2>
+                        <p>These channels deliver the best ROI for hosting businesses:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Content Marketing</h3>
+                                        <p>Create tutorials, benchmarks, and hosting guides that demonstrate your expertise</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Partner Programs</h3>
+                                        <p>Develop partnerships with web designers, developers, and agencies</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Local Networking</h3>
+                                        <p>Attend business events and chamber of commerce meetings</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Referral Program</h3>
+                                        <p>Incentivize current clients to refer new business</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Conversion Optimization</h2>
+                        <p>Turn visitors into paying clients with these tactics:</p>
+                        <ul>
+                            <li>Offer a risk-free trial period</li>
+                            <li>Provide live chat support during business hours</li>
+                            <li>Showcase client testimonials and case studies</li>
+                            <li>Offer migration assistance for new clients</li>
+                            <li>Create clear pricing with no hidden fees</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-4">
+                            <strong>Tip:</strong> The average hosting customer acquisition cost is $150-300. Focus on retention to maximize lifetime value.
+                        </div>
+                    `
+                },
+                {
+                    id: 5,
+                    title: "Optimizing Server Performance",
+                    excerpt: "Techniques to ensure your hosting environment delivers maximum speed.",
+                    category: "servers",
+                    tags: ["Performance"],
+                    date: "April 18, 2023",
+                    readTime: "9 min read",
+                    author: {
+                        name: "Robert Chen",
+                        title: "Systems Architect",
+                        image: "https://randomuser.me/api/portraits/men/45.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">Server performance directly impacts your clients' website speed, SEO rankings, and ultimately, your reputation as a hosting provider. Here's how to optimize your servers.</p>
+                        
+                        <h2>Server Configuration</h2>
+                        <p>Start with these essential server optimizations:</p>
+                        <ul>
+                            <li><strong>Latest PHP Version:</strong> PHP 8.x is significantly faster than older versions</li>
+                            <li><strong>OPcache:</strong> Enable and properly configure for WordPress and other PHP apps</li>
+                            <li><strong>MySQL Tuning:</strong> Optimize your database configuration</li>
+                            <li><strong>HTTP/2:</strong> Enable for faster parallel loading</li>
+                            <li><strong>Brotli Compression:</strong> More efficient than gzip for modern browsers</li>
+                        </ul>
+                        
+                        <h2>Caching Strategies</h2>
+                        <p>Implement these caching layers for maximum performance:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Object Caching</h3>
+                                        <p>Redis or Memcached for database query caching</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Page Caching</h3>
+                                        <p>NGINX FastCGI cache or Varnish for full page caching</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Browser Caching</h3>
+                                        <p>Leverage client-side caching with proper headers</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. CDN Integration</h3>
+                                        <p>Offload static assets to a global CDN network</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Monitoring and Maintenance</h2>
+                        <p>Keep your servers running optimally with these practices:</p>
+                        <ul>
+                            <li>Set up server monitoring (CPU, memory, disk I/O)</li>
+                            <li>Implement automated daily health checks</li>
+                            <li>Regularly audit resource usage by account</li>
+                            <li>Schedule maintenance during low-traffic periods</li>
+                            <li>Keep detailed performance benchmarks</li>
+                        </ul>
+                        
+                        <div class="alert alert-warning mt-4">
+                            <strong>Performance Fact:</strong> A 1-second delay in page load time can result in a 7% reduction in conversions.
+                        </div>
+                    `
+                },
+                {
+                    id: 6,
+                    title: "Pricing Strategies for Resellers",
+                    excerpt: "How to price your hosting services competitively while maintaining profitability.",
+                    category: "business",
+                    tags: ["Business Growth"],
+                    date: "March 5, 2023",
+                    readTime: "5 min read",
+                    author: {
+                        name: "Lisa Wong",
+                        title: "Pricing Strategist",
+                        image: "https://randomuser.me/api/portraits/women/28.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">Pricing your hosting services correctly is crucial for attracting clients while maintaining healthy profit margins. Here's how to develop a winning pricing strategy.</p>
+                        
+                        <h2>Pricing Models to Consider</h2>
+                        <p>Evaluate these common hosting pricing structures:</p>
+                        <ul>
+                            <li><strong>Tiered Pricing:</strong> Basic, Business, and Enterprise plans</li>
+                            <li><strong>Pay-As-You-Go:</strong> Charge based on actual resource usage</li>
+                            <li><strong>Flat-Rate:</strong> Simple pricing with clear inclusions</li>
+                            <li><strong>Value-Based:</strong> Price based on perceived value to client</li>
+                        </ul>
+                        
+                        <h2>Key Pricing Factors</h2>
+                        <p>Consider these elements when setting your prices:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Costs</h3>
+                                        <p>Calculate your actual costs including server resources, support, and overhead</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Competition</h3>
+                                        <p>Research competitor pricing but don't race to the bottom</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Target Market</h3>
+                                        <p>Price according to your specific audience's willingness to pay</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Value Proposition</h3>
+                                        <p>Price higher if you offer exceptional service or features</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Upsell Opportunities</h2>
+                        <p>Increase revenue with these strategic add-ons:</p>
+                        <ul>
+                            <li>SSL certificates (free with paid options)</li>
+                            <li>Automated daily backups</li>
+                            <li>Premium support packages</li>
+                            <li>Website security services</li>
+                            <li>CDN acceleration</li>
+                            <li>Domain registration and management</li>
+                        </ul>
+                        
+                        <div class="alert alert-success mt-4">
+                            <strong>Pro Tip:</strong> Offer annual billing with a 10-20% discount to improve cash flow and reduce churn.
+                        </div>
+                    `
+                },
+                {
+                    id: 7,
+                    title: "Migrating Clients Without Downtime",
+                    excerpt: "Step-by-step guide to seamless website migrations between hosting providers.",
+                    category: "tutorials",
+                    tags: ["Tutorials"],
+                    date: "February 20, 2023",
+                    readTime: "12 min read",
+                    author: {
+                        name: "James Wilson",
+                        title: "Migration Specialist",
+                        image: "https://randomuser.me/api/portraits/men/75.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1517245386980-97625861fff9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">Website migrations are inevitable in the hosting business. Doing them properly ensures happy clients and minimal support headaches. Here's your complete migration playbook.</p>
+                        
+                        <h2>Pre-Migration Planning</h2>
+                        <p>Lay the groundwork for a successful migration:</p>
+                        <ul>
+                            <li><strong>Client Communication:</strong> Set expectations and schedule the migration</li>
+                            <li><strong>Backup Everything:</strong> Create complete backups before starting</li>
+                            <li><strong>Document Current Setup:</strong> Note all special configurations</li>
+                            <li><strong>Test Environment:</strong> Set up a staging area to test the new server</li>
+                        </ul>
+                        
+                        <h2>Migration Process</h2>
+                        <p>Follow this step-by-step migration procedure:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. DNS Preparation</h3>
+                                        <p>Lower TTL values 24-48 hours before migration</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Content Transfer</h3>
+                                        <p>Use rsync for files and mysqldump for databases</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Configuration</h3>
+                                        <p>Set up identical PHP versions, extensions, and settings</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Testing</h3>
+                                        <p>Thoroughly test on the new server before DNS switch</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Post-Migration Checklist</h2>
+                        <p>Complete these tasks after the migration:</p>
+                        <ul>
+                            <li>Verify all website functionality</li>
+                            <li>Check for broken links or missing files</li>
+                            <li>Test forms and e-commerce functionality</li>
+                            <li>Monitor server logs for errors</li>
+                            <li>Follow up with client after 24-48 hours</li>
+                        </ul>
+                        
+                        <div class="alert alert-primary mt-4">
+                            <strong>Migration Tip:</strong> For large sites, consider using a database synchronization tool to minimize downtime during the final sync.
+                        </div>
+                    `
+                },
+                {
+                    id: 8,
+                    title: "Essential cPanel Features Explained",
+                    excerpt: "Master the most important cPanel features to better support your hosting clients.",
+                    category: "tutorials",
+                    tags: ["Tutorials"],
+                    date: "January 15, 2023",
+                    readTime: "11 min read",
+                    author: {
+                        name: "Thomas Baker",
+                        title: "cPanel Expert",
+                        image: "https://randomuser.me/api/portraits/men/33.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1583508916869-029aa9414413?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">cPanel remains the most popular hosting control panel, and mastering its features will make you a better hosting provider. Here's what you need to know.</p>
+                        
+                        <h2>Core cPanel Features</h2>
+                        <p>These are the features your clients will use most often:</p>
+                        <ul>
+                            <li><strong>File Manager:</strong> Web-based alternative to FTP</li>
+                            <li><strong>MySQL Databases:</strong> Create and manage databases</li>
+                            <li><strong>Email Accounts:</strong> Set up and manage email addresses</li>
+                            <li><strong>Backup:</strong> Create and restore backups</li>
+                            <li><strong>SSL/TLS:</strong> Install and manage security certificates</li>
+                        </ul>
+                        
+                        <h2>Advanced Features</h2>
+                        <p>These powerful features can set your hosting apart:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Softaculous Apps</h3>
+                                        <p>One-click installs for WordPress, Joomla, and 400+ other apps</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. AutoSSL</h3>
+                                        <p>Automatically provisions and renews free SSL certificates</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. PHP Selector</h3>
+                                        <p>Allow clients to choose their PHP version per domain</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Hotlink Protection</h3>
+                                        <p>Prevent other sites from directly linking to your clients' images</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Security Features</h2>
+                        <p>Don't overlook these important security tools:</p>
+                        <ul>
+                            <li>IP Blocker to ban malicious IPs</li>
+                            <li>Leech Protection for stolen passwords</li>
+                            <li>SSL/TLS Status to verify certificate installation</li>
+                            <li>Two-Factor Authentication for cPanel login</li>
+                            <li>ModSecurity for web application firewall</li>
+                        </ul>
+                        
+                        <div class="alert alert-info mt-4">
+                            <strong>Did You Know?</strong> cPanel processes over 1 billion email messages per day across all installations worldwide.
+                        </div>
+                    `
+                },
+                {
+                    id: 9,
+                    title: "WordPress Hosting Optimization Guide",
+                    excerpt: "Specialized techniques to optimize your servers for WordPress hosting.",
+                    category: "servers",
+                    tags: ["Performance"],
+                    date: "December 10, 2022",
+                    readTime: "14 min read",
+                    author: {
+                        name: "Jennifer Lee",
+                        title: "WordPress Specialist",
+                        image: "https://randomuser.me/api/portraits/women/65.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">WordPress powers over 40% of all websites, making it crucial for hosting providers to optimize their servers specifically for WordPress. Here's how to do it right.</p>
+                        
+                        <h2>Server Configuration for WordPress</h2>
+                        <p>These server-level optimizations will benefit all WordPress sites:</p>
+                        <ul>
+                            <li><strong>PHP 8.0+:</strong> Significant performance improvements over PHP 7.x</li>
+                            <li><strong>OPcache:</strong> Properly configured with enough memory</li>
+                            <li><strong>MySQL 8.0:</strong> With optimized configuration for WordPress</li>
+                            <li><strong>HTTP/2:</strong> Enabled for faster parallel loading</li>
+                            <li><strong>Redis Object Cache:</strong> For persistent object caching</li>
+                        </ul>
+                        
+                        <h2>Recommended Stack</h2>
+                        <p>Consider these optimized software combinations:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. NGINX + PHP-FPM</h3>
+                                        <p>Excellent performance with proper caching rules</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. LiteSpeed + LSCache</h3>
+                                        <p>Built-in WordPress caching with excellent results</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. CloudLinux + CageFS</h3>
+                                        <p>For security and resource isolation</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. MariaDB + Redis</h3>
+                                        <p>High-performance database with object caching</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>WordPress-Specific Features</h2>
+                        <p>Offer these value-added services for WordPress clients:</p>
+                        <ul>
+                            <li>Staging environments for testing</li>
+                            <li>One-click WordPress installation</li>
+                            <li>Automatic core updates (with rollback option)</li>
+                            <li>Built-in caching solution</li>
+                            <li>Malware scanning and removal</li>
+                            <li>Daily backups with one-click restore</li>
+                        </ul>
+                        
+                        <div class="alert alert-success mt-4">
+                            <strong>Performance Tip:</strong> A well-optimized WordPress server can handle 10x more traffic than a default configuration.
+                        </div>
+                    `
+                },
+                {
+                    id: 10,
+                    title: "Building a Hosting Support Team",
+                    excerpt: "How to assemble and train a top-notch support team for your hosting business.",
+                    category: "business",
+                    tags: ["Business Growth"],
+                    date: "November 22, 2022",
+                    readTime: "8 min read",
+                    author: {
+                        name: "Daniel Martinez",
+                        title: "Support Manager",
+                        image: "https://randomuser.me/api/portraits/men/55.jpg"
+                    },
+                    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                    featured: false,
+                    content: `
+                        <p class="lead">Quality support is the #1 factor in hosting customer satisfaction and retention. Here's how to build a support team that delights your clients.</p>
+                        
+                        <h2>Hiring the Right Team</h2>
+                        <p>Look for these qualities in support candidates:</p>
+                        <ul>
+                            <li><strong>Technical Skills:</strong> Solid understanding of hosting technologies</li>
+                            <li><strong>Communication:</strong> Clear, patient, and professional</li>
+                            <li><strong>Problem-Solving:</strong> Ability to troubleshoot creatively</li>
+                            <li><strong>Attitude:</strong> Positive and customer-focused</li>
+                            <li><strong>Learning Ability:</strong> Willingness to continuously improve</li>
+                        </ul>
+                        
+                        <h2>Training Program</h2>
+                        <p>Implement this comprehensive training approach:</p>
+                        
+                        <div class="row g-4 my-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">1. Technical Training</h3>
+                                        <p>cPanel, DNS, email, WordPress, and common issues</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">2. Soft Skills</h3>
+                                        <p>Communication, de-escalation, and customer service</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">3. Shadowing</h3>
+                                        <p>Pair with experienced team members</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="h5">4. Certification</h3>
+                                        <p>Require passing tests before handling live tickets</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Support Best Practices</h2>
+                        <p>Implement these policies for excellent support:</p>
+                        <ul>
+                            <li>Set and meet clear response time SLAs</li>
+                            <li>Use a proper ticketing system with knowledge base</li>
+                            <li>Offer multiple support channels (email, chat, phone)</li>
+                            <li>Monitor and improve first-response resolution rate</li>
+                            <li>Regularly review support metrics and customer feedback</li>
+                            <li>Provide ongoing training and skill development</li>
+                        </ul>
+                        
+                        <div class="alert alert-primary mt-4">
+                            <strong>Support Fact:</strong> 68% of customers leave because they feel you don't care about them. Excellent support can prevent this.
+                        </div>
+                    `
+                }
+            ];
+    
+            // Configuration
+            const postsPerPage = 4;
+            let currentPage = 1;
+            let filteredPosts = [...blogData];
+    
+            // Initialize the blog
+            document.addEventListener('DOMContentLoaded', function() {
+                renderBlogPosts();
+                renderPopularPosts();
+                setupEventListeners();
+            });
+    
+            // Render blog posts for current page
+            function renderBlogPosts() {
+                const startIndex = (currentPage - 1) * postsPerPage;
+                const endIndex = startIndex + postsPerPage;
+                const postsToShow = filteredPosts.slice(startIndex, endIndex);
+                
+                const blogPostsContainer = document.getElementById('blogPostsContainer');
+                blogPostsContainer.innerHTML = '';
+                
+                postsToShow.forEach(post => {
+                    if (!post.featured) { // Skip featured post since it's shown separately
+                        const postElement = document.createElement('div');
+                        postElement.className = 'col';
+                        postElement.innerHTML = `
+                            <div class="card h-100 border-0 shadow-sm">
+                                ${post.image ? `<img src="${post.image}" class="card-img-top" alt="${post.title}">` : ''}
+                                <div class="card-body">
+                                    <span class="badge ${getCategoryBadgeClass(post.category)} mb-2">${post.tags[0]}</span>
+                                    <h3 class="h5 card-title mb-3">${post.title}</h3>
+                                    <p class="card-text text-muted mb-4">${post.excerpt}</p>
+                                    <div class="d-flex align-items-center">
+                                        <small class="text-muted me-auto">${post.date}</small>
+                                        <button class="btn btn-sm btn-outline-secondary read-article" data-id="${post.id}">
+                                            Read <i class="bi bi-arrow-right ms-1"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        blogPostsContainer.appendChild(postElement);
+                    }
+                });
+                
+                renderPagination();
+            }
+    
+            // Render popular posts in sidebar
+            function renderPopularPosts() {
+                const popularPostsContainer = document.getElementById('popularPosts');
+                popularPostsContainer.innerHTML = '';
+                
+                // Sort by date (newest first) and take first 3
+                const popularPosts = [...blogData]
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .slice(0, 3);
+                
+                popularPosts.forEach(post => {
+                    const postElement = document.createElement('a');
+                    postElement.href = '#';
+                    postElement.className = 'list-group-item list-group-item-action border-0 py-3 read-article';
+                    postElement.dataset.id = post.id;
+                    postElement.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="${post.image || 'https://via.placeholder.com/60'}" width="60" height="60" class="rounded" alt="${post.title}">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="mb-1">${post.title}</h5>
+                                <small class="text-muted">${post.date}</small>
+                            </div>
+                        </div>
+                    `;
+                    popularPostsContainer.appendChild(postElement);
+                });
+            }
+    
+            // Render pagination controls
+            function renderPagination() {
+                const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+                const paginationContainer = document.getElementById('pagination');
+                paginationContainer.innerHTML = '';
+                
+                // Previous button
+                const prevLi = document.createElement('li');
+                prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+                prevLi.innerHTML = `<a class="page-link" href="#" aria-label="Previous"><i class="bi bi-chevron-left"></i></a>`;
+                prevLi.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderBlogPosts();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+                paginationContainer.appendChild(prevLi);
+                
+                // Page numbers
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageLi = document.createElement('li');
+                    pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                    pageLi.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                    pageLi.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        currentPage = i;
+                        renderBlogPosts();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                    paginationContainer.appendChild(pageLi);
+                }
+                
+                // Next button
+                const nextLi = document.createElement('li');
+                nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+                nextLi.innerHTML = `<a class="page-link" href="#" aria-label="Next"><i class="bi bi-chevron-right"></i></a>`;
+                nextLi.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        renderBlogPosts();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+                paginationContainer.appendChild(nextLi);
+            }
+    
+            // Get appropriate badge class based on category
+            function getCategoryBadgeClass(category) {
+                switch(category) {
+                    case 'whitelabel': return 'bg-light text-dark';
+                    case 'business': return 'bg-primary text-white';
+                    case 'servers': return 'bg-info text-dark';
+                    case 'security': return 'bg-danger text-white';
+                    case 'marketing': return 'bg-warning text-dark';
+                    case 'tutorials': return 'bg-secondary text-white';
+                    default: return 'bg-light text-dark';
+                }
+            }
+    
+            // Set up event listeners
+            function setupEventListeners() {
+                // Read article buttons
+                document.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('read-article') || e.target.closest('.read-article')) {
+                        e.preventDefault();
+                        const button = e.target.classList.contains('read-article') ? e.target : e.target.closest('.read-article');
+                        const articleId = parseInt(button.dataset.id);
+                        showArticle(articleId);
+                    }
+                    
+                    // Back to blog button
+                    if (e.target.classList.contains('back-to-blog') || e.target.closest('.back-to-blog')) {
+                        e.preventDefault();
+                        document.getElementById('blogListing').style.display = 'block';
+                        document.getElementById('articleContent').style.display = 'none';
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+                
+                // Search form
+                document.getElementById('searchForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                    
+                    if (searchTerm.trim() === '') {
+                        filteredPosts = [...blogData];
+                    } else {
+                        filteredPosts = blogData.filter(post => 
+                            post.title.toLowerCase().includes(searchTerm) || 
+                            post.excerpt.toLowerCase().includes(searchTerm) ||
+                            post.content.toLowerCase().includes(searchTerm) ||
+                            post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+                        );
+                    }
+                    
+                    currentPage = 1;
+                    renderBlogPosts();
+                });
+                
+                // Category filters
+                document.querySelectorAll('.category-filter').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const category = this.dataset.category;
+                        
+                        if (category === 'all') {
+                            filteredPosts = [...blogData];
+                        } else {
+                            filteredPosts = blogData.filter(post => post.category === category);
+                        }
+                        
+                        currentPage = 1;
+                        renderBlogPosts();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+                
+                // Newsletter form
+                document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input').value;
+                    const originalContent = this.innerHTML;
+                    
+                    this.innerHTML = `
+                        <div class="alert alert-success mb-0">
+                            <i class="bi bi-check-circle-fill me-2"></i> Thank you for subscribing!
+                        </div>
+                    `;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalContent;
+                        this.querySelector('input').value = '';
+                    }, 3000);
+                });
+            }
+    
+            // Show article content
+            function showArticle(articleId) {
+                const article = blogData.find(post => post.id === articleId);
+                if (!article) return;
+                
+                document.getElementById('blogListing').style.display = 'none';
+                const articleContent = document.getElementById('articleContent');
+                articleContent.style.display = 'block';
+                articleContent.innerHTML = `
+                    <a href="#" class="d-flex align-items-center mb-4 text-decoration-none back-to-blog">
+                        <i class="bi bi-arrow-left me-2"></i> Back to Blog
+                    </a>
+                    
+                    <article class="article-single">
+                        <span class="badge ${getCategoryBadgeClass(article.category)} mb-3">${article.tags[0]}</span>
+                        <h1 class="mb-4">${article.title}</h1>
+                        
+                        <div class="d-flex align-items-center mb-5">
+                            <img src="${article.author.image}" class="rounded-circle me-3 author-img" alt="${article.author.name}">
+                            <div>
+                                <span class="d-block fw-medium">${article.author.name}</span>
+                                <small class="text-muted">${article.date} · ${article.readTime}</small>
+                            </div>
+                        </div>
+                        
+                        ${article.image ? `<img src="${article.image}" class="img-fluid rounded-3 mb-5 article-img" alt="${article.title}">` : ''}
+                        
+                        <div class="article-content">
+                            ${article.content}
+                        </div>
+                        
+                        <div class="mt-5 pt-4 border-top">
+                            <h3 class="mb-4">About the Author</h3>
+                            <div class="d-flex align-items-center">
+                                <img src="${article.author.image}" class="rounded-circle me-4" width="80" height="80" alt="${article.author.name}">
+                                <div>
+                                    <h4 class="h5 mb-1">${article.author.name}</h4>
+                                    <p class="text-muted mb-2">${article.author.title}</p>
+                                    <div class="d-flex gap-3">
+                                        <a href="#" class="text-primary"><i class="bi bi-twitter fs-5"></i></a>
+                                        <a href="#" class="text-primary"><i class="bi bi-linkedin fs-5"></i></a>
+                                        <a href="#" class="text-primary"><i class="bi bi-globe fs-5"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5 pt-4 border-top">
+                            <h3 class="mb-4">Related Articles</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                ${getRelatedArticles(article.id, article.category).join('')}
+                            </div>
+                        </div>
+                    </article>
+                `;
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+    
+            // Get related articles (excluding current article)
+            function getRelatedArticles(currentId, category, limit = 2) {
+                return blogData
+                    .filter(post => post.id !== currentId && post.category === category)
+                    .slice(0, limit)
+                    .map(post => `
+                        <div class="col">
+                            <div class="card h-100 border-0 shadow-sm">
+                                ${post.image ? `<img src="${post.image}" class="card-img-top" alt="${post.title}">` : ''}
+                                <div class="card-body">
+                                    <span class="badge ${getCategoryBadgeClass(post.category)} mb-2">${post.tags[0]}</span>
+                                    <h4 class="h5">${post.title}</h4>
+                                    <button class="btn btn-link ps-0 read-article" data-id="${post.id}">
+                                        Read Article <i class="bi bi-arrow-right ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+            }
+        </script>
+
+
+    <!-- Footer -->
+    <footer
+      class="pt-7 mainfooterstart mb-0"
+      style="background-color: #1e293b; color: white"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
+
+              <!-- Newsletter Form (Moved up) -->
+              <div class="mb-4">
+                <h5 style="color: white; font-weight: 600">Newsletter</h5>
+                <form class="mb-2">
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your email"
+                      style="
+                        border-color: rgba(255, 255, 255, 0.5);
+                        color: white;
+                        background-color: rgba(255, 255, 255, 0.1);
+                      "
+                    />
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      style="
+                        background-color: white;
+                        border-color: white;
+                        color: #1e293b;
+                      "
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+                <small style="color: rgba(255, 255, 255, 0.8)"
+                  >Get hosting tips and special offers</small
+                >
+              </div>
+
+              <!-- Social Icons with updated X icon -->
+              <div class="d-flex gap-3 mt-3">
+                <a href="#" style="color: white"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hosting Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Hosting</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="shared-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Shared Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="wordpress-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >WordPress Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="vps-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >VPS Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="cloud-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Cloud Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reseller-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Reseller Hosting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Domains Column -->
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Domains</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Register Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="domain-transfer.html"
+                  style="color: white; text-decoration: none"
+                  >Transfer Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Domain Pricing</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >WHOIS Lookup</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="ssl-certificate.html"
+                  style="color: white; text-decoration: none"
+                  >SSL Certificates</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Knowledge Base</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Tutorials</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >System Status</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Contact Support</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Free Migration</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Column (Now last column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="about.html" style="color: white; text-decoration: none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="blog.html" style="color: white; text-decoration: none"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Partners</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reviews.html"
+                  style="color: white; text-decoration: none"
+                  >Customer Reviews</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr style="border-color: rgba(255, 255, 255, 0.2)" />
+
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <span style="color: white"
+              >© 2025 WefitHost. All rights reserved.</span
+            >
+          </div>
+          <div class="col-md-6">
+            <ul
+              class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0"
+            >
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Acceptable Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Service Level Agreement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >DMCA</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .footerlinkcoor input.form-control {
+        background-color: inherit;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .footerlinkcoor input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footerlinkcoor button.btn {
+        background-color: white;
+        color: #6b63ff;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+    </style>
+
+    <!-- Footer End -->
+
+    <!-- Libs JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Sample blog data (in a real app, this would come from a database)
+      const blogPosts = {
+        1: {
+          title: "How to Scale Your Reseller Hosting Business in 2023",
+          category: "Business Growth",
+          date: "June 15, 2023",
+          readTime: "8 min read",
+          author: "Michael Chen",
+          authorImg: "https://randomuser.me/api/portraits/men/32.jpg",
+          image:
+            "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+          content: `
+                <p>Scaling a reseller hosting business requires strategic planning and execution. In this comprehensive guide, we'll explore the most effective methods to grow your hosting client base while maintaining excellent service quality.</p>
+                
+                <h2>1. Optimize Your Pricing Strategy</h2>
+                <p>Your pricing model can make or break your hosting business. Consider these approaches:</p>
+                <ul>
+                    <li><strong>Tiered Pricing:</strong> Offer multiple packages (Basic, Professional, Enterprise) with increasing resources</li>
+                    <li><strong>Annual Discounts:</strong> Encourage longer commitments with 10-20% discounts for annual payments</li>
+                    <li><strong>Add-on Services:</strong> Provide value-added services like SSL certificates, backups, or premium support</li>
+                </ul>
+                
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     class="img-fluid rounded" 
+                     alt="Business growth chart">
+                
+                <h2>2. Leverage White-Label Branding</h2>
+                <p>Full white-label capabilities allow you to present a completely professional image:</p>
+                <ol>
+                    <li>Configure custom nameservers (ns1.yourcompany.com)</li>
+                    <li>Brand the client control panel with your logo and colors</li>
+                    <li>Use your company name in all communications</li>
+                    <li>Offer branded support emails (support@yourcompany.com)</li>
+                </ol>
+                
+                <h2>3. Implement Automated Marketing</h2>
+                <p>Automation can help you scale your marketing efforts:</p>
+                <ul>
+                    <li><strong>Email Sequences:</strong> Welcome series, renewal reminders, upgrade suggestions</li>
+                    <li><strong>Affiliate Program:</strong> Encourage clients to refer others with incentives</li>
+                    <li><strong>Retention Campaigns:</strong> Reduce churn with targeted offers before renewal dates</li>
+                </ul>
+                
+                <div class="alert alert-primary mt-4">
+                    <strong>Pro Tip:</strong> Focus on customer lifetime value rather than just acquiring new clients. A 5% increase in retention can boost profits by 25-95%.
+                </div>
+            `,
+        },
+        2: {
+          title: "White Label Hosting: Build Your Brand",
+          category: "White Labeling",
+          date: "May 28, 2023",
+          readTime: "6 min read",
+          author: "Sarah Johnson",
+          authorImg: "https://randomuser.me/api/portraits/women/44.jpg",
+          image:
+            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+          content: `
+                <p>White-label hosting allows you to offer hosting services under your own brand name, creating a seamless experience for your clients. Here's how to maximize your white-label potential.</p>
+                
+                <h2>1. Custom Branding Essentials</h2>
+                <p>Key elements to customize for complete brand integration:</p>
+                <ul>
+                    <li>Custom nameservers (ns1.yourdomain.com, ns2.yourdomain.com)</li>
+                    <li>Branded control panel with your logo and color scheme</li>
+                    <li>Custom email templates for all client communications</li>
+                    <li>Branded invoices and receipts</li>
+                </ul>
+                
+                <h2>2. Technical Implementation</h2>
+                <p>Step-by-step guide to setting up your white-label environment:</p>
+                <ol>
+                    <li>Register your nameservers with your domain registrar</li>
+                    <li>Configure DNS settings in your hosting provider's WHM</li>
+                    <li>Upload your logo and set brand colors in the control panel</li>
+                    <li>Customize all email templates with your branding</li>
+                </ol>
+                
+                <div class="alert alert-primary mt-4">
+                    <strong>Pro Tip:</strong> Use a professional email address (e.g., support@yourcompany.com) rather than a generic Gmail or Yahoo address to enhance credibility.
+                </div>
+            `,
+        },
+        // Additional posts would follow the same structure
+      };
+
+      // DOM Elements
+      const blogListing = document.getElementById("blogListing");
+      const articleContent = document.getElementById("articleContent");
+      const backToBlog = document.getElementById("backToBlog");
+      const searchForm = document.getElementById("searchForm");
+      const searchInput = document.getElementById("searchInput");
+      const newsletterForm = document.getElementById("newsletterForm");
+
+      // Article elements
+      const articleTitle = document.getElementById("articleTitle");
+      const articleCategory = document.getElementById("articleCategory");
+      const articleDate = document.getElementById("articleDate");
+      const articleReadTime = document.getElementById("articleReadTime");
+      const articleAuthor = document.getElementById("articleAuthor");
+      const articleAuthorImg = document.getElementById("articleAuthorImg");
+      const articleImage = document.getElementById("articleImage");
+      const articleText = document.getElementById("articleText");
+
+      // Handle article clicks
+      document.querySelectorAll(".read-article").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const postId = this.getAttribute("data-id");
+          showArticle(postId);
+        });
+      });
+
+      // Show article function
+      function showArticle(postId) {
+        const post = blogPosts[postId];
+
+        if (post) {
+          articleTitle.textContent = post.title;
+          articleCategory.textContent = post.category;
+          articleDate.textContent = post.date;
+          articleReadTime.textContent = post.readTime;
+          articleAuthor.textContent = post.author;
+          articleAuthorImg.src = post.authorImg;
+          articleImage.src = post.image;
+          articleText.innerHTML = post.content;
+
+          blogListing.style.display = "none";
+          articleContent.style.display = "block";
+
+          // Scroll to top
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+
+      // Back to blog listing
+      backToBlog.addEventListener("click", function (e) {
+        e.preventDefault();
+        blogListing.style.display = "block";
+        articleContent.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Search functionality
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const query = searchInput.value.toLowerCase();
+
+        if (query.trim() === "") return;
+
+        // In a real app, this would search your database
+        alert(
+          `Searching for: ${query}\n\nIn a real application, this would filter blog posts or redirect to search results.`
+        );
+      });
+
+      // Newsletter signup
+      newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const email = this.querySelector('input[type="email"]').value;
+
+        // In a real app, this would send to your email service
+        alert(
+          `Thank you for subscribing with: ${email}\n\nYou'll receive our next newsletter.`
+        );
+        this.reset();
+      });
+
+      // Handle initial state (show article if URL has hash)
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.location.hash) {
+          const postId = window.location.hash.substring(1);
+          if (blogPosts[postId]) {
+            showArticle(postId);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
