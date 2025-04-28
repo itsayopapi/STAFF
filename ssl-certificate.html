@@ -1739,128 +1739,150 @@
     </section>
 
     <!-- SSL FAQ Section -->
-    <section class="ssl-faq py-10" id="ssl-faq">
+     <section class="ssl-faq py-10" id="ssl-faq">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="text-center mb-5" data-cue="zoomIn">
-                        <h2 class="mb-3">SSL Certificate FAQs</h2>
-                        <p class="text-muted">Get answers to common questions about SSL certificates</p>
+          <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">SSL Certificate FAQs</h2>
+            <p class="lead text-muted">Get answers to common questions about SSL certificates</p>
+          </div>
+    
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        What is an SSL certificate?
+                    </button>
+                  </h3>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        An SSL (Secure Sockets Layer) certificate is a digital certificate that
+                        authenticates a website's identity and enables an encrypted connection. It
+                        creates a secure link between a web server and a browser, ensuring that all data
+                        passed between them remains private and integral.
                     </div>
-
-                    <div class="accordion" id="sslAccordion" data-cue="zoomIn">
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                What is an SSL certificate?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq1" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>An SSL (Secure Sockets Layer) certificate is a digital certificate that
-                                        authenticates a website's identity and enables an encrypted connection. It
-                                        creates a secure link between a web server and a browser, ensuring that all data
-                                        passed between them remains private and integral.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                Why do I need an SSL certificate?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq2" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>You need an SSL certificate to:</p>
-                                    <ul>
-                                        <li>Protect sensitive customer information</li>
-                                        <li>Establish trust with your visitors</li>
-                                        <li>Improve your search engine rankings (Google favors HTTPS sites)</li>
-                                        <li>Meet PCI compliance requirements if you accept payments</li>
-                                        <li>Prevent browser warnings about insecure connections</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                What's the difference between DV, OV, and EV SSL?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq3" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>The main differences are in the validation process and level of trust displayed:
-                                    </p>
-                                    <ul>
-                                        <li><strong>Domain Validation (DV):</strong> Basic validation that verifies you
-                                            own the domain. Issued quickly (minutes). Shows padlock icon.</li>
-                                        <li><strong>Organization Validation (OV):</strong> Verifies your business
-                                            identity. Takes 1-3 days. Shows organization name in certificate details.
-                                        </li>
-                                        <li><strong>Extended Validation (EV):</strong> Rigorous verification process.
-                                            Takes 5-7 days. Displays your company name in the browser address bar (green
-                                            bar in some browsers).</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
-                                How do I install an SSL certificate?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq4" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>We make SSL installation easy:</p>
-                                    <ol>
-                                        <li>Purchase your SSL certificate</li>
-                                        <li>Generate a Certificate Signing Request (CSR) from your hosting control panel
-                                        </li>
-                                        <li>Complete the validation process (varies by certificate type)</li>
-                                        <li>We'll issue your certificate</li>
-                                        <li>Install the certificate via your hosting control panel (we provide
-                                            instructions)</li>
-                                        <li>Update your site to use HTTPS</li>
-                                    </ol>
-                                    <p>Our support team can assist with installation if needed.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
-                                Do you offer wildcard SSL certificates?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq5" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>Yes! We offer wildcard SSL certificates that secure your main domain and all its
-                                        subdomains (e.g., example.com, blog.example.com, shop.example.com). Wildcard
-                                        certificates are available for both DV and OV validation levels.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="faq-item">
-                            <div class="faq-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">
-                                What if I have multiple domains to secure?
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div id="faq6" class="collapse" data-bs-parent="#sslAccordion">
-                                <div class="faq-body">
-                                    <p>We offer multi-domain SSL certificates (SAN certificates) that allow you to
-                                        secure multiple domains with a single certificate. This is perfect for
-                                        businesses managing several websites or services under different domains.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+    
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo">
+                      Why do I need an SSL certificate?
+                    </button>
+                  </h3>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>You need an SSL certificate to:</p>
+                        <ul>
+                            <li>Protect sensitive customer information</li>
+                            <li>Establish trust with your visitors</li>
+                            <li>Improve your search engine rankings (Google favors HTTPS sites)</li>
+                            <li>Meet PCI compliance requirements if you accept payments</li>
+                            <li>Prevent browser warnings about insecure connections</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree">
+                      What's the difference between DV, OV, and EV SSL?
+                    </button>
+                  </h3>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>The main differences are in the validation process and level of trust displayed:
+                        </p>
+                        <ul>
+                            <li><strong>Domain Validation (DV):</strong> Basic validation that verifies you
+                                own the domain. Issued quickly (minutes). Shows padlock icon.</li>
+                            <li><strong>Organization Validation (OV):</strong> Verifies your business
+                                identity. Takes 1-3 days. Shows organization name in certificate details.
+                            </li>
+                            <li><strong>Extended Validation (EV):</strong> Rigorous verification process.
+                                Takes 5-7 days. Displays your company name in the browser address bar (green
+                                bar in some browsers).</li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour">
+                      How do I install an SSL certificate?
+                    </button>
+                  </h3>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <p>We make SSL installation easy:</p>
+                        <ol>
+                            <li>Purchase your SSL certificate</li>
+                            <li>Generate a Certificate Signing Request (CSR) from your hosting control panel
+                            </li>
+                            <li>Complete the validation process (varies by certificate type)</li>
+                            <li>We'll issue your certificate</li>
+                            <li>Install the certificate via your hosting control panel (we provide
+                                instructions)</li>
+                            <li>Update your site to use HTTPS</li>
+                        </ol>
+                        <p>Our support team can assist with installation if needed.</p>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive">
+                      Do you offer wildcard SSL certificates?
+                    </button>
+                  </h3>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes! We offer wildcard SSL certificates that secure your main domain and all its
+                        subdomains (e.g., example.com, blog.example.com, shop.example.com). Wildcard
+                        certificates are available for both DV and OV validation levels.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                    <h3 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive">
+                        What if I have multiple domains to secure?
+                      </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                      data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        We offer multi-domain SSL certificates (SAN certificates) that allow you to
+                        secure multiple domains with a single certificate. This is perfect for
+                        businesses managing several websites or services under different domains.
+                      </div>
+                    </div>
+                  </div>
+              </div>
+    
+              <div class="text-center mt-4">
+                <a href="support.html" class="btn btn-outline-primary">View All FAQs</a>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+    
 
     <!-- SSL CTA Section -->
     <section class="ssl-cta" data-cues="fadeIn">
