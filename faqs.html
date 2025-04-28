@@ -3,262 +3,662 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeFitHost - Frequently Asked Questions</title>
+    <title>WeFitHost - Complete FAQ Center</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --light-bg: #f8fafc;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--light-bg);
             color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            line-height: 1.6;
         }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
         }
-        h2 {
-            color: #3498db;
-            margin-top: 40px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
+        
         .faq-section {
-            margin-bottom: 50px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
         }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .section-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
         .faq-item {
-            margin-bottom: 25px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border-left: 3px solid #eee;
+            transition: all 0.3s ease;
         }
+        
+        .faq-item:hover {
+            border-left-color: var(--primary);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
         .faq-question {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 1.1em;
+            padding: 1.25rem 1.5rem;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
         }
+        
+        .faq-question .icon {
+            margin-right: 12px;
+            color: var(--primary);
+            font-size: 1.3rem;
+            min-width: 30px;
+        }
+        
         .faq-answer {
-            color: #555;
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .feature-img {
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            max-height: 300px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 1.5rem;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<h1>Frequently Asked Questions</h1>
+<!-- Page Header -->
+<header class="page-header">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">WeFitHost Help Center</h1>
+        <p class="lead mb-4">Find answers to all your hosting questions</p>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Search FAQs...">
+                    <button class="btn btn-light" type="button">
+                        <i class="bi bi-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-<div class="faq-section">
-    <h2>Domain & Hosting Questions</h2>
-    
-    <div class="faq-item">
-        <div class="faq-question">1. Why buy a domain name from WeFitHost?</div>
-        <div class="faq-answer">We make it easy and affordable to secure your ideal domain name, with UK-based support, transparent pricing, and simple management tools — perfect for individuals, businesses, and agencies.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">2. What types of hosting does WeFitHost offer?</div>
-        <div class="faq-answer">WeFitHost provides shared hosting, reseller hosting, WordPress-optimized hosting, and high-performance VPS (Virtual Private Servers), all hosted on lightning-fast UK servers.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">3. Is WeFitHost really UK-based?</div>
-        <div class="faq-answer">Yes! All our infrastructure is based in the UK, with local support to match. That means faster speeds for UK visitors and peace of mind knowing your data stays local.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">4. Can I transfer my domain to WeFitHost?</div>
-        <div class="faq-answer">Absolutely. Transferring your domain to WeFitHost is straightforward, and we'll guide you through the process or handle it for you.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">5. What makes your support different?</div>
-        <div class="faq-answer">We offer real human support, not canned replies. Whether it's a domain issue, email setup, or website migration, our expert team is here when you need us — no stress, no scripts.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">6. Do you help with migrating websites from other hosts?</div>
-        <div class="faq-answer">Yes, we offer free migration for websites, emails, and databases — no downtime, no headaches.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">7. Are your VPS plans scalable?</div>
-        <div class="faq-answer">Definitely. Our virtual private servers are flexible and scalable to match your growing needs, whether you're hosting a simple site or running custom apps.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">8. Do you offer domain privacy protection?</div>
-        <div class="faq-answer">Yes, domain privacy is available for most extensions. It helps protect your personal info from public WHOIS databases.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">9. Can I register international domain extensions with WeFitHost?</div>
-        <div class="faq-answer">Yes! In addition to .co.uk and .uk, we support a wide range of domain extensions like .com, .net, .io, and more.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">10. Is WeFitHost suitable for agencies or resellers?</div>
-        <div class="faq-answer">Absolutely. We offer white-label reseller plans and multi-client management tools, so agencies can manage client sites with ease — all under their own brand.</div>
-    </div>
+<div class="container py-4">
+    <!-- Domain & Hosting Section -->
+    <section class="faq-section">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-icon">
+                    <i class="bi bi-globe"></i>
+                </div>
+                <h2 class="section-title">Domain & Hosting</h2>
+                <p>Everything about domains and our hosting services</p>
+                <img src="https://images.unsplash.com/photo-1614064548237-096f735f344f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Domain registration" 
+                     class="feature-img">
+            </div>
+            <div class="col-lg-8">
+                <div class="accordion accordion-flush" id="domainAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain1">
+                            <i class="bi bi-question-circle icon"></i>
+                            Why buy a domain name from WeFitHost?
+                        </div>
+                        <div id="domain1" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            We make it easy and affordable to secure your ideal domain name, with UK-based support, transparent pricing, and simple management tools — perfect for individuals, businesses, and agencies.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain2">
+                            <i class="bi bi-server icon"></i>
+                            What types of hosting does WeFitHost offer?
+                        </div>
+                        <div id="domain2" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            WeFitHost provides shared hosting, reseller hosting, WordPress-optimized hosting, and high-performance VPS (Virtual Private Servers), all hosted on lightning-fast UK servers.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain3">
+                            <i class="bi bi-geo-alt icon"></i>
+                            Is WeFitHost really UK-based?
+                        </div>
+                        <div id="domain3" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Yes! All our infrastructure is based in the UK, with local support to match. That means faster speeds for UK visitors and peace of mind knowing your data stays local.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain4">
+                            <i class="bi bi-arrow-left-right icon"></i>
+                            Can I transfer my domain to WeFitHost?
+                        </div>
+                        <div id="domain4" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Absolutely. Transferring your domain to WeFitHost is straightforward, and we'll guide you through the process or handle it for you.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain5">
+                            <i class="bi bi-headset icon"></i>
+                            What makes your support different?
+                        </div>
+                        <div id="domain5" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            We offer real human support, not canned replies. Whether it's a domain issue, email setup, or website migration, our expert team is here when you need us — no stress, no scripts.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain6">
+                            <i class="bi bi-arrow-repeat icon"></i>
+                            Do you help with migrating websites from other hosts?
+                        </div>
+                        <div id="domain6" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Yes, we offer free migration for websites, emails, and databases — no downtime, no headaches.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain7">
+                            <i class="bi bi-arrows-angle-expand icon"></i>
+                            Are your VPS plans scalable?
+                        </div>
+                        <div id="domain7" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Definitely. Our virtual private servers are flexible and scalable to match your growing needs, whether you're hosting a simple site or running custom apps.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain8">
+                            <i class="bi bi-eye-slash icon"></i>
+                            Do you offer domain privacy protection?
+                        </div>
+                        <div id="domain8" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Yes, domain privacy is available for most extensions. It helps protect your personal info from public WHOIS databases.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain9">
+                            <i class="bi bi-globe2 icon"></i>
+                            Can I register international domain extensions with WeFitHost?
+                        </div>
+                        <div id="domain9" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Yes! In addition to .co.uk and .uk, we support a wide range of domain extensions like .com, .net, .io, and more.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#domain10">
+                            <i class="bi bi-people icon"></i>
+                            Is WeFitHost suitable for agencies or resellers?
+                        </div>
+                        <div id="domain10" class="collapse faq-answer" data-bs-parent="#domainAccordion">
+                            Absolutely. We offer white-label reseller plans and multi-client management tools, so agencies can manage client sites with ease — all under their own brand.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Hosting Section -->
+    <section class="faq-section">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-icon">
+                    <i class="bi bi-cloud"></i>
+                </div>
+                <h2 class="section-title">Cloud Hosting</h2>
+                <p>Powerful cloud solutions for your business</p>
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                     alt="Cloud hosting" 
+                     class="feature-img">
+            </div>
+            <div class="col-lg-8">
+                <div class="accordion accordion-flush" id="cloudAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud1">
+                            <i class="bi bi-stars icon"></i>
+                            What makes WeFitHost Cloud different from other cloud providers?
+                        </div>
+                        <div id="cloud1" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            WeFitHost Cloud is built for simplicity, speed, and reliability — with 100% UK-based infrastructure, lightning-fast SSD storage, automatic scalability, and real human support. No complicated setups, no hidden fees — just powerful cloud hosting made easy.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud2">
+                            <i class="bi bi-rocket icon"></i>
+                            Is WeFitHost Cloud suitable for small businesses and startups?
+                        </div>
+                        <div id="cloud2" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Absolutely. Whether you're launching a blog, an online store, or a business site, WeFitHost Cloud is flexible enough to grow with you, with easy upgrades and no downtime.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud3">
+                            <i class="bi bi-speedometer2 icon"></i>
+                            Will my website load faster with cloud hosting?
+                        </div>
+                        <div id="cloud3" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Yes! Our cloud hosting uses distributed resources, high-speed NVMe storage, and UK data centers to deliver super-fast loading times for your visitors, no matter where they are.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud4">
+                            <i class="bi bi-arrow-up icon"></i>
+                            How easy is it to scale my hosting as my business grows?
+                        </div>
+                        <div id="cloud4" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Super easy. With WeFitHost Cloud, you can instantly scale your resources — like CPU, RAM, and storage — with just a few clicks. No migrations or downtime needed.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud5">
+                            <i class="bi bi-gear icon"></i>
+                            Do you offer managed cloud hosting?
+                        </div>
+                        <div id="cloud5" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Yes, we offer fully managed options! Our team takes care of server maintenance, security updates, backups, and performance optimization so you can focus on growing your business.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud6">
+                            <i class="bi bi-shield-check icon"></i>
+                            How secure is WeFitHost Cloud?
+                        </div>
+                        <div id="cloud6" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Security is built into everything we do — from DDoS protection and firewalls to free SSL certificates and daily backups. Plus, all data is securely stored in UK-based Tier 3 data centers.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud7">
+                            <i class="bi bi-headset icon"></i>
+                            What kind of support do you provide?
+                        </div>
+                        <div id="cloud7" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            We offer 24/7 expert support — no bots, no runarounds. Whether you need help setting up, troubleshooting, or scaling, our UK-based team is ready to assist.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud8">
+                            <i class="bi bi-arrow-repeat icon"></i>
+                            Can I migrate my existing site to WeFitHost Cloud?
+                        </div>
+                        <div id="cloud8" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Of course! We provide free website migrations with no downtime. Our team will move your website, databases, and emails over quickly and securely.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud9">
+                            <i class="bi bi-cash-coin icon"></i>
+                            Are there hidden fees or complicated contracts?
+                        </div>
+                        <div id="cloud9" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            Never. We believe in transparent, honest pricing. What you see is what you pay — no surprise renewal hikes or sneaky add-ons.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#cloud10">
+                            <i class="bi bi-layout-wtf icon"></i>
+                            What control panel do you offer with cloud hosting?
+                        </div>
+                        <div id="cloud10" class="collapse faq-answer" data-bs-parent="#cloudAccordion">
+                            We offer easy-to-use control panels like cPanel or a custom WeFitHost Cloud Dashboard — giving you full control over your websites, emails, databases, and resources.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Managed Hosting Section -->
+    <section class="faq-section">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-icon">
+                    <i class="bi bi-gear-fill"></i>
+                </div>
+                <h2 class="section-title">Managed Hosting</h2>
+                <p>Expert management for your hosting needs</p>
+                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                     alt="Managed hosting" 
+                     class="feature-img">
+            </div>
+            <div class="col-lg-8">
+                <div class="accordion accordion-flush" id="managedAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed1">
+                            <i class="bi bi-question-circle icon"></i>
+                            What exactly is managed hosting?
+                        </div>
+                        <div id="managed1" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Managed hosting means we take care of all the technical aspects of running your server — including setup, maintenance, updates, security, and support — so you can focus on your website and business without worrying about server management.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed2">
+                            <i class="bi bi-person-check icon"></i>
+                            Who should use managed hosting?
+                        </div>
+                        <div id="managed2" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Managed hosting is perfect for businesses, agencies, e-commerce stores, and anyone who wants high performance and expert support without the need to manage the technical side themselves.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed3">
+                            <i class="bi bi-list-check icon"></i>
+                            What services are included with WeFitHost managed hosting?
+                        </div>
+                        <div id="managed3" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Our managed hosting includes server monitoring, regular software updates, security patches, backups, website migrations, performance tuning, and 24/7 expert support.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed4">
+                            <i class="bi bi-arrow-left-right icon"></i>
+                            How is managed hosting different from regular web hosting?
+                        </div>
+                        <div id="managed4" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            With regular hosting, you're responsible for managing your server and fixing technical issues. With WeFitHost managed hosting, our team handles all of that for you, ensuring your site stays fast, secure, and online — without you lifting a finger.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed5">
+                            <i class="bi bi-exclamation-triangle icon"></i>
+                            Will you help if my site goes down or has technical issues?
+                        </div>
+                        <div id="managed5" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Yes! Our monitoring systems alert us instantly if there's an issue, and our support team will work proactively to fix it — often before you even notice.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed6">
+                            <i class="bi bi-arrow-repeat icon"></i>
+                            Can I move my existing website to WeFitHost managed hosting?
+                        </div>
+                        <div id="managed6" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Definitely. We offer free, hassle-free migrations, including websites, databases, and email accounts, with no downtime during the transfer.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed7">
+                            <i class="bi bi-shield-lock icon"></i>
+                            Is WeFitHost managed hosting secure?
+                        </div>
+                        <div id="managed7" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Absolutely. We prioritize security with proactive threat monitoring, DDoS protection, firewalls, malware scanning, and regular backups — all included at no extra cost.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed8">
+                            <i class="bi bi-graph-up icon"></i>
+                            Do you offer custom solutions for high-traffic or complex websites?
+                        </div>
+                        <div id="managed8" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            Yes! We can tailor a managed hosting plan specifically for your needs, including custom server configurations, load balancing, and scaling for high-traffic or resource-intensive sites.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed9">
+                            <i class="bi bi-layout-text-sidebar-reverse icon"></i>
+                            How do I access my hosting account or manage my website?
+                        </div>
+                        <div id="managed9" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            You'll have access to an intuitive dashboard (like cPanel or a custom WeFitHost panel) where you can manage your website, emails, backups, and more — all with just a few clicks.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#managed10">
+                            <i class="bi bi-award icon"></i>
+                            What makes WeFitHost managed hosting better than the rest?
+                        </div>
+                        <div id="managed10" class="collapse faq-answer" data-bs-parent="#managedAccordion">
+                            We combine true UK-based infrastructure, real human support, powerful technology, and transparent pricing — all designed to give you peace of mind and the best possible hosting experience.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="faq-section">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-icon">
+                    <i class="bi bi-shield-lock"></i>
+                </div>
+                <h2 class="section-title">Security Center</h2>
+                <p>Protecting your online presence</p>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Security" 
+                     class="feature-img">
+            </div>
+            <div class="col-lg-8">
+                <div class="accordion accordion-flush" id="securityAccordion">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security1">
+                            <i class="bi bi-shield-check icon"></i>
+                            How does WeFitHost protect my website?
+                        </div>
+                        <div id="security1" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            We use advanced security measures like firewalls, malware scanning, DDoS protection, SSL certificates, and real-time threat monitoring to keep your website safe.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security2">
+                            <i class="bi bi-shield-exclamation icon"></i>
+                            What is DDoS protection and do you provide it?
+                        </div>
+                        <div id="security2" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            Yes, we do. DDoS protection helps defend your website from malicious attacks that try to overwhelm your server and take your site offline — keeping your business running smoothly.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security3">
+                            <i class="bi bi-lock icon"></i>
+                            Is an SSL certificate included with my hosting plan?
+                        </div>
+                        <div id="security3" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            Absolutely. Every WeFitHost plan comes with a free SSL certificate to encrypt data between your site and its visitors, building trust and protecting sensitive information.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security4">
+                            <i class="bi bi-archive icon"></i>
+                            How often are backups performed?
+                        </div>
+                        <div id="security4" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            We perform daily backups automatically, so your website, databases, and emails are safely stored and can be quickly restored if needed.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security5">
+                            <i class="bi bi-save icon"></i>
+                            Can I manually back up my website whenever I want?
+                        </div>
+                        <div id="security5" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            Yes! Through your hosting control panel, you can create manual backups anytime for extra peace of mind.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security6">
+                            <i class="bi bi-bug icon"></i>
+                            How do you handle malware or hacks?
+                        </div>
+                        <div id="security6" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            If malware or hacking is detected, our security team immediately steps in to clean, restore, and protect your website — often before you even notice a problem.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security7">
+                            <i class="bi bi-database icon"></i>
+                            Where is my website data stored?
+                        </div>
+                        <div id="security7" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            All your data is securely stored in UK-based Tier 3 data centers, fully compliant with UK and EU regulations for privacy and data protection.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 8 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security8">
+                            <i class="bi bi-eye icon"></i>
+                            Do you offer security monitoring services?
+                        </div>
+                        <div id="security8" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            Yes. WeFitHost includes continuous monitoring for vulnerabilities, suspicious activity, and unauthorized access attempts as part of our managed hosting services.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 9 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security9">
+                            <i class="bi bi-shield-plus icon"></i>
+                            How can I make my website even more secure?
+                        </div>
+                        <div id="security9" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            We recommend using strong passwords, enabling two-factor authentication, updating plugins and software regularly, and letting us handle server-level protection and security patches.
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 10 -->
+                    <div class="faq-item">
+                        <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#security10">
+                            <i class="bi bi-exclamation-octagon icon"></i>
+                            What happens if my website is compromised?
+                        </div>
+                        <div id="security10" class="collapse faq-answer" data-bs-parent="#securityAccordion">
+                            We're here 24/7 to help. Our support team will investigate, clean up your site, and strengthen your security — quickly and professionally.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
-<div class="faq-section">
-    <h2>Cloud Hosting Questions</h2>
-    
-    <div class="faq-item">
-        <div class="faq-question">1. What makes WeFitHost Cloud different from other cloud providers?</div>
-        <div class="faq-answer">WeFitHost Cloud is built for simplicity, speed, and reliability — with 100% UK-based infrastructure, lightning-fast SSD storage, automatic scalability, and real human support. No complicated setups, no hidden fees — just powerful cloud hosting made easy.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">2. Is WeFitHost Cloud suitable for small businesses and startups?</div>
-        <div class="faq-answer">Absolutely. Whether you're launching a blog, an online store, or a business site, WeFitHost Cloud is flexible enough to grow with you, with easy upgrades and no downtime.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">3. Will my website load faster with cloud hosting?</div>
-        <div class="faq-answer">Yes! Our cloud hosting uses distributed resources, high-speed NVMe storage, and UK data centers to deliver super-fast loading times for your visitors, no matter where they are.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">4. How easy is it to scale my hosting as my business grows?</div>
-        <div class="faq-answer">Super easy. With WeFitHost Cloud, you can instantly scale your resources — like CPU, RAM, and storage — with just a few clicks. No migrations or downtime needed.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">5. Do you offer managed cloud hosting?</div>
-        <div class="faq-answer">Yes, we offer fully managed options! Our team takes care of server maintenance, security updates, backups, and performance optimization so you can focus on growing your business.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">6. How secure is WeFitHost Cloud?</div>
-        <div class="faq-answer">Security is built into everything we do — from DDoS protection and firewalls to free SSL certificates and daily backups. Plus, all data is securely stored in UK-based Tier 3 data centers.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">7. What kind of support do you provide?</div>
-        <div class="faq-answer">We offer 24/7 expert support — no bots, no runarounds. Whether you need help setting up, troubleshooting, or scaling, our UK-based team is ready to assist.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">8. Can I migrate my existing site to WeFitHost Cloud?</div>
-        <div class="faq-answer">Of course! We provide free website migrations with no downtime. Our team will move your website, databases, and emails over quickly and securely.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">9. Are there hidden fees or complicated contracts?</div>
-        <div class="faq-answer">Never. We believe in transparent, honest pricing. What you see is what you pay — no surprise renewal hikes or sneaky add-ons.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">10. What control panel do you offer with cloud hosting?</div>
-        <div class="faq-answer">We offer easy-to-use control panels like cPanel or a custom WeFitHost Cloud Dashboard — giving you full control over your websites, emails, databases, and resources.</div>
-    </div>
-</div>
-
-<div class="faq-section">
-    <h2>Managed Hosting Questions</h2>
-    
-    <div class="faq-item">
-        <div class="faq-question">1. What exactly is managed hosting?</div>
-        <div class="faq-answer">Managed hosting means we take care of all the technical aspects of running your server — including setup, maintenance, updates, security, and support — so you can focus on your website and business without worrying about server management.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">2. Who should use managed hosting?</div>
-        <div class="faq-answer">Managed hosting is perfect for businesses, agencies, e-commerce stores, and anyone who wants high performance and expert support without the need to manage the technical side themselves.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">3. What services are included with WeFitHost managed hosting?</div>
-        <div class="faq-answer">Our managed hosting includes server monitoring, regular software updates, security patches, backups, website migrations, performance tuning, and 24/7 expert support.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">4. How is managed hosting different from regular web hosting?</div>
-        <div class="faq-answer">With regular hosting, you're responsible for managing your server and fixing technical issues. With WeFitHost managed hosting, our team handles all of that for you, ensuring your site stays fast, secure, and online — without you lifting a finger.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">5. Will you help if my site goes down or has technical issues?</div>
-        <div class="faq-answer">Yes! Our monitoring systems alert us instantly if there's an issue, and our support team will work proactively to fix it — often before you even notice.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">6. Can I move my existing website to WeFitHost managed hosting?</div>
-        <div class="faq-answer">Definitely. We offer free, hassle-free migrations, including websites, databases, and email accounts, with no downtime during the transfer.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">7. Is WeFitHost managed hosting secure?</div>
-        <div class="faq-answer">Absolutely. We prioritize security with proactive threat monitoring, DDoS protection, firewalls, malware scanning, and regular backups — all included at no extra cost.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">8. Do you offer custom solutions for high-traffic or complex websites?</div>
-        <div class="faq-answer">Yes! We can tailor a managed hosting plan specifically for your needs, including custom server configurations, load balancing, and scaling for high-traffic or resource-intensive sites.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">9. How do I access my hosting account or manage my website?</div>
-        <div class="faq-answer">You'll have access to an intuitive dashboard (like cPanel or a custom WeFitHost panel) where you can manage your website, emails, backups, and more — all with just a few clicks.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">10. What makes WeFitHost managed hosting better than the rest?</div>
-        <div class="faq-answer">We combine true UK-based infrastructure, real human support, powerful technology, and transparent pricing — all designed to give you peace of mind and the best possible hosting experience.</div>
-    </div>
-</div>
-
-<div class="faq-section">
-    <h2>Security Questions</h2>
-    
-    <div class="faq-item">
-        <div class="faq-question">1. How does WeFitHost protect my website?</div>
-        <div class="faq-answer">We use advanced security measures like firewalls, malware scanning, DDoS protection, SSL certificates, and real-time threat monitoring to keep your website safe.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">2. What is DDoS protection and do you provide it?</div>
-        <div class="faq-answer">Yes, we do. DDoS protection helps defend your website from malicious attacks that try to overwhelm your server and take your site offline — keeping your business running smoothly.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">3. Is an SSL certificate included with my hosting plan?</div>
-        <div class="faq-answer">Absolutely. Every WeFitHost plan comes with a free SSL certificate to encrypt data between your site and its visitors, building trust and protecting sensitive information.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">4. How often are backups performed?</div>
-        <div class="faq-answer">We perform daily backups automatically, so your website, databases, and emails are safely stored and can be quickly restored if needed.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">5. Can I manually back up my website whenever I want?</div>
-        <div class="faq-answer">Yes! Through your hosting control panel, you can create manual backups anytime for extra peace of mind.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">6. How do you handle malware or hacks?</div>
-        <div class="faq-answer">If malware or hacking is detected, our security team immediately steps in to clean, restore, and protect your website — often before you even notice a problem.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">7. Where is my website data stored?</div>
-        <div class="faq-answer">All your data is securely stored in UK-based Tier 3 data centers, fully compliant with UK and EU regulations for privacy and data protection.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">8. Do you offer security monitoring services?</div>
-        <div class="faq-answer">Yes. WeFitHost includes continuous monitoring for vulnerabilities, suspicious activity, and unauthorized access attempts as part of our managed hosting services.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">9. How can I make my website even more secure?</div>
-        <div class="faq-answer">We recommend using strong passwords, enabling two-factor authentication, updating plugins and software regularly, and letting us handle server-level protection and security patches.</div>
-    </div>
-    
-    <div class="faq-item">
-        <div class="faq-question">10. What happens if my website is compromised?</div>
-        <div class="faq-answer">We're here 24/7 to help. Our support team will investigate, clean up your site, and strengthen your security — quickly and professionally.</div>
-    </div>
-</div>
-
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
