@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
@@ -16,8 +21,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Libs CSS -->
-    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
-    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
@@ -32,435 +43,437 @@
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- Media queries Css -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css">
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
     <title>WeFitHost</title>
 
-
     <style>
-        :root {
-            --primary: #6B63FF;
-            --primary-dark: #5a52e0;
-            --secondary: #2d3748;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --danger: #dc3545;
-        }
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--dark);
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
 
-        /* Header Styles */
-        .custom-header {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1020;
-            background-color: white;
-            transition: transform 0.3s ease;
-        }
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
 
-        .custom-header.scrolled-up {
-            transform: translateY(0);
-        }
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
 
-        .custom-header.scrolled-down {
-            transform: translateY(-100%);
-        }
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
 
-        .navbar {
-            padding: 0.8rem 0;
-        }
+      .navbar {
+        padding: 0.8rem 0;
+      }
 
-        .navbar-brand img {
-            transition: all 0.3s ease;
-        }
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
 
-        .navbar-brand:hover img {
-            transform: scale(1.05);
-        }
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
 
-        .nav-link {
-            font-weight: 500;
-            color: #333;
-            padding: 1rem 1.25rem;
-            transition: all 0.2s ease;
-        }
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
 
-        .nav-link:hover,
-        .nav-link:focus {
-            color: #6B63FF;
-        }
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
 
-        /* .dropdown-toggle::after {
+      /* .dropdown-toggle::after {
             display: none;
         } */
 
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
         .dropdown-menu {
-            border: none;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 0.5rem 0;
-            margin-top: 0.5rem;
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
         }
 
-        .dropdown-item {
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9rem;
-            color: #333;
-            transition: all 0.2s ease;
-            border-radius: 4px;
-            margin: 0.15rem 0.5rem;
+        .mega-dropdown .dropdown-menu {
+          width: auto;
         }
 
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #6B63FF;
+        .mega-menu .row {
+          flex-direction: column;
         }
 
-        .mega-dropdown {
-            position: static !important;
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
         }
 
-        .mega-menu {
-            width: 100%;
-            left: 0;
-            right: 0;
-            padding: 1rem;
-            margin-top: 0;
-            border: none;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 0 0 8px 8px;
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
         }
 
-        .dropdown-header {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #6c757d;
-            text-transform: uppercase;
-            padding: 0.5rem 1.5rem;
-            margin-top: 0.5rem;
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
         }
 
-        .dropdown-item:hover,
-        .dropdown-item:focus {
-            background-color: rgba(107, 99, 255, 0.1);
-            color: var(--primary);
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
         }
+      }
 
-        .mobile-menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1020;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+      .hero-section {
+        background: linear-gradient(135deg, #6b63ff 0%, #4a42d6 100%);
+        color: white;
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .mobile-menu-backdrop.show {
-            opacity: 1;
-            visibility: visible;
-        }
+      .hero-section .manage-header {
+        color: #fff;
+      }
 
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                position: fixed;
-                top: 72px;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: white;
-                z-index: 1010;
-                overflow-y: auto;
-                padding: 1.5rem;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url("https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+          no-repeat center center;
+        background-size: cover;
+        opacity: 0.1;
+      }
 
-            .navbar-collapse.show {
-                transform: translateX(0);
-            }
+      /* Additional SSL-specific styles */
+      .ssl-hero {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
 
-            .dropdown-menu {
-                box-shadow: none;
-                border-left: 3px solid var(--primary);
-                margin-left: 1rem;
-            }
+      .ssl-hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
 
-            .mega-dropdown .dropdown-menu {
-                width: auto;
-            }
+      .ssl-hero p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin-bottom: 2rem;
+      }
 
-            .mega-menu .row {
-                flex-direction: column;
-            }
+      .ssl-badge {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+      }
 
-            .mega-menu .col-md-4,
-            .mega-menu .col-md-6 {
-                width: 100%;
-                padding: 0;
-            }
+      .ssl-plans {
+        padding: 4rem 0 2rem 0;
+        background-color: #f9f9ff;
+      }
 
-            .mega-menu .p-3 {
-                padding: 1rem 0 !important;
-            }
+      .ssl-price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #6b63ff;
+        margin-bottom: 1.5rem;
+      }
 
-            .dropdown-toggle i.bi-chevron-down {
-                transition: transform 0.3s ease;
-            }
+      .ssl-price span {
+        font-size: 1rem;
+        color: #666;
+        font-weight: 400;
+      }
 
-            .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
-                transform: rotate(180deg);
-            }
-        }
+      .ssl-features {
+        margin: 2rem 0;
+      }
 
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            font-weight: 600;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-size: 1.05rem;
-        }
-		.hero-section {
-            background: linear-gradient(135deg, #6B63FF 0%, #4A42D6 100%);
-            color: white;
-            padding: 5rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+      .ssl-features li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: flex-start;
+      }
 
-        .hero-section .manage-header {
-            color: #fff;
-        }
+      .ssl-features li i {
+        color: #6b63ff;
+        margin-right: 0.75rem;
+        margin-top: 0.2rem;
+      }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 0.1;
-        }
+      .ssl-benefits {
+        padding: 4rem 0;
+        background-color: white;
+      }
 
-        /* Additional SSL-specific styles */
-        .ssl-hero {
-            background: linear-gradient(135deg, #6B63FF 0%, #8b3dff 100%);
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
+      .benefit-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
 
+      .benefit-icon {
+        width: 80px;
+        height: 80px;
+        background-color: rgba(107, 99, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .benefit-icon i {
+        color: #6b63ff;
+        font-size: 2rem;
+      }
+
+      .ssl-faq {
+        padding: 4rem 0;
+        background-color: #f9f9ff;
+      }
+
+      .faq-item {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-header {
+        background-color: white;
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+      }
+
+      .faq-header:hover {
+        background-color: #f8f9fa;
+      }
+
+      .faq-header i {
+        transition: transform 0.3s ease;
+      }
+
+      .faq-header.collapsed i {
+        transform: rotate(0deg);
+      }
+
+      .faq-header:not(.collapsed) i {
+        transform: rotate(180deg);
+      }
+
+      .faq-body {
+        padding: 1.5rem;
+        background-color: white;
+        border-top: 1px solid #eee;
+      }
+
+      .ssl-cta {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .ssl-cta h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .ssl-cta p {
+        font-size: 1.25rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .ssl-features {
+        flex-grow: 1;
+      }
+
+      .validation-level {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .validation-domain {
+        background-color: #e3f2fd;
+        color: #1976d2;
+      }
+
+      .validation-organization {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      .validation-extended {
+        background-color: #fff8e1;
+        color: #ff8f00;
+      }
+
+      @media (max-width: 767.98px) {
         .ssl-hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+          font-size: 2.25rem;
         }
 
         .ssl-hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .ssl-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .ssl-plans {
-            padding: 4rem 0;
-            background-color: #f9f9ff;
-        }
-
-      
-
-        .ssl-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #6B63FF;
-            margin-bottom: 1.5rem;
-        }
-
-        .ssl-price span {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 400;
-        }
-
-        .ssl-features {
-            margin: 2rem 0;
-        }
-
-        .ssl-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .ssl-features li i {
-            color: #6B63FF;
-            margin-right: 0.75rem;
-            margin-top: 0.2rem;
-        }
-
-        .ssl-benefits {
-            padding: 4rem 0;
-            background-color: white;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(107, 99, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-        }
-
-        .benefit-icon i {
-            color: #6B63FF;
-            font-size: 2rem;
-        }
-
-        .ssl-faq {
-            padding: 4rem 0;
-            background-color: #f9f9ff;
-        }
-
-        .faq-item {
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-header {
-            background-color: white;
-            padding: 1.25rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .faq-header:hover {
-            background-color: #f8f9fa;
-        }
-
-        .faq-header i {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-header.collapsed i {
-            transform: rotate(0deg);
-        }
-
-        .faq-header:not(.collapsed) i {
-            transform: rotate(180deg);
-        }
-
-        .faq-body {
-            padding: 1.5rem;
-            background-color: white;
-            border-top: 1px solid #eee;
-        }
-
-        .ssl-cta {
-            background: linear-gradient(135deg, #6B63FF 0%, #8b3dff 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
+          font-size: 1.1rem;
         }
 
         .ssl-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+          font-size: 2rem;
         }
-
-        .ssl-cta p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
-
-       
-
-        .ssl-features {
-
-            flex-grow: 1;
-        }
-
-        .validation-level {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .validation-domain {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-
-        .validation-organization {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .validation-extended {
-            background-color: #fff8e1;
-            color: #ff8f00;
-        }
-
-        @media (max-width: 767.98px) {
-            .ssl-hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .ssl-hero p {
-                font-size: 1.1rem;
-            }
-
-          
-
-            .ssl-cta h2 {
-                font-size: 2rem;
-            }
-        }
-
-        
+      }
     </style>
-</head>
+  </head>
 
 <body data-bs-theme="light">
    <!-- Navbar Start File-->
@@ -1143,490 +1156,821 @@
     </section>
 
     <!-- SSL Plans Section -->
-    
-    <section class="rts-pricing-plan ssl-plans py-10" data-cue="fadeIn">
-        <div class="container">
-            <div class="row justify-content-center" data-cue="fadeIn">
-                <div class="rts-section w-490 text-center">
-                    <h2 class="rts-section__title">
-                        Choose the Right SSL Certificate
-                    </h2>
-                    <p class="rts-section__description lead">
-                        Select the level of validation and security that fits your needs
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row justify-content-center">
 
-                    <!-- PRICING PLAN -->
-                    <div class="manage_price_content" id="monthly">
-                        <div class="row g-3 monthly">
-                            <!-- single card -->
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="card-plan" data-cue="zoomIn">
-                                    <span class="validation-level validation-domain">Domain Validation</span>
-                                    <div class="card-plan__package">
-                                        <div class="icon">
-                                            <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="" />
-                                        </div>
-                                        <h4 class="package__name">Standard SSL</h4>
-                                    </div>
-                                    <p class="card-plan__desc">
-                                        Basic encryption for your website with quick issuance.
-                                    </p>
-                                    <div class="card-plan__offer">
-                                        <!-- <span class="past-price">$29</span> -->
-                                        <span class="offer-given">Starting from</span>
-                                    </div>
-                                    <h5 class="card-plan__price">
-                                        <sup>$</sup><span>59.99</span> <sub>/YEAR</sub>
-                                    </h5>
-                                    <div class="card-plan__cartbtn">
-                                        <a href="https://my.wefithost.com/manage">Get Started</a>
-                                    </div>
-                                    <!-- <p class="card-plan__renew-price">
-                                    Then only £4.99/month
-                                    </p> -->
-                                    <div class="card-plan__feature">
-                                        <ul class="card-plan__feature--list">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Domain
-                                                    validation</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Host a single website with this plan"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Basic
-                                                    encryption</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Fast SSD storage for your website"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Padlock icon in
-                                                    browser</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Monthly data transfer allowance"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>HTTPS enabled</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="One MySQL database included"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Issued in
-                                                    minutes</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Daily automatic backups"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>$10,000
-                                                    warranty</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Create snapshots anytime"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <!-- MORE FEATURES -->
-                                            <!-- <li class="card-plan__feature--list-trigered">
-                                                <span class="text">More Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                                </span>
-                                            </li> -->
-                                        </ul>
-                                        <ul class="card-plan__feature--list more__feature">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                                                    CDN</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Content Delivery Network"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                                                    Scans</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Regular security scans"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                                                    Guarantee</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Risk-free trial"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-xmark"></i> Basic Security
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Email security features"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Round-the-clock support"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-trigered">
-                                                <span class="text">See less Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single card end -->
-                            <!-- single card -->
-                            <div class="col-lg-4 col-md-6 col-sm-6" style="">
-                                <div class="card-plan active" data-cue="zoomIn">
-                                    <span class="validation-level validation-domain">Organization Validation</span>
-                                    <div class="popular-tag">most popular</div>
-                                    <div class="card-plan__package">
-                                        <div class="icon">
-                                            <img src="assets/images/pricing/premium.svg" height="30" width="30"
-                                                alt="" />
-                                        </div>
-                                        <h4 class="package__name">Business SSL</h4>
-                                    </div>
-                                    <p class="card-plan__desc">
-                                        Enhanced validation for business websites and eCommerce.
-                                    </p>
-                                    <div class="card-plan__offer">
-                                        <!-- <span class="past-price">£5.99</span> -->
-                                        <span class="offer-given">Starting from</span>
-                                    </div>
-                                    <h5 class="card-plan__price">
-                                        <sup>$</sup><span>129.99</span><sub>/YEAR</sub>
-                                    </h5>
-                                    <div class="card-plan__cartbtn">
-                                        <a href="https://my.wefithost.com/manage">Get Started</a>
-                                    </div>
-                                    <!-- <p class="card-plan__renew-price">
-                                    Then only £5.99/month
-                                </p> -->
-                                    <div class="card-plan__feature">
-                                        <ul class="card-plan__feature--list">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Organization
-                                                    validation</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Host one WordPress site"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Strong
-                                                    encryption</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Fast SSD storage"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Green address
-                                                    bar</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Monthly data transfer"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> HTTPS
-                                                    enabled</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Daily automatic backups"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Issued in 1-3
-                                                    days</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Create snapshots anytime"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> $50,000
-                                                    warranty</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Unlimited email accounts"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Business
-                                                    verified</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Secure your site with SSL"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-
-                                            <!-- MORE FEATURES -->
-                                            <!-- <li class="card-plan__feature--list-trigered">
-                                                <span class="text">More Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                                </span>
-                                            </li> -->
-                                        </ul>
-                                        <ul class="card-plan__feature--list more__feature">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                                                    CDN</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Content Delivery Network"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                                                    Scans</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Regular security scans"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                                                    Guarantee</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Risk-free trial"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Advanced Security
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Email security features"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Round-the-clock support"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-trigered">
-                                                <span class="text">See less Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single card end -->
-
-                            <!-- single card -->
-                            <div class="col-lg-4 col-md-6 col-sm-6" style="">
-                                <div class="card-plan" data-cue="zoomIn">
-                                    <span class="validation-level validation-extended">Extended Validation</span>
-                                    <div class="card-plan__package">
-                                        <div class="icon">
-                                            <img src="assets/images/pricing/cloud.svg" height="30" width="30" alt="" />
-                                        </div>
-                                        <h4 class="package__name">Premium SSL</h4>
-                                    </div>
-                                    <p class="card-plan__desc">
-                                        Highest level of validation for maximum trust and security.
-                                    </p>
-                                    <div class="card-plan__offer">
-                                        <span class="offer-given">Starting from</span>
-                                    </div>
-                                    <h5 class="card-plan__price">
-                                        <sup>$</sup><span>199.99</span> <sub>/YEAR</sub>
-                                    </h5>
-                                    <div class="card-plan__cartbtn">
-                                        <a href="https://my.wefithost.com/manage">Get Started</a>
-                                    </div>
-                                    <div class="card-plan__feature">
-                                        <ul class="card-plan__feature--list">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Extended
-                                                    validation</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Multiple cloud platforms"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Strongest
-                                                    encryption</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Host unlimited sites"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Green address
-                                                    bar</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Round-the-clock support"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> HTTPS
-                                                    enabled</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Automatic backup system"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Issued in 5-7
-                                                    days</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Unlimited email accounts"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> $1,000,000
-                                                    warranty</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="No database limits"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Business
-                                                    verified</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Easy website transfers"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Highest trust
-                                                    level</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Secure your sites with SSL"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-
-                                            <!-- MORE FEATURES -->
-                                            <!-- <li class="card-plan__feature--list-trigered">
-                                                <span class="text">More Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                                </span>
-                                            </li> -->
-                                        </ul>
-                                        <ul class="card-plan__feature--list more__feature">
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                                                    CDN</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Content Delivery Network"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                                                    Scans</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Regular security scans"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                                                    Guarantee</span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Risk-free trial"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i>Premium Security
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Email security features"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-
-                                            <li class="card-plan__feature--list-item">
-                                                <span class="text"><i class="fa-solid fa-check"></i> Priority Support
-                                                </span>
-                                                <span class="tolltip" data-bs-toggle="tooltip"
-                                                    data-bs-placement="bottom"
-                                                    data-bs-original-title="Round-the-clock support"><i
-                                                        class="fa-solid fa-circle-question"></i></span>
-                                            </li>
-                                            <li class="card-plan__feature--list-trigered">
-                                                <span class="text">See less Features
-                                                    <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single card end -->
+    <section class="rts-pricing-plan ssl-plans" data-cue="fadeIn">
+      <div class="container">
+        <div class="row justify-content-center" data-cue="fadeIn">
+          <div class="rts-section w-490 text-center">
+            <h2 class="rts-section__title">Choose the Right SSL Certificate</h2>
+            <p class="rts-section__description lead">
+              Select the level of validation and security that fits your needs
+            </p>
+          </div>
+        </div>
+        <div class="">
+          <div class="justify-content-center">
+            <!-- PRICING PLAN -->
+            <div class="" id="monthly">
+              <div class="swiper pricing-swiper">
+                <div class="swiper-wrapper">
+                  <!-- single card -->
+                  <div class="swiper-slide">
+                    <div class="card-plan" data-cue="zoomIn">
+                      <span class="validation-level validation-domain"
+                        >Domain Validation</span
+                      >
+                      <div class="card-plan__package">
+                        <div class="icon">
+                          <img
+                            src="assets/images/pricing/basic.svg"
+                            height="30"
+                            width="30"
+                            alt=""
+                          />
                         </div>
-                    </div>
-                    <!-- PRICING PLAN yearly -->
-                </div>
-            </div>
+                        <h4 class="package__name">Standard SSL</h4>
+                      </div>
+                      <p class="card-plan__desc">
+                        Basic encryption for your website with quick issuance.
+                      </p>
+                      <div class="card-plan__offer">
+                        <!-- <span class="past-price">$29</span> -->
+                        <span class="offer-given">Starting from</span>
+                      </div>
+                      <h5 class="card-plan__price">
+                        <sup>$</sup><span>59.99</span> <sub>/YEAR</sub>
+                      </h5>
+                      <div class="card-plan__cartbtn">
+                        <a href="#">Add to Cart</a>
+                      </div>
+                      <!-- <p class="card-plan__renew-price">
+                                      Then only £4.99/month
+                                      </p> -->
+                      <div class="card-plan__feature">
+                        <ul class="card-plan__feature--list">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Domain
+                              validation</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Host a single website with this plan"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Basic
+                              encryption</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Fast SSD storage for your website"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Padlock icon in
+                              browser</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Monthly data transfer allowance"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>HTTPS
+                              enabled</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="One MySQL database included"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Issued in
+                              minutes</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Daily automatic backups"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>$10,000
+                              warranty</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Create snapshots anytime"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
 
-            <div class="text-center mt-5">
-                <p class="text-muted">Need help choosing? <a href="#ssl-faq" class="text-decoration-none">Compare SSL
-                        types</a> or <a href="#" class="text-decoration-none">contact our sales team</a>.</p>
+                          <!-- MORE FEATURES -->
+                          <!-- <li class="card-plan__feature--list-trigered">
+                                                  <span class="text">More Features
+                                                      <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                  </span>
+                                              </li> -->
+                        </ul>
+                        <ul class="card-plan__feature--list more__feature">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> FREE wefithost
+                              CDN</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Content Delivery Network"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Automatic
+                              Malware Scans</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Regular security scans"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> 30-day Money
+                              Back Guarantee</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Risk-free trial"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-xmark"></i> Basic Security
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Email security features"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-xmark"></i> Priority
+                              Support
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Round-the-clock support"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-trigered">
+                            <span class="text"
+                              >See less Features
+                              <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single card end -->
+                  <!-- single card -->
+                  <div class="swiper-slide">
+                    <div class="card-plan active" data-cue="zoomIn">
+                      <span class="validation-level validation-domain"
+                        >Organization Validation</span
+                      >
+                      <div class="popular-tag">most popular</div>
+                      <div class="card-plan__package">
+                        <div class="icon">
+                          <img
+                            src="assets/images/pricing/premium.svg"
+                            height="30"
+                            width="30"
+                            alt=""
+                          />
+                        </div>
+                        <h4 class="package__name">Business SSL</h4>
+                      </div>
+                      <p class="card-plan__desc">
+                        Enhanced validation for business websites and eCommerce.
+                      </p>
+                      <div class="card-plan__offer">
+                        <!-- <span class="past-price">£5.99</span> -->
+                        <span class="offer-given">Starting from</span>
+                      </div>
+                      <h5 class="card-plan__price">
+                        <sup>$</sup><span>129.99</span><sub>/YEAR</sub>
+                      </h5>
+                      <div class="card-plan__cartbtn">
+                        <a href="https://my.wefithost.com/manage"
+                          >Add to cart</a
+                        >
+                      </div>
+                      <!-- <p class="card-plan__renew-price">
+                                      Then only £5.99/month
+                                  </p> -->
+                      <div class="card-plan__feature">
+                        <ul class="card-plan__feature--list">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Organization
+                              validation</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Host one WordPress site"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Strong
+                              encryption</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Fast SSD storage"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Green address
+                              bar</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Monthly data transfer"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> HTTPS
+                              enabled</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Daily automatic backups"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Issued in 1-3
+                              days</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Create snapshots anytime"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> $50,000
+                              warranty</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Unlimited email accounts"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Business
+                              verified</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Secure your site with SSL"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <!-- MORE FEATURES -->
+                          <!-- <li class="card-plan__feature--list-trigered">
+                                                  <span class="text">More Features
+                                                      <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                  </span>
+                                              </li> -->
+                        </ul>
+                        <ul class="card-plan__feature--list more__feature">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> FREE wefithost
+                              CDN</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Content Delivery Network"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Automatic
+                              Malware Scans</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Regular security scans"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> 30-day Money
+                              Back Guarantee</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Risk-free trial"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Advanced
+                              Security
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Email security features"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-xmark"></i> Priority
+                              Support
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Round-the-clock support"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-trigered">
+                            <span class="text"
+                              >See less Features
+                              <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single card end -->
+
+                  <!-- single card -->
+                  <div class="swiper-slide">
+                    <div class="card-plan" data-cue="zoomIn">
+                      <span class="validation-level validation-extended"
+                        >Extended Validation</span
+                      >
+                      <div class="card-plan__package">
+                        <div class="icon">
+                          <img
+                            src="assets/images/pricing/cloud.svg"
+                            height="30"
+                            width="30"
+                            alt=""
+                          />
+                        </div>
+                        <h4 class="package__name">Premium SSL</h4>
+                      </div>
+                      <p class="card-plan__desc">
+                        Highest level of validation for maximum trust and
+                        security.
+                      </p>
+                      <div class="card-plan__offer">
+                        <span class="offer-given">Starting from</span>
+                      </div>
+                      <h5 class="card-plan__price">
+                        <sup>$</sup><span>199.99</span> <sub>/YEAR</sub>
+                      </h5>
+                      <div class="card-plan__cartbtn">
+                        <a href="#">Add to cart</a>
+                      </div>
+                      <div class="card-plan__feature">
+                        <ul class="card-plan__feature--list">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Extended
+                              validation</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Multiple cloud platforms"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Strongest
+                              encryption</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Host unlimited sites"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Green address
+                              bar</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Round-the-clock support"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> HTTPS
+                              enabled</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Automatic backup system"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Issued in 5-7
+                              days</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Unlimited email accounts"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> $1,000,000
+                              warranty</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="No database limits"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Business
+                              verified</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Easy website transfers"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Highest trust
+                              level</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Secure your sites with SSL"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <!-- MORE FEATURES -->
+                          <!-- <li class="card-plan__feature--list-trigered">
+                                                  <span class="text">More Features
+                                                      <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                                  </span>
+                                              </li> -->
+                        </ul>
+                        <ul class="card-plan__feature--list more__feature">
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> FREE wefithost
+                              CDN</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Content Delivery Network"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Automatic
+                              Malware Scans</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Regular security scans"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> 30-day Money
+                              Back Guarantee</span
+                            >
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Risk-free trial"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i>Premium Security
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Email security features"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+
+                          <li class="card-plan__feature--list-item">
+                            <span class="text"
+                              ><i class="fa-solid fa-check"></i> Priority
+                              Support
+                            </span>
+                            <span
+                              class="tolltip"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="bottom"
+                              data-bs-original-title="Round-the-clock support"
+                              ><i class="fa-solid fa-circle-question"></i
+                            ></span>
+                          </li>
+                          <li class="card-plan__feature--list-trigered">
+                            <span class="text"
+                              >See less Features
+                              <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- single card end -->
+                </div>
+
+                <!-- Swiper Pagination -->
+               <div class="swiper-pagination"></div>
+
+               <!-- Swiper Navigation -->
+               <div class="swiper-button-prev d-lg-none"></div>
+               <div class="swiper-button-next d-lg-none"></div>
+              </div>
+
+              
             </div>
+          
+          </div>
+        </div>
+
+       
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="text-muted">
+          Need help choosing?
+          <a href="#ssl-faq" class="text-decoration-none"
+            >Compare SSL types</a
+          >
+          or
+          <a href="#" class="text-decoration-none">contact our sales team</a>.
+        </p>
+      </div>
     </section>
     <style>
-        .card-plan {
-            max-height: 100%;
+      .card-plan {
+        max-height: 100%;
+    
+      }
+
+      .card-plan__feature {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+       /* Swiper-Specific Styling */
+       .pricing-scroller {
+            position: relative;
+            padding: 20px 40px;
+            overflow: visible !important;
         }
 
-        .card-plan__feature {
+
+
+        .swiper {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            width: 100%;
+            height: auto;
             display: flex;
-            flex-direction: column;
-            height: 100%
+            align-items: center;
+            justify-content: center;
+            opacity: 1 !important;
+
+        }
+
+        .swiper-wrapper {
+            align-items: stretch;
+            min-height: 0;
+            padding-bottom: 50px;
+        }
+
+
+
+        .swiper-pagination {
+            bottom: 0px;
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet {
+            background: #6c757d;
+            opacity: 0.5;
+            width: 8px;
+            height: 8px;
+            margin: 0 4px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #4e66f8;
+            opacity: 1;
+        }
+
+        @media (min-width: 992px) {
+            .swiper-slide {
+                width: 280px;
+                /* Match card width */
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .first-slide {
+                margin-right: 0px !important;
+            }
+        }
+
+
+
+        /* Swiper Navigation Buttons */
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 40px;
+            height: 40px;
+            background-color: #4e66f8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 30px;
+            transform: translateY(0);
+            z-index: 10;
+        }
+
+        .swiper-button-prev {
+            right: 64px;
+            left: auto;
+        }
+
+        .swiper-button-next {
+            right: 10px;
+            left: auto;
+        }
+
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 12px;
+            color: #fff;
+        }
+
+        /* Adjust button positioning for responsiveness */
+        @media (max-width: 768px) {
+            .swiper-button-prev {
+                right: 50px;
+            }
+
+            .swiper-button-next {
+                right: 6px;
+            }
+        }
+
+        .pricing-swiper {
+            position: relative;
+            padding-top: 58px;
         }
     </style>
-
-
 
     <!-- SSL Benefits Section -->
     <section class="ssl-benefits py-10" data-cue="fadeIn">
@@ -1636,49 +1980,60 @@
                 <p class="text-muted">SSL certificates provide essential security and trust for your online presence</p>
             </div>
 
-            <div class="row g-4" data-cue="fadeIn">
-                <div class="col-md-3">
-                    <div class="benefit-item" data-cue="zoomIn">
-                        <div class="benefit-icon">
-                            <i class="bi bi-lock-fill"></i>
-                        </div>
-                        <h4>Data Encryption</h4>
-                        <p>Protect sensitive information like passwords and credit card numbers with strong encryption.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="benefit-item" data-cue="zoomIn">
-                        <div class="benefit-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-                        <h4>Trust & Credibility</h4>
-                        <p>The padlock icon and HTTPS show visitors your site is secure and legitimate.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="benefit-item" data-cue="zoomIn">
-                        <div class="benefit-icon">
-                            <i class="bi bi-search"></i>
-                        </div>
-                        <h4>SEO Boost</h4>
-                        <p>Google ranks HTTPS sites higher in search results, improving your visibility.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="benefit-item" data-cue="zoomIn">
-                        <div class="benefit-icon">
-                            <i class="bi bi-credit-card"></i>
-                        </div>
-                        <h4>PCI Compliance</h4>
-                        <p>Required for eCommerce sites that process payments to meet security standards.</p>
-                    </div>
-                </div>
+        <div class="row g-4" data-cue="fadeIn">
+          <div class="col-md-3">
+            <div class="benefit-item" data-cue="zoomIn">
+              <div class="benefit-icon">
+                <i class="bi bi-lock-fill"></i>
+              </div>
+              <h4>Data Encryption</h4>
+              <p>
+                Protect sensitive information like passwords and credit card
+                numbers with strong encryption.
+              </p>
             </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="benefit-item" data-cue="zoomIn">
+              <div class="benefit-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4>Trust & Credibility</h4>
+              <p>
+                The padlock icon and HTTPS show visitors your site is secure and
+                legitimate.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="benefit-item" data-cue="zoomIn">
+              <div class="benefit-icon">
+                <i class="bi bi-search"></i>
+              </div>
+              <h4>SEO Boost</h4>
+              <p>
+                Google ranks HTTPS sites higher in search results, improving
+                your visibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="benefit-item" data-cue="zoomIn">
+              <div class="benefit-icon">
+                <i class="bi bi-credit-card"></i>
+              </div>
+              <h4>PCI Compliance</h4>
+              <p>
+                Required for eCommerce sites that process payments to meet
+                security standards.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- SSL FAQ Section -->
@@ -1844,130 +2199,333 @@
 <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
     <div class="container">
         <div class="row">
-            <!-- Newsletter & Logo Column (Now first column) -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="mb-4">
-                    <a href="#">
-                        <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3" style="max-height: 40px; filter: brightness(0) invert(1);">
-                    </a>
-                    <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
-                    
-                    <!-- Newsletter Form (Moved up) -->
-                    <div class="mb-4">
-                        <h5 style="color: white; font-weight: 600;">Newsletter</h5>
-                        <form class="mb-2">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Your email" style="border-color: rgba(255,255,255,0.5); color: white; background-color: rgba(255,255,255,0.1);">
-                                <button class="btn btn-primary" type="submit" style="background-color: white; border-color: white; color: #1E293B;">Subscribe</button>
-                            </div>
-                        </form>
-                        <small style="color: rgba(255,255,255,0.8);">Get hosting tips and special offers</small>
-                    </div>
-                    
-                    <!-- Social Icons with updated X icon -->
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="#" style="color: white;"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
 
-            <!-- Hosting Column -->
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Hosting</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="shared-hosting.html" style="color: white; text-decoration: none;">Shared Hosting</a></li>
-                    <li class="mb-2"><a href="wordpress-hosting.html" style="color: white; text-decoration: none;">WordPress Hosting</a></li>
-                    <li class="mb-2"><a href="vps-hosting.html" style="color: white; text-decoration: none;">VPS Hosting</a></li>
-                    <li class="mb-2"><a href="cloud-hosting.html" style="color: white; text-decoration: none;">Cloud Hosting</a></li>
-                    <li class="mb-2"><a href="reseller-hosting.html" style="color: white; text-decoration: none;">Reseller Hosting</a></li>
-                </ul>
-            </div>
+              <!-- Newsletter Form (Moved up) -->
+              <div class="mb-4">
+                <h5 style="color: white; font-weight: 600">Newsletter</h5>
+                <form class="mb-2">
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your email"
+                      style="
+                        border-color: rgba(255, 255, 255, 0.5);
+                        color: white;
+                        background-color: rgba(255, 255, 255, 0.1);
+                      "
+                    />
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      style="
+                        background-color: white;
+                        border-color: white;
+                        color: #1e293b;
+                      "
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+                <small style="color: rgba(255, 255, 255, 0.8)"
+                  >Get hosting tips and special offers</small
+                >
+              </div>
 
-            <!-- Domains Column -->
-            
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Domains</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Register Domain</a></li>
-                    <li class="mb-2"><a href="domain-transfer.html" style="color: white; text-decoration: none;">Transfer Domain</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Domain Pricing</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">WHOIS Lookup</a></li>
-                    <li class="mb-2"><a href="ssl-certificate.html" style="color: white; text-decoration: none;">SSL Certificates</a></li>
-                </ul>
+              <!-- Social Icons with updated X icon -->
+              <div class="d-flex gap-3 mt-3">
+                <a href="#" style="color: white"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
             </div>
+          </div>
 
-            <!-- Support Column -->
-            <div class="col-lg-2 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Support</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Knowledge Base</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Tutorials</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">System Status</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Contact Support</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Free Migration</a></li>
-                </ul>
-            </div>
+          <!-- Hosting Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Hosting</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="shared-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Shared Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="wordpress-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >WordPress Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="vps-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >VPS Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="cloud-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Cloud Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reseller-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Reseller Hosting</a
+                >
+              </li>
+            </ul>
+          </div>
 
-            <!-- Company Column (Now last column) -->
-            <div class="col-lg-3 col-md-6 mb-4">
-                <h5 style="color: white; font-weight: 600;">Company</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="about.html" style="color: white; text-decoration: none;">About Us</a></li>
-                    <li class="mb-2"><a href="blog.html" style="color: white; text-decoration: none;">Blog</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Careers</a></li>
-                    <li class="mb-2"><a href="maintenance.html" style="color: white; text-decoration: none;">Partners</a></li>
-                    <li class="mb-2"><a href="reviews.html" style="color: white; text-decoration: none;">Customer Reviews</a></li>
-                </ul>
-            </div>
+          <!-- Domains Column -->
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Domains</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Register Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="domain-transfer.html"
+                  style="color: white; text-decoration: none"
+                  >Transfer Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Domain Pricing</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >WHOIS Lookup</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="ssl-certificate.html"
+                  style="color: white; text-decoration: none"
+                  >SSL Certificates</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Knowledge Base</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Tutorials</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >System Status</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Contact Support</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Free Migration</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Column (Now last column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="about.html" style="color: white; text-decoration: none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="blog.html" style="color: white; text-decoration: none"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Partners</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reviews.html"
+                  style="color: white; text-decoration: none"
+                  >Customer Reviews</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <hr style="border-color: rgba(255,255,255,0.2);">
+        <hr style="border-color: rgba(255, 255, 255, 0.2)" />
 
         <div class="row align-items-center">
-            <div class="col-md-6 mb-3 mb-md-0">
-                <span style="color: white;">© 2025 WefitHost. All rights reserved.</span>
-            </div>
-            <div class="col-md-6">
-                <ul class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0">
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Privacy Policy</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Terms of Service</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Acceptable Use</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">Service Level Agreement</a></li>
-                    <li><a href="maintenance.html" style="color: white; text-decoration: none; font-size: 0.875rem;">DMCA</a></li>
-                </ul>
-            </div>
+          <div class="col-md-6 mb-3 mb-md-0">
+            <span style="color: white"
+              >© 2025 WefitHost. All rights reserved.</span
+            >
+          </div>
+          <div class="col-md-6">
+            <ul
+              class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0"
+            >
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Acceptable Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Service Level Agreement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >DMCA</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<style>
-    .footerlinkcoor input.form-control {
+    <style>
+      .footerlinkcoor input.form-control {
         background-color: inherit;
         color: white;
         border: 1px solid rgba(255, 255, 255, 0.5);
-    }
+      }
 
-    .footerlinkcoor input::placeholder {
+      .footerlinkcoor input::placeholder {
         color: rgba(255, 255, 255, 0.7);
-    }
+      }
 
-    .footerlinkcoor button.btn {
+      .footerlinkcoor button.btn {
         background-color: white;
-        color: #6B63FF;
-    }
+        color: #6b63ff;
+      }
 
-    .text-center {
+      .text-center {
         text-align: center;
-    }
-</style>
+      }
+    </style>
 
-<!-- Footer End -->
-
-
-    
+    <!-- Footer End -->
 
     <!-- Libs JS -->
     <script
@@ -1995,6 +2553,39 @@
           } else {
             navbar.classList.remove("scrolled");
           }
+        });
+      });
+    </script>
+
+    <!-- Swiper.js JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".pricing-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: false,
+
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          observer: true,
+          observeParents: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
         });
       });
     </script>

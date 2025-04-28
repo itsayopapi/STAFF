@@ -848,34 +848,45 @@
             toggle: false
         });
 
-        // Toggle menu and backdrop
-        navbarToggler.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            if (!isExpanded) {
-                bsCollapse.show();
-                backdrop.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            } else {
+            // Toggle menu and backdrop
+            navbarToggler.addEventListener('click', function () {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+
+                if (!isExpanded) {
+                    bsCollapse.show();
+                    backdrop.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    bsCollapse.hide();
+                    backdrop.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close menu when clicking backdrop
+            backdrop.addEventListener('click', function () {
+                navbarToggler.setAttribute('aria-expanded', 'false');
                 bsCollapse.hide();
-                backdrop.classList.remove('show');
+                this.classList.remove('show');
                 document.body.style.overflow = '';
-            }
-        });
+            });
 
-        // Close menu when clicking backdrop
-        backdrop.addEventListener('click', function() {
-            navbarToggler.setAttribute('aria-expanded', 'false');
-            bsCollapse.hide();
-            this.classList.remove('show');
-            document.body.style.overflow = '';
-        });
+            // Close menu when clicking a nav link (for mobile)
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth < 992) {
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                        bsCollapse.hide();
+                        backdrop.classList.remove('show');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
 
-        // Close menu when clicking a nav link (for mobile)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {
+            // Close menu when resizing to desktop
+            window.addEventListener('resize', function () {
+                if (window.innerWidth >= 992) {
                     navbarToggler.setAttribute('aria-expanded', 'false');
                     bsCollapse.hide();
                     backdrop.classList.remove('show');
@@ -883,18 +894,7 @@
                 }
             });
         });
-
-        // Close menu when resizing to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 992) {
-                navbarToggler.setAttribute('aria-expanded', 'false');
-                bsCollapse.hide();
-                backdrop.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-</script>
+    </script>
     <!-- Navbar End -->
 
 
@@ -1539,7 +1539,7 @@
                                 <!-- single card end -->
                             </div>
 
-                             <!-- Swiper Navigation -->
+                            <!-- Swiper Navigation -->
                             <div class="swiper-button-prev d-md-none"></div>
                             <div class="swiper-button-next d-md-none"></div>
                         </div>
@@ -1547,7 +1547,7 @@
                         <!-- Swiper Pagination -->
                         <div class="swiper-pagination"></div>
 
-                       
+
                     </div>
 
                 </div>
@@ -2652,8 +2652,8 @@
             const toggleButtons = document.querySelectorAll('.tab__price');
             const pricingCards = document.querySelectorAll('.card-plan');
 
-            console.log(toggleButtons)
-            console.log(pricingCards)
+            // console.log(toggleButtons)
+            // console.log(pricingCards)
 
             const pricingData = [
                 { monthly: 15.63, yearly: (15.63 * 12 * 0.8).toFixed(2) }, // Starter
@@ -2661,40 +2661,37 @@
                 { monthly: 68.63, yearly: (68.63 * 12 * 0.8).toFixed(2) } // Business
             ]
 
+            function updatePricing(selectedPlan) {
+                pricingCards.forEach((card, index) => {
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+
+                    const activeButton = Array.from(toggleButtons).find(btn => btn.getAttribute('data-tab') === selectedPlan);
+                    if (activeButton) {
+                        activeButton.classList.add('active');
+                    }
+
+                    const priceWrapper = card.querySelector('.card-plan__price');
+                    const priceSpan = priceWrapper.querySelector('span');
+                    const periodSub = priceWrapper.querySelector('sub');
+
+                    if (selectedPlan === 'yearly') {
+                        priceSpan.textContent = pricingData[index].yearly;
+                        periodSub.textContent = '/YEAR';
+                    } else {
+                        priceSpan.textContent = pricingData[index].monthly;
+                        periodSub.textContent = '/MONTH';
+                    }
+                });
+            }
+
+            updatePricing('monthly'); // Set default to monthly
+
             toggleButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    toggleButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
                     const selectedPlan = this.getAttribute('data-tab');
-
-                    console.log(selectedPlan);
-                    pricingCards.forEach((card, index) => {
-                        const priceWrapper = card.querySelector('.card-plan__price');
-                        const priceSpan = priceWrapper.querySelector('span');
-                        const periodSub = priceWrapper.querySelector('sub');
-                        console.log(priceWrapper)
-                        console.log(priceSpan)
-                        console.log(periodSub)
-
-
-
-                        if (selectedPlan === 'yearly') {
-                            priceSpan.textContent = pricingData[index].yearly;
-                            periodSub.textContent = '/YEAR';
-
-                            console.log("the price span is: ", priceSpan);
-                            console.log("the period sub is: ", periodSub);
-                        }
-
-                        else {
-                            priceSpan.textContent = pricingData[index].monthly;
-                            periodSub.textContent = '/MONTH';
-                        }
-                    })
-                })
-            })
-
+                    updatePricing(selectedPlan);
+                });
+            });
         });
     </script>
 

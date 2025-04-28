@@ -36,7 +36,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <!-- Media queries Css -->
   <link rel="stylesheet" href="./assets/css/media-queries.css">
   <title>WeFitHost</title>
@@ -892,83 +895,84 @@
 </script>
   <!-- Navbar End -->
 
-  <!-- Hero Section -->
-  <section class="hero-section py-8" data-cue="fadeIn">
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-lg-6" data-cue="zoomIn">
-          <h1 class="hero-title display-4 fw-bold mb-4 text-secondary">Start Your Own Hosting Business</h1>
-          <p class="lead mb-4">Our white-label reseller hosting gives you everything you need to launch and grow your
-            hosting company under your own brand.</p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#plans" class="btn btn-secondary btn-lg px-4">View Plans</a>
-            <a href="#features" class="btn btn-outline-light btn-lg px-4">Explore Features</a>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section py-8" data-cue="fadeIn">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-cue="zoomIn">
+            <h1 class="hero-title display-4 fw-bold mb-4 text-secondary">Start Your Own Hosting Business</h1>
+            <p class="lead mb-4">Our white-label reseller hosting gives you everything you need to launch and grow your
+              hosting company under your own brand.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#plans" class="btn btn-secondary btn-lg px-4">View Plans</a>
+              <a href="#features" class="btn btn-outline-light btn-lg px-4">Explore Features</a>
+            </div>
+          </div>
+          <div class="col-lg-6  d-none d-lg-block" data-cue="slideInRight">
+            <img src="/assets/images/feature/resell/reseller-pricing-hero.jpg" alt="Reseller Hosting"
+              class="img-fluid rounded-3 floating">
           </div>
         </div>
-        <div class="col-lg-6  d-none d-lg-block" data-cue="slideInRight">
-          <img src="/assets/images/feature/resell/reseller-pricing-hero.jpg" alt="Reseller Hosting"
-            class="img-fluid rounded-3 floating">
+      </div>
+    </section>
+
+    <style>
+      .hero-section {
+        background: linear-gradient(135deg, #6B63FF 0%, #4A42D6 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section .manage-header {
+        color: #fff;
+      }
+
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+        background-size: cover;
+        opacity: 0.1;
+      }
+    </style>
+
+    <!-- Trust Badges -->
+    <section class="py-4 bg-secondary">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="img-fluid"
+              style="height: 50px; filter: grayscale(0%) opacity(70%);">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg" alt="NGINX" class="img-fluid"
+              style="height: 50px; filter: grayscale(0%) opacity(70%);">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Symphony_OS_logo.png" alt="Symfony"
+              class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap"
+              class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png" alt="Cloudflare"
+              class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" alt="Vercel"
+              class="img-fluid" style="height: 50px; filter: brightness(1) invert(0);">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <style>
-    .hero-section {
-      background: linear-gradient(135deg, #6B63FF 0%, #4A42D6 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-section .manage-header {
-      color: #fff;
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-      background-size: cover;
-      opacity: 0.1;
-    }
-  </style>
-
-  <!-- Trust Badges -->
-  <section class="py-4 bg-secondary">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg" alt="Laravel" class="img-fluid"
-            style="height: 50px; filter: grayscale(0%) opacity(70%);">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 text-center mb-3 mb-lg-0">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Nginx_logo.svg" alt="NGINX" class="img-fluid"
-            style="height: 50px; filter: grayscale(0%) opacity(70%);">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Symphony_OS_logo.png" alt="Symfony"
-            class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap"
-            class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png" alt="Cloudflare"
-            class="img-fluid" style="height: 50px; filter: grayscale(0%) opacity(70%);">
-        </div>
-        <div class="col-6 col-md-4 col-lg-2 text-center">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg" alt="Vercel"
-            class="img-fluid" style="height: 50px; filter: brightness(1) invert(0);">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- Key Features -->
   <section id="features" class="py-10" data-cue="fadeIn">
@@ -978,66 +982,67 @@
         <p class="lead text-muted">Powerful tools to grow your hosting business</p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-          <div class="card feature-card h-100 p-4">
-            <div class="feature-icon mb-3">
-              <i class="fas fa-user-shield"></i>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="card feature-card h-100 p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <h4>White Label Branding</h4>
+              <p class="text-muted">Completely brand the hosting experience with your logo, colors, and company name.
+                Your
+                clients will never know you're using our platform.</p>
             </div>
-            <h4>White Label Branding</h4>
-            <p class="text-muted">Completely brand the hosting experience with your logo, colors, and company name. Your
-              clients will never know you're using our platform.</p>
           </div>
-        </div>
 
-        <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-          <div class="card feature-card h-100 p-4">
-            <div class="feature-icon mb-3">
-              <i class="fas fa-tachometer-alt"></i>
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="card feature-card h-100 p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h4>Powerful Dashboard</h4>
+              <p class="text-muted">Easily manage all your clients, hosting accounts, and billing from our intuitive
+                reseller control panel with real-time statistics.</p>
             </div>
-            <h4>Powerful Dashboard</h4>
-            <p class="text-muted">Easily manage all your clients, hosting accounts, and billing from our intuitive
-              reseller control panel with real-time statistics.</p>
           </div>
-        </div>
 
-        <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-          <div class="card feature-card h-100 p-4">
-            <div class="feature-icon mb-3">
-              <i class="fas fa-server"></i>
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="card feature-card h-100 p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-server"></i>
+              </div>
+              <h4>Scalable Resources</h4>
+              <p class="text-muted">Start small and grow as your business expands. Easily upgrade your resources without
+                any downtime or migration hassles.</p>
             </div>
-            <h4>Scalable Resources</h4>
-            <p class="text-muted">Start small and grow as your business expands. Easily upgrade your resources without
-              any downtime or migration hassles.</p>
           </div>
-        </div>
 
-        <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-          <div class="card feature-card h-100 p-4">
-            <div class="feature-icon mb-3">
-              <i class="fas fa-headset"></i>
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="card feature-card h-100 p-4">
+              <div class="feature-icon mb-3">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4>Priority Support</h4>
+              <p class="text-muted">Our dedicated reseller support team is available 24/7 to help you and your clients
+                with any technical issues or questions.</p>
             </div>
-            <h4>Priority Support</h4>
-            <p class="text-muted">Our dedicated reseller support team is available 24/7 to help you and your clients
-              with any technical issues or questions.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <style>
-    .feature-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      color: #5A52E0;
-      font-size: 1.5rem;
-    }
-  </style>
+    </section>
+    <style>
+      .feature-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        color: #5A52E0;
+        font-size: 1.5rem;
+      }
+    </style>
 
   <!-- Dashboard Preview -->
   <section class="dashboard-section py-10" data-cue="fadeIn">
@@ -1068,8 +1073,8 @@
 
 
 
-  <!-- Reseller Plans -->
-  <!-- <section id="plans" class="py-5 bg-light">
+    <!-- Reseller Plans -->
+    <!-- <section id="plans" class="py-5 bg-light">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="fw-bold mb-3">Reseller Hosting Plans</h2>
@@ -1158,472 +1163,474 @@
     </div>
   </section> -->
 
-  <section class="rts-pricing-plan py-10" data-cue="fadeIn">
-    <div class="container">
-      <div class="row justify-content-center" data-cue="fadeIn">
-        <div class="rts-section w-490 text-center">
-          <h2 class="rts-section__title">
-            Reseller Hosting Plans
-          </h2>
-          <p class="rts-section__description lead">
-            Choose the perfect package for your hosting business
-          </p>
+    <section class="rts-pricing-plan py-5" data-cue="fadeIn">
+      <div class="container">
+        <div class="row justify-content-center" data-cue="fadeIn">
+          <div class="rts-section w-490 text-center">
+            <h2 class="rts-section__title">
+              Reseller Hosting Plans
+            </h2>
+            <p class="rts-section__description lead">
+              Choose the perfect package for your hosting business
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="row justify-content-center">
 
+        <div class="row">
           <!-- PRICING PLAN -->
           <div class="manage_price_content" id="monthly">
-            <div class="row g-3 monthly">
-              <!-- single card -->
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card-plan" data-cue="zoomIn">
-                  <!-- <span class="validation-level validation-domain">Domain Validation</span> -->
-                  <div class="card-plan__package">
-                    <div class="icon">
-                      <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="" />
+            <div class="swiper pricing-swiper">
+              <div class="swiper-wrapper">
+                <!-- single card -->
+                <div class="swiper-slide">
+                  <div class="card-plan" data-cue="zoomIn">
+                    <!-- <span class="validation-level validation-domain">Domain Validation</span> -->
+                    <div class="card-plan__package">
+                      <div class="icon">
+                        <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="" />
+                      </div>
+                      <h4 class="package__name">Starter</h4>
                     </div>
-                    <h4 class="package__name">Starter</h4>
-                  </div>
-                  <p class="card-plan__desc">
-                    Ideal for beginners
-                  </p>
-                  <div class="card-plan__offer">
-                    <!-- <span class="past-price">$29</span> -->
-                    <span class="offer-given">Starting from</span>
-                  </div>
-                  <h5 class="card-plan__price">
-                    <sup>$</sup><span>19.99</span> <sub>/MONTH</sub>
-                  </h5>
-                  <div class="card-plan__cartbtn">
-                    <a href="https://my.wefithost.com/manage">Get Started</a>
-                  </div>
-                  <!-- <p class="card-plan__renew-price">
-                                Then only £4.99/month
-                                </p> -->
-                  <div class="card-plan__feature">
-                    <ul class="card-plan__feature--list">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>50GB SSD Storage</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Host a single website with this plan"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>500GB Bandwidth</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="500GB free bandwith for your website"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 25 cPanel
-                          Accounts</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="cpanel accounts for managing your sites"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>Free WHMCS</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free web host manager complete solution for manging clients"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 24/7 Support</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="24/7 support from the support team"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-
-                      <!-- MORE FEATURES -->
-                      <!-- <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features
-                                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                            </span>
-                                        </li> -->
-                    </ul>
-                    <ul class="card-plan__feature--list more__feature">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                          CDN</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Content Delivery Network"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                          Scans</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Regular security scans"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                          Guarantee</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-xmark"></i> Basic Security
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Email security features"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Round-the-clock support"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-trigered">
-                        <span class="text">See less Features
-                          <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- single card end -->
-              <!-- single card -->
-              <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card-plan" data-cue="zoomIn">
-                  <!-- <span class="validation-level validation-domain">Domain Validation</span> -->
-                  <div class="card-plan__package">
-                    <div class="icon">
-                      <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="" />
+                    <p class="card-plan__desc">
+                      Ideal for beginners
+                    </p>
+                    <div class="card-plan__offer">
+                      <!-- <span class="past-price">$29</span> -->
+                      <span class="offer-given">Starting from</span>
                     </div>
-                    <h4 class="package__name">Business</h4>
-                  </div>
-                  <p class="card-plan__desc">
-                    Growing agencies
-                  </p>
-                  <div class="card-plan__offer">
-                    <!-- <span class="past-price">$29</span> -->
-                    <span class="offer-given">Starting from</span>
-                  </div>
-                  <h5 class="card-plan__price">
-                    <sup>$</sup><span>39.99</span> <sub>/MONTH</sub>
-                  </h5>
-                  <div class="card-plan__cartbtn">
-                    <a href="https://my.wefithost.com/manage">Get Started</a>
-                  </div>
-                  <!-- <p class="card-plan__renew-price">
-                                Then only £4.99/month
-                                </p> -->
-                  <div class="card-plan__feature">
-                    <ul class="card-plan__feature--list">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>100GB SSD Storage</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="100GB free SSD storage"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 1TB Bandwidth</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="1TB free bandwith for your website"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 50 cPanel
-                          Accounts</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="50 cpanel accounts for managing your sites"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>Free WHMCS</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free web host manager complete solution for manging clients"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Priority Support</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Priority support from the support team"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-
-                      <!-- MORE FEATURES -->
-                      <!-- <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features
-                                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                            </span>
-                                        </li> -->
-                    </ul>
-                    <ul class="card-plan__feature--list more__feature">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                          CDN</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Content Delivery Network"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                          Scans</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Regular security scans"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                          Guarantee</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-xmark"></i> Basic Security
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Email security features"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Round-the-clock support"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-trigered">
-                        <span class="text">See less Features
-                          <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- single card end-->
-              <!-- single card -->
-              <div class="col-lg-3 col-md-6 col-sm-6" style="">
-                <div class="card-plan active" data-cue="zoomIn">
-                  <!-- <span class="validation-level validation-domain">Organization Validation</span> -->
-                  <div class="popular-tag">most popular</div>
-                  <div class="card-plan__package">
-                    <div class="icon">
-                      <img src="assets/images/pricing/premium.svg" height="30" width="30" alt="" />
+                    <h5 class="card-plan__price">
+                      <sup>$</sup><span>19.99</span> <sub>/MONTH</sub>
+                    </h5>
+                    <div class="card-plan__cartbtn">
+                      <a href="#">Get Started</a>
                     </div>
-                    <h4 class="package__name">Professional</h4>
-                  </div>
-                  <p class="card-plan__desc">
-                    Established businesses
-                  </p>
-                  <div class="card-plan__offer">
-                    <!-- <span class="past-price">£5.99</span> -->
-                    <span class="offer-given">Starting from</span>
-                  </div>
-                  <h5 class="card-plan__price">
-                    <sup>$</sup><span>59.99</span><sub>/MONTH</sub>
-                  </h5>
-                  <div class="card-plan__cartbtn">
-                    <a href="https://my.wefithost.com/manage">Get Started</a>
-                  </div>
-                  <!-- <p class="card-plan__renew-price">
-                                Then only £5.99/month
+                    <!-- <p class="card-plan__renew-price">
+                            Then only £4.99/month
                             </p> -->
-                  <div class="card-plan__feature">
-                    <ul class="card-plan__feature--list">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 200GB SSD
-                          Storage</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="200GB SSD storage"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 2TB Bandwidth</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free 2TB bandwith"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>100 cPanel
-                          Accounts</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="100 cpanel accounts to manage your website "><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Free WHMCS + SSL</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free web host manager complete solution for managing clients + SSL certificates"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Priority support
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Get priority support anytime needed"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                    <div class="card-plan__feature">
+                      <ul class="card-plan__feature--list">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>50GB SSD Storage</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Host a single website with this plan"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>500GB Bandwidth</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="500GB free bandwith for your website"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 25 cPanel
+                            Accounts</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="cpanel accounts for managing your sites"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>Free WHMCS</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free web host manager complete solution for manging clients"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 24/7 Support</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="24/7 support from the support team"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
 
-                      <!-- MORE FEATURES -->
-                      <!-- <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features
-                                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                            </span>
-                                        </li> -->
-                    </ul>
-                    <ul class="card-plan__feature--list more__feature">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                          CDN</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Content Delivery Network"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <!-- MORE FEATURES -->
+                        <!-- <li class="card-plan__feature--list-trigered">
+                                        <span class="text">More Features
+                                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </li> -->
+                      </ul>
+                      <ul class="card-plan__feature--list more__feature">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
+                            CDN</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Content Delivery Network"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                          Scans</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Regular security scans"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
+                            Scans</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Regular security scans"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                          Guarantee</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
+                            Guarantee</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Advanced Security
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Email security features"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-xmark"></i> Basic Security
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Email security features"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Round-the-clock support"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-trigered">
-                        <span class="text">See less Features
-                          <i class="fa-sharp fa-solid fa-chevron-up"></i>
-                        </span>
-                      </li>
-                    </ul>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Round-the-clock support"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-trigered">
+                          <span class="text">See less Features
+                            <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <!-- single card end -->
-
-              <!-- single card -->
-              <div class="col-lg-3 col-md-6 col-sm-6" style="">
-                <div class="card-plan" data-cue="zoomIn">
-                  <!-- <span class="validation-level validation-extended">Enterprise</span> -->
-                  <div class="card-plan__package">
-                    <div class="icon">
-                      <img src="assets/images/pricing/cloud.svg" height="30" width="30" alt="" />
+                <!-- single card end -->
+                <!-- single card -->
+                <div class="swiper-slide">
+                  <div class="card-plan" data-cue="zoomIn">
+                    <!-- <span class="validation-level validation-domain">Domain Validation</span> -->
+                    <div class="card-plan__package">
+                      <div class="icon">
+                        <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="" />
+                      </div>
+                      <h4 class="package__name">Business</h4>
                     </div>
-                    <h4 class="package__name">Enterprise</h4>
+                    <p class="card-plan__desc">
+                      Growing agencies
+                    </p>
+                    <div class="card-plan__offer">
+                      <!-- <span class="past-price">$29</span> -->
+                      <span class="offer-given">Starting from</span>
+                    </div>
+                    <h5 class="card-plan__price">
+                      <sup>$</sup><span>39.99</span> <sub>/MONTH</sub>
+                    </h5>
+                    <div class="card-plan__cartbtn">
+                      <a href="#">Get Started</a>
+                    </div>
+                    <!-- <p class="card-plan__renew-price">
+                            Then only £4.99/month
+                            </p> -->
+                    <div class="card-plan__feature">
+                      <ul class="card-plan__feature--list">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>100GB SSD Storage</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="100GB free SSD storage"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 1TB Bandwidth</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="1TB free bandwith for your website"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 50 cPanel
+                            Accounts</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="50 cpanel accounts for managing your sites"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>Free WHMCS</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free web host manager complete solution for manging clients"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Priority Support</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Priority support from the support team"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+
+                        <!-- MORE FEATURES -->
+                        <!-- <li class="card-plan__feature--list-trigered">
+                                        <span class="text">More Features
+                                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </li> -->
+                      </ul>
+                      <ul class="card-plan__feature--list more__feature">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
+                            CDN</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Content Delivery Network"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
+                            Scans</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Regular security scans"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
+                            Guarantee</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-xmark"></i> Basic Security
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Email security features"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Round-the-clock support"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-trigered">
+                          <span class="text">See less Features
+                            <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <p class="card-plan__desc">
-                    High volume-resellers
-                  </p>
-                  <div class="card-plan__offer">
-                    <span class="offer-given">Starting from</span>
+                </div>
+                <!-- single card end-->
+                <!-- single card -->
+                <div class="swiper-slide">
+                  <div class="card-plan active" data-cue="zoomIn">
+                    <!-- <span class="validation-level validation-domain">Organization Validation</span> -->
+                    <div class="popular-tag">most popular</div>
+                    <div class="card-plan__package">
+                      <div class="icon">
+                        <img src="assets/images/pricing/premium.svg" height="30" width="30" alt="" />
+                      </div>
+                      <h4 class="package__name">Professional</h4>
+                    </div>
+                    <p class="card-plan__desc">
+                      Established businesses
+                    </p>
+                    <div class="card-plan__offer">
+                      <!-- <span class="past-price">£5.99</span> -->
+                      <span class="offer-given">Starting from</span>
+                    </div>
+                    <h5 class="card-plan__price">
+                      <sup>$</sup><span>59.99</span><sub>/MONTH</sub>
+                    </h5>
+                    <div class="card-plan__cartbtn">
+                      <a href="https://my.wefithost.com/manage">Get Started</a>
+                    </div>
+                    <!-- <p class="card-plan__renew-price">
+                            Then only £5.99/month
+                        </p> -->
+                    <div class="card-plan__feature">
+                      <ul class="card-plan__feature--list">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 200GB SSD
+                            Storage</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="200GB SSD storage"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 2TB Bandwidth</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free 2TB bandwith"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>100 cPanel
+                            Accounts</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="100 cpanel accounts to manage your website "><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Free WHMCS + SSL</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free web host manager complete solution for managing clients + SSL certificates"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Priority support
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Get priority support anytime needed"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+
+                        <!-- MORE FEATURES -->
+                        <!-- <li class="card-plan__feature--list-trigered">
+                                        <span class="text">More Features
+                                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </li> -->
+                      </ul>
+                      <ul class="card-plan__feature--list more__feature">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
+                            CDN</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Content Delivery Network"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
+                            Scans</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Regular security scans"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
+                            Guarantee</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Advanced Security
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Email security features"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-xmark"></i> Priority Support
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Round-the-clock support"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-trigered">
+                          <span class="text">See less Features
+                            <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                  <h5 class="card-plan__price">
-                    <sup>$</sup><span>99.99</span> <sub>/MONTH</sub>
-                  </h5>
-                  <div class="card-plan__cartbtn">
-                    <a href="https://my.wefithost.com/manage">Get Started</a>
-                  </div>
-                  <div class="card-plan__feature">
-                    <ul class="card-plan__feature--list">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 500GB SSD
-                          Storage</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free 500GB SSD storage"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>5TB Bandwidth</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="5TB bandwith provided"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Unlimited
-                          Accounts</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="create as many accounts as you need "><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Free WHMCS + SSL</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Free web host manager complete solution for managing clients + SSL certificates"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>Dedicated Support</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Round the clock support"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                </div>
+                <!-- single card end -->
 
-                      <!-- MORE FEATURES -->
-                      <!-- <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features
-                                                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-                                            </span>
-                                        </li> -->
-                    </ul>
-                    <ul class="card-plan__feature--list more__feature">
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
-                          CDN</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Content Delivery Network"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                <!-- single card -->
+                <div class="swiper-slide">
+                  <div class="card-plan" data-cue="zoomIn">
+                    <!-- <span class="validation-level validation-extended">Enterprise</span> -->
+                    <div class="card-plan__package">
+                      <div class="icon">
+                        <img src="assets/images/pricing/cloud.svg" height="30" width="30" alt="" />
+                      </div>
+                      <h4 class="package__name">Enterprise</h4>
+                    </div>
+                    <p class="card-plan__desc">
+                      High volume-resellers
+                    </p>
+                    <div class="card-plan__offer">
+                      <span class="offer-given">Starting from</span>
+                    </div>
+                    <h5 class="card-plan__price">
+                      <sup>$</sup><span>99.99</span> <sub>/MONTH</sub>
+                    </h5>
+                    <div class="card-plan__cartbtn">
+                      <a href="#">Get Started</a>
+                    </div>
+                    <div class="card-plan__feature">
+                      <ul class="card-plan__feature--list">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 500GB SSD
+                            Storage</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free 500GB SSD storage"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>5TB Bandwidth</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="5TB bandwith provided"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Unlimited
+                            Accounts</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="create as many accounts as you need "><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Free WHMCS + SSL</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Free web host manager complete solution for managing clients + SSL certificates"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>Dedicated Support</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Round the clock support"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
-                          Scans</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Regular security scans"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <!-- MORE FEATURES -->
+                        <!-- <li class="card-plan__feature--list-trigered">
+                                        <span class="text">More Features
+                                            <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                        </span>
+                                    </li> -->
+                      </ul>
+                      <ul class="card-plan__feature--list more__feature">
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> FREE wefithost
+                            CDN</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Content Delivery Network"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
-                          Guarantee</span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> Automatic Malware
+                            Scans</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Regular security scans"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
-                      <li class="card-plan__feature--list-item">
-                        <span class="text"><i class="fa-solid fa-check"></i>Premium Security
-                        </span>
-                        <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                          data-bs-original-title="Email security features"><i
-                            class="fa-solid fa-circle-question"></i></span>
-                      </li>
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i> 30-day Money Back
+                            Guarantee</span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Risk-free trial"><i class="fa-solid fa-circle-question"></i></span>
+                        </li>
+
+                        <li class="card-plan__feature--list-item">
+                          <span class="text"><i class="fa-solid fa-check"></i>Premium Security
+                          </span>
+                          <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            data-bs-original-title="Email security features"><i
+                              class="fa-solid fa-circle-question"></i></span>
+                        </li>
 
                       <li class="card-plan__feature--list-item">
                         <span class="text"><i class="fa-solid fa-check"></i> Priority Support
@@ -1648,6 +1655,7 @@
         </div>
       </div>
 
+
       <div class="text-center mt-5">
         <p class="mb-3">Need custom resources or enterprise solutions?</p>
         <a href="maintenance.html" class="btn btn-outline-secondary text-black">Contact Our Sales Team</a>
@@ -1658,12 +1666,132 @@
       max-height: 100%;
     }
 
-    .card-plan__feature {
-      display: flex;
-      flex-direction: column;
-      height: 100%
-    }
-  </style>
+      .card-plan__feature {
+        display: flex;
+        flex-direction: column;
+        height: 100%
+      }
+
+      /* Swiper-Specific Styling */
+      .pricing-scroller {
+        position: relative;
+        padding: 20px 40px;
+        overflow: visible !important;
+      }
+
+      /* .swiper {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+      .swiper-wrapper {
+        align-items: stretch;
+        min-height: 0;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        height: auto;
+        width: 280px;
+        display: flex;
+        justify-content: center;
+        opacity: 1 !important;
+      } */
+
+      .swiper-wrapper {
+        align-items: stretch;
+        min-height: 0;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+       
+        opacity: 1 !important;
+      }
+
+      .swiper-pagination {
+        bottom: 0px;
+        text-align: center;
+      }
+
+      .swiper-pagination-bullet {
+        background: #6c757d;
+        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #4e66f8;
+        opacity: 1;
+      }
+
+
+
+      @media (min-width: 992px) {
+        .swiper-slide {
+          width: 280px;
+
+        }
+      }
+
+      /* Swiper Navigation Buttons */
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        background-color: #4e66f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 25px;
+        transform: translateY(0);
+        z-index: 10;
+      }
+
+      .swiper-button-prev {
+        right: 64px;
+        left: auto;
+      }
+
+      .swiper-button-next {
+        right: 10px;
+        left: auto;
+      }
+
+
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        font-size: 12px;
+        color: #fff;
+      }
+
+      /* Adjust button positioning for responsiveness */
+      @media (max-width: 768px) {
+        .swiper-button-prev {
+          right: 50px;
+        }
+
+        .swiper-button-next {
+          right: 6px;
+        }
+      }
+
+      .pricing-swiper {
+        position: relative;
+        padding-top: 58px;
+      }
+    </style>
 
   <!-- Infrastructure -->
   <section class="py-10" data-cue="fadeIn">
@@ -1734,75 +1862,75 @@
         <p class="lead text-secondary">See what our partners say about our reseller hosting</p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="d-flex align-items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="client-img me-3">
-              <div>
-                <h5 class="mb-1">Sarah Johnson</h5>
-                <p class="text-muted mb-0">Web Design Agency</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="client-img me-3">
+                <div>
+                  <h5 class="mb-1">Sarah Johnson</h5>
+                  <p class="text-muted mb-0">Web Design Agency</p>
+                </div>
               </div>
-            </div>
-            <p class="text-black">"Switching to WeFitHost's reseller program was the best decision for my agency. The
-              white-label features
-              let me present a completely branded experience to my clients."</p>
-            <div class="text-warning">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <p class="text-black">"Switching to WeFitHost's reseller program was the best decision for my agency. The
+                white-label features
+                let me present a completely branded experience to my clients."</p>
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="d-flex align-items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-img me-3">
-              <div>
-                <h5 class="mb-1">Michael Chen</h5>
-                <p class="text-muted mb-0 ">IT Solutions Provider</p>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-img me-3">
+                <div>
+                  <h5 class="mb-1">Michael Chen</h5>
+                  <p class="text-muted mb-0 ">IT Solutions Provider</p>
+                </div>
               </div>
-            </div>
-            <p class="text-black">"The scalability of these reseller plans allowed me to grow from 10 clients to over
-              200 without any
-              hiccups. The priority support has been invaluable for my business."</p>
-            <div class="text-warning">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <p class="text-black">"The scalability of these reseller plans allowed me to grow from 10 clients to over
+                200 without any
+                hiccups. The priority support has been invaluable for my business."</p>
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-md-4">
-          <div class="testimonial-card">
-            <div class="d-flex align-items-center mb-4">
-              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="client-img me-3">
-              <div>
-                <h5 class="mb-1">Emily Rodriguez</h5>
-                <p class="text-muted mb-0">Freelance Developer</p>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <div class="d-flex align-items-center mb-4">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="client-img me-3">
+                <div>
+                  <h5 class="mb-1">Emily Rodriguez</h5>
+                  <p class="text-muted mb-0">Freelance Developer</p>
+                </div>
               </div>
-            </div>
-            <p class="text-black">"As a solo developer, the reseller dashboard makes it so easy to manage all my
-              clients' hosting. The
-              profit margins are great and the reliability is outstanding."</p>
-            <div class="text-warning">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
+              <p class="text-black">"As a solo developer, the reseller dashboard makes it so easy to manage all my
+                clients' hosting. The
+                profit margins are great and the reliability is outstanding."</p>
+              <div class="text-warning">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- CTA Section -->
   <section class="cta-section py-5 mt-10">
@@ -1829,92 +1957,97 @@
         <p class="lead text-muted">Common questions about our reseller program</p>
       </div>
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="accordion" id="faqAccordion">
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h3 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                  What is white-label reseller hosting?
-                </button>
-              </h3>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  White-label reseller hosting allows you to sell hosting services under your own brand name. All
-                  control panels, emails, and client-facing interfaces display your branding instead of ours, making it
-                  appear as your own hosting service.
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne">
+                    What is white-label reseller hosting?
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    White-label reseller hosting allows you to sell hosting services under your own brand name. All
+                    control panels, emails, and client-facing interfaces display your branding instead of ours, making
+                    it
+                    appear as your own hosting service.
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h3 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo">
-                  How do I manage my clients' hosting accounts?
-                </button>
-              </h3>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  You'll have access to our reseller control panel (WHM) where you can create, modify, and manage all
-                  client accounts. Each client gets their own cPanel interface branded with your logo and company
-                  information.
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo">
+                    How do I manage my clients' hosting accounts?
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You'll have access to our reseller control panel (WHM) where you can create, modify, and manage all
+                    client accounts. Each client gets their own cPanel interface branded with your logo and company
+                    information.
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h3 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree">
-                  Can I upgrade my plan as my business grows?
-                </button>
-              </h3>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Yes, you can upgrade your reseller plan at any time without downtime or migration. We'll automatically
-                  adjust your resource limits and prorate any difference in pricing.
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree">
+                    Can I upgrade my plan as my business grows?
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Yes, you can upgrade your reseller plan at any time without downtime or migration. We'll
+                    automatically
+                    adjust your resource limits and prorate any difference in pricing.
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h3 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseFour">
-                  What billing software do you provide?
-                </button>
-              </h3>
-              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  We include a free WHMCS license with all reseller plans, which is the industry-standard billing
-                  automation platform for hosting businesses. It handles client signups, invoicing, support tickets, and
-                  more.
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour">
+                    What billing software do you provide?
+                  </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    We include a free WHMCS license with all reseller plans, which is the industry-standard billing
+                    automation platform for hosting businesses. It handles client signups, invoicing, support tickets,
+                    and
+                    more.
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="accordion-item mb-3 border-0 shadow-sm">
-              <h3 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseFive">
-                  How do you handle support for my clients?
-                </button>
-              </h3>
-              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  You have two options: 1) Handle all support yourself through your own channels, or 2) Route support
-                  requests to our team while maintaining your branding. Many resellers start by handling basic requests
-                  themselves and escalating technical issues to us.
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive">
+                    How do you handle support for my clients?
+                  </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    You have two options: 1) Handle all support yourself through your own channels, or 2) Route support
+                    requests to our team while maintaining your branding. Many resellers start by handling basic
+                    requests
+                    themselves and escalating technical issues to us.
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <div class="text-center mt-4">
             <a href="maintenance.html" class="btn btn-outline-primary">View All FAQs</a>
@@ -1924,6 +2057,7 @@
     </div>
   </section>
 
+  </main>
   <!-- Footer -->
   <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
     <div class="container">
@@ -2088,6 +2222,42 @@
   <script src="assets/js/init.js?t=20240403"></script>
   <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
   <script src="assets/js/vendors/scrollcue.js"></script>
+
+
+  <!-- Swiper.js JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.pricing-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: false,
+        grabCursor: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        observer: true,
+        observeParents: true,
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          }
+        }
+      });
+    });
+
+
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
