@@ -1,2582 +1,1313 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/favicon/tile.xml"
-    />
-
-    <!-- Color modes -->
-    <script src="assets/js/vendors/color-modes.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Libs CSS -->
-    <link
-      href="assets/libs/simplebar/dist/simplebar.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Scroll Cue -->
-    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
-
-    <!-- Box icons -->
-    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
-
-    <!-- FAV ICON -->
-    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
-
-    <!-- FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- Media queries Css -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css" />
-    <title>WeFitHost</title>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Dedicated Server Hosting | Wefithost</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <!-- Custom CSS -->
     <style>
-      :root {
-        --primary: #6b63ff;
-        --primary-dark: #5a52e0;
-        --secondary: #2d3748;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --danger: #dc3545;
-      }
-
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        color: var(--dark);
-        line-height: 1.6;
-      }
-
-      /* Header Styles */
-      .custom-header {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1020;
-        background-color: white;
-        transition: transform 0.3s ease;
-      }
-
-      .custom-header.scrolled-up {
-        transform: translateY(0);
-      }
-
-      .custom-header.scrolled-down {
-        transform: translateY(-100%);
-      }
-
-      .navbar {
-        padding: 0.8rem 0;
-      }
-
-      .navbar-brand img {
-        transition: all 0.3s ease;
-      }
-
-      .navbar-brand:hover img {
-        transform: scale(1.05);
-      }
-
-      .nav-link {
-        font-weight: 500;
-        color: #333;
-        padding: 1rem 1.25rem;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus {
-        color: #6b63ff;
-      }
-
-      /* .dropdown-toggle::after {
-            display: none;
-        } */
-
-      .dropdown-menu {
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-      }
-
-      .dropdown-item {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-        color: #333;
-        transition: all 0.2s ease;
-        border-radius: 4px;
-        margin: 0.15rem 0.5rem;
-      }
-
-      .dropdown-item:hover {
-        background-color: #f8f9fa;
-        color: #6b63ff;
-      }
-
-      .mega-dropdown {
-        position: static !important;
-      }
-
-      .mega-menu {
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        margin-top: 0;
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 8px 8px;
-      }
-
-      .dropdown-header {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #6c757d;
-        text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      .dropdown-item:hover,
-      .dropdown-item:focus {
-        background-color: rgba(107, 99, 255, 0.1);
-        color: var(--primary);
-      }
-
-      .mobile-menu-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1020;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .mobile-menu-backdrop.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      @media (max-width: 991.98px) {
-        .navbar-collapse {
-          position: fixed;
-          top: 72px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: white;
-          z-index: 1010;
-          overflow-y: auto;
-          padding: 1.5rem;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
+        :root {
+            --primary-color: #4e66f8;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --accent-color: #00c9a7;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, #6a11cb 100%);
         }
-
-        .navbar-collapse.show {
-          transform: translateX(0);
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
         }
-
-        .dropdown-menu {
-          box-shadow: none;
-          border-left: 3px solid var(--primary);
-          margin-left: 1rem;
+        
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
         }
-
-        .mega-dropdown .dropdown-menu {
-          width: auto;
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
         }
-
-        .mega-menu .row {
-          flex-direction: column;
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            background: white;
         }
-
-        .mega-menu .col-md-4,
-        .mega-menu .col-md-6 {
-          width: 100%;
-          padding: 0;
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-
-        .mega-menu .p-3 {
-          padding: 1rem 0 !important;
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(78, 102, 248, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
         }
-
-        .dropdown-toggle i.bi-chevron-down {
-          transition: transform 0.3s ease;
+        
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
         }
-
-        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
-          transform: rotate(180deg);
+        
+        .pricing-table {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
         }
-      }
-
-      .btn-primary {
-        background-color: var(--primary);
-        border-color: var(--primary);
-        font-weight: 600;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        font-size: 1.05rem;
-      }
-    </style>
-  </head>
-
-  <body data-bs-theme="light">
-    <!-- Navbar Start File-->
-    <header class="custom-header">
-      <nav
-        class="navbar navbar-expand-lg navbar-light"
-        style="background-color: #1e293b"
-      >
-        <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand" href="./home.html">
-            <img
-              src="./Logo_Wefithost_03.png"
-              alt="WeFitHost Logo"
-              height="40"
-            />
-          </a>
-
-          <!-- Mobile Toggle -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-            aria-controls="navbarContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Navigation Content -->
-          <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- Hosting Mega Dropdown -->
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/"
-                  id="hostingDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Hosting
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="hostingDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-wordpress me-2"></i>WordPress
-                          Solutions
-                        </h6>
-                        <a class="dropdown-item" href="wordpress-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>WordPress Hosting</strong>
-                            <small class="text-muted"
-                              >Automated updates and plugins</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="cloud-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Cloud Hosting</strong>
-                            <small class="text-muted"
-                              >Lightning-fast with 100% uptime SLA</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="managed-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Managed Hosting</strong>
-                            <small class="text-muted"
-                              >Lag-free, managed WordPress hosting</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="secure-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Secure Hosting</strong>
-                            <small class="text-muted"
-                              >Everything needed to securely launch your
-                              website</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-cart me-2"></i>eCommerce Solutions
-                        </h6>
-                        <a class="dropdown-item" href="woocommerce.html">
-                          <div class="d-flex flex-column">
-                            <strong>WooCommerce</strong>
-                            <small class="text-muted"
-                              >Secure, online store with built-in tools</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Websites & Stores</strong>
-                            <small class="text-muted"
-                              >Powerful site tools and WooCommerce</small
-                            >
-                          </div>
-                        </a>
-
-                        <h6 class="dropdown-header mt-3">
-                          <i class="bi bi-shield-lock me-2"></i>Security &
-                          Backup
-                        </h6>
-                        <a class="dropdown-item" href="ssl-certificate.html">
-                          <div class="d-flex flex-column">
-                            <strong>SSL Certificates</strong>
-                            <small class="text-muted"
-                              >Lock up your data with Premium SSL</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Website Security</strong>
-                            <small class="text-muted"
-                              >Minimize cyberthreats with SiteLock</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Website Backup</strong>
-                            <small class="text-muted"
-                              >Back up your site with CodeGuard</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-server me-2"></i>Traditional Hosting
-                        </h6>
-                        <a class="dropdown-item" href="shared-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Shared Hosting</strong>
-                            <small class="text-muted"
-                              >Affordable hosting for small websites</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="vps-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>VPS Hosting</strong>
-                            <small class="text-muted"
-                              >Scalable virtual private servers</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="web-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Web Hosting</strong>
-                            <small class="text-muted"
-                              >Reliable web hosting solutions</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="dedicated-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Dedicated Hosting</strong>
-                            <small class="text-muted"
-                              >Full control with enterprise hardware</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="autoscalling.html">
-                          <div class="d-flex flex-column">
-                            <strong>Autoscaling</strong>
-                            <small class="text-muted"
-                              >Intelligent Auto-Scaling for Modern Cloud
-                              Applications</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Domains Mega Dropdown -->
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/"
-                  id="domainDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Domains
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="domainDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-globe me-2"></i>Domain Services
-                        </h6>
-                        <a class="dropdown-item" href="domain-search.html">
-                          <div class="d-flex flex-column">
-                            <strong>Domain Search</strong>
-                            <small class="text-muted"
-                              >Find your perfect domain name</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="domain-transfer.html">
-                          <div class="d-flex flex-column">
-                            <strong>Domain Transfer</strong>
-                            <small class="text-muted"
-                              >Move your domain to us easily</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Bulk Domain Search</strong>
-                            <small class="text-muted"
-                              >Search for multiple domains at once</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-shield-lock me-2"></i>Domain Security
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Domain Privacy</strong>
-                            <small class="text-muted"
-                              >Protect your personal information</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Domain Lock</strong>
-                            <small class="text-muted"
-                              >Prevent unauthorized transfers</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Two-Factor Authentication</strong>
-                            <small class="text-muted"
-                              >Extra security for your domains</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-tags me-2"></i>Domain Extensions
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>.com Domains</strong>
-                            <small class="text-muted"
-                              >The world's most popular extension</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>.net Domains</strong>
-                            <small class="text-muted"
-                              >Great for tech and networks</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>.org Domains</strong>
-                            <small class="text-muted"
-                              >Perfect for organizations</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>New TLDs</strong>
-                            <small class="text-muted"
-                              >.tech, .store, .online and more</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Reseller Mega Dropdown (New Section) -->
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/"
-                  id="resellerDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Reseller
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="resellerDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-gear me-2"></i>Reseller Hosting
-                        </h6>
-
-                        <a class="dropdown-item" href="reseller-hosting.html">
-                          <div class="d-flex flex-column">
-                            <strong>Reseller Hosting</strong>
-                            <small class="text-muted"
-                              >Start your hosting business</small
-                            >
-                          </div>
-                        </a>
-
-                        <a class="dropdown-item" href="reseller-plans.html">
-                          <div class="d-flex flex-column">
-                            <strong>Reseller Plans</strong>
-                            <small class="text-muted"
-                              >Start your hosting business</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>WHMCS Integration</strong>
-                            <small class="text-muted"
-                              >Complete billing automation</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>White Label</strong>
-                            <small class="text-muted"
-                              >Brand as your own service</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-people me-2"></i>Client Management
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Client Accounts</strong>
-                            <small class="text-muted"
-                              >Manage all your clients</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Automated Billing</strong>
-                            <small class="text-muted"
-                              >Recurring invoices & payments</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Support System</strong>
-                            <small class="text-muted"
-                              >Handle client tickets</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-graph-up me-2"></i>Business Growth
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Marketing Tools</strong>
-                            <small class="text-muted"
-                              >Grow your hosting business</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Partner Program</strong>
-                            <small class="text-muted">Earn commissions</small>
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Resources</strong>
-                            <small class="text-muted">Guides & tutorials</small>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Services Mega Dropdown -->
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/"
-                  id="servicesDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Services
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="servicesDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-palette me-2"></i>Design Services
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Web Design</strong>
-                            <small class="text-muted"
-                              >Custom WordPress sites built for you</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Logo Design</strong>
-                            <small class="text-muted"
-                              >Professional branding for your business</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>UX/UI Design</strong>
-                            <small class="text-muted"
-                              >Optimized user experiences</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-megaphone me-2"></i>Marketing Services
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Digital Marketing</strong>
-                            <small class="text-muted"
-                              >SEO and PPC campaigns done for you</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Content Marketing</strong>
-                            <small class="text-muted"
-                              >Engaging content that converts</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Social Media Management</strong>
-                            <small class="text-muted"
-                              >Grow your social presence</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-headset me-2"></i>Support Services
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Pro Design Live Support</strong>
-                            <small class="text-muted"
-                              >On-demand, WordPress expert support</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                          <div class="d-flex flex-column">
-                            <strong>Website SEO Checker (FREE)</strong>
-                            <small class="text-muted"
-                              >Get a free analysis and learn how to
-                              improve</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>24/7 Priority Support</strong>
-                            <small class="text-muted"
-                              >Dedicated help when you need it</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Migration Services</strong>
-                            <small class="text-muted"
-                              >We'll move your site for you</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Agency Hub Mega Dropdown -->
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="agencyDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Agency Hub
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="agencyDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-people me-2"></i>For Agencies
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Agency Hosting</strong>
-                            <small class="text-muted"
-                              >Specialized hosting for agencies</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Client Management</strong>
-                            <small class="text-muted"
-                              >Tools to manage all your clients</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>White Label Solutions</strong>
-                            <small class="text-muted"
-                              >Brand our services as your own</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-graph-up me-2"></i>Growth Tools
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Partner Program</strong>
-                            <small class="text-muted"
-                              >Earn commissions for referrals</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Marketing Resources</strong>
-                            <small class="text-muted"
-                              >Templates and guides</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Sales Training</strong>
-                            <small class="text-muted"
-                              >Close more hosting deals</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-gear me-2"></i>Developer Tools
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>API Access</strong>
-                            <small class="text-muted"
-                              >Integrate with our platform</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Staging Environments</strong>
-                            <small class="text-muted"
-                              >Test changes safely</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Git Integration</strong>
-                            <small class="text-muted"
-                              >Version control for your sites</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>WP-CLI Enabled</strong>
-                            <small class="text-muted"
-                              >Command line control</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="nav-item dropdown mega-dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="/"
-                  id="emailDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Email
-                </a>
-                <div
-                  class="dropdown-menu mega-menu"
-                  aria-labelledby="emailDropdown"
-                >
-                  <div class="row g-0">
-                    <div class="col-md-6">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-envelope me-2"></i>Email Services
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Professional Email</strong>
-                            <small class="text-muted">you@yourdomain.com</small>
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Microsoft 365</strong>
-                            <small class="text-muted"
-                              >Premium Office suite with email</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Google Workspace</strong>
-                            <small class="text-muted"
-                              >Gmail for your domain</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="p-3">
-                        <h6 class="dropdown-header">
-                          <i class="bi bi-shield-lock me-2"></i>Email Security
-                        </h6>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Email Protection</strong>
-                            <small class="text-muted"
-                              >Block spam and malware</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Email Forwarding</strong>
-                            <small class="text-muted"
-                              >Forward emails to other accounts</small
-                            >
-                          </div>
-                        </a>
-                        <a class="dropdown-item" href="maintenance.html">
-                          <div class="d-flex flex-column">
-                            <strong>Email Migration</strong>
-                            <small class="text-muted"
-                              >Move your existing emails</small
-                            >
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-
-            <!-- Right-side buttons -->
-            <div class="d-flex align-items-center">
-              <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
-              <a
-                href="https://my.wefithost.com/login"
-                class="btn btn-link login-btn me-3"
-                ><i class="bi bi-person"></i> Log In</a
-              >
-              <a href="https://my.wefithost.com/manage" class="btn btn-primary"
-                >Sign Up</a
-              >
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="mobile-menu-backdrop"></div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const navbarToggler = document.querySelector(".navbar-toggler");
-        const navbarCollapse = document.querySelector(".navbar-collapse");
-        const backdrop = document.querySelector(".mobile-menu-backdrop");
-
-        // Initialize Bootstrap Collapse
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-          toggle: false,
-        });
-
-        // Toggle menu and backdrop
-        navbarToggler.addEventListener("click", function () {
-          const isExpanded = this.getAttribute("aria-expanded") === "true";
-          this.setAttribute("aria-expanded", !isExpanded);
-
-          if (!isExpanded) {
-            bsCollapse.show();
-            backdrop.classList.add("show");
-            document.body.style.overflow = "hidden";
-          } else {
-            bsCollapse.hide();
-            backdrop.classList.remove("show");
-            document.body.style.overflow = "";
-          }
-        });
-
-        // Close menu when clicking backdrop
-        backdrop.addEventListener("click", function () {
-          navbarToggler.setAttribute("aria-expanded", "false");
-          bsCollapse.hide();
-          this.classList.remove("show");
-          document.body.style.overflow = "";
-        });
-
-        // Close menu when clicking a nav link (for mobile)
-        document.querySelectorAll(".nav-link").forEach((link) => {
-          link.addEventListener("click", function () {
-            if (window.innerWidth < 992) {
-              navbarToggler.setAttribute("aria-expanded", "false");
-              bsCollapse.hide();
-              backdrop.classList.remove("show");
-              document.body.style.overflow = "";
+        
+        .pricing-table thead th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .pricing-table tbody tr {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-table tbody td {
+            padding: 1.5rem;
+            vertical-align: middle;
+        }
+        
+        .pricing-table .btn-signup {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-table .btn-signup:hover {
+            background: #3a56f7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+        }
+        
+        .price-toggle {
+            background: rgba(78, 102, 248, 0.1);
+            border-radius: 30px;
+            padding: 5px;
+            display: inline-flex;
+        }
+        
+        .price-toggle-btn {
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .price-toggle-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .discount-badge {
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #3a56f7;
+            border-color: #3a56f7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+        }
+        
+        .testimonial-card {
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .star-rating {
+            color: #ffc107;
+        }
+        
+        .server-image {
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-list li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .badge-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .price-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px;
+            display: inline-block;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        /* New styles for additional sections */
+        .data-center-map {
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .specs-table {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .specs-table th {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+        }
+        
+        .specs-table td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .client-logo {
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .comparison-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-card .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .comparison-feature {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-feature:last-child {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+        
+        .x-icon {
+            color: #dc3545;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 3rem 0;
+                text-align: center;
             }
-          });
-        });
-
-        // Close menu when resizing to desktop
-        window.addEventListener("resize", function () {
-          if (window.innerWidth >= 992) {
-            navbarToggler.setAttribute("aria-expanded", "false");
-            bsCollapse.hide();
-            backdrop.classList.remove("show");
-            document.body.style.overflow = "";
-          }
-        });
-      });
-    </script>
-    <!-- Navbar End -->
-    <main>
-      <!-- Hero -->
-      <div
-        data-cue="fadeIn"
-        style="
-          background-image: url(./assets/img/BG-WAVE.svg);
-          background-position: center bottom;
-          background-size: cover;
-          background-repeat: no-repeat;
-        "
-      >
-        <section class="py-8">
-          <div class="container">
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .pricing-table thead th, 
+            .pricing-table tbody td {
+                padding: 1rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .data-center-map {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
             <div class="row align-items-center">
-              <div class="col-md-6">
-                <div data-cue="zoomIn">
-                  <div class="text-content">
-                    <span class="prohost">DEDICATED HOSTING</span>
-                    <h1 class="text-black-stable display-5 mb-3">
-                      Fully-Managed Dedicated Server Hosting
-                    </h1>
-                    <p class="mb-0 lead text-black-stable">
-                      Professional hosting at an affordable price.
-                    </p>
-                  </div>
-                  <div
-                    class="mt-6 d-grid gap-2 d-md-flex justify-content-md-start"
-                  >
-                    <a
-                      href=""
-                      data-shop-href="basket-summary-login"
-                      class="btn btn-primary w-75 px-5 mb-3 mb-md-0 w-md-auto"
-                      >Get Started</a
-                    >
-                    <a
-                      href="./Register.html"
-                      data-shop-href="basket-summary-login"
-                      class="btn signbtn px-5 w-75 w-md-auto"
-                      >Our Plans</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mt-5 mt-md-0">
-                <div data-cue="zoomIn">
-                  <div class="position-relative">
-                    <img
-                      src="assets/images/feature/dedicated/servers-delivering-web-content.jpg"
-                      class="img-fluid w-100 rounded"
-                      alt="Reseller Hosting Expert"
-                      style="min-height: 420px; object-fit: cover"
-                    />
-                    <div class="productoffer">
-                      <h6>From Only</h6>
-                      <h3>$9.00/ <sub> month</sub></h3>
+                <div class="col-lg-6">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill">DEDICATED HOSTING</span>
+                    <h1 class="display-4 fw-bold mb-4">Fully-Managed Dedicated Server Hosting</h1>
+                    <p class="lead mb-4">Professional hosting at an affordable price with enterprise-grade hardware and 24/7 expert support.</p>
+                    <div class="d-flex flex-column flex-md-row gap-3">
+                        <a href="#" class="btn btn-light btn-lg rounded-pill px-4">Get Started <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-lg rounded-pill px-4">Our Plans</a>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- FEATURE BEGIN -->
-      <div class="rts-dedicated-feature py-7 py-md-8" data-cue="fadeIn">
-        <div class="container">
-          <div class="row gy-3">
-            <div class="col-lg-4 col-md-6 col-sm-6" data-cue="zoomIn">
-              <div class="dedicated-feature">
-                <div class="icon">
-                  <img src="assets/images/feature/dedicated/1.svg" alt="" />
+                <div class="col-lg-6 mt-5 mt-lg-0 position-relative">
+                    <img src="assets/images/feature/dedicated/servers-delivering-web-content.jpg" class="img-fluid rounded-3 shadow-lg w-100" alt="Dedicated Server" style="height: 400px; object-fit: cover;">
+                    <div class="price-badge">
+                        <h6 class="mb-0 text-white">From Only</h6>
+                        <h3 class="mb-0 text-white">$9.00<small class="fs-6">/month</small></h3>
+                    </div>
                 </div>
-                <h4 class="title">Multi-server management</h4>
-                <p class="description">
-                  Multi-Server Management simplifies control with a unified
-                  dashboard for seamless scaling and efficiency.
-                </p>
-              </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6" data-cue="zoomIn">
-              <div class="dedicated-feature">
-                <div class="icon">
-                  <img src="assets/images/feature/dedicated/2.svg" alt="" />
-                </div>
-                <h4 class="title">Hosting Access Control</h4>
-                <p class="description">
-                  Hosting Access Control provides secure management, allowing
-                  you to set permissions and protect sensitive data.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6" data-cue="zoomIn">
-              <div class="dedicated-feature">
-                <div class="icon">
-                  <img src="assets/images/feature/dedicated/3.svg" alt="" />
-                </div>
-                <h4 class="title">Root Access</h4>
-                <p class="description">
-                  Root Access gives you full control over your server, enabling
-                  custom configurations and advanced management.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- FEATURE END -->
+    </section>
 
-      <!-- PRICING PLAN START -->
-      <div
-        class="rts-pricing-plan table-pricing py-4 py-md-8"
-        data-cue="fadeIn"
-      >
+    <!-- Key Features -->
+    <section class="py-5 my-5">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="rts-section w-640 text-center">
-              <h2 class="text-black-stable display-6 display-md-5">
-                Compare Wefithost Dedicated Hosting Plans
-              </h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="row justify-content-center" data-cue="zoomIn">
-              <div class="col-xl-4 col-lg-5 col-md-6">
-                <div class="rts-pricing-plan__tab pricing__tab">
-                  <div class="tab__button">
-                    <div class="tab__button__item">
-                      <button class="active tab__btn" data-tab="monthly">
-                        monthly
-                      </button>
-                      <button class="tab__btn" data-tab="yearly">yearly</button>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature/dedicated/1.svg" alt="Multi-server management">
+                        </div>
+                        <h4 class="fw-bold mb-3">Multi-server Management</h4>
+                        <p class="text-muted">Simplify control with a unified dashboard for seamless scaling and efficiency across all your dedicated servers.</p>
                     </div>
-                  </div>
-                  <div class="discount">
-                    <span class="line"
-                      ><img
-                        src="assets/images/pricing/offer__vactor.svg"
-                        height="20"
-                        width="85"
-                        alt=""
-                    /></span>
-                    <p>20% save</p>
-                  </div>
                 </div>
-              </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature/dedicated/2.svg" alt="Hosting Access Control">
+                        </div>
+                        <h4 class="fw-bold mb-3">Hosting Access Control</h4>
+                        <p class="text-muted">Secure management with granular permissions to protect sensitive data and server configurations.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 text-center h-100">
+                        <div class="feature-icon">
+                            <img src="assets/images/feature/dedicated/3.svg" alt="Root Access">
+                        </div>
+                        <h4 class="fw-bold mb-3">Full Root Access</h4>
+                        <p class="text-muted">Complete control over your server environment for custom configurations and advanced management.</p>
+                    </div>
+                </div>
             </div>
-
-            <!-- PRICING PLAN -->
-            <div class="tab__content open" id="monthly" data-cue="zoomIn">
-              <table class="table">
-                <thead class="heading__bg">
-                  <tr>
-                    <th class="cell">Value</th>
-                    <th class="cell core-cell">Core</th>
-                    <th class="cell">RAM</th>
-                    <th class="cell">Storage</th>
-                    <th class="cell">Monthly Price</th>
-                    <th class="cell"></th>
-                  </tr>
-                </thead>
-                <tbody class="table__content">
-                  <tr>
-                    <td class="package">Standard 4</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">4 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$167.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 4</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">8 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$199.00month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 8</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$299.00month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 16</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$399.00month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced 32</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">32 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$499.00month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced 64</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">64 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$599.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced SSD 16</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">240 GB SSD</td>
-                    <td class="price">$299.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced SSD 64</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">64 GB</td>
-                    <td class="storage">240 GB SSD</td>
-                    <td class="price">$399.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- PRICING PLAN -->
-            <div class="tab__content" id="yearly">
-              <table class="table">
-                <thead class="heading__bg">
-                  <tr>
-                    <th class="cell">Value</th>
-                    <th class="cell">Core</th>
-                    <th class="cell">RAM</th>
-                    <th class="cell">Storage</th>
-                    <th class="cell">Monthly Price</th>
-                    <th class="cell"></th>
-                  </tr>
-                </thead>
-                <tbody class="table__content">
-                  <tr>
-                    <td class="package">Standard 4</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">4 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$367.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 4</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">8 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$499.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 8</td>
-                    <td class="process">Intel Xeon 4-Core 8-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">1 TB HDD</td>
-                    <td class="price">$599.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Standard 16</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$499.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced 32</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">32 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$699.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced 64</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">64 GB</td>
-                    <td class="storage">2 TB HDD</td>
-                    <td class="price">$899.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced SSD 16</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">16 GB</td>
-                    <td class="storage">240 GB SSD</td>
-                    <td class="price">$499.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="package">Enhanced SSD 64</td>
-                    <td class="process">Intel Xeon 12-Core 24-Thread</td>
-                    <td class="ram">64 GB</td>
-                    <td class="storage">240 GB SSD</td>
-                    <td class="price">$599.00/month</td>
-                    <td>
-                      <a
-                        href="https://my.wefithost.com/manage"
-                        class="btn__two primary__btn"
-                        style="text-decoration: none"
-                        >sign up</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- PRICING PLAN START END -->
+    </section>
 
-      <!-- HOSTING FEATURE AREA -->
-      <div class="dedicated-feature-area py-10 py-md-8" data-cue="fadeIn">
+    <!-- Hosting Comparison Section -->
+    <section class="py-5 my-5 bg-light">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="rts-section w-670 text-center">
-              <h2 class="rts-section__title mb-0" data-cue="zoomIn">
-                Dedicated Hosting Features Matter to Your Success
-              </h2>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Dedicated vs Other Hosting Types</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Compare dedicated hosting with other hosting solutions to find the perfect fit</p>
             </div>
-          </div>
-          <div class="row gy-8 gy-md-10 justify-content-center">
-            <div class="col-lg-6 col-xl-4 col-md-12" data-cue="zoomIn">
-              <div class="dedicated-feature-section">
-                <h3 class="">Extreme Performance</h3>
-                <p>
-                  Dedicated servers from Wefithost use top-tier hardware and
-                  software to ensure consistently fast and reliable performance.
-                </p>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img
-                      src="assets/images/feature/dedicated/server.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    Extreme Performance for fast load times and smooth user
-                    experiences.
-                  </p>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="comparison-card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">Shared Hosting</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Lowest Cost</strong>
+                                <p class="mt-2 mb-0">Most affordable option with shared resources</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-times x-icon"></i> <strong>Limited Resources</strong>
+                                <p class="mt-2 mb-0">CPU, RAM and bandwidth shared with other users</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-times x-icon"></i> <strong>No Root Access</strong>
+                                <p class="mt-2 mb-0">Limited customization options</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Managed</strong>
+                                <p class="mt-2 mb-0">Server maintenance handled by provider</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img src="assets/images/feature/dedicated/ram.svg" alt="" />
-                  </div>
-                  <p>
-                    Enjoy Extreme Performance with optimized resources for
-                    high-traffic sites.
-                  </p>
+                
+                <div class="col-md-4">
+                    <div class="comparison-card h-100">
+                        <div class="card-header">
+                            <h4 class="mb-0">VPS Hosting</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Moderate Cost</strong>
+                                <p class="mt-2 mb-0">More affordable than dedicated servers</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Guaranteed Resources</strong>
+                                <p class="mt-2 mb-0">Dedicated portion of server resources</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Root Access</strong>
+                                <p class="mt-2 mb-0">Full control over your virtual server</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Scalable</strong>
+                                <p class="mt-2 mb-0">Easily upgrade resources as needed</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img
-                      src="assets/images/feature/dedicated/support.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    Get Extreme Performance with powerful hardware for
-                    unparalleled speed.
-                  </p>
+                
+                <div class="col-md-4">
+                    <div class="comparison-card h-100">
+                        <div class="card-header bg-dark">
+                            <h4 class="mb-0">Dedicated Hosting</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Highest Performance</strong>
+                                <p class="mt-2 mb-0">Entire physical server for your exclusive use</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Full Customization</strong>
+                                <p class="mt-2 mb-0">Complete control over hardware and software</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Enhanced Security</strong>
+                                <p class="mt-2 mb-0">Isolated environment with no resource sharing</p>
+                            </div>
+                            <div class="comparison-feature">
+                                <i class="fas fa-check check-icon"></i> <strong>Enterprise-Grade</strong>
+                                <p class="mt-2 mb-0">Ideal for high-traffic, mission-critical applications</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div
-              class="col-lg-5 offset-lg-1 col-xl-6 offset-xl-2 col-md-12"
-              data-cue="zoomIn"
-            >
-              <div class="dedicated-feature-image">
-                <img
-                  src="assets/images/feature/dedicated/image-1.png"
-                  alt=""
-                  height="444"
-                  width="645"
-                />
-                <div class="feature-text">
-                  <div class="seo">
-                    <p>SEO Score</p>
-                    <div class="score">99</div>
-                  </div>
-                  <div class="performance">
-                    <p>performance</p>
-                    <div class="score">100</div>
-                  </div>
-                </div>
-              </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">Still not sure? Get hosting advice</a>
             </div>
-            <div class="col-lg-6 col-md-12 mt--100" data-cue="zoomIn">
-              <div class="dedicated-feature-image">
-                <img
-                  src="assets/images/feature/dedicated/image-2.png"
-                  alt=""
-                  height="444"
-                  width="645"
-                />
-                <div class="featured-item">
-                  <div class="icon">
-                    <img
-                      src="assets/images/feature/dedicated/email.svg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="content">
-                    <h6>Wefithost Mail</h6>
-                    <p>
-                      Shared Unlimited hosting Plan Comes with unlimited Free
-                      Email addresses.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-12 mt--100"
-              data-cue="zoomIn"
-            >
-              <div class="dedicated-feature-section">
-                <h3>Intuitive Management</h3>
-                <p>
-                  Real-Time Analytics – Monitor your website’s performance and
-                  traffic with real-time insights directly from your control
-                  panel.
-                </p>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img
-                      src="assets/images/feature/dedicated/server.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    User-Friendly Dashboard – Manage domains, emails, and
-                    databases easily with a sleek, intuitive interface.
-                  </p>
-                </div>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img src="assets/images/feature/dedicated/ram.svg" alt="" />
-                  </div>
-                  <p>
-                    Real-Time Analytics – Monitor your website’s performance and
-                    traffic with real-time insights directly from your control
-                    panel.
-                  </p>
-                </div>
-                <div class="single-feature">
-                  <div class="icon">
-                    <img
-                      src="assets/images/feature/dedicated/support.svg"
-                      alt=""
-                    />
-                  </div>
-                  <p>
-                    One-Click Installs – Install popular applications like
-                    WordPress or Joomla in just a click, no technical experience
-                    needed.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- HOSTING FEATURE AREA END -->
+    </section>
 
-      <!-- HOSTIE QUICK FEATURE -->
-      <section class="rts-feature py-10 py-md-8" data-cue="fadeIn">
+    <!-- Pricing Plans -->
+    <section class="py-5 my-5">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="w-450 text-center mb-4" data-cue="zoomIn">
-              <h2 class="title">Included with Every Dedicated Hosting Plan</h2>
-              <p>
-                Dedicated servers from WeFitHost deliver top-tier hardware and
-                software to keep your site running fast and reliably 24/7.
-              </p>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Compare Dedicated Hosting Plans</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Choose the perfect dedicated server configuration for your business needs</p>
             </div>
-          </div>
-          <div class="row g-3" data-cue="zoomIn">
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                    >
-                      <path
-                        d="M19.8333 0C30.787 0 39.6667 8.87969 39.6667 19.8333C39.6667 30.787 30.787 39.6667 19.8333 39.6667C8.87969 39.6667 0 30.787 0 19.8333C0 8.87969 8.87969 0 19.8333 0ZM19.8333 2.08772C10.0327 2.08772 2.08772 10.0327 2.08772 19.8333C2.08772 29.634 10.0327 37.5789 19.8333 37.5789C29.634 37.5789 37.5789 29.634 37.5789 19.8333C37.5789 10.0327 29.634 2.08772 19.8333 2.08772ZM31.0101 8.65662C31.3863 9.03291 31.4542 9.71168 31.0101 10.1329L23.4306 17.7122C23.798 18.3339 24.0088 19.059 24.0088 19.8333C24.0088 22.1394 22.1394 24.0088 19.8333 24.0088C17.5273 24.0088 15.6579 22.1394 15.6579 19.8333C15.6579 17.5273 17.5273 15.6579 19.8333 15.6579C20.6077 15.6579 21.3328 15.8687 21.9544 16.236L29.5338 8.65662C29.9415 8.24896 30.6024 8.24896 31.0101 8.65662ZM19.8333 17.7456C18.6803 17.7456 17.7456 18.6803 17.7456 19.8333C17.7456 20.9864 18.6803 21.9211 19.8333 21.9211C20.9864 21.9211 21.9211 20.9864 21.9211 19.8333C21.9211 18.6803 20.9864 17.7456 19.8333 17.7456ZM32.1693 14.1715C32.9788 15.9325 33.4035 17.8539 33.4035 19.8333C33.4035 20.4098 32.9362 20.8772 32.3596 20.8772C31.7831 20.8772 31.3158 20.4098 31.3158 19.8333C31.3158 18.1565 30.9568 16.5323 30.2724 15.0435C30.0316 14.5197 30.261 13.8998 30.7849 13.659C31.3087 13.4183 31.9285 13.6477 32.1693 14.1715ZM19.8333 6.26316C21.831 6.26316 23.7695 6.6958 25.5435 7.51973C26.0664 7.76258 26.2934 8.38331 26.0506 8.90617C25.8077 9.42904 25.187 9.65604 24.6641 9.41319C23.1642 8.71657 21.5257 8.35088 19.8333 8.35088C13.4917 8.35088 8.35088 13.4917 8.35088 19.8333C8.35088 20.4098 7.88353 20.8772 7.30702 20.8772C6.73051 20.8772 6.26316 20.4098 6.26316 19.8333C6.26316 12.3387 12.3387 6.26316 19.8333 6.26316Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">
-                    Security, & Updates
-                  </h5>
-                  <p class="card-feature__single--description">
-                    Stay protected with WeFitHost’s advanced security, regular
-                    updates, and proactive monitoring for maximum website
-                    safety.
-                  </p>
+            
+            <div class="text-center mb-5">
+                <div class="price-toggle d-inline-flex mb-4">
+                    <button class="price-toggle-btn active" data-period="monthly">Monthly</button>
+                    <button class="price-toggle-btn" data-period="yearly">Yearly <span class="discount-badge">20% Save</span></button>
                 </div>
-              </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      width="48"
-                      height="32"
-                      viewBox="0 0 48 32"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15.1992 20H23.1992V5.60004H15.1992V20ZM16.7992 7.20004H21.5992V18.4H16.7992V7.20004Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M24.7988 20H32.7988V5.60004H24.7988V20ZM26.3988 7.20004H31.1988V18.4H26.3988V7.20004Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M5.59961 20H13.5996V5.60004H5.59961V20ZM7.19961 7.20004H11.9996V18.4H7.19961V7.20004Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M34.3984 20H42.3984V5.60004H34.3984V20ZM35.9984 7.20004H40.7984V18.4H35.9984V7.20004Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M47.2 10.4C47.6418 10.4 48 10.0418 48 9.60005V3.20005C48 1.87455 46.9255 0.800049 45.6 0.800049H2.4C1.0745 0.800049 0 1.87455 0 3.20005V9.60005C0 10.0418 0.3582 10.4 0.8 10.4C1.2418 10.4 1.6 10.7582 1.6 11.2C1.6 11.6418 1.2418 12 0.8 12C0.3582 12 0 12.3582 0 12.8V24C0 24.4418 0.3582 24.8 0.8 24.8H4V30.4C4 30.8418 4.3582 31.2 4.8 31.2H17.6C18.0418 31.2 18.4 30.8418 18.4 30.4V28.8C18.4 28.3582 18.7582 28 19.2 28C19.4158 27.9993 19.6223 28.0879 19.7704 28.2448C19.9188 28.3913 20.0016 28.5915 20 28.8V30.4C20 30.8418 20.3582 31.2 20.8 31.2H43.2C43.6418 31.2 44 30.8418 44 30.4V24.8H47.2C47.6418 24.8 48 24.4418 48 24V12.8C48 12.3582 47.6418 12 47.2 12C46.7582 12 46.4 11.6418 46.4 11.2C46.4 10.7582 46.7582 10.4 47.2 10.4ZM42.4 29.6H40.8V26.4H39.2V29.6H37.6V26.4H36V29.6H34.4V26.4H32.8V29.6H31.2V26.4H29.6V29.6H28V26.4H26.4V29.6H24.8V26.4H23.2V29.6H21.6V28.8C21.5943 27.4769 20.5231 26.4057 19.2 26.4C17.8745 26.4 16.8 27.4745 16.8 28.8V29.6H15.2V26.4H13.6V29.6H12V26.4H10.4V29.6H8.8V26.4H7.2V29.6H5.6V24.8H42.4V29.6ZM46.4 8.93685C45.1501 9.37795 44.4944 10.7488 44.9355 11.9987C45.1771 12.6832 45.7155 13.2216 46.4 13.4632V23.2H1.6V13.4632C2.8499 13.0221 3.5056 11.6512 3.0645 10.4013C2.8229 9.71685 2.2845 9.17845 1.6 8.93685V3.20005C1.6 2.75825 1.9582 2.40005 2.4 2.40005H45.6C46.0418 2.40005 46.4 2.75825 46.4 3.20005V8.93685Z"
-                        fill="#2D3C58"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">RAM & storage</h5>
-                  <p class="card-feature__single--description">
-                    Experience high-performance hosting with scalable RAM and
-                    ample storage to handle all your website needs seamlessly.
-                  </p>
+            
+            <!-- Monthly Pricing -->
+            <div class="pricing-content" id="monthly-pricing">
+                <div class="table-responsive">
+                    <table class="table pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Processor</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">Standard 4</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>4 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$167.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Standard 8</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>8 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$199.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Standard 16</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>16 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$299.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Enhanced 32</td>
+                                <td>Intel Xeon 12-Core 24-Thread</td>
+                                <td>32 GB</td>
+                                <td>2 TB HDD</td>
+                                <td class="fw-bold">$499.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Enhanced SSD 16</td>
+                                <td>Intel Xeon 12-Core 24-Thread</td>
+                                <td>16 GB</td>
+                                <td>240 GB SSD</td>
+                                <td class="fw-bold">$299.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M35 5H5C4.33696 5 3.70107 5.26339 3.23223 5.73223C2.76339 6.20107 2.5 6.83696 2.5 7.5V32.5C2.5 33.163 2.76339 33.7989 3.23223 34.2678C3.70107 34.7366 4.33696 35 5 35H35C35.663 35 36.2989 34.7366 36.7678 34.2678C37.2366 33.7989 37.5 33.163 37.5 32.5V7.5C37.5 6.83696 37.2366 6.20107 36.7678 5.73223C36.2989 5.26339 35.663 5 35 5V5ZM5 7.5H12.5V32.5H5V7.5ZM35 32.5H15V7.5H35V32.5Z"
-                        fill="#2D3C58"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">Quick & easy</h5>
-                  <p class="card-feature__single--description">
-                    Set up and manage your hosting effortlessly with WeFitHost’s
-                    quick, easy, and user-friendly platform.
-                  </p>
+            
+            <!-- Yearly Pricing (Hidden by default) -->
+            <div class="pricing-content d-none" id="yearly-pricing">
+                <div class="table-responsive">
+                    <table class="table pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Plan</th>
+                                <th>Processor</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-bold">Standard 4</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>4 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$367.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Standard 8</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>8 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$499.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Standard 16</td>
+                                <td>Intel Xeon 4-Core 8-Thread</td>
+                                <td>16 GB</td>
+                                <td>1 TB HDD</td>
+                                <td class="fw-bold">$599.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Enhanced 32</td>
+                                <td>Intel Xeon 12-Core 24-Thread</td>
+                                <td>32 GB</td>
+                                <td>2 TB HDD</td>
+                                <td class="fw-bold">$699.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold">Enhanced SSD 16</td>
+                                <td>Intel Xeon 12-Core 24-Thread</td>
+                                <td>16 GB</td>
+                                <td>240 GB SSD</td>
+                                <td class="fw-bold">$499.00/month</td>
+                                <td><a href="#" class="btn btn-signup">Sign Up</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-              </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                    >
-                      <path
-                        d="M19.8333 0C30.787 0 39.6667 8.87969 39.6667 19.8333C39.6667 30.787 30.787 39.6667 19.8333 39.6667C8.87969 39.6667 0 30.787 0 19.8333C0 8.87969 8.87969 0 19.8333 0ZM19.8333 2.08772C10.0327 2.08772 2.08772 10.0327 2.08772 19.8333C2.08772 29.634 10.0327 37.5789 19.8333 37.5789C29.634 37.5789 37.5789 29.634 37.5789 19.8333C37.5789 10.0327 29.634 2.08772 19.8333 2.08772ZM31.0101 8.65662C31.3863 9.03291 31.4542 9.71168 31.0101 10.1329L23.4306 17.7122C23.798 18.3339 24.0088 19.059 24.0088 19.8333C24.0088 22.1394 22.1394 24.0088 19.8333 24.0088C17.5273 24.0088 15.6579 22.1394 15.6579 19.8333C15.6579 17.5273 17.5273 15.6579 19.8333 15.6579C20.6077 15.6579 21.3328 15.8687 21.9544 16.236L29.5338 8.65662C29.9415 8.24896 30.6024 8.24896 31.0101 8.65662ZM19.8333 17.7456C18.6803 17.7456 17.7456 18.6803 17.7456 19.8333C17.7456 20.9864 18.6803 21.9211 19.8333 21.9211C20.9864 21.9211 21.9211 20.9864 21.9211 19.8333C21.9211 18.6803 20.9864 17.7456 19.8333 17.7456ZM32.1693 14.1715C32.9788 15.9325 33.4035 17.8539 33.4035 19.8333C33.4035 20.4098 32.9362 20.8772 32.3596 20.8772C31.7831 20.8772 31.3158 20.4098 31.3158 19.8333C31.3158 18.1565 30.9568 16.5323 30.2724 15.0435C30.0316 14.5197 30.261 13.8998 30.7849 13.659C31.3087 13.4183 31.9285 13.6477 32.1693 14.1715ZM19.8333 6.26316C21.831 6.26316 23.7695 6.6958 25.5435 7.51973C26.0664 7.76258 26.2934 8.38331 26.0506 8.90617C25.8077 9.42904 25.187 9.65604 24.6641 9.41319C23.1642 8.71657 21.5257 8.35088 19.8333 8.35088C13.4917 8.35088 8.35088 13.4917 8.35088 19.8333C8.35088 20.4098 7.88353 20.8772 7.30702 20.8772C6.73051 20.8772 6.26316 20.4098 6.26316 19.8333C6.26316 12.3387 12.3387 6.26316 19.8333 6.26316Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">
-                    Unlimited bandwidth
-                  </h5>
-                  <p class="card-feature__single--description">
-                    Enjoy seamless performance with WeFitHost’s unlimited
-                    bandwidth, ensuring fast and reliable website access
-                    anytime.
-                  </p>
-                </div>
-              </div>
+            
+            <div class="text-center mt-4">
+                <p class="text-muted">Need a custom configuration? <a href="#" class="text-primary">Contact our sales team</a></p>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="40"
-                      viewBox="0 0 40 40"
-                      fill="none"
-                    >
-                      <path
-                        d="M19.8333 0C30.787 0 39.6667 8.87969 39.6667 19.8333C39.6667 30.787 30.787 39.6667 19.8333 39.6667C8.87969 39.6667 0 30.787 0 19.8333C0 8.87969 8.87969 0 19.8333 0ZM19.8333 2.08772C10.0327 2.08772 2.08772 10.0327 2.08772 19.8333C2.08772 29.634 10.0327 37.5789 19.8333 37.5789C29.634 37.5789 37.5789 29.634 37.5789 19.8333C37.5789 10.0327 29.634 2.08772 19.8333 2.08772ZM31.0101 8.65662C31.3863 9.03291 31.4542 9.71168 31.0101 10.1329L23.4306 17.7122C23.798 18.3339 24.0088 19.059 24.0088 19.8333C24.0088 22.1394 22.1394 24.0088 19.8333 24.0088C17.5273 24.0088 15.6579 22.1394 15.6579 19.8333C15.6579 17.5273 17.5273 15.6579 19.8333 15.6579C20.6077 15.6579 21.3328 15.8687 21.9544 16.236L29.5338 8.65662C29.9415 8.24896 30.6024 8.24896 31.0101 8.65662ZM19.8333 17.7456C18.6803 17.7456 17.7456 18.6803 17.7456 19.8333C17.7456 20.9864 18.6803 21.9211 19.8333 21.9211C20.9864 21.9211 21.9211 20.9864 21.9211 19.8333C21.9211 18.6803 20.9864 17.7456 19.8333 17.7456ZM32.1693 14.1715C32.9788 15.9325 33.4035 17.8539 33.4035 19.8333C33.4035 20.4098 32.9362 20.8772 32.3596 20.8772C31.7831 20.8772 31.3158 20.4098 31.3158 19.8333C31.3158 18.1565 30.9568 16.5323 30.2724 15.0435C30.0316 14.5197 30.261 13.8998 30.7849 13.659C31.3087 13.4183 31.9285 13.6477 32.1693 14.1715ZM19.8333 6.26316C21.831 6.26316 23.7695 6.6958 25.5435 7.51973C26.0664 7.76258 26.2934 8.38331 26.0506 8.90617C25.8077 9.42904 25.187 9.65604 24.6641 9.41319C23.1642 8.71657 21.5257 8.35088 19.8333 8.35088C13.4917 8.35088 8.35088 13.4917 8.35088 19.8333C8.35088 20.4098 7.88353 20.8772 7.30702 20.8772C6.73051 20.8772 6.26316 20.4098 6.26316 19.8333C6.26316 12.3387 12.3387 6.26316 19.8333 6.26316Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">SSDs, email & SSL</h5>
-                  <p class="card-feature__single--description">
-                    Get ultra-fast SSD storage, professional email, and free SSL
-                    for secure and high-performance hosting with WeFitHost.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-              <div class="card-feature">
-                <div class="card-feature__single">
-                  <div class="card-feature__single--icon">
-                    <svg
-                      width="37"
-                      height="29"
-                      viewBox="0 0 37 29"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M35.7716 13.1458L27.5948 4.48282C27.0923 3.94981 26.2534 3.9255 25.7204 4.42847C25.1882 4.93102 25.1635 5.77031 25.6665 6.30291L32.9845 14.0554L25.6665 21.8088C25.1635 22.3413 25.1882 23.1802 25.7204 23.6832C25.9767 23.925 26.3042 24.0447 26.6305 24.0447C26.9828 24.0447 27.3346 23.9051 27.5949 23.6297L35.7717 14.9663C36.2538 14.455 36.2538 13.6567 35.7716 13.1458Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M11.2407 21.8082L3.92312 14.0552L11.2407 6.30236C11.7432 5.76976 11.7189 4.9304 11.1863 4.42791C10.6541 3.92536 9.81434 3.94967 9.31186 4.48226L1.13507 13.1452C0.652892 13.6561 0.652892 14.4548 1.13507 14.9658L9.31227 23.6292C9.57304 23.9054 9.92442 24.0447 10.2767 24.0447C10.6029 24.0447 10.9304 23.9244 11.1863 23.6826C11.7194 23.1801 11.7432 22.3408 11.2407 21.8082Z"
-                        fill="#2D3C58"
-                      />
-                      <path
-                        d="M20.5996 0.0151505C19.8761 -0.0944488 19.199 0.402305 19.0885 1.12585L15.199 26.5844C15.0885 27.3083 15.5857 27.9851 16.3097 28.0956C16.3778 28.1057 16.4449 28.1106 16.5117 28.1106C17.1557 28.1106 17.7205 27.6408 17.8208 26.9849L21.7103 1.52634C21.8208 0.802304 21.3236 0.125648 20.5996 0.0151505Z"
-                        fill="#2D3C58"
-                      />
-                    </svg>
-                  </div>
-                  <h5 class="card-feature__single--title">PHP7/Perl/Python</h5>
-                  <p class="card-feature__single--description">
-                    Run powerful applications with support for PHP7, Perl, and
-                    Python, ensuring seamless performance and flexibility.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-      <!-- HOSTIE QUICK FEATURE END -->
+    </section>
 
-      <!-- WHAT OUR CLIENTS SAY -->
-      <section class="testimonials py-7" id="speaker">
+    <!-- Technical Specifications -->
+    <section class="py-5 my-5 bg-light">
         <div class="container">
-          <div class="row testimonial-text">
-            <div class="col-md-8" data-cue="fadeIn">
-              <div class="mb-5 pb-2">
-                <h2 class="">See What Our Clients Are Saying About Us</h2>
-                <p class="mb-0 lead">
-                  Enjoy the features and benefits of our hosting at an
-                  affordable price.
-                </p>
-              </div>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Technical Specifications</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Detailed specifications for our dedicated server hardware</p>
             </div>
-          </div>
-          <div class="">
-            <div
-              class="row row-cols-xl-3 row-cols-md-2 row-cols-1 g-4 pb-4 pb-xl-0 me-lg-0"
-              data-cues="fadeIn"
-            >
-              <div class="col" data-cue="fadeIn">
-                <div class="card shadow-sm border-0 card-lift">
-                  <div class="card-body">
-                    <div class="mb-2 d-flex startsetting">
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                    </div>
-                    <div class="mb-2 hostingcard">
-                      <span class="small"
-                        >WeFitHost’s dedicated hosting has been a game-changer
-                        for my eCommerce site. The speed, reliability, and
-                        support are top-notch, and I can focus on growing my
-                        business without any technical worries.</span
-                      >
-                      <div class="d-flex mt-3">
-                        <div>
-                          <img
-                            src="./assets/images/feature/author__one.png"
-                            alt=""
-                            height="50"
-                            width="50"
-                          />
-                        </div>
-                        <div class="ps-2">
-                          <p class="text-black mb-0">James T</p>
-                          <h4 class="mb-0 h5">Managing Director</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col" data-cue="fadeIn">
-                <div class="card shadow-sm border-0 card-lift">
-                  <div class="card-body">
-                    <div class="mb-2 d-flex startsetting">
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                    </div>
-                    <div class="mb-2 hostingcard">
-                      <span class="small"
-                        >WeFitHost has been a reliable partner for our company.
-                        With dedicated hosting, we can scale easily, and the
-                        security measures they offer give us peace of mind.
-                        Their support team is always ready to assist</span
-                      >
-                      <div class="d-flex mt-3">
-                        <div>
-                          <img
-                            src="./assets/images/feature/author__two.png"
-                            alt=""
-                            class="rounded-5"
-                            style="height: 50px; width: 50px"
-                          />
-                        </div>
-                        <div class="ps-2">
-                          <p class="text-black mb-0">Jason Woods</p>
-                          <h4 class="mb-0 h5">Host4me</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col" data-cue="fadeIn">
-                <div class="card shadow-sm border-0 card-lift">
-                  <div class="card-body">
-                    <div class="mb-2 d-flex startsetting">
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                      <img
-                        src="./assets/img/Home page/star.svg"
-                        alt="testimonial"
-                        class=""
-                      />
-                    </div>
-                    <div class="mb-2 hostingcard">
-                      <span class="small"
-                        >As a high-traffic website owner, WeFitHost’s dedicated
-                        hosting gives me the power and stability I need. The
-                        server performance is incredible, and the 24/7 support
-                        is always there when I need them.</span
-                      >
-                      <div class="d-flex mt-3">
-                        <div>
-                          <img
-                            src="./assets/images/feature/author__three.png"
-                            alt=""
-                          />
-                        </div>
-                        <div class="ps-2">
-                          <p class="text-black mb-0">Andrew Fox</p>
-                          <h4 class="mb-0 h5">Hostspecial</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
+            <div class="table-responsive">
+                <table class="table specs-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Standard Series</th>
+                            <th>Enhanced Series</th>
+                            <th>Enterprise Series</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Processor</strong></td>
+                            <td>Intel Xeon E-2300 Series (4-8 Cores)</td>
+                            <td>Intel Xeon Silver 4200 Series (8-16 Cores)</td>
+                            <td>Intel Xeon Gold 6300 Series (16-32 Cores)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Memory</strong></td>
+                            <td>4GB - 32GB DDR4 ECC</td>
+                            <td>32GB - 128GB DDR4 ECC</td>
+                            <td>128GB - 512GB DDR4 ECC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage</strong></td>
+                            <td>1TB HDD or 240GB SSD</td>
+                            <td>2TB HDD or 480GB SSD</td>
+                            <td>4TB HDD or 960GB SSD (NVMe available)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>RAID Options</strong></td>
+                            <td>Software RAID 0/1</td>
+                            <td>Hardware RAID 0/1/5/10</td>
+                            <td>Hardware RAID 0/1/5/6/10/50/60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network</strong></td>
+                            <td>1Gbps Unmetered</td>
+                            <td>1Gbps Unmetered</td>
+                            <td>10Gbps Unmetered</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IP Addresses</strong></td>
+                            <td>1 IPv4 + IPv6</td>
+                            <td>5 IPv4 + IPv6</td>
+                            <td>10+ IPv4 + IPv6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Uptime SLA</strong></td>
+                            <td>99.9%</td>
+                            <td>99.95%</td>
+                            <td>99.99%</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-          </div>
-
-          <div class="col-md-4 button mx-auto mt-5" data-cue="fadeIn">
-            <div class="">
-              <a href="maintenance.html" class="btn btn-primary px-5 mb-3"
-                >View more</a
-              >
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary px-4">View Full Specifications</a>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <!-- WHAT OUR CLIENTS SAY END -->
-
-      <style>
-        .testimonials {
-          font-family: "Quicksand", "sans-serif";
-        }
-
-        .testimonial-text {
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .testimonials .button {
-          display: flex;
-          justify-content: center;
-          width: fit-content;
-        }
-
-        .testimonials .button .btn {
-          border-radius: 0.3rem;
-          background: #6b63ff;
-          color: white;
-        }
-
-        .testimonials .button .btn:hover {
-          background: white;
-          color: #6b63ff;
-          transform: scale(1.1);
-        }
-      </style>
-
-      <!-- FAQs -->
-
-      <section class="py-10 faqs" data-cue="fadeIn">
+    <!-- Data Center Locations -->
+    <section class="py-5 my-5">
         <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3">FAQ's</h2>
-            <p class="lead text-muted">
-              UK-based web hosting services, domains, and virtual private
-              servers.
-            </p>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="accordion" id="faqAccordion">
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                    >
-                      What is Dedicated Hosting?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      Dedicated hosting provides an entire server exclusively
-                      for your website, ensuring maximum performance, security,
-                      and control without sharing resources with other users.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                    >
-                      Who should use Dedicated Hosting?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      Dedicated hosting is ideal for high-traffic websites,
-                      large businesses, eCommerce stores, and applications that
-                      require superior performance and reliability.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                    >
-                      What are the benefits of WeFitHost Dedicated Hosting?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      With WeFitHost, you get top-tier hardware, full root
-                      access, advanced security, 24/7 expert support, and 99.9%
-                      uptime for a seamless experience.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="text-center mt-4">
-                <a href="faqs.html" class="btn btn-outline-primary"
-                  >View All FAQs</a
-                >
-              </div>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Global Data Center Locations</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Our worldwide network ensures low latency and high availability</p>
             </div>
-          </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="data-center-map" id="dataCenterMap"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="feature-card p-4 h-100">
+                                <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> North America</h4>
+                                <ul class="feature-list list-unstyled">
+                                    <li>Dallas, USA</li>
+                                    <li>New York, USA</li>
+                                    <li>Los Angeles, USA</li>
+                                    <li>Toronto, Canada</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature-card p-4 h-100">
+                                <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Europe</h4>
+                                <ul class="feature-list list-unstyled">
+                                    <li>London, UK</li>
+                                    <li>Frankfurt, Germany</li>
+                                    <li>Paris, France</li>
+                                    <li>Amsterdam, Netherlands</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature-card p-4 h-100">
+                                <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Asia Pacific</h4>
+                                <ul class="feature-list list-unstyled">
+                                    <li>Singapore</li>
+                                    <li>Tokyo, Japan</li>
+                                    <li>Mumbai, India</li>
+                                    <li>Sydney, Australia</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature-card p-4 h-100">
+                                <h4 class="fw-bold mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Coming Soon</h4>
+                                <ul class="feature-list list-unstyled">
+                                    <li>São Paulo, Brazil</li>
+                                    <li>Dubai, UAE</li>
+                                    <li>Johannesburg, South Africa</li>
+                                    <li>Seoul, South Korea</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary px-4">View Data Center Details</a>
+            </div>
         </div>
-      </section>
-    </main>
+    </section>
+
+    <!-- Performance Features -->
+    <section class="py-5 my-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Extreme Performance for Demanding Workloads</h2>
+                    <p class="lead">Our dedicated servers use top-tier hardware and software to ensure consistently fast and reliable performance for your most demanding applications.</p>
+                    
+                    <ul class="feature-list list-unstyled mt-4">
+                        <li class="mb-3">High-frequency processors for maximum throughput</li>
+                        <li class="mb-3">Enterprise-grade SSDs for blazing fast I/O</li>
+                        <li class="mb-3">ECC memory for data integrity</li>
+                        <li class="mb-3">Redundant power supplies for maximum uptime</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/feature/dedicated/image-1.png" class="img-fluid server-image" alt="Server Performance">
+                    <div class="d-flex justify-content-center mt-4 gap-4">
+                        <div class="text-center">
+                            <div class="display-5 fw-bold text-primary">99.9%</div>
+                            <p class="mb-0">Uptime SLA</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="display-5 fw-bold text-primary">24/7</div>
+                            <p class="mb-0">Monitoring</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="display-5 fw-bold text-primary">100%</div>
+                            <p class="mb-0">SSD Storage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Features -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Intuitive Server Management</h2>
+                    <p class="lead">Real-Time Analytics – Monitor your server's performance and traffic with real-time insights directly from your control panel.</p>
+                    
+                    <ul class="feature-list list-unstyled mt-4">
+                        <li class="mb-3">User-Friendly Dashboard – Manage all aspects of your server through an intuitive interface</li>
+                        <li class="mb-3">One-Click Installs – Deploy popular applications like WordPress or Joomla instantly</li>
+                        <li class="mb-3">API Access – Automate management tasks with our comprehensive API</li>
+                        <li class="mb-3">Mobile App – Manage your server from anywhere with our mobile application</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="assets/images/feature/dedicated/image-2.png" class="img-fluid server-image" alt="Server Management">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Showcase -->
+    <section class="py-5 my-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Trusted By Industry Leaders</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Join thousands of businesses that rely on our dedicated hosting solutions</p>
+            </div>
+            
+            <div class="row align-items-center justify-content-center g-4">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo1.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo2.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo3.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo4.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo5.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <img src="assets/images/clients/logo6.svg" class="img-fluid client-logo" alt="Client Logo">
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">View Case Studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Included Features -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Included with Every Dedicated Server</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Premium features that come standard with all our dedicated hosting plans</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/security.svg" alt="Security">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">Advanced Security</h4>
+                                <p class="text-muted">Stay protected with our advanced security stack including DDoS protection, web application firewall, and regular security updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/storage.svg" alt="Storage">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">High-Performance Storage</h4>
+                                <p class="text-muted">Enterprise-grade SSDs with RAID configurations available for maximum performance and data redundancy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/support.svg" alt="Support">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">24/7 Expert Support</h4>
+                                <p class="text-muted">Our team of server experts is available around the clock to assist with any issues or questions you may have.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/backup.svg" alt="Backup">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">Automated Backups</h4>
+                                <p class="text-muted">Daily automated backups with 14-day retention to protect your valuable data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/network.svg" alt="Network">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">Premium Network</h4>
+                                <p class="text-muted">1Gbps unmetered bandwidth with redundant Tier 1 network providers for maximum uptime and performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-4">
+                                <img src="assets/images/feature/dedicated/migration.svg" alt="Migration">
+                            </div>
+                            <div>
+                                <h4 class="fw-bold mb-3">Free Migration</h4>
+                                <p class="text-muted">Our experts will migrate your existing server to our platform at no additional cost.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 my-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">What Our Clients Say</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Trusted by businesses worldwide for their mission-critical hosting needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4">
+                        <div class="star-rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"WeFitHost's dedicated hosting has been a game-changer for our eCommerce platform. The performance is outstanding and their support team is always available when we need them."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/feature/author__one.png" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                            <div>
+                                <h6 class="mb-0 fw-bold">James T.</h6>
+                                <small class="text-muted">CTO, TechCorp</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4">
+                        <div class="star-rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"The reliability of WeFitHost's dedicated servers is unmatched. We've experienced zero downtime since migrating our SaaS platform to their infrastructure."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/feature/author__two.png" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Sarah M.</h6>
+                                <small class="text-muted">Director of Operations</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4">
+                        <div class="star-rating mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"As a high-traffic media company, we need servers that can handle our load. WeFitHost's dedicated solutions have exceeded our expectations in every way."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/feature/author__three.png" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Andrew F.</h6>
+                                <small class="text-muted">IT Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">View More Testimonials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Get answers to common questions about our dedicated hosting</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                                    What is Dedicated Hosting?
+                                </button>
+                            </h3>
+                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Dedicated hosting provides an entire physical server exclusively for your use, with all resources (CPU, RAM, storage) dedicated to your applications. This offers maximum performance, security, and control compared to shared or VPS hosting solutions.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                                    Who should use Dedicated Hosting?
+                                </button>
+                            </h3>
+                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Dedicated servers are ideal for high-traffic websites, large eCommerce stores, SaaS applications, gaming servers, and businesses with strict security or compliance requirements. If you need guaranteed resources and complete control over your server environment, dedicated hosting is the right choice.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                                    How does WeFitHost's dedicated hosting compare to others?
+                                </button>
+                            </h3>
+                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    WeFitHost stands out with our enterprise-grade hardware, premium network infrastructure, and 24/7 expert support. All our dedicated servers include free DDoS protection, automated backups, and a 99.9% uptime SLA. Plus, our management interface makes server administration easier than ever.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                                    Can I upgrade my server later?
+                                </button>
+                            </h3>
+                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! We offer seamless upgrades to more powerful configurations as your needs grow. You can upgrade RAM, storage, or even migrate to a completely different server configuration with minimal downtime. Our support team can help plan and execute upgrades to ensure a smooth transition.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive">
+                                    What kind of support do you offer?
+                                </button>
+                            </h3>
+                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide 24/7/365 support via live chat, email, and phone. Our team of server experts can assist with hardware issues, network problems, and basic OS troubleshooting. For managed service customers, we also handle software updates, security patches, and performance optimization.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-outline-primary px-4">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 my-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Experience Premium Dedicated Hosting?</h2>
+                    <p class="lead mb-5">Get started with enterprise-grade dedicated servers today and take your business to the next level.</p>
+                    <a href="#" class="btn btn-light btn-lg px-5">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer
-      class="pt-10 pb-3 mainfooterstart mb-0"
-      style="background-color: #1e293b; color: white"
-    >
-      <div class="container">
-        <div class="row">
-          <!-- Newsletter & Logo Column (Now first column) -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="mb-4">
-              <a href="#">
-                <img
-                  src="./Logo_Wefithost_03.png"
-                  alt="WefitHost Logo"
-                  class="mb-3"
-                  style="max-height: 40px; filter: brightness(0) invert(1)"
-                />
-              </a>
-              <p style="color: white">
-                Powering websites with reliable hosting since 2015.
-              </p>
-
-              <!-- Newsletter Form (Moved up) -->
-              <div class="mb-4">
-                <h5 style="color: white; font-weight: 600">Newsletter</h5>
-                <form class="mb-2">
-                  <div class="input-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Your email"
-                      style="
-                        border-color: rgba(255, 255, 255, 0.5);
-                        color: white;
-                        background-color: rgba(255, 255, 255, 0.1);
-                      "
-                    />
-                    <button
-                      class="btn btn-primary"
-                      type="submit"
-                      style="
-                        background-color: white;
-                        border-color: white;
-                        color: #1e293b;
-                      "
-                    >
-                      Subscribe
-                    </button>
-                  </div>
-                </form>
-                <small style="color: rgba(255, 255, 255, 0.8)"
-                  >Get hosting tips and special offers</small
-                >
-              </div>
-
-              <!-- Social Icons with updated X icon -->
-              <div class="d-flex gap-3 mt-3">
-                <a href="#" style="color: white"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a href="#" style="color: white"
-                  ><i class="fab fa-x-twitter"></i
-                ></a>
-                <a href="#" style="color: white"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-                <a href="#" style="color: white"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-4">WeFitHost</h4>
+                    <p>Providing premium hosting solutions since 2010 with a focus on performance, reliability, and exceptional customer support.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Hosting</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Dedicated Hosting</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">VPS Hosting</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Shared Hosting</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">WordPress Hosting</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Cloud Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Knowledge Base</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Tutorials</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">System Status</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Submit Ticket</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Live Chat</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Acceptable Use</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">SLA</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">Refund Policy</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <!-- Hosting Column -->
-          <div class="col-lg-2 col-md-6 mb-4">
-            <h5 style="color: white; font-weight: 600">Hosting</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a
-                  href="shared-hosting.html"
-                  style="color: white; text-decoration: none"
-                  >Shared Hosting</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="wordpress-hosting.html"
-                  style="color: white; text-decoration: none"
-                  >WordPress Hosting</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="vps-hosting.html"
-                  style="color: white; text-decoration: none"
-                  >VPS Hosting</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="cloud-hosting.html"
-                  style="color: white; text-decoration: none"
-                  >Cloud Hosting</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="reseller-hosting.html"
-                  style="color: white; text-decoration: none"
-                  >Reseller Hosting</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Domains Column -->
-
-          <div class="col-lg-2 col-md-6 mb-4">
-            <h5 style="color: white; font-weight: 600">Domains</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Register Domain</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="domain-transfer.html"
-                  style="color: white; text-decoration: none"
-                  >Transfer Domain</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Domain Pricing</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >WHOIS Lookup</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="ssl-certificate.html"
-                  style="color: white; text-decoration: none"
-                  >SSL Certificates</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Support Column -->
-          <div class="col-lg-2 col-md-6 mb-4">
-            <h5 style="color: white; font-weight: 600">Support</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Knowledge Base</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Tutorials</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >System Status</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Contact Support</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Free Migration</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Company Column (Now last column) -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <h5 style="color: white; font-weight: 600">Company</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="about.html" style="color: white; text-decoration: none"
-                  >About Us</a
-                >
-              </li>
-              <li class="mb-2">
-                <a href="blog.html" style="color: white; text-decoration: none"
-                  >Blog</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Careers</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="maintenance.html"
-                  style="color: white; text-decoration: none"
-                  >Partners</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="reviews.html"
-                  style="color: white; text-decoration: none"
-                  >Customer Reviews</a
-                >
-              </li>
-            </ul>
-          </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2023 WeFitHost. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by WeFitHost Team</p>
+                </div>
+            </div>
         </div>
-
-        <hr style="border-color: rgba(255, 255, 255, 0.2)" />
-
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <span style="color: white"
-              >© 2025 WefitHost. All rights reserved.</span
-            >
-          </div>
-          <div class="col-md-6">
-            <ul
-              class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0"
-            >
-              <li>
-                <a
-                  href="maintenance.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                  "
-                  >Privacy Policy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="maintenance.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                  "
-                  >Terms of Service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="maintenance.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                  "
-                  >Acceptable Use</a
-                >
-              </li>
-              <li>
-                <a
-                  href="maintenance.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                  "
-                  >Service Level Agreement</a
-                >
-              </li>
-              <li>
-                <a
-                  href="maintenance.html"
-                  style="
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.875rem;
-                  "
-                  >DMCA</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </footer>
 
-    <style>
-      .footerlinkcoor input.form-control {
-        background-color: inherit;
-        color: white;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-      }
-
-      .footerlinkcoor input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .footerlinkcoor button.btn {
-        background-color: white;
-        color: #6b63ff;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-    </style>
-
-    <!-- Footer End -->
-
-    <!-- Libs JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
-
-    <!-- Theme JS -->
-    <script src="assets/js/theme.min.js"></script>
-    <script src="assets/js/init.js?t=20240403"></script>
-    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
-    <script src="assets/js/vendors/scrollcue.js"></script>
-
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JavaScript -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let navbar = document.querySelector(".navbar");
-
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            // Change when scrolled 50px
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pricing toggle functionality
+            const pricingToggles = document.querySelectorAll('.price-toggle-btn');
+            
+            pricingToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    // Remove active class from all toggles
+                    pricingToggles.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked toggle
+                    this.classList.add('active');
+                    
+                    // Show/hide pricing content
+                    const period = this.getAttribute('data-period');
+                    document.querySelectorAll('.pricing-content').forEach(content => {
+                        content.classList.add('d-none');
+                    });
+                    document.getElementById(`${period}-pricing`).classList.remove('d-none');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize data center map if element exists
+            if (document.getElementById('dataCenterMap')) {
+                const map = L.map('dataCenterMap').setView([20, 0], 2);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                // Add markers for data center locations
+                const locations = [
+                    {name: "Dallas, USA", coords: [32.7767, -96.7970]},
+                    {name: "New York, USA", coords: [40.7128, -74.0060]},
+                    {name: "Los Angeles, USA", coords: [34.0522, -118.2437]},
+                    {name: "Toronto, Canada", coords: [43.6532, -79.3832]},
+                    {name: "London, UK", coords: [51.5074, -0.1278]},
+                    {name: "Frankfurt, Germany", coords: [50.1109, 8.6821]},
+                    {name: "Paris, France", coords: [48.8566, 2.3522]},
+                    {name: "Amsterdam, Netherlands", coords: [52.3676, 4.9041]},
+                    {name: "Singapore", coords: [1.3521, 103.8198]},
+                    {name: "Tokyo, Japan", coords: [35.6762, 139.6503]},
+                    {name: "Mumbai, India", coords: [19.0760, 72.8777]},
+                    {name: "Sydney, Australia", coords: [-33.8688, 151.2093]}
+                ];
+                
+                locations.forEach(loc => {
+                    L.marker(loc.coords).addTo(map)
+                        .bindPopup(`<b>${loc.name}</b><br>Data Center Location`);
+                });
+            }
         });
-      });
     </script>
-  </body>
+</body>
 </html>
