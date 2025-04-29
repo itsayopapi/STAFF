@@ -355,6 +355,10 @@
         opacity: 0.9;
       }
 
+      .woocommerce-performance .text-muted {
+        color: #bbb !important;
+      }
+
       /* Sections */
       .section-title {
         color: var(--dark);
@@ -365,7 +369,7 @@
         padding-bottom: 1rem;
       }
 
-      .section-title:after {
+      /* .section-title:after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -375,7 +379,7 @@
         height: 3px;
         background: linear-gradient(90deg, var(--primary), var(--secondary));
         border-radius: 3px;
-      }
+      } */
 
       /* Features */
       .feature-card {
@@ -625,16 +629,19 @@
         transform: rotate(180deg);
       }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            border-radius: 12px;
-            margin: 5rem auto 7rem auto;
-
-        }
+      /* CTA Section */
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--dark) 0%,
+          var(--primary) 100%
+        );
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+        border-radius: 12px;
+        margin: 5rem auto 7rem auto;
+      }
 
       /* Dashboard Preview */
       .dashboard-preview {
@@ -819,47 +826,57 @@
                       </div>
                     </div>
 
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-server me-2"></i>Traditional
-                                                Hosting</h6>
-                                            <a class="dropdown-item" href="shared-hosting.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Shared Hosting</strong>
-                                                    <small class="text-muted">Affordable hosting for small
-                                                        websites</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="vps-hosting.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>VPS Hosting</strong>
-                                                    <small class="text-muted">Scalable virtual private servers</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="web-hosting.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Web Hosting</strong>
-                                                    <small class="text-muted">Reliable web hosting solutions</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="dedicated-hosting.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Dedicated Hosting</strong>
-                                                    <small class="text-muted">Full control with enterprise
-                                                        hardware</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="autoscalling.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Autoscaling</strong>
-                                                    <small class="text-muted">Intelligent Auto-Scaling for Modern Cloud Applications</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-server me-2"></i>Traditional Hosting
+                        </h6>
+                        <a class="dropdown-item" href="shared-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Shared Hosting</strong>
+                            <small class="text-muted"
+                              >Affordable hosting for small websites</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="vps-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>VPS Hosting</strong>
+                            <small class="text-muted"
+                              >Scalable virtual private servers</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="web-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Web Hosting</strong>
+                            <small class="text-muted"
+                              >Reliable web hosting solutions</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="dedicated-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Dedicated Hosting</strong>
+                            <small class="text-muted"
+                              >Full control with enterprise hardware</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="autoscalling.html">
+                          <div class="d-flex flex-column">
+                            <strong>Autoscaling</strong>
+                            <small class="text-muted"
+                              >Intelligent Auto-Scaling for Modern Cloud
+                              Applications</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
 
               <!-- Domains Mega Dropdown -->
               <li class="nav-item dropdown mega-dropdown">
@@ -1017,81 +1034,95 @@
                           </div>
                         </a>
 
-                                            <a class="dropdown-item" href="reseller-plans.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Reseller Plans</strong>
-                                                    <small class="text-muted">Start your hosting business</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>WHMCS Integration</strong>
-                                                    <small class="text-muted">Complete billing automation</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>White Label</strong>
-                                                    <small class="text-muted">Brand as your own service</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                        <a class="dropdown-item" href="reseller-plans.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Plans</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WHMCS Integration</strong>
+                            <small class="text-muted"
+                              >Complete billing automation</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label</strong>
+                            <small class="text-muted"
+                              >Brand as your own service</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
 
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-people me-2"></i>Client
-                                                Management
-                                            </h6>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Client Accounts</strong>
-                                                    <small class="text-muted">Manage all your clients</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Automated Billing</strong>
-                                                    <small class="text-muted">Recurring invoices & payments</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Support System</strong>
-                                                    <small class="text-muted">Handle client tickets</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>Client Management
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Accounts</strong>
+                            <small class="text-muted"
+                              >Manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Automated Billing</strong>
+                            <small class="text-muted"
+                              >Recurring invoices & payments</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Support System</strong>
+                            <small class="text-muted"
+                              >Handle client tickets</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
 
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <h6 class="dropdown-header"><i class="bi bi-graph-up me-2"></i>Business
-                                                Growth
-                                            </h6>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Marketing Tools</strong>
-                                                    <small class="text-muted">Grow your hosting business</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Partner Program</strong>
-                                                    <small class="text-muted">Earn commissions</small>
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item" href="maintenance.html">
-                                                <div class="d-flex flex-column">
-                                                    <strong>Resources</strong>
-                                                    <small class="text-muted">Guides & tutorials</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Business Growth
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Tools</strong>
+                            <small class="text-muted"
+                              >Grow your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted">Earn commissions</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Resources</strong>
+                            <small class="text-muted">Guides & tutorials</small>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
 
               <!-- Services Mega Dropdown -->
               <li class="nav-item dropdown mega-dropdown">
@@ -1423,78 +1454,83 @@
               </li>
             </ul>
 
-                    <!-- Right-side buttons -->
-                    <div class="d-flex align-items-center">
-                        <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
-                        <a href="https://my.wefithost.com/login" class="btn btn-link login-btn me-3"><i
-                                class="bi bi-person"></i> Log In</a>
-                        <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
-                    </div>
-                </div>
+            <!-- Right-side buttons -->
+            <div class="d-flex align-items-center">
+              <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+              <a
+                href="https://my.wefithost.com/login"
+                class="btn btn-link login-btn me-3"
+                ><i class="bi bi-person"></i> Log In</a
+              >
+              <a href="https://my.wefithost.com/manage" class="btn btn-primary"
+                >Sign Up</a
+              >
             </div>
-        </nav>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <div class="mobile-menu-backdrop"></div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        const backdrop = document.querySelector('.mobile-menu-backdrop');
-        
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
         // Initialize Bootstrap Collapse
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-            toggle: false
+          toggle: false,
         });
 
         // Toggle menu and backdrop
-        navbarToggler.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            if (!isExpanded) {
-                bsCollapse.show();
-                backdrop.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            } else {
-                bsCollapse.hide();
-                backdrop.classList.remove('show');
-                document.body.style.overflow = '';
-            }
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
         });
 
         // Close menu when clicking backdrop
-        backdrop.addEventListener('click', function() {
-            navbarToggler.setAttribute('aria-expanded', 'false');
-            bsCollapse.hide();
-            this.classList.remove('show');
-            document.body.style.overflow = '';
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
         });
 
         // Close menu when clicking a nav link (for mobile)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {
-                    navbarToggler.setAttribute('aria-expanded', 'false');
-                    bsCollapse.hide();
-                    backdrop.classList.remove('show');
-                    document.body.style.overflow = '';
-                }
-            });
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
         });
 
         // Close menu when resizing to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 992) {
-                navbarToggler.setAttribute('aria-expanded', 'false');
-                bsCollapse.hide();
-                backdrop.classList.remove('show');
-                document.body.style.overflow = '';
-            }
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
         });
-    });
-</script>
+      });
+    </script>
     <!-- Navbar End -->
 
     <!-- WooCommerce Hosting Hero Section -->
@@ -1554,13 +1590,20 @@
     </section>
 
     <!-- Performance Section -->
-    <section class="py-5 py-lg-10 bg-light" data-cue="fadeIn">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-cue="zoomIn">
-                    <h2 class="section-title text-start text-dark">Built for Speed & Performance</h2>
-                    <p class="lead">Our WooCommerce-optimized hosting delivers significantly faster page loads compared
-                        to standard hosting solutions.</p>
+    <section
+      class="py-5 py-lg-10 bg-light woocommerce-performance"
+      data-cue="fadeIn"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-cue="zoomIn">
+            <h2 class="section-title text-start text-dark">
+              Built for Speed & Performance
+            </h2>
+            <p class="lead">
+              Our WooCommerce-optimized hosting delivers significantly faster
+              page loads compared to standard hosting solutions.
+            </p>
 
             <div class="performance-meter mt-4">
               <div class="meter-fill" style="width: 95%"></div>
@@ -1641,9 +1684,13 @@
 
     <!-- Features Section -->
     <section class="py-5 py-lg-10" id="features" data-cue="fadeIn">
-        <div class="container">
-            <h2 class="section-title" data-cue="zoomIn">Everything Your Online Store Needs</h2>
-            <p class="lead text-center mb-5" data-cue="zoomIn">Specialized features to help your WooCommerce store succeed</p>
+      <div class="container">
+        <h2 class="section-title" data-cue="zoomIn">
+          Everything Your Online Store Needs
+        </h2>
+        <p class="lead text-center mb-5" data-cue="zoomIn">
+          Specialized features to help your WooCommerce store succeed
+        </p>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-3" data-cue="zoomIn">
@@ -1735,12 +1782,17 @@
 
     <!-- WooCommerce Dashboard Section -->
     <section class="py-5 py-lg-10 bg-light" data-cue="fadeIn">
-        <div class="container">
-            <div class="row align-items-center" >
-                <div class="col-lg-6 mb-5 mb-lg-0" data-cue="zoomIn">
-                    <h2 class="section-title text-start text-dark">Optimized WooCommerce Dashboard</h2>
-                    <p class="lead">We've customized our hosting environment specifically for WooCommerce stores to give
-                        you the best performance and easiest management.</p>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-cue="zoomIn">
+            <h2 class="section-title text-start text-dark">
+              Optimized WooCommerce Dashboard
+            </h2>
+            <p class="lead">
+              We've customized our hosting environment specifically for
+              WooCommerce stores to give you the best performance and easiest
+              management.
+            </p>
 
             <ul class="feature-list mt-4">
               <li>Pre-installed WooCommerce with optimized settings</li>
@@ -1880,8 +1932,8 @@
       /* Swiper-Specific Styling */
       .pricing-swiper {
         position: relative;
-        padding-top: 58px; 
-        padding-bottom: 50px; 
+        padding-top: 58px;
+        padding-bottom: 50px;
       }
 
       /* Ensure Swiper takes full width */
@@ -1892,14 +1944,13 @@
 
       /* Swiper slide styling */
       .swiper-slide {
-        width: auto; 
+        width: auto;
         height: auto;
         display: flex;
-        align-items: stretch; 
+        align-items: stretch;
         justify-content: center;
       }
 
-   
       .swiper-wrapper {
         align-items: stretch;
       }
@@ -1954,8 +2005,6 @@
         color: #fff;
       }
 
-      
-
       /* Adjust button positioning for smaller screens */
       @media (max-width: 768px) {
         .swiper-button-prev {
@@ -1968,9 +2017,9 @@
 
       /* Pricing card styling */
       .pricing-card {
-        width: 100%; 
-        max-width: 350px; 
-        margin: 0 auto; 
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
       }
 
       /* Ensure equal height for cards */
@@ -1978,15 +2027,12 @@
         display: flex;
         flex-direction: column;
       }
-
-     
-     
     </style>
 
     <!-- Testimonials Section -->
     <section class="py-5 py-lg-10" data-cue="fadeIn">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
 
         <div class="row g-4">
           <div class="col-md-4" data-cue="zoomIn">
@@ -2079,34 +2125,51 @@
     </section>
     <!-- CTA Section -->
     <section class="cta-section" data-cue="zoomIn">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold mb-4 text-secondary">Ready to Boost Your Online Store?</h2>
-                    <p class="lead mb-5">Join thousands of successful WooCommerce stores powered by WeFitHost</p>
-                    <a href="https://my.wefithost.com/manage" class="btn btn-secondary btn-lg me-3">
-                        <i class="fas fa-shopping-cart me-2"></i>Get Started Now
-                    </a>
-                    <a href="maintenance.html" class="btn btn-outline-secondary btn-lg">
-                        <i class="fas fa-phone-alt me-2"></i>Talk to an Expert
-                    </a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="display-5 fw-bold mb-4 text-secondary">
+              Ready to Boost Your Online Store?
+            </h2>
+            <p class="lead mb-5">
+              Join thousands of successful WooCommerce stores powered by
+              WeFitHost
+            </p>
+            <a
+              href="https://my.wefithost.com/manage"
+              class="btn btn-secondary btn-lg me-3"
+            >
+              <i class="fas fa-shopping-cart me-2"></i>Get Started Now
+            </a>
+            <a href="maintenance.html" class="btn btn-outline-secondary btn-lg">
+              <i class="fas fa-phone-alt me-2"></i>Talk to an Expert
+            </a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
-        <div class="container">
-            <div class="row">
-                <!-- Newsletter & Logo Column (Now first column) -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="mb-4">
-                        <a href="#">
-                            <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
-                                style="max-height: 40px; filter: brightness(0) invert(1);">
-                        </a>
-                        <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+    <footer
+      class="pt-10 pb-3 mainfooterstart mb-0"
+      style="background-color: #1e293b; color: white"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
 
               <!-- Newsletter Form (Moved up) -->
               <div class="mb-4">
@@ -2422,8 +2485,11 @@
     <!-- Footer End -->
 
     <!-- Libs JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
