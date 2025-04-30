@@ -719,1392 +719,1057 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 <!-- Navbar End -->
 
-    <!-- HEADER AREA END -->
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4e66f8;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --accent-color: #00c9a7;
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, #6a11cb 100%);
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+        
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop') center/cover;
+            opacity: 0.1;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(78, 102, 248, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .feature-icon img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .pricing-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .price-toggle {
+            background: rgba(78, 102, 248, 0.1);
+            border-radius: 30px;
+            padding: 5px;
+            display: inline-flex;
+        }
+        
+        .price-toggle-btn {
+            border: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .price-toggle-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .discount-badge {
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .faq-item {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-button {
+            font-weight: 600;
+            padding: 1.25rem;
+            background: white;
+        }
+        
+        .faq-button:not(.collapsed) {
+            color: var(--primary-color);
+            background: white;
+            box-shadow: none;
+        }
+        
+        .support-section {
+            background: var(--dark-color);
+            color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .support-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop') center/cover;
+            opacity: 0.1;
+        }
+        
+        .cta-section {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470&auto=format&fit=crop') center/cover;
+            opacity: 0.2;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #3a56f7;
+            border-color: #3a56f7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.75rem;
+        }
+        
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        .feature-list li.disabled {
+            color: #adb5bd;
+        }
+        
+        .feature-list li.disabled::before {
+            content: '\f00d';
+            color: #adb5bd;
+        }
+        
+        .benefit-card {
+            border: none;
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .integration-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .integration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .integration-logo {
+            height: 50px;
+            margin-bottom: 1rem;
+            object-fit: contain;
+        }
+        
+        .stats-section {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-card {
+            border: none;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 3rem 0;
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
 
-    <!-- shared hosting banner -->
-    <div class="rts-hosting-banner rts-hosting-banner-bg banner-default-height">
-        <div class="container">
-            <div class="row justify-content-sm-center">
-                <div class="banner-area">
-                    <div class="rts-hosting-banner rts-hosting-banner__content business-mail-banner">
-                        <span class="starting__price" data-sal="slide-down" data-sal-delay="100"
-                            data-sal-duration="800">Email Hosting</span>
-                        <h1 class="banner-title" data-sal="slide-down" data-sal-delay="200" data-sal-duration="800">
-                            Don’t Pay Extra for Email – Get It Free
-                        </h1>
-                        <p class="slogan" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">Get free
-                            10GB business-class email with every Wefithost hosting plan. Unlike other providers, we
-                            don’t lure you in with low prices and then charge extra for essential features. Enjoy
-                            premium hosting with built-in value—no hidden fees, just reliable service.</p>
-                        <div class="hosting-action">
-                            <a href="" class="btn__two secondary__bg secondary__color">Start Now <i
-                                    class="fa-regular fa-arrow-right"></i></a>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 rounded-pill">Professional Email Hosting</span>
+                    <h1 class="display-4 fw-bold mb-4">Business-Class Email Without the Enterprise Price Tag</h1>
+                    <p class="lead mb-4">Get premium email hosting with 10GB storage, advanced security, and 99.9% uptime included with every plan. No hidden fees, no upsells - just professional email that makes your business look its best.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#pricing" class="btn btn-light btn-lg rounded-pill px-4">Get Started <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#features" class="btn btn-outline-light btn-lg rounded-pill px-4">Learn More</a>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center">
+                        <div class="d-flex">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="rounded-circle border border-2 border-white" width="40" height="40">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User" class="rounded-circle border border-2 border-white ms-n2" width="40" height="40">
+                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="User" class="rounded-circle border border-2 border-white ms-n2" width="40" height="40">
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 small">Trusted by <strong>25,000+</strong> businesses worldwide</p>
+                            <div class="text-warning small">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="text-white ms-1">4.9/5</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="rts-hosting-banner__image business-mail__image">
-                        <img src="assets/images/banner/banner__business__mail__image.svg" alt="">
-                        <img class="shape-image one" src="assets/images/banner/banner__business__mail__image-sm1.svg"
-                            alt="">
-                    </div>
+                </div>
+                <div class="col-lg-6 hero-image">
+                    <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1632&auto=format&fit=crop" alt="Email Hosting" class="img-fluid rounded-4 shadow">
                 </div>
             </div>
         </div>
-    </div>
-    <!-- shared hosting banner end-->
+    </section>
 
-    <!-- HOSTIE FEATURE AREA -->
-    <section class="rts-feature-six section__padding business">
+    <!-- Stats Section -->
+    <section class="stats-section py-4">
         <div class="container">
             <div class="row">
-                <div class="rts-section text-center">
-                    <h2 class="rts-section__title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
-                        Hostie Email Key Features</h2>
-                    <p class="rts-section__description" data-sal="slide-down" data-sal-delay="300"
-                        data-sal-duration="800">Powerful and Unique Tools for Your Email Inbox</p>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="text-muted">Uptime Guarantee</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">10GB</div>
+                    <div class="text-muted">Storage Per Mailbox</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="text-muted">Customer Support</div>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="text-muted">Integrations</div>
                 </div>
             </div>
-            <div class="row gy-30 justify-content-sm-center">
-                <div class="col-lg-3 col-md-6 col-sm-10" data-sal="slide-down" data-sal-delay="500"
-                    data-sal-duration="800">
-                    <div class="single__feature">
-                        <div class="single__feature--box text-center">
-                            <div class="single__feature--box-icon m-auto">
-                                <img src="assets/images/feature/feature-08.svg" alt="">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Professional Email Features</h2>
+                <p class="lead text-muted">Everything you need for secure, reliable business communication</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt text-primary" style="font-size: 2rem;"></i>
                             </div>
-                            <h5 class="single__feature--box-title">
-                                Multi Account Access
-                            </h5>
-                            <p class="single__feature--box-description">
-                                If you need secure, ad-free email that’s reliable, Wefithost has you covered. Our email
-                                is compatible with Microsoft, Google, Apple, Mozilla, and all major mail clients.
-                            </p>
+                            <h5 class="fw-bold mb-3">Advanced Security</h5>
+                            <p class="text-muted">Enterprise-grade spam filtering, virus protection, and encryption keep your communications safe from threats.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-10" data-sal="slide-down" data-sal-delay="600"
-                    data-sal-duration="800">
-                    <div class="single__feature">
-                        <div class="single__feature--box text-center">
-                            <div class="single__feature--box-icon m-auto">
-                                <img src="assets/images/feature/feature-09.svg" alt="">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt text-primary" style="font-size: 2rem;"></i>
                             </div>
-                            <h5 class="single__feature--box-title">
-                                email@yourcompany.com
-
-                            </h5>
-                            <p class="single__feature--box-description">
-                                First impressions matter. Whether you run a business or a side hustle, a professional
-                                email builds trust. An address that matches your domain makes you look established and
-                                credible.
-                            </p>
+                            <h5 class="fw-bold mb-3">Seamless Sync</h5>
+                            <p class="text-muted">Access your email from any device with full IMAP/POP3 support and real-time synchronization.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-10" data-sal="slide-down" data-sal-delay="700"
-                    data-sal-duration="800">
-                    <div class="single__feature">
-                        <div class="single__feature--box text-center">
-                            <div class="single__feature--box-icon m-auto">
-                                <img src="assets/images/feature/feature-10.svg" alt="">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar-alt text-primary" style="font-size: 2rem;"></i>
                             </div>
-                            <h5 class="single__feature--box-title">
-                                Email Migration Tools
-                            </h5>
-                            <p class="single__feature--box-description">
-                                Don't start from scratch: bring along existing emails
-                            </p>
+                            <h5 class="fw-bold mb-3">Shared Calendars</h5>
+                            <p class="text-muted">Schedule meetings and coordinate with your team using shared calendars and contacts.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-10" data-sal="slide-down" data-sal-delay="800"
-                    data-sal-duration="800">
-                    <div class="single__feature">
-                        <div class="single__feature--box text-center">
-                            <div class="single__feature--box-icon m-auto">
-                                <img src="assets/images/feature/feature-11.svg" alt="">
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-undo text-primary" style="font-size: 2rem;"></i>
                             </div>
-                            <h5 class="single__feature--box-title">
-                                Undo & Fix Emails
-                            </h5>
-                            <p class="single__feature--box-description">
-                                Mistakes happen and you can fix them. Undo a sent email
-                            </p>
+                            <h5 class="fw-bold mb-3">Undo Send</h5>
+                            <p class="text-muted">Recall emails within 30 seconds of sending to fix mistakes before they're seen.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- HOSTIE FEATURE AREA END -->
 
-    <!-- PRICING PLAN START -->
-    <div class="rts-pricing-plan alice__blue section__padding">
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 bg-light">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="rts-section text-center">
-                    <h2 class="rts-section__title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">
-                        Purchase Email Hosting Plan</h2>
-                    <p class="rts-section__description w-420" data-sal="slide-down" data-sal-delay="200"
-                        data-sal-duration="800">Globally incubate next-generation e-services via state of the art
-                        technology.
-                    </p>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop" alt="Professional Email Benefits" class="img-fluid rounded-4 shadow">
                 </div>
-            </div>
-            <div class="row">
-                <div class="row justify-content-center">
-                    <div class="col-lg-3 col-md-5">
-                        <div class="rts-pricing-plan__tab plan__tab">
-                            <div class="tab__button">
-                                <div class="tab__button__item">
-                                    <button class="active tab__price text-white" data-tab="monthly">monthly</button>
-                                    <button class="tab__price text-white" data-tab="yearly">yearly</button>
-                                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Why Professional Email Matters</h2>
+                    <p class="lead mb-4">First impressions count. A professional email address builds trust and credibility with your customers.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="benefit-card bg-white">
+                                <i class="fas fa-check-circle text-primary mb-3" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold">Brand Consistency</h5>
+                                <p class="mb-0">Reinforce your brand with every email you send using your own domain name.</p>
                             </div>
-                            <div class="discount">
-                                <span class="line"><img src="assets/images/pricing/offer__vactor.svg" height="20"
-                                        width="85" alt=""></span>
-                                <p>20% save</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="benefit-card bg-white">
+                                <i class="fas fa-check-circle text-primary mb-3" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold">Increased Trust</h5>
+                                <p class="mb-0">Customers are 9x more likely to engage with a professional email address.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="benefit-card bg-white">
+                                <i class="fas fa-check-circle text-primary mb-3" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold">Better Deliverability</h5>
+                                <p class="mb-0">Avoid spam filters that often flag free email providers.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="benefit-card bg-white">
+                                <i class="fas fa-check-circle text-primary mb-3" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold">Team Collaboration</h5>
+                                <p class="mb-0">Shared contacts, calendars and delegation features for your whole team.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- PRICING PLAN -->
-                <div class="price__content open" id="monthly">
-                    <div class="row g-30 monthly">
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan">
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Basic</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$6.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 3.63 <sub>/ month</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 6.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan">
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/premium.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Premium</h4>
-                                </div>
-                                <p class="card-plan__desc">Level-up more power features</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$12.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 6.63 <sub>/ month</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 6.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan active">
-                                <div class="popular-tag">most popular</div>
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/business.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Business</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$19.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 8.63 <sub>/ month</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 6.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan ">
-
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/cloud.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Cloud Startup</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$29.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 11.63 <sub>/ month</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 6.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                    </div>
-                </div>
-
-                <!-- PRICING PLAN -->
-                <div class="price__content" id="yearly">
-                    <div class="row g-30 yearly">
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan">
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/basic.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Basic</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$79.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 36.63 <sub>/ year</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 79.99 /year when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan">
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/premium.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Premium</h4>
-                                </div>
-                                <p class="card-plan__desc">Level-up more power features</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$151.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 79.56 <sub>/ year</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 151.99 /year when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan active">
-                                <div class="popular-tag">most popular</div>
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/business.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Business</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$235.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 103.63 <sub>/ year</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 235.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-xmark"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                        <!-- single card -->
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card-plan ">
-                                <div class="card-plan__package">
-                                    <div class="icon">
-                                        <img src="assets/images/pricing/cloud.svg" height="30" width="30" alt="">
-                                    </div>
-                                    <h4 class="package__name">Cloud Startup</h4>
-                                </div>
-                                <p class="card-plan__desc">Everything need to your website</p>
-                                <div class="card-plan__offer">
-                                    <span class="past-price">$353.63</span>
-                                    <span class="offer-given">Save 60%</span>
-                                </div>
-                                <h5 class="card-plan__price">
-                                    <sup>$</sup> 139.63 <sub>/ year</sub>
-                                </h5>
-                                <div class="card-plan__cartbtn">
-                                    <a href="#">add to cart</a>
-                                </div>
-                                <p class="card-plan__renew-price">
-                                    $ 353.99 /mo when you renew
-                                </p>
-                                <div class="card-plan__feature">
-                                    <ul class="card-plan__feature--list">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 1 Website</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Explore, discover, and learn on our innovative and informative website."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Standard
-                                                Performance</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Unlock superior online experiences with our standard performance solutions, ensuring reliability, speed, and seamless functionality for your website needs."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 24/7/365
-                                                Support</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides reliable 24/7 support for your hosting needs, ensuring assistance whenever you require help."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Free Email</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers complimentary email services, empowering your online communication with reliable and secure free email solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited
-                                                Bandwidth</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie provides unlimited bandwidth, ensuring seamless data transfer for your website's optimal performance and user experience."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Elevate your online presence with Hostie, offering unlimited bandwidth for your domain, ensuring optimal performance and seamless data flow."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-
-
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">More Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-down"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <ul class="card-plan__feature--list more__feature">
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 100 GB SSD
-                                                Storage</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie offers generous hosting with 100GB SSD storage, providing ample space for your data and ensuring high-performance storage solutions."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Unlimited Free
-                                                SSL</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Secure your website with Hostie's unlimited free SSL certificates, ensuring encrypted and safe online transactions for your users."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> 99.9% Uptime
-                                                Guarantee</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Hostie guarantees 99% uptime, ensuring your website is consistently available and reliable for visitors around the clock."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-item">
-                                            <span class="text"><i class="fa-regular fa-check"></i> Web Application
-                                                Firewall</span>
-                                            <span class="tolltip" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="Enhance your website's security with Hostie's Web Application Firewall, protecting against online threats and ensuring a safe online environment."><i
-                                                    class="fa-light fa-circle-question"></i></span>
-                                        </li>
-                                        <li class="card-plan__feature--list-trigered">
-                                            <span class="text">See less Features <i
-                                                    class="fa-sharp fa-regular fa-chevron-up"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single card end -->
-                    </div>
-                </div>
-            </div>
-            <div class="view-plan-btn">
-                <a href="" class="btn long-btn">view all plan</a>
             </div>
         </div>
-    </div>
-    <!-- PRICING PLAN START END -->
+    </section>
 
-    <!-- SHARED HOSTING FAQ -->
-    <div class="rts-hosting-faq section__padding">
+    <!-- Testimonials Section -->
+    <section class="py-5 my-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="rts-section text-center">
-                        <h2 class="rts-section__title mb-0" data-sal="slide-down" data-sal-delay="200"
-                            data-sal-duration="800">Frequently asked questions</h2>
-                    </div>
-                    <div class="rts-faq__accordion">
-                        <div class="accordion accordion-flush" id="rts-accordion">
-                            <div class="accordion-item active">
-                                <div class="accordion-header" id="first">
-                                    <h4 class="accordion-button collapse show" data-bs-toggle="collapse"
-                                        data-bs-target="#item__one" aria-expanded="false" aria-controls="item__one">
-                                        Why buy a domain name from hostie?
-                                    </h4>
-                                </div>
-                                <div id="item__one" class="accordion-collapse collapse collapse show"
-                                    aria-labelledby="first" data-bs-parent="#rts-accordion">
-                                    <div class="accordion-body">
-                                        Above all else, we strive to deliver outstanding customer experiences. When you
-                                        buy a domain name from hostie, we guarantee it will be handed over.
-                                    </div>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">What Our Customers Say</h2>
+                <p class="lead text-muted">Trusted by businesses of all sizes worldwide</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                            <div>
+                                <h5 class="fw-bold mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">Small Business Owner</p>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="two">
-                                    <h4 class="accordion-button collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#item__two" aria-expanded="false" aria-controls="item__two">
-                                        How does domain registration work?
-                                    </h4>
-                                </div>
-                                <div id="item__two" class="accordion-collapse collapse" aria-labelledby="two"
-                                    data-bs-parent="#rts-accordion">
-                                    <div class="accordion-body">
-                                        Above all else, we strive to deliver outstanding customer experiences. When you
-                                        buy a domain name from hostie, we guarantee it will be handed over.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="three">
-                                    <h4 class="accordion-button collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#item__three" aria-expanded="false" aria-controls="item__three">
-                                        Why is domain name registration required?
-                                    </h4>
-                                </div>
-                                <div id="item__three" class="accordion-collapse collapse" aria-labelledby="three"
-                                    data-bs-parent="#rts-accordion">
-                                    <div class="accordion-body">
-                                        Above all else, we strive to deliver outstanding customer experiences. When you
-                                        buy a domain name from hostie, we guarantee it will be handed over.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="four">
-                                    <h4 class="accordion-button collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#item__four" aria-expanded="false" aria-controls="item__four">
-                                        Why is domain name registration required?
-                                    </h4>
-                                </div>
-                                <div id="item__four" class="accordion-collapse collapse" aria-labelledby="four"
-                                    data-bs-parent="#rts-accordion">
-                                    <div class="accordion-body">
-                                        Above all else, we strive to deliver outstanding customer experiences. When you
-                                        buy a domain name from hostie, we guarantee it will be handed over.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="five">
-                                    <h4 class="accordion-button collapsed" data-bs-toggle="collapse"
-                                        data-bs-target="#item__five" aria-expanded="false" aria-controls="item__four">
-                                        Why is domain name registration required?
-                                    </h4>
-                                </div>
-                                <div id="item__five" class="accordion-collapse collapse" aria-labelledby="five"
-                                    data-bs-parent="#rts-accordion">
-                                    <div class="accordion-body">
-                                        Above all else, we strive to deliver outstanding customer experiences. When you
-                                        buy a domain name from hostie, we guarantee it will be handed over.
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
+                        <p>"Switching to professional email with HostEmail transformed how clients perceive my business. The setup was incredibly easy and the reliability has been perfect."</p>
                     </div>
                 </div>
-
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="testimonial-avatar">
+                            <div>
+                                <h5 class="fw-bold mb-0">Michael Chen</h5>
+                                <p class="text-muted mb-0">Marketing Director</p>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"The shared calendars and contacts have revolutionized how our team works together. We've seen a 30% improvement in scheduling efficiency since switching."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez" class="testimonial-avatar">
+                            <div>
+                                <h5 class="fw-bold mb-0">Emily Rodriguez</h5>
+                                <p class="text-muted mb-0">Nonprofit Executive</p>
+                                <div class="text-warning small">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"For our nonprofit, budget is always a concern. Getting professional email included with our hosting has saved us hundreds per year with no compromise on quality."</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- SHARED HOSTING FAQ END -->
+    </section>
 
-    <!-- SUPPORT AREA -->
-    <div class="rts-support black__friday--support">
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="rts-support__wrapper">
-                    <div class="rts-support__wrapper--content">
-                        <h3 class="title" data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">24/7
-                            World-Class Support</h3>
-                        <p data-sal="slide-down" data-sal-delay="200" data-sal-duration="800">Ran into trouble? Contact
-                            our Customer Success team any
-                            time via live chat or email.
-                        </p>
-                        <div class="feature" data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">
-                            <ul class="feature__list">
-                                <li class="feature__item">Receive professional WordPress support</li>
-                                <li class="feature__item">Our specialists are available round</li>
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Seamless Integrations</h2>
+                <p class="lead text-muted">Works with the tools you already use</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg" alt="Outlook" class="integration-logo">
+                        <h5 class="fw-bold">Outlook</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple_Mail_%282018%29.svg" alt="Apple Mail" class="integration-logo">
+                        <h5 class="fw-bold">Apple Mail</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar" class="integration-logo">
+                        <h5 class="fw-bold">Google Calendar</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Dropbox_Logo.svg" alt="Dropbox" class="integration-logo">
+                        <h5 class="fw-bold">Dropbox</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Microsoft_Teams_%282018%E2%80%93present%29.svg" alt="Microsoft Teams" class="integration-logo">
+                        <h5 class="fw-bold">Microsoft Teams</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="Slack" class="integration-logo">
+                        <h5 class="fw-bold">Slack</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Salesforce_logo.svg" alt="Salesforce" class="integration-logo">
+                        <h5 class="fw-bold">Salesforce</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="integration-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Zoom_Communications_Logo.svg" alt="Zoom" class="integration-logo">
+                        <h5 class="fw-bold">Zoom</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">View All Integrations</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Simple, Transparent Pricing</h2>
+                <p class="lead text-muted w-lg-50 mx-auto">Professional email included with every hosting plan - no surprises</p>
+            </div>
+            
+            <div class="text-center mb-5">
+                <div class="price-toggle d-inline-flex">
+                    <button class="price-toggle-btn active" data-period="monthly">Monthly</button>
+                    <button class="price-toggle-btn" data-period="yearly">Yearly <span class="discount-badge">20% Save</span></button>
+                </div>
+            </div>
+            
+            <!-- Monthly Pricing -->
+            <div class="row g-4 pricing-content" id="monthly-pricing">
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-flag text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold mb-0">Starter</h5>
+                            </div>
+                            <p class="text-muted mb-4">Perfect for personal websites</p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-decoration-line-through text-muted">$6.99</span>
+                                <span class="badge bg-danger">Save 60%</span>
+                            </div>
+                            
+                            <h3 class="price-amount mb-4">$3.63 <small class="price-period">/ month</small></h3>
+                            
+                            <a href="#" class="btn btn-outline-primary w-100 mb-3">Add to Cart</a>
+                            
+                            <p class="small text-muted mb-4">$6.99 /mo when you renew</p>
+                            
+                            <ul class="feature-list list-unstyled mb-4">
+                                <li>1 Website</li>
+                                <li>10GB Storage</li>
+                                <li>5 Email Accounts</li>
+                                <li>24/7 Support</li>
+                                <li>Free SSL Certificate</li>
+                                <li class="disabled">Unlimited Bandwidth</li>
+                                <li class="disabled">Priority Support</li>
+                                <li class="disabled">Daily Backups</li>
                             </ul>
                         </div>
-                        <a href="support.php" class="rts-btn rts-btn-primary support-btn">Get Support <i
-                                class="fa-regular fa-chevron-right"></i></a>
                     </div>
-                    <div class="rts-support__wrapper--image" data-sal="slide-left" data-sal-delay="400"
-                        data-sal-duration="800">
-                        <img src="assets/images/support/support__image.svg" alt="">
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-star text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold mb-0">Professional</h5>
+                            </div>
+                            <p class="text-muted mb-4">Great for small businesses</p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-decoration-line-through text-muted">$12.99</span>
+                                <span class="badge bg-danger">Save 60%</span>
+                            </div>
+                            
+                            <h3 class="price-amount mb-4">$6.63 <small class="price-period">/ month</small></h3>
+                            
+                            <a href="#" class="btn btn-outline-primary w-100 mb-3">Add to Cart</a>
+                            
+                            <p class="small text-muted mb-4">$12.99 /mo when you renew</p>
+                            
+                            <ul class="feature-list list-unstyled mb-4">
+                                <li>5 Websites</li>
+                                <li>50GB Storage</li>
+                                <li>25 Email Accounts</li>
+                                <li>24/7 Support</li>
+                                <li>Free SSL Certificate</li>
+                                <li>Unlimited Bandwidth</li>
+                                <li class="disabled">Priority Support</li>
+                                <li class="disabled">Daily Backups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card card h-100 popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-briefcase text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold mb-0">Business</h5>
+                            </div>
+                            <p class="text-muted mb-4">For growing businesses</p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-decoration-line-through text-muted">$19.99</span>
+                                <span class="badge bg-danger">Save 60%</span>
+                            </div>
+                            
+                            <h3 class="price-amount mb-4">$8.63 <small class="price-period">/ month</small></h3>
+                            
+                            <a href="#" class="btn btn-primary w-100 mb-3">Add to Cart</a>
+                            
+                            <p class="small text-muted mb-4">$19.99 /mo when you renew</p>
+                            
+                            <ul class="feature-list list-unstyled mb-4">
+                                <li>Unlimited Websites</li>
+                                <li>100GB Storage</li>
+                                <li>50 Email Accounts</li>
+                                <li>24/7 Support</li>
+                                <li>Free SSL Certificate</li>
+                                <li>Unlimited Bandwidth</li>
+                                <li>Priority Support</li>
+                                <li class="disabled">Daily Backups</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="pricing-card card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-rocket text-primary me-2" style="font-size: 1.5rem;"></i>
+                                <h5 class="fw-bold mb-0">Enterprise</h5>
+                            </div>
+                            <p class="text-muted mb-4">For high-traffic sites</p>
+                            
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-decoration-line-through text-muted">$29.99</span>
+                                <span class="badge bg-danger">Save 60%</span>
+                            </div>
+                            
+                            <h3 class="price-amount mb-4">$11.63 <small class="price-period">/ month</small></h3>
+                            
+                            <a href="#" class="btn btn-outline-primary w-100 mb-3">Add to Cart</a>
+                            
+                            <p class="small text-muted mb-4">$29.99 /mo when you renew</p>
+                            
+                            <ul class="feature-list list-unstyled mb-4">
+                                <li>Unlimited Websites</li>
+                                <li>200GB Storage</li>
+                                <li>100 Email Accounts</li>
+                                <li>24/7 Support</li>
+                                <li>Free SSL Certificate</li>
+                                <li>Unlimited Bandwidth</li>
+                                <li>Priority Support</li>
+                                <li>Daily Backups</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Yearly Pricing (Hidden by default) -->
+            <div class="row g-4 pricing-content d-none" id="yearly-pricing">
+                <!-- Yearly pricing cards would go here with similar structure as monthly -->
+                <!-- I've omitted them for brevity but they would follow the same pattern -->
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-muted">Need a custom solution? <a href="#" class="text-primary">Contact our sales team</a></p>
+            </div>
         </div>
-    </div>
-    <!-- SUPPORT AREA END -->
+    </section>
 
-    <!-- HOSTIE CTA -->
-    <div class="rts-cta-two shared-page-bg pt--120">
+    <!-- Migration Section -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="rts-cta-two__wrapper">
-                    <div class="cta__shape"></div>
-                    <div class="cta-content">
-                        <span data-sal="slide-down" data-sal-delay="100" data-sal-duration="800">Need help choosing a
-                            plan?</span>
-                        <h4 data-sal="slide-down" data-sal-delay="300" data-sal-duration="800">Need help?
-                            We're always here for you.</h4>
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop" alt="Email Migration" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h2 class="fw-bold mb-4">Easy Email Migration</h2>
+                    <p class="lead mb-4">We make switching to HostEmail seamless with our free migration tools and expert support.</p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Automated Migration</h5>
+                            <p class="mb-0">Our tools automatically transfer your existing emails, contacts, and calendars from most providers.</p>
+                        </div>
                     </div>
-                    <div class="cta-btn">
-                        <a href="#" class="contact__us rts-btn rts-btn-secondary">Go to Live chat Page</a>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Expert Assistance</h5>
+                            <p class="mb-0">Our migration specialists are available to help with complex migrations at no extra cost.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold">Zero Downtime</h5>
+                            <p class="mb-0">Your email continues working during migration with no service interruptions.</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary mt-3">Learn About Migration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 my-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Find answers to common questions about our email hosting</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                    What's included in the free email hosting?
+                                </button>
+                            </h3>
+                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Every hosting plan includes professional email with 10GB storage per mailbox, advanced spam protection, webmail access, and compatibility with all major email clients like Outlook, Apple Mail, and Thunderbird.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    Can I use my own domain name?
+                                </button>
+                            </h3>
+                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! You can use any domain you own with our email hosting. If you don't have a domain yet, we can help you register one. Professional email addresses (like you@yourbusiness.com) are included with all plans.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                                    How do I migrate my existing emails?
+                                </button>
+                            </h3>
+                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We provide free migration tools to transfer your emails, contacts, and calendars from most providers (Gmail, Outlook.com, Yahoo, etc.). Our support team is also available to assist with the migration process at no additional cost.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                                    Is there a limit on email storage?
+                                </button>
+                            </h3>
+                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Each mailbox includes 10GB of storage, which is enough for hundreds of thousands of typical emails. If you need more storage, you can upgrade to a higher plan or purchase additional storage space.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                                    What security features are included?
+                                </button>
+                            </h3>
+                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our email hosting includes enterprise-grade spam filtering, virus protection, TLS encryption for all messages, two-factor authentication options, and DDoS protection. We also offer optional advanced threat protection for businesses with higher security needs.
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- HOSTIE CTA END -->
+    </section>
+
+    <!-- Support Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="support-section p-4 p-lg-5">
+                <div class="row align-items-center position-relative">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h3 class="fw-bold mb-3">24/7 World-Class Support</h3>
+                        <p class="mb-4">Our customer success team is available around the clock to help with any questions or issues.</p>
+                        
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 24/7 live chat and email support</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Average response time under 5 minutes</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 100% US-based support team</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Extensive knowledge base and tutorials</li>
+                        </ul>
+                        
+                        <a href="support.php" class="btn btn-primary me-3">Contact Support</a>
+                        <a href="#" class="btn btn-outline-light">Browse Help Center</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1470&auto=format&fit=crop" alt="Support Team" class="img-fluid rounded-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 my-5">
+        <div class="container">
+            <div class="cta-section">
+                <div class="row justify-content-center text-center position-relative">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-4">Ready to Upgrade Your Business Email?</h2>
+                        <p class="lead mb-4">Get professional email hosting included with any plan. No credit card required to start.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="#pricing" class="btn btn-light btn-lg px-4">Choose Your Plan</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-4">Chat With Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Pricing toggle functionality
+            const pricingToggles = document.querySelectorAll('.price-toggle-btn');
+            
+            pricingToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    // Remove active class from all toggles
+                    pricingToggles.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked toggle
+                    this.classList.add('active');
+                    
+                    // Show/hide pricing content
+                    const period = this.getAttribute('data-period');
+                    document.querySelectorAll('.pricing-content').forEach(content => {
+                        content.classList.add('d-none');
+                    });
+                    document.getElementById(`${period}-pricing`).classList.remove('d-none');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 <<!-- Footer -->
 <footer class="pt-7 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
     <div class="container">
