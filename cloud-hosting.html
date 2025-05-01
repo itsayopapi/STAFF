@@ -1,123 +1,1306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Cloud Hosting | High-Performance Cloud Solutions</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Libs CSS -->
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" /> 
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6b63ff;
-            --primary-light: rgba(107, 99, 255, 0.1);
-            --dark: #212529;
-        }
-        
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            padding: 7rem 0;
-        }
-        
-        .feature-card {
-            transition: all 0.3s ease;
-            border: none;
-            border-radius: 12px;
-            height: 100%;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-        }
-        
-        .icon-wrapper {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 16px;
-            background-color: var(--primary-light);
-            margin-bottom: 1.5rem;
-        }
-        
-        .data-center-marker {
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background-color: var(--primary);
-            border-radius: 50%;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px rgba(107, 99, 255, 0.3);
-        }
-        
-        .tech-stack img {
-            height: 50px;
-            margin: 1rem;
-            opacity: 0.7;
-            transition: all 0.3s ease;
-            filter: grayscale(100%);
-        }
-        
-        .tech-stack img:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        }
-        
-        .pricing-card {
-            transition: all 0.3s ease;
-            border: none;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .popular-card {
-            border: 2px solid var(--primary) !important;
-            margin-top: -15px;
-            margin-bottom: -15px;
-        }
-        
-        .stats-item {
-            padding: 2rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .stats-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-    </style>
-</head>
-<body>
+    
+    <title>WeFitHost - Cloud Hosting Solutions</title>
 
-    <!-- Hero Section -->
-    <section class="hero-section" data-aos="fade">
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-light: rgba(107, 99, 255, 0.1);
+        --primary-dark: #554fd8;
+        --dark: #1e293b;
+        --light: #f8f9fa;
+        --body-bg: #ffffff;
+        --text-color: #333333;
+        --text-muted: #6c757d;
+      }
+
+      [data-bs-theme="dark"] {
+        --body-bg: #1a1a2e;
+        --text-color: #f8f9fa;
+        --text-muted: #adb5bd;
+      }
+
+      body {
+        background-color: var(--body-bg);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .text-muted {
+        color: var(--text-muted) !important;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: var(--body-bg);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--text-color);
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: var(--primary);
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+        background-color: var(--body-bg);
+        color: var(--text-color);
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: var(--text-color);
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+        background-color: var(--body-bg);
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: var(--body-bg);
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+
+      @media (max-width: 1140px) and (min-width: 992px) {
+        .nav-link {
+          padding: 1rem 0.1rem !important;
+        }
+      }
+
+      /*Cloud hosting styles*/
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        padding: 7rem 0;
+      }
+      
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 12px;
+        height: 100%;
+        background-color: var(--body-bg);
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+      }
+      
+      .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background-color: var(--primary-light);
+        margin-bottom: 1.5rem;
+      }
+      
+      .data-center-marker {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        border: 3px solid white;
+        box-shadow: 0 0 0 3px rgba(107, 99, 255, 0.3);
+      }
+      
+      .tech-stack img {
+        height: 50px;
+        margin: 1rem;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+      }
+      
+      .tech-stack img:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.1);
+      }
+      
+      .pricing-card {
+        transition: all 0.3s ease;
+        border: none;
+        background-color: var(--body-bg);
+      }
+      
+      .pricing-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .popular-card {
+        border: 2px solid var(--primary) !important;
+        margin-top: -15px;
+        margin-bottom: -15px;
+      }
+      
+      .stats-item {
+        padding: 2rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        background-color: var(--body-bg);
+      }
+      
+      .stats-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+      
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+
+      /* New sections styles */
+      .comparison-table {
+        background-color: var(--body-bg);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      
+      .comparison-table th {
+        background-color: var(--primary);
+        color: white;
+      }
+      
+      .resource-monitoring {
+        background: linear-gradient(135deg, var(--primary) 0%, #8b3dff 100%);
+        color: white;
+        border-radius: 12px;
+      }
+      
+      .deployment-process {
+        counter-reset: step;
+      }
+      
+      .deployment-step::before {
+        counter-increment: step;
+        content: counter(step);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        font-weight: bold;
+      }
+      
+      .security-badge {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .integration-card {
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .integration-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      
+      .case-study-card {
+        transition: all 0.3s ease;
+      }
+      
+      .case-study-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+      
+      .timeline {
+        position: relative;
+        padding-left: 30px;
+      }
+      
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: var(--primary);
+      }
+      
+      .timeline-item {
+        position: relative;
+        padding-bottom: 20px;
+      }
+      
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        border: 2px solid white;
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header">
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #1e293b"
+      >
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./home.html">
+            <img
+              src="./Logo_Wefithost_03.png"
+              alt="WeFitHost Logo"
+              height="40"
+            />
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarContent"
+            aria-controls="navbarContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Hosting Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="hostingDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hosting
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="hostingDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-wordpress me-2"></i>WordPress
+                          Solutions
+                        </h6>
+                        <a class="dropdown-item" href="wordpress-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>WordPress Hosting</strong>
+                            <small class="text-muted"
+                              >Automated updates and plugins</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="cloud-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Cloud Hosting</strong>
+                            <small class="text-muted"
+                              >Lightning-fast with 100% uptime SLA</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="managed-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Managed Hosting</strong>
+                            <small class="text-muted"
+                              >Lag-free, managed WordPress hosting</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="secure-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Secure Hosting</strong>
+                            <small class="text-muted"
+                              >Everything needed to securely launch your
+                              website</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-cart me-2"></i>eCommerce Solutions
+                        </h6>
+                        <a class="dropdown-item" href="woocommerce.html">
+                          <div class="d-flex flex-column">
+                            <strong>WooCommerce</strong>
+                            <small class="text-muted"
+                              >Secure, online store with built-in tools</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Websites & Stores</strong>
+                            <small class="text-muted"
+                              >Powerful site tools and WooCommerce</small
+                            >
+                          </div>
+                        </a>
+
+                        <h6 class="dropdown-header mt-3">
+                          <i class="bi bi-shield-lock me-2"></i>Security &
+                          Backup
+                        </h6>
+                        <a class="dropdown-item" href="ssl-certificate.html">
+                          <div class="d-flex flex-column">
+                            <strong>SSL Certificates</strong>
+                            <small class="text-muted"
+                              >Lock up your data with Premium SSL</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Website Security</strong>
+                            <small class="text-muted"
+                              >Minimize cyberthreats with SiteLock</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Website Backup</strong>
+                            <small class="text-muted"
+                              >Back up your site with CodeGuard</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-server me-2"></i>Traditional Hosting
+                        </h6>
+                        <a class="dropdown-item" href="shared-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Shared Hosting</strong>
+                            <small class="text-muted"
+                              >Affordable hosting for small websites</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="vps-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>VPS Hosting</strong>
+                            <small class="text-muted"
+                              >Scalable virtual private servers</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="web-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Web Hosting</strong>
+                            <small class="text-muted"
+                              >Reliable web hosting solutions</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="dedicated-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Dedicated Hosting</strong>
+                            <small class="text-muted"
+                              >Full control with enterprise hardware</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="autoscalling.html">
+                          <div class="d-flex flex-column">
+                            <strong>Autoscaling</strong>
+                            <small class="text-muted"
+                              >Intelligent Auto-Scaling for Modern Cloud
+                              Applications</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Domains Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="domainDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Domains
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="domainDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-globe me-2"></i>Domain Services
+                        </h6>
+                        <a class="dropdown-item" href="domain-search.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Search</strong>
+                            <small class="text-muted"
+                              >Find your perfect domain name</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="domain-transfer.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Transfer</strong>
+                            <small class="text-muted"
+                              >Move your domain to us easily</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Bulk Domain Search</strong>
+                            <small class="text-muted"
+                              >Search for multiple domains at once</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-shield-lock me-2"></i>Domain Security
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Privacy</strong>
+                            <small class="text-muted"
+                              >Protect your personal information</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Domain Lock</strong>
+                            <small class="text-muted"
+                              >Prevent unauthorized transfers</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Two-Factor Authentication</strong>
+                            <small class="text-muted"
+                              >Extra security for your domains</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-tags me-2"></i>Domain Extensions
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.com Domains</strong>
+                            <small class="text-muted"
+                              >The world's most popular extension</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.net Domains</strong>
+                            <small class="text-muted"
+                              >Great for tech and networks</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>.org Domains</strong>
+                            <small class="text-muted"
+                              >Perfect for organizations</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>New TLDs</strong>
+                            <small class="text-muted"
+                              >.tech, .store, .online and more</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Reseller Mega Dropdown (New Section) -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="resellerDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Reseller
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="resellerDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-gear me-2"></i>Reseller Hosting
+                        </h6>
+
+                        <a class="dropdown-item" href="reseller-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Hosting</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+
+                        <a class="dropdown-item" href="reseller-plans.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Plans</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WHMCS Integration</strong>
+                            <small class="text-muted"
+                              >Complete billing automation</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label</strong>
+                            <small class="text-muted"
+                              >Brand as your own service</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>Client Management
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Accounts</strong>
+                            <small class="text-muted"
+                              >Manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Automated Billing</strong>
+                            <small class="text-muted"
+                              >Recurring invoices & payments</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Support System</strong>
+                            <small class="text-muted"
+                              >Handle client tickets</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Business Growth
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Tools</strong>
+                            <small class="text-muted"
+                              >Grow your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted">Earn commissions</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Resources</strong>
+                            <small class="text-muted">Guides & tutorials</small>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Services Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="servicesDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Services
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="servicesDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-palette me-2"></i>Design Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Web Design</strong>
+                            <small class="text-muted"
+                              >Custom WordPress sites built for you</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Logo Design</strong>
+                            <small class="text-muted"
+                              >Professional branding for your business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>UX/UI Design</strong>
+                            <small class="text-muted"
+                              >Optimized user experiences</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-megaphone me-2"></i>Marketing Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Digital Marketing</strong>
+                            <small class="text-muted"
+                              >SEO and PPC campaigns done for you</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Content Marketing</strong>
+                            <small class="text-muted"
+                              >Engaging content that converts</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Social Media Management</strong>
+                            <small class="text-muted"
+                              >Grow your social presence</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-headset me-2"></i>Support Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Pro Design Live Support</strong>
+                            <small class="text-muted"
+                              >On-demand, WordPress expert support</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          <div class="d-flex flex-column">
+                            <strong>Website SEO Checker (FREE)</strong>
+                            <small class="text-muted"
+                              >Get a free analysis and learn how to
+                              improve</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>24/7 Priority Support</strong>
+                            <small class="text-muted"
+                              >Dedicated help when you need it</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Migration Services</strong>
+                            <small class="text-muted"
+                              >We'll move your site for you</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Agency Hub Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="agencyDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Agency Hub
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="agencyDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>For Agencies
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Agency Hosting</strong>
+                            <small class="text-muted"
+                              >Specialized hosting for agencies</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Management</strong>
+                            <small class="text-muted"
+                              >Tools to manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label Solutions</strong>
+                            <small class="text-muted"
+                              >Brand our services as your own</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Growth Tools
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted"
+                              >Earn commissions for referrals</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Resources</strong>
+                            <small class="text-muted"
+                              >Templates and guides</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Sales Training</strong>
+                            <small class="text-muted"
+                              >Close more hosting deals</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-gear me-2"></i>Developer Tools
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>API Access</strong>
+                            <small class="text-muted"
+                              >Integrate with our platform</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Staging Environments</strong>
+                            <small class="text-muted"
+                              >Test changes safely</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Git Integration</strong>
+                            <small class="text-muted"
+                              >Version control for your sites</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WP-CLI Enabled</strong>
+                            <small class="text-muted"
+                              >Command line control</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="emailDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Email
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="emailDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-6">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-envelope me-2"></i>Email Services
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Professional Email</strong>
+                            <small class="text-muted">you@yourdomain.com</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Microsoft 365</strong>
+                            <small class="text-muted"
+                              >Premium Office suite with email</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Google Workspace</strong>
+                            <small class="text-muted"
+                              >Gmail for your domain</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-shield-lock me-2"></i>Email Security
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Protection</strong>
+                            <small class="text-muted"
+                              >Block spam and malware</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Forwarding</strong>
+                            <small class="text-muted"
+                              >Forward emails to other accounts</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Email Migration</strong>
+                            <small class="text-muted"
+                              >Move your existing emails</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Right-side buttons -->
+            <div class="d-flex align-items-center">
+              <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+              <a
+                href="https://my.wefithost.com/login"
+                class="btn btn-link login-btn me-3"
+                ><i class="bi bi-person"></i> Log In</a
+              >
+              <a href="https://my.wefithost.com/manage" class="btn btn-primary"
+                >Sign Up</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="mobile-menu-backdrop"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+
+     <!-- Hero Section -->
+     <section class="hero-section" data-aos="fade">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
@@ -337,7 +1520,133 @@
         </div>
     </section>
 
-    <!-- New: Use Cases Section -->
+    <!-- New: Resource Monitoring Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">MONITORING</span>
+                <h2 class="display-5 fw-bold mb-3">Real-Time Resource Monitoring</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Keep track of your cloud resources with our intuitive dashboard</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-monitoring p-4 h-100 rounded-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">CPU Usage</h3>
+                            <span class="badge bg-white text-primary">Live</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Current Usage</span>
+                                <span>24%</span>
+                            </div>
+                            <div class="progress bg-white bg-opacity-25" style="height: 8px;">
+                                <div class="progress-bar bg-white" style="width: 24%"></div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                                    <small class="d-block text-white-50">Peak Today</small>
+                                    <strong class="text-white">68%</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                                    <small class="d-block text-white-50">Avg. Daily</small>
+                                    <strong class="text-white">32%</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-monitoring p-4 h-100 rounded-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h4 mb-0">Memory Usage</h3>
+                            <span class="badge bg-white text-primary">Live</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Current Usage</span>
+                                <span>1.8GB / 4GB</span>
+                            </div>
+                            <div class="progress bg-white bg-opacity-25" style="height: 8px;">
+                                <div class="progress-bar bg-white" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                                    <small class="d-block text-white-50">Peak Today</small>
+                                    <strong class="text-white">3.2GB</strong>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                                    <small class="d-block text-white-50">Auto-scaled</small>
+                                    <strong class="text-white">2 Times</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New: Deployment Process Section -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">DEPLOYMENT</span>
+                <h2 class="display-5 fw-bold mb-3">Simple Deployment Process</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Get your applications up and running in minutes, not hours</p>
+            </div>
+            
+            <div class="row g-4 deployment-process">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h5 mb-3 deployment-step">Select Your Configuration</h3>
+                            <p class="text-muted mb-0">Choose from pre-configured setups or customize your own with our intuitive interface.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h5 mb-3 deployment-step">Choose Data Center</h3>
+                            <p class="text-muted mb-0">Select from our global network of data centers to minimize latency for your users.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h5 mb-3 deployment-step">Deploy Your App</h3>
+                            <p class="text-muted mb-0">Upload your code or connect your Git repository for automatic deployments.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h5 mb-3 deployment-step">Go Live</h3>
+                            <p class="text-muted mb-0">Your application is now live with automatic scaling and monitoring enabled.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
     <section class="py-5 py-lg-7">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
@@ -389,8 +1698,69 @@
         </div>
     </section>
 
-    <!-- Global Data Centers -->
+    <!-- New: Security Features Section -->
     <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">SECURITY</span>
+                <h2 class="display-5 fw-bold mb-3">Enterprise-Grade Security</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Protect your applications with our comprehensive security features</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-shield-lock text-primary fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">DDoS Protection</h3>
+                            <p class="text-muted mb-3">Automatic mitigation of distributed denial-of-service attacks to keep your applications online.</p>
+                            <div>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Layer 3/4 Protection</span>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Layer 7 Protection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-file-lock2 text-primary fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Web Application Firewall</h3>
+                            <p class="text-muted mb-3">Protect against common web exploits and vulnerabilities with our managed WAF.</p>
+                            <div>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> OWASP Top 10</span>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Custom Rules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-database-check text-primary fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Backup & Recovery</h3>
+                            <p class="text-muted mb-3">Automated daily backups with point-in-time recovery options for your data.</p>
+                            <div>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> 7-Day Retention</span>
+                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> One-Click Restore</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Data Centers -->
+    <section class="py-5 py-lg-7">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="badge bg-primary bg-opacity-10 text-primary mb-3">GLOBAL REACH</span>
@@ -469,6 +1839,53 @@
         </div>
     </section>
 
+    <!-- New: Integration Section -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">INTEGRATIONS</span>
+                <h2 class="display-5 fw-bold mb-3">Seamless Integrations</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Connect with your favorite tools and services</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="50" class="mb-3">
+                            <h3 class="h5 mb-3">GitHub</h3>
+                            <p class="text-muted mb-0">Automatically deploy from your GitHub repositories with our CI/CD pipeline.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" height="50" class="mb-3">
+                            <h3 class="h5 mb-3">Docker</h3>
+                            <p class="text-muted mb-0">Deploy containerized applications with our managed Kubernetes service.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" height="50" class="mb-3">
+                            <h3 class="h5 mb-3">Slack</h3>
+                            <p class="text-muted mb-0">Get real-time notifications about your deployments and server status.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="btn btn-outline-primary">View All Integrations</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Technology Stack -->
     <section class="py-5 py-lg-7">
         <div class="container">
@@ -499,8 +1916,75 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- New: Case Studies Section -->
     <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">SUCCESS STORIES</span>
+                <h2 class="display-5 fw-bold mb-3">Customer Case Studies</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">See how businesses like yours are succeeding with our cloud hosting</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 case-study-card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="E-commerce Case Study">
+                        <div class="card-body">
+                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">E-commerce</span>
+                            <h3 class="h5 mb-3">FashionForward</h3>
+                            <p class="text-muted mb-3">Scaled to handle 500% traffic increase during Black Friday sales with zero downtime.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-arrow-up-right-circle-fill text-success me-1"></i>
+                                    <strong>+320%</strong> Revenue
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 case-study-card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="SaaS Case Study">
+                        <div class="card-body">
+                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">SaaS</span>
+                            <h3 class="h5 mb-3">DataInsight</h3>
+                            <p class="text-muted mb-3">Reduced API response times from 2.1s to 380ms after migrating to our cloud.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-lightning-charge-fill text-success me-1"></i>
+                                    <strong>5.5x</strong> Faster
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 case-study-card border-0 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Enterprise Case Study">
+                        <div class="card-body">
+                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Enterprise</span>
+                            <h3 class="h5 mb-3">GlobalBank</h3>
+                            <p class="text-muted mb-3">Achieved 99.999% uptime for their customer portal across 12 countries.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-check-circle-fill text-success me-1"></i>
+                                    <strong>99.999%</strong> Uptime
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 py-lg-7">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
                 <span class="badge bg-primary bg-opacity-10 text-primary mb-3">TESTIMONIALS</span>
@@ -596,6 +2080,72 @@
         </div>
     </section>
 
+    <!-- New: Comparison Table -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">COMPARISON</span>
+                <h2 class="display-5 fw-bold mb-3">How We Compare</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">See how our cloud hosting stacks up against the competition</p>
+            </div>
+            
+            <div class="table-responsive comparison-table shadow-sm rounded-3" data-aos="fade-up">
+                <table class="table table-bordered mb-0">
+                    <thead>
+                        <tr>
+                            <th width="25%">Feature</th>
+                            <th class="text-center">WeFitHost</th>
+                            <th class="text-center">Competitor A</th>
+                            <th class="text-center">Competitor B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Uptime SLA</td>
+                            <td class="text-center"><strong>99.99%</strong></td>
+                            <td class="text-center">99.9%</td>
+                            <td class="text-center">99.95%</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Scaling</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Extra Cost</td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Not Available</td>
+                        </tr>
+                        <tr>
+                            <td>Global Data Centers</td>
+                            <td class="text-center"><strong>15 Locations</strong></td>
+                            <td class="text-center">8 Locations</td>
+                            <td class="text-center">5 Locations</td>
+                        </tr>
+                        <tr>
+                            <td>DDoS Protection</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Extra Cost</td>
+                        </tr>
+                        <tr>
+                            <td>Free SSL Certificates</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Unlimited</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> 1 Certificate</td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Not Included</td>
+                        </tr>
+                        <tr>
+                            <td>24/7 Support</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> All Plans</td>
+                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Business+</td>
+                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Business+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="#" class="btn btn-outline-primary">See Detailed Comparison</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing -->
     <section class="py-5 py-lg-7" id="pricing">
         <div class="container">
@@ -670,6 +2220,48 @@
             <div class="text-center mt-5" data-aos="fade-up">
                 <p class="mb-3">Need custom solutions for your enterprise?</p>
                 <a href="#" class="btn btn-primary px-4">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New: Migration Timeline -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">MIGRATION</span>
+                <h2 class="display-5 fw-bold mb-3">Seamless Migration Process</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">We'll handle your move to our cloud with minimal downtime</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline" data-aos="fade-up">
+                        <div class="timeline-item">
+                            <h3 class="h5 mb-2">Initial Assessment</h3>
+                            <p class="text-muted">We analyze your current infrastructure and create a migration plan tailored to your needs.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 mb-2">Pre-Migration Testing</h3>
+                            <p class="text-muted">We test the migration process in a staging environment to identify any potential issues.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 mb-2">Data Migration</h3>
+                            <p class="text-muted">Your applications and data are securely transferred to our cloud infrastructure.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 mb-2">DNS Cutover</h3>
+                            <p class="text-muted">We coordinate the final switch with minimal downtime, typically under 5 minutes.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="h5 mb-2">Post-Migration Optimization</h3>
+                            <p class="text-muted">We fine-tune your new environment for maximum performance and cost efficiency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#" class="btn btn-outline-primary">Learn More About Migration</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -780,6 +2372,418 @@
                 card.style.boxShadow = '';
             });
         });
+
+        // Theme switcher functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     </script>
+
+    <!-- Footer -->
+  <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1e293b; color: white">
+    <div class="container">
+      <div class="row">
+        <!-- Newsletter & Logo Column (Now first column) -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="mb-4">
+            <a href="#">
+              <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
+                style="max-height: 40px; filter: brightness(0) invert(1)" />
+            </a>
+            <p style="color: white">
+              Powering websites with reliable hosting since 2015.
+            </p>
+
+              <!-- Newsletter Form (Moved up) -->
+              <div class="mb-4">
+                <h5 style="color: white; font-weight: 600">Newsletter</h5>
+                <form class="mb-2">
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your email"
+                      style="
+                        border-color: rgba(255, 255, 255, 0.5);
+                        color: white;
+                        background-color: rgba(255, 255, 255, 0.1);
+                      "
+                    />
+                    <button
+                      class="btn btn-primary"
+                      type="submit"
+                      style="
+                        background-color: white;
+                        border-color: white;
+                        color: #1e293b;
+                      "
+                    >
+                      Subscribe
+                    </button>
+                  </div>
+                </form>
+                <small style="color: rgba(255, 255, 255, 0.8)"
+                  >Get hosting tips and special offers</small
+                >
+              </div>
+
+              <!-- Social Icons with updated X icon -->
+              <div class="d-flex gap-3 mt-3">
+                <a href="#" style="color: white"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-x-twitter"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" style="color: white"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hosting Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Hosting</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="shared-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Shared Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="wordpress-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >WordPress Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="vps-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >VPS Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="cloud-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Cloud Hosting</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reseller-hosting.html"
+                  style="color: white; text-decoration: none"
+                  >Reseller Hosting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Domains Column -->
+
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Domains</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Register Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="domain-transfer.html"
+                  style="color: white; text-decoration: none"
+                  >Transfer Domain</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Domain Pricing</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >WHOIS Lookup</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="ssl-certificate.html"
+                  style="color: white; text-decoration: none"
+                  >SSL Certificates</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Column -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Support</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Knowledge Base</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Tutorials</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >System Status</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Contact Support</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Free Migration</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Column (Now last column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5 style="color: white; font-weight: 600">Company</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="about.html" style="color: white; text-decoration: none"
+                  >About Us</a
+                >
+              </li>
+              <li class="mb-2">
+                <a href="blog.html" style="color: white; text-decoration: none"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="maintenance.html"
+                  style="color: white; text-decoration: none"
+                  >Partners</a
+                >
+              </li>
+              <li class="mb-2">
+                <a
+                  href="reviews.html"
+                  style="color: white; text-decoration: none"
+                  >Customer Reviews</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr style="border-color: rgba(255, 255, 255, 0.2)" />
+
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <span style="color: white"
+              >© 2025 WefitHost. All rights reserved.</span
+            >
+          </div>
+          <div class="col-md-6">
+            <ul
+              class="d-flex flex-wrap justify-content-md-end gap-3 align-items-center list-unstyled mb-0"
+            >
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Acceptable Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >Service Level Agreement</a
+                >
+              </li>
+              <li>
+                <a
+                  href="maintenance.html"
+                  style="
+                    color: white;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                  "
+                  >DMCA</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .footerlinkcoor input.form-control {
+        background-color: inherit;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .footerlinkcoor input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footerlinkcoor button.btn {
+        background-color: white;
+        color: #6b63ff;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      @media screen and (max-width: 810px) {
+        .input-group
+          > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+            .valid-feedback
+          ):not(.invalid-tooltip):not(.invalid-feedback) {
+          border-bottom-left-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+
+        .input-group.has-validation > .dropdown-toggle:nth-last-child(n + 4),
+        .input-group.has-validation
+          > .form-floating:nth-last-child(n + 3)
+          > .form-control,
+        .input-group.has-validation
+          > .form-floating:nth-last-child(n + 3)
+          > .form-select,
+        .input-group.has-validation
+          > :nth-last-child(n + 3):not(.dropdown-toggle):not(
+            .dropdown-menu
+          ):not(.form-floating),
+        .input-group:not(.has-validation)
+          > .dropdown-toggle:nth-last-child(n + 3),
+        .input-group:not(.has-validation)
+          > .form-floating:not(:last-child)
+          > .form-control,
+        .input-group:not(.has-validation)
+          > .form-floating:not(:last-child)
+          > .form-select,
+        .input-group:not(.has-validation)
+          > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(
+            .form-floating
+          ) {
+          border-bottom-right-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        .input-group {
+          gap: 10px;
+        }
+      }
+    </style>
+
+    <!-- Footer End -->
+
+    <!-- Libs JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+
+
 </body>
+
 </html>
