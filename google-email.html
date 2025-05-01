@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -16,6 +18,9 @@
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
+
+     <!-- Scroll Cue -->
+     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -48,24 +53,22 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- Scroll Cue -->
-    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-     <!-- Swiper.js CSS -->
-     <link
-     rel="stylesheet"
-     href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-   />
-
+   
 
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
-    <title>WeFitHost</title>
 
-    <!-- Custom CSS -->
+    <title>Google Workspace Email Hosting</title>
+
     <style>
       :root {
-        --primary-color: #4e66f8;
+        --primary-color: #6b63ff;
         --secondary-color: #6c757d;
         --dark-color: #1e293b;
         --light-color: #f8f9fa;
@@ -80,7 +83,10 @@
       body {
         font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
         line-height: 1.6;
-        color: var(--dark-color);
+      }
+
+      .badge {
+        background-color: var(--dark-color);
       }
 
       .hero-section {
@@ -98,45 +104,32 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1470&auto=format&fit=crop")
+        background: url("https://img.freepik.com/free-photo/system-administrator-types-code-into-pc-developing-software_482257-119733.jpg?ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740")
           center/cover;
         opacity: 0.1;
       }
 
+      .stats-section {
+        background: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
       .feature-card {
-        transition: all 0.3s ease;
         border: none;
         border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
         height: 100%;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .feature-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(78, 102, 248, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-      }
-
-      .feature-icon img {
-        width: 40px;
-        height: 40px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
 
       .pricing-card {
         border: none;
         border-radius: 12px;
-        overflow: hidden;
         transition: all 0.3s ease;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
@@ -149,10 +142,6 @@
       .pricing-card.popular {
         border: 2px solid var(--primary-color);
         position: relative;
-      }
-
-      .badge {
-        background-color: var(--dark-color);
       }
 
       .popular-badge {
@@ -169,7 +158,7 @@
 
       .price-toggle {
         background: rgba(78, 102, 248, 0.1);
-        border-radius: 30px;
+        border-radius: 10px;
         padding: 5px;
         display: inline-flex;
       }
@@ -177,7 +166,7 @@
       .price-toggle-btn {
         border: none;
         padding: 8px 20px;
-        border-radius: 25px;
+        border-radius: 10px;
         font-weight: 600;
         transition: all 0.3s ease;
       }
@@ -185,6 +174,23 @@
       .price-toggle-btn.active {
         background: var(--primary-color);
         color: white;
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 0;
+      }
+
+      .btn-outline-primary:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
       }
 
       .discount-badge {
@@ -196,129 +202,6 @@
         font-size: 0.8rem;
         display: inline-block;
         margin-left: 10px;
-      }
-
-      .faq-item {
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 15px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      }
-
-      .faq-button {
-        font-weight: 600;
-        padding: 1.25rem;
-        background: white;
-      }
-
-      .faq-button:not(.collapsed) {
-        color: var(--primary-color);
-        background: white;
-        box-shadow: none;
-      }
-
-      .support-section {
-        background: var(--dark-color);
-        color: white;
-        border-radius: 15px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .support-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1470&auto=format&fit=crop")
-          center/cover;
-        opacity: 0.1;
-      }
-
-      .cta-section {
-        background: var(--gradient);
-        color: white;
-        padding: 4rem 0;
-        border-radius: 15px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470&auto=format&fit=crop")
-          center/cover;
-        opacity: 0.2;
-      }
-
-      .btn-primary {
-        background: var(--primary-color);
-        border-color: var(--primary-color);
-        border-radius: 30px;
-
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background: #3a56f7;
-        border-color: #3a56f7;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
-      }
-
-      .btn-outline-primary {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-        padding: 10px 25px;
-        border-radius: 10px;
-        margin-top: 0;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .btn-outline-primary:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
-      }
-
-      .section-title {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 2rem;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: var(--primary-color);
-        border-radius: 3px;
-      }
-
-      .price-amount {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--primary-color);
-      }
-
-      .price-period {
-        font-size: 1rem;
-        color: var(--secondary-color);
       }
 
       .feature-list li {
@@ -345,55 +228,25 @@
         color: #adb5bd;
       }
 
-      .benefit-card {
-        border: none;
-        border-radius: 12px;
-        padding: 2rem;
-        height: 100%;
+      .table-color {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .cta-section {
+        background: var(--gradient);
+        color: white;
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .tool-card:hover {
         transition: all 0.3s ease;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .benefit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .integration-card {
-        background: white;
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .integration-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .integration-logo {
-        height: 50px;
-        margin-bottom: 1rem;
-        object-fit: contain;
-      }
-
-      .stats-section {
-        background: #f8f9fa;
-        padding: 4rem 0;
-      }
-
-      .stat-item {
-        text-align: center;
-        padding: 1.5rem;
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
+        scale: 1.05;
       }
 
       .testimonial-card {
@@ -411,16 +264,200 @@
         object-fit: cover;
         margin-right: 1rem;
       }
+    </style>
 
-      @media (max-width: 767.98px) {
-        .hero-section {
-          padding: 3rem 0;
-          text-align: center;
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+            display: none;
+        } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
 
-        .hero-image {
-          margin-top: 2rem;
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
       }
     </style>
   </head>
@@ -1215,272 +1252,39 @@
       </nav>
     </header>
 
-    <style>
-      :root {
-        --primary: #6b63ff;
-        --primary-dark: #5a52e0;
-        --secondary: #2d3748;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --danger: #dc3545;
-      }
-
-      body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        color: var(--dark);
-        line-height: 1.6;
-      }
-
-      /* Header Styles */
-      .custom-header {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1020;
-        background-color: white;
-        transition: transform 0.3s ease;
-      }
-
-      .custom-header.scrolled-up {
-        transform: translateY(0);
-      }
-
-      .custom-header.scrolled-down {
-        transform: translateY(-100%);
-      }
-
-      .navbar {
-        padding: 0.8rem 0;
-      }
-
-      .navbar-brand img {
-        transition: all 0.3s ease;
-      }
-
-      .navbar-brand:hover img {
-        transform: scale(1.05);
-      }
-
-      .nav-link {
-        font-weight: 500;
-        color: #333;
-        padding: 1rem 1.25rem;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus {
-        color: #6b63ff;
-      }
-
-      /* .dropdown-toggle::after {
-              display: none;
-          } */
-
-      .dropdown-menu {
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-      }
-
-      .dropdown-item {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-        color: #333;
-        transition: all 0.2s ease;
-        border-radius: 4px;
-        margin: 0.15rem 0.5rem;
-      }
-
-      .dropdown-item:hover {
-        background-color: #f8f9fa;
-        color: #6b63ff;
-      }
-
-      .mega-dropdown {
-        position: static !important;
-      }
-
-      .mega-menu {
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        margin-top: 0;
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 8px 8px;
-      }
-
-      .dropdown-header {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #6c757d;
-        text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      .dropdown-item:hover,
-      .dropdown-item:focus {
-        background-color: rgba(107, 99, 255, 0.1);
-        color: var(--primary);
-      }
-
-      .mobile-menu-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1020;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .mobile-menu-backdrop.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      @media (max-width: 991.98px) {
-        .navbar-collapse {
-          position: fixed;
-          top: 72px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: white;
-          z-index: 1010;
-          overflow-y: auto;
-          padding: 1.5rem;
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-        }
-
-        .navbar-collapse.show {
-          transform: translateX(0);
-        }
-
-        .dropdown-menu {
-          box-shadow: none;
-          border-left: 3px solid var(--primary);
-          margin-left: 1rem;
-        }
-
-        .mega-dropdown .dropdown-menu {
-          width: auto;
-        }
-
-        .mega-menu .row {
-          flex-direction: column;
-        }
-
-        .mega-menu .col-md-4,
-        .mega-menu .col-md-6 {
-          width: 100%;
-          padding: 0;
-        }
-
-        .mega-menu .p-3 {
-          padding: 1rem 0 !important;
-        }
-
-        .dropdown-toggle i.bi-chevron-down {
-          transition: transform 0.3s ease;
-        }
-
-        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
-          transform: rotate(180deg);
-        }
-      }
-
-      .btn-primary {
-        background-color: var(--primary);
-        border-color: var(--primary);
-        font-weight: 600;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        font-size: 1.05rem;
-      }
-    </style>
+    <!-- <div class="mobile-menu-backdrop"></div> -->
 
     <!-- Navbar End -->
 
-    <!-- Hero Section -->
     <section class="hero-section" data-cue="fadeIn">
       <div class="container position-relative">
-        <div class="row align-items-center" >
+        <div class="row align-items-center">
           <div class="col-lg-6" data-cue="zoomIn">
             <span class="badge mb-3 px-3 py-2 rounded-pill"
-              >Professional Email Hosting</span
+              >Google Workspace</span
             >
             <h1 class="display-4 fw-bold mb-4 text-secondary">
-              Business-Class Email Without the Enterprise Price Tag
+              Professional Business Email, Powered by Google
             </h1>
             <p class="lead mb-4">
-              Get premium email hosting with 10GB storage, advanced security,
-              and 99.9% uptime included with every plan. No hidden fees, no
-              upsells - just professional email that makes your business look
-              its best.
+              Get custom email (@yourdomain.com) with Google Workspace and
+              unlock the full suite of Google productivity tools – all managed
+              and supported by us.
             </p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="#pricing" class="btn btn-light btn-lg rounded-pill px-4"
+            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap justify-content-md-start">
+              <a href="#pricing" class="btn btn-light btn-lg px-4 rounded"
                 >Get Started <i class="fas fa-arrow-right ms-2"></i
               ></a>
               <a
                 href="#features"
-                class="btn btn-outline-light btn-lg rounded-pill px-4"
+                class="btn btn-outline-light btn-lg rounded px-4 mb-4 mb-md-0"
                 >Learn More</a
               >
-            </div>
-            <div class="mt-4 d-flex align-items-center">
-              <div class="d-flex">
-                <img
-                  src="https://randomuser.me/api/portraits/women/32.jpg"
-                  alt="User"
-                  class="rounded-circle border border-2 border-white"
-                  width="40"
-                  height="40"
-                />
-                <img
-                  src="https://randomuser.me/api/portraits/men/75.jpg"
-                  alt="User"
-                  class="rounded-circle border border-2 border-white ms-n2"
-                  width="40"
-                  height="40"
-                />
-                <img
-                  src="https://randomuser.me/api/portraits/women/63.jpg"
-                  alt="User"
-                  class="rounded-circle border border-2 border-white ms-n2"
-                  width="40"
-                  height="40"
-                />
-              </div>
-              <div class="ms-3">
-                <p class="mb-0 small">
-                  Trusted by <strong>25,000+</strong> businesses worldwide
-                </p>
-                <div class="text-warning small">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <span class="text-white ms-1">4.9/5</span>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-lg-6 hero-image" data-cue="slideInRight">
             <img
-              src="https://img.freepik.com/premium-photo/woman-hands-using-laptop-tablet-typing-keyboard-surfing-internet-with-email-icon-email-marketing-concept-send-email-newsletter-online-working-internet-network-technologyxaxa_1300982-8010.jpg?ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+              src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1632&auto=format&fit=crop"
               alt="Email Hosting"
               class="img-fluid rounded-4 shadow"
             />
@@ -1490,282 +1294,166 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section py-4">
+    <section class="stats-section py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-3 stat-item" data-cue="fadeIn">
-            <div class="stat-number">99.9%</div>
-            <div class="text-muted">Uptime Guarantee</div>
+        <div class="row text-center">
+          <div class="col-6 col-md-3 stat-item mb-4" data-cue="fadeIn">
+            <i class="fas fa-check-circle fa-2x text-primary mb-2"></i>
+            <div class="stat-number fw-bold">99.9%</div>
+            <div class="text-muted">Uptime SLA Backed by Google</div>
           </div>
-          <div class="col-6 col-md-3 stat-item" data-cue="fadeIn">
-            <div class="stat-number">10GB</div>
-            <div class="text-muted">Storage Per Mailbox</div>
+          <div class="col-6 col-md-3 stat-item mb-4" data-cue="fadeIn">
+            <i class="fas fa-database fa-2x text-success mb-2"></i>
+            <div class="stat-number fw-bold">30GB+</div>
+            <div class="text-muted">Secure Cloud Storage</div>
           </div>
-          <div class="col-6 col-md-3 stat-item" data-cue="fadeIn">
-            <div class="stat-number">24/7</div>
-            <div class="text-muted">Customer Support</div>
+          <div class="col-6 col-md-3 stat-item mb-4" data-cue="fadeIn">
+            <i class="fas fa-headset fa-2x text-warning mb-2"></i>
+            <div class="stat-number fw-bold">24/7</div>
+            <div class="text-muted">Admin & Migration Support</div>
           </div>
-          <div class="col-6 col-md-3 stat-item" data-cue="fadeIn">
-            <div class="stat-number">100+</div>
-            <div class="text-muted">Integrations</div>
+          <div class="col-6 col-md-3 stat-item mb-4" data-cue="fadeIn">
+            <i class="fas fa-puzzle-piece fa-2x text-danger mb-2"></i>
+            <div class="stat-number fw-bold">100+</div>
+            <div class="text-muted">Apps & Tool Integrations</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-5 my-5">
+    <!-- About features section -->
+    <section class="py-5 my-3">
       <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold section-title display-6" data-cue="zoomIn">Professional Email Features</h2>
-          <p class="lead text-muted" data-cue="zoomIn">
-            Everything you need for secure, reliable business communication
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="feature-card card h-100">
-              <div class="card-body p-4 text-center">
-                <div class="feature-icon">
-                  <i
-                    class="fas fa-shield-alt text-primary"
-                    style="font-size: 2rem"
-                  ></i>
-                </div>
-                <h5 class="fw-bold mb-3">Advanced Security</h5>
-                <p class="text-muted">
-                  Enterprise-grade spam filtering, virus protection, and
-                  encryption keep your communications safe from threats.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="feature-card card h-100">
-              <div class="card-body p-4 text-center">
-                <div class="feature-icon">
-                  <i
-                    class="fas fa-sync-alt text-primary"
-                    style="font-size: 2rem"
-                  ></i>
-                </div>
-                <h5 class="fw-bold mb-3">Seamless Sync</h5>
-                <p class="text-muted">
-                  Access your email from any device with full IMAP/POP3 support
-                  and real-time synchronization.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="feature-card card h-100">
-              <div class="card-body p-4 text-center">
-                <div class="feature-icon">
-                  <i
-                    class="fas fa-calendar-alt text-primary"
-                    style="font-size: 2rem"
-                  ></i>
-                </div>
-                <h5 class="fw-bold mb-3">Shared Calendars</h5>
-                <p class="text-muted">
-                  Schedule meetings and coordinate with your team using shared
-                  calendars and contacts.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="feature-card card h-100">
-              <div class="card-body p-4 text-center">
-                <div class="feature-icon">
-                  <i
-                    class="fas fa-undo text-primary"
-                    style="font-size: 2rem"
-                  ></i>
-                </div>
-                <h5 class="fw-bold mb-3">Undo Send</h5>
-                <p class="text-muted">
-                  Recall emails within 30 seconds of sending to fix mistakes
-                  before they're seen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-5 bg-light">
-      <div class="container">
+        <h2 class="text-center mb-6 fw-bold display-6" data-cue="zoomIn">
+          The power of Google at Your Fingertips
+        </h2>
         <div class="row align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0" data-cue="slideInRight">
+          <!-- Image Column -->
+          <div class="col-md-6 mb-5 mb-md-0 d-flex justify-content-center" data-cue="slideInRight">
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop"
-              alt="Professional Email Benefits"
-              class="img-fluid rounded-4 shadow"
+              src="https://img.freepik.com/premium-photo/g-letter-png-hand-holding-sign-transparent-background_53876-987319.jpg?ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+              alt="Google Workspace illustration"
+              class="img-fluid rounded shadow"
+              style="height: 400px; width: 400px"
             />
           </div>
-          <div class="col-lg-6" data-cue="zoomIn">
-            <h2 class="fw-bold mb-4">Why Professional Email Matters</h2>
-            <p class="lead mb-4">
-              First impressions count. A professional email address builds trust
-              and credibility with your customers.
-            </p>
 
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="benefit-card bg-white">
-                  <i
-                    class="fas fa-check-circle text-primary mb-3"
-                    style="font-size: 1.5rem"
-                  ></i>
-                  <h5 class="fw-bold">Brand Consistency</h5>
-                  <p class="mb-0">
-                    Reinforce your brand with every email you send using your
-                    own domain name.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="benefit-card bg-white">
-                  <i
-                    class="fas fa-check-circle text-primary mb-3"
-                    style="font-size: 1.5rem"
-                  ></i>
-                  <h5 class="fw-bold">Increased Trust</h5>
-                  <p class="mb-0">
-                    Customers are 9x more likely to engage with a professional
-                    email address.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="benefit-card bg-white">
-                  <i
-                    class="fas fa-check-circle text-primary mb-3"
-                    style="font-size: 1.5rem"
-                  ></i>
-                  <h5 class="fw-bold">Better Deliverability</h5>
-                  <p class="mb-0">
-                    Avoid spam filters that often flag free email providers.
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="benefit-card bg-white">
-                  <i
-                    class="fas fa-check-circle text-primary mb-3"
-                    style="font-size: 1.5rem"
-                  ></i>
-                  <h5 class="fw-bold">Team Collaboration</h5>
-                  <p class="mb-0">
-                    Shared contacts, calendars and delegation features for your
-                    whole team.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <!-- Text Column -->
+          <div class="col-md-6" data-cue="zoomIn">
+            <h2 class="fw-bold">
+              Work smarter with Gmail, Drive, Meet, and more
+            </h2>
+            <p class="text-muted">
+              Google Workspace brings together all the tools your team needs to
+              communicate, collaborate, and get work done—wherever you are. With
+              business email, real-time document editing, secure file sharing,
+              and powerful video meetings, productivity is just a click away.
+            </p>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-check-circle text-success me-2"></i>
+                Professional Gmail with your domain
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-success me-2"></i> Cloud
+                storage with Google Drive
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-success me-2"></i> Secure
+                video meetings with Google Meet
+              </li>
+              <li>
+                <i class="fas fa-check-circle text-success me-2"></i> Seamless
+                collaboration with Docs, Sheets, and Slides
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-5 my-5">
+    <!-- Features section -->
+
+    <section class="py-5 bg-light" data-cue="fadeIn">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title display-6" data-cue="zoomIn">What Our Customers Say</h2>
-          <p class="lead text-muted" data-cue="zoomIn">
-            Trusted by businesses of all sizes worldwide
+          <h2 class="fw-bold text-dark display-6" data-cue="zoomIn">
+            Powerful Features for Modern Teams
+          </h2>
+          <p class="text-dark lead" data-cue="zoomIn" data-cue-delay="100">
+            Everything you need to manage, communicate, and grow — with Google
+            Workspace
           </p>
         </div>
 
         <div class="row g-4">
-          <div class="col-md-4" data-cue="zoomIn">
-            <div class="testimonial-card">
-              <div class="d-flex align-items-center mb-3">
-                <img
-                  src="https://randomuser.me/api/portraits/women/44.jpg"
-                  alt="Sarah Johnson"
-                  class="testimonial-avatar"
-                />
-                <div>
-                  <h5 class="fw-bold mb-0">Sarah Johnson</h5>
-                  <p class="text-muted mb-0">Small Business Owner</p>
-                  <div class="text-warning small">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                </div>
-              </div>
-              <p>
-                "Switching to professional email with HostEmail transformed how
-                clients perceive my business. The setup was incredibly easy and
-                the reliability has been perfect."
+          <!-- Feature 1 -->
+          <div class="col-md-4" data-cue="fadeIn">
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+              <h5 class="fw-semibold text-dark">Professional Email</h5>
+              <p class="text-muted">
+                Look profesh with an email address that matches your domain
+                name.
               </p>
             </div>
           </div>
 
-          <div class="col-md-4" data-cue="zoomIn">
-            <div class="testimonial-card">
-              <div class="d-flex align-items-center mb-3">
-                <img
-                  src="https://randomuser.me/api/portraits/men/32.jpg"
-                  alt="Michael Chen"
-                  class="testimonial-avatar"
-                />
-                <div>
-                  <h5 class="fw-bold mb-0">Michael Chen</h5>
-                  <p class="text-muted mb-0">Marketing Director</p>
-                  <div class="text-warning small">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </div>
-                </div>
-              </div>
-              <p>
-                "The shared calendars and contacts have revolutionized how our
-                team works together. We've seen a 30% improvement in scheduling
-                efficiency since switching."
+          <!-- Feature 2 -->
+          <div class="col-md-4" data-cue="fadeIn" data-cue="fadeIn">
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-hdd fa-2x text-success mb-3"></i>
+              <h5 class="fw-semibold text-dark">Oodles of Storage</h5>
+              <p class="text-muted">
+                Start with 30GB per user, then upgrade to an unlimited amount as
+                needed.
               </p>
             </div>
           </div>
 
-          <div class="col-md-4" data-cue="zoomIn">
-            <div class="testimonial-card">
-              <div class="d-flex align-items-center mb-3">
-                <img
-                  src="https://randomuser.me/api/portraits/women/68.jpg"
-                  alt="Emily Rodriguez"
-                  class="testimonial-avatar"
-                />
-                <div>
-                  <h5 class="fw-bold mb-0">Emily Rodriguez</h5>
-                  <p class="text-muted mb-0">Nonprofit Executive</p>
-                  <div class="text-warning small">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                  </div>
-                </div>
-              </div>
-              <p>
-                "For our nonprofit, budget is always a concern. Getting
-                professional email included with our hosting has saved us
-                hundreds per year with no compromise on quality."
+          <!-- Feature 3 -->
+          <div class="col-md-4" data-cue="fadeIn" data-cue="fadeIn">
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-cubes fa-2x text-warning mb-3"></i>
+              <h5 class="fw-semibold text-dark">Google Apps & AI</h5>
+              <p class="text-muted">
+                Gmail, Calendar, Slides, Drive, Docs, and more—now backed with
+                the power of Gemini AI.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="col-md-4" data-cue="fadeIn" data-cue="fadeIn">
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-user-shield fa-2x text-danger mb-3"></i>
+              <h5 class="fw-semibold text-dark">Admin Controls</h5>
+              <p class="text-muted">
+                Manage Google Workspace for your team by adding users, changing
+                settings, and more.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="col-md-4" data-cue="fadeIn" data-cue="fadeIn">
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-mobile-alt fa-2x text-info mb-3"></i>
+              <h5 class="fw-semibold text-dark">Mobile Management</h5>
+              <p class="text-muted">
+                Enjoy device location, passwords, and even mobile data deletion.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="col-md-4" data-cue="fadeIn" data-cue="fadeIn"> 
+            <div class="p-4 bg-white shadow-sm rounded h-100 feature-card">
+              <i class="fas fa-database fa-2x text-secondary mb-3"></i>
+              <h5 class="fw-semibold text-dark">Easy Data Migration</h5>
+              <p class="text-muted">
+                Use our tools & services to easily move your data into Google
+                Workspace.
               </p>
             </div>
           </div>
@@ -1773,116 +1461,16 @@
       </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section id="integrations" class="py-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fw-bold section-title text-dark display-6" data-cue="zoomIn">Seamless Integrations</h2>
-          <p class="lead text-muted" data-cue="zoomIn">Works with the tools you already use</p>
-        </div>
-
-        <div class="row g-4" >
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg"
-                alt="Outlook"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Outlook</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
-                alt="Apple Mail"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Apple Mail</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg"
-                alt="Google Calendar"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Google Calendar</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/be/Antu_dropbox.svg"
-                alt="Dropbox"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Dropbox</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg"
-                alt="Microsoft Teams"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Microsoft Teams</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg"
-                alt="Slack"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Slack</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/64/SalesForce.jpg"
-                alt="Salesforce"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Salesforce</h5>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-cue="fadeIn">
-            <div class="integration-card">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/2/24/Zoom-Logo.png"
-                alt="Zoom"
-                class="integration-logo"
-              />
-              <h5 class="fw-bold">Zoom</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-5">
-          <a href="#" class="btn btn-outline-primary px-4"
-            >View All Integrations</a
-          >
-        </div>
-      </div>
-    </section>
-
-   
     <!-- Pricing Section -->
     <section id="pricing" class="py-5 my-2">
       <div class="container">
         <div class="text-center mb-5">
           <h2 class="fw-bold section-title display-6 " data-cue="zoomIn" >
-           Simple, Transparent Pricing
+            Choose Your Google Workspace Plan
           </h2>
-          <p class="lead text-muted w-lg-50 mx-auto">
+          <!-- <p class="lead text-muted w-lg-50 mx-auto">
             Professional email included with every hosting plan - no surprises
-          </p>
+          </p> -->
         </div>
 
         <div class="text-center mb-5" data-cue="fadeIn" >
@@ -2111,193 +1699,434 @@
     </section>
 
     <style>
-        /* Swiper-Specific Styling */
-        .pricing-scroller {
-          position: relative;
-          padding: 20px 40px;
-          overflow: visible !important;
-        }
-  
-        .swiper {
-          width: 100%;
-        }
-  
+      /* Swiper-Specific Styling */
+      .pricing-scroller {
+        position: relative;
+        padding: 20px 40px;
+        overflow: visible !important;
+      }
+
+      .swiper {
+        width: 100%;
+      }
+
+      .swiper-slide {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .swiper-wrapper {
+        align-items: stretch;
+        min-height: 0;
+        padding-bottom: 50px;
+      }
+
+      .swiper-pagination {
+        bottom: 0px;
+        text-align: center;
+      }
+
+      .swiper-pagination-bullet {
+        background: #6c757d;
+        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--primary);
+        opacity: 1;
+      }
+
+      @media (min-width: 992px) {
         .swiper-slide {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          width: 280px;
+          /* Match card width */
         }
-  
-        .swiper-wrapper {
-          align-items: stretch;
-          min-height: 0;
-          padding-bottom: 50px;
-        }
-  
-        .swiper-pagination {
-          bottom: 0px;
-          text-align: center;
-        }
-  
-        .swiper-pagination-bullet {
-          background: #6c757d;
-          opacity: 0.5;
-          width: 8px;
-          height: 8px;
-          margin: 0 4px;
-        }
-  
-        .swiper-pagination-bullet-active {
-          background: var(--primary);
-          opacity: 1;
-        }
-  
-        @media (min-width: 992px) {
-          .swiper-slide {
-            width: 280px;
-            /* Match card width */
-          }
-        }
-  
-        /* Swiper Navigation Buttons */
-        .swiper-button-prev,
-        .swiper-button-next {
-          width: 40px;
-          height: 40px;
-          background-color: #4e66f8;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          top: 35px;
-          transform: translateY(0);
-          z-index: 10;
-        }
-  
+      }
+
+      /* Swiper Navigation Buttons */
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        background-color: #4e66f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 35px;
+        transform: translateY(0);
+        z-index: 10;
+      }
+
+      .swiper-button-prev {
+        right: 64px;
+        left: auto;
+      }
+
+      .swiper-button-next {
+        right: 10px;
+        left: auto;
+      }
+
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        font-size: 12px;
+        color: #fff;
+      }
+
+      /* Adjust button positioning for responsiveness */
+      @media (max-width: 768px) {
         .swiper-button-prev {
-          right: 64px;
-          left: auto;
+          right: 50px;
         }
-  
+
         .swiper-button-next {
-          right: 10px;
-          left: auto;
+          right: 6px;
         }
-  
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-          font-size: 12px;
-          color: #fff;
-        }
-  
-        /* Adjust button positioning for responsiveness */
-        @media (max-width: 768px) {
-          .swiper-button-prev {
-            right: 50px;
-          }
-  
-          .swiper-button-next {
-            right: 6px;
-          }
-        }
-  
-        .pricing-swiper {
-          position: relative;
-          padding-top: 58px;
-        }
+      }
+
+      .pricing-swiper {
+        position: relative;
+        padding-top: 58px;
+      }
     </style>
 
-    <!-- Migration Section -->
-    <section class="py-5 bg-light">
+    <!-- Tools Section -->
+    <section class="py-5">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-cue="slideInRight">
-            <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop"
-              alt="Email Migration"
-              class="img-fluid rounded-4 shadow"
-            />
+        <div class="text-center mb-5">
+          <h2 class="fw-bold display-6" data-cue="zoomIn">
+            User-Friendly Tools to Power Up Your Business
+          </h2>
+          <p class="text-muted lead" data-cue="zoomIn" data-cue-delay="100">
+            Easy to set up. Easy to connect. Easy to use. <br />
+            Google Workspace makes collaboration simple.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Gmail -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Gmail_Product_Icon_96dp?ts=1733841572887&dpr=off"
+                alt="Gmail"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Gmail</h5>
+              <p class="text-muted small">
+                Attach your business domain to your email.
+              </p>
+            </div>
           </div>
-          <div class="col-lg-6 order-lg-1" data-cue="zoomIn">
-            <h2 class="fw-bold mb-4">Easy Email Migration</h2>
-            <p class="lead mb-4">
-              We make switching to HostEmail seamless with our free migration
-              tools and expert support.
-            </p>
 
-            <div class="d-flex mb-4">
-              <div class="me-4">
-                <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center"
-                  style="width: 50px; height: 50px"
-                >
-                  <i class="fas fa-check text-secondary"></i>
-                </div>
-              </div>
-              <div>
-                <h5 class="fw-bold ">Automated Migration</h5>
-                <p class="mb-0">
-                  Our tools automatically transfer your existing emails,
-                  contacts, and calendars from most providers.
-                </p>
-              </div>
+          <!-- Calendar -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Calendar_Product_Icon?ts=1733841531336&dpr=off"
+                alt="Calendar"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Calendar</h5>
+              <p class="text-muted small">Time management made super simple.</p>
             </div>
+          </div>
 
-            <div class="d-flex mb-4">
-              <div class="me-4">
-                <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center"
-                  style="width: 50px; height: 50px"
-                >
-                  <i class="fas fa-check text-secondary"></i>
-                </div>
-              </div>
-              <div>
-                <h5 class="fw-bold">Expert Assistance</h5>
-                <p class="mb-0">
-                  Our migration specialists are available to help with complex
-                  migrations at no extra cost.
-                </p>
-              </div>
+          <!-- Chat -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Chat_Product_Icon?ts=1733841564520&dpr=off"
+                alt="Chat"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Chat</h5>
+              <p class="text-muted small">
+                Communicate easily via direct messages.
+              </p>
             </div>
+          </div>
 
-            <div class="d-flex mb-4">
-              <div class="me-4">
-                <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center"
-                  style="width: 50px; height: 50px"
-                >
-                  <i class="fas fa-check text-secondary"></i>
-                </div>
-              </div>
-              <div>
-                <h5 class="fw-bold">Zero Downtime</h5>
-                <p class="mb-0">
-                  Your email continues working during migration with no service
-                  interruptions.
-                </p>
-              </div>
+          <!-- Meet -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Meet_Product_Icon?ts=1733841568207&dpr=off"
+                alt="Meet"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Meet</h5>
+              <p class="text-muted small">
+                Host meetings with high-quality video calls.
+              </p>
             </div>
+          </div>
 
-            <a href="#" class="btn btn-primary mt-3">Learn About Migration</a>
+          <!-- Docs -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Docs_Product_Icon?ts=1733841560647&dpr=off"
+                alt="Docs"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Docs</h5>
+              <p class="text-muted small">
+                Create & collaborate on online documents.
+              </p>
+            </div>
+          </div>
+
+          <!-- Forms -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/Forms_Product_Icon?ts=1733841579012&dpr=off"
+                alt="Forms"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Forms</h5>
+              <p class="text-muted small">
+                Create forms & surveys, then analyze results.
+              </p>
+            </div>
+          </div>
+
+          <!-- Drive -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Drive_logo.png"
+                alt="Drive"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Drive</h5>
+              <p class="text-muted small">
+                Store & share your files anytime, anywhere.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cloud -->
+          <div class="col-md-4 col-lg-3" data-cue="fadeIn">
+            <div class="card h-100 text-center p-3 shadow-sm tool-card">
+              <img
+                src="https://newfold.scene7.com/is/content/NewfoldDigital/google-cloud?ts=1733841498177&dpr=off"
+                alt="Cloud"
+                style="width: 50px"
+                class="mx-auto mb-3"
+              />
+              <h5 class="fw-semibold">Cloud</h5>
+              <p class="text-muted small">
+                A suite of cloud-based tools & services.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5 my-5" data-cue="fadeIn">
+    <!-- Testimonials Section -->
+    <section class="py-5 my-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title" data-cue="zoomIn">Frequently Asked Questions</h2>
-          <p class="lead text-muted" data-cue="zoomIn">
-            Find answers to common questions about our email hosting
+          <h2 class="fw-bold section-title " data-cue="zoomIn">What Our Customers Say</h2>
+          <p class="lead text-muted" data-cue="zoomIn" data-cue-delay="100">
+            Trusted by businesses of all sizes worldwide
           </p>
         </div>
 
-        <div class="row justify-content-center" data-cue="zoomIn">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card" data-cue="fadeIn">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Sarah Johnson"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="fw-bold mb-0">Sarah Johnson</h5>
+                  <p class="text-muted mb-0">Small Business Owner</p>
+                  <div class="text-warning small">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                "Switching to professional email with HostEmail transformed how
+                clients perceive my business. The setup was incredibly easy and
+                the reliability has been perfect."
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card" data-cue="fadeIn">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Michael Chen"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="fw-bold mb-0">Michael Chen</h5>
+                  <p class="text-muted mb-0">Marketing Director</p>
+                  <div class="text-warning small">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                "The shared calendars and contacts have revolutionized how our
+                team works together. We've seen a 30% improvement in scheduling
+                efficiency since switching."
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="testimonial-card" data-cue="fadeIn">
+              <div class="d-flex align-items-center mb-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Emily Rodriguez"
+                  class="testimonial-avatar"
+                />
+                <div>
+                  <h5 class="fw-bold mb-0">Emily Rodriguez</h5>
+                  <p class="text-muted mb-0">Nonprofit Executive</p>
+                  <div class="text-warning small">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                </div>
+              </div>
+              <p>
+                "For our nonprofit, budget is always a concern. Getting
+                professional email included with our hosting has saved us
+                hundreds per year with no compromise on quality."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparism Section -->
+    <section class="py-5 bg-white" id="plan-comparism" >
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold text-dark display-6" data-cue="zoomIn">
+            Compare Email & Productivity Hosting Options
+          </h2>
+          <p class="text-dark lead" data-cue="zoomIn">
+            See how Professional Email, Google Workspace, and Microsoft 365
+            stack up.
+          </p>
+        </div>
+
+        <div class="table-responsive" data-cue="fadeIn">
+          <table class="table table-bordered text-center align-middle">
+            <thead class="table-color">
+              <tr>
+                <th scope="col">Features</th>
+                <th scope="col">Professional Email Hosting</th>
+                <th scope="col">Google Workspace</th>
+                <th scope="col">Microsoft 365</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Custom Domain Email</th>
+                <td>✅</td>
+                <td>✅</td>
+                <td>✅</td>
+              </tr>
+              <tr>
+                <th scope="row">Cloud Storage</th>
+                <td>Limited or None</td>
+                <td>30 GB - Unlimited</td>
+                <td>1 TB+</td>
+              </tr>
+              <tr>
+                <th scope="row">Office Suite</th>
+                <td>Email Only</td>
+                <td>Docs, Sheets, Slides, Forms</td>
+                <td>Word, Excel, PowerPoint, Forms</td>
+              </tr>
+              <tr>
+                <th scope="row">Video Calls</th>
+                <td>❌</td>
+                <td>Google Meet</td>
+                <td>Microsoft Teams</td>
+              </tr>
+              <tr>
+                <th scope="row">Collaboration Tools</th>
+                <td>❌</td>
+                <td>Drive, Chat, Sites</td>
+                <td>OneDrive, SharePoint, Teams</td>
+              </tr>
+              <tr>
+                <th scope="row">Admin Controls</th>
+                <td>Basic</td>
+                <td>Advanced</td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <th scope="row">AI Integration</th>
+                <td>❌</td>
+                <td>Gemini AI</td>
+                <td>Copilot AI</td>
+              </tr>
+              <tr>
+                <th scope="row">Pricing</th>
+                <td>Low-cost</td>
+                <td>Mid-range</td>
+                <td>Mid-to-high</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 my-5">
+      <div class="container" data-cue="fadeIn">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold display-6">Frequently Asked Questions</h2>
+          <p class="lead text-muted">
+            Find answers to common questions about our Google workpace hosting
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="accordion" id="faqAccordion">
               <div class="faq-item">
@@ -2310,7 +2139,7 @@
                     aria-expanded="true"
                     aria-controls="faqOne"
                   >
-                    What's included in the free email hosting?
+                    What exactly is Google Workspace?
                   </button>
                 </h3>
                 <div
@@ -2319,10 +2148,11 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Every hosting plan includes professional email with 10GB
-                    storage per mailbox, advanced spam protection, webmail
-                    access, and compatibility with all major email clients like
-                    Outlook, Apple Mail, and Thunderbird.
+                    You're likely already familiar with popular free Google apps
+                    like Gmail, Docs, and others. Google Workspace builds on
+                    these tools by offering additional features like enhanced
+                    security, greater customization, and advanced management
+                    options.
                   </div>
                 </div>
               </div>
@@ -2337,7 +2167,8 @@
                     aria-expanded="false"
                     aria-controls="faqTwo"
                   >
-                    Can I use my own domain name?
+                    What are the benefits of using Google Workspace through our
+                    hosting provider?
                   </button>
                 </h3>
                 <div
@@ -2346,10 +2177,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Absolutely! You can use any domain you own with our email
-                    hosting. If you don't have a domain yet, we can help you
-                    register one. Professional email addresses (like
-                    you@yourbusiness.com) are included with all plans.
+                    Benefits include domain integration, email setup assistance,
+                    data migration support, priority customer service, and
+                    sometimes discounted pricing or bundled services like web
+                    hosting.
                   </div>
                 </div>
               </div>
@@ -2364,7 +2195,7 @@
                     aria-expanded="false"
                     aria-controls="faqThree"
                   >
-                    How do I migrate my existing emails?
+                    Can I use my own domain with Google Workspace?
                   </button>
                 </h3>
                 <div
@@ -2373,11 +2204,9 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    We provide free migration tools to transfer your emails,
-                    contacts, and calendars from most providers (Gmail,
-                    Outlook.com, Yahoo, etc.). Our support team is also
-                    available to assist with the migration process at no
-                    additional cost.
+                    Yes. You can connect your own custom domain (e.g.,
+                    yourname@yourcompany.com) to use Gmail and other Workspace
+                    tools professionally.
                   </div>
                 </div>
               </div>
@@ -2392,7 +2221,7 @@
                     aria-expanded="false"
                     aria-controls="faqFour"
                   >
-                    Is there a limit on email storage?
+                    Is Google Workspace secure for business use?
                   </button>
                 </h3>
                 <div
@@ -2401,10 +2230,9 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Each mailbox includes 10GB of storage, which is enough for
-                    hundreds of thousands of typical emails. If you need more
-                    storage, you can upgrade to a higher plan or purchase
-                    additional storage space.
+                    Absolutely. Google Workspace offers enterprise-grade
+                    security features like two-step verification, data
+                    encryption, and advanced admin controls.
                   </div>
                 </div>
               </div>
@@ -2419,7 +2247,7 @@
                     aria-expanded="false"
                     aria-controls="faqFive"
                   >
-                    What security features are included?
+                    Is Google Workspace suitable for remote or hybrid teams?
                   </button>
                 </h3>
                 <div
@@ -2428,62 +2256,12 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Our email hosting includes enterprise-grade spam filtering,
-                    virus protection, TLS encryption for all messages,
-                    two-factor authentication options, and DDoS protection. We
-                    also offer optional advanced threat protection for
-                    businesses with higher security needs.
+                    Definitely. Google Workspace is cloud-based and designed for
+                    real-time collaboration, making it ideal for remote and
+                    distributed teams.
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support Section -->
-    <section class="py-5 my-5" data-cue="zoomIn">
-      <div class="container">
-        <div class="support-section p-4 p-lg-5">
-          <div class="row align-items-center position-relative">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-              <h3 class="fw-bold mb-3 text-secondary">24/7 World-Class Support</h3>
-              <p class="mb-4">
-                Our customer success team is available around the clock to help
-                with any questions or issues.
-              </p>
-
-              <ul class="list-unstyled mb-4">
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> 24/7 live chat
-                  and email support
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Average
-                  response time under 5 minutes
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> 100% US-based
-                  support team
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Extensive
-                  knowledge base and tutorials
-                </li>
-              </ul>
-
-              <a href="support.php" class="btn btn-primary me-3"
-                >Contact Support</a
-              >
-              <a href="#" class="btn btn-outline-light">Browse Help Center</a>
-            </div>
-            <div class="col-lg-6">
-              <img
-                src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1470&auto=format&fit=crop"
-                alt="Support Team"
-                class="img-fluid rounded-4"
-              />
             </div>
           </div>
         </div>
@@ -2496,13 +2274,10 @@
         <div class="cta-section">
           <div class="row justify-content-center text-center position-relative">
             <div class="col-lg-8">
-              <h2 class="fw-bold mb-4 text-secondary">
-                Ready to Upgrade Your Business Email?
+              <h2 class="fw-bold mb-4 text-dark">
+                Ready to power your business email with Google Workspace?
               </h2>
-              <p class="lead mb-4">
-                Get professional email hosting included with any plan. No credit
-                card required to start.
-              </p>
+              <p class="lead mb-4">Let our team handle everything for you.</p>
               <div class="d-flex flex-wrap justify-content-center gap-3">
                 <a href="#pricing" class="btn btn-light btn-lg px-4"
                   >Choose Your Plan</a
@@ -2852,158 +2627,187 @@
 
     <!-- Footer End -->
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Theme JS -->
+     <script src="assets/js/theme.min.js"></script>
+     <script src="assets/js/init.js?t=20240403"></script>
+     <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+     <script src="assets/js/vendors/scrollcue.js"></script>
 
-    
-
-    <!-- Libs JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
-
-    <!-- Theme JS -->
-    <script src="assets/js/theme.min.js"></script>
-    <script src="assets/js/init.js?t=20240403"></script>
-    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
-    <script src="assets/js/vendors/scrollcue.js"></script>
-
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        let navbar = document.querySelector(".navbar");
+        new Swiper(".pricing-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: false,
 
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 50) {
-            // Change when scrolled 50px
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          observer: true,
+          observeParents: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      });
+
+      //Fix sizing when switching tabs
+      document.querySelectorAll(".tab__price").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          setTimeout(() => {
+            swiper.update(); // force recalculate size
+          }, 100); // short delay to let DOM render
         });
       });
     </script>
 
-     <!-- Swiper.js JS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-     <script>
-       document.addEventListener("DOMContentLoaded", function () {
-         new Swiper(".pricing-swiper", {
-           slidesPerView: 1,
-           spaceBetween: 10,
-           loop: false,
- 
-           navigation: {
-             nextEl: ".swiper-button-next",
-             prevEl: ".swiper-button-prev",
-           },
-           pagination: {
-             el: ".swiper-pagination",
-             clickable: true,
-           },
-           observer: true,
-           observeParents: true,
-           breakpoints: {
-             768: {
-               slidesPerView: 2,
-             },
-             1024: {
-               slidesPerView: 3,
-             },
-           },
-         });
-       });
- 
-       //Fix sizing when switching tabs
-       document.querySelectorAll(".tab__price").forEach((btn) => {
-         btn.addEventListener("click", () => {
-           setTimeout(() => {
-             swiper.update(); // force recalculate size
-           }, 100); // short delay to let DOM render
-         });
-       });
-     </script>
-
-     <!-- Toggle price script -->
+    <!-- Toggle price script -->
     <script>
-        function togglePrice() {
-          const pricingData = {
-            starter: {
-              monthly: { price: "3.63", old: "6.99", renew: "6.99" },
-              yearly: { price: "34.99", old: "83.88", renew: "83.88" },
-            },
-            professional: {
-              monthly: { price: "4.13", old: "7.99", renew: "7.99" },
-              yearly: { price: "39.99", old: "95.88", renew: "95.88" },
-            },
-            business: {
-              monthly: { price: "5.13", old: "9.99", renew: "9.99" },
-              yearly: { price: "49.99", old: "119.88", renew: "119.88" },
-            },
-            enterprise: {
-              monthly: { price: "7.63", old: "14.99", renew: "14.99" },
-              yearly: { price: "74.99", old: "179.88", renew: "179.88" },
-            },
-          };
-  
-          const toggleButtons = document.querySelectorAll(".price-toggle-btn");
-          const pricingCards = document.querySelectorAll(".pricing-card");
-  
-          function updatePrices(period) {
-            toggleButtons.forEach((btn) => btn.classList.remove("active"));
-            const activeButton = Array.from(toggleButtons).find(
-              (btn) => btn.getAttribute("data-period") === period
-            );
-  
-            console.log(activeButton);
-  
-            if (activeButton) {
-              activeButton.classList.add("active");
-            }
-  
-            pricingCards.forEach((card) => {
-              const plan = card.getAttribute("data-plan");
-              const priceInfo = pricingData[plan]?.[period];
-  
-              if (!priceInfo) {
-                console.warn(`Invalid plan "${plan}" or period "${period}"`);
-                return;
-              }
-  
-              const priceAmount = card.querySelector(".price-amount");
-              const oldPrice = card.querySelector(
-                ".text-decoration-line-through"
-              );
-              const renewPrice = card.querySelector(".small.text-muted");
-  
-              priceAmount.innerHTML = `$${
-                priceInfo.price
-              } <small class="price-period">/ ${
-                period === "monthly" ? "month" : "year"
-              }</small>`;
-              oldPrice.textContent = `$${priceInfo.old}`;
-              renewPrice.textContent = `$${priceInfo.renew} /${
-                period === "monthly" ? "mo" : "yr"
-              } when you renew`;
-            });
+      function togglePrice() {
+        const pricingData = {
+          starter: {
+            monthly: { price: "3.63", old: "6.99", renew: "6.99" },
+            yearly: { price: "34.99", old: "83.88", renew: "83.88" },
+          },
+          professional: {
+            monthly: { price: "4.13", old: "7.99", renew: "7.99" },
+            yearly: { price: "39.99", old: "95.88", renew: "95.88" },
+          },
+          business: {
+            monthly: { price: "5.13", old: "9.99", renew: "9.99" },
+            yearly: { price: "49.99", old: "119.88", renew: "119.88" },
+          },
+          enterprise: {
+            monthly: { price: "7.63", old: "14.99", renew: "14.99" },
+            yearly: { price: "74.99", old: "179.88", renew: "179.88" },
+          },
+        };
+
+        const toggleButtons = document.querySelectorAll(".price-toggle-btn");
+        const pricingCards = document.querySelectorAll(".pricing-card");
+
+        function updatePrices(period) {
+          toggleButtons.forEach((btn) => btn.classList.remove("active"));
+          const activeButton = Array.from(toggleButtons).find(
+            (btn) => btn.getAttribute("data-period") === period
+          );
+
+          console.log(activeButton);
+
+          if (activeButton) {
+            activeButton.classList.add("active");
           }
-  
-          // Initial setup
-          updatePrices("monthly");
-  
-          // Toggle buttons
-          toggleButtons.forEach((button) => {
-            button.addEventListener("click", function () {
-              const period = this.getAttribute("data-period");
-              updatePrices(period);
-            });
+
+          pricingCards.forEach((card) => {
+            const plan = card.getAttribute("data-plan");
+            const priceInfo = pricingData[plan]?.[period];
+
+            if (!priceInfo) {
+              console.warn(`Invalid plan "${plan}" or period "${period}"`);
+              return;
+            }
+
+            const priceAmount = card.querySelector(".price-amount");
+            const oldPrice = card.querySelector(
+              ".text-decoration-line-through"
+            );
+            const renewPrice = card.querySelector(".small.text-muted");
+
+            priceAmount.innerHTML = `$${
+              priceInfo.price
+            } <small class="price-period">/ ${
+              period === "monthly" ? "month" : "year"
+            }</small>`;
+            oldPrice.textContent = `$${priceInfo.old}`;
+            renewPrice.textContent = `$${priceInfo.renew} /${
+              period === "monthly" ? "mo" : "yr"
+            } when you renew`;
           });
         }
-        document.addEventListener("DOMContentLoaded", togglePrice);
-      </script>
+
+        // Initial setup
+        updatePrices("monthly");
+
+        // Toggle buttons
+        toggleButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const period = this.getAttribute("data-period");
+            updatePrices(period);
+          });
+        });
+      }
+      document.addEventListener("DOMContentLoaded", togglePrice);
+    </script>
+    <!-- Toggle menu script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
