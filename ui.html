@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UI/UX Design Services | WeFitHost</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <style>
+        :root {
+            --primary: #6b63ff;
+            --primary-light: rgba(107, 99, 255, 0.1);
+            --dark: #1e293b;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #6b63ff, #8a63ff);
+        }
+
+        /* Smooth scrolling & typography */
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            transition: all 0.3s ease;
+            background-color: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-uiux {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 12rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-uiux:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(107, 99, 255, 0.3), transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+
+        /* Cards & Hover Effects */
+        .service-card, .portfolio-card {
+            transition: all 0.4s ease;
+            border: none;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .service-card:hover, .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* Process Steps */
+        .process-step {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateX(10px);
+        }
+
+        .process-step .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(107, 99, 255, 0.3);
+        }
+
+        /* Portfolio Items */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: var(--light);
+            height: 300px;
+            transition: all 0.4s ease;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.popular {
+            border: 3px solid var(--primary) !important;
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular .card-header {
+            background: var(--gradient);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(107, 99, 255, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+        }
+
+        /* General Styling */
+        .bg-light {
+            background-color: var(--light) !important;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient);
+            border-color: var(--primary);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .bg-primary {
+            background: var(--gradient) !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-uiux {
+                padding: 8rem 0;
+                background-attachment: scroll;
+            }
+            
+            .process-step {
+                padding-left: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="100">
+    <!-- Header -->
+    <header class="custom-header">
+      <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./home.html">
+            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40" />
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">UI/UX Design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#process">Process</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+            </ul>
+
+            <!-- Right-side buttons -->
+            <div class="d-flex align-items-center">
+              <a href="https://my.wefithost.com/login" class="btn btn-link login-btn me-3" style="color: white;"><i class="bi bi-person"></i> Log In</a>
+              <a href="https://my.wefithost.com/manage" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-uiux" id="home">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Premium UI/UX Design Services</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">We create intuitive, beautiful digital experiences that drive engagement and conversions.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#pricing" class="btn btn-primary btn-lg px-4">View Packages</a>
+                        <a href="#portfolio" class="btn btn-outline-light btn-lg px-4">See Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#services" class="scroll-down animate__animated animate__fadeIn animate__delay-3s">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Why UI/UX Matters -->
+    <section class="py-5 py-lg-7" id="services">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">WHY IT MATTERS</span>
+                    <h2 class="display-5 fw-bold mb-4">Great Design = Better Business Results</h2>
+                    <p class="lead mb-4">A well-designed interface isn't just pretty—it drives engagement, builds trust, and increases conversions.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Increased Conversions</h5>
+                                    <p class="mb-0 small text-muted">Good UX can increase conversion rates by up to 400%.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Better Engagement</h5>
+                                    <p class="mb-0 small text-muted">Users spend 50% less time searching with good UI.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-phone"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Mobile Optimization</h5>
+                                    <p class="mb-0 small text-muted">57% of users won't recommend a poorly designed site.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-shield-check"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Brand Trust</h5>
+                                    <p class="mb-0 small text-muted">94% of first impressions are design-related.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="UI/UX design process" 
+                             class="img-fluid rounded-3 shadow">
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 rounded shadow-sm" style="transform: translate(-20%, 20%);">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Mobile UI example" 
+                                 class="img-fluid" width="120">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">SERVICES</span>
+                <h2 class="display-5 fw-bold mb-3">Our UI/UX Design Services</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-layout-text-window-reverse fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Website UI/UX Design</h3>
+                            <p class="text-muted mb-0">Custom-designed websites that are visually stunning and optimized for conversions.</p>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Responsive Design</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> User Flow Optimization</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Conversion-Focused Elements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-phone fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Mobile App Design</h3>
+                            <p class="text-muted mb-0">Intuitive mobile interfaces that provide seamless user experiences.</p>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> iOS & Android Design</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Prototyping & Testing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Gesture-Based Navigation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 service-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-pencil-square fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">UX Research & Strategy</h3>
+                            <p class="text-muted mb-0">Data-driven insights to create user-centered digital products.</p>
+                            <ul class="list-unstyled mt-3 text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> User Personas</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Usability Testing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Information Architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5 py-lg-7" id="process">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PROCESS</span>
+                <h2 class="display-5 fw-bold mb-3">Our UI/UX Design Process</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">A proven methodology to create exceptional digital experiences</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                        <span class="step-number">1</span>
+                        <h3 class="h4 mb-2">Discovery & Research</h3>
+                        <p class="text-muted mb-0">We conduct in-depth user research, market analysis, and competitor benchmarking to understand your audience and business goals.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+                        <span class="step-number">2</span>
+                        <h3 class="h4 mb-2">Wireframing & Prototyping</h3>
+                        <p class="text-muted mb-0">Low-fidelity wireframes evolve into interactive prototypes that we test with real users to validate concepts.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                        <span class="step-number">3</span>
+                        <h3 class="h4 mb-2">UI Design</h3>
+                        <p class="text-muted mb-0">We create pixel-perfect interfaces with attention to typography, color theory, and visual hierarchy.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+                        <span class="step-number">4</span>
+                        <h3 class="h4 mb-2">User Testing</h3>
+                        <p class="text-muted mb-0">Real users interact with the design while we gather feedback to refine the experience.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="500">
+                        <span class="step-number">5</span>
+                        <h3 class="h4 mb-2">Handoff & Implementation</h3>
+                        <p class="text-muted mb-0">We provide developers with all assets, style guides, and documentation for seamless implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="py-5 py-lg-7 bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PORTFOLIO</span>
+                <h2 class="display-5 fw-bold mb-3">Our UI/UX Design Work</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Case studies of successful projects we've delivered</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="E-commerce UI">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">E-commerce Platform</h3>
+                            <div>
+                                <span class="badge bg-primary me-2">Web Design</span>
+                                <span class="badge bg-primary">UX Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Mobile App">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Fitness Mobile App</h3>
+                            <div>
+                                <span class="badge bg-primary me-2">iOS & Android</span>
+                                <span class="badge bg-primary">User Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dashboard UI">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Analytics Dashboard</h3>
+                            <div>
+                                <span class="badge bg-primary me-2">Web App</span>
+                                <span class="badge bg-primary">Data Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="btn btn-outline-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-5 py-lg-7" id="pricing">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PRICING</span>
+                <h2 class="display-5 fw-bold mb-3">UI/UX Design Packages</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Flexible options to fit your project needs</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 pricing-card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Starter</h3>
+                            <p class="text-muted mb-4">For small projects and startups</p>
+                            <h4 class="mb-4">$2,499 <small class="text-muted fw-normal">/project</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> 5-10 Screens</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Responsive Design</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Basic Prototype</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> User Testing</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Style Guide</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 pricing-card border-0 shadow-lg popular">
+                        <div class="card-header text-white py-3">
+                            <span class="badge bg-white text-primary">MOST POPULAR</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Professional</h3>
+                            <p class="text-muted mb-4">For growing businesses</p>
+                            <h4 class="mb-4">$4,999 <small class="text-muted fw-normal">/project</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> 15-25 Screens</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Mobile & Desktop</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Interactive Prototype</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Basic User Testing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Style Guide</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 pricing-card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Enterprise</h3>
+                            <p class="text-muted mb-4">For complex applications</p>
+                            <h4 class="mb-4">$9,999+ <small class="text-muted fw-normal">/project</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> 50+ Screens</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Multi-platform</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Advanced Prototyping</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Comprehensive Testing</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Design System</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 py-lg-7 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4" data-aos="fade-up">Ready to Transform Your Digital Experience?</h2>
+            <p class="lead mb-5 mx-auto" style="max-width: 600px" data-aos="fade-up" data-aos-delay="100">Let's create a UI/UX design that delights users and drives business growth.</p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="#pricing" class="btn btn-light btn-lg px-4">View Packages</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">Book a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1e293b; color: white">
+        <!-- Your existing footer code here -->
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (target

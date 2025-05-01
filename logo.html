@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Logo Design Services | WeFitHost</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <style>
+        :root {
+            --primary: #6b63ff;
+            --primary-light: rgba(107, 99, 255, 0.1);
+            --dark: #1e293b;
+            --light: #f8f9fa;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Navigation */
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(30, 41, 59, 0.95) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero-logodesign {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 10rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-logodesign:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(107, 99, 255, 0.3), transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        
+        /* Logo Cards */
+        .logo-card {
+            transition: all 0.4s ease;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .logo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        /* Process Steps */
+        .process-step {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateX(10px);
+        }
+        
+        .process-step .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(107, 99, 255, 0.3);
+        }
+        
+        /* Portfolio Items */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: var(--light);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 280px;
+            transition: all 0.4s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .portfolio-item img {
+            max-width: 100%;
+            max-height: 100%;
+            transition: transform 0.5s ease;
+            filter: grayscale(20%);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0%);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Logo Type Badges */
+        .logo-type-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid var(--primary) !important;
+            transform: translateY(-5px);
+        }
+        
+        .pricing-card.popular .card-header {
+            background: linear-gradient(135deg, var(--primary), #8a63ff);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+        
+        .rating {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-light);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            bottom: -10px;
+            left: 0;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(107, 99, 255, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            background: #5a52e6;
+        }
+        
+        /* General Styling */
+        .bg-light {
+            background-color: var(--light) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #5a52e6;
+            border-color: #5a52e6;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .text-primary {
+            color: var(--primary) !important;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-logodesign {
+                padding: 7rem 0;
+                background-attachment: scroll;
+            }
+            
+            .process-step {
+                padding-left: 3.5rem;
+            }
+            
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline:before {
+                left: 15px;
+            }
+            
+            .timeline-dot {
+                left: -28px;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarContent" data-bs-offset="100">
+    <!-- Header -->
+    <header class="custom-header">
+      <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #1e293b">
+        <div class="container">
+          <!-- Logo -->
+          <a class="navbar-brand" href="./home.html">
+            <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40" />
+          </a>
+
+          <!-- Mobile Toggle -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navigation Content -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Hosting Mega Dropdown -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a class="nav-link dropdown-toggle" href="/" id="hostingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hosting
+                </a>
+                <!-- ... rest of your existing header ... -->
+              </li>
+              
+              <!-- Logo Design Link -->
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Logo Design</a>
+              </li>
+              
+              <!-- Other Navigation Links -->
+              <li class="nav-item">
+                <a class="nav-link" href="#process">Process</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">Testimonials</a>
+              </li>
+            </ul>
+
+            <!-- Right-side buttons -->
+            <div class="d-flex align-items-center">
+              <a href="https://my.wefithost.com/login" class="btn btn-link login-btn me-3" style="color: white;"><i class="bi bi-person"></i> Log In</a>
+              <a href="https://my.wefithost.com/manage" class="btn btn-primary">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-logodesign" id="home">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Professional Logo Design</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">Create a powerful brand identity with custom logo designs that make your business memorable and stand out from competitors.</p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#pricing" class="btn btn-primary btn-lg px-4">View Packages</a>
+                        <a href="#portfolio" class="btn btn-outline-light btn-lg px-4">See Examples</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                         alt="Logo design process" 
+                         class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+        <a href="#why-invest" class="scroll-down animate__animated animate__fadeIn animate__delay-3s">
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Why Invest in Logo Design -->
+    <section class="py-5 py-lg-7" id="why-invest">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">BRANDING</span>
+                    <h2 class="display-5 fw-bold mb-4">Your Logo is Your Business Identity</h2>
+                    <p class="lead mb-4">A professionally designed logo builds trust, communicates your values, and makes your brand instantly recognizable across all platforms.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-eye-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">First Impressions Matter</h5>
+                                    <p class="mb-0 small text-muted">Customers form opinions about your business in seconds based on visual appeal.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-lightbulb-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Brand Recognition</h5>
+                                    <p class="mb-0 small text-muted">A distinctive logo helps customers remember and identify your business instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Professional Image</h5>
+                                    <p class="mb-0 small text-muted">Establishes credibility and trust with your audience and competitors.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-start">
+                                <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 p-2 me-3">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Competitive Edge</h5>
+                                    <p class="mb-0 small text-muted">Stand out in crowded marketplaces with a unique visual identity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                             alt="Brand identity examples" 
+                             class="img-fluid rounded-3 shadow">
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 rounded shadow-sm" style="transform: translate(-20%, 20%);">
+                            <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Logo example" 
+                                 class="img-fluid" width="120">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Styles -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">STYLES</span>
+                <h2 class="display-5 fw-bold mb-3">Logo Design Styles</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">We create logos that match your brand personality and industry standards</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 logo-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4 p-4 bg-primary bg-opacity-10 rounded-3">
+                                <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Wordmark" class="img-fluid">
+                            </div>
+                            <h3 class="h5 mb-3">Wordmark</h3>
+                            <p class="text-muted mb-0">Text-based logos that focus on your business name with custom typography and color treatments.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 logo-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4 p-4 bg-primary bg-opacity-10 rounded-3">
+                                <img src="https://images.unsplash.com/photo-1611162617263-4ec3060bf7d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Lettermark" class="img-fluid">
+                            </div>
+                            <h3 class="h5 mb-3">Lettermark</h3>
+                            <p class="text-muted mb-0">Initial-based logos perfect for companies with long names, creating memorable monograms.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 logo-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4 p-4 bg-primary bg-opacity-10 rounded-3">
+                                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Pictorial" class="img-fluid">
+                            </div>
+                            <h3 class="h5 mb-3">Pictorial</h3>
+                            <p class="text-muted mb-0">Iconic symbols that represent your brand visually without relying on text elements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 logo-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4 p-4 bg-primary bg-opacity-10 rounded-3">
+                                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Combination" class="img-fluid">
+                            </div>
+                            <h3 class="h5 mb-3">Combination</h3>
+                            <p class="text-muted mb-0">Mix of text and symbol for maximum brand recognition and versatility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-5 py-lg-7" id="process">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PROCESS</span>
+                <h2 class="display-5 fw-bold mb-3">Our Logo Design Process</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">A collaborative approach to creating your perfect logo</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                        <span class="step-number">1</span>
+                        <h3 class="h4 mb-2">Discovery & Research</h3>
+                        <p class="text-muted mb-0">We start with an in-depth questionnaire and market research to understand your business, target audience, competitors, and design preferences. This helps us establish the creative direction and ensure your logo stands out in your industry.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+                        <span class="step-number">2</span>
+                        <h3 class="h4 mb-2">Concept Development</h3>
+                        <p class="text-muted mb-0">Our designers create multiple initial concepts based on your brand identity. We explore different styles, colors, and typography options to provide you with a diverse range of creative directions to choose from.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                        <span class="step-number">3</span>
+                        <h3 class="h4 mb-2">Client Review</h3>
+                        <p class="text-muted mb-0">You receive 3-5 initial logo concepts to review in a private online presentation. We gather your detailed feedback to refine the direction before moving forward with the chosen concept.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+                        <span class="step-number">4</span>
+                        <h3 class="h4 mb-2">Refinement</h3>
+                        <p class="text-muted mb-0">We refine the selected concept(s) based on your feedback, making precise adjustments to colors, typography, composition, and any other elements until it perfectly represents your brand vision.</p>
+                    </div>
+                    
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="500">
+                        <span class="step-number">5</span>
+                        <h3 class="h4 mb-2">Final Delivery</h3>
+                        <p class="text-muted mb-0">You receive all final logo files in multiple formats (PNG, JPG, SVG, EPS) with various color versions, along with a comprehensive brand style guide for consistent usage across all platforms and media.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">TIMELINE</span>
+                <h2 class="display-5 fw-bold mb-3">Project Timeline</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Typical logo design project schedule</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="timeline-dot"></div>
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="mb-2">Day 1-2: Discovery Phase</h5>
+                                    <p class="text-muted mb-0">Initial consultation, questionnaire completion, and market research.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-dot"></div>
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="mb-2">Day 3-5: Concept Development</h5>
+                                    <p class="text-muted mb-0">Our designers create initial concepts and present them for review.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="timeline-dot"></div>
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="mb-2">Day 6-7: Client Feedback</h5>
+                                    <p class="text-muted mb-0">You review concepts and provide detailed feedback for refinements.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="timeline-dot"></div>
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="mb-2">Day 8-9: Refinement</h5>
+                                    <p class="text-muted mb-0">We implement your feedback and refine the selected concept.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="timeline-dot"></div>
+                            <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <h5 class="mb-2">Day 10: Final Delivery</h5>
+                                    <p class="text-muted mb-0">You receive all final files and brand guidelines.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="py-5 py-lg-7" id="portfolio">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PORTFOLIO</span>
+                <h2 class="display-5 fw-bold mb-3">Recent Logo Designs</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Examples of logos we've created for businesses across various industries</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162617263-4ec3060bf7d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cafe Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Brew Haven</h3>
+                            <div>
+                                <span class="logo-type-badge">Wordmark</span>
+                                <span class="logo-type-badge">Food & Beverage</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tech Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Nexus Technologies</h3>
+                            <div>
+                                <span class="logo-type-badge">Combination</span>
+                                <span class="logo-type-badge">Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fitness Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Peak Performance</h3>
+                            <div>
+                                <span class="logo-type-badge">Pictorial</span>
+                                <span class="logo-type-badge">Fitness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Law Firm Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Summit Law Group</h3>
+                            <div>
+                                <span class="logo-type-badge">Lettermark</span>
+                                <span class="logo-type-badge">Professional Services</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162617263-4ec3060bf7d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kids Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Tiny Explorers</h3>
+                            <div>
+                                <span class="logo-type-badge">Combination</span>
+                                <span class="logo-type-badge">Education</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-item shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Beauty Logo">
+                        <div class="portfolio-overlay">
+                            <h3 class="h5 mb-1">Lumière Beauty</h3>
+                            <div>
+                                <span class="logo-type-badge">Wordmark</span>
+                                <span class="logo-type-badge">Beauty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="700">
+                <a href="#" class="btn btn-outline-primary">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">DELIVERABLES</span>
+                <h2 class="display-5 fw-bold mb-3">What You'll Receive</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Complete logo package ready for any application</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-file-earmark-image fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">High-Resolution Files</h3>
+                            <p class="text-muted mb-0">PNG, JPG (300dpi) for print and digital use in multiple sizes and aspect ratios.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-vector-pen fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Vector Files</h3>
+                            <p class="text-muted mb-0">EPS and SVG formats for unlimited scalability without quality loss, perfect for large format printing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-palette fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Color Variations</h3>
+                            <p class="text-muted mb-0">Full color, black & white, and reversed versions for different backgrounds with Pantone color codes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-3 mb-4 mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                <i class="bi bi-journal-bookmark fs-3"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Brand Guidelines</h3>
+                            <p class="text-muted mb-0">Comprehensive documentation on proper logo usage, colors, typography, spacing, and application examples.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 py-lg-7" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">TESTIMONIALS</span>
+                <h2 class="display-5 fw-bold mb-3">What Our Clients Say</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Don't just take our word for it - hear from businesses we've helped</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="testimonial-img mb-3">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4">"The logo WeFitHost designed perfectly captures our brand personality. We've received countless compliments from customers and it's helped establish our professional image."</p>
+                            <h5 class="mb-1">Sarah Johnson</h5>
+                            <p class="text-muted small">Founder, Brew Haven</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-img mb-3">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4">"Working with WeFitHost was a fantastic experience. They took the time to understand our business and delivered a logo that exceeded our expectations. The brand guidelines were incredibly helpful."</p>
+                            <h5 class="mb-1">Michael Chen</h5>
+                            <p class="text-muted small">CEO, Nexus Technologies</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 testimonial-card">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="testimonial-img mb-3">
+                            <div class="rating mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-4">"Our new logo has completely transformed our brand identity. The design process was collaborative and professional. WeFitHost delivered exactly what we needed to stand out in our market."</p>
+                            <h5 class="mb-1">Emily Rodriguez</h5>
+                            <p class="text-muted small">Owner, Lumière Beauty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-5 py-lg-7 bg-light" id="pricing">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PRICING</span>
+                <h2 class="display-5 fw-bold mb-3">Logo Design Packages</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Simple pricing with everything you need to build your brand</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 pricing-card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Starter Logo</h3>
+                            <p class="text-muted mb-4">Perfect for new businesses and startups</p>
+                            <h4 class="mb-4">$299 <small class="text-muted fw-normal">one-time</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 3 Initial Concepts</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 2 Revisions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Final Logo Files (PNG, JPG)</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Vector Files (EPS, SVG)</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Brand Guidelines</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Social Media Kit</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 pricing-card border-0 shadow-lg popular">
+                        <div class="card-header bg-primary text-white py-3">
+                            <span class="badge bg-white text-primary">MOST POPULAR</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Professional Logo</h3>
+                            <p class="text-muted mb-4">Ideal for established businesses and brands</p>
+                            <h4 class="mb-4">$599 <small class="text-muted fw-normal">one-time</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 5 Initial Concepts</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Revisions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Final Logo Files (PNG, JPG)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Vector Files (EPS, SVG)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic Brand Guidelines</li>
+                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Social Media Kit</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 pricing-card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="h4 mb-3">Brand Identity Package</h3>
+                            <p class="text-muted mb-4">Complete branding solution for serious businesses</p>
+                            <h4 class="mb-4">$1,299 <small class="text-muted fw-normal">one-time</small></h4>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 7 Initial Concepts</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Revisions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> All Logo File Formats</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Comprehensive Brand Guidelines</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Social Media Kit</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Business Card Design</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <p class="mb-3">Need custom solutions for your business?</p>
+                <a href="#" class="btn btn-primary px-4">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">FAQ</span>
+                <h2 class="display-5 fw-bold mb-3">Logo Design Questions</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px">Answers to common questions about our logo design services</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    How long does the logo design process take?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our standard logo design process takes 7-10 business days from initial briefing to final delivery. More complex projects or those requiring multiple revisions may take 2-3 weeks. We offer rush services for an additional 25% fee that can deliver your logo in 3-5 business days.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    What information do you need to design my logo?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We'll start with a detailed questionnaire covering your business name, industry, target audience, competitors, design preferences (colors, styles), and brand personality. The more information you provide about your vision, values, and what makes your business unique, the better we can create a logo that truly represents you. Examples of logos you like/dislike are also helpful.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Will I own the copyright to my logo?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Upon final payment, you receive full copyright ownership of your logo design through a signed copyright transfer agreement. The logo is yours to use however you wish with no restrictions. We retain no rights to the design and will never reuse or resell it.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Can you design matching business cards and stationery?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely! Our Brand Identity Package includes business card design, and we offer add-on services for letterheads, email signatures, social media graphics, packaging, and other branded materials. Maintaining visual consistency across all touchpoints strengthens brand recognition and professionalism. Ask about our complete brand identity packages.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="500">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    What if I'm not happy with the initial concepts?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We offer unlimited revisions in our Professional and Brand Identity packages to ensure complete satisfaction. If you're not happy with the initial concepts, we'll go back to the drawing board with your feedback to develop new directions. Our process is collaborative until you're 100% satisfied with your logo design.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 py-lg-7 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4" data-aos="fade-up">Ready to Create Your Perfect Logo?</h2>
+            <p class="lead mb-5 mx-auto" style="max-width: 600px" data-aos="fade-up" data-aos-delay="100">Let's design a logo that captures your brand essence and resonates with your audience.</p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="#pricing" class="btn btn-light btn-lg px-4">Choose a Package</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4">Schedule Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same Footer as Before -->
+    <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1e293b; color: white">
+        <!-- Your existing footer code here -->
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+        
+        // Portfolio hover effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+        
+        // Pricing card hover effect
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('popular')) {
+                    this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('popular')) {
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
