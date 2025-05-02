@@ -3,20 +3,35 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
 
     <!-- Bootstrap JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- Libs CSS -->
-    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
-    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
@@ -25,20 +40,29 @@
     <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" /> 
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
 
     <!-- FAV ICON -->
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <title>WeFitHost - Cloud Hosting Solutions</title>
 
     <style>
@@ -51,12 +75,19 @@
         --body-bg: #ffffff;
         --text-color: #333333;
         --text-muted: #6c757d;
+        --text-muted-dark: #6c757d;
+      }
+
+      [data-bs-theme="dark"] .btn-outline-light {
+        --bs-btn-color: #8d929a;
+        --bs-btn-border-color: #bdbebe;
+       
       }
 
       [data-bs-theme="dark"] {
-        --body-bg: #1a1a2e;
         --text-color: #f8f9fa;
-        --text-muted: #adb5bd;
+        --text-muted: #6c757d;
+        --text-muted-dark: #ffffffec;
       }
 
       body {
@@ -252,15 +283,15 @@
 
       /*Cloud hosting styles*/
       .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         color: white;
         padding: 7rem 0;
       }
-      
+
       .feature-card {
         transition: all 0.3s ease;
         border: none;
@@ -268,12 +299,12 @@
         height: 100%;
         background-color: var(--body-bg);
       }
-      
+
       .feature-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
       }
-      
+
       .icon-wrapper {
         width: 70px;
         height: 70px;
@@ -284,7 +315,7 @@
         background-color: var(--primary-light);
         margin-bottom: 1.5rem;
       }
-      
+
       .data-center-marker {
         position: absolute;
         width: 14px;
@@ -294,7 +325,7 @@
         border: 3px solid white;
         box-shadow: 0 0 0 3px rgba(107, 99, 255, 0.3);
       }
-      
+
       .tech-stack img {
         height: 50px;
         margin: 1rem;
@@ -302,49 +333,55 @@
         transition: all 0.3s ease;
         filter: grayscale(100%);
       }
-      
+
       .tech-stack img:hover {
         opacity: 1;
         filter: grayscale(0%);
         transform: scale(1.1);
       }
-      
+
       .pricing-card {
         transition: all 0.3s ease;
         border: none;
         background-color: var(--body-bg);
       }
-      
+
       .pricing-card:hover {
         transform: translateY(-5px);
       }
-      
+
       .popular-card {
         border: 2px solid var(--primary) !important;
         margin-top: -15px;
         margin-bottom: -15px;
       }
-      
+
       .stats-item {
         padding: 2rem;
         border-radius: 12px;
         transition: all 0.3s ease;
         background-color: var(--body-bg);
       }
-      
+
       .stats-item:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
-      
+
       .floating {
         animation: floating 3s ease-in-out infinite;
       }
-      
+
       @keyframes floating {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
       /* New sections styles */
@@ -353,22 +390,22 @@
         border-radius: 12px;
         overflow: hidden;
       }
-      
+
       .comparison-table th {
         background-color: var(--primary);
         color: white;
       }
-      
+
       .resource-monitoring {
         background: linear-gradient(135deg, var(--primary) 0%, #8b3dff 100%);
         color: white;
         border-radius: 12px;
       }
-      
+
       .deployment-process {
         counter-reset: step;
       }
-      
+
       .deployment-step::before {
         counter-increment: step;
         content: counter(step);
@@ -383,7 +420,7 @@
         margin-right: 10px;
         font-weight: bold;
       }
-      
+
       .security-badge {
         display: inline-flex;
         align-items: center;
@@ -393,33 +430,33 @@
         margin-right: 10px;
         margin-bottom: 10px;
       }
-      
+
       .integration-card {
         transition: all 0.3s ease;
         height: 100%;
       }
-      
+
       .integration-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-      
+
       .case-study-card {
         transition: all 0.3s ease;
       }
-      
+
       .case-study-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
-      
+
       .timeline {
         position: relative;
         padding-left: 30px;
       }
-      
+
       .timeline::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 10px;
         top: 0;
@@ -427,14 +464,14 @@
         width: 2px;
         background-color: var(--primary);
       }
-      
+
       .timeline-item {
         position: relative;
         padding-bottom: 20px;
       }
-      
+
       .timeline-item::before {
-        content: '';
+        content: "";
         position: absolute;
         left: -30px;
         top: 5px;
@@ -443,6 +480,10 @@
         border-radius: 50%;
         background-color: var(--primary);
         border: 2px solid white;
+      }
+
+      .card-img-top {
+        height: 250px;
       }
     </style>
   </head>
@@ -1299,1106 +1340,1771 @@
     </script>
     <!-- Navbar End -->
 
-     <!-- Hero Section -->
-     <section class="hero-section" data-aos="fade">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="display-3 fw-bold mb-4" data-aos="fade-up">Enterprise-Grade Cloud Hosting</h1>
-                    <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Deploy scalable applications with our high-performance cloud infrastructure. Get 99.99% uptime, automatic scaling, and global data centers.</p>
-                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#pricing" class="btn btn-primary btn-lg px-4">Get Started</a>
-                        <a href="#features" class="btn btn-outline-light btn-lg px-4">Explore Features</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0">
-                    <div class="card bg-white text-dark p-4 shadow-lg floating" data-aos="fade-left">
-                        <h3 class="h4 mb-3">Start in minutes</h3>
-                        <div class="mb-3">
-                            <label class="form-label">Choose your plan:</label>
-                            <select class="form-select">
-                                <option>Starter - $29/month</option>
-                                <option>Professional - $59/month</option>
-                                <option>Business - $99/month</option>
-                                <option>Enterprise - Custom</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Select data center:</label>
-                            <select class="form-select">
-                                <option>North America (East)</option>
-                                <option>North America (West)</option>
-                                <option>Europe</option>
-                                <option>Asia Pacific</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-primary w-100">Deploy Now</button>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero-section py-8" data-aos="fade">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1
+              class="display-3 fw-bold mb-4 text-secondary"
+              data-aos="fade-up"
+            >
+              Enterprise-Grade Cloud Hosting
+            </h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+              Deploy scalable applications with our high-performance cloud
+              infrastructure. Get 99.99% uptime, automatic scaling, and global
+              data centers.
+            </p>
+            <div
+              class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <a href="#pricing" class="btn btn-primary btn-lg px-4"
+                >Get Started</a
+              >
+              <a href="#features" class="btn btn-outline-light btn-lg px-4"
+                >Explore Features</a
+              >
             </div>
+          </div>
+          <div class="col-lg-5 mt-5 mt-lg-0">
+            <div
+              class="card bg-white text-dark p-4 shadow-lg floating"
+              data-aos="fade-left"
+            >
+              <h3 class="h4 mb-3">Start in minutes</h3>
+              <div class="mb-3">
+                <label class="form-label">Choose your plan:</label>
+                <select class="form-select">
+                  <option>Starter - $29/month</option>
+                  <option>Professional - $59/month</option>
+                  <option>Business - $99/month</option>
+                  <option>Enterprise - Custom</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Select data center:</label>
+                <select class="form-select">
+                  <option>North America (East)</option>
+                  <option>North America (West)</option>
+                  <option>Europe</option>
+                  <option>Asia Pacific</option>
+                </select>
+              </div>
+              <button class="btn btn-primary w-100">Deploy Now</button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Trust Badges -->
     <section class="py-4 bg-light" data-aos="fade">
-        <div class="container">
-            <div class="row align-items-center justify-content-center g-4">
-                <div class="col-auto text-center">
-                    <p class="mb-0 text-muted">Trusted by 15,000+ businesses worldwide</p>
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="100">
-                    <img src="https://via.placeholder.com/150x50?text=TechCo" alt="TechCo" height="40" class="img-fluid">
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="200">
-                    <img src="https://via.placeholder.com/150x50?text=StartUp" alt="StartUp" height="40" class="img-fluid">
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="300">
-                    <img src="https://via.placeholder.com/150x50?text=GlobalInc" alt="GlobalInc" height="40" class="img-fluid">
-                </div>
-                <div class="col-auto" data-aos="fade" data-aos-delay="400">
-                    <img src="https://via.placeholder.com/150x50?text=Fortune500" alt="Fortune500" height="40" class="img-fluid">
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center justify-content-center g-4">
+          <div class="col-auto text-center">
+            <p class="mb-0 text-muted-dark">
+              Trusted by 15,000+ businesses worldwide
+            </p>
+          </div>
+          <div class="col-auto" data-aos="fade" data-aos-delay="100">
+            <img
+              src="https://via.placeholder.com/150x50?text=TechCo"
+              alt="TechCo"
+              height="40"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-auto" data-aos="fade" data-aos-delay="200">
+            <img
+              src="https://via.placeholder.com/150x50?text=StartUp"
+              alt="StartUp"
+              height="40"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-auto" data-aos="fade" data-aos-delay="300">
+            <img
+              src="https://via.placeholder.com/150x50?text=GlobalInc"
+              alt="GlobalInc"
+              height="40"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-auto" data-aos="fade" data-aos-delay="400">
+            <img
+              src="https://via.placeholder.com/150x50?text=Fortune500"
+              alt="Fortune500"
+              height="40"
+              class="img-fluid"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up">
-                    <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
-                        <h2 class="display-4 fw-bold text-primary mb-2">99.99%</h2>
-                        <p class="mb-0 fw-bold">Uptime SLA</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
-                        <h2 class="display-4 fw-bold text-primary mb-2">15</h2>
-                        <p class="mb-0 fw-bold">Global Data Centers</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
-                        <h2 class="display-4 fw-bold text-primary mb-2">24/7</h2>
-                        <p class="mb-0 fw-bold">Expert Support</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
-                        <h2 class="display-4 fw-bold text-primary mb-2">500ms</h2>
-                        <p class="mb-0 fw-bold">Avg. Response Time</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-aos="fade-up">
+            <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
+              <h2 class="display-4 fw-bold text-primary mb-2">99.99%</h2>
+              <p class="mb-0 fw-bold">Uptime SLA</p>
             </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
+              <h2 class="display-4 fw-bold text-primary mb-2">15</h2>
+              <p class="mb-0 fw-bold">Global Data Centers</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
+              <h2 class="display-4 fw-bold text-primary mb-2">24/7</h2>
+              <p class="mb-0 fw-bold">Expert Support</p>
+            </div>
+          </div>
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="stats-item bg-white text-center p-4 shadow-sm h-100">
+              <h2 class="display-4 fw-bold text-primary mb-2">500ms</h2>
+              <p class="mb-0 fw-bold">Avg. Response Time</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Key Features -->
     <section class="py-5 py-lg-7" id="features">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">WHY CHOOSE US</span>
-                <h2 class="display-5 fw-bold mb-3">Powerful Cloud Infrastructure</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Everything you need to deploy, manage, and scale your applications</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 feature-card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-lightning-charge-fill text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Ultra-Fast Performance</h3>
-                            <p class="text-muted mb-0">NVMe SSD storage and optimized stack deliver 3x faster performance than standard hosting.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 feature-card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-arrow-up-down text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Auto Scaling</h3>
-                            <p class="text-muted mb-0">Resources automatically adjust to handle traffic spikes without manual intervention.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 feature-card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-shield-lock text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Enterprise Security</h3>
-                            <p class="text-muted mb-0">DDoS protection, firewalls, and automatic backups keep your data safe.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100 feature-card shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-globe2 text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Global Network</h3>
-                            <p class="text-muted mb-0">15 data centers worldwide to deploy closer to your users for reduced latency.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >WHY CHOOSE US</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Powerful Cloud Infrastructure</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Everything you need to deploy, manage, and scale your applications
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-lightning-charge-fill text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Ultra-Fast Performance</h3>
+                <p class="text-muted mb-0">
+                  NVMe SSD storage and optimized stack deliver 3x faster
+                  performance than standard hosting.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-arrow-down-up text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Auto Scaling</h3>
+                <p class="text-muted mb-0">
+                  Resources automatically adjust to handle traffic spikes
+                  without manual intervention.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-shield-lock text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Enterprise Security</h3>
+                <p class="text-muted mb-0">
+                  DDoS protection, firewalls, and automatic backups keep your
+                  data safe.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-globe2 text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Global Network</h3>
+                <p class="text-muted mb-0">
+                  15 data centers worldwide to deploy closer to your users for
+                  reduced latency.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Performance Comparison -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PERFORMANCE</span>
-                    <h2 class="display-5 fw-bold mb-4">2.5x Faster Than Competitors</h2>
-                    <p class="lead mb-4">Our optimized cloud infrastructure delivers unmatched speed for your applications.</p>
-                    
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Our Cloud</span>
-                            <span>780ms</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-primary" style="width: 100%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-5">
-                        <div class="d-flex justify-content-between mb-2">
-                            <span>Average Competitor</span>
-                            <span>1.9s</span>
-                        </div>
-                        <div class="progress" style="height: 8px;">
-                            <div class="progress-bar bg-secondary" style="width: 41%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row g-3">
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                <span>99.99% Uptime SLA</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                <span>24/7 Monitoring</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                <span>Free SSL Certificates</span>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center">
-                                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                <span>DDoS Protection</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                         alt="Server performance comparison" 
-                         class="img-fluid rounded-3 shadow">
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+              >PERFORMANCE</span
+            >
+            <h2 class="display-5 fw-bold mb-4 text-dark">
+              2.5x Faster Than Competitors
+            </h2>
+            <p class="lead mb-4">
+              Our optimized cloud infrastructure delivers unmatched speed for
+              your applications.
+            </p>
+
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Our Cloud</span>
+                <span>780ms</span>
+              </div>
+              <div class="progress" style="height: 8px">
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
+              </div>
             </div>
+
+            <div class="mb-5">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Average Competitor</span>
+                <span>1.9s</span>
+              </div>
+              <div class="progress" style="height: 8px">
+                <div class="progress-bar bg-secondary" style="width: 41%"></div>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>99.99% Uptime SLA</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>24/7 Monitoring</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>Free SSL Certificates</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  <span>DDoS Protection</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Server performance comparison"
+              class="img-fluid rounded-3 shadow"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- New: Resource Monitoring Section -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">MONITORING</span>
-                <h2 class="display-5 fw-bold mb-3">Real-Time Resource Monitoring</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Keep track of your cloud resources with our intuitive dashboard</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="resource-monitoring p-4 h-100 rounded-3">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h4 mb-0">CPU Usage</h3>
-                            <span class="badge bg-white text-primary">Live</span>
-                        </div>
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Current Usage</span>
-                                <span>24%</span>
-                            </div>
-                            <div class="progress bg-white bg-opacity-25" style="height: 8px;">
-                                <div class="progress-bar bg-white" style="width: 24%"></div>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                    <small class="d-block text-white-50">Peak Today</small>
-                                    <strong class="text-white">68%</strong>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                    <small class="d-block text-white-50">Avg. Daily</small>
-                                    <strong class="text-white">32%</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="resource-monitoring p-4 h-100 rounded-3">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h3 class="h4 mb-0">Memory Usage</h3>
-                            <span class="badge bg-white text-primary">Live</span>
-                        </div>
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>Current Usage</span>
-                                <span>1.8GB / 4GB</span>
-                            </div>
-                            <div class="progress bg-white bg-opacity-25" style="height: 8px;">
-                                <div class="progress-bar bg-white" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                    <small class="d-block text-white-50">Peak Today</small>
-                                    <strong class="text-white">3.2GB</strong>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-white bg-opacity-10 p-3 rounded-3">
-                                    <small class="d-block text-white-50">Auto-scaled</small>
-                                    <strong class="text-white">2 Times</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >MONITORING</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Real-Time Resource Monitoring</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Keep track of your cloud resources with our intuitive dashboard
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="resource-monitoring p-4 h-100 rounded-3">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h3 class="h4 mb-0 text-secondary">CPU Usage</h3>
+                <span class="badge bg-white text-primary">Live</span>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Current Usage</span>
+                  <span>24%</span>
+                </div>
+                <div
+                  class="progress bg-secondary bg-opacity-25"
+                  style="height: 8px"
+                >
+                  <div class="progress-bar bg-white" style="width: 24%"></div>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                    <small class="d-block text-white-50">Peak Today</small>
+                    <strong class="text-secondary">68%</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                    <small class="d-block text-white-50">Avg. Daily</small>
+                    <strong class="text-secondary">32%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="resource-monitoring p-4 h-100 rounded-3">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h3 class="h4 mb-0 text-secondary">Memory Usage</h3>
+                <span class="badge bg-white text-primary">Live</span>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Current Usage</span>
+                  <span>1.8GB / 4GB</span>
+                </div>
+                <div
+                  class="progress bg-secondary bg-opacity-25"
+                  style="height: 8px"
+                >
+                  <div class="progress-bar bg-white" style="width: 45%"></div>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                    <small class="d-block text-white-50">Peak Today</small>
+                    <strong class="text-secondary">3.2GB</strong>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-3">
+                    <small class="d-block text-white-50">Auto-scaled</small>
+                    <strong class="text-secondary">2 Times</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- New: Deployment Process Section -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">DEPLOYMENT</span>
-                <h2 class="display-5 fw-bold mb-3">Simple Deployment Process</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Get your applications up and running in minutes, not hours</p>
-            </div>
-            
-            <div class="row g-4 deployment-process">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h5 mb-3 deployment-step">Select Your Configuration</h3>
-                            <p class="text-muted mb-0">Choose from pre-configured setups or customize your own with our intuitive interface.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h5 mb-3 deployment-step">Choose Data Center</h3>
-                            <p class="text-muted mb-0">Select from our global network of data centers to minimize latency for your users.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h5 mb-3 deployment-step">Deploy Your App</h3>
-                            <p class="text-muted mb-0">Upload your code or connect your Git repository for automatic deployments.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h5 mb-3 deployment-step">Go Live</h3>
-                            <p class="text-muted mb-0">Your application is now live with automatic scaling and monitoring enabled.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >DEPLOYMENT</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">
+            Simple Deployment Process
+          </h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            Get your applications up and running in minutes, not hours
+          </p>
         </div>
+
+        <div class="row g-4 deployment-process">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3 deployment-step">
+                  Select Your Configuration
+                </h3>
+                <p class="text-muted mb-0">
+                  Choose from pre-configured setups or customize your own with
+                  our intuitive interface.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3 deployment-step">Choose Data Center</h3>
+                <p class="text-muted mb-0">
+                  Select from our global network of data centers to minimize
+                  latency for your users.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3 deployment-step">Deploy Your App</h3>
+                <p class="text-muted mb-0">
+                  Upload your code or connect your Git repository for automatic
+                  deployments.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h5 mb-3 deployment-step">Go Live</h3>
+                <p class="text-muted mb-0">
+                  Your application is now live with automatic scaling and
+                  monitoring enabled.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Use Cases Section -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">USE CASES</span>
-                <h2 class="display-5 fw-bold mb-3">Perfect For Any Workload</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">From small blogs to enterprise applications</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top" 
-                             alt="Web Applications">
-                        <div class="card-body">
-                            <h3 class="h5 mb-3">Web Applications</h3>
-                            <p class="text-muted">Host your web apps with auto-scaling and high availability. Perfect for SaaS products and business applications.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top" 
-                             alt="E-commerce">
-                        <div class="card-body">
-                            <h3 class="h5 mb-3">E-commerce Stores</h3>
-                            <p class="text-muted">Handle traffic spikes during sales and holidays with our auto-scaling infrastructure and global CDN.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                             class="card-img-top" 
-                             alt="Enterprise Solutions">
-                        <div class="card-body">
-                            <h3 class="h5 mb-3">Enterprise Solutions</h3>
-                            <p class="text-muted">Dedicated resources, private networking, and custom configurations for your mission-critical applications.</p>
-                            <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >USE CASES</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Perfect For Any Workload</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            From small blogs to enterprise applications
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Web Applications"
+              />
+              <div class="card-body">
+                <h3 class="h5 mb-3">Web Applications</h3>
+                <p class="text-muted">
+                  Host your web apps with auto-scaling and high availability.
+                  Perfect for SaaS products and business applications.
+                </p>
+                <a href="#" class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="E-commerce"
+              />
+              <div class="card-body">
+                <h3 class="h5 mb-3">E-commerce Stores</h3>
+                <p class="text-muted">
+                  Handle traffic spikes during sales and holidays with our
+                  auto-scaling infrastructure and global CDN.
+                </p>
+                <a href="#" class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Enterprise Solutions"
+              />
+              <div class="card-body">
+                <h3 class="h5 mb-3">Enterprise Solutions</h3>
+                <p class="text-muted">
+                  Dedicated resources, private networking, and custom
+                  configurations for your mission-critical applications.
+                </p>
+                <a href="#" class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- New: Security Features Section -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">SECURITY</span>
-                <h2 class="display-5 fw-bold mb-3">Enterprise-Grade Security</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Protect your applications with our comprehensive security features</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-shield-lock text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">DDoS Protection</h3>
-                            <p class="text-muted mb-3">Automatic mitigation of distributed denial-of-service attacks to keep your applications online.</p>
-                            <div>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Layer 3/4 Protection</span>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Layer 7 Protection</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-file-lock2 text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Web Application Firewall</h3>
-                            <p class="text-muted mb-3">Protect against common web exploits and vulnerabilities with our managed WAF.</p>
-                            <div>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> OWASP Top 10</span>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> Custom Rules</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="icon-wrapper">
-                                <i class="bi bi-database-check text-primary fs-3"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Backup & Recovery</h3>
-                            <p class="text-muted mb-3">Automated daily backups with point-in-time recovery options for your data.</p>
-                            <div>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> 7-Day Retention</span>
-                                <span class="security-badge"><i class="bi bi-check-circle-fill me-1"></i> One-Click Restore</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >SECURITY</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">
+            Enterprise-Grade Security
+          </h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            Protect your applications with our comprehensive security features
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-shield-lock text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">DDoS Protection</h3>
+                <p class="text-muted mb-3">
+                  Automatic mitigation of distributed denial-of-service attacks
+                  to keep your applications online.
+                </p>
+                <div>
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> Layer 3/4
+                    Protection</span
+                  >
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> Layer 7
+                    Protection</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-file-lock2 text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Web Application Firewall</h3>
+                <p class="text-muted mb-3">
+                  Protect against common web exploits and vulnerabilities with
+                  our managed WAF.
+                </p>
+                <div>
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> OWASP Top
+                    10</span
+                  >
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> Custom
+                    Rules</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-database-check text-primary fs-3"></i>
+                </div>
+                <h3 class="h5 mb-3">Backup & Recovery</h3>
+                <p class="text-muted mb-3">
+                  Automated daily backups with point-in-time recovery options
+                  for your data.
+                </p>
+                <div>
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> 7-Day
+                    Retention</span
+                  >
+                  <span class="security-badge"
+                    ><i class="bi bi-check-circle-fill me-1"></i> One-Click
+                    Restore</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Global Data Centers -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">GLOBAL REACH</span>
-                <h2 class="display-5 fw-bold mb-3">Worldwide Data Center Network</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Deploy your applications closer to your users for optimal performance</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
-                                <h3 class="h5 mb-0">North America</h3>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> New York, USA</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> San Francisco, USA</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Toronto, Canada</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Dallas, USA</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
-                                <h3 class="h5 mb-0">Europe</h3>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> London, UK</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Frankfurt, Germany</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Paris, France</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Amsterdam, NL</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
-                                <h3 class="h5 mb-0">Asia Pacific</h3>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Singapore</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Tokyo, Japan</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Sydney, Australia</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Mumbai, India</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
-                                <h3 class="h5 mb-0">South America</h3>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> São Paulo, Brazil</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Santiago, Chile</li>
-                                <li class="mb-2"><i class="bi bi-clock-fill text-warning me-2"></i> Buenos Aires (Coming Q3 2025)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >GLOBAL REACH</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Worldwide Data Center Network</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Deploy your applications closer to your users for optimal
+            performance
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                  <h3 class="h5 mb-0">North America</h3>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    New York, USA
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    San Francisco, USA
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Toronto, Canada
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Dallas, USA
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                  <h3 class="h5 mb-0">Europe</h3>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    London, UK
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Frankfurt, Germany
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Paris, France
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Amsterdam, NL
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                  <h3 class="h5 mb-0">Asia Pacific</h3>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Singapore
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Tokyo, Japan
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Sydney, Australia
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Mumbai, India
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                  <h3 class="h5 mb-0">South America</h3>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    São Paulo, Brazil
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Santiago, Chile
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-clock-fill text-warning me-2"></i> Buenos
+                    Aires (Coming Q3 2025)
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- New: Integration Section -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">INTEGRATIONS</span>
-                <h2 class="display-5 fw-bold mb-3">Seamless Integrations</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Connect with your favorite tools and services</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 integration-card border-0 shadow-sm">
-                        <div class="card-body p-4 text-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" height="50" class="mb-3">
-                            <h3 class="h5 mb-3">GitHub</h3>
-                            <p class="text-muted mb-0">Automatically deploy from your GitHub repositories with our CI/CD pipeline.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 integration-card border-0 shadow-sm">
-                        <div class="card-body p-4 text-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" height="50" class="mb-3">
-                            <h3 class="h5 mb-3">Docker</h3>
-                            <p class="text-muted mb-0">Deploy containerized applications with our managed Kubernetes service.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 integration-card border-0 shadow-sm">
-                        <div class="card-body p-4 text-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" height="50" class="mb-3">
-                            <h3 class="h5 mb-3">Slack</h3>
-                            <p class="text-muted mb-0">Get real-time notifications about your deployments and server status.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
-                <a href="#" class="btn btn-outline-primary">View All Integrations</a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >INTEGRATIONS</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">
+            Seamless Integrations
+          </h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            Connect with your favorite tools and services
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 integration-card border-0 shadow-sm">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                  alt="GitHub"
+                  height="50"
+                  class="mb-3"
+                />
+                <h3 class="h5 mb-3">GitHub</h3>
+                <p class="text-muted mb-0">
+                  Automatically deploy from your GitHub repositories with our
+                  CI/CD pipeline.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 integration-card border-0 shadow-sm">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  alt="Docker"
+                  height="50"
+                  class="mb-3"
+                />
+                <h3 class="h5 mb-3">Docker</h3>
+                <p class="text-muted mb-0">
+                  Deploy containerized applications with our managed Kubernetes
+                  service.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 integration-card border-0 shadow-sm">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
+                  alt="Slack"
+                  height="50"
+                  class="mb-3"
+                />
+                <h3 class="h5 mb-3">Slack</h3>
+                <p class="text-muted mb-0">
+                  Get real-time notifications about your deployments and server
+                  status.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+          <a href="#" class="btn btn-outline-primary">View All Integrations</a>
+        </div>
+      </div>
     </section>
 
     <!-- Technology Stack -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">TECHNOLOGY</span>
-                <h2 class="display-5 fw-bold mb-3">Supported Technologies</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">We support all major frameworks, languages, and databases</p>
-            </div>
-            
-            <div class="tech-stack text-center mb-5">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" data-aos="fade-up" data-aos-delay="150">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby" data-aos="fade-up" data-aos-delay="250">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" data-aos="fade-up" data-aos-delay="300">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" data-aos="fade-up" data-aos-delay="350">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" data-aos="fade-up" data-aos-delay="450">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" data-aos="fade-up" data-aos-delay="500">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" data-aos="fade-up" data-aos-delay="550">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" data-aos="fade-up" data-aos-delay="600">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" data-aos="fade-up" data-aos-delay="650">
-            </div>
-            
-            <div class="text-center" data-aos="fade-up" data-aos-delay="700">
-                <a href="#" class="btn btn-outline-primary">View All Supported Technologies</a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >TECHNOLOGY</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Supported Technologies</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            We support all major frameworks, languages, and databases
+          </p>
         </div>
+
+        <div class="tech-stack text-center mb-5">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            alt="Node.js"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt="Python"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+            alt="PHP"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg"
+            alt="Ruby"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+            alt="Go"
+            data-aos="fade-up"
+            data-aos-delay="350"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+            alt="Kubernetes"
+            data-aos="fade-up"
+            data-aos-delay="450"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            alt="MySQL"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+            alt="MongoDB"
+            data-aos="fade-up"
+            data-aos-delay="550"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+            alt="Redis"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          />
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            alt="PostgreSQL"
+            data-aos="fade-up"
+            data-aos-delay="650"
+          />
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="700">
+          <a href="#" class="btn btn-outline-primary"
+            >View All Supported Technologies</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- New: Case Studies Section -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">SUCCESS STORIES</span>
-                <h2 class="display-5 fw-bold mb-3">Customer Case Studies</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">See how businesses like yours are succeeding with our cloud hosting</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 case-study-card border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="E-commerce Case Study">
-                        <div class="card-body">
-                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">E-commerce</span>
-                            <h3 class="h5 mb-3">FashionForward</h3>
-                            <p class="text-muted mb-3">Scaled to handle 500% traffic increase during Black Friday sales with zero downtime.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="bi bi-arrow-up-right-circle-fill text-success me-1"></i>
-                                    <strong>+320%</strong> Revenue
-                                </div>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 case-study-card border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="SaaS Case Study">
-                        <div class="card-body">
-                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">SaaS</span>
-                            <h3 class="h5 mb-3">DataInsight</h3>
-                            <p class="text-muted mb-3">Reduced API response times from 2.1s to 380ms after migrating to our cloud.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="bi bi-lightning-charge-fill text-success me-1"></i>
-                                    <strong>5.5x</strong> Faster
-                                </div>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 case-study-card border-0 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Enterprise Case Study">
-                        <div class="card-body">
-                            <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Enterprise</span>
-                            <h3 class="h5 mb-3">GlobalBank</h3>
-                            <p class="text-muted mb-3">Achieved 99.999% uptime for their customer portal across 12 countries.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="bi bi-check-circle-fill text-success me-1"></i>
-                                    <strong>99.999%</strong> Uptime
-                                </div>
-                                <a href="#" class="btn btn-sm btn-outline-primary">Read Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >SUCCESS STORIES</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">
+            Customer Case Studies
+          </h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            See how businesses like yours are succeeding with our cloud hosting
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 case-study-card border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="E-commerce Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >E-commerce</span
+                >
+                <h3 class="h5 mb-3">FashionForward</h3>
+                <p class="text-muted mb-3">
+                  Scaled to handle 500% traffic increase during Black Friday
+                  sales with zero downtime.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i
+                      class="bi bi-arrow-up-right-circle-fill text-success me-1"
+                    ></i>
+                    <strong>+320%</strong> Revenue
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >Read Case Study</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 case-study-card border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="SaaS Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >SaaS</span
+                >
+                <h3 class="h5 mb-3">DataInsight</h3>
+                <p class="text-muted mb-3">
+                  Reduced API response times from 2.1s to 380ms after migrating
+                  to our cloud.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i
+                      class="bi bi-lightning-charge-fill text-success me-1"
+                    ></i>
+                    <strong>5.5x</strong> Faster
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >Read Case Study</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 case-study-card border-0 shadow-sm">
+              <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Enterprise Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                  >Enterprise</span
+                >
+                <h3 class="h5 mb-3">GlobalBank</h3>
+                <p class="text-muted mb-3">
+                  Achieved 99.999% uptime for their customer portal across 12
+                  countries.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <i class="bi bi-check-circle-fill text-success me-1"></i>
+                    <strong>99.999%</strong> Uptime
+                  </div>
+                  <a href="#" class="btn btn-sm btn-outline-primary"
+                    >Read Case Study</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">TESTIMONIALS</span>
-                <h2 class="display-5 fw-bold mb-3">Trusted by Thousands of Businesses</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Don't just take our word for it - hear from our customers</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex mb-3">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" 
-                                     alt="Sarah Johnson" 
-                                     class="rounded-circle me-3" 
-                                     width="50" 
-                                     height="50">
-                                <div>
-                                    <h5 class="mb-0">Sarah Johnson</h5>
-                                    <small class="text-muted">CTO, Tech Startup</small>
-                                </div>
-                            </div>
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="mb-0">
-                                "The cloud hosting handles our traffic spikes effortlessly. The auto-scaling feature saved us during our product launch when traffic increased by 500% overnight."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex mb-3">
-                                <img src="https://randomuser.me/api/portraits/men/45.jpg" 
-                                     alt="Michael Chen" 
-                                     class="rounded-circle me-3" 
-                                     width="50" 
-                                     height="50">
-                                <div>
-                                    <h5 class="mb-0">Michael Chen</h5>
-                                    <small class="text-muted">CEO, E-commerce Store</small>
-                                </div>
-                            </div>
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <p class="mb-0">
-                                "Moving to this cloud reduced our page load times from 3.2s to 0.8s. Our conversion rates improved by 22% just from the performance boost alone."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex mb-3">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" 
-                                     alt="Emily Rodriguez" 
-                                     class="rounded-circle me-3" 
-                                     width="50" 
-                                     height="50">
-                                <div>
-                                    <h5 class="mb-0">Emily Rodriguez</h5>
-                                    <small class="text-muted">Director of Engineering</small>
-                                </div>
-                            </div>
-                            <div class="mb-3 text-warning">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-half"></i>
-                            </div>
-                            <p class="mb-0">
-                                "The global data centers allowed us to deploy closer to our international customers. Latency dropped by 65% in Asia and Europe compared to our previous provider."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >TESTIMONIALS</span
+          >
+          <h2 class="display-5 fw-bold mb-3">
+            Trusted by Thousands of Businesses
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Don't just take our word for it - hear from our customers
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex mb-3">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/32.jpg"
+                    alt="Sarah Johnson"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                  />
+                  <div>
+                    <h5 class="mb-0">Sarah Johnson</h5>
+                    <small class="text-muted">CTO, Tech Startup</small>
+                  </div>
+                </div>
+                <div class="mb-3 text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-0">
+                  "The cloud hosting handles our traffic spikes effortlessly.
+                  The auto-scaling feature saved us during our product launch
+                  when traffic increased by 500% overnight."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex mb-3">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/45.jpg"
+                    alt="Michael Chen"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                  />
+                  <div>
+                    <h5 class="mb-0">Michael Chen</h5>
+                    <small class="text-muted">CEO, E-commerce Store</small>
+                  </div>
+                </div>
+                <div class="mb-3 text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-0">
+                  "Moving to this cloud reduced our page load times from 3.2s to
+                  0.8s. Our conversion rates improved by 22% just from the
+                  performance boost alone."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex mb-3">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/68.jpg"
+                    alt="Emily Rodriguez"
+                    class="rounded-circle me-3"
+                    width="50"
+                    height="50"
+                  />
+                  <div>
+                    <h5 class="mb-0">Emily Rodriguez</h5>
+                    <small class="text-muted">Director of Engineering</small>
+                  </div>
+                </div>
+                <div class="mb-3 text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <p class="mb-0">
+                  "The global data centers allowed us to deploy closer to our
+                  international customers. Latency dropped by 65% in Asia and
+                  Europe compared to our previous provider."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- New: Comparison Table -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">COMPARISON</span>
-                <h2 class="display-5 fw-bold mb-3">How We Compare</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">See how our cloud hosting stacks up against the competition</p>
-            </div>
-            
-            <div class="table-responsive comparison-table shadow-sm rounded-3" data-aos="fade-up">
-                <table class="table table-bordered mb-0">
-                    <thead>
-                        <tr>
-                            <th width="25%">Feature</th>
-                            <th class="text-center">WeFitHost</th>
-                            <th class="text-center">Competitor A</th>
-                            <th class="text-center">Competitor B</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Uptime SLA</td>
-                            <td class="text-center"><strong>99.99%</strong></td>
-                            <td class="text-center">99.9%</td>
-                            <td class="text-center">99.95%</td>
-                        </tr>
-                        <tr>
-                            <td>Auto Scaling</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Extra Cost</td>
-                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Not Available</td>
-                        </tr>
-                        <tr>
-                            <td>Global Data Centers</td>
-                            <td class="text-center"><strong>15 Locations</strong></td>
-                            <td class="text-center">8 Locations</td>
-                            <td class="text-center">5 Locations</td>
-                        </tr>
-                        <tr>
-                            <td>DDoS Protection</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Included</td>
-                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Extra Cost</td>
-                        </tr>
-                        <tr>
-                            <td>Free SSL Certificates</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Unlimited</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> 1 Certificate</td>
-                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Not Included</td>
-                        </tr>
-                        <tr>
-                            <td>24/7 Support</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> All Plans</td>
-                            <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i> Business+</td>
-                            <td class="text-center"><i class="bi bi-x-circle-fill text-danger"></i> Business+</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="#" class="btn btn-outline-primary">See Detailed Comparison</a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >COMPARISON</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">How We Compare</h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            See how our cloud hosting stacks up against the competition
+          </p>
         </div>
+
+        <div
+          class="table-responsive comparison-table shadow-sm rounded-3"
+          data-aos="fade-up"
+        >
+          <table class="table table-bordered mb-0">
+            <thead>
+              <tr>
+                <th width="25%">Feature</th>
+                <th class="text-center">WeFitHost</th>
+                <th class="text-center">Competitor A</th>
+                <th class="text-center">Competitor B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Uptime SLA</td>
+                <td class="text-center"><strong>99.99%</strong></td>
+                <td class="text-center">99.9%</td>
+                <td class="text-center">99.95%</td>
+              </tr>
+              <tr>
+                <td>Auto Scaling</td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Included
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Extra
+                  Cost
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-x-circle-fill text-danger"></i> Not Available
+                </td>
+              </tr>
+              <tr>
+                <td>Global Data Centers</td>
+                <td class="text-center"><strong>15 Locations</strong></td>
+                <td class="text-center">8 Locations</td>
+                <td class="text-center">5 Locations</td>
+              </tr>
+              <tr>
+                <td>DDoS Protection</td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Included
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Included
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-x-circle-fill text-danger"></i> Extra Cost
+                </td>
+              </tr>
+              <tr>
+                <td>Free SSL Certificates</td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Unlimited
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> 1
+                  Certificate
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-x-circle-fill text-danger"></i> Not Included
+                </td>
+              </tr>
+              <tr>
+                <td>24/7 Support</td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> All Plans
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-check-circle-fill text-success"></i> Business+
+                </td>
+                <td class="text-center">
+                  <i class="bi bi-x-circle-fill text-danger"></i> Business+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
+          <a href="#" class="btn btn-outline-primary"
+            >See Detailed Comparison</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Pricing -->
     <section class="py-5 py-lg-7" id="pricing">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">PRICING</span>
-                <h2 class="display-5 fw-bold mb-3">Simple, Predictable Pricing</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Pay only for what you use with transparent hourly billing</p>
-            </div>
-            
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 pricing-card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-3">Starter</h3>
-                            <p class="text-muted mb-4">Perfect for small websites and blogs</p>
-                            <h4 class="mb-4">$29<small class="text-muted fw-normal">/month</small></h4>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 1 vCPU Core</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 2GB RAM</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 50GB SSD Storage</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 2TB Bandwidth</li>
-                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Load Balancer</li>
-                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Dedicated Firewall</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 pricing-card border-0 shadow-lg popular-card">
-                        <div class="card-header bg-primary text-white py-3">
-                            <span class="badge bg-white text-primary">MOST POPULAR</span>
-                        </div>
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-3">Professional</h3>
-                            <p class="text-muted mb-4">Ideal for growing businesses</p>
-                            <h4 class="mb-4">$59<small class="text-muted fw-normal">/month</small></h4>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 2 vCPU Cores</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 4GB RAM</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 100GB SSD Storage</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 4TB Bandwidth</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic Load Balancer</li>
-                                <li class="mb-2"><i class="bi bi-x-circle-fill text-muted me-2"></i> Dedicated Firewall</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary w-100">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 pricing-card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="h4 mb-3">Business</h3>
-                            <p class="text-muted mb-4">For high-traffic applications</p>
-                            <h4 class="mb-4">$99<small class="text-muted fw-normal">/month</small></h4>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 4 vCPU Cores</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 8GB RAM</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 200GB SSD Storage</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 8TB Bandwidth</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Advanced Load Balancer</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Dedicated Firewall</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5" data-aos="fade-up">
-                <p class="mb-3">Need custom solutions for your enterprise?</p>
-                <a href="#" class="btn btn-primary px-4">Contact Sales</a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >PRICING</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Simple, Predictable Pricing</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Pay only for what you use with transparent hourly billing
+          </p>
         </div>
+
+        <div class="row g-4 justify-content-center">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 pricing-card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h4 mb-3">Starter</h3>
+                <p class="text-muted mb-4">
+                  Perfect for small websites and blogs
+                </p>
+                <h4 class="mb-4">
+                  $29<small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 1
+                    vCPU Core
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    2GB RAM
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    50GB SSD Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    2TB Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i> Load
+                    Balancer
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i>
+                    Dedicated Firewall
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary w-100"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="card h-100 pricing-card border-0 shadow-lg popular-card"
+            >
+              <div class="card-header bg-primary text-white py-3">
+                <span class="badge bg-white text-primary">MOST POPULAR</span>
+              </div>
+              <div class="card-body p-4">
+                <h3 class="h4 mb-3">Professional</h3>
+                <p class="text-muted mb-4">Ideal for growing businesses</p>
+                <h4 class="mb-4">
+                  $59<small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 2
+                    vCPU Cores
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    4GB RAM
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    100GB SSD Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    4TB Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Basic Load Balancer
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i>
+                    Dedicated Firewall
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-primary w-100">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 pricing-card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <h3 class="h4 mb-3">Business</h3>
+                <p class="text-muted mb-4">For high-traffic applications</p>
+                <h4 class="mb-4">
+                  $99<small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 4
+                    vCPU Cores
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    8GB RAM
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    200GB SSD Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    8TB Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Advanced Load Balancer
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Dedicated Firewall
+                  </li>
+                </ul>
+                <a href="#" class="btn btn-outline-primary w-100"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+          <p class="mb-3">Need custom solutions for your enterprise?</p>
+          <a href="#" class="btn btn-primary px-4">Contact Sales</a>
+        </div>
+      </div>
     </section>
 
     <!-- New: Migration Timeline -->
     <section class="py-5 py-lg-7">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">MIGRATION</span>
-                <h2 class="display-5 fw-bold mb-3">Seamless Migration Process</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">We'll handle your move to our cloud with minimal downtime</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="timeline" data-aos="fade-up">
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-2">Initial Assessment</h3>
-                            <p class="text-muted">We analyze your current infrastructure and create a migration plan tailored to your needs.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-2">Pre-Migration Testing</h3>
-                            <p class="text-muted">We test the migration process in a staging environment to identify any potential issues.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-2">Data Migration</h3>
-                            <p class="text-muted">Your applications and data are securely transferred to our cloud infrastructure.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-2">DNS Cutover</h3>
-                            <p class="text-muted">We coordinate the final switch with minimal downtime, typically under 5 minutes.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <h3 class="h5 mb-2">Post-Migration Optimization</h3>
-                            <p class="text-muted">We fine-tune your new environment for maximum performance and cost efficiency.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="100">
-                        <a href="#" class="btn btn-outline-primary">Learn More About Migration</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >MIGRATION</span
+          >
+          <h2 class="display-5 fw-bold mb-3">Seamless Migration Process</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            We'll handle your move to our cloud with minimal downtime
+          </p>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="timeline" data-aos="fade-up">
+              <div class="timeline-item">
+                <h3 class="h5 mb-2">Initial Assessment</h3>
+                <p class="text-muted">
+                  We analyze your current infrastructure and create a migration
+                  plan tailored to your needs.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h5 mb-2">Pre-Migration Testing</h3>
+                <p class="text-muted">
+                  We test the migration process in a staging environment to
+                  identify any potential issues.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h5 mb-2">Data Migration</h3>
+                <p class="text-muted">
+                  Your applications and data are securely transferred to our
+                  cloud infrastructure.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h5 mb-2">DNS Cutover</h3>
+                <p class="text-muted">
+                  We coordinate the final switch with minimal downtime,
+                  typically under 5 minutes.
+                </p>
+              </div>
+              <div class="timeline-item">
+                <h3 class="h5 mb-2">Post-Migration Optimization</h3>
+                <p class="text-muted">
+                  We fine-tune your new environment for maximum performance and
+                  cost efficiency.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="text-center mt-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <a href="#" class="btn btn-outline-primary"
+                >Learn More About Migration</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ -->
     <section class="py-5 py-lg-7 bg-light">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">FAQ</span>
-                <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px">Everything you need to know about our cloud hosting</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="100">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    What makes your cloud different from other providers?
-                                </button>
-                            </h3>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Our cloud is specifically optimized for web applications with features like automatic scaling, built-in caching, and developer-friendly tools. Unlike generic cloud providers, we include many premium features like free SSL certificates, DDoS protection, and daily backups in all plans.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="200">
-                            <h3 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    How does the auto-scaling feature work?
-                                </button>
-                            </h3>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Our system continuously monitors your resource usage. When traffic increases beyond your current plan's capacity, we automatically allocate additional resources to handle the load. When traffic decreases, we scale back down to save you money. You only pay for the resources you actually use.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="300">
-                            <h3 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    What kind of support do you offer?
-                                </button>
-                            </h3>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    All cloud hosting plans include 24/7 support via live chat and email. Our support team consists of cloud infrastructure experts who can help with configuration, optimization, and troubleshooting. Business plans include priority phone support with faster response times.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item mb-3 border-0 shadow-sm" data-aos="fade-up" data-aos-delay="400">
-                            <h3 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    Is there a money-back guarantee?
-                                </button>
-                            </h3>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    Yes! We offer a 30-day money-back guarantee on all cloud hosting plans. If you're not completely satisfied with our service, you can cancel within the first 30 days for a full refund, no questions asked.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-                        <a href="#" class="btn btn-outline-primary">View All FAQs</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="badge bg-primary bg-opacity-10 text-primary mb-3"
+            >FAQ</span
+          >
+          <h2 class="display-5 fw-bold mb-3 text-dark">
+            Frequently Asked Questions
+          </h2>
+          <p class="lead text-muted-dark mx-auto" style="max-width: 700px">
+            Everything you need to know about our cloud hosting
+          </p>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    What makes your cloud different from other providers?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our cloud is specifically optimized for web applications
+                    with features like automatic scaling, built-in caching, and
+                    developer-friendly tools. Unlike generic cloud providers, we
+                    include many premium features like free SSL certificates,
+                    DDoS protection, and daily backups in all plans.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    How does the auto-scaling feature work?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our system continuously monitors your resource usage. When
+                    traffic increases beyond your current plan's capacity, we
+                    automatically allocate additional resources to handle the
+                    load. When traffic decreases, we scale back down to save you
+                    money. You only pay for the resources you actually use.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    What kind of support do you offer?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    All cloud hosting plans include 24/7 support via live chat
+                    and email. Our support team consists of cloud infrastructure
+                    experts who can help with configuration, optimization, and
+                    troubleshooting. Business plans include priority phone
+                    support with faster response times.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                    Is there a money-back guarantee?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes! We offer a 30-day money-back guarantee on all cloud
+                    hosting plans. If you're not completely satisfied with our
+                    service, you can cancel within the first 30 days for a full
+                    refund, no questions asked.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="text-center mt-4"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Final CTA -->
     <section class="py-5 py-lg-7 bg-primary text-white">
-        <div class="container text-center" data-aos="zoom-in">
-            <h2 class="display-5 fw-bold mb-4">Ready to deploy your applications?</h2>
-            <p class="lead mb-5 mx-auto" style="max-width: 600px">Get started with our high-performance cloud hosting today. Deploy in minutes with our simple setup process.</p>
-            <div class="d-flex flex-wrap gap-3 justify-content-center">
-                <a href="#pricing" class="btn btn-light btn-lg px-4">View Plans</a>
-                <a href="#" class="btn btn-outline-light btn-lg px-4">Contact Sales</a>
-            </div>
+      <div class="container text-center" data-aos="zoom-in">
+        <h2 class="display-5 fw-bold mb-4 text-secondary">
+          Ready to deploy your applications?
+        </h2>
+        <p class="lead mb-5 mx-auto text-secondary" style="max-width: 600px">
+          Get started with our high-performance cloud hosting today. Deploy in
+          minutes with our simple setup process.
+        </p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+          <a href="#pricing" class="btn btn-light btn-lg px-4">View Plans</a>
+          <a href="#" class="btn btn-outline-light btn-lg px-4"
+            >Contact Sales</a
+          >
         </div>
+      </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize animations
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        
-        // Add animation to pricing cards on hover
-        document.querySelectorAll('.pricing-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.boxShadow = '0 15px 30px rgba(0,0,0,0.1)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-                card.style.boxShadow = '';
-            });
-        });
+      // Initialize animations
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
 
-        // Theme switcher functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            htmlElement.setAttribute('data-bs-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+      // Add animation to pricing cards on hover
+      document.querySelectorAll(".pricing-card").forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          card.style.transform = "translateY(-10px)";
+          card.style.boxShadow = "0 15px 30px rgba(0,0,0,0.1)";
         });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "";
+          card.style.boxShadow = "";
+        });
+      });
+
+      // Theme switcher functionality
+      const themeToggle = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-bs-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        htmlElement.setAttribute("data-bs-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
     </script>
 
     <!-- Footer -->
-  <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1e293b; color: white">
-    <div class="container">
-      <div class="row">
-        <!-- Newsletter & Logo Column (Now first column) -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="mb-4">
-            <a href="#">
-              <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
-                style="max-height: 40px; filter: brightness(0) invert(1)" />
-            </a>
-            <p style="color: white">
-              Powering websites with reliable hosting since 2015.
-            </p>
+    <footer
+      class="pt-10 pb-3 mainfooterstart mb-0"
+      style="background-color: #1e293b; color: white"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
 
               <!-- Newsletter Form (Moved up) -->
               <div class="mb-4">
@@ -2782,8 +3488,5 @@
         });
       });
     </script>
-
-
-</body>
-
+  </body>
 </html>
