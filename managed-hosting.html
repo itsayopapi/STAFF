@@ -262,9 +262,9 @@
     </style>
   </head>
 
-<body data-bs-theme="light">
-     <!-- Navbar Start File-->
-     <header class="custom-header">
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header">
       <nav
         class="navbar navbar-expand-lg navbar-light"
         style="background-color: #1e293b"
@@ -497,7 +497,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="bulk-domain-search.html">
                           <div class="d-flex flex-column">
                             <strong>Bulk Domain Search</strong>
                             <small class="text-muted"
@@ -1054,64 +1054,64 @@
 
     <div class="mobile-menu-backdrop"></div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const navbarToggler = document.querySelector('.navbar-toggler');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        const backdrop = document.querySelector('.mobile-menu-backdrop');
-        
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
         // Initialize Bootstrap Collapse
         const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-            toggle: false
+          toggle: false,
         });
 
         // Toggle menu and backdrop
-        navbarToggler.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            
-            if (!isExpanded) {
-                bsCollapse.show();
-                backdrop.classList.add('show');
-                document.body.style.overflow = 'hidden';
-            } else {
-                bsCollapse.hide();
-                backdrop.classList.remove('show');
-                document.body.style.overflow = '';
-            }
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
         });
 
         // Close menu when clicking backdrop
-        backdrop.addEventListener('click', function() {
-            navbarToggler.setAttribute('aria-expanded', 'false');
-            bsCollapse.hide();
-            this.classList.remove('show');
-            document.body.style.overflow = '';
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
         });
 
         // Close menu when clicking a nav link (for mobile)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {
-                    navbarToggler.setAttribute('aria-expanded', 'false');
-                    bsCollapse.hide();
-                    backdrop.classList.remove('show');
-                    document.body.style.overflow = '';
-                }
-            });
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
         });
 
         // Close menu when resizing to desktop
-        window.addEventListener('resize', function() {
-            if (window.innerWidth >= 992) {
-                navbarToggler.setAttribute('aria-expanded', 'false');
-                bsCollapse.hide();
-                backdrop.classList.remove('show');
-                document.body.style.overflow = '';
-            }
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
         });
-    });
-</script>
+      });
+    </script>
     <!-- Navbar End -->
 
     <!-- Hero Section -->
@@ -1179,12 +1179,16 @@
 
     <!-- Features Section -->
     <section id="features" class="py-5 py-lg-10">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3">Premium Managed Hosting Features</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to run your website
-                    smoothly without the technical hassle</p>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">
+            Premium Managed Hosting Features
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Everything you need to run your website smoothly without the
+            technical hassle
+          </p>
+        </div>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
@@ -1281,13 +1285,17 @@
     </section>
 
     <!-- Comparison Section -->
-    <section class="py-5 py-lg-10" style="background-color: #1E293B;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3 text-secondary">Why Choose Managed Hosting?</h2>
-                <p class="lead text-secondary mx-auto" style="max-width: 700px;">Compare the difference between traditional
-                    and managed hosting solutions</p>
-            </div>
+    <section class="py-5 py-lg-10" style="background-color: #1e293b">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3 text-secondary">
+            Why Choose Managed Hosting?
+          </h2>
+          <p class="lead text-secondary mx-auto" style="max-width: 700px">
+            Compare the difference between traditional and managed hosting
+            solutions
+          </p>
+        </div>
 
         <div class="row g-4">
           <div class="col-md-6">
@@ -1367,7 +1375,11 @@
       </div>
     </section>
 
-    <section class="rts-pricing-plan py-7" data-cue="" style="background-color: #F4F9FF;">
+    <section
+      class="rts-pricing-plan py-7"
+      data-cue=""
+      style="background-color: #f4f9ff"
+    >
       <div class="container">
         <div class="row justify-content-center">
           <div class="rts-section w-490 text-center">
@@ -1889,7 +1901,7 @@
                 <!-- single card end -->
 
                 <!-- single card -->
-                <div class="swiper-slide" >
+                <div class="swiper-slide">
                   <div class="card-plan">
                     <div class="card-plan__package">
                       <div class="icon">
@@ -2134,8 +2146,6 @@
           </div>
           <!-- PRICING PLAN yearly -->
         </div>
-       
-
       </div>
 
       <div class="view-plan-btn">
@@ -2144,132 +2154,127 @@
         >
       </div>
     </section>
-   
 
     <style>
-        /* Swiper-Specific Styling */
-        .pricing-scroller {
-            position: relative;
-            padding: 20px 40px;
-            overflow: visible !important;
-        }
+      /* Swiper-Specific Styling */
+      .pricing-scroller {
+        position: relative;
+        padding: 20px 40px;
+        overflow: visible !important;
+      }
 
+      .swiper {
+        width: 100%;
+      }
 
+      .swiper-slide {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1 !important;
+      }
 
-        .swiper {
-            width: 100%;
-        }
+      .swiper-wrapper {
+        align-items: stretch;
+        min-height: 0;
+        padding-bottom: 50px;
+      }
 
+      .swiper-pagination {
+        bottom: 0px;
+        text-align: center;
+      }
+
+      .swiper-pagination-bullet {
+        background: #6c757d;
+        opacity: 0.5;
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #4e66f8;
+        opacity: 1;
+      }
+
+      @media (min-width: 992px) {
         .swiper-slide {
-            width: 100%;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 1 !important;
-
+          width: 280px;
+          /* Match card width */
         }
+      }
 
-        .swiper-wrapper {
-            align-items: stretch;
-            min-height: 0;
-            padding-bottom: 50px;
+      @media (min-width: 1025px) {
+        .first-slide {
+          margin-right: 0px !important;
         }
+      }
 
+      /* Swiper Navigation Buttons */
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 40px;
+        height: 40px;
+        background-color: #4e66f8;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 30px;
+        transform: translateY(0);
+        z-index: 10;
+      }
 
+      .swiper-button-prev {
+        right: 64px;
+        left: auto;
+      }
 
-        .swiper-pagination {
-            bottom: 0px;
-            text-align: center;
-        }
+      .swiper-button-next {
+        right: 10px;
+        left: auto;
+      }
 
-        .swiper-pagination-bullet {
-            background: #6c757d;
-            opacity: 0.5;
-            width: 8px;
-            height: 8px;
-            margin: 0 4px;
-        }
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        font-size: 12px;
+        color: #fff;
+      }
 
-        .swiper-pagination-bullet-active {
-            background: #4e66f8;
-            opacity: 1;
-        }
-
-        @media (min-width: 992px) {
-            .swiper-slide {
-                width: 280px;
-                /* Match card width */
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .first-slide {
-                margin-right: 0px !important;
-            }
-        }
-
-
-
-        /* Swiper Navigation Buttons */
-        .swiper-button-prev,
-        .swiper-button-next {
-            width: 40px;
-            height: 40px;
-            background-color: #4e66f8;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            top: 30px;
-            transform: translateY(0);
-            z-index: 10;
-        }
-
+      /* Adjust button positioning for responsiveness */
+      @media (max-width: 768px) {
         .swiper-button-prev {
-            right: 64px;
-            left: auto;
+          right: 50px;
         }
 
         .swiper-button-next {
-            right: 10px;
-            left: auto;
+          right: 6px;
         }
+      }
 
-
-        .swiper-button-prev::after,
-        .swiper-button-next::after {
-            font-size: 12px;
-            color: #fff;
-        }
-
-        /* Adjust button positioning for responsiveness */
-        @media (max-width: 768px) {
-            .swiper-button-prev {
-                right: 50px;
-            }
-
-            .swiper-button-next {
-                right: 6px;
-            }
-        }
-
-        .pricing-swiper {
-            position: relative;
-            padding-top: 58px;
-        }
+      .pricing-swiper {
+        position: relative;
+        padding-top: 58px;
+      }
     </style>
 
     <!-- Pricing Plan End -->
 
     <!-- Testimonials Section -->
-    <section class="py-5 py-lg-10" style="background-color: #1E293B;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold mb-3 text-secondary">What Our Customers Say</h2>
-                <p class="lead text-secondary mx-auto" style="max-width: 700px;">Don't just take our word for it - hear from
-                    businesses that switched to our managed hosting</p>
-            </div>
+    <section class="py-5 py-lg-10" style="background-color: #1e293b">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3 text-secondary">
+            What Our Customers Say
+          </h2>
+          <p class="lead text-secondary mx-auto" style="max-width: 700px">
+            Don't just take our word for it - hear from businesses that switched
+            to our managed hosting
+          </p>
+        </div>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
@@ -2364,143 +2369,213 @@
     </section>
 
     <!-- FAQ Section -->
-     <section class="py-5 py-lg-10">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
-            <p class="lead text-muted">Find answers to common questions about our
-                managed hosting services</p>
-          </div>
-    
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="accordion" id="faqAccordion">
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                        What exactly is managed hosting?
-                    </button>
-                  </h3>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Managed hosting means we handle all the technical aspects of running your website.
-                        This includes server maintenance, security updates, performance optimization,
-                        backups, and providing expert support. You focus on your content and business while
-                        we take care of the infrastructure.
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo">
-                      How is managed hosting different from shared hosting?
-                    </button>
-                  </h3>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Shared hosting puts many websites on a single server with limited resources and
-                        minimal management. Managed hosting provides dedicated resources, premium hardware,
-                        and comprehensive management services including security, updates, and expert
-                        support tailored to your specific needs.
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree">
-                      Do you offer website migration services?
-                    </button>
-                  </h3>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Yes! We provide free migration services for all managed hosting customers. Our team
-                        will handle the entire process for you, ensuring no downtime and that everything
-                        works perfectly on our platform. This includes transferring your files, databases,
-                        emails, and DNS configuration.
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour">
-                      What kind of support can I expect?
-                    </button>
-                  </h3>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Our managed hosting customers get 24/7 access to WordPress experts via live chat,
-                                    email, and phone. We can help with everything from plugin conflicts and theme issues
-                                    to performance optimization and security concerns. Higher-tier plans include
-                                    priority support with faster response times.
-                    </div>
-                  </div>
-                </div>
-    
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseFive">
-                      Can I upgrade my plan as my site grows?
-                    </button>
-                  </h3>
-                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                    data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                        Absolutely! You can upgrade your resources at any time with just a few clicks. Our
-                        platform is designed to scale with your needs, and we can help you choose the right
-                        resources as your traffic and requirements grow. Upgrades are performed with zero
-                        downtime.
-                    </div>
+    <section class="py-5 py-lg-10">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+          <p class="lead text-muted">
+            Find answers to common questions about our managed hosting services
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    What exactly is managed hosting?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Managed hosting means we handle all the technical aspects of
+                    running your website. This includes server maintenance,
+                    security updates, performance optimization, backups, and
+                    providing expert support. You focus on your content and
+                    business while we take care of the infrastructure.
                   </div>
                 </div>
               </div>
-    
-              <div class="text-center mt-4">
-                <a href="faqs.html" class="btn btn-outline-primary">View All FAQs</a>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    How is managed hosting different from shared hosting?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Shared hosting puts many websites on a single server with
+                    limited resources and minimal management. Managed hosting
+                    provides dedicated resources, premium hardware, and
+                    comprehensive management services including security,
+                    updates, and expert support tailored to your specific needs.
+                  </div>
+                </div>
               </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    Do you offer website migration services?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes! We provide free migration services for all managed
+                    hosting customers. Our team will handle the entire process
+                    for you, ensuring no downtime and that everything works
+                    perfectly on our platform. This includes transferring your
+                    files, databases, emails, and DNS configuration.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                    What kind of support can I expect?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our managed hosting customers get 24/7 access to WordPress
+                    experts via live chat, email, and phone. We can help with
+                    everything from plugin conflicts and theme issues to
+                    performance optimization and security concerns. Higher-tier
+                    plans include priority support with faster response times.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                  >
+                    Can I upgrade my plan as my site grows?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Absolutely! You can upgrade your resources at any time with
+                    just a few clicks. Our platform is designed to scale with
+                    your needs, and we can help you choose the right resources
+                    as your traffic and requirements grow. Upgrades are
+                    performed with zero downtime.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="faqs.html" class="btn btn-outline-primary"
+                >View All FAQs</a
+              >
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
     <!-- CTA Section -->
     <section class="py-5 py-lg-8 bg-primary text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-8 col-md-6 mb-4 mb-lg-0">
-                    <h2 class="display-5 fw-bold mb-3 text-secondary">Ready to experience hassle-free hosting?</h2>
-                    <p class="lead mb-0 text-secondary">Join thousands of businesses who trust us with their websites.</p>
-                </div>
-                <div class="col-xl-4 col-md-6 text-lg-end">
-                    <a href="https:my.wefithost.com/manage" class="btn btn-light btn-lg px-4 me-3 text-dark">Get Started</a>
-                    <a href="maintenance.html" class="btn btn-outline-light btn-lg px-4 mt-2 mt-md-0">Learn More</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-8 col-md-6 mb-4 mb-lg-0">
+            <h2 class="display-5 fw-bold mb-3 text-secondary">
+              Ready to experience hassle-free hosting?
+            </h2>
+            <p class="lead mb-0 text-secondary">
+              Join thousands of businesses who trust us with their websites.
+            </p>
+          </div>
+          <div class="col-xl-4 col-md-6 text-lg-end">
+            <a
+              href="https:my.wefithost.com/manage"
+              class="btn btn-light btn-lg px-4 me-3 text-dark"
+              >Get Started</a
+            >
+            <a
+              href="maintenance.html"
+              class="btn btn-outline-light btn-lg px-4 mt-2 mt-md-0"
+              >Learn More</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1E293B; color: white;">
-        <div class="container">
-            <div class="row">
-                <!-- Newsletter & Logo Column (Now first column) -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="mb-4">
-                        <a href="#">
-                            <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
-                                style="max-height: 40px; filter: brightness(0) invert(1);">
-                        </a>
-                        <p style="color: white;">Powering websites with reliable hosting since 2015.</p>
+    <footer
+      class="pt-10 pb-3 mainfooterstart mb-0"
+      style="background-color: #1e293b; color: white"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
 
               <!-- Newsletter Form (Moved up) -->
               <div class="mb-4">
@@ -2957,8 +3032,11 @@
     </script>
 
     <!-- Libs JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
     <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>

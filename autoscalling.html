@@ -492,7 +492,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="bulk-domain-search.html">
                           <div class="d-flex flex-column">
                             <strong>Bulk Domain Search</strong>
                             <small class="text-muted"
@@ -1414,19 +1414,19 @@
         gap: 12px;
       }
 
-    .scroller-nav-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
+      .scroller-nav-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 1px solid var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
 
       .scroller-nav-btn:hover:not([disabled]),
       .scroller-nav-btn:focus:not([disabled]) {
@@ -1450,18 +1450,17 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
       }
 
-    .price-scroller {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 24px;
-      padding: 24px 8px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      overflow-x: auto;
-      white-space: nowrap;
-
-    }
+      .price-scroller {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 24px;
+        padding: 24px 8px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
 
       .price-scroller::-webkit-scrollbar {
         display: none;
@@ -1893,21 +1892,20 @@
         z-index: 2;
       }
 
-    .carousel-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--primary);
-      border: 1px solid var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      pointer-events: auto;
-
-    }
+      .carousel-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 1px solid var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        pointer-events: auto;
+      }
 
       .carousel-btn:hover:not([disabled]) {
         background: var(--primary);
@@ -3139,48 +3137,48 @@
         // Initialize button states
         carousel.dispatchEvent(new Event("scroll"));
 
-      // Pricing scroller navigation
-      // const priceScroller = document.querySelector(".price-scroller");
-      // const pricePrevBtn = document.querySelector(
-      //   ".scroller-nav .scroller-nav-btn:first-child"
-      // );
-      // const priceNextBtn = document.querySelector(
-      //   ".scroller-nav .scroller-nav-btn:last-child"
-      // );
+        // Pricing scroller navigation
+        // const priceScroller = document.querySelector(".price-scroller");
+        // const pricePrevBtn = document.querySelector(
+        //   ".scroller-nav .scroller-nav-btn:first-child"
+        // );
+        // const priceNextBtn = document.querySelector(
+        //   ".scroller-nav .scroller-nav-btn:last-child"
+        // );
 
-      // pricePrevBtn.addEventListener("click", () => {
-      //   priceScroller.scrollBy({
-      //     left: -360, // matches card width
-      //     behavior: "smooth",
-      //   });
-      // });
+        // pricePrevBtn.addEventListener("click", () => {
+        //   priceScroller.scrollBy({
+        //     left: -360, // matches card width
+        //     behavior: "smooth",
+        //   });
+        // });
 
-      // priceNextBtn.addEventListener("click", () => {
-      //   priceScroller.scrollBy({
-      //     left: 360, // matches card width
-      //     behavior: "smooth",
-      //   });
-      // });
+        // priceNextBtn.addEventListener("click", () => {
+        //   priceScroller.scrollBy({
+        //     left: 360, // matches card width
+        //     behavior: "smooth",
+        //   });
+        // });
 
-      // priceScroller.addEventListener("scroll", () => {
-      //   const maxScroll =
-      //     priceScroller.scrollWidth - priceScroller.clientWidth;
+        // priceScroller.addEventListener("scroll", () => {
+        //   const maxScroll =
+        //     priceScroller.scrollWidth - priceScroller.clientWidth;
 
-      //   if (priceScroller.scrollLeft <= 0) {
-      //     pricePrevBtn.disabled = true;
-      //   } else {
-      //     pricePrevBtn.disabled = false;
-      //   }
+        //   if (priceScroller.scrollLeft <= 0) {
+        //     pricePrevBtn.disabled = true;
+        //   } else {
+        //     pricePrevBtn.disabled = false;
+        //   }
 
-      //   if (priceScroller.scrollLeft >= maxScroll) {
-      //     priceNextBtn.disabled = true;
-      //   } else {
-      //     priceNextBtn.disabled = false;
-      //   }
-      // });
+        //   if (priceScroller.scrollLeft >= maxScroll) {
+        //     priceNextBtn.disabled = true;
+        //   } else {
+        //     priceNextBtn.disabled = false;
+        //   }
+        // });
 
-      // // Initialize pricing scroller button states
-      // priceScroller.dispatchEvent(new Event("scroll"));
+        // // Initialize pricing scroller button states
+        // priceScroller.dispatchEvent(new Event("scroll"));
 
         // FAQ accordion functionality
         const faqQuestions = document.querySelectorAll(".faq-question");
@@ -3218,90 +3216,93 @@
         });
       });
 
-    // Price scroller navigation
-    // const scroller = document.querySelector(".price-scroller");
-    // const prevBtn = document.querySelector(
-    //   '.scroller-nav-btn[aria-label="Previous"]'
-    // );
+      // Price scroller navigation
+      // const scroller = document.querySelector(".price-scroller");
+      // const prevBtn = document.querySelector(
+      //   '.scroller-nav-btn[aria-label="Previous"]'
+      // );
 
+      // const nextBtn = document.querySelector(
+      //   '.scroller-nav-btn[aria-label="Next"]'
+      // );
 
-    // const nextBtn = document.querySelector(
-    //   '.scroller-nav-btn[aria-label="Next"]'
-    // );
+      // if (scroller && prevBtn && nextBtn) {
+      //   const scrollAmount = 360; // Width of card + gap
 
-    // if (scroller && prevBtn && nextBtn) {
-    //   const scrollAmount = 360; // Width of card + gap
+      //   nextBtn.addEventListener("click", () => {
+      //     scroller.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      //     updateNavButtons();
+      //   });
 
-    //   nextBtn.addEventListener("click", () => {
-    //     scroller.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    //     updateNavButtons();
-    //   });
+      //   prevBtn.addEventListener("click", () => {
+      //     scroller.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      //     updateNavButtons();
+      //   });
 
-    //   prevBtn.addEventListener("click", () => {
-    //     scroller.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    //     updateNavButtons();
-    //   });
+      //   function updateNavButtons() {
+      //     prevBtn.disabled = scroller.scrollLeft <=  scroller.scrollLeft <= 10;
+      //     nextBtn.disabled =
+      //       scroller.scrollLeft >=
+      //       scroller.scrollWidth - scroller.clientWidth - 10;
+      //   }
 
-    //   function updateNavButtons() {
-    //     prevBtn.disabled = scroller.scrollLeft <=  scroller.scrollLeft <= 10;
-    //     nextBtn.disabled =
-    //       scroller.scrollLeft >=
-    //       scroller.scrollWidth - scroller.clientWidth - 10;
-    //   }
+      //   scroller.addEventListener("scroll", updateNavButtons);
+      //   window.addEventListener("resize", updateNavButtons);
+      //   updateNavButtons();
+      // }
 
+      const priceScroller = document.querySelector(".price-scroller");
+      const pricePrevBtn = document.querySelector(
+        ".scroller-nav .scroller-nav-btn:first-child"
+      );
+      const priceNextBtn = document.querySelector(
+        ".scroller-nav .scroller-nav-btn:last-child"
+      );
 
+      if (priceScroller && pricePrevBtn && priceNextBtn) {
+        const scrollAmount = 360;
 
-    //   scroller.addEventListener("scroll", updateNavButtons);
-    //   window.addEventListener("resize", updateNavButtons);
-    //   updateNavButtons();
-    // }
+        pricePrevBtn.addEventListener("click", () => {
+          priceScroller.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
 
+        priceNextBtn.addEventListener("click", () => {
+          priceScroller.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
 
-    const priceScroller = document.querySelector(".price-scroller");
-    const pricePrevBtn = document.querySelector(
-      ".scroller-nav .scroller-nav-btn:first-child"
-    );
-    const priceNextBtn = document.querySelector(
-      ".scroller-nav .scroller-nav-btn:last-child"
-    );
+        priceScroller.addEventListener("scroll", () => {
+          const maxScroll =
+            priceScroller.scrollWidth - priceScroller.clientWidth;
 
-    if (priceScroller && pricePrevBtn && priceNextBtn) {
-      const scrollAmount = 360;
+          pricePrevBtn.disabled = priceScroller.scrollLeft <= 10;
+          priceNextBtn.disabled = priceScroller.scrollLeft >= maxScroll - 10;
+        });
 
-      pricePrevBtn.addEventListener("click", () => {
-        priceScroller.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      });
-
-      priceNextBtn.addEventListener("click", () => {
-        priceScroller.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      });
-
-      priceScroller.addEventListener("scroll", () => {
-        const maxScroll = priceScroller.scrollWidth - priceScroller.clientWidth;
-
-        pricePrevBtn.disabled = priceScroller.scrollLeft <= 10;
-        priceNextBtn.disabled = priceScroller.scrollLeft >= maxScroll - 10;
-      });
-
-      // Trigger initial state
-      priceScroller.dispatchEvent(new Event("scroll"));
-    }
-
-  </script>
-  <!-- Footer -->
-  <footer class="pt-10 pb-3 mainfooterstart mb-0" style="background-color: #1e293b; color: white">
-    <div class="container">
-      <div class="row">
-        <!-- Newsletter & Logo Column (Now first column) -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="mb-4">
-            <a href="#">
-              <img src="./Logo_Wefithost_03.png" alt="WefitHost Logo" class="mb-3"
-                style="max-height: 40px; filter: brightness(0) invert(1)" />
-            </a>
-            <p style="color: white">
-              Powering websites with reliable hosting since 2015.
-            </p>
+        // Trigger initial state
+        priceScroller.dispatchEvent(new Event("scroll"));
+      }
+    </script>
+    <!-- Footer -->
+    <footer
+      class="pt-10 pb-3 mainfooterstart mb-0"
+      style="background-color: #1e293b; color: white"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Newsletter & Logo Column (Now first column) -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="mb-4">
+              <a href="#">
+                <img
+                  src="./Logo_Wefithost_03.png"
+                  alt="WefitHost Logo"
+                  class="mb-3"
+                  style="max-height: 40px; filter: brightness(0) invert(1)"
+                />
+              </a>
+              <p style="color: white">
+                Powering websites with reliable hosting since 2015.
+              </p>
 
               <!-- Newsletter Form (Moved up) -->
               <div class="mb-4">
@@ -3685,8 +3686,5 @@
         });
       });
     </script>
-
-
-</body>
-
+  </body>
 </html>

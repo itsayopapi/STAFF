@@ -50,17 +50,224 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
-
     <title>WeFitHost</title>
+
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+            display: none;
+        } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background-color: var(--primary-light);
+        margin-bottom: 1.5rem;
+      }
+    </style>
   </head>
 
   <body data-bs-theme="light">
-    <!-- Navbar Start -->
+    <!-- Navbar Start File-->
     <header class="custom-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #1e293b"
+      >
         <div class="container">
           <!-- Logo -->
           <a class="navbar-brand" href="./home.html">
@@ -91,7 +298,7 @@
               <li class="nav-item dropdown mega-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="/"
                   id="hostingDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -134,7 +341,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="secure-hosting.html">
                           <div class="d-flex flex-column">
                             <strong>Secure Hosting</strong>
                             <small class="text-muted"
@@ -151,7 +358,7 @@
                         <h6 class="dropdown-header">
                           <i class="bi bi-cart me-2"></i>eCommerce Solutions
                         </h6>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="woocommerce.html">
                           <div class="d-flex flex-column">
                             <strong>WooCommerce</strong>
                             <small class="text-muted"
@@ -172,7 +379,7 @@
                           <i class="bi bi-shield-lock me-2"></i>Security &
                           Backup
                         </h6>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="ssl-certificate.html">
                           <div class="d-flex flex-column">
                             <strong>SSL Certificates</strong>
                             <small class="text-muted"
@@ -236,11 +443,12 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="reseller-hosting.html">
+                        <a class="dropdown-item" href="autoscalling.html">
                           <div class="d-flex flex-column">
-                            <strong>Reseller Hosting</strong>
+                            <strong>Autoscaling</strong>
                             <small class="text-muted"
-                              >Start your own hosting business</small
+                              >Intelligent Auto-Scaling for Modern Cloud
+                              Applications</small
                             >
                           </div>
                         </a>
@@ -254,7 +462,7 @@
               <li class="nav-item dropdown mega-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="/"
                   id="domainDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -280,7 +488,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="domain-transfer.html">
                           <div class="d-flex flex-column">
                             <strong>Domain Transfer</strong>
                             <small class="text-muted"
@@ -374,11 +582,133 @@
                 </div>
               </li>
 
+              <!-- Reseller Mega Dropdown (New Section) -->
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="/"
+                  id="resellerDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Reseller
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="resellerDropdown"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-gear me-2"></i>Reseller Hosting
+                        </h6>
+
+                        <a class="dropdown-item" href="reseller-hosting.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Hosting</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+
+                        <a class="dropdown-item" href="reseller-plans.html">
+                          <div class="d-flex flex-column">
+                            <strong>Reseller Plans</strong>
+                            <small class="text-muted"
+                              >Start your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>WHMCS Integration</strong>
+                            <small class="text-muted"
+                              >Complete billing automation</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>White Label</strong>
+                            <small class="text-muted"
+                              >Brand as your own service</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-people me-2"></i>Client Management
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Client Accounts</strong>
+                            <small class="text-muted"
+                              >Manage all your clients</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Automated Billing</strong>
+                            <small class="text-muted"
+                              >Recurring invoices & payments</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Support System</strong>
+                            <small class="text-muted"
+                              >Handle client tickets</small
+                            >
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="p-3">
+                        <h6 class="dropdown-header">
+                          <i class="bi bi-graph-up me-2"></i>Business Growth
+                        </h6>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Marketing Tools</strong>
+                            <small class="text-muted"
+                              >Grow your hosting business</small
+                            >
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Partner Program</strong>
+                            <small class="text-muted">Earn commissions</small>
+                          </div>
+                        </a>
+                        <a class="dropdown-item" href="maintenance.html">
+                          <div class="d-flex flex-column">
+                            <strong>Resources</strong>
+                            <small class="text-muted">Guides & tutorials</small>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
               <!-- Services Mega Dropdown -->
               <li class="nav-item dropdown mega-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="/"
                   id="servicesDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -396,7 +726,7 @@
                         <h6 class="dropdown-header">
                           <i class="bi bi-palette me-2"></i>Design Services
                         </h6>
-                        <a class="dropdown-item" href="managed-hosting.html">
+                        <a class="dropdown-item" href="maintenance.html">
                           <div class="d-flex flex-column">
                             <strong>Web Design</strong>
                             <small class="text-muted"
@@ -404,7 +734,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="maintenance.html">
                           <div class="d-flex flex-column">
                             <strong>Logo Design</strong>
                             <small class="text-muted"
@@ -625,7 +955,7 @@
               <li class="nav-item dropdown mega-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="/"
                   id="emailDropdown"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -709,7 +1039,7 @@
               <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
               <a
                 href="https://my.wefithost.com/login"
-                class="btn btn-link text-secondary me-3"
+                class="btn btn-link login-btn me-3"
                 ><i class="bi bi-person"></i> Log In</a
               >
               <a href="https://my.wefithost.com/manage" class="btn btn-primary"
@@ -721,594 +1051,562 @@
       </nav>
     </header>
 
-    <style>
-      .custom-header {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        position: sticky;
-        top: 0;
-        z-index: 1020;
-        background-color: white;
-      }
-
-      .navbar {
-        padding: 0.5rem 0;
-      }
-
-      .nav-link {
-        font-weight: 500;
-        color: #333;
-        padding: 1rem 1.25rem;
-        transition: all 0.2s ease;
-      }
-
-      .nav-link:hover,
-      .nav-link:focus {
-        color: #6b63ff;
-      }
-
-      /* Mega dropdown styles */
-      .mega-dropdown {
-        position: static !important;
-      }
-
-      .mega-menu {
-        width: 100%;
-        left: 0;
-        right: 0;
-        padding: 1rem;
-        margin-top: 0;
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 0 0 8px 8px;
-      }
-
-      .dropdown-menu {
-        border: none;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-        padding: 0.5rem 0;
-        margin-top: 0.5rem;
-      }
-
-      .dropdown-item {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-        color: #333;
-        transition: all 0.2s ease;
-        border-radius: 4px;
-        margin: 0.15rem 0.5rem;
-      }
-
-      .dropdown-item:hover {
-        background-color: #f8f9fa;
-        color: #6b63ff;
-      }
-
-      .dropdown-header {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: #6c757d;
-        text-transform: uppercase;
-        padding: 0.5rem 1.5rem;
-        margin-top: 0.5rem;
-      }
-
-      .btn-primary {
-        background-color: #6b63ff;
-        border-color: #6b63ff;
-        padding: 0.5rem 1.25rem;
-        font-weight: 500;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #5a52e0;
-        border-color: #5a52e0;
-        transform: translateY(-1px);
-      }
-
-      .btn-link {
-        text-decoration: none;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 991.98px) {
-        .navbar-collapse {
-          padding: 1rem 0;
-        }
-
-        .nav-link {
-          padding: 0.75rem 1rem;
-        }
-
-        .mega-menu {
-          position: static !important;
-          width: 100%;
-          box-shadow: none;
-          padding: 0;
-        }
-
-        .mega-menu .row {
-          flex-direction: column;
-        }
-
-        .mega-menu .col-md-4 {
-          width: 100%;
-          padding: 0;
-        }
-
-        .dropdown-menu {
-          box-shadow: none;
-          border-radius: 0;
-          margin-top: 0;
-          border-left: 3px solid #6b63ff;
-        }
-      }
-    </style>
+    <div class="mobile-menu-backdrop"></div>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Add sticky behavior on scroll
-        const header = document.querySelector(".custom-header");
-        let lastScroll = 0;
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
 
-        window.addEventListener("scroll", function () {
-          const currentScroll = window.pageYOffset;
-
-          if (currentScroll <= 0) {
-            header.classList.remove("scrolled-up");
-            return;
-          }
-
-          if (
-            currentScroll > lastScroll &&
-            !header.classList.contains("scrolled-down")
-          ) {
-            // Scroll down
-            header.classList.remove("scrolled-up");
-            header.classList.add("scrolled-down");
-          } else if (
-            currentScroll < lastScroll &&
-            header.classList.contains("scrolled-down")
-          ) {
-            // Scroll up
-            header.classList.remove("scrolled-down");
-            header.classList.add("scrolled-up");
-          }
-
-          lastScroll = currentScroll;
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
         });
 
-        // Keep dropdown open when hovering
-        const megaDropdowns = document.querySelectorAll(".mega-dropdown");
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
 
-        megaDropdowns.forEach((dropdown) => {
-          const toggle = dropdown.querySelector(".dropdown-toggle");
-          const menu = dropdown.querySelector(".dropdown-menu");
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
 
-          dropdown.addEventListener("mouseenter", function () {
-            const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
-            if (!dropdownInstance) {
-              new bootstrap.Dropdown(toggle).show();
-            } else {
-              dropdownInstance.show();
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
             }
           });
+        });
 
-          dropdown.addEventListener("mouseleave", function () {
-            const dropdownInstance = bootstrap.Dropdown.getInstance(toggle);
-            if (dropdownInstance) {
-              dropdownInstance.hide();
-            }
-          });
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
         });
       });
     </script>
     <!-- Navbar End -->
-    <!-- HEADER AREA END -->
 
-    <!-- HERO BANNER ONE -->
-    <section
-      class="rts-hero-three rts-hosting-banner rts-hero__one domain-checker-padding banner-default-height"
-    >
+    <!-- Hero Section -->
+    <section class="hero-section pt-8 pb-8" data-cue="fadeIn">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-12">
-            <div class="rts-hero__content domain">
-              <h1
-                data-sal="slide-down"
-                data-sal-delay="100"
-                data-sal-duration="800"
-              >
-                Register Your Domain
-              </h1>
-              <p
-                class="description"
-                data-sal="slide-down"
-                data-sal-delay="200"
-                data-sal-duration="800"
-              >
-                Enter the domain that you would like to transfer to Wefithost
-              </p>
+          <div class="col-lg-6" data-cue="zoomIn">
+            <h1 class="display-4 fw-bold mb-4 text-secondary">
+              Secure Your
+              <span style="color: #6b63ff">.com</span> Domain Today
+            </h1>
+            <p class="lead mb-4">
+              Establish your online presence with the most recognized and
+              trusted domain extension in the world
+            </p>
 
-              <form action="https://my.wefithost.com/domain-search">
-                <div class="rts-hero__form-area">
-                  <input type="hidden" name="domain" value="register" />
-                  <input type="hidden" name="a" value="add" />
-                  <input
-                    type="text"
-                    placeholder="find your domain name"
-                    name="query"
-                    required
-                  />
-                  <div class="select-button-area">
-                    <select
-                      name="domain_type"
-                      id="select"
-                      class="price__select"
-                    >
-                      <option value=".com">.com</option>
-                      <option value=".net">.net</option>
-                      <option value=".love">.love</option>
-                      <option value=".pw">.pw</option>
-                      <option value=".org">.org</option>
-                      <option value=".org">.org</option>
-                      <option value=".info">.info</option>
-                      <option value=".info">.info</option>
-                      <option value=".xyz">.xyz</option>
-                    </select>
-                    <button type="submit">Search</button>
-                  </div>
+            <form
+              class="domain-transfer-form mb-4"
+              action="./domain-search.html"
+              method="GET"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  name="search"
+                  placeholder="example.com"
+                  required
+                  pattern="^([a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"
+                  title="Enter a domain name without http:// or www (e.g., mydomain.com)"
+                />
+                <button class="btn btn-primary btn-lg" type="submit">
+                  <i class="fas fa-search me-2"></i> Secure Domain
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6" data-cue="slideInRight">
+            <img
+              src="./dot-com-domain-hero.png"
+              alt="Domain Transfer"
+              class="img-fluid rounded-3 shadow"
+              height="550"
+              width="550"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose Section -->
+    <section class="py-10" data-cue="fadeIn">
+      <div class="container">
+        <div class="text-center mb-5" data-cue="zoomIn">
+          <h2 class="fw-bold mb-3">Why Choose a .com Domain?</h2>
+          <p class="lead text-muted">
+            .com is trusted, easy to remember, and perfect for any brand
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-globe2 text-primary fs-3"></i>
                 </div>
-              </form>
-              <div class="banner-content-tag">
-                <p class="desc" data-sal-delay="400" data-sal-duration="800">
-                  Looking for a new domain name?
-                  <a href="domain-checker.php">Try domain checker</a>
+                <h4 class="mb-3">Global Trust</h4>
+                <p class="mb-0 feature-desc">
+                  .com is the most trusted domain extension worldwide.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-rocket-takeoff-fill text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Boost Credibility</h4>
+                <p class="mb-0 feature-desc">
+                  Give your brand a professional image with a .com address.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-search text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Better Visibility</h4>
+                <p class="mb-0 feature-desc">
+                  .com domains are more memorable and rank well in search
+                  engines.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-briefcase-fill text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Brand Recognition</h4>
+                <p class="mb-0 feature-desc">
+                  A .com domain helps solidify your brand’s identity, making it
+                  more recognizable to consumers.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="banner-shape-area">
-        <img
-          class="three"
-          src="assets/images/banner/banner-bg-element.svg"
-          alt=""
-        />
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-10 bg-light" data-cue="zoomIn" data-cue-delay="300">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3 text-dark">Domains Pricing</h2>
+          <p class="lead text-dark-50">
+            Competitive rates with free privacy protection included
+          </p>
+        </div>
+
+        <div class="table-responsive pricing-table shadow-sm">
+          <table class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Domain Extension</th>
+                <th class="text-center">Domain Price</th>
+                <th class="text-center">Renewal Price</th>
+                <th class="text-center">Privacy Protection</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="tld">.com</td>
+                <td class="text-center transfer-price">$11.49/year</td>
+                <td class="text-center renewal-price">$17.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.net</td>
+                <td class="text-center transfer-price">$11.99/year</td>
+                <td class="text-center renewal-price">$15.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.org</td>
+                <td class="text-center transfer-price">$12.99/year</td>
+                <td class="text-center renewal-price">$16.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.info</td>
+                <td class="text-center transfer-price">$9.99/year</td>
+                <td class="text-center renewal-price">$14.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.biz</td>
+                <td class="text-center transfer-price">$14.99/year</td>
+                <td class="text-center renewal-price">$18.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="maintenance.html" class="btn btn-outline-dark"
+            >View All Domain Pricing</a
+          >
+        </div>
       </div>
     </section>
-    <!-- HERO BANNER ONE END -->
 
-    <!-- WEFITHOST SECURITY ANNOUNCEMENT SECTION -->
-    <section class="rts-hosting-feature-two section__padding">
+    <!-- Transfer Process Section -->
+    <!-- <section class="py-10" data-cue="fadeIn">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div
-              class="rts-hosting-feature-two__image"
-              data-sal="slide-right"
-              data-sal-delay="100"
-              data-sal-duration="800"
-            >
+        <div class="text-center mb-5" data-cue="zoomIn">
+          <h2 class="fw-bold mb-3">How to Transfer Your Domain</h2>
+          <p class="lead text-muted">
+            Simple steps to move your domain to WeFitHost
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="process-step d-flex flex-column" data-step="1">
+              <h4>Check Domain Eligibility</h4>
+              <p class="text-muted">
+                Verify your domain is eligible for transfer and not within 60
+                days of registration or previous transfer.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="process-step d-flex flex-column" data-step="2">
+              <h4>Unlock Your Domain</h4>
+              <p class="text-muted">
+                Log in to your current registrar and disable the domain lock to
+                allow transfers.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="process-step d-flex flex-column" data-step="3">
+              <h4>Get Authorization Code</h4>
+              <p class="text-muted">
+                Request the EPP/authorization code from your current registrar
+                (also called transfer key).
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
+            <div class="process-step d-flex flex-column" data-step="4">
+              <h4>Initiate Transfer</h4>
+              <p class="text-muted">
+                Enter your domain and authorization code at WeFitHost to start
+                the transfer process.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="./domain-search.html" class="btn btn-primary btn-lg px-4"
+            >Start Your Domain Transfer Now</a
+          >
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Support Section -->
+    <section class="py-7" data-cue="fadeIn">
+      <div class="container">
+        <div class="support-section p-4 p-lg-5" data-cue="zoomIn">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <h2 class="fw-bold mb-3 text-secondary">
+                24/7 Domain Transfer Support
+              </h2>
+              <p class="mb-4">
+                Our team of domain experts is available around the clock to
+                assist with your transfer process. Get help with authorization
+                codes, troubleshooting, and more.
+              </p>
+
+              <div class="mb-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Professional support for all domain transfers</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Average response time under 15 minutes</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Help available via live chat, email, and phone</span>
+                </div>
+              </div>
+
+              <a href="contact.html" class="btn btn-secondary"
+                >Get Support Now</a
+              >
+            </div>
+            <div class="col-lg-5 text-center">
               <img
-                src="assets/images/hosting/hosting__feature__two.png"
-                alt=""
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Support Team"
+                class="img-fluid support-img rounded-3"
               />
             </div>
           </div>
-          <div class="col-lg-5 offset-lg-1">
-            <div class="rts-hosting-feature-two__content">
-              <div class="rts-section__two">
-                <h6
-                  class="sub__title"
-                  data-sal="slide-down"
-                  data-sal-delay="100"
-                  data-sal-duration="800"
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+
+    <section class="py-10">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">.com Domain FAQs</h2>
+          <p class="lead text-muted">
+            Common questions about transferring domains to WeFitHost
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    How long does a domain transfer take?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
                 >
-                  feature
-                </h6>
-                <h2
-                  class="title"
-                  data-sal="slide-down"
-                  data-sal-delay="300"
-                  data-sal-duration="800"
-                >
-                  Advanced Security Features
-                </h2>
-                <p
-                  class="description"
-                  data-sal="slide-down"
-                  data-sal-delay="400"
-                  data-sal-duration="800"
-                >
-                  We’ll move your first website to Cloud ways from any web host
-                  for without breaking your live site hosted.
-                </p>
+                  <div class="accordion-body">
+                    Most domain transfers complete within 5-7 days, depending on
+                    your current registrar. The process can be faster if you
+                    promptly approve the transfer confirmation email. Some
+                    domains may transfer in as little as 15 minutes.
+                  </div>
+                </div>
               </div>
-              <div
-                class="feature"
-                data-sal="slide-down"
-                data-sal-delay="500"
-                data-sal-duration="800"
-              >
-                <ul class="feature__list">
-                  <li class="feature__item">
-                    Get unlimited SSL security certificates
-                  </li>
-                  <li class="feature__item">
-                    Protect your website from DDoS attacks
-                  </li>
-                  <li class="feature__item">
-                    Secure your files with automatic backups.
-                  </li>
-                </ul>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    Will my website experience downtime during transfer?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    No, your website will remain online during the transfer
+                    process as long as you don't change your nameservers. We
+                    recommend keeping your current hosting until the transfer is
+                    complete to avoid any potential downtime.
+                  </div>
+                </div>
               </div>
-              <a
-                href="https://my.wefithost.com/manage"
-                class="rts-btn rts-btn-secondary"
-                data-sal="slide-down"
-                data-sal-delay="600"
-                data-sal-duration="800"
-                >get started</a
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    Do I need to renew my domain before transferring?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    No, transferring your domain to WeFitHost automatically
+                    extends your registration by one year. However, if your
+                    domain is expiring soon (within 15 days), we recommend
+                    renewing it with your current registrar before initiating
+                    the transfer.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                    What is an authorization code (EPP code)?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    An authorization code (also called EPP code or transfer key)
+                    is a security code required to transfer your domain between
+                    registrars. You can obtain this code from your current
+                    domain registrar's control panel. It typically looks like a
+                    random string of letters and numbers.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                  >
+                    Can I transfer an expired domain?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Domains that have expired typically cannot be transferred
+                    until they are renewed with the current registrar. The
+                    redemption period (usually 30 days after expiration) may
+                    have additional requirements. Contact our support team if
+                    you need help with an expired domain transfer.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="faqs.html" class="btn btn-outline-primary"
+                >View All FAQs</a
               >
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- WEFITHOST SECURITY ANNOUNCEMENT SECTION END -->
 
-    <!-- SUPPORT AREA -->
-    <div class="rts-support black__friday--support">
-      <div class="container">
-        <div class="row">
-          <div class="rts-support__wrapper">
-            <div class="rts-support__wrapper--content">
-              <h3
-                class="title"
-                data-sal="slide-down"
-                data-sal-delay="100"
-                data-sal-duration="800"
-              >
-                24/7 World-Class Support
-              </h3>
-              <p
-                data-sal="slide-down"
-                data-sal-delay="200"
-                data-sal-duration="800"
-              >
-                Ran into trouble? Contact our Customer Success team any time via
-                live chat or email.
-              </p>
-              <div
-                class="feature"
-                data-sal="slide-down"
-                data-sal-delay="300"
-                data-sal-duration="800"
-              >
-                <ul class="feature__list">
-                  <li class="feature__item">
-                    Receive professional WordPress support
-                  </li>
-                  <li class="feature__item">
-                    Our specialists are available round
-                  </li>
-                </ul>
-              </div>
-              <a href="/support" class="rts-btn rts-btn-primary support-btn"
-                >Get Support <i class="fa-regular fa-chevron-right"></i
-              ></a>
-            </div>
-            <div
-              class="rts-support__wrapper--image"
-              data-sal="slide-left"
-              data-sal-delay="400"
-              data-sal-duration="800"
-            >
-              <img src="assets/images/support/support__image.svg" alt="" />
-            </div>
-          </div>
+    <!-- CTA Section -->
+    <section class="pt-7 pb-10" data-cue="fadeIn">
+      <div class="container" data-cue="zoomIn">
+        <div class="cta-section p-4 p-lg-5 text-center">
+          <h2 class="fw-bold mb-3 text-secondary">Get Started with a .com</h2>
+          <p class="lead mb-4">
+            Join thousands of customers who trust WeFitHost with their domains
+          </p>
+          <a href="#s" class="btn btn-primary btn-lg px-4 me-2"
+            >Get Your Domain Now</a
+          >
+          <a href="contact.html" class="btn btn-outline-secondary btn-lg px-4"
+            >Contact Support</a
+          >
         </div>
       </div>
-    </div>
-    <!-- SUPPORT AREA END -->
-
-    <!-- DOMAIN  REGISTRATION FAQ -->
-    <div class="rts-hosting-faq section__padding">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="rts-section text-center">
-              <h2
-                class="rts-section__title mb-0"
-                data-sal="slide-down"
-                data-sal-delay="100"
-                data-sal-duration="800"
-              >
-                Frequently asked questions
-              </h2>
-            </div>
-            <div
-              class="rts-faq__accordion"
-              data-sal="slide-down"
-              data-sal-delay="100"
-              data-sal-duration="800"
-            >
-              <div class="accordion accordion-flush" id="rts-accordion">
-                <div class="accordion-item active">
-                  <div class="accordion-header" id="first">
-                    <h4
-                      class="accordion-button collapse show"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#item__one"
-                      aria-expanded="false"
-                      aria-controls="item__one"
-                    >
-                      What is a domain name, and why do I need one?
-                    </h4>
-                  </div>
-                  <div
-                    id="item__one"
-                    class="accordion-collapse collapse collapse show"
-                    aria-labelledby="first"
-                    data-bs-parent="#rts-accordion"
-                  >
-                    <div class="accordion-body">
-                      A domain name is your website’s unique address on the
-                      internet (e.g., yourwebsite.com). It helps customers find
-                      you online and builds your brand identity.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header" id="two">
-                    <h4
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#item__two"
-                      aria-expanded="false"
-                      aria-controls="item__two"
-                    >
-                      How do I register a domain name?
-                    </h4>
-                  </div>
-                  <div
-                    id="item__two"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="two"
-                    data-bs-parent="#rts-accordion"
-                  >
-                    <div class="accordion-body">
-                      Simply search for your desired domain on our platform,
-                      choose an available name, select a plan, and complete the
-                      registration process.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header" id="three">
-                    <h4
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#item__three"
-                      aria-expanded="false"
-                      aria-controls="item__three"
-                    >
-                      Can I transfer my domain to WeFitHost?
-                    </h4>
-                  </div>
-                  <div
-                    id="item__three"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="three"
-                    data-bs-parent="#rts-accordion"
-                  >
-                    <div class="accordion-body">
-                      Yes! You can transfer your existing domain to WeFitHost
-                      easily. Just ensure your domain is unlocked, and you have
-                      the transfer authorization code from your current
-                      provider.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item">
-                  <div class="accordion-header" id="four">
-                    <h4
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#item__four"
-                      aria-expanded="false"
-                      aria-controls="item__four"
-                    >
-                      WWhat happens if my domain expires?
-                    </h4>
-                  </div>
-                  <div
-                    id="item__four"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="four"
-                    data-bs-parent="#rts-accordion"
-                  >
-                    <div class="accordion-body">
-                      If your domain expires, it enters a grace period where you
-                      can renew it. After this period, it may become available
-                      for others to purchase, so timely renewal is crucial.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <div class="accordion-header" id="five">
-                    <h4
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#item__five"
-                      aria-expanded="false"
-                      aria-controls="item__four"
-                    >
-                      Do I get free domain privacy protection?
-                    </h4>
-                  </div>
-                  <div
-                    id="item__five"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="five"
-                    data-bs-parent="#rts-accordion"
-                  >
-                    <div class="accordion-body">
-                      Yes, WeFitHost offers domain privacy protection to keep
-                      your personal information safe from spammers and scammers.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- SHARED HOSTING FAQ END -->
-
-    <!-- WeFitHost CTA -->
-    <div class="rts-cta-two shared-page-bg">
-      <div class="container">
-        <div class="row">
-          <div class="rts-cta-two__wrapper">
-            <div class="cta__shape"></div>
-            <div class="cta-content">
-              <span
-                data-sal="slide-down"
-                data-sal-delay="100"
-                data-sal-duration="800"
-                >Need help choosing a plan?</span
-              >
-              <h4
-                data-sal="slide-down"
-                data-sal-delay="200"
-                data-sal-duration="800"
-              >
-                Need help? We're always here for you.
-              </h4>
-            </div>
-            <div class="cta-btn">
-              <a
-                href="#"
-                class="contact__us primary__btn btn__two secondary__bg secondary__color"
-                >Go to Live chat Page</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- WeFitHost CTA END -->
+    </section>
 
     <!-- Footer -->
     <footer
-      class="pt-7 mainfooterstart mb-0"
+      class="pt-10 pb-3 mainfooterstart mb-0"
       style="background-color: #1e293b; color: white"
     >
       <div class="container">
@@ -1647,7 +1945,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
 
