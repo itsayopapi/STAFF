@@ -258,6 +258,30 @@
         background-color: var(--primary-light);
         margin-bottom: 1.5rem;
       }
+
+      .form-input {
+        color: var(--dark);
+      }
+
+      .form-input::placeholder {
+        color: #ccc;
+      }
+
+      @media screen and (max-width: 991px) {
+        .hero-section {
+          text-align: center;
+        }
+
+        .support-img-box {
+          margin-top: 2rem;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .btn-support {
+          margin-top: 1.3rem;
+        }
+      }
     </style>
   </head>
 
@@ -544,7 +568,7 @@
                         <h6 class="dropdown-header">
                           <i class="bi bi-tags me-2"></i>Domain Extensions
                         </h6>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="dot-com-domain.html">
                           <div class="d-flex flex-column">
                             <strong>.com Domains</strong>
                             <small class="text-muted"
@@ -552,7 +576,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="dot-net-domain.html">
                           <div class="d-flex flex-column">
                             <strong>.net Domains</strong>
                             <small class="text-muted"
@@ -560,7 +584,7 @@
                             >
                           </div>
                         </a>
-                        <a class="dropdown-item" href="maintenance.html">
+                        <a class="dropdown-item" href="dot-org-domain.html">
                           <div class="d-flex flex-column">
                             <strong>.org Domains</strong>
                             <small class="text-muted"
@@ -1114,7 +1138,7 @@
     <!-- Navbar End -->
 
     <!-- Hero Section -->
-    <section class="hero-section pt-8 pb-8" data-cue="fadeIn">
+    <section class="hero-section pt-8 pb-8" data-cue="fadeIn" id="hero-section">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6" data-cue="zoomIn">
@@ -1129,14 +1153,17 @@
 
             <form
               class="domain-transfer-form mb-4"
-              action="./domain-search.html"
+              action="https://my.wefithost.com/domain-search"
               method="GET"
+              target="_blank"
+              onsubmit="return validateDomainSearch()"
             >
               <div class="input-group">
                 <input
                   type="text"
-                  class="form-control form-control-lg"
-                  name="search"
+                  class="form-control form-control-lg form-input"
+                  name="domain"
+                  id="searchDomain"
                   placeholder="example.com"
                   required
                   pattern="^([a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"
@@ -1160,6 +1187,29 @@
         </div>
       </div>
     </section>
+
+    <script>
+      function validateDomainSearch() {
+        const input = document.getElementById("searchDomain");
+        let domain = input.value.trim();
+
+        // Remove http:// or https:// if present
+        domain = domain.replace(/^https?:\/\//i, "");
+
+        // Remove www. if present
+        domain = domain.replace(/^www\./i, "");
+
+        // If the input doesn't contain a dot, we'll let the search page handle it
+        if (domain.length > 0) {
+          // Update the input value with cleaned domain
+          input.value = domain;
+          return true;
+        }
+
+        alert("Please enter a valid domain name");
+        return false;
+      }
+    </script>
 
     <!-- Why choose Section -->
     <section class="py-10" data-cue="fadeIn">
@@ -1322,68 +1372,8 @@
       </div>
     </section>
 
-    <!-- Transfer Process Section -->
-    <!-- <section class="py-10" data-cue="fadeIn">
-      <div class="container">
-        <div class="text-center mb-5" data-cue="zoomIn">
-          <h2 class="fw-bold mb-3">How to Transfer Your Domain</h2>
-          <p class="lead text-muted">
-            Simple steps to move your domain to WeFitHost
-          </p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="process-step d-flex flex-column" data-step="1">
-              <h4>Check Domain Eligibility</h4>
-              <p class="text-muted">
-                Verify your domain is eligible for transfer and not within 60
-                days of registration or previous transfer.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="process-step d-flex flex-column" data-step="2">
-              <h4>Unlock Your Domain</h4>
-              <p class="text-muted">
-                Log in to your current registrar and disable the domain lock to
-                allow transfers.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="process-step d-flex flex-column" data-step="3">
-              <h4>Get Authorization Code</h4>
-              <p class="text-muted">
-                Request the EPP/authorization code from your current registrar
-                (also called transfer key).
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3" data-cue="zoomIn">
-            <div class="process-step d-flex flex-column" data-step="4">
-              <h4>Initiate Transfer</h4>
-              <p class="text-muted">
-                Enter your domain and authorization code at WeFitHost to start
-                the transfer process.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-5">
-          <a href="./domain-search.html" class="btn btn-primary btn-lg px-4"
-            >Start Your Domain Transfer Now</a
-          >
-        </div>
-      </div>
-    </section> -->
-
     <!-- Support Section -->
-    <section class="py-7" data-cue="fadeIn">
+    <section class="pt-10 pb-7" data-cue="fadeIn">
       <div class="container">
         <div class="support-section p-4 p-lg-5" data-cue="zoomIn">
           <div class="row align-items-center">
@@ -1416,7 +1406,7 @@
                 >Get Support Now</a
               >
             </div>
-            <div class="col-lg-5 text-center">
+            <div class="col-lg-5 support-img-box">
               <img
                 src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                 alt="Support Team"
@@ -1434,9 +1424,7 @@
       <div class="container">
         <div class="text-center mb-5">
           <h2 class="fw-bold mb-3">.com Domain FAQs</h2>
-          <p class="lead text-muted">
-            Common questions about transferring domains to WeFitHost
-          </p>
+          <p class="lead text-muted">Common questions about .com Domains</p>
         </div>
 
         <div class="row justify-content-center">
@@ -1450,7 +1438,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseOne"
                   >
-                    How long does a domain transfer take?
+                    Why should I choose a .com domain over other extensions?
                   </button>
                 </h3>
                 <div
@@ -1460,10 +1448,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Most domain transfers complete within 5-7 days, depending on
-                    your current registrar. The process can be faster if you
-                    promptly approve the transfer confirmation email. Some
-                    domains may transfer in as little as 15 minutes.
+                    A .com domain is globally recognized, trusted, and
+                    associated with credibility. It’s the default choice for
+                    businesses, making your website appear more professional and
+                    established.
                   </div>
                 </div>
               </div>
@@ -1476,7 +1464,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseTwo"
                   >
-                    Will my website experience downtime during transfer?
+                    Is a .com domain better for SEO?
                   </button>
                 </h3>
                 <div
@@ -1486,10 +1474,10 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    No, your website will remain online during the transfer
-                    process as long as you don't change your nameservers. We
-                    recommend keeping your current hosting until the transfer is
-                    complete to avoid any potential downtime.
+                    While search engines treat most domain extensions equally,
+                    .com domains often receive more clicks because users are
+                    familiar with them, which can positively impact your SEO
+                    performance over time.
                   </div>
                 </div>
               </div>
@@ -1502,7 +1490,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseThree"
                   >
-                    Do I need to renew my domain before transferring?
+                    Can I use a .com domain for any type of website?
                   </button>
                 </h3>
                 <div
@@ -1512,11 +1500,9 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    No, transferring your domain to WeFitHost automatically
-                    extends your registration by one year. However, if your
-                    domain is expiring soon (within 15 days), we recommend
-                    renewing it with your current registrar before initiating
-                    the transfer.
+                    Absolutely. Whether you’re launching a personal blog,
+                    e-commerce site, portfolio, or corporate page, a .com domain
+                    is flexible and appropriate for almost any purpose.
                   </div>
                 </div>
               </div>
@@ -1529,7 +1515,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseFour"
                   >
-                    What is an authorization code (EPP code)?
+                    Are .com domains still available? Aren’t most of them taken?
                   </button>
                 </h3>
                 <div
@@ -1539,11 +1525,9 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    An authorization code (also called EPP code or transfer key)
-                    is a security code required to transfer your domain between
-                    registrars. You can obtain this code from your current
-                    domain registrar's control panel. It typically looks like a
-                    random string of letters and numbers.
+                    Yes, many short .com domains are taken, but with a little
+                    creativity, such as combining words or using unique brand
+                    names, you can still find great available options.
                   </div>
                 </div>
               </div>
@@ -1556,7 +1540,7 @@
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseFive"
                   >
-                    Can I transfer an expired domain?
+                    What happens if someone already owns the .com I want?
                   </button>
                 </h3>
                 <div
@@ -1566,11 +1550,9 @@
                   data-bs-parent="#faqAccordion"
                 >
                   <div class="accordion-body">
-                    Domains that have expired typically cannot be transferred
-                    until they are renewed with the current registrar. The
-                    redemption period (usually 30 days after expiration) may
-                    have additional requirements. Contact our support team if
-                    you need help with an expired domain transfer.
+                    If your desired .com domain is taken, you can try contacting
+                    the owner to make an offer, consider variations of the name,
+                    or explore other TLDs, but .com remains the gold standard.
                   </div>
                 </div>
               </div>
@@ -1594,10 +1576,12 @@
           <p class="lead mb-4">
             Join thousands of customers who trust WeFitHost with their domains
           </p>
-          <a href="#s" class="btn btn-primary btn-lg px-4 me-2"
+          <a href="#hero-section" class="btn btn-primary btn-lg px-4 me-2"
             >Get Your Domain Now</a
           >
-          <a href="contact.html" class="btn btn-outline-secondary btn-lg px-4"
+          <a
+            href="maintenance.html"
+            class="btn btn-outline-secondary btn-lg px-4 btn-support"
             >Contact Support</a
           >
         </div>

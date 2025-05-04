@@ -248,136 +248,6 @@
         font-size: 1.05rem;
       }
 
-      /* ===== Base Styles ===== */
-      :root {
-        --primary: #6b63ff;
-        --primary-dark: #4f46e5;
-        --dark: #111827;
-        --light: #f9fafb;
-        --text-dark: #1e293b;
-        --text-muted: #64748b;
-      }
-
-      body {
-        font-family: "Inter", sans-serif;
-        color: var(--text-dark);
-        line-height: 1.6;
-      }
-
-      /* ===== Hero Section ===== */
-      .domain-hero-container {
-        justify-content: space-between;
-      }
-
-      @media screen and (max-width: 992px) {
-        .domain-hero-container {
-          flex-direction: column;
-        }
-      }
-
-      @media screen and (max-width: 992px) and (min-width: 768px) {
-        .badge {
-          display: none;
-        }
-      }
-
-      .domain-hero {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        padding: 7rem 0 5rem;
-        color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .domain-hero-content {
-        position: relative;
-        z-index: 2;
-        flex-basis: 43%;
-      }
-
-      .domain-search-row {
-        flex-basis: 55%;
-      }
-
-      .bulk-search-input {
-        resize: none;
-        font-size: 16px !important;
-        color: var(--text-dark);
-        font-weight: 500;
-      }
-
-      .bulk-search-input::placeholder {
-        color: var(--text-muted);
-        /* font-weight: 500; */
-      }
-
-      .domain-hero h1 {
-        font-size: 3rem;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 1.5rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .domain-hero .lead {
-        font-size: 1.3rem;
-        opacity: 0.95;
-        margin-bottom: 2.5rem;
-        max-width: 600px;
-      }
-
-      .domain-hero-pattern {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(
-            circle at 20% 30%,
-            rgba(255, 255, 255, 0.1) 0%,
-            transparent 20%
-          ),
-          radial-gradient(
-            circle at 80% 70%,
-            rgba(255, 255, 255, 0.1) 0%,
-            transparent 20%
-          );
-      }
-
-      /* Domain Search Container */
-      .domain-search-container {
-        background: white;
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
-        position: relative;
-        z-index: 1;
-        height: 400px;
-      }
-
-      .domain-search-form {
-        /* position: relative;
-        margin-bottom: 2rem; */
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .domain-search-form h3 {
-        font-size: 1.3rem !important;
-      }
-
-      .btn-search {
-      }
-
-      .section-features h2 {
-        font-size: 2.5rem;
-      }
-
       .icon-wrapper {
         width: 70px;
         height: 70px;
@@ -389,313 +259,27 @@
         margin-bottom: 1.5rem;
       }
 
-      .feature-heading {
-        font-size: 17px;
+      .form-input {
+        color: var(--dark);
       }
 
-      .feature-desc {
-        font-size: 17px;
+      .form-input::placeholder {
+        color: #ccc;
       }
 
-      .domain-search-form input {
-        padding: 1.25rem 1.5rem;
-        border-radius: 10px;
-        border: 2px solid #e2e8f0;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .domain-search-form input:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 4px rgba(107, 99, 255, 0.2);
-        outline: none;
-      }
-
-      .domain-search-form button {
-        padding: 0.75rem 1.75rem;
-        border-radius: 8px;
-        font-weight: 600;
-        border: none;
-        background-color: #6b63ff;
-        transition: background-color 0.3s ease;
-      }
-
-      .domain-search-form button:hover {
-        background-color: #1a237e;
-      }
-
-      .domain-tlds {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .domain-tld {
-        background: white;
-        border-radius: 8px;
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-        font-weight: 600;
-        color: var(--primary);
-      }
-
-      .domain-tld:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        border-color: var(--primary);
-        color: var(--primary-dark);
-      }
-
-      /* Section Headers */
-      .section-header {
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-
-      .section-header h2 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-      }
-
-      .section-header .lead {
-        font-size: 1.25rem;
-        color: var(--text-muted);
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Domain Cards */
-      .domain-card {
-        border: none;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        transition: all 0.3s ease;
-        height: 100%;
-        background: white;
-      }
-
-      .domain-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-
-      .domain-card-header {
-        padding: 1.5rem;
-        border-bottom: 1px solid #f1f5f9;
-      }
-
-      .domain-card-header h4 {
-        font-weight: 700;
-        color: var(--text-dark);
-        margin: 0;
-      }
-
-      .domain-item {
-        padding: 1.25rem 1.5rem;
-        border-bottom: 1px solid #f1f5f9;
-        display: flex;
-        align-items: center;
-      }
-
-      .domain-item:last-child {
-        border-bottom: none;
-      }
-
-      .domain-name {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-weight: 600;
-        flex: 1;
-      }
-
-      .domain-name .badge {
-        background: rgba(107, 99, 255, 0.1);
-        color: var(--primary);
-        padding: 0.25rem 0.75rem;
-        border-radius: 50px;
-        font-size: 0.8rem;
-      }
-
-      .domain-price {
-        font-weight: 700;
-        color: var(--primary);
-        margin: 0 1.5rem;
-        min-width: 80px;
-        text-align: center;
-      }
-
-      .domain-action .btn {
-        padding: 0.5rem 1.25rem;
-        font-size: 0.9rem;
-        white-space: nowrap;
-      }
-
-      /* Feature Sections */
-      .feature-section {
-        padding: 4rem 0;
-      }
-
-      .feature-section.bg-light {
-        background-color: #f8fafc;
-      }
-
-      .feature-content h3 {
-        font-size: 2rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        color: var(--text-dark);
-      }
-
-      .feature-content h4 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--text-dark);
-      }
-
-      .feature-content p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: var(--text-muted);
-        margin-bottom: 1.5rem;
-      }
-
-      .feature-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 16px;
-        background: rgba(107, 99, 255, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        color: var(--primary);
-        font-size: 1.75rem;
-      }
-
-      /* FAQs */
-      .faq-section {
-        padding: 2rem 0;
-        background: #f8fafc;
-      }
-
-      .faq-item {
-        margin-bottom: 1rem;
-        border-radius: 8px;
-        overflow: hidden;
-        background: white;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      }
-
-      .faq-header button {
-        width: 100%;
-        text-align: left;
-        padding: 1.25rem 1.5rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        background: none;
-        border: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .faq-header button:not(.collapsed) {
-        color: var(--primary);
-        background-color: rgba(107, 99, 255, 0.05);
-      }
-
-      .faq-body {
-        padding: 0 1.5rem 1.5rem;
-        color: var(--text-muted);
-        line-height: 1.7;
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 991.98px) {
-        .domain-hero {
-          padding: 5rem 0 3rem;
+      @media screen and (max-width: 991px) {
+        .hero-section {
           text-align: center;
         }
 
-        .domain-hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .domain-hero .lead {
-          font-size: 1.15rem;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .domain-search-container {
-          padding: 1.75rem;
-        }
-
-        .section-header h2 {
-          font-size: 2rem;
+        .support-img-box {
+          margin-top: 2rem;
         }
       }
 
-      @media (max-width: 767.98px) {
-        .domain-hero h1 {
-          font-size: 2rem;
-        }
-
-        .domain-item {
-          flex-direction: column;
-          gap: 1rem;
-          text-align: center;
-        }
-
-        .domain-name,
-        .domain-price,
-        .domain-action {
-          width: 100%;
-          justify-content: center;
-        }
-
-        .domain-price {
-          margin: 0.5rem 0;
-        }
-
-        .feature-section {
-          padding: 4rem 0;
-        }
-
-        .feature-content h3 {
-          font-size: 1.75rem;
-        }
-      }
-
-      @media (max-width: 575.98px) {
-        .domain-search-form input {
-          padding: 1rem;
-        }
-
-        .domain-search-form button {
-          position: relative;
-          top: auto;
-          right: auto;
-          width: 100%;
-          margin-top: 1rem;
-        }
-
-        .domain-tld {
-          padding: 0.75rem 1rem;
-          font-size: 0.9rem;
+      @media screen and (max-width: 768px) {
+        .btn-support {
+          margin-top: 1.3rem;
         }
       }
     </style>
@@ -759,7 +343,7 @@
                         </h6>
                         <a class="dropdown-item" href="wordpress-hosting.html">
                           <div class="d-flex flex-column">
-                            <strong>Managed WordPress Hosting</strong>
+                            <strong>WordPress Hosting</strong>
                             <small class="text-muted"
                               >Automated updates and plugins</small
                             >
@@ -767,7 +351,7 @@
                         </a>
                         <a class="dropdown-item" href="cloud-hosting.html">
                           <div class="d-flex flex-column">
-                            <strong>Managed Cloud Hosting</strong>
+                            <strong>Cloud Hosting</strong>
                             <small class="text-muted"
                               >Lightning-fast with 100% uptime SLA</small
                             >
@@ -861,7 +445,7 @@
                         </a>
                         <a class="dropdown-item" href="vps-hosting.html">
                           <div class="d-flex flex-column">
-                            <strong>Managed VPS Hosting</strong>
+                            <strong>VPS Hosting</strong>
                             <small class="text-muted"
                               >Scalable virtual private servers</small
                             >
@@ -1553,563 +1137,58 @@
     </script>
     <!-- Navbar End -->
 
-    <!-- Main Content -->
-    <main>
-      <!-- Hero Section -->
-      <section class="domain-hero py-10">
-        <div class="domain-hero-pattern"></div>
-        <div class="container">
-          <div class="row align-items-center domain-hero-container">
-            <div class="col-11 order-lg-1 domain-hero-content">
-              <span class="badge bg-white text-primary mb-3 py-2 px-3"
-                >Bulk Domain Search</span
-              >
-              <h1 class="text-secondary">Search and Buy Domains in Bulk</h1>
-              <p class="lead">
-                Easily check the availability of multiple domain names in one
-                search. Ideal for businesses, resellers. Save time and make
-                smarter domain registration decisions.
-              </p>
-            </div>
-            <div
-              class="col-11 order-lg-2 order-1 mb-5 mb-lg-0 domain-search-row"
-            >
-              <div class="domain-search-container">
-                <form
-                  id="domainSearchForm"
-                  action="https://my.wefithost.com/domain-search"
-                  method="GET"
-                  onsubmit="return validateDomainSearch()"
-                  target="_blank"
-                  style="height: 100%"
-                >
-                  <div class="domain-search-form" style="height: 100%">
-                    <h3>Enter a list of domains</h3>
-                    <textarea
-                      name="domain"
-                      id="searchDomain"
-                      class="form-control form-control-lg bulk-search-input"
-                      style="height: 100%"
-                      placeholder="example.com
-example.net
-example.org"
-                    ></textarea>
-                    <button class="btn-search">Search Domains</button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Hero section end -->
-
-      <!-- Key Features start -->
-      <section class="py-10 py-lg-10 section-features" id="features">
-        <div class="container">
-          <div class="text-center mb-7" data-aos="fade-up">
-            <h2 class="fw-bold mb-3">Bulk Search Features</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px">
-              All-in-one solution for fast, accurate, and scalable domain
-              searches.
+    <!-- Hero Section -->
+    <section class="hero-section pt-8 pb-8" data-cue="fadeIn" id="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-cue="zoomIn">
+            <h1 class="display-4 fw-bold mb-4 text-secondary">
+              Secure Your
+              <span style="color: #6b63ff">.net</span> Domain Today
+            </h1>
+            <p class="lead mb-4">
+              The trusted choice for tech innovators, startups, and networking
+              platforms. Get your .net today and stand out online.
             </p>
-          </div>
 
-          <div class="row g-4">
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="fade-up"
-              data-aos-delay="200"
+            <form
+              class="domain-transfer-form mb-4"
+              action="https://my.wefithost.com/domain-search"
+              method="GET"
+              target="_blank"
+              onsubmit="return validateDomainSearch()"
             >
-              <div class="card h-100 feature-card shadow-sm">
-                <div class="card-body p-4">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-wallet2 text-primary fs-3"></i>
-                  </div>
-                  <h3 class="feature-heading mb-3">Buy and Save More</h3>
-                  <p class="mb-0 feature-desc">
-                    Save on registration costs when purchasing domains in bulk.
-                  </p>
-                </div>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control form-control-lg form-input"
+                  name="domain"
+                  id="searchDomain"
+                  placeholder="example.net"
+                  required
+                  pattern="^([a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.)+[a-zA-Z]{2,}$"
+                  title="Enter a domain name without http:// or www (e.g., mydomain.com)"
+                />
+                <button class="btn btn-primary btn-lg" type="submit">
+                  <i class="fas fa-search me-2"></i> Secure Domain
+                </button>
               </div>
-            </div>
-
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div class="card h-100 feature-card shadow-sm">
-                <div class="card-body p-4">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-shield-lock text-primary fs-3"></i>
-                  </div>
-                  <h3 class="feature-heading mb-3">Add Privacy in Bulk</h3>
-                  <p class="mb-0 feature-desc">
-                    Automatically add Domain Privacy and Protection to all
-                    domains in your cart.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="card h-100 feature-card shadow-sm">
-                <div class="card-body p-4">
-                  <div class="icon-wrapper">
-                    <i
-                      class="bi bi-lightning-charge-fill text-primary fs-3"
-                    ></i>
-                  </div>
-                  <h3 class="feature-heading mb-3">
-                    Instantly search several domains
-                  </h3>
-                  <p class="mb-0 feature-desc">
-                    Check availability of several domains at once.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col-md-6 col-lg-3"
-              data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              <div class="card h-100 feature-card shadow-sm">
-                <div class="card-body p-4">
-                  <div class="icon-wrapper">
-                    <i class="bi bi-search text-primary fs-3"></i>
-                  </div>
-                  <h3 class="feature-heading mb-3">Bulk WHOIS Lookup</h3>
-                  <p class="mb-0 feature-desc">
-                    Access WHOIS details for each domain in your search list.
-                  </p>
-                </div>
-              </div>
-            </div>
+            </form>
+          </div>
+          <div class="col-lg-6" data-cue="slideInRight">
+            <img
+              src="./dot-net-domain-hero.png"
+              alt="Domain Transfer"
+              class="img-fluid rounded-3 shadow"
+              height="550"
+              width="550"
+            />
           </div>
         </div>
-      </section>
-      <!-- key features end -->
-
-      <!-- Domain Pricing -->
-      <section id="domain-pricing" class="py-10">
-        <div class="container">
-          <div class="section-header">
-            <h2>Domain Pricing</h2>
-            <p class="lead">
-              Competitive pricing for all popular domain extensions
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="domain-card">
-                <div class="domain-card-header">
-                  <h4>Popular Domains</h4>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span class="badge">Best Value</span>
-                    <span>.com</span>
-                  </div>
-                  <div class="domain-price">$14.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.com"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.net</span>
-                  </div>
-                  <div class="domain-price">$15.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.net"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.org</span>
-                  </div>
-                  <div class="domain-price">$12.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.org"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.co.uk</span>
-                  </div>
-                  <div class="domain-price">$7.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.co.uk"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="domain-card">
-                <div class="domain-card-header">
-                  <h4>New Domains</h4>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span class="badge">Trending</span>
-                    <span>.dev</span>
-                  </div>
-                  <div class="domain-price">$16.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.dev"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.app</span>
-                  </div>
-                  <div class="domain-price">$19.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.app"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.tech</span>
-                  </div>
-                  <div class="domain-price">$24.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.tech"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.blog</span>
-                  </div>
-                  <div class="domain-price">$18.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features -->
-      <section id="how-it-works" class="feature-section pb-10">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="feature-icon">
-                <i class="bi bi-gear"></i>
-              </div>
-              <h3>Easy Domain Management</h3>
-              <div class="mb-4">
-                <h4>Intuitive Control Panel</h4>
-                <p>
-                  Manage all your domains from one simple dashboard. Update DNS
-                  settings, configure email forwarding, and renew domains with
-                  just a few clicks.
-                </p>
-              </div>
-              <div>
-                <h4>Bulk Management Tools</h4>
-                <p>
-                  Save time when managing multiple domains. Update nameservers
-                  or contact information across all your domains simultaneously.
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="bg-primary bg-opacity-10 p-5 rounded-3">
-                <div class="d-flex gap-3 mb-4">
-                  <div class="bg-white p-3 rounded-2 shadow-sm flex-grow-1">
-                    <h5 class="text-primary">DNS Management</h5>
-                    <p class="mb-0 small">
-                      Easily update your domain's nameservers and DNS records
-                    </p>
-                  </div>
-                  <div class="bg-white p-3 rounded-2 shadow-sm flex-grow-1">
-                    <h5 class="text-primary">Auto-Renewal</h5>
-                    <p class="mb-0 small">
-                      Never lose your domain with automatic renewals
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex gap-3">
-                  <div class="bg-white p-3 rounded-2 shadow-sm flex-grow-1">
-                    <h5 class="text-primary">Domain Forwarding</h5>
-                    <p class="mb-0 small">
-                      Redirect your domain to any website or social profile
-                    </p>
-                  </div>
-                  <div class="bg-white p-3 rounded-2 shadow-sm flex-grow-1">
-                    <h5 class="text-primary">WHOIS Privacy</h5>
-                    <p class="mb-0 small">
-                      Protect your personal information from public view
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Pricing Features -->
-      <section class="feature-section bg-light py-10">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 order-lg-1 order-2">
-              <div class="bg-white p-5 rounded-3 shadow-sm">
-                <div class="d-flex align-items-center gap-3 mb-4">
-                  <div class="text-primary fs-2">
-                    <i class="bi bi-tag"></i>
-                  </div>
-                  <div>
-                    <h4 class="mb-1">Transparent Pricing</h4>
-                    <p class="mb-0 small">
-                      No hidden fees or surprise price increases
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-3 mb-4">
-                  <div class="text-primary fs-2">
-                    <i class="bi bi-arrow-repeat"></i>
-                  </div>
-                  <div>
-                    <h4 class="mb-1">Free Transfers</h4>
-                    <p class="mb-0 small">
-                      Bring your existing domains at no extra cost
-                    </p>
-                  </div>
-                </div>
-                <div class="d-flex align-items-center gap-3">
-                  <div class="text-primary fs-2">
-                    <i class="bi bi-shield-check"></i>
-                  </div>
-                  <div>
-                    <h4 class="mb-1">Free SSL</h4>
-                    <p class="mb-0 small">
-                      Includes free SSL certificate for your domain
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 order-lg-2 order-1">
-              <div class="feature-icon">
-                <i class="bi bi-currency-dollar"></i>
-              </div>
-              <h3 class="text-dark">Fair & Transparent Pricing</h3>
-              <div class="mb-4">
-                <h4>No Hidden Fees</h4>
-                <p>
-                  What you see is what you pay. No surprise charges when you
-                  renew your domain. We believe in simple, straightforward
-                  pricing.
-                </p>
-              </div>
-              <div>
-                <h4>Competitive Rates</h4>
-                <p>
-                  Whether you need a .com, .net, or specialty extension, we
-                  offer consistently competitive pricing for all domain types.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQs -->
-
-      <section class="faq-section py-10">
-        <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
-            <p class="lead text-muted">
-              Get answers to common questions about bulk domain search
-            </p>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="accordion" id="faqAccordion">
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                    >
-                      What is bulk domain search?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      Bulk domain search allows you to check the availability of
-                      multiple domain names at once, saving time compared to
-                      searching each one individually.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                    >
-                      Can I register the domains directly after searching?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      Yes, if a domain is available, you’ll have the option to
-                      register it immediately. You can add multiple domains to
-                      your cart and complete the registration process at once.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                    >
-                      What domain extensions (TLDs) can I search for?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      You can search popular extensions like .com, .net, .org,
-                      and many others including country-specific and niche TLDs.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="accordion-item mb-3 border-0 shadow-sm">
-                  <h3 class="accordion-header" id="headingFour">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour"
-                    >
-                      What format should I use to enter domain names?
-                    </button>
-                  </h3>
-                  <div
-                    id="collapseFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="headingFour"
-                    data-bs-parent="#faqAccordion"
-                  >
-                    <div class="accordion-body">
-                      Enter a list of domain names one per line. Our system will
-                      clean and format them automatically for the search.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="text-center mt-4">
-                <a href="faqs.html" class="btn btn-outline-primary"
-                  >View All FAQs</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Bootstrap components
-        const dropdownElementList = [].slice.call(
-          document.querySelectorAll(".dropdown-toggle")
-        );
-        dropdownElementList.map(function (dropdownToggleEl) {
-          return new bootstrap.Dropdown(dropdownToggleEl);
-        });
-
-        // Initialize accordions
-        const accordionItems = document.querySelectorAll(".faq-item .collapse");
-        accordionItems.forEach((item) => {
-          item.addEventListener("show.bs.collapse", function () {
-            this.parentElement
-              .querySelector(".btn-link")
-              .classList.add("text-primary");
-          });
-          item.addEventListener("hide.bs.collapse", function () {
-            this.parentElement
-              .querySelector(".btn-link")
-              .classList.remove("text-primary");
-          });
-        });
-      });
-
       function validateDomainSearch() {
         const input = document.getElementById("searchDomain");
         let domain = input.value.trim();
@@ -2131,6 +1210,360 @@ example.org"
         return false;
       }
     </script>
+
+    <!-- Why choose Section -->
+    <section class="py-10" data-cue="fadeIn">
+      <div class="container">
+        <div class="text-center mb-5" data-cue="zoomIn">
+          <h2 class="fw-bold mb-3">Why Choose a .net Domain?</h2>
+          <p class="lead text-muted">
+            .net is a reliable, globally recognized domain perfect for modern,
+            tech-driven brands.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-globe2 text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Global Appeal</h4>
+                <p class="mb-0 feature-desc">
+                  Recognized and trusted by audiences around the world, making
+                  it a solid choice for international reach.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-lightbulb-fill text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Great for Innovation</h4>
+                <p class="mb-0 feature-desc">
+                  Position your brand as forward-thinking with a domain commonly
+                  used in the tech and digital space.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-search text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">More Availability</h4>
+                <p class="mb-0 feature-desc">
+                  Compared to .com, .net offers more chances to secure your
+                  preferred domain name.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card h-100 feature-card shadow-sm">
+              <div class="card-body p-4">
+                <div class="icon-wrapper">
+                  <i class="bi bi-shield-fill-check text-primary fs-3"></i>
+                </div>
+                <h4 class="mb-3">Trusted & Reliable</h4>
+                <p class="mb-0 feature-desc">
+                  A .net domain gives your brand a professional and dependable
+                  image that builds trust.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-10 bg-light" data-cue="zoomIn" data-cue-delay="300">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3 text-dark">Domains Pricing</h2>
+          <p class="lead text-dark-50">
+            Competitive rates with free privacy protection included
+          </p>
+        </div>
+
+        <div class="table-responsive pricing-table shadow-sm">
+          <table class="table table-hover mb-0">
+            <thead>
+              <tr>
+                <th>Domain Extension</th>
+                <th class="text-center">Domain Price</th>
+                <th class="text-center">Renewal Price</th>
+                <th class="text-center">Privacy Protection</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="tld">.com</td>
+                <td class="text-center transfer-price">$11.49/year</td>
+                <td class="text-center renewal-price">$17.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.net</td>
+                <td class="text-center transfer-price">$11.99/year</td>
+                <td class="text-center renewal-price">$15.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.org</td>
+                <td class="text-center transfer-price">$12.99/year</td>
+                <td class="text-center renewal-price">$16.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.info</td>
+                <td class="text-center transfer-price">$9.99/year</td>
+                <td class="text-center renewal-price">$14.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="tld">.biz</td>
+                <td class="text-center transfer-price">$14.99/year</td>
+                <td class="text-center renewal-price">$18.99/year</td>
+                <td class="text-center">
+                  <i class="fas fa-check-circle check-icon"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="maintenance.html" class="btn btn-outline-dark"
+            >View All Domain Pricing</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="pt-10 pb-7" data-cue="fadeIn">
+      <div class="container">
+        <div class="support-section p-4 p-lg-5" data-cue="zoomIn">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <h2 class="fw-bold mb-3 text-secondary">
+                24/7 Domain Transfer Support
+              </h2>
+              <p class="mb-4">
+                Our team of domain experts is available around the clock to
+                assist with your transfer process. Get help with authorization
+                codes, troubleshooting, and more.
+              </p>
+
+              <div class="mb-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Professional support for all domain transfers</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Average response time under 15 minutes</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="fas fa-check-circle me-3"></i>
+                  <span>Help available via live chat, email, and phone</span>
+                </div>
+              </div>
+
+              <a href="contact.html" class="btn btn-secondary"
+                >Get Support Now</a
+              >
+            </div>
+            <div class="col-lg-5 support-img-box">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Support Team"
+                class="img-fluid support-img rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+
+    <section class="py-10">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fw-bold mb-3">.net Domain FAQs</h2>
+          <p class="lead text-muted">Common questions about .net Domains</p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    What does .net mean in a domain name?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    “.net” stands for “network” and was originally intended for
+                    companies involved in networking technologies. Today, it's
+                    widely used by tech businesses, startups, and online
+                    platforms.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    Is .net a good alternative to .com?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes. If your desired .com is unavailable, .net is a credible
+                    and well-known alternative that still gives your brand a
+                    professional and trustworthy image.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    Who should use a .net domain?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    A .net domain is ideal for tech companies, web developers,
+                    IT professionals, startups, and businesses offering digital
+                    or network-based services.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 border-0 shadow-sm">
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                    Are .net domains still available?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes! Compared to .com, .net domains typically offer more
+                    availability, making it easier to secure the name you really
+                    want.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <a href="faqs.html" class="btn btn-outline-primary"
+                >View All FAQs</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="pt-7 pb-10" data-cue="fadeIn">
+      <div class="container" data-cue="zoomIn">
+        <div class="cta-section p-4 p-lg-5 text-center">
+          <h2 class="fw-bold mb-3 text-secondary">Get Started with a .net</h2>
+          <p class="lead mb-4">
+            Join thousands of customers who trust WeFitHost with their domains
+          </p>
+          <a href="#hero-section" class="btn btn-primary btn-lg px-4 me-2"
+            >Get Your Domain Now</a
+          >
+          <a
+            href="maintenance.html"
+            class="btn btn-outline-secondary btn-lg px-4 btn-support"
+            >Contact Support</a
+          >
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer
@@ -2220,21 +1653,21 @@ example.org"
                 <a
                   href="wordpress-hosting.html"
                   style="color: white; text-decoration: none"
-                  >Managed WordPress Hosting</a
+                  >WordPress Hosting</a
                 >
               </li>
               <li class="mb-2">
                 <a
                   href="vps-hosting.html"
                   style="color: white; text-decoration: none"
-                  >Managed VPS Hosting</a
+                  >VPS Hosting</a
                 >
               </li>
               <li class="mb-2">
                 <a
                   href="cloud-hosting.html"
                   style="color: white; text-decoration: none"
-                  >Managed Cloud Hosting</a
+                  >Cloud Hosting</a
                 >
               </li>
               <li class="mb-2">
@@ -2362,7 +1795,7 @@ example.org"
               </li>
               <li class="mb-2">
                 <a
-                  href="maintenance.html"
+                  href="reviews.html"
                   style="color: white; text-decoration: none"
                   >Customer Reviews</a
                 >
