@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Minimal Custom CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .client-avatar {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+        
+        .progress-thin {
+            height: 6px;
+        }
+        
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .sidebar-link {
+            transition: all 0.2s;
+        }
+        
+        .sidebar-link:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 5px;
+        }
+        
+        .chart-container {
+            height: 250px;
+            position: relative;
+        }
+        
+        /* Animation delays */
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        /* Mobile sidebar toggle */
+        .sidebar-collapse {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            width: 250px;
+            overflow-y: auto;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-collapse.show {
+            transform: translateX(0);
+        }
+        
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+        }
+        
+        .sidebar-overlay.show {
+            display: block;
+        }
+        
+        @media (min-width: 992px) {
+            .sidebar-collapse {
+                transform: translateX(0);
+                position: relative;
+                width: auto;
+                box-shadow: none;
+            }
+            
+            .main-content {
+                margin-left: 16.666667%;
+            }
+        }
+        
+        /* Task checkbox styling */
+        .task-checkbox:checked + .task-text {
+            text-decoration: line-through;
+            color: #6c757d !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay"></div>
+    
+    <!-- Mobile Sidebar Toggle Button -->
+    <button class="btn btn-primary d-lg-none position-fixed m-3" style="z-index: 100;" id="sidebarToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <!-- Sidebar -->
+            <div class="col-lg-2 sidebar-collapse bg-white shadow-sm vh-100" id="sidebar">
+                <div class="p-3">
+                    <h5 class="text-center mb-4 animate__animated animate__fadeIn">
+                        <i class="fas fa-users-cog me-2"></i>Client Manager
+                    </h5>
+                    
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-100">
+                            <a class="nav-link sidebar-link active" href="#dashboard" data-section="dashboard">
+                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-200">
+                            <a class="nav-link sidebar-link" href="#clients" data-section="clients">
+                                <i class="fas fa-users me-2"></i>Clients
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-300">
+                            <a class="nav-link sidebar-link" href="#projects" data-section="projects">
+                                <i class="fas fa-project-diagram me-2"></i>Projects
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-100">
+                            <a class="nav-link sidebar-link" href="#tasks" data-section="tasks">
+                                <i class="fas fa-tasks me-2"></i>Tasks
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-200">
+                            <a class="nav-link sidebar-link" href="#messages" data-section="messages">
+                                <i class="fas fa-envelope me-2"></i>Messages
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-300">
+                            <a class="nav-link sidebar-link" href="#reports" data-section="reports">
+                                <i class="fas fa-chart-bar me-2"></i>Reports
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <div class="position-absolute bottom-0 start-0 end-0 p-3">
+                        <div class="d-flex align-items-center animate__animated animate__fadeIn animate-delay-300">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+                            <div>
+                                <div class="fw-bold small">Sarah Johnson</div>
+                                <div class="text-muted small">Admin</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-lg-10 ms-lg-auto main-content">
+                <div class="p-4">
+                    <!-- Dashboard Section -->
+                    <section id="dashboard" class="mb-5 section-content">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="animate__animated animate__fadeIn">Dashboard</h2>
+                            <div class="animate__animated animate__fadeIn animate-delay-100">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addClientModal">
+                                    <i class="fas fa-plus me-1"></i> Add Client
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Stats Cards -->
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp">
+                                <div class="card card-hover border-0 bg-primary text-white">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase small">Total Clients</h6>
+                                                <h3 class="mb-0" id="totalClients">124</h3>
+                                            </div>
+                                            <i class="fas fa-users fa-2x opacity-50"></i>
+                                        </div>
+                                        <div class="mt-3">
+                                            <span class="small">+12% from last month</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-100">
+                                <div class="card card-hover border-0 bg-success text-white">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase small">Active Projects</h6>
+                                                <h3 class="mb-0" id="activeProjects">28</h3>
+                                            </div>
+                                            <i class="fas fa-project-diagram fa-2x opacity-50"></i>
+                                        </div>
+                                        <div class="mt-3">
+                                            <span class="small">5 completed this week</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-200">
+                                <div class="card card-hover border-0 bg-warning text-dark">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase small">Pending Tasks</h6>
+                                                <h3 class="mb-0" id="pendingTasks">42</h3>
+                                            </div>
+                                            <i class="fas fa-tasks fa-2x opacity-50"></i>
+                                        </div>
+                                        <div class="mt-3">
+                                            <span class="small">8 overdue</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-300">
+                                <div class="card card-hover border-0 bg-info text-white">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="text-uppercase small">Revenue</h6>
+                                                <h3 class="mb-0" id="totalRevenue">$24,580</h3>
+                                            </div>
+                                            <i class="fas fa-dollar-sign fa-2x opacity-50"></i>
+                                        </div>
+                                        <div class="mt-3">
+                                            <span class="small">+18% from last quarter</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Charts and Recent Activity -->
+                        <div class="row g-4">
+                            <div class="col-lg-8 animate__animated animate__fadeInLeft">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-header bg-white">
+                                        <h5 class="mb-0">Client Growth</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <canvas id="clientGrowthChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 animate__animated animate__fadeInRight">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-header bg-white">
+                                        <h5 class="mb-0">Recent Activity</h5>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="list-group list-group-flush" id="recentActivity">
+                                            <div class="list-group-item border-0 py-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-3">
+                                                        <span class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                                            <i class="fas fa-user-plus"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="small">New client added</div>
+                                                        <div class="text-muted small">Acme Corp • 2 hours ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item border-0 py-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-3">
+                                                        <span class="avatar bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="small">Project completed</div>
+                                                        <div class="text-muted small">Website Redesign • Yesterday</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item border-0 py-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-3">
+                                                        <span class="avatar bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                                            <i class="fas fa-exclamation"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="small">Payment reminder sent</div>
+                                                        <div class="text-muted small">Global Tech • 2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item border-0 py-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-3">
+                                                        <span class="avatar bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                                            <i class="fas fa-comment"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <div class="small">New message received</div>
+                                                        <div class="text-muted small">Sarah Miller • 3 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Clients Section -->
+                    <section id="clients" class="mb-5 section-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Clients</h2>
+                            <div>
+                                <div class="input-group" style="width: 250px;">
+                                    <input type="text" class="form-control form-control-sm" placeholder="Search clients..." id="clientSearch">
+                                    <button class="btn btn-primary btn-sm" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card card-hover border-0">
+                            <div class="card-header bg-white">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <h5 class="mb-0">Client List</h5>
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <div class="btn-group" role="group">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm active filter-btn" data-filter="all">All</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm filter-btn" data-filter="active">Active</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm filter-btn" data-filter="inactive">Inactive</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0" id="clientsTable">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Client</th>
+                                                <th>Contact</th>
+                                                <th>Projects</th>
+                                                <th>Status</th>
+                                                <th>Last Contact</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-status="active">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-avatar rounded-circle me-2" alt="Client">
+                                                        <div>
+                                                            <div class="fw-bold">Acme Corporation</div>
+                                                            <div class="text-muted small">Technology</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>John Smith</div>
+                                                    <div class="text-muted small">john@acme.com</div>
+                                                </td>
+                                                <td>5</td>
+                                                <td>
+                                                    <span class="badge bg-success status-badge">Active</span>
+                                                </td>
+                                                <td>2 days ago</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="acme">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Deactivate</a></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="pending">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-avatar rounded-circle me-2" alt="Client">
+                                                        <div>
+                                                            <div class="fw-bold">Global Tech</div>
+                                                            <div class="text-muted small">Consulting</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Sarah Johnson</div>
+                                                    <div class="text-muted small">sarah@globaltech.com</div>
+                                                </td>
+                                                <td>3</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark status-badge">Pending</span>
+                                                </td>
+                                                <td>1 week ago</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="global">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Activate</a></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="active">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="client-avatar rounded-circle me-2" alt="Client">
+                                                        <div>
+                                                            <div class="fw-bold">Bright Solutions</div>
+                                                            <div class="text-muted small">Marketing</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Michael Chen</div>
+                                                    <div class="text-muted small">michael@bright.com</div>
+                                                </td>
+                                                <td>7</td>
+                                                <td>
+                                                    <span class="badge bg-success status-badge">Active</span>
+                                                </td>
+                                                <td>3 days ago</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="bright">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Deactivate</a></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="inactive">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="client-avatar rounded-circle me-2" alt="Client">
+                                                        <div>
+                                                            <div class="fw-bold">Summit Partners</div>
+                                                            <div class="text-muted small">Finance</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>Emily Wilson</div>
+                                                    <div class="text-muted small">emily@summit.com</div>
+                                                </td>
+                                                <td>2</td>
+                                                <td>
+                                                    <span class="badge bg-danger status-badge">Inactive</span>
+                                                </td>
+                                                <td>1 month ago</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="summit">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#">Reactivate</a></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination pagination-sm justify-content-center mb-0">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Projects Section -->
+                    <section id="projects" class="mb-5 section-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Projects</h2>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                                    <i class="fas fa-plus me-1"></i> New Project
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
+                                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="mb-0">Website Redesign</h5>
+                                            <span class="badge bg-primary">In Progress</span>
+                                        </div>
+                                        <p class="text-muted small">Complete redesign of Acme Corp's website with new branding</p>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between small mb-1">
+                                                <span>Progress</span>
+                                                <span>65%</span>
+                                            </div>
+                                            <div class="progress progress-thin">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
+                                                <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle" width="24" height="24" alt="Team">
+                                            </div>
+                                            <small class="text-muted">Due: May 15</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
+                                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="mb-0">Mobile App Development</h5>
+                                            <span class="badge bg-warning text-dark">Planning</span>
+                                        </div>
+                                        <p class="text-muted small">New iOS/Android app for Global Tech's customer portal</p>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between small mb-1">
+                                                <span>Progress</span>
+                                                <span>25%</span>
+                                            </div>
+                                            <div class="progress progress-thin">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex">
+                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
+                                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle" width="24" height="24" alt="Team">
+                                            </div>
+                                            <small class="text-muted">Due: Jun 30</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="mb-0">Marketing Campaign</h5>
+                                            <span class="badge bg-success">Completed</span>
+                                        </div>
+                                        <p class="text-muted small">Q2 marketing campaign for Bright Solutions</p>
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between small mb-1">
+                                                <span>Progress</span>
+                                                <span>100%</span>
+                                            </div>
+                                            <div class="progress progress-thin">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex">
+                                                <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
+                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="24" height="24" alt="Team">
+                                            </div>
+                                            <small class="text-muted">Completed: Apr 10</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Tasks Section -->
+                    <section id="tasks" class="mb-5 section-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Tasks</h2>
+                            <div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm active task-filter" data-filter="all">All</button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm task-filter" data-filter="my">My Tasks</button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm task-filter" data-filter="overdue">Overdue</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card card-hover border-0">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0" id="tasksTable">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width: 40px;">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="selectAllTasks">
+                                                    </div>
+                                                </th>
+                                                <th>Task</th>
+                                                <th>Project</th>
+                                                <th>Assigned To</th>
+                                                <th>Due Date</th>
+                                                <th>Priority</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-status="pending" data-priority="high" data-assigned="john">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="fw-bold task-text">Create wireframes</div>
+                                                    <div class="text-muted small">Website Redesign</div>
+                                                </td>
+                                                <td>Acme Corp</td>
+                                                <td>
+                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
+                                                    John S.
+                                                </td>
+                                                <td>May 10</td>
+                                                <td>
+                                                    <span class="badge bg-danger">High</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">In Progress</span>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="pending" data-priority="medium" data-assigned="sarah">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="fw-bold task-text">Review contract</div>
+                                                    <div class="text-muted small">Mobile App</div>
+                                                </td>
+                                                <td>Global Tech</td>
+                                                <td>
+                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
+                                                    Sarah J.
+                                                </td>
+                                                <td>May 12</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">Medium</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-secondary">Not Started</span>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="completed" data-priority="low" data-assigned="michael">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input task-checkbox" type="checkbox" value="" checked>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="fw-bold task-text">Finalize Q2 report</div>
+                                                    <div class="text-muted small">Marketing Campaign</div>
+                                                </td>
+                                                <td>Bright Solutions</td>
+                                                <td>
+                                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
+                                                    Michael C.
+                                                </td>
+                                                <td>Apr 28</td>
+                                                <td>
+                                                    <span class="badge bg-success">Low</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-success">Completed</span>
+                                                </td>
+                                            </tr>
+                                            <tr data-status="pending" data-priority="medium" data-assigned="emily">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="fw-bold task-text">Client meeting</div>
+                                                    <div class="text-muted small">Website Redesign</div>
+                                                </td>
+                                                <td>Acme Corp</td>
+                                                <td>
+                                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
+                                                    Emily W.
+                                                </td>
+                                                <td>May 15</td>
+                                                <td>
+                                                    <span class="badge bg-warning text-dark">Medium</span>
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-secondary">Not Started</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="small text-muted">Showing 4 of 12 tasks</div>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        View All Tasks
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Messages Section -->
+                    <section id="messages" class="mb-5 section-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Messages</h2>
+                            <div>
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newMessageModal">
+                                    <i class="fas fa-plus me-1"></i> New Message
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="card card-hover border-0">
+                            <div class="card-body p-0">
+                                <div class="row g-0">
+                                    <div class="col-md-4 border-end">
+                                        <div class="p-3 border-bottom">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control form-control-sm" placeholder="Search messages...">
+                                                <button class="btn btn-outline-secondary btn-sm" type="button">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="list-group list-group-flush" style="max-height: 400px; overflow-y: auto;">
+                                            <a href="#" class="list-group-item list-group-item-action border-0 active">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+                                                    <div>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0">John Smith</h6>
+                                                            <small class="text-white-50">2h ago</small>
+                                                        </div>
+                                                        <p class="small mb-0 text-white-50">About the website redesign project...</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action border-0">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+                                                    <div>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0">Sarah Johnson</h6>
+                                                            <small class="text-muted">1d ago</small>
+                                                        </div>
+                                                        <p class="small mb-0 text-muted">Contract review for the mobile app...</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action border-0">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+                                                    <div>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0">Michael Chen</h6>
+                                                            <small class="text-muted">2d ago</small>
+                                                        </div>
+                                                        <p class="small mb-0 text-muted">Feedback on the marketing campaign...</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action border-0">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
+                                                    <div>
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <h6 class="mb-0">Emily Wilson</h6>
+                                                            <small class="text-muted">3d ago</small>
+                                                        </div>
+                                                        <p class="small mb-0 text-muted">Regarding the upcoming meeting...</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="d-flex flex-column h-100">
+                                            <div class="p-3 border-bottom">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h5 class="mb-0">John Smith</h5>
+                                                    <div>
+                                                        <button class="btn btn-sm btn-outline-secondary me-1">
+                                                            <i class="fas fa-reply"></i>
+                                                        </button>
+                                                        <button class="btn btn-sm btn-outline-secondary">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 p-3 overflow-auto" style="max-height: 300px;">
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between mb-2">
+                                                        <div class="fw-bold">John Smith</div>
+                                                        <small class="text-muted">Today, 10:30 AM</small>
+                                                    </div>
+                                                    <p>Hi Sarah,</p>
+                                                    <p>I wanted to follow up on the website redesign project. The wireframes look great, but we have a few suggestions for the homepage layout.</p>
+                                                    <p>Could we schedule a call tomorrow to discuss these changes? I'm available between 10 AM and 2 PM.</p>
+                                                    <p>Best regards,<br>John</p>
+                                                </div>
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between mb-2">
+                                                        <div class="fw-bold">Sarah Johnson</div>
+                                                        <small class="text-muted">Today, 11:45 AM</small>
+                                                    </div>
+                                                    <p>Hi John,</p>
+                                                    <p>Thanks for your feedback. I've shared your suggestions with the design team and we'll prepare some revised options.</p>
+                                                    <p>How about we meet at 11 AM tomorrow? I'll send you a calendar invite shortly.</p>
+                                                    <p>Also, I've attached the latest project timeline for your review.</p>
+                                                    <div class="mt-2">
+                                                        <div class="d-inline-block border p-2 rounded">
+                                                            <i class="fas fa-file-pdf text-danger me-2"></i>
+                                                            <span>Project_Timeline_v3.pdf</span>
+                                                            <small class="text-muted ms-2">(2.4 MB)</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="p-3 border-top">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Type your message...">
+                                                    <button class="btn btn-outline-secondary" type="button">
+                                                        <i class="fas fa-paperclip"></i>
+                                                    </button>
+                                                    <button class="btn btn-primary" type="button">
+                                                        <i class="fas fa-paper-plane"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Reports Section -->
+                    <section id="reports" class="mb-5 section-content" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Reports</h2>
+                            <div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-secondary btn-sm active">This Month</button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">Quarter</button>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">Year</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row g-4">
+                            <div class="col-lg-8">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-header bg-white">
+                                        <h5 class="mb-0">Revenue Overview</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <canvas id="revenueChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4">
+                                <div class="card card-hover border-0 h-100">
+                                    <div class="card-header bg-white">
+                                        <h5 class="mb-0">Client Distribution</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <canvas id="clientDistributionChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="card card-hover border-0 mt-4">
+                                    <div class="card-header bg-white">
+                                        <h5 class="mb-0">Project Performance</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container" style="height: 300px;">
+                                            <canvas id="projectPerformanceChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Client Modal -->
+    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="clientForm">
+                        <div class="mb-3">
+                            <label for="clientName" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="clientName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientIndustry" class="form-label">Industry</label>
+                            <input type="text" class="form-control" id="clientIndustry">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Contact Person</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactPhone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="contactPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientStatus" class="form-label">Status</label>
+                            <select class="form-select" id="clientStatus">
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveClient">Save Client</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Project Modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProjectModalLabel">New Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="projectForm">
+                        <div class="mb-3">
+                            <label for="projectName" class="form-label">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectClient" class="form-label">Client</label>
+                            <select class="form-select" id="projectClient" required>
+                                <option value="">Select Client</option>
+                                <option value="Acme Corporation">Acme Corporation</option>
+                                <option value="Global Tech">Global Tech</option>
+                                <option value="Bright Solutions">Bright Solutions</option>
+                                <option value="Summit Partners">Summit Partners</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectDescription" class="form-label">Description</label>
+                            <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="projectStart" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" id="projectStart" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="projectEnd" class="form-label">Due Date</label>
+                                <input type="date" class="form-control" id="projectEnd" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="projectStatus" class="form-label">Status</label>
+                            <select class="form-select" id="projectStatus">
+                                <option value="planning">Planning</option>
+                                <option value="in-progress" selected>In Progress</option>
+                                <option value="on-hold">On Hold</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveProject">Create Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- New Message Modal -->
+    <div class="modal fade" id="newMessageModal" tabindex="-1" aria-labelledby="newMessageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newMessageModalLabel">New Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="messageForm">
+                        <div class="mb-3">
+                            <label for="messageRecipient" class="form-label">To</label>
+                            <select class="form-select" id="messageRecipient" required>
+                                <option value="">Select Client</option>
+                                <option value="John Smith">John Smith (Acme Corporation)</option>
+                                <option value="Sarah Johnson">Sarah Johnson (Global Tech)</option>
+                                <option value="Michael Chen">Michael Chen (Bright Solutions)</option>
+                                <option value="Emily Wilson">Emily Wilson (Summit Partners)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="messageSubject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageContent" class="form-label">Message</label>
+                            <textarea class="form-control" id="messageContent" rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="messageAttachment" class="form-label">Attachment</label>
+                            <input type="file" class="form-control" id="messageAttachment">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="sendMessage">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Initialize the dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile sidebar toggle
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.querySelector('.sidebar-overlay');
+            
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('show');
+                sidebarOverlay.classList.toggle('show');
+            });
+            
+            sidebarOverlay.addEventListener('click', function() {
+                sidebar.classList.remove('show');
+                sidebarOverlay.classList.remove('show');
+            });
+            
+            // Navigation between sections
+            const navLinks = document.querySelectorAll('.sidebar-link');
+            const sections = document.querySelectorAll('.section-content');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show the selected section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).style.display = 'block';
+                    
+                    // Close sidebar on mobile after selection
+                    if (window.innerWidth < 992) {
+                        sidebar.classList.remove('show');
+                        sidebarOverlay.classList.remove('show');
+                    }
+                    
+                    // Update charts when switching to reports
+                    if (sectionId === 'reports') {
+                        updateReportCharts();
+                    }
+                });
+            });
+            
+            // Client search functionality
+            const clientSearch = document.getElementById('clientSearch');
+            if (clientSearch) {
+                clientSearch.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const rows = document.querySelectorAll('#clientsTable tbody tr');
+                    
+                    rows.forEach(row => {
+                        const clientName = row.querySelector('td').textContent.toLowerCase();
+                        if (clientName.includes(searchTerm)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Client filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    const rows = document.querySelectorAll('#clientsTable tbody tr');
+                    
+                    rows.forEach(row => {
+                        const status = row.getAttribute('data-status');
+                        
+                        if (filter === 'all' || filter === status) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Task filter buttons
+            const taskFilterButtons = document.querySelectorAll('.task-filter');
+            taskFilterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    taskFilterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    const rows = document.querySelectorAll('#tasksTable tbody tr');
+                    
+                    rows.forEach(row => {
+                        const status = row.getAttribute('data-status');
+                        const assigned = row.getAttribute('data-assigned');
+                        const dueDate = row.querySelector('td:nth-child(5)').textContent;
+                        
+                        let showRow = false;
+                        
+                        if (filter === 'all') {
+                            showRow = true;
+                        } else if (filter === 'my') {
+                            // In a real app, this would check against logged-in user
+                            showRow = assigned === 'sarah'; // Assuming Sarah is current user
+                        } else if (filter === 'overdue') {
+                            const today = new Date();
+                            const due = new Date(dueDate);
+                            showRow = due < today && status !== 'completed';
+                        }
+                        
+                        row.style.display = showRow ? '' : 'none';
+                    });
+                });
+            });
+            
+            // Task checkbox functionality
+            const taskCheckboxes = document.querySelectorAll('.task-checkbox');
+            taskCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const row = this.closest('tr');
+                    const statusCell = row.querySelector('td:nth-child(7)');
+                    
+                    if (this.checked) {
+                        statusCell.innerHTML = '<span class="badge bg-success">Completed</span>';
+                        row.setAttribute('data-status', 'completed');
+                    } else {
+                        statusCell.innerHTML = '<span class="badge bg-secondary">Not Started</span>';
+                        row.setAttribute('data-status', 'pending');
+                    }
+                });
+            });
+            
+            // Select all tasks checkbox
+            const selectAllCheckbox = document.getElementById('selectAllTasks');
+            if (selectAllCheckbox) {
+                selectAllCheckbox.addEventListener('change', function() {
+                    const checkboxes = document.querySelectorAll('.task-checkbox');
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = this.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    });
+                });
+            }
+            
+            // View client buttons
+            const viewClientButtons = document.querySelectorAll('.view-client');
+            viewClientButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const clientId = this.getAttribute('data-client');
+                    alert(`Viewing details for client: ${clientId}`);
+                    // In a real app, this would open a modal or navigate to client details
+                });
+            });
+            
+            // Save client form
+            const saveClientButton = document.getElementById('saveClient');
+            if (saveClientButton) {
+                saveClientButton.addEventListener('click', function() {
+                    const clientName = document.getElementById('clientName').value;
+                    const contactName = document.getElementById('contactName').value;
+                    
+                    if (clientName && contactName) {
+                        alert(`New client "${clientName}" with contact "${contactName}" has been added!`);
+                        // In a real app, this would submit the form via AJAX
+                        bootstrap.Modal.getInstance(document.getElementById('addClientModal')).hide();
+                        document.getElementById('clientForm').reset();
+                        
+                        // Update client count
+                        const totalClients = document.getElementById('totalClients');
+                        totalClients.textContent = parseInt(totalClients.textContent) + 1;
+                    } else {
+                        alert('Please fill in all required fields');
+                    }
+                });
+            }
+            
+            // Save project form
+            const saveProjectButton = document.getElementById('saveProject');
+            if (saveProjectButton) {
+                saveProjectButton.addEventListener('click', function() {
+                    const projectName = document.getElementById('projectName').value;
+                    const projectClient = document.getElementById('projectClient').value;
+                    
+                    if (projectName && projectClient) {
+                        alert(`New project "${projectName}" for client "${projectClient}" has been created!`);
+                        // In a real app, this would submit the form via AJAX
+                        bootstrap.Modal.getInstance(document.getElementById('addProjectModal')).hide();
+                        document.getElementById('projectForm').reset();
+                        
+                        // Update project count
+                        const activeProjects = document.getElementById('activeProjects');
+                        activeProjects.textContent = parseInt(activeProjects.textContent) + 1;
+                    } else {
+                        alert('Please fill in all required fields');
+                    }
+                });
+            }
+            
+            // Send message form
+            const sendMessageButton = document.getElementById('sendMessage');
+            if (sendMessageButton) {
+                sendMessageButton.addEventListener('click', function() {
+                    const recipient = document.getElementById('messageRecipient').value;
+                    const subject = document.getElementById('messageSubject').value;
+                    
+                    if (recipient && subject) {
+                        alert(`Message to "${recipient}" with subject "${subject}" has been sent!`);
+                        // In a real app, this would submit the form via AJAX
+                        bootstrap.Modal.getInstance(document.getElementById('newMessageModal')).hide();
+                        document.getElementById('messageForm').reset();
+                    } else {
+                        alert('Please fill in all required fields');
+                    }
+                });
+            }
+            
+            // Initialize charts
+            initializeCharts();
+        });
+        
+        // Initialize charts
+        function initializeCharts() {
+            // Client Growth Chart
+            const clientGrowthCtx = document.getElementById('clientGrowthChart').getContext('2d');
+            const clientGrowthChart = new Chart(clientGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'New Clients',
+                        data: [12, 19, 15, 22, 18, 25, 23, 30, 28, 32, 35, 40],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(revenueCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    datasets: [{
+                        label: 'Revenue',
+                        data: [12500, 18000, 15000, 22000],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(54, 162, 235, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            
+            // Client Distribution Chart
+            const clientDistCtx = document.getElementById('clientDistributionChart').getContext('2d');
+            const clientDistChart = new Chart(clientDistCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Technology', 'Finance', 'Healthcare', 'Retail', 'Other'],
+                    datasets: [{
+                        data: [35, 25, 20, 15, 5],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            // Project Performance Chart
+            const projectPerfCtx = document.getElementById('projectPerformanceChart').getContext('2d');
+            const projectPerfChart = new Chart(projectPerfCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['On Time', 'Budget', 'Quality', 'Client Satisfaction', 'Team Satisfaction'],
+                    datasets: [
+                        {
+                            label: 'Current Projects',
+                            data: [85, 78, 92, 88, 82],
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
+                        },
+                        {
+                            label: 'Industry Average',
+                            data: [72, 65, 78, 75, 70],
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(255, 99, 132, 1)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+            
+            // Store chart references for later updates
+            window.charts = {
+                clientGrowth: clientGrowthChart,
+                revenue: revenueChart,
+                clientDistribution: clientDistChart,
+                projectPerformance: projectPerfChart
+            };
+        }
+        
+        // Update report charts with fresh data
+        function updateReportCharts() {
+            // Simulate fetching new data
+            const newClientData = [12, 19, 15, 22, 18, 25, 23, 30, 28, 32, 35, 40].map(value => value + Math.floor(Math.random() * 5));
+            const newRevenueData = [12500, 18000, 15000, 22000].map(value => value + Math.floor(Math.random() * 2000));
+            
+            // Update charts
+            window.charts.clientGrowth.data.datasets[0].data = newClientData;
+            window.charts.clientGrowth.update();
+            
+            window.charts.revenue.data.datasets[0].data = newRevenueData;
+            window.charts.revenue.update();
+            
+            // Rotate client distribution colors for demo purposes
+            const backgroundColors = window.charts.clientDistribution.data.datasets[0].backgroundColor;
+            const rotatedColors = [...backgroundColors.slice(1), backgroundColors[0]];
+            window.charts.clientDistribution.data.datasets[0].backgroundColor = rotatedColors;
+            window.charts.clientDistribution.update();
+            
+            // Randomize project performance slightly
+            window.charts.projectPerformance.data.datasets[0].data = 
+                window.charts.projectPerformance.data.datasets[0].data.map(
+                    value => Math.min(100, value + Math.floor(Math.random() * 10 - 3))
+            );
+            window.charts.projectPerformance.update();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Partner Program | Premium Hosting Solutions</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --light-bg: #f8fafc;
+            --dark-color: #1e293b;
+            --text-color: #334155;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 6rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -5rem;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            opacity: 0.15;
+            border-radius: 30px 0 0 30px;
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-tab {
+            border-bottom: 3px solid transparent;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .feature-tab.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: rgba(37, 99, 235, 0.05);
+        }
+        
+        .testimonial-card {
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .comparison-table .better {
+            background-color: rgba(74, 222, 128, 0.1);
+            position: relative;
+        }
+        
+        .comparison-table .better::after {
+            content: '✓';
+            color: #16a34a;
+            font-weight: bold;
+            position: absolute;
+            right: 10px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: 4rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 2px;
+        }
+        
+        .feature-tab-content {
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .floating-shape {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            z-index: -1;
+        }
+        
+        .shape-1 {
+            top: 20%;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .shape-2 {
+            bottom: 10%;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            max-height: 50px;
+            width: auto;
+        }
+        
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+        }
+        
+        .calculator-card {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        .calculator-card .card-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border: none;
+        }
+        
+        .calculator-card .card-body {
+            padding: 2rem;
+        }
+        
+        /* New Styles for Enhancements */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .sticky-nav.scrolled {
+            padding: 0.5rem 0;
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .case-study-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .resource-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+        
+        .dark-mode .card,
+        .dark-mode .stat-card,
+        .dark-mode .feature-tab-content,
+        .dark-mode .calculator-card .card-body {
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+        }
+        
+        .dark-mode h1, 
+        .dark-mode h2, 
+        .dark-mode h3, 
+        .dark-mode h4, 
+        .dark-mode h5, 
+        .dark-mode h6 {
+            color: #ffffff;
+        }
+        
+        .dark-mode .text-muted {
+            color: #b0b0b0 !important;
+        }
+        
+        /* Accessibility Improvements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+                text-align: center;
+                padding: 4rem 0 3rem;
+            }
+            
+            .hero-section::before {
+                width: 100%;
+                height: 40%;
+                top: auto;
+                bottom: 0;
+                opacity: 0.1;
+                border-radius: 0;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Sticky Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50/2563eb/ffffff?text=HostPartner" alt="Logo" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#benefits">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#case-studies">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary btn-sm" href="#join">Join Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-white text-primary mb-3 px-3 py-2 fw-normal">Agency Partner Program</span>
+                    <h1 class="display-4 fw-bold mb-4">Scale Your Web Design Business With Our <span class="border-bottom border-3 border-warning">Agency Program</span></h1>
+                    <p class="lead mb-4">Earn recurring revenue, deliver premium hosting, and grow your agency with our white-label solutions and industry-leading commissions.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#join" class="btn btn-light btn-lg px-4 fw-500">Start Earning Today <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#features" class="btn btn-outline-light btn-lg px-4">Explore Features</a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-4">
+                        <div class="stat-card">
+                            <div class="stat-number">30%</div>
+                            <div class="text-muted">Recurring Commissions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="text-muted">Priority Support</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10K+</div>
+                            <div class="text-muted">Agency Partners</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team collaboration" class="img-fluid rounded-3 shadow-lg" style="transform: perspective(1000px) rotateY(-15deg);">
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 rounded shadow-sm" style="transform: translate(-20%, 20%); width: 200px;">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
+                                    <i class="fas fa-chart-line text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">$1.2M+</div>
+                                    <small class="text-muted">Paid Monthly</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 bg-light" style="margin-top: 5rem;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Why Agencies Choose Us</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to grow your agency business while delivering exceptional value to your clients</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4 class="mb-3">Higher Earnings</h4>
+                        <p class="text-muted mb-0">Earn 30% recurring commissions — significantly more than standard affiliate programs. Our tiered structure rewards growth with even higher percentages.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h4 class="mb-3">True White-Label</h4>
+                        <p class="text-muted mb-0">Your branding, your control panel. Clients never see our name, with custom domains, email templates, and complete white-label DNS management.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="mb-3">Premium Performance</h4>
+                        <p class="text-muted mb-0">Enterprise-grade infrastructure with NVMe storage, LiteSpeed servers, and optimized caching that makes your clients' sites fly.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="mb-3">Dedicated Support</h4>
+                        <p class="text-muted mb-0">Your own account manager and priority support queue with SLA guarantees. We're an extension of your team.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4 class="mb-3">Hassle-Free Migrations</h4>
+                        <p class="text-muted mb-0">Our migration team handles everything — we'll move all your clients' sites with zero downtime and improved performance.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="benefit-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4 class="mb-3">API & Integrations</h4>
+                        <p class="text-muted mb-0">Full API access and popular platform integrations to automate your workflows and connect with your existing tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Features -->
+    <section id="features" class="py-5 position-relative">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="section-title d-inline-block">Powerful Agency Features</h2>
+                    <p class="mb-4">Our platform is built specifically for agencies that want to offer hosting as part of their service stack.</p>
+                    
+                    <div class="d-flex flex-wrap border-bottom mb-4">
+                        <div class="feature-tab active p-3" data-tab="revenue">Revenue</div>
+                        <div class="feature-tab p-3" data-tab="tools">Tools</div>
+                        <div class="feature-tab p-3" data-tab="support">Support</div>
+                    </div>
+                    
+                    <div id="revenue-tab" class="feature-tab-content">
+                        <h3 class="h4 mb-3">Maximize Your Earnings</h3>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 30% recurring commission on all plans</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 90-day cookie tracking for referrals</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Bonus payouts for volume milestones</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Monthly payments via PayPal or bank transfer</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Real-time earnings dashboard</li>
+                        </ul>
+                        <a href="#join" class="btn btn-primary">Start Earning Now</a>
+                    </div>
+                    
+                    <div id="tools-tab" class="feature-tab-content d-none">
+                        <h3 class="h4 mb-3">Agency-Focused Tools</h3>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Complete white-label hosting dashboard</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Client management portal</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> One-click billing automation</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> API access for custom integrations</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Automated client reporting</li>
+                        </ul>
+                        <a href="#join" class="btn btn-primary">Explore Tools</a>
+                    </div>
+                    
+                    <div id="support-tab" class="feature-tab-content d-none">
+                        <h3 class="h4 mb-3">Dedicated Agency Support</h3>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 24/7 priority support for partners</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Dedicated account manager</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Migration specialists to move client sites</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Weekly office hours with our team</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Private Slack channel for top partners</li>
+                        </ul>
+                        <a href="#join" class="btn btn-primary">Get Supported</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="calculator-card shadow-lg">
+                        <div class="card-header">
+                            <h3 class="h5 mb-0">Commission Calculator</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <label for="clients" class="form-label fw-500">Number of Clients</label>
+                                <input type="range" class="form-range" min="10" max="500" step="10" id="clients" value="50">
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span>10</span>
+                                    <span id="client-value">50</span>
+                                    <span>500+</span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="plan" class="form-label fw-500">Average Plan Price</label>
+                                <select class="form-select" id="plan">
+                                    <option value="10">$10/month</option>
+                                    <option value="20" selected>$20/month</option>
+                                    <option value="30">$30/month</option>
+                                    <option value="50">$50/month</option>
+                                </select>
+                            </div>
+                            <div class="alert bg-light border border-primary border-opacity-10">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h6 class="fw-500 mb-1">Estimated Monthly Earnings</h6>
+                                        <p class="small text-muted mb-0">Based on 30% commission rate</p>
+                                    </div>
+                                    <div>
+                                        <div class="fs-3 fw-bold text-primary" id="earnings">$300</div>
+                                        <small class="text-muted d-block text-end">$3,600/year</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <small class="text-muted">* Volume tiers can increase your commission up to 40%</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Trusted by Leading Agencies</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Don't just take our word for it — hear from agencies who've grown their business with our partner program</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="60" loading="lazy">
+                                    <div>
+                                        <h5 class="mb-1">Sarah Johnson</h5>
+                                        <small class="text-muted">CEO, WebDesign Pros</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="text-warning me-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small>6 months ago</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-card ps-3">
+                                <p class="fst-italic mb-4">"Since joining the partner program, our recurring revenue has increased by 40%. The white-label dashboard lets us present a completely seamless experience to our clients."</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
+                                        <i class="fas fa-chart-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Results achieved:</small>
+                                        <div class="fw-500">$12,500/month recurring</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60" loading="lazy">
+                                    <div>
+                                        <h5 class="mb-1">Michael Chen</h5>
+                                        <small class="text-muted">Founder, Digital Solutions Co.</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="text-warning me-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <small>3 months ago</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-card ps-3">
+                                <p class="fst-italic mb-4">"The migration team handled moving all 150 of our client sites with zero downtime. Our clients actually saw performance improvements, which made us look great!"</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
+                                        <i class="fas fa-clock text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Migration results:</small>
+                                        <div class="fw-500">150 sites, 0 downtime</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jessica Martinez" class="rounded-circle me-3" width="60" loading="lazy">
+                                    <div>
+                                        <h5 class="mb-1">Jessica Martinez</h5>
+                                        <small class="text-muted">Director, Creative Web Agency</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="text-warning me-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <small>1 year ago</small>
+                                </div>
+                            </div>
+                            <div class="testimonial-card ps-3">
+                                <p class="fst-italic mb-4">"The commission structure is the most generous we've found. We earn more while actually providing better hosting for our clients. It's a win-win partnership."</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
+                                        <i class="fas fa-percentage text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Commission increase:</small>
+                                        <div class="fw-500">From 20% to 30%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 py-4">
+                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Agency+One" alt="Partner logo" class="partner-logo" loading="lazy">
+                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Web+Pros" alt="Partner logo" class="partner-logo" loading="lazy">
+                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Digital+Co" alt="Partner logo" class="partner-logo" loading="lazy">
+                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Creative+Team" alt="Partner logo" class="partner-logo" loading="lazy">
+                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Design+Hub" alt="Partner logo" class="partner-logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Success Stories</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">See how agencies like yours are growing with our program</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="case-study-card bg-white shadow-sm rounded-3 overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Case Study" class="img-fluid h-100 object-fit-cover" loading="lazy">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="p-4 h-100 d-flex flex-column">
+                                    <div class="mb-3">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Case Study</span>
+                                        <h3>WebDesign Pros</h3>
+                                    </div>
+                                    <p class="flex-grow-1">How a mid-sized agency increased their recurring revenue by 65% in 6 months while improving client satisfaction scores.</p>
+                                    <div class="mt-4 pt-3 border-top">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="text-primary fw-bold">+65%</div>
+                                                <small class="text-muted">Revenue Growth</small>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-primary fw-bold">98%</div>
+                                                <small class="text-muted">Client Retention</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary mt-3 align-self-start">Read Full Story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-study-card bg-white shadow-sm rounded-3 overflow-hidden h-100">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-5">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Case Study" class="img-fluid h-100 object-fit-cover" loading="lazy">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="p-4 h-100 d-flex flex-column">
+                                    <div class="mb-3">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary mb-2">Case Study</span>
+                                        <h3>Digital Solutions Co.</h3>
+                                    </div>
+                                    <p class="flex-grow-1">A boutique agency scaled to 200+ hosting clients with zero additional overhead by leveraging our white-label solutions.</p>
+                                    <div class="mt-4 pt-3 border-top">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="text-primary fw-bold">200+</div>
+                                                <small class="text-muted">New Clients</small>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="text-primary fw-bold">40%</div>
+                                                <small class="text-muted">Higher Margins</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-primary mt-3 align-self-start">Read Full Story</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section id="comparison" class="py-5 position-relative bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">The Best Choice for Agencies</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">We're built specifically for agencies who want to offer hosting as part of their services</p>
+            </div>
+            
+            <div class="table-responsive" data-aos="fade-up">
+                <table class="table comparison-table table-hover align-middle">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">Feature</th>
+                            <th style="width: 20%;">Us</th>
+                            <th style="width: 20%;">Competitor A</th>
+                            <th style="width: 20%;">Competitor B</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>Commission Percentage</td>
+                            <td class="better">30% recurring</td>
+                            <td>20% recurring</td>
+                            <td>15% first year only</td>
+                        </tr>
+                        <tr>
+                            <td>White-label Solution</td>
+                            <td class="better">Complete white-label</td>
+                            <td>Branded login only</td>
+                            <td>No white-label</td>
+                        </tr>
+                        <tr>
+                            <td>Client Migration</td>
+                            <td class="better">Free expert migrations</td>
+                            <td>Self-service only</td>
+                            <td>$50/site fee</td>
+                        </tr>
+                        <tr>
+                            <td>API Access</td>
+                            <td class="better">Full API with docs</td>
+                            <td>Limited API</td>
+                            <td>No API</td>
+                        </tr>
+                        <tr>
+                            <td>Support SLA</td>
+                            <td class="better">1 hour response</td>
+                            <td>4 hour response</td>
+                            <td>24 hour response</td>
+                        </tr>
+                        <tr>
+                            <td>Uptime Guarantee</td>
+                            <td class="better">99.99%</td>
+                            <td>99.9%</td>
+                            <td>99.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#join" class="btn btn-primary btn-lg px-5">Join Now and Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Meet Your Partner Team</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Our dedicated agency support team is ready to help you succeed</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-lg-3" data-aos="fade-up">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alex Morgan" loading="lazy">
+                        <h4 class="mb-1">Alex Morgan</h4>
+                        <p class="text-muted mb-2">Partner Success Manager</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="David Kim" loading="lazy">
+                        <h4 class="mb-1">David Kim</h4>
+                        <p class="text-muted mb-2">Migration Specialist</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Johnson" loading="lazy">
+                        <h4 class="mb-1">Sarah Johnson</h4>
+                        <p class="text-muted mb-2">Technical Support Lead</p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden" data-aos="fade-up">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How quickly can I start earning commissions?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can start earning immediately after approval (typically within 24 hours). Once approved, you'll get access to your partner dashboard where you can begin referring clients. Commissions are paid monthly, with the first payout 30 days after your first client's payment clears.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Is there a minimum number of clients required?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No, there's no minimum requirement to join or maintain your partnership. However, our tiered commission structure rewards agencies with more clients. Starting at 30%, your commission can increase up to 40% as you bring more clients to the program.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How does the white-label solution work?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our white-label solution completely removes our branding from your clients' experience. You can use your own domain for the hosting dashboard, your logo and colors throughout, and even white-label email communications. Clients will never know you're partnering with us unless you choose to tell them.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    What support do you provide for migrating existing clients?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our migration team handles everything at no cost to you. We'll coordinate with you to schedule migrations during low-traffic periods, move all content and databases, test thoroughly, and flip DNS records with minimal downtime (typically less than 5 minutes). Many clients see performance improvements post-migration.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    How are payments handled and when do I get paid?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We handle all billing directly with your clients (under your branding) and pay you commissions monthly via PayPal or bank transfer. Payments are made on the 15th of each month for all commissions earned in the previous calendar month. There's a $50 minimum payout threshold.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Partner Resources</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to succeed</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="resource-card p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded mb-3" style="width: fit-content;">
+                            <i class="fas fa-file-alt text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Sales Toolkit</h4>
+                        <p class="text-muted mb-3">Download our complete sales kit with presentations, objection handlers, and pricing strategies.</p>
+                        <a href="#" class="btn btn-outline-primary">Download Now</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="resource-card p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded mb-3" style="width: fit-content;">
+                            <i class="fas fa-play-circle text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Training Webinars</h4>
+                        <p class="text-muted mb-3">Access our library of training videos and register for upcoming live webinars.</p>
+                        <a href="#" class="btn btn-outline-primary">View Resources</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="resource-card p-4 h-100">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded mb-3" style="width: fit-content;">
+                            <i class="fas fa-bullhorn text-primary fs-4"></i>
+                        </div>
+                        <h4 class="mb-3">Marketing Assets</h4>
+                        <p class="text-muted mb-3">Get co-brandable marketing materials including email templates, social media posts, and ads.</p>
+                        <a href="#" class="btn btn-outline-primary">Access Assets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onboarding Process -->
+    <section class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Get Started in 3 Simple Steps</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 700px;">Join our partner program and start earning recurring commissions today</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="step-icon">1</div>
+                        <h4 class="mb-3">Apply Online</h4>
+                        <p class="text-muted">Complete our simple application form (takes less than 2 minutes). Approval typically within 24 hours.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="step-icon">2</div>
+                        <h4 class="mb-3">Set Up Your Portal</h4>
+                        <p class="text-muted">Configure your white-label portal with your branding, pricing, and services. Our team will guide you.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
+                        <div class="step-icon">3</div>
+                        <h4 class="mb-3">Start Earning</h4>
+                        <p class="text-muted">Add clients and watch your commissions grow. We handle all the hosting while you focus on your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="join" class="cta-section">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="fw-bold text-white mb-4">Ready to Grow Your Agency?</h2>
+                    <p class="lead text-white mb-5 mx-auto" style="max-width: 600px;">Join thousands of agencies already earning recurring revenue with our partner program. Get started today with no upfront costs.</p>
+                    
+                    <div class="d-flex flex-column flex-lg-row justify-content-center gap-3 mb-5">
+                        <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-500">
+                            <i class="fas fa-user-plus me-2"></i> Join Partner Program
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">
+                            <i class="fas fa-calendar-alt me-2"></i> Book Demo
+                        </a>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap justify-content-center gap-4">
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span>No setup fees</span>
+                        </div>
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span>No long-term contracts</span>
+                        </div>
+                        <div class="d-flex align-items-center text-white">
+                            <i class="fas fa-check-circle me-2"></i>
+                            <span>24/7 priority support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta d-none d-lg-block">
+        <a href="#join" class="btn btn-primary btn-lg shadow-lg px-4 py-3">
+            <i class="fas fa-user-plus me-2"></i> Apply Now
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="https://via.placeholder.com/150x50/ffffff/2563eb?text=HostPartner" alt="Logo" height="30" class="mb-3">
+                    <p class="text-muted">The premium hosting partner program for digital agencies and web professionals.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Program</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#benefits" class="text-muted text-decoration-none">Benefits</a></li>
+                        <li class="mb-2"><a href="#features" class="text-muted text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="#case-studies" class="text-muted text-decoration-none">Case Studies</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#join" class="text-muted text-decoration-none">Join Now</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">API Reference</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Migration Guide</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Help Center</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Status</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Legal</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Contact</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> partners@example.com</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (800) 123-4567</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> San Francisco, CA</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small text-muted mb-0">© 2023 HostPartner. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small text-muted mb-0">
+                        <a href="#" class="text-decoration-none text-muted">Privacy Policy</a> | 
+                        <a href="#" class="text-decoration-none text-muted">Terms of Service</a> | 
+                        <a href="#" class="text-decoration-none text-muted">GDPR</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Animate on Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Tab functionality
+        document.querySelectorAll('.feature-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.feature-tab').forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.feature-tab-content').forEach(content => {
+                    content.classList.add('d-none');
+                });
+                
+                // Show the selected tab content
+                const tabId = tab.getAttribute('data-tab') + '-tab';
+                document.getElementById(tabId).classList.remove('d-none');
+            });
+        });
+        
+        // Commission calculator
+        const clientsInput = document.getElementById('clients');
+        const clientValue = document.getElementById('client-value');
+        const planSelect = document.getElementById('plan');
+        const earningsDisplay = document.getElementById('earnings');
+        
+        function calculateEarnings() {
+            const clients = parseInt(clientsInput.value);
+            const planPrice = parseInt(planSelect.value);
+            let commissionRate = 0.3; // Base 30%
+            
+            // Tiered commission structure
+            if (clients > 200) commissionRate = 0.35;
+            if (clients > 400) commissionRate = 0.4;
+            
+            const monthlyEarnings = clients * planPrice * commissionRate;
+            const annualEarnings = monthlyEarnings * 12;
+            
+            clientValue.textContent = clients;
+            earningsDisplay.innerHTML = `
+                <span class="d-block">$${monthlyEarnings.toLocaleString()}/mo</span>
+                <small class="text-muted d-block">$${annualEarnings.toLocaleString()}/year</small>
+                <small class="text-success d-block mt-1">${commissionRate*100}% commission</small>
+            `;
+        }
+        
+        clientsInput.addEventListener('input', calculateEarnings);
+        planSelect.addEventListener('change', calculateEarnings);
+        
+        // Initialize calculator
+        calculateEarnings();
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Make navbar sticky on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.sticky-nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Track CTA clicks for analytics
+        document.querySelectorAll('[href="#join"], .floating-cta a').forEach(cta => {
+            cta.addEventListener('click', function() {
+                // In a real implementation, you would send this to Google Analytics or similar
+                console.log('CTA clicked:', this.textContent.trim());
+            });
+        });
+        
+        // Dark mode toggle (optional)
+        const darkModeToggle = document.createElement('div');
+        darkModeToggle.innerHTML = `
+            <button id="darkModeToggle" class="btn btn-sm position-fixed bottom-0 end-0 m-3 rounded-circle" style="width: 40px; height: 40px;">
+                <i class="fas fa-moon"></i>
+            </button>
+        `;
+        document.body.appendChild(darkModeToggle);
+        
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
+    
+    <!-- Schema markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Agency Partner Program | Premium Hosting Solutions",
+      "description": "Earn recurring revenue, deliver premium hosting, and grow your agency with our white-label solutions and industry-leading commissions.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "HostPartner",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://example.com/logo.png"
+        }
+      }
+    }
+    </script>
+</body>
+</html>
