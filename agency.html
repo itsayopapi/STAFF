@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agency Partner Program | Premium Hosting Solutions</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>AgencyPro Hosting - Premium White Label Hosting for Digital Agencies</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
     <style>
+        /* Minimal custom CSS */
         :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --light-bg: #f8fafc;
-            --dark-color: #1e293b;
-            --text-color: #334155;
+            --primary: #4e73df;
+            --primary-dark: #2e59d9;
+            --secondary: #f6c23e;
+            --dark: #2c3e50;
+            --light: #f8f9fc;
+            --gray: #858796;
         }
         
         body {
+            scroll-behavior: smooth;
             font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            color: var(--dark-color);
+            color: var(--dark);
         }
         
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 6rem 0 5rem;
+            padding: 8rem 0 6rem;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-bottom: -5rem;
         }
         
         .hero-section::before {
@@ -48,123 +40,105 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 45%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            bottom: 0;
+            width: 40%;
+            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
             opacity: 0.15;
-            border-radius: 30px 0 0 30px;
         }
         
-        .benefit-icon {
+        .feature-icon {
             font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            background: rgba(78, 115, 223, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
         
-        .feature-tab {
-            border-bottom: 3px solid transparent;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
+        .pricing-card {
             transition: all 0.3s ease;
-            font-weight: 500;
-            color: var(--text-color);
+            border: none;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            border-radius: 0.5rem;
+            overflow: hidden;
         }
         
-        .feature-tab.active {
-            border-bottom-color: var(--primary-color);
-            color: var(--primary-color);
-            font-weight: 600;
-            background-color: rgba(37, 99, 235, 0.05);
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
         }
         
-        .testimonial-card {
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .comparison-table th {
-            background-color: var(--primary-color);
+        .pricing-card .card-header {
+            background-color: var(--primary);
             color: white;
-        }
-        
-        .comparison-table .better {
-            background-color: rgba(74, 222, 128, 0.1);
-            position: relative;
-        }
-        
-        .comparison-table .better::after {
-            content: '✓';
-            color: #16a34a;
-            font-weight: bold;
-            position: absolute;
-            right: 10px;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 5rem 0;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
-            margin-top: 4rem;
+            padding: 1.5rem;
+            text-align: center;
         }
         
         .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            border-color: var(--primary);
             font-weight: 500;
-            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
         }
         
         .btn-primary:hover {
             background-color: var(--primary-dark);
             border-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
         
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 0.75rem 1.5rem;
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--dark);
             font-weight: 500;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0b137;
+            border-color: #e0b137;
+            color: var(--dark);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+        
+        .stats-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+            text-align: center;
             transition: all 0.3s ease;
         }
         
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        .stats-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.15);
         }
         
-        .step-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            font-weight: bold;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        .stats-item .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
         
         .section-title {
             position: relative;
             display: inline-block;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .section-title::after {
@@ -173,150 +147,123 @@
             bottom: -10px;
             left: 0;
             width: 50px;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 2px;
+            height: 3px;
+            background: var(--primary);
         }
         
-        .feature-tab-content {
-            animation: fadeIn 0.5s ease;
+        .platform-showcase {
+            background: #f8f9fc;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .tab-content {
+            padding: 2rem 0;
         }
         
-        .floating-shape {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: rgba(59, 130, 246, 0.1);
-            z-index: -1;
+        .nav-pills .nav-link.active {
+            background-color: var(--primary);
         }
         
-        .shape-1 {
-            top: 20%;
-            left: -100px;
-            width: 300px;
-            height: 300px;
+        .nav-pills .nav-link {
+            color: var(--dark);
+            font-weight: 500;
         }
         
-        .shape-2 {
-            bottom: 10%;
-            right: -50px;
-            width: 250px;
-            height: 250px;
-        }
-        
-        .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .partner-logo {
-            filter: grayscale(100%);
+        .integration-logo {
+            height: 50px;
+            margin: 1rem;
             opacity: 0.7;
             transition: all 0.3s ease;
-            max-height: 50px;
-            width: auto;
         }
         
-        .partner-logo:hover {
-            filter: grayscale(0);
+        .integration-logo:hover {
             opacity: 1;
+            transform: scale(1.1);
         }
         
-        .form-control, .form-select {
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
+        .client-logo {
+            height: 40px;
+            margin: 1.5rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
         }
         
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+        .client-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
         }
         
-        .calculator-card {
-            border-radius: 12px;
-            border: none;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
             overflow: hidden;
+            z-index: 0;
         }
         
-        .calculator-card .card-header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 1rem 1.5rem;
-            border: none;
+        .floating-shapes div {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
         
-        .calculator-card .card-body {
-            padding: 2rem;
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 6rem 0 4rem;
+            }
+            
+            .hero-section::before {
+                width: 100%;
+                opacity: 0.1;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
+    <section id="home" class="hero-section">
+        <div class="floating-shapes">
+            <div style="width: 300px; height: 300px; top: -100px; right: -100px;"></div>
+            <div style="width: 150px; height: 150px; bottom: 50px; left: -50px;"></div>
+        </div>
         <div class="container position-relative">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <span class="badge bg-white text-primary mb-3 px-3 py-2 fw-normal">Agency Partner Program</span>
-                    <h1 class="display-4 fw-bold mb-4">Scale Your Web Design Business With Our <span class="border-bottom border-3 border-warning">Agency Program</span></h1>
-                    <p class="lead mb-4">Earn recurring revenue, deliver premium hosting, and grow your agency with our white-label solutions and industry-leading commissions.</p>
-                    <div class="d-flex flex-wrap gap-3 mb-5">
-                        <a href="#join" class="btn btn-light btn-lg px-4 fw-500">Get Started Today <i class="fas fa-arrow-right ms-2"></i></a>
-                        <a href="#features" class="btn btn-outline-light btn-lg px-4">Explore Features</a>
+                    <h1 class="display-4 fw-bold mb-4">Premium White Label Hosting for Digital Agencies</h1>
+                    <p class="lead mb-4">Scale your agency with our complete hosting solution designed exclusively for web professionals managing multiple client websites. Focus on growing your business while we handle the infrastructure.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#pricing" class="btn btn-light btn-lg px-4">View Plans <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#demo" class="btn btn-outline-light btn-lg px-4">Request Demo</a>
                     </div>
-                    <div class="d-flex flex-wrap gap-4">
-                        <div class="stat-card">
-                            <div class="stat-number">30%</div>
-                            <div class="text-muted">Recurring Commissions</div>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="d-flex">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="rounded-circle border border-3 border-white" width="40" style="margin-right: -10px;">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User" class="rounded-circle border border-3 border-white" width="40" style="margin-right: -10px;">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="User" class="rounded-circle border border-3 border-white" width="40">
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="text-muted">Priority Support</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">10K+</div>
-                            <div class="text-muted">Agency Partners</div>
+                        <div class="ms-3">
+                            <div class="text-white-50 small">Trusted by 3,500+ agencies worldwide</div>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-white ms-1">4.8/5</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team collaboration" class="img-fluid rounded-3 shadow-lg" style="transform: perspective(1000px) rotateY(-15deg);">
-                        <div class="position-absolute bottom-0 start-0 bg-white p-3 rounded shadow-sm" style="transform: translate(-20%, 20%); width: 200px;">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
-                                    <i class="fas fa-chart-line text-primary"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">$1.2M+</div>
-                                    <small class="text-muted">Paid Monthly</small>
-                                </div>
-                            </div>
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <div class="platform-showcase">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dashboard preview" class="img-fluid rounded shadow">
+                        <div class="text-center mt-3">
+                            <small class="text-muted">Our white-label dashboard - fully customizable to your brand</small>
                         </div>
                     </div>
                 </div>
@@ -324,159 +271,210 @@
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-5 bg-light" style="margin-top: 5rem;">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="section-title d-inline-block">Why Agencies Choose Us</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to grow your agency business while delivering exceptional value to your clients</p>
+    <!-- Trust Badges -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-auto text-center">
+                    <p class="mb-0 text-muted">TRUSTED BY LEADING AGENCIES</p>
+                </div>
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/120x40?text=Logo+1" alt="Client logo" class="client-logo">
+                </div>
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/120x40?text=Logo+2" alt="Client logo" class="client-logo">
+                </div>
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/120x40?text=Logo+3" alt="Client logo" class="client-logo">
+                </div>
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/120x40?text=Logo+4" alt="Client logo" class="client-logo">
+                </div>
+                <div class="col-auto">
+                    <img src="https://via.placeholder.com/120x40?text=Logo+5" alt="Client logo" class="client-logo">
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-item">
+                        <div class="stat-value">99.9%</div>
+                        <h5 class="mb-0">Uptime</h5>
+                        <p class="text-muted mb-0">Guaranteed SLA</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-item">
+                        <div class="stat-value">10K+</div>
+                        <h5 class="mb-0">Agencies</h5>
+                        <p class="text-muted mb-0">Growing daily</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-item">
+                        <div class="stat-value">50+</div>
+                        <h5 class="mb-0">Locations</h5>
+                        <p class="text-muted mb-0">Global network</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-item">
+                        <div class="stat-value">24/7</div>
+                        <h5 class="mb-0">Support</h5>
+                        <p class="text-muted mb-0">Expert assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Agency-Focused Features</h2>
+                <p class="lead text-muted">Everything you need to manage client websites efficiently and professionally</p>
+            </div>
+            
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-money-bill-wave"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h4 class="mb-3">Higher Earnings</h4>
-                        <p class="text-muted mb-0">Earn 30% recurring commissions — significantly more than standard affiliate programs. Our tiered structure rewards growth with even higher percentages.</p>
+                        <h3 class="text-center mb-3">White Label Hosting</h3>
+                        <p class="text-center">Present a completely branded experience to your clients with custom dashboards, emails, and client portals. Your branding, not ours.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Custom branding for all interfaces</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> White-label support emails</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Branded client onboarding</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-tag"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-tachometer-alt"></i>
                         </div>
-                        <h4 class="mb-3">True White-Label</h4>
-                        <p class="text-muted mb-0">Your branding, your control panel. Clients never see our name, with custom domains, email templates, and complete white-label DNS management.</p>
+                        <h3 class="text-center mb-3">Centralized Dashboard</h3>
+                        <p class="text-center">Manage all client websites from a single powerful dashboard with bulk actions, team collaboration, and granular access controls.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> One-click site management</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Team member roles</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Client access controls</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bolt"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-rocket"></i>
                         </div>
-                        <h4 class="mb-3">Premium Performance</h4>
-                        <p class="text-muted mb-0">Enterprise-grade infrastructure with NVMe storage, LiteSpeed servers, and optimized caching that makes your clients' sites fly.</p>
+                        <h3 class="text-center mb-3">Premium Performance</h3>
+                        <p class="text-center">Enterprise-grade infrastructure with NVMe SSD storage, HTTP/3, built-in caching, and global CDN for unbeatable speed.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> 300% faster than standard hosting</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Global CDN with 50+ locations</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Resource isolation technology</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headset"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-lock"></i>
                         </div>
-                        <h4 class="mb-3">Dedicated Support</h4>
-                        <p class="text-muted mb-0">Your own account manager and priority support queue with SLA guarantees. We're an extension of your team.</p>
+                        <h3 class="text-center mb-3">Enterprise Security</h3>
+                        <p class="text-center">Protect your clients with daily malware scans, automated backups, DDoS protection, and free SSL certificates for all sites.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Automated daily backups</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Web application firewall</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Free Let's Encrypt SSL</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-exchange-alt"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-sync-alt"></i>
                         </div>
-                        <h4 class="mb-3">Hassle-Free Migrations</h4>
-                        <p class="text-muted mb-0">Our migration team handles everything — we'll move all your clients' sites with zero downtime and improved performance.</p>
+                        <h3 class="text-center mb-3">Staging Environments</h3>
+                        <p class="text-center">Create staging sites with one click to test changes before pushing to production. Perfect for client approvals and safe development.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> One-click staging creation</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Push to live with one click</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Password protection</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="benefit-icon">
-                            <i class="fas fa-project-diagram"></i>
+                    <div class="p-4 h-100 bg-white rounded shadow-sm">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-chart-line"></i>
                         </div>
-                        <h4 class="mb-3">API & Integrations</h4>
-                        <p class="text-muted mb-0">Full API access and popular platform integrations to automate your workflows and connect with your existing tools.</p>
+                        <h3 class="text-center mb-3">Client Reporting</h3>
+                        <p class="text-center">Automated white-label reports on uptime, performance, and security keep your clients informed and impressed with your service.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Custom report branding</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Scheduled email delivery</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Performance metrics</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Program Features -->
-    <section id="features" class="py-5 position-relative">
-        <div class="container py-5">
+    <!-- Platform Showcase -->
+    <section class="py-5">
+        <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="section-title d-inline-block">Powerful Agency Features</h2>
-                    <p class="mb-4">Our platform is built specifically for agencies that want to offer hosting as part of their service stack.</p>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold section-title mb-4">Your Brand, Your Platform</h2>
+                    <p class="lead">Our white-label technology lets you present the hosting platform as your own proprietary system, strengthening your agency's value proposition.</p>
                     
-                    <div class="d-flex flex-wrap border-bottom mb-4">
-                        <div class="feature-tab active p-3" data-tab="revenue">Revenue</div>
-                        <div class="feature-tab p-3" data-tab="tools">Tools</div>
-                        <div class="feature-tab p-3" data-tab="support">Support</div>
-                    </div>
-                    
-                    <div id="revenue-tab" class="feature-tab-content">
-                        <h3 class="h4 mb-3">Maximize Your Earnings</h3>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 30% recurring commission on all plans</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 90-day cookie tracking for referrals</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Bonus payouts for volume milestones</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Monthly payments via PayPal or bank transfer</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Real-time earnings dashboard</li>
-                        </ul>
-                        <a href="#join" class="btn btn-primary">Start Earning Now</a>
-                    </div>
-                    
-                    <div id="tools-tab" class="feature-tab-content d-none">
-                        <h3 class="h4 mb-3">Agency-Focused Tools</h3>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Complete white-label hosting dashboard</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Client management portal</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> One-click billing automation</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> API access for custom integrations</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Automated client reporting</li>
-                        </ul>
-                        <a href="#join" class="btn btn-primary">Explore Tools</a>
-                    </div>
-                    
-                    <div id="support-tab" class="feature-tab-content d-none">
-                        <h3 class="h4 mb-3">Dedicated Agency Support</h3>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 24/7 priority support for partners</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Dedicated account manager</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Migration specialists to move client sites</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Weekly office hours with our team</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Private Slack channel for top partners</li>
-                        </ul>
-                        <a href="#join" class="btn btn-primary">Get Supported</a>
-                    </div>
-                </div>
-                
-                <div class="col-lg-7">
-                    <div class="calculator-card shadow-lg">
-                        <div class="card-header">
-                            <h3 class="h5 mb-0">Commission Calculator</h3>
+                    <div class="mt-4">
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Complete Brand Control</h5>
+                                <p class="mb-0 text-muted">Customize every touchpoint with your logo, colors, and messaging.</p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <label for="clients" class="form-label fw-500">Number of Clients</label>
-                                <input type="range" class="form-range" min="10" max="500" step="10" id="clients" value="50">
-                                <div class="d-flex justify-content-between text-muted small">
-                                    <span>10</span>
-                                    <span id="client-value">50</span>
-                                    <span>500+</span>
-                                </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-2x"></i>
                             </div>
-                            <div class="mb-4">
-                                <label for="plan" class="form-label fw-500">Average Plan Price</label>
-                                <select class="form-select" id="plan">
-                                    <option value="10">$10/month</option>
-                                    <option value="20" selected>$20/month</option>
-                                    <option value="30">$30/month</option>
-                                    <option value="50">$50/month</option>
-                                </select>
+                            <div>
+                                <h5 class="mb-1">Seamless Client Experience</h5>
+                                <p class="mb-0 text-muted">Clients interact only with your brand throughout their journey.</p>
                             </div>
-                            <div class="alert bg-light border border-primary border-opacity-10">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <h6 class="fw-500 mb-1">Estimated Monthly Earnings</h6>
-                                        <p class="small text-muted mb-0">Based on 30% commission rate</p>
-                                    </div>
-                                    <div class="fs-3 fw-bold text-primary" id="earnings">$300</div>
-                                </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-check-circle fa-2x"></i>
                             </div>
-                            <div class="mt-3">
-                                <small class="text-muted">* Volume tiers can increase your commission up to 40%</small>
+                            <div>
+                                <h5 class="mb-1">Revenue Opportunities</h5>
+                                <p class="mb-0 text-muted">Upsell hosting as a premium service under your brand.</p>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#demo" class="btn btn-primary mt-3">Request Branding Demo</a>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Branded dashboard" class="img-fluid rounded shadow-lg">
+                        <div class="position-absolute top-0 start-0 translate-middle">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile view" class="img-fluid rounded shadow" width="200" style="border: 5px solid white;">
                         </div>
                     </div>
                 </div>
@@ -484,124 +482,53 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-5 bg-light">
-        <div class="container py-5">
+    <!-- How It Works -->
+    <section class="py-5 bg-light">
+        <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title d-inline-block">Trusted by Leading Agencies</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Don't just take our word for it — hear from agencies who've grown their business with our partner program</p>
+                <h2 class="fw-bold section-title">How AgencyPro Hosting Works</h2>
+                <p class="lead text-muted">Get started quickly and see results immediately</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="mb-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="60">
-                                    <div>
-                                        <h5 class="mb-1">Sarah Johnson</h5>
-                                        <small class="text-muted">CEO, WebDesign Pros</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="text-warning me-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <small>6 months ago</small>
-                                </div>
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <span class="display-5 fw-bold">1</span>
                             </div>
-                            <div class="testimonial-card ps-3">
-                                <p class="fst-italic mb-4">"Since joining the partner program, our recurring revenue has increased by 40%. The white-label dashboard lets us present a completely seamless experience to our clients."</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
-                                        <i class="fas fa-chart-line text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <small class="text-muted">Results achieved:</small>
-                                        <div class="fw-500">$12,500/month recurring</div>
-                                    </div>
-                                </div>
+                            <h3 class="my-3">Sign Up & Brand</h3>
+                            <p>Create your account and customize the platform with your logo, colors, and messaging. Set up your white-label client portal.</p>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Brand setup" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="mb-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="rounded-circle me-3" width="60">
-                                    <div>
-                                        <h5 class="mb-1">Michael Chen</h5>
-                                        <small class="text-muted">Founder, Digital Solutions Co.</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="text-warning me-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <small>3 months ago</small>
-                                </div>
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <span class="display-5 fw-bold">2</span>
                             </div>
-                            <div class="testimonial-card ps-3">
-                                <p class="fst-italic mb-4">"The migration team handled moving all 150 of our client sites with zero downtime. Our clients actually saw performance improvements, which made us look great!"</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
-                                        <i class="fas fa-clock text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <small class="text-muted">Migration results:</small>
-                                        <div class="fw-500">150 sites, 0 downtime</div>
-                                    </div>
-                                </div>
+                            <h3 class="my-3">Migrate Client Sites</h3>
+                            <p>Use our free migration service to move your clients' websites. Our experts handle the technical details with minimal downtime.</p>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Migration" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="mb-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jessica Martinez" class="rounded-circle me-3" width="60">
-                                    <div>
-                                        <h5 class="mb-1">Jessica Martinez</h5>
-                                        <small class="text-muted">Director, Creative Web Agency</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="text-warning me-2">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <small>1 year ago</small>
-                                </div>
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <span class="display-5 fw-bold">3</span>
                             </div>
-                            <div class="testimonial-card ps-3">
-                                <p class="fst-italic mb-4">"The commission structure is the most generous we've found. We earn more while actually providing better hosting for our clients. It's a win-win partnership."</p>
-                                <div class="d-flex align-items-center">
-                                    <div class="bg-primary bg-opacity-10 p-2 rounded me-2">
-                                        <i class="fas fa-percentage text-primary"></i>
-                                    </div>
-                                    <div>
-                                        <small class="text-muted">Commission increase:</small>
-                                        <div class="fw-500">From 20% to 30%</div>
-                                    </div>
-                                </div>
+                            <h3 class="my-3">Manage & Grow</h3>
+                            <p>Use our dashboard to manage all sites, onboard new clients, and scale resources. Set client access levels and automate billing.</p>
+                            <div class="mt-3">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Management" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>
@@ -609,110 +536,762 @@
             </div>
             
             <div class="text-center mt-5">
-                <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 py-4">
-                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Agency+One" alt="Partner logo" class="partner-logo">
-                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Web+Pros" alt="Partner logo" class="partner-logo">
-                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Digital+Co" alt="Partner logo" class="partner-logo">
-                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Creative+Team" alt="Partner logo" class="partner-logo">
-                    <img src="https://via.placeholder.com/150x60/2563eb/ffffff?text=Design+Hub" alt="Partner logo" class="partner-logo">
+                <a href="#pricing" class="btn btn-primary btn-lg px-4">See Pricing Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Features Tabs -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Platform Features</h2>
+                <p class="lead text-muted">Explore the powerful tools built for agency workflows</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="platform-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="management-tab" data-bs-toggle="pill" data-bs-target="#management" type="button" role="tab">Management</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="security-tab" data-bs-toggle="pill" data-bs-target="#security" type="button" role="tab">Security</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="performance-tab" data-bs-toggle="pill" data-bs-target="#performance" type="button" role="tab">Performance</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="business-tab" data-bs-toggle="pill" data-bs-target="#business" type="button" role="tab">Business Tools</button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="platform-tabs-content">
+                        <div class="tab-pane fade show active" id="management" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-users fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Team Collaboration</h5>
+                                            <p class="mb-0">Assign roles and permissions to team members with granular access controls.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-copy fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Staging Environments</h5>
+                                            <p class="mb-0">Create staging sites with one click for testing before going live.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-bolt fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Bulk Actions</h5>
+                                            <p class="mb-0">Update, backup, or manage multiple sites simultaneously.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-code-branch fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Git Integration</h5>
+                                            <p class="mb-0">Connect your Git repositories for seamless deployment workflows.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Management dashboard" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="security" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-shield-alt fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Malware Scanning</h5>
+                                            <p class="mb-0">Daily automated scans detect and remove threats proactively.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-lock fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>DDoS Protection</h5>
+                                            <p class="mb-0">Enterprise-grade protection against attacks of all sizes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-database fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Automated Backups</h5>
+                                            <p class="mb-0">Daily backups with 30-day retention and one-click restore.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-certificate fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Free SSL Certificates</h5>
+                                            <p class="mb-0">Auto-renewing SSL for all sites with one-click setup.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security features" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="performance" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-tachometer-alt fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>NVMe SSD Storage</h5>
+                                            <p class="mb-0">Ultra-fast storage for maximum database performance.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-globe fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Global CDN</h5>
+                                            <p class="mb-0">50+ edge locations deliver content at lightning speed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-memory fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Advanced Caching</h5>
+                                            <p class="mb-0">Multi-layer caching for WordPress and other CMS platforms.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-network-wired fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>HTTP/3 Support</h5>
+                                            <p class="mb-0">Next-gen protocol for faster page loads and better security.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Performance metrics" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane fade" id="business" role="tabpanel">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>White-Label Billing</h5>
+                                            <p class="mb-0">Custom invoices and billing under your brand.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-chart-pie fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Client Reports</h5>
+                                            <p class="mb-0">Automated performance and uptime reports.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-user-plus fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Client Onboarding</h5>
+                                            <p class="mb-0">Automated welcome emails and setup guides.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4">
+                                        <div class="me-3 text-primary">
+                                            <i class="fas fa-plug fa-2x"></i>
+                                        </div>
+                                        <div>
+                                            <h5>API Access</h5>
+                                            <p class="mb-0">Integrate with your existing tools and workflows.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Business tools" class="img-fluid rounded shadow">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Seamless Integrations</h2>
+                <p class="lead text-muted">Connect with the tools you already use</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center">
+                        <img src="https://via.placeholder.com/150x60?text=WordPress" alt="WordPress" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Shopify" alt="Shopify" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=WooCommerce" alt="WooCommerce" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Git" alt="Git" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Slack" alt="Slack" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Zapier" alt="Zapier" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=Stripe" alt="Stripe" class="integration-logo">
+                        <img src="https://via.placeholder.com/150x60?text=PayPal" alt="PayPal" class="integration-logo">
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-outline-primary">View All Integrations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Simple, Transparent Pricing</h2>
+                <p class="lead text-muted">Choose the plan that fits your agency's needs</p>
+                
+                <div class="d-flex justify-content-center mt-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="billingToggle" checked>
+                        <label class="form-check-label" for="billingToggle">
+                            <span>Monthly Billing</span>
+                            <span class="text-muted"> | </span>
+                            <span>Annual Billing (Save 20%)</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="pricing-card card h-100">
+                        <div class="card-header">
+                            <h3 class="text-white mb-0">Starter</h3>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 fw-bold my-4">
+                                <span class="monthly-price">$29</span>
+                                <span class="annual-price d-none">$23</span>
+                                <span class="fs-6 text-muted">/mo</span>
+                            </div>
+                            <p class="text-muted">Perfect for small agencies</p>
+                            <hr>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 10 Websites</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 50GB SSD Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 1TB Bandwidth</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Basic White Label</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 24/7 Support</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Free SSL Certificates</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Daily Backups</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card card h-100 border-primary border-2">
+                        <div class="card-header">
+                            <h3 class="text-white mb-0">Professional</h3>
+                            <span class="badge bg-white text-primary">Most Popular</span>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 fw-bold my-4">
+                                <span class="monthly-price">$79</span>
+                                <span class="annual-price d-none">$63</span>
+                                <span class="fs-6 text-muted">/mo</span>
+                            </div>
+                            <p class="text-muted">For growing agencies</p>
+                            <hr>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 30 Websites</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 150GB SSD Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 3TB Bandwidth</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Full White Label</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Staging Sites</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Priority Support</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Client Reporting</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Malware Scanning</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card card h-100">
+                        <div class="card-header">
+                            <h3 class="text-white mb-0">Enterprise</h3>
+                        </div>
+                        <div class="card-body text-center p-4">
+                            <div class="display-4 fw-bold my-4">
+                                <span class="monthly-price">$199</span>
+                                <span class="annual-price d-none">$159</span>
+                                <span class="fs-6 text-muted">/mo</span>
+                            </div>
+                            <p class="text-muted">For large agencies</p>
+                            <hr>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 100 Websites</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 500GB SSD Storage</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 10TB Bandwidth</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Advanced White Label</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Dedicated Resources</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 24/7 VIP Support</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> API Access</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Custom Solutions</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="mb-1">Need custom solutions or have more than 100 websites?</p>
+                <a href="#contact" class="btn btn-link">Contact us for enterprise plans</a>
             </div>
         </div>
     </section>
 
     <!-- Comparison Table -->
-    <section id="comparison" class="py-5 position-relative">
-        <div class="container py-5">
+    <section class="py-5 bg-light">
+        <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title d-inline-block">The Best Choice for Agencies</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">We're built specifically for agencies who want to offer hosting as part of their services</p>
+                <h2 class="fw-bold section-title">Plan Comparison</h2>
+                <p class="lead text-muted">See how our plans stack up against each other</p>
             </div>
             
             <div class="table-responsive">
-                <table class="table comparison-table table-hover align-middle">
-                    <thead>
+                <table class="table table-bordered">
+                    <thead class="table-light">
                         <tr>
-                            <th style="width: 40%;">Feature</th>
-                            <th style="width: 20%;">Us</th>
-                            <th style="width: 20%;">Competitor A</th>
-                            <th style="width: 20%;">Competitor B</th>
+                            <th style="width: 30%">Feature</th>
+                            <th class="text-center">Starter</th>
+                            <th class="text-center">Professional</th>
+                            <th class="text-center">Enterprise</th>
                         </tr>
                     </thead>
-                    <tbody class="table-group-divider">
+                    <tbody>
                         <tr>
-                            <td>Commission Percentage</td>
-                            <td class="better">30% recurring</td>
-                            <td>20% recurring</td>
-                            <td>15% first year only</td>
+                            <td>Websites</td>
+                            <td class="text-center">10</td>
+                            <td class="text-center">30</td>
+                            <td class="text-center">100</td>
                         </tr>
                         <tr>
-                            <td>White-label Solution</td>
-                            <td class="better">Complete white-label</td>
-                            <td>Branded login only</td>
-                            <td>No white-label</td>
+                            <td>SSD Storage</td>
+                            <td class="text-center">50GB</td>
+                            <td class="text-center">150GB</td>
+                            <td class="text-center">500GB</td>
                         </tr>
                         <tr>
-                            <td>Client Migration</td>
-                            <td class="better">Free expert migrations</td>
-                            <td>Self-service only</td>
-                            <td>$50/site fee</td>
+                            <td>Bandwidth</td>
+                            <td class="text-center">1TB</td>
+                            <td class="text-center">3TB</td>
+                            <td class="text-center">10TB</td>
+                        </tr>
+                        <tr>
+                            <td>White Label</td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Staging Sites</td>
+                            <td class="text-center"><i class="fas fa-times text-muted"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Client Reporting</td>
+                            <td class="text-center"><i class="fas fa-times text-muted"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Malware Scanning</td>
+                            <td class="text-center">Basic</td>
+                            <td class="text-center">Advanced</td>
+                            <td class="text-center">Premium</td>
+                        </tr>
+                        <tr>
+                            <td>Support</td>
+                            <td class="text-center">24/7 Standard</td>
+                            <td class="text-center">24/7 Priority</td>
+                            <td class="text-center">24/7 VIP</td>
                         </tr>
                         <tr>
                             <td>API Access</td>
-                            <td class="better">Full API with docs</td>
-                            <td>Limited API</td>
-                            <td>No API</td>
-                        </tr>
-                        <tr>
-                            <td>Support SLA</td>
-                            <td class="better">1 hour response</td>
-                            <td>4 hour response</td>
-                            <td>24 hour response</td>
-                        </tr>
-                        <tr>
-                            <td>Uptime Guarantee</td>
-                            <td class="better">99.99%</td>
-                            <td>99.9%</td>
-                            <td>99.5%</td>
+                            <td class="text-center"><i class="fas fa-times text-muted"></i></td>
+                            <td class="text-center">Limited</td>
+                            <td class="text-center"><i class="fas fa-check text-primary"></i></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            
-            <div class="text-center mt-5">
-                <a href="#join" class="btn btn-primary btn-lg px-5">Join Now and Get Started</a>
-            </div>
         </div>
     </section>
 
-    <!-- Onboarding Process -->
-    <section class="py-5 bg-light">
-        <div class="container py-5">
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title d-inline-block">Get Started in 3 Simple Steps</h2>
-                <p class="lead text-muted mx-auto" style="max-width: 700px;">Join our partner program and start earning recurring commissions today</p>
+                <h2 class="fw-bold section-title">Trusted by Top Agencies</h2>
+                <p class="lead text-muted">What our partners say about us</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="step-icon">1</div>
-                        <h4 class="mb-3">Apply Online</h4>
-                        <p class="text-muted">Complete our simple application form (takes less than 2 minutes). Approval typically within 24 hours.</p>
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="rounded-circle testimonial-img me-3">
+                                <div>
+                                    <h5 class="mb-0">Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">CEO, WebCraft Agency</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Switching to AgencyPro Hosting transformed our business. We've saved hundreds of hours on client site management and our clients love the performance improvements. The white-label features allow us to present a premium service under our brand."</p>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted">Hosting 45 client sites</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="step-icon">2</div>
-                        <h4 class="mb-3">Set Up Your Portal</h4>
-                        <p class="text-muted">Configure your white-label portal with your branding, pricing, and services. Our team will guide you.</p>
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="rounded-circle testimonial-img me-3">
+                                <div>
+                                    <h5 class="mb-0">Michael Chen</h5>
+                                    <p class="text-muted mb-0">Director, PixelPerfect</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"The centralized dashboard has been a game-changer for our team. We can now manage all client sites from one place with different access levels for our developers and account managers. The staging environments have significantly reduced client revision cycles."</p>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted">Hosting 78 client sites</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="text-center p-4 h-100 bg-white rounded-3 shadow-sm">
-                        <div class="step-icon">3</div>
-                        <h4 class="mb-3">Start Earning</h4>
-                        <p class="text-muted">Add clients and watch your commissions grow. We handle all the hosting while you focus on your business.</p>
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez" class="rounded-circle testimonial-img me-3">
+                                <div>
+                                    <h5 class="mb-0">Emma Rodriguez</h5>
+                                    <p class="text-muted mb-0">Founder, Digital Bloom</p>
+                                </div>
+                            </div>
+                            <p class="card-text">"Since migrating our client sites to AgencyPro, we've seen a 40% reduction in hosting-related support tickets. The automated client reports keep our clients informed and impressed with our service. It's become a valuable upsell opportunity for our agency."</p>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted">Hosting 112 client sites</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary">Read More Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="pe-lg-5">
+                        <h2 class="fw-bold section-title mb-4">Case Study: CreativeMind Agency</h2>
+                        <p class="lead">How CreativeMind scaled to 150+ client sites while reducing management time by 60%</p>
+                        
+                        <div class="mb-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="fas fa-chart-line fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">75% Faster Load Times</h5>
+                                    <p class="mb-0 text-muted">Improved client site performance across the board</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="fas fa-clock fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">60% Time Savings</h5>
+                                    <p class="mb-0 text-muted">Reduced time spent on hosting management</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="fas fa-dollar-sign fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">$45k Additional Revenue</h5>
+                                    <p class="mb-0 text-muted">Generated through premium hosting services</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary mt-2">Read Full Case Study</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team meeting" class="img-fluid rounded shadow-lg">
+                        <div class="position-absolute bottom-0 start-0 translate-middle-y bg-white p-3 rounded shadow" style="width: 80%;">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="CreativeMind CEO" class="rounded-circle me-3" width="60">
+                                <div>
+                                    <h6 class="mb-0">David Wilson</h6>
+                                    <p class="mb-0 text-muted small">CEO, CreativeMind Agency</p>
+                                </div>
+                            </div>
+                            <p class="mt-2 mb-0">"AgencyPro Hosting has been instrumental in our growth, allowing us to focus on client work rather than server management."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold section-title">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Find answers to common questions about AgencyPro Hosting</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What makes agency hosting different from regular hosting?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Agency hosting is specifically designed for web professionals managing multiple client websites. Key differences include:</p>
+                                    <ul>
+                                        <li><strong>White-label branding:</strong> Present the hosting as your own service</li>
+                                        <li><strong>Centralized management:</strong> Control all client sites from one dashboard</li>
+                                        <li><strong>Client access controls:</strong> Granular permissions for clients and team members</li>
+                                        <li><strong>Bulk actions:</strong> Update or manage multiple sites simultaneously</li>
+                                        <li><strong>Business tools:</strong> Client reporting, billing integration, and team collaboration</li>
+                                    </ul>
+                                    <p class="mb-0">Regular hosting is designed for individuals or businesses managing their own single website.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Can I migrate existing client websites to your platform?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes! We offer free, hassle-free migration services for all new customers. Our migration process includes:</p>
+                                    <ul>
+                                        <li>Free migration of all client websites (no limit)</li>
+                                        <li>Dedicated migration specialist to handle the technical work</li>
+                                        <li>Scheduled migrations during low-traffic periods to minimize disruption</li>
+                                        <li>Complete testing before going live</li>
+                                        <li>DNS management assistance</li>
+                                    </ul>
+                                    <p class="mb-0">Most migrations are completed within 24-48 hours with minimal downtime.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How does the white-label branding work?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Our white-label technology allows you to completely brand the hosting platform as your own. This includes:</p>
+                                    <ul>
+                                        <li><strong>Custom branding:</strong> Upload your logo, set brand colors, and customize the interface</li>
+                                        <li><strong>White-label client portal:</strong> Clients log in to your branded dashboard</li>
+                                        <li><strong>Branded communications:</strong> All system emails display your branding</li>
+                                        <li><strong>Custom domain:</strong> Host the client portal on your own domain (e.g., clients.youragency.com)</li>
+                                        <li><strong>White-label support:</strong> Support emails come from your domain with your branding</li>
+                                        <li><strong>Branded invoices:</strong> Customize invoices with your logo and payment details</li>
+                                    </ul>
+                                    <p class="mb-0">Your clients will never know you're using AgencyPro Hosting unless you tell them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What happens if I need more resources than my plan includes?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We make it easy to scale your resources as your agency grows:</p>
+                                    <ul>
+                                        <li><strong>Flexible upgrades:</strong> Instantly upgrade your plan through your dashboard</li>
+                                        <li><strong>Add-on resources:</strong> Purchase additional websites, storage, or bandwidth as needed</li>
+                                        <li><strong>Enterprise solutions:</strong> Custom configurations for high-traffic sites</li>
+                                        <li><strong>No downtime:</strong> Scaling happens seamlessly without service interruption</li>
+                                    </ul>
+                                    <p class="mb-0">Our support team can help you choose the right scaling options for your specific needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    How do you handle support for my clients?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We offer flexible support options to match your agency's workflow:</p>
+                                    <ul>
+                                        <li><strong>Tier 1 support:</strong> You handle initial client support using our knowledge base</li>
+                                        <li><strong>Tier 2 support:</strong> Our experts assist with technical issues when needed</li>
+                                        <li><strong>White-label support:</strong> Clients contact you, and you escalate to us behind the scenes</li>
+                                        <li><strong>Direct support:</strong> Option to have clients contact us directly with your branding</li>
+                                        <li><strong>Support portal:</strong> Branded help center with your documentation</li>
+                                    </ul>
+                                    <p class="mb-0">We'll work with you to establish the best support workflow for your agency.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <p>Still have questions? <a href="#contact">Contact our team</a> for personalized answers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h2 class="display-5 fw-bold mb-4">See AgencyPro Hosting in Action</h2>
+                    <p class="lead mb-5">Schedule a personalized demo to see how our platform can transform your agency's hosting services.</p>
+                    
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white bg-opacity-10 rounded h-100">
+                                <div class="mb-3">
+                                    <i class="fas fa-calendar-alt fa-3x"></i>
+                                </div>
+                                <h4>Live Demo</h4>
+                                <p>30-minute walkthrough of the platform with Q&A</p>
+                                <a href="#" class="btn btn-light btn-sm">Schedule Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white bg-opacity-10 rounded h-100">
+                                <div class="mb-3">
+                                    <i class="fas fa-play-circle fa-3x"></i>
+                                </div>
+                                <h4>Video Tour</h4>
+                                <p>15-minute recorded demo of key features</p>
+                                <a href="#" class="btn btn-light btn-sm">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white bg-opacity-10 rounded h-100">
+                                <div class="mb-3">
+                                    <i class="fas fa-handshake fa-3x"></i>
+                                </div>
+                                <h4>Consultation</h4>
+                                <p>Strategy session for your specific needs</p>
+                                <a href="#" class="btn btn-light btn-sm">Let's Talk</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -720,34 +1299,39 @@
     </section>
 
     <!-- Final CTA -->
-    <section id="join" class="cta-section">
-        <div class="container py-5">
+    <section id="contact" class="py-5">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold text-white mb-4">Ready to Grow Your Agency?</h2>
-                    <p class="lead text-white mb-5 mx-auto" style="max-width: 600px;">Join thousands of agencies already earning recurring revenue with our partner program. Get started today with no upfront costs.</p>
-                    
-                    <div class="d-flex flex-column flex-lg-row justify-content-center gap-3 mb-5">
-                        <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-500">
-                            <i class="fas fa-user-plus me-2"></i> Join Partner Program
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">
-                            <i class="fas fa-calendar-alt me-2"></i> Book Demo
-                        </a>
-                    </div>
-                    
-                    <div class="d-flex flex-wrap justify-content-center gap-4">
-                        <div class="d-flex align-items-center text-white">
-                            <i class="fas fa-check-circle me-2"></i>
-                            <span>No setup fees</span>
-                        </div>
-                        <div class="d-flex align-items-center text-white">
-                            <i class="fas fa-check-circle me-2"></i>
-                            <span>No long-term contracts</span>
-                        </div>
-                        <div class="d-flex align-items-center text-white">
-                            <i class="fas fa-check-circle me-2"></i>
-                            <span>24/7 priority support</span>
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <h2 class="fw-bold section-title">Ready to Get Started?</h2>
+                                <p class="lead">Join thousands of agencies who trust us with their client websites.</p>
+                            </div>
+                            
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="h-100 p-4 bg-light rounded">
+                                        <h4 class="mb-3">Start Free Trial</h4>
+                                        <p>Try AgencyPro Hosting risk-free for 14 days. No credit card required.</p>
+                                        <a href="#" class="btn btn-primary w-100">Sign Up Now</a>
+                                        <div class="text-center mt-3">
+                                            <small class="text-muted">Full-featured trial, cancel anytime</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="h-100 p-4 bg-light rounded">
+                                        <h4 class="mb-3">Contact Sales</h4>
+                                        <p>Have questions? Our experts are ready to help.</p>
+                                        <a href="#" class="btn btn-outline-primary w-100">Contact Us</a>
+                                        <div class="text-center mt-3">
+                                            <small class="text-muted">Response within 1 business day</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -757,66 +1341,62 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
+    <!-- Smooth scroll for anchor links -->
     <script>
-        // Tab functionality
-        document.querySelectorAll('.feature-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                document.querySelectorAll('.feature-tab').forEach(t => t.classList.remove('active'));
-                // Add active class to clicked tab
-                tab.classList.add('active');
-                
-                // Hide all tab contents
-                document.querySelectorAll('.feature-tab-content').forEach(content => {
-                    content.classList.add('d-none');
-                });
-                
-                // Show the selected tab content
-                const tabId = tab.getAttribute('data-tab') + '-tab';
-                document.getElementById(tabId).classList.remove('d-none');
-            });
-        });
-        
-        // Commission calculator
-        const clientsInput = document.getElementById('clients');
-        const clientValue = document.getElementById('client-value');
-        const planSelect = document.getElementById('plan');
-        const earningsDisplay = document.getElementById('earnings');
-        
-        function calculateEarnings() {
-            const clients = clientsInput.value;
-            const planPrice = planSelect.value;
-            const commission = 0.3; // 30%
-            const earnings = clients * planPrice * commission;
-            
-            clientValue.textContent = clients;
-            earningsDisplay.textContent = '$' + earnings.toLocaleString();
-        }
-        
-        clientsInput.addEventListener('input', calculateEarnings);
-        planSelect.addEventListener('change', calculateEarnings);
-        
-        // Initialize calculator
-        calculateEarnings();
-        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
+        
+        // Billing toggle functionality
+        document.getElementById('billingToggle').addEventListener('change', function() {
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const annualPrices = document.querySelectorAll('.annual-price');
+            
+            if (this.checked) {
+                monthlyPrices.forEach(el => el.classList.remove('d-none'));
+                annualPrices.forEach(el => el.classList.add('d-none'));
+            } else {
+                monthlyPrices.forEach(el => el.classList.add('d-none'));
+                annualPrices.forEach(el => el.classList.remove('d-none'));
+            }
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.stats-item, .pricing-card, .feature-icon');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.stats-item, .pricing-card, .feature-icon');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.6s ease';
+            });
+            
+            // Trigger animation on load for elements in view
+            setTimeout(animateOnScroll, 500);
+        });
+        
+        // Trigger animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
