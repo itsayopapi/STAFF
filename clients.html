@@ -1,1579 +1,2047 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Management Dashboard</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Minimal Custom CSS -->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css">
+    <title>WeFitHost</title>
+
     <style>
-        body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background-color: #f8f9fa;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .client-avatar {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-        }
-        
-        .progress-thin {
-            height: 6px;
-        }
-        
-        .status-badge {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.5rem;
-        }
-        
-        .sidebar-link {
-            transition: all 0.2s;
-        }
-        
-        .sidebar-link:hover {
-            background-color: rgba(0,0,0,0.05);
-            border-radius: 5px;
-        }
-        
-        .chart-container {
-            height: 250px;
-            position: relative;
-        }
-        
-        /* Animation delays */
-        .animate-delay-100 {
-            animation-delay: 0.1s;
-        }
-        .animate-delay-200 {
-            animation-delay: 0.2s;
-        }
-        .animate-delay-300 {
-            animation-delay: 0.3s;
-        }
-        
-        /* Mobile sidebar toggle */
-        .sidebar-collapse {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            z-index: 1000;
-            width: 250px;
-            overflow-y: auto;
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .sidebar-collapse.show {
-            transform: translateX(0);
-        }
-        
-        .sidebar-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 999;
-            background-color: rgba(0,0,0,0.5);
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
             display: none;
+        } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
-        
-        .sidebar-overlay.show {
-            display: block;
+
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
-        
-        @media (min-width: 992px) {
-            .sidebar-collapse {
-                transform: translateX(0);
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+   <!-- Navbar Start File-->
+   <header class="custom-header">
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #1e293b"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="./home.html">
+          <img
+            src="./Logo_Wefithost_03.png"
+            alt="WeFitHost Logo"
+            height="40"
+          />
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Hosting Mega Dropdown -->
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                id="hostingDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Hosting
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="hostingDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-wordpress me-2"></i>WordPress
+                        Solutions
+                      </h6>
+                      <a class="dropdown-item" href="wordpress-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Managed WordPress Hosting</strong>
+                          <small class="text-muted"
+                            >Automated updates and plugins</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="cloud-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Managed Cloud Hosting</strong>
+                          <small class="text-muted"
+                            >Lightning-fast with 100% uptime SLA</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="managed-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Managed Hosting</strong>
+                          <small class="text-muted"
+                            >Lag-free, managed WordPress hosting</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="secure-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Secure Hosting</strong>
+                          <small class="text-muted"
+                            >Everything needed to securely launch your
+                            website</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-cart me-2"></i>eCommerce Solutions
+                      </h6>
+                      <a class="dropdown-item" href="woocommerce.html">
+                        <div class="d-flex flex-column">
+                          <strong>WooCommerce</strong>
+                          <small class="text-muted"
+                            >Secure, online store with built-in tools</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Websites & Stores</strong>
+                          <small class="text-muted"
+                            >Powerful site tools and WooCommerce</small
+                          >
+                        </div>
+                      </a>
+
+                      <h6 class="dropdown-header mt-3">
+                        <i class="bi bi-shield-lock me-2"></i>Security &
+                        Backup
+                      </h6>
+                      <a class="dropdown-item" href="ssl-certificate.html">
+                        <div class="d-flex flex-column">
+                          <strong>SSL Certificates</strong>
+                          <small class="text-muted"
+                            >Lock up your data with Premium SSL</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Website Security</strong>
+                          <small class="text-muted"
+                            >Minimize cyberthreats with SiteLock</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Website Backup</strong>
+                          <small class="text-muted"
+                            >Back up your site with CodeGuard</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-server me-2"></i>Traditional Hosting
+                      </h6>
+                      <a class="dropdown-item" href="shared-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Shared Hosting</strong>
+                          <small class="text-muted"
+                            >Affordable hosting for small websites</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="vps-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Managed VPS Hosting</strong>
+                          <small class="text-muted"
+                            >Scalable virtual private servers</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="web-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Web Hosting</strong>
+                          <small class="text-muted"
+                            >Reliable web hosting solutions</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="dedicated-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Dedicated Hosting</strong>
+                          <small class="text-muted"
+                            >Full control with enterprise hardware</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="autoscalling.html">
+                        <div class="d-flex flex-column">
+                          <strong>Autoscaling</strong>
+                          <small class="text-muted"
+                            >Intelligent Auto-Scaling for Modern Cloud
+                            Applications</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Domains Mega Dropdown -->
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                id="domainDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Domains
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="domainDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-globe me-2"></i>Domain Services
+                      </h6>
+                      <a class="dropdown-item" href="domain-search.html">
+                        <div class="d-flex flex-column">
+                          <strong>Domain Search</strong>
+                          <small class="text-muted"
+                            >Find your perfect domain name</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="domain-transfer.html">
+                        <div class="d-flex flex-column">
+                          <strong>Domain Transfer</strong>
+                          <small class="text-muted"
+                            >Move your domain to us easily</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="bulk-domain-search.html">
+                        <div class="d-flex flex-column">
+                          <strong>Bulk Domain Search</strong>
+                          <small class="text-muted"
+                            >Search for multiple domains at once</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-shield-lock me-2"></i>Domain Security
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Domain Privacy</strong>
+                          <small class="text-muted"
+                            >Protect your personal information</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Domain Lock</strong>
+                          <small class="text-muted"
+                            >Prevent unauthorized transfers</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Two-Factor Authentication</strong>
+                          <small class="text-muted"
+                            >Extra security for your domains</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-tags me-2"></i>Domain Extensions
+                      </h6>
+                      <a class="dropdown-item" href="dot-com-domain.html">
+                        <div class="d-flex flex-column">
+                          <strong>.com Domains</strong>
+                          <small class="text-muted"
+                            >The world's most popular extension</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="dot-net-domain.html">
+                        <div class="d-flex flex-column">
+                          <strong>.net Domains</strong>
+                          <small class="text-muted"
+                            >Great for tech and networks</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="dot-org-domain.html">
+                        <div class="d-flex flex-column">
+                          <strong>.org Domains</strong>
+                          <small class="text-muted"
+                            >Perfect for organizations</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>New TLDs</strong>
+                          <small class="text-muted"
+                            >.tech, .store, .online and more</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Reseller Mega Dropdown (New Section) -->
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                id="resellerDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Reseller
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="resellerDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-gear me-2"></i>Reseller Hosting
+                      </h6>
+
+                      <a class="dropdown-item" href="reseller-hosting.html">
+                        <div class="d-flex flex-column">
+                          <strong>Reseller Hosting</strong>
+                          <small class="text-muted"
+                            >Start your hosting business</small
+                          >
+                        </div>
+                      </a>
+
+                      <a class="dropdown-item" href="reseller-plans.html">
+                        <div class="d-flex flex-column">
+                          <strong>Reseller Plans</strong>
+                          <small class="text-muted"
+                            >Start your hosting business</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>WHMCS Integration</strong>
+                          <small class="text-muted"
+                            >Complete billing automation</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>White Label</strong>
+                          <small class="text-muted"
+                            >Brand as your own service</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-people me-2"></i>Client Management
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Client Accounts</strong>
+                          <small class="text-muted"
+                            >Manage all your clients</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Automated Billing</strong>
+                          <small class="text-muted"
+                            >Recurring invoices & payments</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Support System</strong>
+                          <small class="text-muted"
+                            >Handle client tickets</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-graph-up me-2"></i>Business Growth
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Marketing Tools</strong>
+                          <small class="text-muted"
+                            >Grow your hosting business</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Partner Program</strong>
+                          <small class="text-muted">Earn commissions</small>
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Resources</strong>
+                          <small class="text-muted">Guides & tutorials</small>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Services Mega Dropdown -->
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Services
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="servicesDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-palette me-2"></i>Design Services
+                      </h6>
+                      <a class="dropdown-item" href="web-design.html">
+                        <div class="d-flex flex-column">
+                          <strong>Web Design</strong>
+                          <small class="text-muted"
+                            >Custom WordPress sites built for you</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="logo.html">
+                        <div class="d-flex flex-column">
+                          <strong>Logo Design</strong>
+                          <small class="text-muted"
+                            >Professional branding for your business</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="ui.html">
+                        <div class="d-flex flex-column">
+                          <strong>UX/UI Design</strong>
+                          <small class="text-muted"
+                            >Optimized user experiences</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-megaphone me-2"></i>Marketing Services
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Digital Marketing</strong>
+                          <small class="text-muted"
+                            >SEO and PPC campaigns done for you</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Content Marketing</strong>
+                          <small class="text-muted"
+                            >Engaging content that converts</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Social Media Management</strong>
+                          <small class="text-muted"
+                            >Grow your social presence</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-headset me-2"></i>Support Services
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Pro Design Live Support</strong>
+                          <small class="text-muted"
+                            >On-demand, WordPress expert support</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex flex-column">
+                          <strong>Website SEO Checker (FREE)</strong>
+                          <small class="text-muted"
+                            >Get a free analysis and learn how to
+                            improve</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>24/7 Priority Support</strong>
+                          <small class="text-muted"
+                            >Dedicated help when you need it</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Migration Services</strong>
+                          <small class="text-muted"
+                            >We'll move your site for you</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Agency Hub Mega Dropdown -->
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="agencyDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Agency Hub
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="agencyDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-people me-2"></i>For Agencies
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Agency Hosting</strong>
+                          <small class="text-muted"
+                            >Specialized hosting for agencies</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Client Management</strong>
+                          <small class="text-muted"
+                            >Tools to manage all your clients</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>White Label Solutions</strong>
+                          <small class="text-muted"
+                            >Brand our services as your own</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-graph-up me-2"></i>Growth Tools
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Partner Program</strong>
+                          <small class="text-muted"
+                            >Earn commissions for referrals</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Marketing Resources</strong>
+                          <small class="text-muted"
+                            >Templates and guides</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Sales Training</strong>
+                          <small class="text-muted"
+                            >Close more hosting deals</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-gear me-2"></i>Developer Tools
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>API Access</strong>
+                          <small class="text-muted"
+                            >Integrate with our platform</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Staging Environments</strong>
+                          <small class="text-muted"
+                            >Test changes safely</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Git Integration</strong>
+                          <small class="text-muted"
+                            >Version control for your sites</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>WP-CLI Enabled</strong>
+                          <small class="text-muted"
+                            >Command line control</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown mega-dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/"
+                id="emailDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Email
+              </a>
+              <div
+                class="dropdown-menu mega-menu"
+                aria-labelledby="emailDropdown"
+              >
+                <div class="row g-0">
+                  <div class="col-md-6">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-envelope me-2"></i>Email Services
+                      </h6>
+                      <a class="dropdown-item" href="email.html">
+                        <div class="d-flex flex-column">
+                          <strong>Professional Email</strong>
+                          <small class="text-muted">you@yourdomain.com</small>
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="microsoft-email.html">
+                        <div class="d-flex flex-column">
+                          <strong>Microsoft 365</strong>
+                          <small class="text-muted"
+                            >Premium Office suite with email</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="google-email.html">
+                        <div class="d-flex flex-column">
+                          <strong>Google Workspace</strong>
+                          <small class="text-muted"
+                            >Gmail for your domain</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="p-3">
+                      <h6 class="dropdown-header">
+                        <i class="bi bi-shield-lock me-2"></i>Email Security
+                      </h6>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Email Protection</strong>
+                          <small class="text-muted"
+                            >Block spam and malware</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Email Forwarding</strong>
+                          <small class="text-muted"
+                            >Forward emails to other accounts</small
+                          >
+                        </div>
+                      </a>
+                      <a class="dropdown-item" href="maintenance.html">
+                        <div class="d-flex flex-column">
+                          <strong>Email Migration</strong>
+                          <small class="text-muted"
+                            >Move your existing emails</small
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Right-side buttons -->
+          <div class="d-flex align-items-center">
+            <!--<a href="#" class="btn btn-link text-dark me-3"><i class="bi bi-search"></i></a> -->
+            <a
+              href="https://my.wefithost.com/login"
+              class="btn btn-link login-btn me-3"
+              ><i class="bi bi-person"></i> Log In</a
+            >
+            <a href="https://my.wefithost.com/manage" class="btn btn-primary"
+              >Sign Up</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all necessary elements
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+        const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+        const navLinks = document.querySelectorAll(
+          ".nav-link:not(.dropdown-toggle)"
+        );
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Hamburger menu toggle functionality
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+          backdrop.classList.toggle("show", !isExpanded);
+          document.body.style.overflow = !isExpanded ? "hidden" : "";
+
+          // Manually trigger show/hide to sync with our backdrop
+          if (!isExpanded) {
+            bsCollapse.show();
+          } else {
+            bsCollapse.hide();
+          }
+        });
+
+        // Backdrop click closes menu
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+          closeAllDropdowns();
+        });
+
+        // Enhanced dropdown functionality for mobile
+        dropdownToggles.forEach((toggle) => {
+          toggle.addEventListener("click", function (e) {
+            if (window.innerWidth < 992) {
+              // Mobile only
+              e.preventDefault();
+              e.stopPropagation();
+
+              const dropdownMenu = this.nextElementSibling;
+              const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+              // Close all other dropdowns first
+              closeAllDropdownsExcept(this);
+
+              // Toggle current dropdown
+              if (isExpanded) {
+                dropdownMenu.classList.remove("show");
+                this.setAttribute("aria-expanded", "false");
+              } else {
+                dropdownMenu.classList.add("show");
+                this.setAttribute("aria-expanded", "true");
+              }
+            }
+          });
+        });
+
+        // Close menu when clicking regular nav links (not dropdown toggles)
+        navLinks.forEach((link) => {
+          if (!link.classList.contains("dropdown-toggle")) {
+            link.addEventListener("click", function () {
+              if (window.innerWidth < 992) {
+                bsCollapse.hide();
+                navbarToggler.setAttribute("aria-expanded", "false");
+                backdrop.classList.remove("show");
+                document.body.style.overflow = "";
+                closeAllDropdowns();
+              }
+            });
+          }
+        });
+
+        // Close all dropdowns except one
+        function closeAllDropdownsExcept(exceptToggle) {
+          dropdownToggles.forEach((toggle) => {
+            if (toggle !== exceptToggle) {
+              const menu = toggle.nextElementSibling;
+              menu.classList.remove("show");
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+
+        // Close all dropdowns
+        function closeAllDropdowns() {
+          dropdownToggles.forEach((toggle) => {
+            const menu = toggle.nextElementSibling;
+            menu.classList.remove("show");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            window.innerWidth < 992 &&
+            !e.target.closest(".navbar") &&
+            navbarCollapse.classList.contains("show")
+          ) {
+            bsCollapse.hide();
+            navbarToggler.setAttribute("aria-expanded", "false");
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+            closeAllDropdowns();
+          }
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            if (navbarCollapse.classList.contains("show")) {
+              bsCollapse.hide();
+              navbarToggler.setAttribute("aria-expanded", "false");
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+              closeAllDropdowns();
+            }
+          }
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+
+        <style>
+            :root {
+                --primary: #6b63ff;
+                --primary-light: #8b85ff;
+                --primary-dark: #5a52e0;
+                --secondary: #2d3748;
+                --light: #f8f9fa;
+                --dark: #212529;
+                --gray: #6c757d;
+                --light-gray: #e9ecef;
+                --success: #28a745;
+                --info: #17a2b8;
+                --warning: #ffc107;
+                --danger: #dc3545;
+            }
+            
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            /* Hero Section */
+            .hero-section {
+                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+                color: white;
+                padding: 8rem 0 6rem;
                 position: relative;
+                overflow: hidden;
+                background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+            }
+            
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(107, 99, 255, 0.9) 0%, rgba(90, 82, 224, 0.9) 100%);
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero-image-container {
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                transform: perspective(1000px) rotateY(-10deg) translateZ(50px);
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+                border: 1px solid rgba(255,255,255,0.2);
+            }
+            
+            .hero-image-container:hover {
+                transform: perspective(1000px) rotateY(0deg) translateZ(0);
+                box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+            }
+            
+            .hero-image-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(107, 99, 255, 0.1) 0%, rgba(90, 82, 224, 0.2) 100%);
+                pointer-events: none;
+            }
+            
+            /* Floating animation */
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            .floating {
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            /* Features Section */
+            .features-section {
+                padding: 6rem 0;
+                background-color: var(--light);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .features-section::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 300px;
+                height: 300px;
+                background-image: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+                opacity: 0.1;
+                z-index: 0;
+            }
+            
+            .feature-card {
+                background: white;
+                border-radius: 12px;
+                padding: 2.5rem 2rem;
+                height: 100%;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid var(--light-gray);
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+            }
+            
+            .feature-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+            }
+            
+            .feature-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: var(--primary);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+            
+            .feature-card:hover::before {
+                transform: scaleX(1);
+            }
+            
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                background: rgba(107, 99, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                transition: transform 0.3s ease, background 0.3s ease;
+            }
+            
+            .feature-card:hover .feature-icon {
+                transform: scale(1.1);
+                background: rgba(107, 99, 255, 0.2);
+            }
+            
+            /* Dashboard Preview */
+            .dashboard-section {
+                padding: 6rem 0;
+                background: white;
+                position: relative;
+            }
+            
+            .dashboard-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsMjQ5LDI1MCwxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
+                opacity: 0.5;
+                z-index: 0;
+            }
+            
+            .dashboard-content {
+                position: relative;
+                z-index: 1;
+            }
+            
+            .dashboard-slideshow {
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                border: 1px solid var(--light-gray);
+                position: relative;
+                height: 500px;
+            }
+            
+            .dashboard-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 1s ease;
+                background-size: cover;
+                background-position: center;
+            }
+            
+            .dashboard-slide.active {
+                opacity: 1;
+            }
+            
+            .slide-indicators {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                z-index: 10;
+            }
+            
+            .slide-indicator {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.5);
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .slide-indicator.active {
+                background: white;
+                transform: scale(1.2);
+            }
+            
+            .slide-caption {
+                position: absolute;
+                bottom: 50px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: white;
+                background: rgba(0,0,0,0.6);
+                padding: 10px;
+                font-size: 0.9rem;
+                border-radius: 0 0 12px 12px;
+            }
+            
+            /* Benefits Section */
+            .benefits-section {
+                padding: 6rem 0;
+                background-color: var(--light);
+                position: relative;
+            }
+            
+            .benefit-item {
+                padding: 2.5rem;
+                background: white;
+                border-radius: 12px;
+                height: 100%;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid var(--light-gray);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .benefit-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            .benefit-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(107, 99, 255, 0.05) 0%, rgba(90, 82, 224, 0.05) 100%);
+                z-index: 0;
+            }
+            
+            .benefit-content {
+                position: relative;
+                z-index: 1;
+            }
+            
+            /* Stats Section */
+            .stats-section {
+                padding: 5rem 0;
+                background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+                color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .stats-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+                opacity: 0.5;
+            }
+            
+            .stat-item {
+                text-align: center;
+                padding: 2rem;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .stat-number {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                background: linear-gradient(to right, white, #e0e0ff);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            .stat-label {
+                font-size: 1.1rem;
+                opacity: 0.9;
+            }
+            
+            /* Testimonials */
+            .testimonial-section {
+                padding: 6rem 0;
+                background: white;
+                position: relative;
+            }
+            
+            .testimonial-card {
+                background: white;
+                border-radius: 12px;
+                padding: 3rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+                border: 1px solid var(--light-gray);
+                position: relative;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                height: 100%;
+            }
+            
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            }
+            
+            .testimonial-card::before {
+                content: '"';
+                position: absolute;
+                top: 1rem;
+                left: 2rem;
+                font-size: 5rem;
+                font-family: Georgia, serif;
+                color: rgba(107, 99, 255, 0.1);
+                line-height: 1;
+                z-index: 0;
+            }
+            
+            .testimonial-content {
+                position: relative;
+                z-index: 1;
+            }
+            
+            .testimonial-img {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid var(--primary-light);
+                transition: transform 0.3s ease, border-color 0.3s ease;
+            }
+            
+            .testimonial-card:hover .testimonial-img {
+                transform: scale(1.05);
+                border-color: var(--primary);
+            }
+            
+            .stars {
+                color: var(--warning);
+            }
+            
+            /* Pricing Section */
+            .pricing-section {
+                padding: 6rem 0;
+                background-color: var(--light);
+                position: relative;
+            }
+            
+            .pricing-card {
+                border-radius: 12px;
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background: white;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .pricing-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            }
+            
+            .pricing-header {
+                padding: 2rem;
+                background: var(--primary);
+                color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .pricing-header::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, transparent 100%);
+            }
+            
+            .popular-plan .pricing-header {
+                background: var(--primary-dark);
+            }
+            
+            .popular-badge {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background: var(--warning);
+                color: var(--dark);
+                padding: 0.25rem 0.75rem;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+            
+            .pricing-body {
+                padding: 2rem;
+                position: relative;
+            }
+            
+            .price {
+                font-size: 3rem;
+                font-weight: 700;
+                color: var(--dark);
+            }
+            
+            .price-period {
+                font-size: 1rem;
+                opacity: 0.8;
+            }
+            
+            .pricing-feature {
+                margin-bottom: 0.75rem;
+                position: relative;
+                padding-left: 1.5rem;
+            }
+            
+            .pricing-feature::before {
+                content: '\f00c';
+                font-family: 'bootstrap-icons';
+                position: absolute;
+                left: 0;
+                color: var(--success);
+            }
+            
+            /* Integration Section */
+            .integration-section {
+                padding: 6rem 0;
+                background: white;
+            }
+            
+            .integration-logo {
+                height: 60px;
                 width: auto;
+                filter: grayscale(100%) opacity(0.7);
+                transition: all 0.3s ease;
+            }
+            
+            .integration-logo:hover {
+                filter: grayscale(0%) opacity(1);
+                transform: scale(1.1);
+            }
+            
+            /* How It Works Section */
+            .how-it-works-section {
+                padding: 6rem 0;
+                background-color: var(--light);
+                position: relative;
+            }
+            
+            .step-card {
+                background: white;
+                border-radius: 12px;
+                padding: 2rem;
+                height: 100%;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                border: 1px solid var(--light-gray);
+                position: relative;
+                transition: transform 0.3s ease;
+            }
+            
+            .step-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                background: var(--primary);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            /* FAQ Section */
+            .faq-section {
+                padding: 6rem 0;
+                background: white;
+            }
+            
+            .accordion-item {
+                margin-bottom: 1rem;
+                border-radius: 8px !important;
+                overflow: hidden;
+                border: 1px solid var(--light-gray) !important;
+            }
+            
+            .accordion-button:not(.collapsed) {
+                background-color: rgba(107, 99, 255, 0.1);
+                color: var(--primary);
                 box-shadow: none;
             }
             
-            .main-content {
-                margin-left: 16.666667%;
+            .accordion-button:focus {
+                box-shadow: 0 0 0 0.25rem rgba(107, 99, 255, 0.25);
             }
-        }
-        
-        /* Task checkbox styling */
-        .task-checkbox:checked + .task-text {
-            text-decoration: line-through;
-            color: #6c757d !important;
-        }
-    </style>
-</head>
-<body>
-    <!-- Mobile Sidebar Overlay -->
-    <div class="sidebar-overlay"></div>
+            
+            .accordion-button::after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b63ff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            }
+            
+            /* CTA Section */
+            .cta-section {
+                padding: 6rem 0;
+                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+                color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .cta-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.1;
+            }
+            
+            .cta-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .cta-card {
+                background: white;
+                border-radius: 12px;
+                padding: 3rem;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                background: rgba(255,255,255,0.95);
+                color: var(--dark);
+            }
+            
+            /* Responsive Adjustments */
+            @media (max-width: 768px) {
+                .hero-section, .features-section, .dashboard-section, 
+                .benefits-section, .testimonial-section, .cta-section,
+                .stats-section, .pricing-section, .faq-section,
+                .integration-section, .how-it-works-section {
+                    padding: 3rem 0;
+                }
+                
+                .hero-section {
+                    padding-top: 6rem;
+                    text-align: center;
+                }
+                
+                .hero-image-container {
+                    margin-top: 2rem;
+                    transform: none;
+                }
+                
+                .dashboard-slideshow {
+                    height: 350px;
+                }
+                
+                .stat-number {
+                    font-size: 2.5rem;
+                }
+            }
+            
+            /* Animation classes */
+            .fade-in {
+                animation: fadeIn 1s ease-in;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            .slide-up {
+                animation: slideUp 0.8s ease-out;
+            }
+            
+            @keyframes slideUp {
+                from { transform: translateY(50px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+        </style>
+    </head>
+    <body data-bs-theme="light">
     
-    <!-- Mobile Sidebar Toggle Button -->
-    <button class="btn btn-primary d-lg-none position-fixed m-3" style="z-index: 100;" id="sidebarToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-    <div class="container-fluid p-0">
-        <div class="row g-0">
-            <!-- Sidebar -->
-            <div class="col-lg-2 sidebar-collapse bg-white shadow-sm vh-100" id="sidebar">
-                <div class="p-3">
-                    <h5 class="text-center mb-4 animate__animated animate__fadeIn">
-                        <i class="fas fa-users-cog me-2"></i>Client Manager
-                    </h5>
-                    
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-100">
-                            <a class="nav-link sidebar-link active" href="#dashboard" data-section="dashboard">
-                                <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-200">
-                            <a class="nav-link sidebar-link" href="#clients" data-section="clients">
-                                <i class="fas fa-users me-2"></i>Clients
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-300">
-                            <a class="nav-link sidebar-link" href="#projects" data-section="projects">
-                                <i class="fas fa-project-diagram me-2"></i>Projects
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-100">
-                            <a class="nav-link sidebar-link" href="#tasks" data-section="tasks">
-                                <i class="fas fa-tasks me-2"></i>Tasks
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-200">
-                            <a class="nav-link sidebar-link" href="#messages" data-section="messages">
-                                <i class="fas fa-envelope me-2"></i>Messages
-                            </a>
-                        </li>
-                        <li class="nav-item mb-2 animate__animated animate__fadeIn animate-delay-300">
-                            <a class="nav-link sidebar-link" href="#reports" data-section="reports">
-                                <i class="fas fa-chart-bar me-2"></i>Reports
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <div class="position-absolute bottom-0 start-0 end-0 p-3">
-                        <div class="d-flex align-items-center animate__animated animate__fadeIn animate-delay-300">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-                            <div>
-                                <div class="fw-bold small">Sarah Johnson</div>
-                                <div class="text-muted small">Admin</div>
+        <main>
+            <!-- 1. Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 hero-content">
+                            <span class="badge bg-white text-primary mb-3 px-3 py-2 fw-normal">NEW RELEASE v3.2</span>
+                            <h1 class="display-4 fw-bold mb-4">Complete Client Management for Hosting Businesses</h1>
+                            <p class="lead mb-4">Our all-in-one platform gives you complete control over client accounts, billing, support, and services with powerful automation to save you time and grow your business.</p>
+                            <div class="d-flex flex-wrap gap-3 mb-5">
+                                <a href="#demo" class="btn btn-light btn-lg px-4 py-3 fw-bold">View Dashboard Demo</a>
+                                <a href="#pricing" class="btn btn-outline-light btn-lg px-4 py-3">See Pricing</a>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex">
+                                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle border border-3 border-white" width="40" height="40" alt="User">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
+                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
+                                </div>
+                                <div class="ms-3">
+                                    <div class="stars">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <small>Trusted by 850+ hosting providers</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="hero-image-container floating">
+                                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                     alt="Client Management Dashboard" 
+                                     class="img-fluid">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Main Content -->
-            <div class="col-lg-10 ms-lg-auto main-content">
-                <div class="p-4">
-                    <!-- Dashboard Section -->
-                    <section id="dashboard" class="mb-5 section-content">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2 class="animate__animated animate__fadeIn">Dashboard</h2>
-                            <div class="animate__animated animate__fadeIn animate-delay-100">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addClientModal">
-                                    <i class="fas fa-plus me-1"></i> Add Client
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Stats Cards -->
-                        <div class="row g-4 mb-4">
-                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp">
-                                <div class="card card-hover border-0 bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="text-uppercase small">Total Clients</h6>
-                                                <h3 class="mb-0" id="totalClients">124</h3>
-                                            </div>
-                                            <i class="fas fa-users fa-2x opacity-50"></i>
-                                        </div>
-                                        <div class="mt-3">
-                                            <span class="small">+12% from last month</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-100">
-                                <div class="card card-hover border-0 bg-success text-white">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="text-uppercase small">Active Projects</h6>
-                                                <h3 class="mb-0" id="activeProjects">28</h3>
-                                            </div>
-                                            <i class="fas fa-project-diagram fa-2x opacity-50"></i>
-                                        </div>
-                                        <div class="mt-3">
-                                            <span class="small">5 completed this week</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-200">
-                                <div class="card card-hover border-0 bg-warning text-dark">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="text-uppercase small">Pending Tasks</h6>
-                                                <h3 class="mb-0" id="pendingTasks">42</h3>
-                                            </div>
-                                            <i class="fas fa-tasks fa-2x opacity-50"></i>
-                                        </div>
-                                        <div class="mt-3">
-                                            <span class="small">8 overdue</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate-delay-300">
-                                <div class="card card-hover border-0 bg-info text-white">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h6 class="text-uppercase small">Revenue</h6>
-                                                <h3 class="mb-0" id="totalRevenue">$24,580</h3>
-                                            </div>
-                                            <i class="fas fa-dollar-sign fa-2x opacity-50"></i>
-                                        </div>
-                                        <div class="mt-3">
-                                            <span class="small">+18% from last quarter</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Charts and Recent Activity -->
-                        <div class="row g-4">
-                            <div class="col-lg-8 animate__animated animate__fadeInLeft">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-header bg-white">
-                                        <h5 class="mb-0">Client Growth</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="clientGrowthChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4 animate__animated animate__fadeInRight">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-header bg-white">
-                                        <h5 class="mb-0">Recent Activity</h5>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <div class="list-group list-group-flush" id="recentActivity">
-                                            <div class="list-group-item border-0 py-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="me-3">
-                                                        <span class="avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                                            <i class="fas fa-user-plus"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small">New client added</div>
-                                                        <div class="text-muted small">Acme Corp • 2 hours ago</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item border-0 py-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="me-3">
-                                                        <span class="avatar bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                                            <i class="fas fa-check"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small">Project completed</div>
-                                                        <div class="text-muted small">Website Redesign • Yesterday</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item border-0 py-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="me-3">
-                                                        <span class="avatar bg-warning text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                                            <i class="fas fa-exclamation"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small">Payment reminder sent</div>
-                                                        <div class="text-muted small">Global Tech • 2 days ago</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="list-group-item border-0 py-3">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="me-3">
-                                                        <span class="avatar bg-info text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                                                            <i class="fas fa-comment"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div>
-                                                        <div class="small">New message received</div>
-                                                        <div class="text-muted small">Sarah Miller • 3 days ago</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Clients Section -->
-                    <section id="clients" class="mb-5 section-content" style="display: none;">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2>Clients</h2>
-                            <div>
-                                <div class="input-group" style="width: 250px;">
-                                    <input type="text" class="form-control form-control-sm" placeholder="Search clients..." id="clientSearch">
-                                    <button class="btn btn-primary btn-sm" type="button">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card card-hover border-0">
-                            <div class="card-header bg-white">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <h5 class="mb-0">Client List</h5>
-                                    </div>
-                                    <div class="col-md-6 text-md-end">
-                                        <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm active filter-btn" data-filter="all">All</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-sm filter-btn" data-filter="active">Active</button>
-                                            <button type="button" class="btn btn-outline-secondary btn-sm filter-btn" data-filter="inactive">Inactive</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0" id="clientsTable">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th>Client</th>
-                                                <th>Contact</th>
-                                                <th>Projects</th>
-                                                <th>Status</th>
-                                                <th>Last Contact</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-status="active">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-avatar rounded-circle me-2" alt="Client">
-                                                        <div>
-                                                            <div class="fw-bold">Acme Corporation</div>
-                                                            <div class="text-muted small">Technology</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>John Smith</div>
-                                                    <div class="text-muted small">john@acme.com</div>
-                                                </td>
-                                                <td>5</td>
-                                                <td>
-                                                    <span class="badge bg-success status-badge">Active</span>
-                                                </td>
-                                                <td>2 days ago</td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="acme">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                        <li><a class="dropdown-item" href="#">Deactivate</a></li>
-                                                        <li><hr class="dropdown-divider"></li>
-                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="pending">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-avatar rounded-circle me-2" alt="Client">
-                                                        <div>
-                                                            <div class="fw-bold">Global Tech</div>
-                                                            <div class="text-muted small">Consulting</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>Sarah Johnson</div>
-                                                    <div class="text-muted small">sarah@globaltech.com</div>
-                                                </td>
-                                                <td>3</td>
-                                                <td>
-                                                    <span class="badge bg-warning text-dark status-badge">Pending</span>
-                                                </td>
-                                                <td>1 week ago</td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="global">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                        <li><a class="dropdown-item" href="#">Activate</a></li>
-                                                        <li><hr class="dropdown-divider"></li>
-                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="active">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="client-avatar rounded-circle me-2" alt="Client">
-                                                        <div>
-                                                            <div class="fw-bold">Bright Solutions</div>
-                                                            <div class="text-muted small">Marketing</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>Michael Chen</div>
-                                                    <div class="text-muted small">michael@bright.com</div>
-                                                </td>
-                                                <td>7</td>
-                                                <td>
-                                                    <span class="badge bg-success status-badge">Active</span>
-                                                </td>
-                                                <td>3 days ago</td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="bright">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                        <li><a class="dropdown-item" href="#">Deactivate</a></li>
-                                                        <li><hr class="dropdown-divider"></li>
-                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="inactive">
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="client-avatar rounded-circle me-2" alt="Client">
-                                                        <div>
-                                                            <div class="fw-bold">Summit Partners</div>
-                                                            <div class="text-muted small">Finance</div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>Emily Wilson</div>
-                                                    <div class="text-muted small">emily@summit.com</div>
-                                                </td>
-                                                <td>2</td>
-                                                <td>
-                                                    <span class="badge bg-danger status-badge">Inactive</span>
-                                                </td>
-                                                <td>1 month ago</td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-primary me-1 view-client" data-client="summit">
-                                                        <i class="fas fa-eye"></i>
-                                                    </button>
-                                                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                                        <i class="fas fa-ellipsis-v"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                        <li><a class="dropdown-item" href="#">Reactivate</a></li>
-                                                        <li><hr class="dropdown-divider"></li>
-                                                        <li><a class="dropdown-item text-danger" href="#">Delete</a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination pagination-sm justify-content-center mb-0">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Projects Section -->
-                    <section id="projects" class="mb-5 section-content" style="display: none;">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2>Projects</h2>
-                            <div>
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addProjectModal">
-                                    <i class="fas fa-plus me-1"></i> New Project
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="row g-4">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
-                                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <h5 class="mb-0">Website Redesign</h5>
-                                            <span class="badge bg-primary">In Progress</span>
-                                        </div>
-                                        <p class="text-muted small">Complete redesign of Acme Corp's website with new branding</p>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between small mb-1">
-                                                <span>Progress</span>
-                                                <span>65%</span>
-                                            </div>
-                                            <div class="progress progress-thin">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 65%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex">
-                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
-                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
-                                                <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle" width="24" height="24" alt="Team">
-                                            </div>
-                                            <small class="text-muted">Due: May 15</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
-                                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <h5 class="mb-0">Mobile App Development</h5>
-                                            <span class="badge bg-warning text-dark">Planning</span>
-                                        </div>
-                                        <p class="text-muted small">New iOS/Android app for Global Tech's customer portal</p>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between small mb-1">
-                                                <span>Progress</span>
-                                                <span>25%</span>
-                                            </div>
-                                            <div class="progress progress-thin">
-                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex">
-                                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
-                                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle" width="24" height="24" alt="Team">
-                                            </div>
-                                            <small class="text-muted">Due: Jun 30</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-img-top overflow-hidden" style="height: 150px;">
-                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="img-fluid w-100 h-100 object-fit-cover" alt="Project">
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <h5 class="mb-0">Marketing Campaign</h5>
-                                            <span class="badge bg-success">Completed</span>
-                                        </div>
-                                        <p class="text-muted small">Q2 marketing campaign for Bright Solutions</p>
-                                        <div class="mb-3">
-                                            <div class="d-flex justify-content-between small mb-1">
-                                                <span>Progress</span>
-                                                <span>100%</span>
-                                            </div>
-                                            <div class="progress progress-thin">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="d-flex">
-                                                <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-1" width="24" height="24" alt="Team">
-                                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle" width="24" height="24" alt="Team">
-                                            </div>
-                                            <small class="text-muted">Completed: Apr 10</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Tasks Section -->
-                    <section id="tasks" class="mb-5 section-content" style="display: none;">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2>Tasks</h2>
-                            <div>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-outline-secondary btn-sm active task-filter" data-filter="all">All</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm task-filter" data-filter="my">My Tasks</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm task-filter" data-filter="overdue">Overdue</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card card-hover border-0">
-                            <div class="card-body p-0">
-                                <div class="table-responsive">
-                                    <table class="table table-hover mb-0" id="tasksTable">
-                                        <thead class="table-light">
-                                            <tr>
-                                                <th style="width: 40px;">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="" id="selectAllTasks">
-                                                    </div>
-                                                </th>
-                                                <th>Task</th>
-                                                <th>Project</th>
-                                                <th>Assigned To</th>
-                                                <th>Due Date</th>
-                                                <th>Priority</th>
-                                                <th>Status</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-status="pending" data-priority="high" data-assigned="john">
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="fw-bold task-text">Create wireframes</div>
-                                                    <div class="text-muted small">Website Redesign</div>
-                                                </td>
-                                                <td>Acme Corp</td>
-                                                <td>
-                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
-                                                    John S.
-                                                </td>
-                                                <td>May 10</td>
-                                                <td>
-                                                    <span class="badge bg-danger">High</span>
-                                                </td>
-                                                <td>
-                                                    <span class="badge bg-warning text-dark">In Progress</span>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="pending" data-priority="medium" data-assigned="sarah">
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="fw-bold task-text">Review contract</div>
-                                                    <div class="text-muted small">Mobile App</div>
-                                                </td>
-                                                <td>Global Tech</td>
-                                                <td>
-                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
-                                                    Sarah J.
-                                                </td>
-                                                <td>May 12</td>
-                                                <td>
-                                                    <span class="badge bg-warning text-dark">Medium</span>
-                                                </td>
-                                                <td>
-                                                    <span class="badge bg-secondary">Not Started</span>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="completed" data-priority="low" data-assigned="michael">
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input task-checkbox" type="checkbox" value="" checked>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="fw-bold task-text">Finalize Q2 report</div>
-                                                    <div class="text-muted small">Marketing Campaign</div>
-                                                </td>
-                                                <td>Bright Solutions</td>
-                                                <td>
-                                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
-                                                    Michael C.
-                                                </td>
-                                                <td>Apr 28</td>
-                                                <td>
-                                                    <span class="badge bg-success">Low</span>
-                                                </td>
-                                                <td>
-                                                    <span class="badge bg-success">Completed</span>
-                                                </td>
-                                            </tr>
-                                            <tr data-status="pending" data-priority="medium" data-assigned="emily">
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input task-checkbox" type="checkbox" value="">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="fw-bold task-text">Client meeting</div>
-                                                    <div class="text-muted small">Website Redesign</div>
-                                                </td>
-                                                <td>Acme Corp</td>
-                                                <td>
-                                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-1" width="24" height="24" alt="User">
-                                                    Emily W.
-                                                </td>
-                                                <td>May 15</td>
-                                                <td>
-                                                    <span class="badge bg-warning text-dark">Medium</span>
-                                                </td>
-                                                <td>
-                                                    <span class="badge bg-secondary">Not Started</span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="small text-muted">Showing 4 of 12 tasks</div>
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        View All Tasks
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Messages Section -->
-                    <section id="messages" class="mb-5 section-content" style="display: none;">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2>Messages</h2>
-                            <div>
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newMessageModal">
-                                    <i class="fas fa-plus me-1"></i> New Message
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="card card-hover border-0">
-                            <div class="card-body p-0">
-                                <div class="row g-0">
-                                    <div class="col-md-4 border-end">
-                                        <div class="p-3 border-bottom">
-                                            <div class="input-group">
-                                                <input type="text" class="form-control form-control-sm" placeholder="Search messages...">
-                                                <button class="btn btn-outline-secondary btn-sm" type="button">
-                                                    <i class="fas fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="list-group list-group-flush" style="max-height: 400px; overflow-y: auto;">
-                                            <a href="#" class="list-group-item list-group-item-action border-0 active">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-                                                    <div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h6 class="mb-0">John Smith</h6>
-                                                            <small class="text-white-50">2h ago</small>
-                                                        </div>
-                                                        <p class="small mb-0 text-white-50">About the website redesign project...</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-                                                    <div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h6 class="mb-0">Sarah Johnson</h6>
-                                                            <small class="text-muted">1d ago</small>
-                                                        </div>
-                                                        <p class="small mb-0 text-muted">Contract review for the mobile app...</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-                                                    <div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h6 class="mb-0">Michael Chen</h6>
-                                                            <small class="text-muted">2d ago</small>
-                                                        </div>
-                                                        <p class="small mb-0 text-muted">Feedback on the marketing campaign...</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="list-group-item list-group-item-action border-0">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-2" width="40" height="40" alt="User">
-                                                    <div>
-                                                        <div class="d-flex justify-content-between align-items-center">
-                                                            <h6 class="mb-0">Emily Wilson</h6>
-                                                            <small class="text-muted">3d ago</small>
-                                                        </div>
-                                                        <p class="small mb-0 text-muted">Regarding the upcoming meeting...</p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="d-flex flex-column h-100">
-                                            <div class="p-3 border-bottom">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <h5 class="mb-0">John Smith</h5>
-                                                    <div>
-                                                        <button class="btn btn-sm btn-outline-secondary me-1">
-                                                            <i class="fas fa-reply"></i>
-                                                        </button>
-                                                        <button class="btn btn-sm btn-outline-secondary">
-                                                            <i class="fas fa-ellipsis-v"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 p-3 overflow-auto" style="max-height: 300px;">
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between mb-2">
-                                                        <div class="fw-bold">John Smith</div>
-                                                        <small class="text-muted">Today, 10:30 AM</small>
-                                                    </div>
-                                                    <p>Hi Sarah,</p>
-                                                    <p>I wanted to follow up on the website redesign project. The wireframes look great, but we have a few suggestions for the homepage layout.</p>
-                                                    <p>Could we schedule a call tomorrow to discuss these changes? I'm available between 10 AM and 2 PM.</p>
-                                                    <p>Best regards,<br>John</p>
-                                                </div>
-                                                <div class="mb-4">
-                                                    <div class="d-flex justify-content-between mb-2">
-                                                        <div class="fw-bold">Sarah Johnson</div>
-                                                        <small class="text-muted">Today, 11:45 AM</small>
-                                                    </div>
-                                                    <p>Hi John,</p>
-                                                    <p>Thanks for your feedback. I've shared your suggestions with the design team and we'll prepare some revised options.</p>
-                                                    <p>How about we meet at 11 AM tomorrow? I'll send you a calendar invite shortly.</p>
-                                                    <p>Also, I've attached the latest project timeline for your review.</p>
-                                                    <div class="mt-2">
-                                                        <div class="d-inline-block border p-2 rounded">
-                                                            <i class="fas fa-file-pdf text-danger me-2"></i>
-                                                            <span>Project_Timeline_v3.pdf</span>
-                                                            <small class="text-muted ms-2">(2.4 MB)</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="p-3 border-top">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Type your message...">
-                                                    <button class="btn btn-outline-secondary" type="button">
-                                                        <i class="fas fa-paperclip"></i>
-                                                    </button>
-                                                    <button class="btn btn-primary" type="button">
-                                                        <i class="fas fa-paper-plane"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <!-- Reports Section -->
-                    <section id="reports" class="mb-5 section-content" style="display: none;">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h2>Reports</h2>
-                            <div>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-outline-secondary btn-sm active">This Month</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm">Quarter</button>
-                                    <button type="button" class="btn btn-outline-secondary btn-sm">Year</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row g-4">
-                            <div class="col-lg-8">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-header bg-white">
-                                        <h5 class="mb-0">Revenue Overview</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="revenueChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-4">
-                                <div class="card card-hover border-0 h-100">
-                                    <div class="card-header bg-white">
-                                        <h5 class="mb-0">Client Distribution</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <canvas id="clientDistributionChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="card card-hover border-0 mt-4">
-                                    <div class="card-header bg-white">
-                                        <h5 class="mb-0">Project Performance</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="chart-container" style="height: 300px;">
-                                            <canvas id="projectPerformanceChart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
+            </section>
     
-    <!-- Add Client Modal -->
-    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="clientForm">
-                        <div class="mb-3">
-                            <label for="clientName" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="clientName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientIndustry" class="form-label">Industry</label>
-                            <input type="text" class="form-control" id="clientIndustry">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactName" class="form-label">Contact Person</label>
-                            <input type="text" class="form-control" id="contactName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="contactEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactPhone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="contactPhone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="clientStatus" class="form-label">Status</label>
-                            <select class="form-select" id="clientStatus">
-                                <option value="active">Active</option>
-                                <option value="pending">Pending</option>
-                                <option value="inactive">Inactive</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="saveClient">Save Client</button>
-                </div>
-            </div>
-        </div>
-    </div>
+            <!-- 2. Key Features Section -->
+            <section id="features" class="features-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold mb-3">Powerful Features for Hosting Providers</h2>
+                        <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to manage your hosting clients efficiently in one powerful platform</p>
+                    </div>
     
-    <!-- Add Project Modal -->
-    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProjectModalLabel">New Project</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="projectForm">
-                        <div class="mb-3">
-                            <label for="projectName" class="form-label">Project Name</label>
-                            <input type="text" class="form-control" id="projectName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="projectClient" class="form-label">Client</label>
-                            <select class="form-select" id="projectClient" required>
-                                <option value="">Select Client</option>
-                                <option value="Acme Corporation">Acme Corporation</option>
-                                <option value="Global Tech">Global Tech</option>
-                                <option value="Bright Solutions">Bright Solutions</option>
-                                <option value="Summit Partners">Summit Partners</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="projectDescription" class="form-label">Description</label>
-                            <textarea class="form-control" id="projectDescription" rows="3"></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="projectStart" class="form-label">Start Date</label>
-                                <input type="date" class="form-control" id="projectStart" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="projectEnd" class="form-label">Due Date</label>
-                                <input type="date" class="form-control" id="projectEnd" required>
+                    <div class="row g-4">
+                        <!-- Feature 1 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-people-fill fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Client Profiles</h4>
+                                <p class="text-muted">Complete client records with contact info, service history, notes, and activity logs. Segment clients by status, plan type, or custom tags.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>360° client view</li>
+                                    <li>Custom fields</li>
+                                    <li>Activity timeline</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="projectStatus" class="form-label">Status</label>
-                            <select class="form-select" id="projectStatus">
-                                <option value="planning">Planning</option>
-                                <option value="in-progress" selected>In Progress</option>
-                                <option value="on-hold">On Hold</option>
-                                <option value="completed">Completed</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="saveProject">Create Project</button>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <!-- New Message Modal -->
-    <div class="modal fade" id="newMessageModal" tabindex="-1" aria-labelledby="newMessageModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newMessageModalLabel">New Message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="messageForm">
-                        <div class="mb-3">
-                            <label for="messageRecipient" class="form-label">To</label>
-                            <select class="form-select" id="messageRecipient" required>
-                                <option value="">Select Client</option>
-                                <option value="John Smith">John Smith (Acme Corporation)</option>
-                                <option value="Sarah Johnson">Sarah Johnson (Global Tech)</option>
-                                <option value="Michael Chen">Michael Chen (Bright Solutions)</option>
-                                <option value="Emily Wilson">Emily Wilson (Summit Partners)</option>
-                            </select>
+                        <!-- Feature 2 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-server fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Service Management</h4>
+                                <p class="text-muted">Manage all client services from one dashboard - hosting accounts, domains, SSL certificates, and add-ons with bulk actions.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>One-click provisioning</li>
+                                    <li>Service monitoring</li>
+                                    <li>Automated renewals</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="messageSubject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="messageSubject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="messageContent" class="form-label">Message</label>
-                            <textarea class="form-control" id="messageContent" rows="5" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="messageAttachment" class="form-label">Attachment</label>
-                            <input type="file" class="form-control" id="messageAttachment">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="sendMessage">Send Message</button>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                        <!-- Feature 3 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-credit-card fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Billing Automation</h4>
+                                <p class="text-muted">Automated invoicing, payment processing, dunning management, and revenue reporting with support for 15+ payment gateways.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>Recurring billing</li>
+                                    <li>Late fee automation</li>
+                                    <li>Revenue analytics</li>
+                                </ul>
+                            </div>
+                        </div>
     
-    <script>
-        // Initialize the dashboard when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile sidebar toggle
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.querySelector('.sidebar-overlay');
-            
-            sidebarToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('show');
-                sidebarOverlay.classList.toggle('show');
-            });
-            
-            sidebarOverlay.addEventListener('click', function() {
-                sidebar.classList.remove('show');
-                sidebarOverlay.classList.remove('show');
-            });
-            
-            // Navigation between sections
-            const navLinks = document.querySelectorAll('.sidebar-link');
-            const sections = document.querySelectorAll('.section-content');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
+                        <!-- Feature 4 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-headset fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Support System</h4>
+                                <p class="text-muted">Integrated ticketing with SLA management, canned responses, client satisfaction ratings, and knowledge base integration.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>Ticket automation</li>
+                                    <li>SLA tracking</li>
+                                    <li>Client portal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     
-                    // Remove active class from all links
-                    navLinks.forEach(navLink => {
-                        navLink.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Hide all sections
-                    sections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    
-                    // Show the selected section
-                    const sectionId = this.getAttribute('data-section');
-                    document.getElementById(sectionId).style.display = 'block';
-                    
-                    // Close sidebar on mobile after selection
-                    if (window.innerWidth < 992) {
-                        sidebar.classList.remove('show');
-                        sidebarOverlay.classList.remove('show');
-                    }
-                    
-                    // Update charts when switching to reports
-                    if (sectionId === 'reports') {
-                        updateReportCharts();
-                    }
-                });
-            });
-            
-            // Client search functionality
-            const clientSearch = document.getElementById('clientSearch');
-            if (clientSearch) {
-                clientSearch.addEventListener('input', function() {
-                    const searchTerm = this.value.toLowerCase();
-                    const rows = document.querySelectorAll('#clientsTable tbody tr');
-                    
-                    rows.forEach(row => {
-                        const clientName = row.querySelector('td').textContent.toLowerCase();
-                        if (clientName.includes(searchTerm)) {
-                            row.style.display = '';
-                        } else {
-                            row.style.display = 'none';
-                        }
-                    });
-                });
-            }
-            
-            // Client filter buttons
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    const rows = document.querySelectorAll('#clientsTable tbody tr');
-                    
-                    rows.forEach(row => {
-                        const status = row.getAttribute('data-status');
-                        
-                        if (filter === 'all' || filter === status) {
-                            row.style.display = '';
-                        } else {
-                            row.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Task filter buttons
-            const taskFilterButtons = document.querySelectorAll('.task-filter');
-            taskFilterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    taskFilterButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    const rows = document.querySelectorAll('#tasksTable tbody tr');
-                    
-                    rows.forEach(row => {
-                        const status = row.getAttribute('data-status');
-                        const assigned = row.getAttribute('data-assigned');
-                        const dueDate = row.querySelector('td:nth-child(5)').textContent;
-                        
-                        let showRow = false;
-                        
-                        if (filter === 'all') {
-                            showRow = true;
-                        } else if (filter === 'my') {
-                            // In a real app, this would check against logged-in user
-                            showRow = assigned === 'sarah'; // Assuming Sarah is current user
-                        } else if (filter === 'overdue') {
-                            const today = new Date();
-                            const due = new Date(dueDate);
-                            showRow = due < today && status !== 'completed';
-                        }
-                        
-                        row.style.display = showRow ? '' : 'none';
-                    });
-                });
-            });
-            
-            // Task checkbox functionality
-            const taskCheckboxes = document.querySelectorAll('.task-checkbox');
-            taskCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const row = this.closest('tr');
-                    const statusCell = row.querySelector('td:nth-child(7)');
-                    
-                    if (this.checked) {
-                        statusCell.innerHTML = '<span class="badge bg-success">Completed</span>';
-                        row.setAttribute('data-status', 'completed');
-                    } else {
-                        statusCell.innerHTML = '<span class="badge bg-secondary">Not Started</span>';
-                        row.setAttribute('data-status', 'pending');
-                    }
-                });
-            });
-            
-            // Select all tasks checkbox
-            const selectAllCheckbox = document.getElementById('selectAllTasks');
-            if (selectAllCheckbox) {
-                selectAllCheckbox.addEventListener('change', function() {
-                    const checkboxes = document.querySelectorAll('.task-checkbox');
-                    checkboxes.forEach(checkbox => {
-                        checkbox.checked = this.checked;
-                        checkbox.dispatchEvent(new Event('change'));
-                    });
-                });
-            }
-            
-            // View client buttons
-            const viewClientButtons = document.querySelectorAll('.view-client');
-            viewClientButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const clientId = this.getAttribute('data-client');
-                    alert(`Viewing details for client: ${clientId}`);
-                    // In a real app, this would open a modal or navigate to client details
-                });
-            });
-            
-            // Save client form
-            const saveClientButton = document.getElementById('saveClient');
-            if (saveClientButton) {
-                saveClientButton.addEventListener('click', function() {
-                    const clientName = document.getElementById('clientName').value;
-                    const contactName = document.getElementById('contactName').value;
-                    
-                    if (clientName && contactName) {
-                        alert(`New client "${clientName}" with contact "${contactName}" has been added!`);
-                        // In a real app, this would submit the form via AJAX
-                        bootstrap.Modal.getInstance(document.getElementById('addClientModal')).hide();
-                        document.getElementById('clientForm').reset();
-                        
-                        // Update client count
-                        const totalClients = document.getElementById('totalClients');
-                        totalClients.textContent = parseInt(totalClients.textContent) + 1;
-                    } else {
-                        alert('Please fill in all required fields');
-                    }
-                });
-            }
-            
-            // Save project form
-            const saveProjectButton = document.getElementById('saveProject');
-            if (saveProjectButton) {
-                saveProjectButton.addEventListener('click', function() {
-                    const projectName = document.getElementById('projectName').value;
-                    const projectClient = document.getElementById('projectClient').value;
-                    
-                    if (projectName && projectClient) {
-                        alert(`New project "${projectName}" for client "${projectClient}" has been created!`);
-                        // In a real app, this would submit the form via AJAX
-                        bootstrap.Modal.getInstance(document.getElementById('addProjectModal')).hide();
-                        document.getElementById('projectForm').reset();
-                        
-                        // Update project count
-                        const activeProjects = document.getElementById('activeProjects');
-                        activeProjects.textContent = parseInt(activeProjects.textContent) + 1;
-                    } else {
-                        alert('Please fill in all required fields');
-                    }
-                });
-            }
-            
-            // Send message form
-            const sendMessageButton = document.getElementById('sendMessage');
-            if (sendMessageButton) {
-                sendMessageButton.addEventListener('click', function() {
-                    const recipient = document.getElementById('messageRecipient').value;
-                    const subject = document.getElementById('messageSubject').value;
-                    
-                    if (recipient && subject) {
-                        alert(`Message to "${recipient}" with subject "${subject}" has been sent!`);
-                        // In a real app, this would submit the form via AJAX
-                        bootstrap.Modal.getInstance(document.getElementById('newMessageModal')).hide();
-                        document.getElementById('messageForm').reset();
-                    } else {
-                        alert('Please fill in all required fields');
-                    }
-                });
-            }
-            
-            // Initialize charts
-            initializeCharts();
-        });
-        
-        // Initialize charts
-        function initializeCharts() {
-            // Client Growth Chart
-            const clientGrowthCtx = document.getElementById('clientGrowthChart').getContext('2d');
-            const clientGrowthChart = new Chart(clientGrowthCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    datasets: [{
-                        label: 'New Clients',
-                        data: [12, 19, 15, 22, 18, 25, 23, 30, 28, 32, 35, 40],
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        tension: 0.4,
-                        fill: true
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            
-            // Revenue Chart
-            const revenueCtx = document.getElementById('revenueChart').getContext('2d');
-            const revenueChart = new Chart(revenueCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-                    datasets: [{
-                        label: 'Revenue',
-                        data: [12500, 18000, 15000, 22000],
-                        backgroundColor: [
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(54, 162, 235, 0.6)'
-                        ],
-                        borderColor: [
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(54, 162, 235, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            
-            // Client Distribution Chart
-            const clientDistCtx = document.getElementById('clientDistributionChart').getContext('2d');
-            const clientDistChart = new Chart(clientDistCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Technology', 'Finance', 'Healthcare', 'Retail', 'Other'],
-                    datasets: [{
-                        data: [35, 25, 20, 15, 5],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 206, 86, 0.6)',
-                            'rgba(75, 192, 192, 0.6)',
-                            'rgba(153, 102, 255, 0.6)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
-            });
-            
-            // Project Performance Chart
-            const projectPerfCtx = document.getElementById('projectPerformanceChart').getContext('2d');
-            const projectPerfChart = new Chart(projectPerfCtx, {
-                type: 'radar',
-                data: {
-                    labels: ['On Time', 'Budget', 'Quality', 'Client Satisfaction', 'Team Satisfaction'],
-                    datasets: [
-                        {
-                            label: 'Current Projects',
-                            data: [85, 78, 92, 88, 82],
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#fff',
-                            pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
-                        },
-                        {
-                            label: 'Industry Average',
-                            data: [72, 65, 78, 75, 70],
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
-                            pointBorderColor: '#fff',
-                            pointHoverBackgroundColor: '#fff',
-                            pointHoverBorderColor: 'rgba(255, 99, 132, 1)'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        r: {
-                            angleLines: {
-                                display: true
-                            },
-                            suggestedMin: 50,
-                            suggestedMax: 100
-                        }
-                    }
-                }
-            });
-            
-            // Store chart references for later updates
-            window.charts = {
-                clientGrowth: clientGrowthChart,
-                revenue: revenueChart,
-                clientDistribution: clientDistChart,
-                projectPerformance: projectPerfChart
-            };
-        }
-        
-        // Update report charts with fresh data
-        function updateReportCharts() {
-            // Simulate fetching new data
-            const newClientData = [12, 19, 15, 22, 18, 25, 23, 30, 28, 32, 35, 40].map(value => value + Math.floor(Math.random() * 5));
-            const newRevenueData = [12500, 18000, 15000, 22000].map(value => value + Math.floor(Math.random() * 2000));
-            
-            // Update charts
-            window.charts.clientGrowth.data.datasets[0].data = newClientData;
-            window.charts.clientGrowth.update();
-            
-            window.charts.revenue.data.datasets[0].data = newRevenueData;
-            window.charts.revenue.update();
-            
-            // Rotate client distribution colors for demo purposes
-            const backgroundColors = window.charts.clientDistribution.data.datasets[0].backgroundColor;
-            const rotatedColors = [...backgroundColors.slice(1), backgroundColors[0]];
-            window.charts.clientDistribution.data.datasets[0].backgroundColor = rotatedColors;
-            window.charts.clientDistribution.update();
-            
-            // Randomize project performance slightly
-            window.charts.projectPerformance.data.datasets[0].data = 
-                window.charts.projectPerformance.data.datasets[0].data.map(
-                    value => Math.min(100, value + Math.floor(Math.random() * 10 - 3))
-            );
-            window.charts.projectPerformance.update();
-        }
-    </script>
-</body>
-</html>
+                    <!-- Second Row of Features -->
+                    <div class="row g-4 mt-2">
+                        <!-- Feature 5 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-graph-up fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Reporting & Analytics</h4>
+                                <p class="text-muted">Comprehensive reports on revenue, client growth, service usage, and support metrics with customizable dashboards.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>Custom reports</li>
+                                    <li>Export to PDF/Excel</li>
+                                    <li>Scheduled reports</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Feature 6 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-envelope fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Email Marketing</h4>
+                                <p class="text-muted">Create and send targeted email campaigns to clients with templates, automation, and performance tracking.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>Pre-built templates</li>
+                                    <li>Segmentation</li>
+                                    <li>Open/click tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Feature 7 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-shield-lock fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Security & Compliance</h4>
+                                <p class="text-muted">Enterprise-grade security with role-based access, audit logs, and compliance tools for GDPR, PCI, and more.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>Two-factor auth</li>
+                                    <li>IP whitelisting</li>
+                                    <li>Audit trails</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Feature 8 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="bi bi-puzzle fs-3 text-primary"></i>
+                                </div>
+                                <h4 class="mb-3">Integrations</h4>
+                                <p class="text-muted">Connect with popular tools like WHMCS, cPanel, Plesk, Slack, QuickBooks, and more via API or pre-built connectors.</p>
+                                <ul class="text-muted small ps-3 mt-3">
+                                    <li>API access</li>
+                                    <li>Zapier integration</li>
+                                    <li>Webhooks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- 3. Dashboard Preview Section -->
+            <section id="demo" class="dashboard-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-5 mb-lg-0 dashboard-content">
+                            <h2 class="fw-bold mb-4">Experience Our Intuitive Dashboard</h2>
+                            <p class="lead text-muted mb-4">Our clean interface puts all the tools you need at your fingertips while minimizing clutter and distractions.</p>
+                            
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="bi bi-speedometer2 fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">At-a-glance Overview</h5>
+                                    <p class="text-muted mb-0">Quickly see key metrics like active clients, revenue, tickets, and server status without digging through reports.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="bi bi-lightning-charge fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Quick Actions</h5>
+                                    <p class="text-muted mb-0">Common tasks like creating invoices, provisioning services, or replying to tickets are just one click away.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-start">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                    <i class="bi bi-columns-gap fs-4"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Customizable Layout</h5>
+                                    <p class="text-muted mb-0">Arrange widgets to match your workflow and save different layouts for different team members.</p>
+                                </div>
+                            </div>
+                            
+                            <a href="#" class="btn btn-primary mt-4 px-4 py-3">Request Personalized Demo</a>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="dashboard-slideshow">
+                                <!-- Slide 1 -->
+                                <div class="dashboard-slide active" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');"></div>
+                                
+                                <!-- Slide 2 -->
+                                <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80');"></div>
+                                
+                                <!-- Slide 3 -->
+                                <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb
