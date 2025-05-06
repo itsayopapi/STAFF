@@ -1497,21 +1497,36 @@
       <span id="unreadBadge" class="unread-badge">0</span>
       <span id="statusIndicator" class="status-indicator"></span>
     </button>
-    <div id="chatWidget" class="chat-widget-container">
-      <!-- Tawk.to iframe loads here -->
-    </div>
+    <div id="chatWidget" class="chat-widget-container"></div>
     <div id="offlineHours" class="offline-hours-alert">
-      <i class="fas fa-clock me-2"></i>We're currently offline
+      <i class="fas fa-clock me-2"></i>
+      <span id="offlineMessage"></span>
+      <span id="countdown"></span>
     </div>
+    <div id="workingHoursModal" class="working-hours-modal">
+      <div class="modal-content">
+        <h5><i class="fas fa-globe-americas me-2"></i>Our Working Hours</h5>
+        <div id="regionsList"></div>
+        <div class="holiday-notice mt-3">
+          <i class="fas fa-calendar-times me-2"></i>
+          <strong>Next Holiday:</strong> <span id="nextHoliday">None scheduled</span>
+        </div>
+        <button id="closeModal" class="btn btn-sm btn-primary mt-3">Close</button>
+      </div>
+    </div>
+    <button id="viewHoursBtn" class="view-hours-btn btn btn-sm btn-outline-light">
+      <i class="fas fa-business-time me-1"></i> View Hours
+    </button>
   </div>
   
   <style>
-    /* Core Styles */
+    /* Core Chat Widget Styles */
     .live-chat-wrapper {
       position: fixed;
       bottom: 30px;
       right: 30px;
       z-index: 9999;
+      font-family: 'Poppins', sans-serif;
     }
     
     .chat-btn {
@@ -1588,7 +1603,76 @@
       font-size: 14px;
       display: none;
       width: max-content;
+      max-width: 300px;
       border: 1px solid #eaeaea;
+    }
+    
+    #countdown {
+      display: block;
+      font-size: 12px;
+      color: #6c757d;
+      margin-top: 5px;
+    }
+    
+    /* Working Hours Modal */
+    .working-hours-modal {
+      position: absolute;
+      bottom: 70px;
+      right: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      padding: 20px;
+      width: 320px;
+      display: none;
+      z-index: 10000;
+      border: 1px solid #ddd;
+    }
+    
+    .working-hours-modal h5 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .region-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .region-name {
+      font-weight: 600;
+      color: #4e73df;
+    }
+    
+    .region-hours {
+      font-size: 13px;
+      color: #6c757d;
+    }
+    
+    .holiday-notice {
+      font-size: 13px;
+      color: #e74a3b;
+      display: flex;
+      align-items: center;
+    }
+    
+    /* View Hours Button */
+    .view-hours-btn {
+      position: absolute;
+      bottom: -25px;
+      right: 10px;
+      font-size: 12px;
+      padding: 3px 8px;
+      opacity: 0.8;
+      transition: all 0.3s;
+    }
+    
+    .view-hours-btn:hover {
+      opacity: 1;
+      transform: translateY(-2px);
     }
     
     /* Widget Container */
@@ -1607,59 +1691,266 @@
     }
     
     @media (max-width: 576px) {
-      .chat-widget-container {
+      .chat-widget-container, 
+      .working-hours-modal {
         width: 100vw;
-        height: 70vh;
         right: -20px;
-        bottom: 60px;
         border-radius: 10px 10px 0 0;
       }
       .btn-text { display: none; }
-      .offline-hours-alert { bottom: 60px; }
+      .offline-hours-alert { 
+        bottom: 60px;
+        right: -10px;
+      }
     }
   </style>
   
   <script>
-    // Configuration - Update These!
+    // ========================
+    // CONFIGURATION
+    // ========================
     const config = {
+      // Multi-region working hours
       workingHours: {
-        active: true, // Enable working hours feature
-        timezone: 'America/New_York', // Your timezone
-        hours: { 
-          start: 9, // 9 AM
-          end: 17   // 5 PM
-        },
-        days: [1, 2, 3, 4, 5] // Mon-Fri
+        regions: [
+          {
+            name: "North America",
+            timezone: "America/New_York",
+            hours: { start: 9, end: 17 }, // 9AM-5PM
+            days: [1, 2, 3, 4, 5], // Mon-Fri
+            offlineMessage: "Our North America team is offline"
+          },
+          {
+            name: "Europe",
+            timezone: "Europe/London",
+            hours: { start: 8, end: 16 }, // 8AM-4PM
+            days: [1, 2, 3, 4, 5],
+            offlineMessage: "Our Europe team is offline"
+          },
+          {
+            name: "Asia",
+            timezone: "Asia/Tokyo",
+            hours: { start: 10, end: 18 }, // 10AM-6PM
+            days: [1, 2, 3, 4, 5],
+            offlineMessage: "Our Asia team is offline"
+          }
+        ],
+        default: {
+          offlineMessage: "We're currently offline",
+          onlineHours: "9AM-5PM your local time"
+        }
       },
-      notificationSound: 'https://assets.mixkit.co/sfx/preview/mixkit-alert-quick-chime-766.mp3' // Notification sound URL
+      
+      // Holidays/Special Days (YYYY-MM-DD format)
+      holidays: [
+        {
+          date: "2023-12-25",
+          name: "Christmas Day",
+          regions: ["America/New_York", "Europe/London"]
+        },
+        {
+          date: "2023-11-23",
+          name: "Thanksgiving",
+          regions: ["America/New_York"]
+        },
+        // Add more holidays as needed
+      ],
+      
+      // Notification Settings
+      notificationSound: 'https://assets.mixkit.co/sfx/preview/mixkit-alert-quick-chime-766.mp3'
     };
   
-    // Chat Control
+    // ========================
+    // CHAT WIDGET SETUP
+    // ========================
     const chatBtn = document.getElementById('chatToggle');
     const chatWidget = document.getElementById('chatWidget');
     const unreadBadge = document.getElementById('unreadBadge');
     const statusIndicator = document.getElementById('statusIndicator');
     const offlineAlert = document.getElementById('offlineHours');
+    const offlineMessage = document.getElementById('offlineMessage');
+    const countdownEl = document.getElementById('countdown');
+    const viewHoursBtn = document.getElementById('viewHoursBtn');
+    const workingHoursModal = document.getElementById('workingHoursModal');
+    const regionsList = document.getElementById('regionsList');
+    const nextHolidayEl = document.getElementById('nextHoliday');
+    const closeModal = document.getElementById('closeModal');
     
     let unreadCount = 0;
     const audio = new Audio(config.notificationSound);
-    
-    // Check Working Hours
-    function isWithinWorkingHours() {
-      if (!config.workingHours.active) return true;
+    let currentRegion = null;
+    let isHoliday = false;
+  
+    // ========================
+    // TIMEZONE FUNCTIONS
+    // ========================
+    function getVisitorTimezone() {
+      try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone;
+      } catch (e) {
+        console.warn("Timezone detection failed, using UTC");
+        return "UTC";
+      }
+    }
+  
+    function getRegionConfig(timezone) {
+      // Check for exact match
+      const exactMatch = config.workingHours.regions.find(r => 
+        r.timezone.toLowerCase() === timezone.toLowerCase()
+      );
+      if (exactMatch) return exactMatch;
+      
+      // Check for city-level match
+      const cityMatch = config.workingHours.regions.find(r =>
+        timezone.toLowerCase().startsWith(r.timezone.split('/')[0].toLowerCase())
+      );
+      if (cityMatch) return cityMatch;
+      
+      // Return default config
+      return config.workingHours.default;
+    }
+  
+    // ========================
+    // HOLIDAY CHECK
+    // ========================
+    function checkHolidays(timezone) {
+      const today = new Date().toISOString().split('T')[0];
+      
+      // Find holidays for this region
+      const regionHolidays = config.holidays.filter(h => 
+        h.regions.includes(timezone) || h.regions.includes(timezone.split('/')[0])
+      );
+      
+      // Check if today is a holiday
+      const todayHoliday = regionHolidays.find(h => h.date === today);
+      if (todayHoliday) {
+        return {
+          isHoliday: true,
+          message: `Today is ${todayHoliday.name} - Closed`
+        };
+      }
+      
+      // Find next upcoming holiday
+      const upcomingHolidays = regionHolidays.filter(h => h.date >= today);
+      if (upcomingHolidays.length > 0) {
+        upcomingHolidays.sort((a, b) => new Date(a.date) - new Date(b.date));
+        return {
+          nextHoliday: upcomingHolidays[0]
+        };
+      }
+      
+      return { isHoliday: false };
+    }
+  
+    // ========================
+    // WORKING HOURS CHECK
+    // ========================
+    function isWithinWorkingHours(region) {
+      if (!region.hours) return false; // No hours defined
+      if (isHoliday) return false;
       
       const now = new Date();
-      const currentHour = now.getHours();
-      const currentDay = now.getDay(); // 0 = Sunday
+      const options = { timeZone: region.timezone || 'UTC', hour12: false };
       
-      return config.workingHours.days.includes(currentDay) && 
-             currentHour >= config.workingHours.hours.start && 
-             currentHour < config.workingHours.hours.end;
+      try {
+        const localTime = now.toLocaleString('en-US', options);
+        const currentHour = parseInt(localTime.split(', ')[1].split(':')[0]);
+        const currentDay = now.toLocaleString('en-US', { ...options, weekday: 'long' });
+        
+        const dayMap = { 
+          sunday: 0, monday: 1, tuesday: 2, wednesday: 3, 
+          thursday: 4, friday: 5, saturday: 6 
+        };
+        const currentDayNum = dayMap[currentDay.toLowerCase()];
+        
+        return region.days.includes(currentDayNum) && 
+               currentHour >= region.hours.start && 
+               currentHour < region.hours.end;
+      } catch (e) {
+        console.error("Error checking working hours:", e);
+        return false;
+      }
     }
-    
-    // Update Chat Status
+  
+    // ========================
+    // COUNTDOWN CALCULATION
+    // ========================
+    function getNextOpeningTime(region) {
+      if (!region.hours) return null;
+      
+      const now = new Date();
+      const options = { timeZone: region.timezone || 'UTC' };
+      const localTime = new Date(now.toLocaleString('en-US', options));
+      
+      // Create next opening time
+      let nextOpen = new Date(localTime);
+      nextOpen.setHours(region.hours.start, 0, 0, 0);
+      
+      // If today is a working day but before opening
+      const currentDay = localTime.getDay();
+      if (region.days.includes(currentDay) && localTime < nextOpen) {
+        return nextOpen;
+      }
+      
+      // Find next working day
+      let daysToAdd = 1;
+      while (daysToAdd < 7) {
+        const nextDay = new Date(localTime);
+        nextDay.setDate(localTime.getDate() + daysToAdd);
+        if (region.days.includes(nextDay.getDay())) {
+          nextOpen = new Date(nextDay);
+          nextOpen.setHours(region.hours.start, 0, 0, 0);
+          return nextOpen;
+        }
+        daysToAdd++;
+      }
+      
+      return null;
+    }
+  
+    function updateCountdown(region) {
+      if (!region.hours) return;
+      
+      const nextOpen = getNextOpeningTime(region);
+      if (!nextOpen) {
+        countdownEl.textContent = '';
+        return;
+      }
+      
+      const now = new Date();
+      const diffMs = nextOpen - now;
+      
+      if (diffMs <= 0) {
+        countdownEl.textContent = '';
+        return;
+      }
+      
+      const diffHrs = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      
+      countdownEl.textContent = `Back in ${diffHrs}h ${diffMins}m`;
+    }
+  
+    // ========================
+    // STATUS UPDATES
+    // ========================
     function updateChatStatus() {
-      const isOnline = isWithinWorkingHours();
+      const visitorTimezone = getVisitorTimezone();
+      currentRegion = getRegionConfig(visitorTimezone);
+      
+      // Check holidays
+      const holidayCheck = checkHolidays(currentRegion.timezone || visitorTimezone);
+      isHoliday = holidayCheck.isHoliday || false;
+      
+      // Update next holiday display
+      if (holidayCheck.nextHoliday) {
+        const holidayDate = new Date(holidayCheck.nextHoliday.date);
+        nextHolidayEl.textContent = `${holidayCheck.nextHoliday.name} (${holidayDate.toLocaleDateString()})`;
+      } else {
+        nextHolidayEl.textContent = "None scheduled";
+      }
+      
+      const isOnline = !isHoliday && isWithinWorkingHours(currentRegion);
       
       if (isOnline) {
         chatBtn.classList.remove('offline');
@@ -1668,11 +1959,64 @@
       } else {
         chatBtn.classList.add('offline');
         statusIndicator.classList.add('offline');
+        
+        // Set offline message
+        let message = isHoliday ? 
+          holidayCheck.message : 
+          currentRegion.offlineMessage || config.workingHours.default.offlineMessage;
+        
+        if (!isHoliday && currentRegion.hours) {
+          const options = { timeZone: currentRegion.timezone, hour12: true };
+          const startTime = new Date();
+          startTime.setHours(currentRegion.hours.start, 0, 0, 0);
+          const endTime = new Date();
+          endTime.setHours(currentRegion.hours.end, 0, 0, 0);
+          
+          message += ` (${startTime.toLocaleTimeString('en-US', { ...options, hour: 'numeric' })}-${endTime.toLocaleTimeString('en-US', { ...options, hour: 'numeric' })} ${currentRegion.timezone.split('/')[1] || currentRegion.timezone})`;
+        }
+        
+        offlineMessage.textContent = message;
         offlineAlert.style.display = 'block';
+        
+        // Update countdown
+        updateCountdown(currentRegion);
       }
+      
+      console.log(`Chat Status: ${isOnline ? 'ONLINE' : 'OFFLINE'}`, 
+                  `Region: ${currentRegion.name || 'Default'}`, 
+                  `Holiday: ${isHoliday}`);
     }
-    
-    // Toggle Chat Visibility
+  
+    // ========================
+    // WORKING HOURS MODAL
+    // ========================
+    function renderWorkingHours() {
+      regionsList.innerHTML = '';
+      
+      config.workingHours.regions.forEach(region => {
+        const regionEl = document.createElement('div');
+        regionEl.className = 'region-item';
+        
+        const daysMap = {
+          1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat', 0: 'Sun'
+        };
+        const daysStr = region.days.map(d => daysMap[d]).join(', ');
+        
+        regionEl.innerHTML = `
+          <div class="region-name">${region.name}</div>
+          <div class="region-hours">
+            ${daysStr}: ${region.hours.start}AM - ${region.hours.end}PM 
+            (${region.timezone.replace('_', ' ')})
+          </div>
+        `;
+        
+        regionsList.appendChild(regionEl);
+      });
+    }
+  
+    // ========================
+    // EVENT LISTENERS
+    // ========================
     chatBtn.addEventListener('click', function() {
       if (chatWidget.style.display === 'block') {
         chatWidget.style.display = 'none';
@@ -1682,20 +2026,32 @@
         }
       } else {
         chatWidget.style.display = 'block';
-        // Focus chat if already loaded
         if (window.Tawk_API && window.Tawk_API.maximize) {
           window.Tawk_API.maximize();
         }
       }
     });
-    
-    // Update Unread Badge
-    function updateUnreadBadge() {
-      unreadBadge.textContent = unreadCount;
-      unreadBadge.style.display = unreadCount > 0 ? 'flex' : 'none';
-    }
-    
-    // Initialize Tawk.to
+  
+    viewHoursBtn.addEventListener('click', function() {
+      workingHoursModal.style.display = 'block';
+    });
+  
+    closeModal.addEventListener('click', function() {
+      workingHoursModal.style.display = 'none';
+    });
+  
+    // Close modal when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!workingHoursModal.contains(e.target) && 
+          e.target !== viewHoursBtn && 
+          !viewHoursBtn.contains(e.target)) {
+        workingHoursModal.style.display = 'none';
+      }
+    });
+  
+    // ========================
+    // TAWK.TO INTEGRATION
+    // ========================
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_API.onLoad = function() {
       // Append iframe to our container
@@ -1704,7 +2060,7 @@
       
       // Status listeners
       window.Tawk_API.onStatusChange = function(status) {
-        if (status === 'online') {
+        if (status === 'online' && !isHoliday && isWithinWorkingHours(currentRegion)) {
           statusIndicator.classList.add('online');
           statusIndicator.classList.remove('offline');
         } else {
@@ -1722,28 +2078,24 @@
         }
       };
     };
-    
-    // Custom Triggers
-    function triggerChat(message = '') {
-      chatWidget.style.display = 'block';
-      if (window.Tawk_API && window.Tawk_API.maximize) {
-        window.Tawk_API.maximize();
-        if (message) window.Tawk_API.setChatMessage(message);
-      }
+  
+    function updateUnreadBadge() {
+      unreadBadge.textContent = unreadCount;
+      unreadBadge.style.display = unreadCount > 0 ? 'flex' : 'none';
     }
-    
-    // Example: Auto-trigger after 30s on page
-    setTimeout(() => {
-      if (isWithinWorkingHours() && !sessionStorage.getItem('chatShown')) {
-        triggerChat("Hi there! Need help with our hosting solutions?");
-        sessionStorage.setItem('chatShown', 'true');
-      }
-    }, 30000);
-    
-    // Check status every minute
+  
+    // ========================
+    // INITIALIZATION
+    // ========================
+    renderWorkingHours();
     updateChatStatus();
-    setInterval(updateChatStatus, 60000);
-    
+    setInterval(updateChatStatus, 60000); // Update every minute
+    setInterval(() => {
+      if (!isWithinWorkingHours(currentRegion) && !isHoliday) {
+        updateCountdown(currentRegion);
+      }
+    }, 60000); // Update countdown every minute
+  
     // Load Tawk.to script
     const tawkScript = document.createElement('script');
     tawkScript.src = 'https://embed.tawk.to/YOUR_WIDGET_ID/default';

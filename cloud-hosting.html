@@ -1320,7 +1320,7 @@
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <a href="#pricing" class="btn btn-primary btn-lg px-4"
+              <a href="http://my.wefithost.com/manage" class="btn btn-primary btn-lg px-4"
                 >Get Started</a
               >
               <a href="#features" class="btn btn-outline-light btn-lg px-4"
@@ -1333,26 +1333,39 @@
               class="card bg-white text-dark p-4 shadow-lg floating"
               data-aos="fade-left"
             >
-              <h3 class="h4 mb-3">Start in minutes</h3>
-              <div class="mb-3">
-                <label class="form-label">Choose your plan:</label>
-                <select class="form-select">
-                  <option>Starter - $29/month</option>
-                  <option>Professional - $59/month</option>
-                  <option>Business - $99/month</option>
-                  <option>Enterprise - Custom</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Select data center:</label>
-                <select class="form-select">
-                  <option>North America (East)</option>
-                  <option>North America (West)</option>
-                  <option>Europe</option>
-                  <option>Asia Pacific</option>
-                </select>
-              </div>
-              <button class="btn btn-primary w-100">Deploy Now</button>
+            <h3 class="h4 mb-3">Start in minutes</h3>
+            <div class="mb-3">
+              <label class="form-label">Choose your plan:</label>
+              <select class="form-select" id="planSelect">
+                <option value="manage">Starter - $29/month</option>
+                <option value="manage">Professional - $59/month</option>
+                <option value="manage">Business - $99/month</option>
+                <option value="build-server">Enterprise - Custom</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Select data center:</label>
+              <select class="form-select" id="dataCenterSelect">
+                <option>North America (East)</option>
+                <option>North America (West)</option>
+                <option>Europe</option>
+                <option>Asia Pacific</option>
+              </select>
+            </div>
+            <button class="btn btn-primary w-100" id="deployButton">Deploy Now</button>
+            
+            <script>
+              document.getElementById('deployButton').addEventListener('click', function() {
+                const selectedPlan = document.getElementById('planSelect').value;
+                const baseUrl = 'https://my.wefithost.com';
+                
+                if (selectedPlan === 'build-server') {
+                  window.location.href = `${baseUrl}/build-server`;
+                } else {
+                  window.location.href = `${baseUrl}/manage`;
+                }
+              });
+            </script>
             </div>
           </div>
         </div>
