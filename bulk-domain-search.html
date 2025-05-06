@@ -30,6 +30,8 @@
       rel="stylesheet"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
 
@@ -282,15 +284,33 @@
       }
 
       .domain-hero {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
+        background: url(./bulk-domain-search-hero.jpg), #555;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
         padding: 7rem 0 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
         position: relative;
         overflow: hidden;
+        height: 100vh;
+      }
+
+      .btn-cta {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .btn-cta:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .domain-hero-container {
+        padding-bottom: 8rem;
       }
 
       .domain-hero-content {
@@ -356,7 +376,7 @@
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
         position: relative;
         z-index: 1;
-        height: 400px;
+        height: 540px;
       }
 
       .domain-search-form {
@@ -696,6 +716,22 @@
         .domain-tld {
           padding: 0.75rem 1rem;
           font-size: 0.9rem;
+        }
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
         }
       }
     </style>
@@ -1560,7 +1596,10 @@
         <div class="domain-hero-pattern"></div>
         <div class="container">
           <div class="row align-items-center domain-hero-container">
-            <div class="col-11 order-lg-1 domain-hero-content">
+            <div
+              class="col-11 order-lg-1 domain-hero-content"
+              data-aos="fade-right"
+            >
               <span class="badge bg-white text-primary mb-3 py-2 px-3"
                 >Bulk Domain Search</span
               >
@@ -1570,11 +1609,20 @@
                 search. Ideal for businesses, resellers. Save time and make
                 smarter domain registration decisions.
               </p>
+
+              <div class="d-flex gap-3">
+                <a href="#domain-pricing" class="btn btn-cta btn-lg px-4"
+                  >View Pricing</a
+                >
+                <a href="#faq-section" class="btn btn-outline-light btn-lg px-4"
+                  >Learn More</a
+                >
+              </div>
             </div>
             <div
               class="col-11 order-lg-2 order-1 mb-5 mb-lg-0 domain-search-row"
             >
-              <div class="domain-search-container">
+              <div class="domain-search-container floating">
                 <form
                   id="domainSearchForm"
                   action="https://my.wefithost.com/domain-search"
@@ -1698,7 +1746,7 @@ example.org"
       <!-- key features end -->
 
       <!-- Domain Pricing -->
-      <section id="domain-pricing" class="py-10">
+      <section id="domain-pricing" class="py-10" data-aos="fade-up">
         <div class="container">
           <div class="section-header">
             <h2>Domain Pricing</h2>
@@ -1834,7 +1882,11 @@ example.org"
       </section>
 
       <!-- Features -->
-      <section id="how-it-works" class="feature-section pb-10">
+      <section
+        id="how-it-works"
+        class="feature-section pb-10"
+        data-aos="fade-up"
+      >
         <div class="container">
           <div class="row align-items-center g-5">
             <div class="col-lg-6">
@@ -1895,7 +1947,7 @@ example.org"
       </section>
 
       <!-- Pricing Features -->
-      <section class="feature-section bg-light py-10">
+      <section class="feature-section bg-light py-10" data-aos="fade-up">
         <div class="container">
           <div class="row align-items-center g-5">
             <div class="col-lg-6 order-lg-1 order-2">
@@ -1962,7 +2014,7 @@ example.org"
 
       <!-- FAQs -->
 
-      <section class="faq-section py-10">
+      <section class="faq-section py-10" id="faq-section" data-aos="fade-up">
         <div class="container">
           <div class="text-center mb-5">
             <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
@@ -2136,6 +2188,7 @@ example.org"
     <footer
       class="pt-10 pb-3 mainfooterstart mb-0"
       style="background-color: #1e293b; color: white"
+      data-aos="fade-up"
     >
       <div class="container">
         <div class="row">
@@ -2466,6 +2519,16 @@ example.org"
     </style>
 
     <!-- Footer End -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize animations
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+    </script>
 
     <!-- Libs JS -->
     <script
