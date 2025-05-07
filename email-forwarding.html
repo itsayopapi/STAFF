@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- JQuery -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <title>Smart & Effortless Email Forwarding | wefithost</title>
+
+    <style>
+      :root {
+        --primary-color: #6b63ff;
+        --secondary-color: #6c757d;
+        --dark-color: #1e293b;
+        --light-color: #f8f9fa;
+        --accent-color: #00c9a7;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #6a11cb 100%
+        );
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      /* Page Specific Styles */
+
+      .badge {
+        background-color: var(--dark-color);
+      }
+
+      .hero-section {
+        background: var(--gradient);
+        color: white;
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://img.freepik.com/premium-photo/businessman-typing-laptop-computer-send-e-mail-business-contact-communications-concept_50039-2487.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .hero-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      @media (max-width: 991px) {
+        .hero-image img {
+          max-height: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 3rem 0;
+        }
+        .hero-image img {
+          max-height: 250px;
+        }
+      }
+
+      .stats-section {
+        background: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(78, 102, 248, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .feature-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      /* Benefits */
+      .benefit {
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .benefit:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-light);
+      }
+
+      .benefit-item {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .benefit-dot {
+        position: absolute;
+        left: -38px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 4px solid white;
+        box-shadow: 0 0 0 2px var(--primary);
+      }
+
+      .pricing-card {
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-card.popular {
+        border: 2px solid var(--primary-color);
+        position: relative;
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--primary-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .price-toggle {
+        background: rgba(78, 102, 248, 0.1);
+        border-radius: 10px;
+        padding: 5px;
+        display: inline-flex;
+      }
+
+      .price-toggle-btn {
+        border: none;
+        padding: 8px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .price-toggle-btn.active {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 0;
+      }
+
+      .btn-outline-primary:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+      }
+
+      .discount-badge {
+        background: var(--accent-color);
+        color: white;
+        font-weight: bold;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      .feature-list li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.75rem;
+      }
+
+      .feature-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+
+      .feature-list li.disabled {
+        color: #adb5bd;
+      }
+
+      .feature-list li.disabled::before {
+        content: "\f00d";
+        color: #adb5bd;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+      }
+
+      .rating {
+        color: #ffc107;
+        font-size: 1.2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .btn-primary {
+        border-color: var(--primary-color);
+      }
+
+      .cta-section {
+        background: var(--gradient);
+        color: white;
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header" data-include="nav.html"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <span class="badge mb-3 px-3 py-2 rounded-pill"
+              >Email Forwarding</span
+            >
+            <h1
+              class="display-5 fw-bold mb-4 text-secondary animate__animated animate__fadeInDown"
+            >
+              Simplify Your Communication with Email Forwarding
+            </h1>
+            <p
+              class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s"
+            >
+              Streamline your inbox by automatically redirecting emails from one
+              address to another. Whether you're managing multiple domains,
+              departments, or personal addresses, our email forwarding service
+              ensures you never miss an important message.
+            </p>
+            <div
+              class="d-flex justify-content-center align-items-center gap-3 flex-wrap justify-content-md-start animate__animated animate__fadeIn animate__delay-2s"
+            >
+              <a href="#pricing" class="btn btn-light btn-lg px-4 rounded"
+                >Get Started <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+              <a
+                href="#features"
+                class="btn btn-outline-light btn-lg rounded px-4 mb-4 mb-md-0"
+                >Learn More</a
+              >
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-image animate__animated animate__fadeIn animate__delay-1s"
+          >
+            <img
+              src="/assets/images/hero/email-forwarding-hero.svg"
+              alt="Email Hosting"
+              class="img-fluid rounded-4 shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Email Forwarding -->
+    <section class="py-5 py-lg-7" id="email-hosting-intro">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="position-relative">
+              <img
+                src="https://img.freepik.com/free-photo/hand-pressing-envelope-that-is-sent-world_1232-278.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+                alt="Professional Email Hosting"
+                class="img-fluid rounded-3 shadow"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-left">
+            <h2 class="display-6 fw-bold mb-4">What Is Email Forwarding?</h2>
+
+            <p class="lead mb-4 text-muted">
+              mail forwarding is a service that allows you to use custom email
+              addresses with your own domain name, even if you don’t host a mail
+              server or have a dedicated inbox. It lets you automatically
+              redirect incoming messages to any email address of your choice,
+              giving you a professional look without the need for full email
+              hosting.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Email Forwarding -->
+    <section class="py-5 py-lg-7" id="why-email-forwarding">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+            <h2 class="display-6 fw-bold mb-4">Why use Email Forwarding</h2>
+
+            <p class="lead mb-4 text-muted">
+              Handling multiple email accounts can be overwhelming. With email
+              forwarding, you can automatically route incoming emails from
+              various addresses to a single inbox, helping you stay organized
+              and responsive. Whether you're a small business, freelancer, or
+              growing enterprise, this feature boosts productivity and
+              simplifies communication across the board.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="position-relative">
+              <img
+                src="https://img.freepik.com/premium-photo/3d-illustration-blue-envelops-hovering-mans-palm-blue-background_665346-114079.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+                alt="Secure Email Image"
+                class="img-fluid rounded-3 shadow"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Forwarding Features -->
+
+    <!-- Email Forwarding Features Section -->
+    <section class="py-5 py-lg-7 bg-light" id="email-forwarding-features">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="h3 fw-bold mb-4 display-6">Email Forwarding Features</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Streamline your communication with our powerful email forwarding
+            solutions. Redirect emails effortlessly to the right inbox, saving
+            time and boosting efficiency.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i
+                  class="bi bi-arrow-right-circle-fill text-primary fs-1 mb-3"
+                ></i>
+                <h4 class="h5 mb-3">Flexible Email Redirects</h4>
+                <p class="text-muted">
+                  Forward emails from one address to multiple destinations, such
+                  as personal inboxes, team accounts, or external services, with
+                  easy setup and no limits.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i class="bi bi-person-plus-fill text-primary fs-1 mb-3"></i>
+                <h4 class="h5 mb-3">Unlimited Email Aliases</h4>
+                <p class="text-muted">
+                  Create unlimited email aliases to manage inquiries (e.g.,
+                  support@yourdomain.com) and forward them to the right team
+                  members without additional mailboxes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i class="bi bi-shield-check text-primary fs-1 mb-3"></i>
+                <h4 class="h5 mb-3">Integrated Spam Filtering</h4>
+                <p class="text-muted">
+                  Protect forwarded emails with built-in spam and malware
+                  filters, powered by advanced tools, to ensure only legitimate
+                  messages reach your inbox.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i class="bi bi-gear-fill text-primary fs-1 mb-3"></i>
+                <h4 class="h5 mb-3">Easy Management Dashboard</h4>
+                <p class="text-muted">
+                  Configure and manage all your email forwarding rules through
+                  an intuitive control panel, with no technical expertise
+                  required.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i class="bi bi-clock-fill text-primary fs-1 mb-3"></i>
+                <h4 class="h5 mb-3">Instant Setup</h4>
+                <p class="text-muted">
+                  Set up email forwarding in seconds with no downtime, allowing
+                  you to redirect emails immediately after configuration.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
+            <div class="card border-0 shadow-sm h-100 feature-card">
+              <div class="card-body p-4 text-center">
+                <i class="bi bi-box-arrow-in-right text-primary fs-1 mb-3"></i>
+                <h4 class="h5 mb-3">Seamless Integration</h4>
+                <p class="text-muted">
+                  Integrate email forwarding with your existing email hosting,
+                  Microsoft 365, or third-party services like Gmail or Outlook
+                  for a unified workflow.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Forwarding Process -->
+    
+    <section class="py-5 py-lg-7" id="process">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          
+          <h2 class="display-6 fw-bold mb-3">Email Forwarding Process</h2>
+          <!-- <p class="lead text-muted mx-auto" style="max-width: 700px">
+            A collaborative approach to creating your perfect logo
+          </p> -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div
+              class="logo-process-step"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
+              <span class="step-number mb-2">1</span>
+              <h3 class="h4 mb-2">Step 1</h3>
+              <p class="text-muted mb-0">
+                Click the Email and Microsoft 365 tile in the Wefithost Control Panel
+              </p>
+            </div>
+
+            <div
+              class="logo-process-step"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <span class="step-number">2</span>
+              <h3 class="h4 mb-2">Step 2</h3>
+              <p class="text-muted mb-0">
+                 Locate the account you want to create the forward for
+              </p>
+            </div>
+
+            <div
+              class="logo-process-step"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              <span class="step-number">3</span>
+              <h3 class="h4 mb-2">Step 3</h3>
+              <p class="text-muted mb-0">
+                Enter the forward address
+              </p>
+            </div>
+
+            <div
+              class="logo-process-step"
+              data-aos="fade-right"
+              data-aos-delay="400"
+            >
+              <span class="step-number">4</span>
+              <h3 class="h4 mb-2">Step 4</h3>
+              <p class="text-muted mb-0">
+                Confirm the automatic forwarding
+              </p>
+            </div>
+
+            <div
+              class="logo-process-step"
+              data-aos="fade-right"
+              data-aos-delay="500"
+            >
+              <span class="step-number">5</span>
+              <h3 class="h4 mb-2">Step 5</h3>
+              <p class="text-muted mb-0">
+                Check that automatic forwarding is verified
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-include="footer.html"></div>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+    </script>
+
+    <script src="nav-foot.js"></script>
+  </body>
+</html>
