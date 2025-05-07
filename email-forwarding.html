@@ -563,6 +563,129 @@
         box-shadow: 0 0 0 2px var(--primary);
       }
 
+      /* Process Steps */
+      .email-process-step {
+        /* position: relative; */
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        gap: 3px;
+        padding-left: 2rem;
+        margin-bottom: 3rem;
+        transition: all 0.3s ease;
+      }
+
+      .email-process-step:hover {
+        transform: translateX(10px);
+      }
+
+      .email-process-step .step-number {
+        /* position: absolute; */
+        left: 0;
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 15px rgba(107, 99, 255, 0.3);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .timeline-marker {
+        width: 40px;
+        height: 40px;
+        background: #6b63ff;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 20px;
+        flex-shrink: 0;
+        z-index: 1;
+        animation: pulse 2s infinite;
+      }
+
+      .timeline-content {
+        flex: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline-content .card-body {
+        padding: 1.5rem;
+      }
+
+      .timeline-content i {
+        transition: color 0.3s ease;
+      }
+
+      .timeline-content:hover i {
+        color: #6b63ff;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 4px;
+        background: #e9ecef;
+        z-index: 0;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(107, 99, 255, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(107, 99, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(107, 99, 255, 0);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .timeline::before {
+          left: 20px;
+        }
+        .timeline-marker {
+          margin-right: 15px;
+        }
+        .timeline-content {
+          margin-left: 0;
+        }
+      }
+
       .pricing-card {
         border: none;
         border-radius: 12px;
@@ -818,8 +941,6 @@
       </div>
     </section>
 
-    <!-- Email Forwarding Features -->
-
     <!-- Email Forwarding Features Section -->
     <section class="py-5 py-lg-7 bg-light" id="email-forwarding-features">
       <div class="container">
@@ -940,78 +1061,651 @@
       </div>
     </section>
 
-    <!-- Email Forwarding Process -->
-    
-    <section class="py-5 py-lg-7" id="process">
+    <!-- How It Works Section -->
+    <section class="py-5 py-lg-7" id="how-it-works">
       <div class="container">
-        <div class="text-center mb-5" data-aos="fade-up">
-          
-          <h2 class="display-6 fw-bold mb-3">Email Forwarding Process</h2>
-          <!-- <p class="lead text-muted mx-auto" style="max-width: 700px">
-            A collaborative approach to creating your perfect logo
-          </p> -->
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="h3 fw-bold mb-4 display-6">
+            Set Up Email Forwarding in 3 Simple Steps
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Discover how easy it is to manage your emails with our powerful
+            forwarding solution. Get started in minutes and take control of your
+            inbox.
+          </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-marker">
+              <span class="timeline-number">1</span>
+            </div>
+            <div class="timeline-content card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-person-circle text-primary fs-2 me-3"></i>
+                  <h4 class="h5 mb-0 fw-bolder">Register Your Username</h4>
+                </div>
+                <p class="text-muted">
+                  Choose a username, like <strong>johndoe</strong>, to create
+                  your email forwarding address (e.g.,
+                  <em>*@johndoe.yourdomain.com</em>). Stay anonymous by picking
+                  a unique username not tied to your identity.
+                </p>
+                <p class="text-muted">
+                  Use shared domains for extra privacy, ensuring aliases can’t
+                  be linked to you.
+                </p>
+                <a href="#signup" class="btn btn-outline-primary btn-sm mt-2"
+                  >Sign Up Now</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-marker">
+              <span class="timeline-number">2</span>
+            </div>
+            <div class="timeline-content card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i
+                    class="bi bi-envelope-plus-fill text-primary fs-2 me-3"
+                  ></i>
+                  <h4 class="h5 mb-0 fw-bolder">Create Email Aliases</h4>
+                </div>
+                <p class="text-muted">
+                  Generate aliases on the fly or in advance. For example, sign
+                  up for a newsletter at <em>vuejs.org</em> using
+                  <em>vuejs@johndoe.yourdomain.com</em> instead of your real
+                  email.
+                </p>
+                <p class="text-muted">
+                  Aliases are auto-created in your dashboard upon receiving
+                  their first email. Reply or send emails anonymously from
+                  aliases with ease.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Manage Aliases -->
+          <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="timeline-marker">
+              <span class="timeline-number">3</span>
+            </div>
+            <div class="timeline-content card border-0 shadow-sm">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-gear-fill text-primary fs-2 me-3"></i>
+                  <h4 class="h5 mb-0 fw-bolder">Manage Your Aliases</h4>
+                </div>
+                <p class="text-muted">
+                  Stop spam instantly by deactivating an alias with a single
+                  toggle in your dashboard. Our system discards further emails
+                  silently.
+                </p>
+                <p class="text-muted">
+                  Delete aliases to reject emails outright automatically,
+                  ensuring spammers receive an error response, keeping your
+                  inbox clean.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="zoom-in" data-aos-delay="600">
+          <a href="#pricing" class="btn btn-primary px-4"
+            >Start Forwarding Emails Today</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 py-lg-7 bg-light" id="testimonials">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-6 fw-bold mb-3">What Our Clients Say</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Don't just take our word for it - hear from businesses we've helped
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/43.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                  "Wefithost’s email security tools have been a game changer for
+                  our remote teams. We’ve seen a drastic drop in spam and
+                  phishing attempts. The real-time filtering works flawlessly,
+                  and support is always responsive"
+                </p>
+                <h5 class="mb-1">Julia Meyer</h5>
+                <p class="text-muted small">CTO, Vortex Media GmbH (Germany)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                  "Our company handles a large volume of client communication
+                  daily, and Wefithost’s protection service has been rock-solid.
+                  Setup was simple, and we now feel much more confident about
+                  the security of our emails"
+                </p>
+                <h5 class="mb-1">Kenji Sato</h5>
+                <p class="text-muted small">
+                  Systems Administrator, Aozora Tech (Japan)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                  "Email security used to be a major concern for us in the
+                  healthcare space. Since moving to Wefithost’s solution, we’ve
+                  had zero breaches and a noticeable improvement in inbox
+                  cleanliness. Highly recommended."
+                </p>
+                <h5 class="mb-1">Isabella Rossi</h5>
+                <p class="text-muted small">
+                  Head of Operations, MedicaGroup Italia (Italy)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 py-lg-7" id="pricing">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="h3 fw-bold mb-4 display-6">
+            Affordable Email Forwarding Plans
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Choose the perfect plan for your email forwarding needs. Enjoy
+            flexible, secure, and easy-to-manage solutions at transparent
+            prices.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Starter Plan -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 border-0 shadow-sm feature-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Starter</h3>
+                <p class="text-muted mb-4">
+                  Perfect for individuals and small projects
+                </p>
+                <h4 class="mb-4">
+                  $5 <small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 10
+                    Email Aliases
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Basic Spam Filtering
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    TLS Encryption
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Dashboard Management
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i> Premium
+                    Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i> Advanced
+                    Analytics
+                  </li>
+                </ul>
+                <a href="#signup" class="btn btn-outline-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Plan (Most Popular) -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             <div
-              class="logo-process-step"
-              data-aos="fade-right"
-              data-aos-delay="100"
+              class="card h-100 border-0 shadow-lg feature-card"
+              style="border: 2px solid #6b63ff !important"
             >
-              <span class="step-number mb-2">1</span>
-              <h3 class="h4 mb-2">Step 1</h3>
-              <p class="text-muted mb-0">
-                Click the Email and Microsoft 365 tile in the Wefithost Control Panel
-              </p>
+              <div class="card-header bg-primary text-white py-3 text-center">
+                <span class="badge bg-white text-primary">MOST POPULAR</span>
+              </div>
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Professional</h3>
+                <p class="text-muted mb-4">Ideal for growing businesses</p>
+                <h4 class="mb-4">
+                  $15 <small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 50
+                    Email Aliases
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Advanced Spam Filtering
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    TLS & OpenPGP Encryption
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Enhanced Dashboard
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Priority Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-x-circle-fill text-muted me-2"></i> Advanced
+                    Analytics
+                  </li>
+                </ul>
+                <a href="#signup" class="btn btn-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Plan -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="card h-100 border-0 shadow-sm feature-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Business</h3>
+                <p class="text-muted mb-4">
+                  Designed for large teams and enterprises
+                </p>
+                <h4 class="mb-4">
+                  $30 <small class="text-muted fw-normal">/month</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Unlimited Email Aliases
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Premium Spam Filtering
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    TLS & OpenPGP Encryption
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Advanced Dashboard
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    24/7 Premium Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Advanced Analytics
+                  </li>
+                </ul>
+                <a href="#signup" class="btn btn-outline-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enterprise CTA -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="600">
+          <p class="mb-3">
+            Need a custom email forwarding solution for your enterprise?
+          </p>
+          <a href="#contact" class="btn btn-primary px-4">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 py-lg-7">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-6 fw-bold mb-3">Email Forwarding Questions</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Answers to common questions about our email forwarding services
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    What is email security and why is it important?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Email security refers to the tools, policies, and practices
+                    designed to protect email accounts, content, and
+                    communication against unauthorized access, loss, or
+                    compromise. Since email is a common entry point for
+                    cyberattacks like phishing and malware, strong email
+                    security is critical for protecting sensitive business data.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    How does email protection work?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Our email security solution scans incoming and outgoing
+                    emails for threats like viruses, phishing links, spam, and
+                    suspicious attachments. It filters out harmful messages
+                    before they reach your inbox and includes features like
+                    encryption, real-time threat monitoring, and advanced spam
+                    filtering.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    Will email protection slow down my email delivery?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Not at all. Our system is optimized for real-time scanning,
+                    ensuring your emails are delivered without delays while
+                    keeping threats out of your inbox.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                    Can email security help prevent phishing attacks?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes. Email security includes anti-phishing filters that
+                    analyze email content and sender authenticity to detect and
+                    block phishing attempts. It helps prevent employees from
+                    clicking harmful links or giving away sensitive information.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                  >
+                    Is my data stored or accessed during scanning?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    No. While we scan email content to identify threats, we do
+                    not store or use your data for any other purpose. All
+                    scanning is done in compliance with privacy and data
+                    protection regulations.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                  >
+                    Do I need technical skills to manage email security?
+                  </button>
+                </h3>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Not at all. Our platform is user-friendly and fully managed,
+                    so you don’t need to be an IT expert. We handle setup,
+                    updates, and monitoring, and our support team is always
+                    available if you need help.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingSeven">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven"
+                  >
+                    Can I use this with any email provider?
+                  </button>
+                </h3>
+                <div
+                  id="collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSeven"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes. Our email protection can be integrated with most major
+                    email platforms, including Microsoft 365, Google Workspace,
+                    and custom-hosted email services.
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
-              class="logo-process-step"
-              data-aos="fade-right"
-              data-aos-delay="200"
+              class="text-center mt-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
             >
-              <span class="step-number">2</span>
-              <h3 class="h4 mb-2">Step 2</h3>
-              <p class="text-muted mb-0">
-                 Locate the account you want to create the forward for
-              </p>
+              <a href="faqs.html" class="btn btn-outline-primary"
+                >View All FAQs</a
+              >
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div
-              class="logo-process-step"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
-              <span class="step-number">3</span>
-              <h3 class="h4 mb-2">Step 3</h3>
-              <p class="text-muted mb-0">
-                Enter the forward address
+    <!-- CTA Section -->
+    <section class="py-5 my-5">
+      <div class="container">
+        <div class="cta-section">
+          <div class="row justify-content-center text-center position-relative">
+            <div class="col-lg-10">
+              <h2
+                class="fw-bold mb-4 text-secondary text-center"
+                data-aos="fade-up"
+              >
+              Take Control of Your Inbox Today
+              </h2>
+              <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                Simplify your email management with our secure, flexible, and easy-to-use forwarding solution. Start redirecting emails in minutes and boost your productivity.
               </p>
-            </div>
-
-            <div
-              class="logo-process-step"
-              data-aos="fade-right"
-              data-aos-delay="400"
-            >
-              <span class="step-number">4</span>
-              <h3 class="h4 mb-2">Step 4</h3>
-              <p class="text-muted mb-0">
-                Confirm the automatic forwarding
-              </p>
-            </div>
-
-            <div
-              class="logo-process-step"
-              data-aos="fade-right"
-              data-aos-delay="500"
-            >
-              <span class="step-number">5</span>
-              <h3 class="h4 mb-2">Step 5</h3>
-              <p class="text-muted mb-0">
-                Check that automatic forwarding is verified
-              </p>
+              <div
+                class="d-flex flex-wrap justify-content-center gap-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <a href="#pricing" class="btn btn-light btn-lg px-4"
+                  >Choose Your Plan</a
+                >
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-light btn-lg px-4"
+                  >Chat With Sales</a
+                >
+              </div>
             </div>
           </div>
         </div>
