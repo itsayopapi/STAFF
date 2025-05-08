@@ -1,7 +1,9 @@
 // include.js (or wherever you're loading navbar)
 document.querySelectorAll("[data-include]").forEach(async (el) => {
-  const file = el.getAttribute("data-include");
-  const res = await fetch(file);
+  let file = el.getAttribute("data-include");
+
+  if(window.location.origin === 'https://wefithost.com') file = file.replace('.html', '');
+  const res = await fetch(`/${file}`);
   el.innerHTML = await res.text();
 
   // Now re-initialize your sticky logic
