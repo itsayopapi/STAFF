@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- JQuery -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+   <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" /> 
+    <title>Technologies | WeFitHost</title>
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<!-- PrismJS for code highlighting -->
+<link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-okaidia.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+     :root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --accent-color: #f6c23e;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+         /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                display: none;
+            } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                display: none;
+            } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+/*TECH SPECS PAGE STYLES*/
+     /* Hero */
+     .hero {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-radius: 0 0 20px 20px;
+    }
+    /* Project Tabs */
+    .project-tab .nav-link {
+      font-weight: 500;
+      color: #495057;
+      border: none !important;
+    }
+    .project-tab .nav-link.active {
+      color: #0d6efd;
+      border-bottom: 3px solid #0d6efd !important;
+      background: transparent !important;
+    }
+    /* Deployment Guides */
+    .deployment-guide {
+      border-left: 4px solid #0d6efd;
+    }
+    .guide-snippet {
+      background: #1e1e1e;
+      border-radius: 5px;
+    }
+    /* Compatibility Matrix */
+    .compatibility-matrix td {
+      vertical-align: middle;
+    }
+    .compatibility-badge {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      border-radius: 50%;
+    }
+    /* Use Cases */
+    .use-case-card img {
+      height: 160px;
+      object-fit: cover;
+    }
+    /* Framework Selector */
+    #frameworkSelector {
+      border: 2px dashed #0d6efd;
+    }
+  </style>
+</head>
+<body data-bs-theme="light">
+    <!-- Navbar -->
+    <header class="custom-header" data-include="nav.html"></header>
+ <!-- ===== Hero ===== -->
+ <section class="hero py-5 mb-5">
+    <div class="container text-center">
+      <h1 class="display-3 fw-bold mb-3">Host Any Developer Project</h1>
+      <p class="lead mb-4">Deploy frontend, backend, static sites, databases, or AI apps—regardless of your stack.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#project-types" class="btn btn-light btn-lg px-4">Browse Project Types</a>
+        <a href="#deployment-guides" class="btn btn-outline-light btn-lg px-4">Deployment Guides</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container py-4">
+    <!-- ===== Project Type Tabs ===== -->
+    <section id="project-types" class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">What Are You Building?</h2>
+      <ul class="nav nav-tabs project-tab justify-content-center mb-4" id="projectTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="frontend-tab" data-bs-toggle="tab" data-bs-target="#frontend" type="button">Frontend</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="backend-tab" data-bs-toggle="tab" data-bs-target="#backend" type="button">Backend</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="static-tab" data-bs-toggle="tab" data-bs-target="#static" type="button">Static Sites</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="database-tab" data-bs-toggle="tab" data-bs-target="#database" type="button">Databases</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="ai-tab" data-bs-toggle="tab" data-bs-target="#ai" type="button">AI/ML</button>
+        </li>
+      </ul>
+      <div class="tab-content bg-light p-4 rounded-3" id="projectTabContent">
+        <!-- Frontend -->
+        <div class="tab-pane fade show active" id="frontend" role="tabpanel">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3><i class="bi bi-layout-wtf"></i> Frontend Projects</h3>
+              <p>Deploy React, Vue, Angular, or Svelte apps with zero config. Automatic CI/CD, preview URLs for every branch, and global CDN.</p>
+              <ul>
+                <li><strong>Supported:</strong> Next.js, Nuxt.js, Remix, Astro</li>
+                <li><strong>Optimized for:</strong> ISR, SSR, Edge Functions</li>
+              </ul>
+              <a href="#deployment-guides" class="btn btn-primary">See Deployment Guides</a>
+            </div>
+            <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Frontend Code">
+            </div>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="tab-pane fade" id="backend" role="tabpanel">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3><i class="bi bi-server"></i> Backend Services</h3>
+              <p>Run Node.js, Python, Ruby, or Go APIs with managed infrastructure. Choose between serverless or containers.</p>
+              <ul>
+                <li><strong>Frameworks:</strong> Express, Django, Flask, Rails, Laravel</li>
+                <li><strong>Features:</strong> Autoscaling, persistent storage, cron jobs</li>
+              </ul>
+              <a href="#deployment-guides" class="btn btn-primary">Backend Examples</a>
+            </div>
+            <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Backend Code">
+            </div>
+          </div>
+        </div>
+        <!-- Static Sites -->
+        <div class="tab-pane fade" id="static" role="tabpanel">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3><i class="bi bi-file-earmark-richtext"></i> Static & JAMstack</h3>
+              <p>Blazing-fast Hugo, Jekyll, or Eleventy sites with atomic deploys and instant cache invalidation.</p>
+              <ul>
+                <li><strong>Generators:</strong> Gatsby, 11ty, Docusaurus, Vitepress</li>
+                <li><strong>Performance:</strong> 99/100 Lighthouse scores out of the box</li>
+              </ul>
+              <a href="#deployment-guides" class="btn btn-primary">Static Site Docs</a>
+            </div>
+            <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Static Site">
+            </div>
+          </div>
+        </div>
+        <!-- Databases -->
+        <div class="tab-pane fade" id="database" role="tabpanel">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3><i class="bi bi-database"></i> Databases</h3>
+              <p>Fully managed PostgreSQL, MySQL, MongoDB, or Redis with backups and one-click scaling.</p>
+              <ul>
+                <li><strong>SQL:</strong> Connection pooling, read replicas</li>
+                <li><strong>NoSQL:</strong> Auto-indexing, in-memory caching</li>
+              </ul>
+              <a href="#deployment-guides" class="btn btn-primary">Database Setup</a>
+            </div>
+            <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Database">
+            </div>
+          </div>
+        </div>
+        <!-- AI/ML -->
+        <div class="tab-pane fade" id="ai" role="tabpanel">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h3><i class="bi bi-cpu"></i> AI & Machine Learning</h3>
+              <p>Deploy PyTorch, TensorFlow, or LLM models with GPU support and autoscaling.</p>
+              <ul>
+                <li><strong>Libraries:</strong> Transformers, LangChain, LlamaIndex</li>
+                <li><strong>Hardware:</strong> NVIDIA A100s, T4 GPUs</li>
+              </ul>
+              <a href="#deployment-guides" class="btn btn-primary">AI Deployment</a>
+            </div>
+            <div class="col-md-6">
+              <img src="https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="AI Code">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Deployment Guides ===== -->
+    <section id="deployment-guides" class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">Framework-Specific Deployment Guides</h2>
+      <div class="row g-4">
+        <!-- Next.js -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body deployment-guide">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0"><i class="bi bi-filetype-jsx text-primary"></i> Next.js</h5>
+                <span class="badge bg-success">Zero Config</span>
+              </div>
+              <p class="card-text">Deploy a Next.js app with hybrid rendering (SSG/SSR/ISR).</p>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#nextjsGuide">Show Instructions</button>
+              <div class="collapse mt-3" id="nextjsGuide">
+                <pre class="guide-snippet p-3 rounded-2"><code class="language-bash"># Install CLI
+npm install -g your-cli
+
+# Deploy
+your-cli deploy --framework nextjs</code></pre>
+                <p class="mt-2"><small>Automatically detects <code>next.config.js</code> for ISR/SSR.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Django -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body deployment-guide">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0"><i class="bi bi-filetype-py text-info"></i> Django</h5>
+                <span class="badge bg-warning text-dark">Needs Config</span>
+              </div>
+              <p class="card-text">Deploy a Django app with PostgreSQL and Redis caching.</p>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#djangoGuide">Show Instructions</button>
+              <div class="collapse mt-3" id="djangoGuide">
+                <pre class="guide-snippet p-3 rounded-2"><code class="language-bash"># Set environment variables
+your-cli env:set DATABASE_URL=postgres://user:pass@host/db
+
+# Deploy with Gunicorn
+your-cli deploy --procfile "web: gunicorn project.wsgi"</code></pre>
+                <p class="mt-2"><small>Add <code>requirements.txt</code> for automatic dependency installation.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Docker -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body deployment-guide">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0"><i class="bi bi-docker text-primary"></i> Docker</h5>
+                <span class="badge bg-secondary">Any Stack</span>
+              </div>
+              <p class="card-text">Deploy custom containers with compose or Kubernetes.</p>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#dockerGuide">Show Instructions</button>
+              <div class="collapse mt-3" id="dockerGuide">
+                <pre class="guide-snippet p-3 rounded-2"><code class="language-dockerfile"># Example Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "start"]</code></pre>
+                <p class="mt-2"><small>Run <code>your-cli deploy --docker</code> from your project root.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Flask -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body deployment-guide">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0"><i class="bi bi-filetype-py text-info"></i> Flask</h5>
+                <span class="badge bg-success">Zero Config</span>
+              </div>
+              <p class="card-text">Deploy a Python Flask API with automatic WSGI detection.</p>
+              <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flaskGuide">Show Instructions</button>
+              <div class="collapse mt-3" id="flaskGuide">
+                <pre class="guide-snippet p-3 rounded-2"><code class="language-python"># app.py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"</code></pre>
+                <p class="mt-2"><small>Just run <code>your-cli deploy</code> in your project folder.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Compatibility Matrix ===== -->
+    <section class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">Tech Stack Compatibility</h2>
+      <div class="table-responsive">
+        <table class="table compatibility-matrix">
+          <thead>
+            <tr>
+              <th>Technology</th>
+              <th>Supported Versions</th>
+              <th>Zero Config</th>
+              <th>Database Support</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Node.js</td>
+              <td>16.x, 18.x, 20.x</td>
+              <td><span class="compatibility-badge bg-success" title="Yes"></span></td>
+              <td>MongoDB, PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>3.8 - 3.11</td>
+              <td><span class="compatibility-badge bg-success" title="Yes"></span></td>
+              <td>Redis, MySQL</td>
+            </tr>
+            <tr>
+              <td>Ruby</td>
+              <td>3.0+</td>
+              <td><span class="compatibility-badge bg-warning" title="Partial"></span></td>
+              <td>PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>Go</td>
+              <td>1.18+</td>
+              <td><span class="compatibility-badge bg-success" title="Yes"></span></td>
+              <td>SQLite, MongoDB</td>
+            </tr>
+            <tr>
+              <td>PHP</td>
+              <td>8.0+</td>
+              <td><span class="compatibility-badge bg-danger" title="No"></span></td>
+              <td>MySQL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Use Cases ===== -->
+    <section class="mb-5">
+      <h2 class="text-center mb-4 fw-bold">Real-World Use Cases</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card use-case-card h-100">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="SaaS Dashboard">
+            <div class="card-body">
+              <h5 class="card-title">SaaS Dashboard</h5>
+              <p class="card-text"><small class="text-muted">Tech Stack: Next.js + Node.js + PostgreSQL</small></p>
+              <p class="card-text">Deployed with automatic scaling for 10K+ users.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">View Case Study</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card use-case-card h-100">
+            <img src="https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="E-commerce">
+            <div class="card-body">
+              <h5 class="card-title">E-Commerce Store</h5>
+              <p class="card-text"><small class="text-muted">Tech Stack: Nuxt.js + Laravel + Redis</small></p>
+              <p class="card-text">Handles Black Friday traffic spikes seamlessly.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">View Case Study</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card use-case-card h-100">
+            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="AI API">
+            <div class="card-body">
+              <h5 class="card-title">AI Text Generator</h5>
+              <p class="card-text"><small class="text-muted">Tech Stack: FastAPI + PyTorch + GPU</small></p>
+              <p class="card-text">Deployed with autoscaling for batch inference jobs.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">View Case Study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Framework Selector Widget ===== -->
+    <section class="mb-5 p-4 rounded-3 bg-light" id="frameworkSelector">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h3 class="fw-bold">Not Sure Where to Start?</h3>
+          <p>Tell us your project type, and we'll generate a deployment guide:</p>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Primary Language/Framework</label>
+              <select class="form-select">
+                <option selected>Choose...</option>
+                <option>React/Vue/Angular</option>
+                <option>Next.js/Nuxt.js</option>
+                <option>Node.js (Express/Nest)</option>
+                <option>Python (Django/Flask)</option>
+                <option>PHP (Laravel)</option>
+                <option>Ruby on Rails</option>
+                <option>Docker/Kubernetes</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Guide</button>
+          </form>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-3" alt="Code Editor" style="max-height: 250px;">
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap & PrismJS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-python.min.js"></script>
+  <div data-include="footer.html"></div>
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+<!-- Back to Top Button -->
+<div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Animate elements when they come into view
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .stats-item, .pricing-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (elementPosition < screenPosition) {
+                element.classList.add('animate__animated', 'animate__fadeInUp');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+</script>
+
+  <!-- Bootstrap JS (for Carousel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="nav-foot.js"></script>
+</body>
+</html>
