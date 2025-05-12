@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete GitHub Integration Guide</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        section {
+            padding: 100px 0;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #24292e 0%, #3a424a 100%);
+            color: white;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://github.githubassets.com/images/modules/site/home/hero-git.png') no-repeat center right;
+            background-size: contain;
+            opacity: 0.15;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0366d6;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #0366d6;
+        }
+        .code-block {
+            background-color: #f6f8fa;
+            border-radius: 6px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 3px solid #0366d6;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .integration-card {
+            transition: all 0.3s ease;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        .integration-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .workflow-diagram {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+        .stats-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0366d6;
+            margin-bottom: 10px;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0366d6;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #0366d6;
+            border: 3px solid white;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: rgba(3, 102, 214, 0.1);
+            font-family: serif;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        .comparison-table th {
+            background-color: #f6f8fa;
+        }
+        .comparison-table td, .comparison-table th {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .comparison-table .feature-cell {
+            text-align: left;
+            font-weight: 500;
+        }
+        .check-icon {
+            color: #28a745;
+        }
+        .x-icon {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-3 fw-bold mb-4">Master GitHub Integration</h1>
+                    <p class="lead fs-4 mb-5">The complete guide to integrating GitHub into your development workflow with best practices, tools, and automation</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="#getting-started" class="btn btn-primary btn-lg px-4 gap-3">Get Started</a>
+                        <a href="#video-tutorials" class="btn btn-outline-light btn-lg px-4">Watch Tutorials</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">73M+</div>
+                        <div class="stats-label">Developers</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">200M+</div>
+                        <div class="stats-label">Repositories</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">84%</div>
+                        <div class="stats-label">Fortune 100 Companies</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">1.5B+</div>
+                        <div class="stats-label">Daily Requests</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="sticky-top bg-white shadow-sm">
+        <div class="container">
+            <ul id="navbar-example" class="nav nav-pills py-3 justify-content-center">
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#getting-started">Getting Started</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#workflows">Workflows</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#ci-cd">CI/CD</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#integrations">Integrations</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#enterprise">Enterprise</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#video-tutorials">Tutorials</a>
+                </li>
+                <li class="nav-item mx-1">
+                    <a class="nav-link" href="#best-practices">Best Practices</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">Getting Started with GitHub</h2>
+                    <p class="lead fs-4">Learn the fundamentals of GitHub integration and set up your first repository with these step-by-step guides</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://github.githubassets.com/images/modules/site/home/illo-repo.png" class="card-img-top" alt="Create Repository">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Create a Repository</h4>
+                            <p class="card-text">Initialize a new repository locally or on GitHub to start version controlling your project.</p>
+                            <div class="code-block text-start mt-3">
+                                <code>
+                                    # Initialize new repo<br>
+                                    git init<br><br>
+                                    
+                                    # Connect to remote<br>
+                                    git remote add origin https://github.com/user/repo.git
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://github.githubassets.com/images/modules/site/home/illo-branch.png" class="card-img-top" alt="Branching Strategy">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Branching Strategy</h4>
+                            <p class="card-text">Understand how to use branches effectively to manage different versions of your code.</p>
+                            <div class="code-block text-start mt-3">
+                                <code>
+                                    # Create new branch<br>
+                                    git branch feature-branch<br><br>
+                                    
+                                    # Switch to branch<br>
+                                    git checkout feature-branch<br><br>
+                                    
+                                    # Push branch to remote<br>
+                                    git push -u origin feature-branch
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="https://github.githubassets.com/images/modules/site/home/illo-pull-request.png" class="card-img-top" alt="Pull Requests">
+                        <div class="card-body text-center p-4">
+                            <h4 class="card-title">Pull Requests</h4>
+                            <p class="card-text">Learn how to propose changes and collaborate through pull requests.</p>
+                            <div class="code-block text-start mt-3">
+                                <code>
+                                    # Create pull request from CLI<br>
+                                    gh pr create --title "New feature" \<br>
+                                    --body "Description of changes" \<br>
+                                    --base main --head feature-branch
+                                </code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">GitHub CLI Tool</h3>
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="https://github.githubassets.com/images/modules/site/home/illo-cli.png" alt="GitHub CLI" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>The GitHub CLI brings GitHub to your terminal, allowing you to:</p>
+                                    <ul>
+                                        <li>Run your entire GitHub workflow from terminal</li>
+                                        <li>Create and review pull requests</li>
+                                        <li>Manage issues and notifications</li>
+                                        <li>Interact with GitHub Actions</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <code># Install GitHub CLI<br>brew install gh</code>
+                                    </div>
+                                    <a href="https://cli.github.com/" class="btn btn-outline-primary mt-3">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflows Section -->
+    <section id="workflows" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">GitHub Workflows</h2>
+                    <p class="lead fs-4">Streamline your development process with these effective GitHub workflows</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="table-responsive">
+                                <table class="table comparison-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Feature</th>
+                                            <th scope="col">Git Flow</th>
+                                            <th scope="col">GitHub Flow</th>
+                                            <th scope="col">Trunk-Based</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="feature-cell">Branch Structure</td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="feature-cell">Release Branches</td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-times x-icon"></i></td>
+                                            <td><i class="fas fa-times x-icon"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="feature-cell">Hotfix Support</td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="feature-cell">CI/CD Integration</td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                            <td><i class="fas fa-check check-icon"></i></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="feature-cell">Learning Curve</td>
+                                            <td>High</td>
+                                            <td>Medium</td>
+                                            <td>Low</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="feature-cell">Best For</td>
+                                            <td>Versioned releases</td>
+                                            <td>Web applications</td>
+                                            <td>Microservices</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="pe-lg-5">
+                        <h3 class="fw-bold mb-4">Git Flow</h3>
+                        <p>The Git Flow workflow defines a strict branching model designed around the project release. This workflow doesn't require any other tools besides Git.</p>
+                        <img src="https://wac-cdn.atlassian.com/dam/jcr:8f00f1a4-ef2d-498a-a2c6-8020bb97902f/01%20How%20it%20works.svg?cdnVersion=1494" alt="Git Flow Diagram" class="img-fluid workflow-diagram mt-3 mb-4">
+                        <h5 class="mt-4">When to Use:</h5>
+                        <ul>
+                            <li>Projects with scheduled version releases</li>
+                            <li>Teams needing to maintain multiple versions in production</li>
+                            <li>Projects with complex release cycles</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5">
+                        <h3 class="fw-bold mb-4">GitHub Flow</h3>
+                        <p>GitHub Flow is a lightweight, branch-based workflow that supports teams and projects with regular deployments.</p>
+                        <div class="timeline mt-4">
+                            <div class="timeline-item">
+                                <h5>1. Create a Branch</h5>
+                                <p>Create a descriptively named branch from your main branch for your work.</p>
+                                <div class="code-block">
+                                    <code>git checkout -b my-feature main</code>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>2. Add Commits</h5>
+                                <p>Make changes and commit them to your branch with clear, descriptive messages.</p>
+                                <div class="code-block">
+                                    <code>git commit -m "Add new authentication feature"</code>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>3. Open a Pull Request</h5>
+                                <p>Create a pull request to propose your changes and start a discussion.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>4. Discuss and Review</h5>
+                                <p>Collaborate with your team through code review comments and discussions.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>5. Deploy for Testing</h5>
+                                <p>Deploy your branch to a testing environment to verify your changes.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h5>6. Merge to Main</h5>
+                                <p>Once approved, merge your changes into the main branch.</p>
+                                <div class="code-block">
+                                    <code>git checkout main<br>git merge my-feature</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CI/CD Section -->
+    <section id="ci-cd">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">Continuous Integration & Deployment</h2>
+                    <p class="lead fs-4">Automate your build, test, and deployment processes with GitHub Actions</p>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.png" class="card-img-top" alt="GitHub Actions">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">GitHub Actions</h3>
+                            <p>GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.</p>
+                            <h5 class="mt-4">Key Features:</h5>
+                            <ul>
+                                <li>Automate workflows based on GitHub events</li>
+                                <li>Run jobs in parallel on multiple OS environments</li>
+                                <li>Use community-created actions or build your own</li>
+                                <li>Seamless integration with GitHub packages</li>
+                                <li>Matrix builds for testing multiple versions</li>
+                                <li>Caching for faster builds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">Sample Workflows</h3>
+                            <div class="accordion" id="workflowAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nodeWorkflow">
+                                            Node.js CI Workflow
+                                        </button>
+                                    </h2>
+                                    <div id="nodeWorkflow" class="accordion-collapse collapse show" data-bs-parent="#workflowAccordion">
+                                        <div class="accordion-body">
+                                            <div class="code-block">
+                                                <code>name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]
+        
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm test</code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dockerWorkflow">
+                                            Docker Build Workflow
+                                        </button>
+                                    </h2>
+                                    <div id="dockerWorkflow" class="accordion-collapse collapse" data-bs-parent="#workflowAccordion">
+                                        <div class="accordion-body">
+                                            <div class="code-block">
+                                                <code>name: Docker Build
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker image
+      run: docker build -t my-app .
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+    - name: Push to Docker Hub
+      run: |
+        docker tag my-app ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/my-app:latest</code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deployWorkflow">
+                                            AWS Deployment Workflow
+                                        </button>
+                                    </h2>
+                                    <div id="deployWorkflow" class="accordion-collapse collapse" data-bs-parent="#workflowAccordion">
+                                        <div class="accordion-body">
+                                            <div class="code-block">
+                                                <code>name: Deploy to AWS
+
+on:
+  push:
+    branches: [ main ]
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - run: npm install
+    - run: npm run build
+    - uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - run: aws s3 sync ./build s3://my-bucket --delete</code>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">GitHub Actions Marketplace</h3>
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="https://github.githubassets.com/images/modules/site/features/actions-marketplace.png" alt="GitHub Actions Marketplace" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>The GitHub Actions Marketplace contains thousands of pre-built actions that you can use in your workflows:</p>
+                                    <ul>
+                                        <li>Deploy to any cloud provider (AWS, Azure, GCP)</li>
+                                        <li>Run tests with all major frameworks</li>
+                                        <li>Static code analysis and security scanning</li>
+                                        <li>Notifications (Slack, Email, Teams)</li>
+                                        <li>Database migrations</li>
+                                        <li>And much more...</li>
+                                    </ul>
+                                    <a href="https://github.com/marketplace?type=actions" class="btn btn-outline-primary mt-3">Browse Marketplace</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Section -->
+    <section id="enterprise" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">GitHub Enterprise</h2>
+                    <p class="lead fs-4">Advanced security, compliance, and deployment controls for enterprises</p>
+                </div>
+            </div>
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 text-center">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <h4>Advanced Security</h4>
+                            <p>Code scanning, secret scanning, and dependency review to find and fix vulnerabilities.</p>
+                            <img src="https://github.githubassets.com/images/modules/site/features/security-icon.png" alt="GitHub Security" class="img-fluid my-3">
+                            <ul class="text-start">
+                                <li>Automated vulnerability detection</li>
+                                <li>Secret scanning for tokens and keys</li>
+                                <li>Dependency graph and alerts</li>
+                                <li>Code scanning with CodeQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 text-center">
+                            <i class="fas fa-server feature-icon"></i>
+                            <h4>Enterprise Server</h4>
+                            <p>GitHub Enterprise Server delivers the power of GitHub in your own environment.</p>
+                            <img src="https://github.githubassets.com/images/modules/site/enterprise/illo-server.png" alt="GitHub Enterprise Server" class="img-fluid my-3">
+                            <ul class="text-start">
+                                <li>Self-hosted solution</li>
+                                <li>Air-gapped deployment options</li>
+                                <li>High availability configurations</li>
+                                <li>Enterprise-grade support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4 text-center">
+                            <i class="fas fa-cloud feature-icon"></i>
+                            <h4>Enterprise Cloud</h4>
+                            <p>GitHub Enterprise Cloud combines the best of GitHub with enterprise features.</p>
+                            <img src="https://github.githubassets.com/images/modules/site/enterprise/illo-cloud.png" alt="GitHub Enterprise Cloud" class="img-fluid my-3">
+                            <ul class="text-start">
+                                <li>SAML single sign-on</li>
+                                <li>Enterprise managed users</li>
+                                <li>Advanced auditing</li>
+                                <li>99.9% uptime SLA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">Enterprise Features Comparison</h3>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>Free</th>
+                                            <th>Team</th>
+                                            <th>Enterprise</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Private Repositories</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Code Owners</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Required Reviews</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pages</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Actions (minutes)</td>
+                                            <td>2,000</td>
+                                            <td>3,000</td>
+                                            <td>50,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Packages Storage</td>
+                                            <td>500MB</td>
+                                            <td>2GB</td>
+                                            <td>50GB</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SAML SSO</td>
+                                            <td>✗</td>
+                                            <td>✓</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Advanced Auditing</td>
+                                            <td>✗</td>
+                                            <td>✗</td>
+                                            <td>✓</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Enterprise Support</td>
+                                            <td>✗</td>
+                                            <td>✗</td>
+                                            <td>✓</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">Popular GitHub Integrations</h2>
+                    <p class="lead fs-4">Extend GitHub's functionality with these powerful integrations</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack" style="height: 60px;" class="mb-3">
+                            <h4>Slack</h4>
+                            <p>Get real-time notifications in Slack for pull requests, issues, and deployments.</p>
+                            <ul class="text-start">
+                                <li>PR notifications</li>
+                                <li>Issue updates</li>
+                                <li>Team mentions</li>
+                                <li>Custom alerts</li>
+                            </ul>
+                            <a href="https://slack.github.com/" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/jira-1.svg" alt="Jira" style="height: 60px;" class="mb-3">
+                            <h4>Jira</h4>
+                            <p>Connect GitHub commits and pull requests to Jira issues for complete traceability.</p>
+                            <ul class="text-start">
+                                <li>Branch creation from Jira</li>
+                                <li>Automatic issue transitions</li>
+                                <li>Development panel in Jira</li>
+                                <li>Smart commits</li>
+                            </ul>
+                            <a href="https://www.atlassian.com/software/jira/features/github-integration" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/visual-studio-code-1.svg" alt="VS Code" style="height: 60px;" class="mb-3">
+                            <h4>VS Code</h4>
+                            <p>GitHub integration directly in your favorite code editor with powerful extensions.</p>
+                            <ul class="text-start">
+                                <li>PR management</li>
+                                <li>Issue navigation</li>
+                                <li>GitHub Copilot</li>
+                                <li>Code review tools</li>
+                            </ul>
+                            <a href="https://code.visualstudio.com/docs/editor/github" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/docker.svg" alt="Docker" style="height: 60px;" class="mb-3">
+                            <h4>Docker</h4>
+                            <p>Build, test, and publish Docker images directly from your GitHub repositories.</p>
+                            <ul class="text-start">
+                                <li>Automated builds</li>
+                                <li>Image scanning</li>
+                                <li>Docker Hub integration</li>
+                                <li>Multi-architecture builds</li>
+                            </ul>
+                            <a href="https://docs.docker.com/ci-cd/github-actions/" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/aws-logo.svg" alt="AWS" style="height: 60px;" class="mb-3">
+                            <h4>AWS</h4>
+                            <p>Deploy directly to AWS services from GitHub with seamless integration.</p>
+                            <ul class="text-start">
+                                <li>ECS deployment</li>
+                                <li>Lambda updates</li>
+                                <li>S3 sync</li>
+                                <li>CloudFormation</li>
+                            </ul>
+                            <a href="https://aws.amazon.com/blogs/devops/github-actions-aws/" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card integration-card border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <img src="https://cdn.worldvectorlogo.com/logos/azure-1.svg" alt="Azure" style="height: 60px;" class="mb-3">
+                            <h4>Azure</h4>
+                            <p>Microsoft Azure's deep integration with GitHub for cloud deployments.</p>
+                            <ul class="text-start">
+                                <li>Azure DevOps</li>
+                                <li>App Service deployment</li>
+                                <li>AKS integration</li>
+                                <li>ARM templates</li>
+                            </ul>
+                            <a href="https://github.com/marketplace?type=actions&query=azure+" class="btn btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">GitHub Marketplace</h3>
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="https://github.githubassets.com/images/modules/site/home/illo-marketplace.png" alt="GitHub Marketplace" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>The GitHub Marketplace offers hundreds of apps and actions to extend GitHub's functionality:</p>
+                                    <ul>
+                                        <li>Code quality and coverage</li>
+                                        <li>Security scanning</li>
+                                        <li>Project management</li>
+                                        <li>Monitoring and alerts</li>
+                                        <li>Code review automation</li>
+                                        <li>And much more...</li>
+                                    </ul>
+                                    <a href="https://github.com/marketplace" class="btn btn-outline-primary mt-3">Browse Marketplace</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section id="video-tutorials" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">Video Tutorials</h2>
+                    <p class="lead fs-4">Learn from these high-quality GitHub integration tutorials</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">GitHub Basics</h3>
+                            <div class="video-container mb-3">
+                                <iframe src="https://www.youtube.com/embed/RGOj5yH7evk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>Learn GitHub in 20 minutes with this beginner-friendly tutorial covering all the essential commands and workflows.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-primary">Beginner</span>
+                                <span>23 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">GitHub Actions CI/CD</h3>
+                            <div class="video-container mb-3">
+                                <iframe src="https://www.youtube.com/embed/cP0I9w2coGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>Complete guide to setting up continuous integration and deployment with GitHub Actions.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-warning text-dark">Intermediate</span>
+                                <span>42 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">GitHub for Teams</h3>
+                            <div class="video-container mb-3">
+                                <iframe src="https://www.youtube.com/embed/Uszj_k0DGsg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>Learn how to effectively use GitHub in team environments with collaboration best practices.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-primary">Beginner</span>
+                                <span>35 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4">Advanced GitHub Features</h3>
+                            <div class="video-container mb-3">
+                                <iframe src="https://www.youtube.com/embed/ecK3EnyGD8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>Explore advanced GitHub features like Actions, Packages, Security, and more.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-danger">Advanced</span>
+                                <span>58 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">GitHub Learning Resources</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h5>Official Documentation</h5>
+                                        <ul>
+                                            <li><a href="https://docs.github.com/en/get-started">Getting Started</a></li>
+                                            <li><a href="https://docs.github.com/en/actions">GitHub Actions</a></li>
+                                            <li><a href="https://docs.github.com/en/packages">GitHub Packages</a></li>
+                                            <li><a href="https://docs.github.com/en/codespaces">GitHub Codespaces</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h5>Community Resources</h5>
+                                        <ul>
+                                            <li><a href="https://github.com/skills">GitHub Skills</a></li>
+                                            <li><a href="https://lab.github.com/">GitHub Learning Lab</a></li>
+                                            <li><a href="https://www.githubstatus.com/">GitHub Status</a></li>
+                                            <li><a href="https://github.blog/">GitHub Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="https://docs.github.com/en" class="btn btn-primary">Explore All Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">What Developers Say About GitHub</h2>
+                    <p class="lead fs-4">Hear from developers and teams who transformed their workflow with GitHub</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card">
+                                    <p>GitHub has completely transformed how our team collaborates on code. The pull request workflow with integrated CI/CD through Actions has reduced our deployment times by 70% while improving code quality.</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                                        <div>
+                                            <h6 class="mb-0">Sarah Johnson</h6>
+                                            <small class="text-muted">CTO at TechSolutions</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <p>As an open source maintainer, GitHub's tools for managing issues, pull requests, and community interactions are invaluable. The new Discussions feature has significantly reduced issue noise in our projects.</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Kim">
+                                        <div>
+                                            <h6 class="mb-0">David Kim</h6>
+                                            <small class="text-muted">Maintainer of Popular OSS Project</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card">
+                                    <p>GitHub Enterprise's security features give our compliance team peace of mind while allowing developers to move fast. The secret scanning has prevented several potential security incidents.</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria Garcia">
+                                        <div>
+                                            <h6 class="mb-0">Maria Garcia</h6>
+                                            <small class="text-muted">Security Lead at FinancialCorp</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Practices Section -->
+    <section id="best-practices" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center mb-5">
+                    <h2 class="fw-bold mb-3">GitHub Best Practices</h2>
+                    <p class="lead fs-4">Follow these guidelines to get the most out of GitHub</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="pe-lg-5">
+                        <h3 class="fw-bold mb-4">Repository Management</h3>
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">README Files</h5>
+                                <p>Every repository should have a comprehensive README.md file that explains:</p>
+                                <ul>
+                                    <li>Project purpose and goals</li>
+                                    <li>Installation instructions</li>
+                                    <li>Usage examples</li>
+                                    <li>Contribution guidelines</li>
+                                    <li>License information</li>
+                                </ul>
+                                <img src="https://docs.github.com/assets/cb-38827/images/help/repository/readme-buttons.png" alt="README Example" class="img-fluid rounded mt-2">
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">.gitignore</h5>
+                                <p>Use a .gitignore file to prevent sensitive or unnecessary files from being tracked:</p>
+                                <div class="code-block">
+                                    <code># Dependency directories<br>node_modules/<br><br># Environment files<br>.env<br><br># IDE files<br>.vscode/<br>.idea/</code>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Branch Protection</h5>
+                                <p>Enable branch protection rules for critical branches (main, develop) to:</p>
+                                <ul>
+                                    <li>Require pull request reviews</li>
+                                    <li>Require status checks to pass</li>
+                                    <li>Require linear history</li>
+                                    <li>Include administrators</li>
+                                </ul>
+                                <img src="https://docs.github.com/assets/cb-20363/images/help/repository/branch-protection-rule.png" alt="Branch Protection" class="img-fluid rounded mt-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-5 mt-5 mt-lg-0">
+                        <h3 class="fw-bold mb-4">Collaboration Practices</h3>
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Commit Messages</h5>
+                                <p>Follow the conventional commits specification for clear, standardized messages:</p>
+                                <div class="code-block">
+                                    <code>feat: add new authentication module<br><br>fix: resolve login page crash<br><br>docs: update API documentation<br><br>chore: update dependencies</code>
+                                </div>
+                                <p class="mt-2">Use imperative mood ("add" not "added" or "adds") and limit to 50 characters.</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Pull Requests</h5>
+                                <p>Effective PR practices for better collaboration:</p>
+                                <ul>
+                                    <li>Keep PRs small and focused</li>
+                                    <li>Use descriptive titles</li>
+                                    <li>Include screenshots for UI changes</li>
+                                    <li>Link to related issues</li>
+                                    <li>Request specific reviewers</li>
+                                    <li>Use templates for consistency</li>
+                                </ul>
+                                <img src="https://docs.github.com/assets/cb-33859/images/help/pull_requests/pr-review-view.png" alt="PR Review" class="img-fluid rounded mt-2">
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Issue Tracking</h5>
+                                <p>Manage issues effectively with:</p>
+                                <ul>
+                                    <li>Clear, descriptive titles</li>
+                                    <li>Labels for categorization</li>
+                                    <li>Milestones for tracking</li>
+                                    <li>Assignees for accountability</li>
+                                    <li>Templates for bug reports and feature requests</li>
+                                </ul>
+                                <img src="https://docs.github.com/assets/cb-25450/images/help/issues/issues-page.png" alt="GitHub Issues" class="img-fluid rounded mt-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h3 class="text-center mb-4">GitHub Security Best Practices</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5>Access Control</h5>
+                                    <ul>
+                                        <li>Use teams for permission management</li>
+                                        <li>Follow principle of least privilege</li>
+                                        <li>Enable 2FA for all accounts</li>
+                                        <li>Regularly review third-party app access</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5>Code Security</h5>
+                                    <ul>
+                                        <li>Enable Dependabot for dependency updates</li>
+                                        <li>Use CodeQL for static analysis</li>
+                                        <li>Scan for secrets in commits</li>
+                                        <li>Require signed commits for critical repos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="https://docs.github.com/en/security" class="btn btn-primary">GitHub Security Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Activate scrollspy
+        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+            target: '#navbar-example'
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Update URL without jumping
+                    if (history.pushState) {
+                        history.pushState(null, null, targetId);
+                    } else {
+                        window.location.hash = targetId;
+                    }
+                }
+            });
+        });
+
+        // Highlight active nav item
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let fromTop = window.scrollY + 150;
+            
+            navLinks.forEach(link => {
+                const section = document.querySelector(link.hash);
+                
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Initialize carousel
+        const testimonialCarousel = new bootstrap.Carousel('#testimonialCarousel', {
+            interval: 5000,
+            wrap: true
+        });
+    </script>
+</body>
+</html>
