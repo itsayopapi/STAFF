@@ -575,10 +575,10 @@
         background: white;
       }
 
-      .domain-card:hover {
+      /* .domain-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      }
+      } */
 
       .domain-card-header {
         padding: 1.5rem;
@@ -885,117 +885,17 @@
 
           <div class="row g-4 pricing-grid">
             <div class="col">
-              <div class="domain-card">
+              <div class="domain-card" id="domain-cards">
                 <div class="domain-card-header">
+                  <form class="domain-search-form">
+                    <input
+                      type="search"
+                      class="domain-search"
+                      id="searchDomain"
+                      placeholder="Search for a domain"
+                    />
+                  </form>
                   <h4>New TLDs</h4>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span class="badge">Trending</span>
-                    <span>.biz</span>
-                  </div>
-                  <div class="domain-price">£19.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.dev"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.ai</span>
-                  </div>
-                  <div class="domain-price">£84.50/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.app"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.tech</span>
-                  </div>
-                  <div class="domain-price">£41.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.tech"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.online</span>
-                  </div>
-                  <div class="domain-price">£30.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.agency</span>
-                  </div>
-                  <div class="domain-price">£23.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.store</span>
-                  </div>
-                  <div class="domain-price">£48.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.design</span>
-                  </div>
-                  <div class="domain-price">£43.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
-                </div>
-
-                <div class="domain-item">
-                  <div class="domain-name">
-                    <span>.education</span>
-                  </div>
-                  <div class="domain-price">£27.99/yr</div>
-                  <div class="domain-action">
-                    <a
-                      href="https://my.wefithost.com/domain-search?domain=.blog"
-                      class="btn btn-sm btn-primary"
-                      >Register</a
-                    >
-                  </div>
                 </div>
               </div>
             </div>
@@ -1003,6 +903,89 @@
         </div>
       </section>
     </main>
+
+    <style>
+      .domain-search-form {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+      }
+
+      .domain-search {
+        background-color: #eee;
+        color: #333;
+      }
+    </style>
+
+    <!-- script for domian pricing json file -->
+    <script>
+      const searchInput = document.querySelector("#searchDomain");
+      // searchInput.addEventListener("keydown", populateDomainCards);
+
+      async function loadDomainPricing() {
+        const response = await fetch("/domain-pricing.json");
+        domainPricing = await response.json();
+
+        const domainPricingContainer = document.querySelector(".domain-card");
+        console.log(domainPricing);
+        domainPricing.forEach((domain) => {
+          const newRow = `<div class="domain-item">
+                  <div class="domain-name">
+                    <span>${domain.domain}</span>
+                  </div>
+                  <div class="domain-price">${domain.retail}</div>
+                  <div class="domain-action">
+                    <a
+                      href="https://my.wefithost.com/domain-search?domain=${domain.tld}"
+                      class="btn btn-sm btn-primary"
+                      >Register</a
+                    >
+                  </div>`;
+          domainPricingContainer.insertAdjacentHTML("beforeend", newRow);
+        });
+      }
+
+      loadDomainPricing();
+
+      // domainPricing = await loadDomainPricing();
+
+      // function populateDomainCards() {
+      //   // logic to handle search input filter
+      //   const inputText = searchInput.value.toLowerCase();
+      //   // if (inputText.length < 1) {
+      //   //   return;
+      //   // }
+
+      //   if (inputText.length >= 1) {
+      //     const filteredDomains = domainPricing.filter((domain) =>
+      //       domain.domain.includes(inputText)
+      //     );
+      //   }
+
+      //   const domainPricingContainer = document.querySelector(
+      //     ".domain-cards-container"
+      //   );
+
+      //   console.log(domainPricing);
+      //   domainPricing.forEach((domain) => {
+      //     const newRow = `<div class="domain-item">
+      //             <div class="domain-name">
+      //               <span>${domain.domain}</span>
+      //             </div>
+      //             <div class="domain-price">${domain.retail}</div>
+      //             <div class="domain-action">
+      //               <a
+      //                 href="https://my.wefithost.com/domain-search?domain=${domain.tld}"
+      //                 class="btn btn-sm btn-primary"
+      //                 >Register</a
+      //               >
+      //             </div>`;
+      //     domainPricingContainer.appendChild(newRow);
+      //   });
+      // }
+
+      // populateDomainCards();
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
