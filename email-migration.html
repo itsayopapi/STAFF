@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- JQuery -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <title>Email Migration | wefithost</title>
+
+    <style>
+      :root {
+        --primary-color: #6b63ff;
+        --secondary-color: #6c757d;
+        --dark-color: #1e293b;
+        --light-color: #f8f9fa;
+        --accent-color: #00c9a7;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #6a11cb 100%
+        );
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      /* Page Specific Styles */
+
+      .badge {
+        background-color: var(--dark-color);
+      }
+
+      .hero-section {
+        background: var(--gradient);
+        color: white;
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://img.freepik.com/premium-photo/businessman-typing-laptop-computer-send-e-mail-business-contact-communications-concept_50039-2487.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .hero-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      @media (max-width: 991px) {
+        .hero-image img {
+          max-height: 300px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 3rem 0;
+        }
+        .hero-image img {
+          max-height: 250px;
+        }
+      }
+
+      /* Metrics section styles */
+      .metrics-section {
+        background-color: #ffffff;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .metric-card {
+        padding: 1.5rem;
+        text-align: center;
+        background: white;
+        box-shadow: none;
+      }
+      .metric-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+      .metric-text {
+        font-size: 1.2rem;
+        color: #6c757d;
+      }
+
+      /* Why migrate section styles */
+      .why-migrate-section {
+        padding: 4rem 1rem;
+        background-color: #f8f9fa;
+        text-align: center;
+      }
+      .why-migrate-title {
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 1rem;
+      }
+      .why-migrate-subtitle {
+        font-size: 1.25rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+      .benefit-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border-radius: 2rem;
+      }
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: #007bff;
+        margin-bottom: 1rem;
+      }
+      .benefit-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 0.5rem;
+      }
+      .benefit-text {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+
+      /* Migration process section styles */
+      .process-section {
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+      .process-title {
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 1rem;
+      }
+      .process-subtitle {
+        font-size: 1.25rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+      .process-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .process-icon {
+        font-size: 2.5rem;
+        color: #007bff;
+        margin-bottom: 1rem;
+      }
+      .process-step-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 0.5rem;
+      }
+      .process-step-text {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+      .cta-button {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+      }
+      .migration-title {
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+        .metric-number {
+          font-size: 2rem;
+        }
+        .metric-text {
+          font-size: 0.9rem;
+        }
+
+        .process-title {
+          font-size: 2rem;
+        }
+        .process-subtitle {
+          font-size: 1rem;
+        }
+        .process-step-title {
+          font-size: 1.25rem;
+        }
+        .process-step-text {
+          font-size: 0.9rem;
+        }
+        .process-section {
+          padding: 4rem 1rem;
+        }
+      }
+
+      .tech-section {
+        background-color: #f7faff;
+      }
+
+      .stats-section {
+        background: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(78, 102, 248, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+
+      .feature-icon svg {
+        width: 40px;
+        height: 40px;
+      }
+
+      /* Benefits */
+      .benefit {
+        position: relative;
+        padding-left: 50px;
+      }
+
+      .benefit:before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-light);
+      }
+
+      .benefit-item {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .benefit-dot {
+        position: absolute;
+        left: -38px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 4px solid white;
+        box-shadow: 0 0 0 2px var(--primary);
+      }
+
+      /* Process Steps */
+      .email-process-step {
+        /* position: relative; */
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        gap: 3px;
+        padding-left: 2rem;
+        margin-bottom: 3rem;
+        transition: all 0.3s ease;
+      }
+
+      .email-process-step:hover {
+        transform: translateX(10px);
+      }
+
+      .email-process-step .step-number {
+        /* position: absolute; */
+        left: 0;
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        box-shadow: 0 5px 15px rgba(107, 99, 255, 0.3);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        position: relative;
+      }
+
+      .timeline-marker {
+        width: 40px;
+        height: 40px;
+        background: #6b63ff;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-right: 20px;
+        flex-shrink: 0;
+        z-index: 1;
+        animation: pulse 2s infinite;
+      }
+
+      .timeline-content {
+        flex: 1;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline-content .card-body {
+        padding: 1.5rem;
+      }
+
+      .timeline-content i {
+        transition: color 0.3s ease;
+      }
+
+      .timeline-content:hover i {
+        color: #6b63ff;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 4px;
+        background: #e9ecef;
+        z-index: 0;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(107, 99, 255, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(107, 99, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(107, 99, 255, 0);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .timeline::before {
+          left: 20px;
+        }
+        .timeline-marker {
+          margin-right: 15px;
+        }
+        .timeline-content {
+          margin-left: 0;
+        }
+      }
+
+      .pricing-card {
+        border: none;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid #6b63ff;
+        cursor: pointer;
+      }
+
+      .pricing-card.popular {
+        border: 2px solid var(--primary-color);
+        position: relative;
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--primary-color);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+
+      .price-toggle {
+        background: rgba(78, 102, 248, 0.1);
+        border-radius: 10px;
+        padding: 5px;
+        display: inline-flex;
+      }
+
+      .price-toggle-btn {
+        border: none;
+        padding: 8px 20px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .price-toggle-btn.active {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 0;
+      }
+
+      .btn-outline-primary:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(78, 102, 248, 0.3);
+      }
+
+      .discount-badge {
+        background: var(--accent-color);
+        color: white;
+        font-weight: bold;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-left: 10px;
+      }
+
+      .feature-list li {
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.75rem;
+      }
+
+      .feature-list li::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+      }
+
+      .feature-list li.disabled {
+        color: #adb5bd;
+      }
+
+      .feature-list li.disabled::before {
+        content: "\f00d";
+        color: #adb5bd;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .testimonial-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary);
+      }
+
+      .rating {
+        color: #ffc107;
+        font-size: 1.2rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .btn-primary {
+        border-color: var(--primary-color);
+      }
+
+      .cta-section {
+        background: var(--gradient);
+        color: white;
+        padding: 3rem 1rem;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header" data-include="nav.html"></header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <span class="badge mb-3 px-3 py-2 rounded-pill"
+              >Email Migration</span
+            >
+            <h1
+              class="display-5 fw-bold mb-4 text-secondary animate__animated animate__fadeInDown"
+            >
+              Move Your Email with Confidence
+            </h1>
+            <p
+              class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s"
+            >
+              Transitioning to a new email provider doesn’t have to mean lost
+              messages or disruption. Our expert email migration service ensures
+              your inbox, contacts, and calendar entries make the move safely —
+              with zero downtime.
+            </p>
+            <div
+              class="d-flex justify-content-center align-items-center gap-3 flex-wrap justify-content-md-start animate__animated animate__fadeIn animate__delay-2s"
+            >
+              <a
+                href="#pricing"
+                class="btn btn-outline-light btn-lg px-4 rounded"
+                >Start Your Mail Migration!
+                <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+            </div>
+            <div class="d-flex align-items-center mt-4">
+              <div class="d-flex">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white"
+                  width="40"
+                  style="margin-right: -10px"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/men/45.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white"
+                  width="40"
+                  style="margin-right: -10px"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/28.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white"
+                  width="40"
+                />
+              </div>
+              <div class="ms-3 mb-3">
+                <div class="text-white-50 small">
+                  Trusted by 3,500+ agencies worldwide
+                </div>
+                <div class="text-warning">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="text-secondary ms-1">4.8/5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-image animate__animated animate__fadeIn animate__delay-1s"
+          >
+            <img
+              src="https://img.freepik.com/premium-photo/3d-mail-delivery-from-computer-laptop_58466-2526.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+              alt="Email Migration"
+              class="img-fluid rounded-4 shadow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            class="col-md-4 metric-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <div class="metric-number" data-count="105">0</div>
+            <div class="metric-text">Countries WefitHost is Used</div>
+          </div>
+          <div
+            class="col-md-4 metric-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <div class="metric-number" data-count="1240">0</div>
+            <div class="metric-text">Daily Mail Migrations</div>
+          </div>
+          <div
+            class="col-md-4 metric-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <div class="metric-number" data-count="453840">0</div>
+            <div class="metric-text">Successful Mail Migrations/Year</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Migrate Section -->
+    <section class="why-migrate-section">
+      <div class="container">
+        <h2
+          class="why-migrate-title display-6 migration-title"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          What is Email Migration & Why Migrate?
+        </h2>
+        <p
+          class="why-migrate-subtitle"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          Email migration is the process of transferring your emails, contacts,
+          and calendars to a new provider. Migrating to WefitHost ensures a
+          seamless, secure, and efficient email experience.
+        </p>
+        <div class="row gap-3 justify-content-center">
+          <div
+            class="col-md-4 benefit-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <i class="fas fa-shield-alt benefit-icon"></i>
+            <h3 class="benefit-title">Enhanced Security</h3>
+            <p class="benefit-text">
+              Protect your data with advanced spam and malware protection, plus
+              free SSL certificates for secure email access.
+            </p>
+          </div>
+          <div
+            class="col-md-4 benefit-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <i class="fas fa-tachometer-alt benefit-icon"></i>
+            <h3 class="benefit-title">Better Performance</h3>
+            <p class="benefit-text">
+              Enjoy fast, reliable email with 10GB of storage and optimized
+              servers for zero downtime.
+            </p>
+          </div>
+          <div
+            class="col-md-4 benefit-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <i class="fas fa-envelope benefit-icon"></i>
+            <h3 class="benefit-title">Professional Email</h3>
+            <p class="benefit-text">
+              Use custom domain emails to boost your brand’s credibility and
+              professionalism.
+            </p>
+          </div>
+          <div
+            class="col-md-4 benefit-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
+            <i class="fas fa-headset benefit-icon"></i>
+            <h3 class="benefit-title">Expert Support</h3>
+            <p class="benefit-text">
+              Get 24/7/365 support from our friendly team to ensure a smooth
+              migration and ongoing assistance.
+            </p>
+          </div>
+        </div>
+        <a
+          href="/learn-more"
+          class="btn btn-primary cta-button"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="800"
+          >Learn More</a
+        >
+      </div>
+    </section>
+
+    <!-- Migration Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2
+          class="process-title display-6 migration-title"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          How Our Email Migration Works
+        </h2>
+        <p
+          class="process-subtitle"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          Our streamlined process ensures your email, contacts, and calendars
+          are migrated securely and efficiently.
+        </p>
+        <div class="row justify-content-center">
+          <div
+            class="col-md-4 process-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <i class="fas fa-clipboard-list process-icon"></i>
+            <h3 class="process-step-title">1. Planning & Assessment</h3>
+            <p class="process-step-text">
+              We analyze your current email setup and create a tailored
+              migration plan to ensure no data is lost.
+            </p>
+          </div>
+          <div
+            class="col-md-4 process-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <i class="fas fa-cloud-upload-alt process-icon"></i>
+            <h3 class="process-step-title">2. Secure Data Transfer</h3>
+            <p class="process-step-text">
+              Your emails, contacts, and calendars are transferred securely
+              using encrypted connections.
+            </p>
+          </div>
+          <div
+            class="col-md-4 process-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <i class="fas fa-check-circle process-icon"></i>
+            <h3 class="process-step-title">3. Verification & Support</h3>
+            <p class="process-step-text">
+              We verify the migration and provide 24/7 support to ensure
+              everything works perfectly.
+            </p>
+          </div>
+        </div>
+        <a
+          href="#pricing"
+          class="btn btn-primary cta-button"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="600"
+          >Start Your Migration</a
+        >
+      </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="py-5 py-lg-7 tech-section">
+      <div class="container">
+        <div
+          class="d-flex flex-column align-items-center justify-content-center text-center mb-5"
+        >
+          <h2 class="display-6 fw-bold mb-3 migration-title">
+            Our Migration Service Works With:
+          </h2>
+        </div>
+
+        <div class="row g-2 flex-wrap">
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Logo_office_365.PNG"
+              alt="Ms office"
+              height="50"
+              class="mb-3"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/webp-express/webp-images/uploads/gmail-logo.png.webp"
+              alt="Gmail"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/2020/09/transfer-email-to-or-from-yahoo-mail.svg?x17606"
+              alt="Yahoo"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/2020/09/transfer-email-to-or-from-outlook.svg?x17606"
+              alt="Outlook"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/MailJerry-IMAP-Icon.svg?x17606"
+              alt="Imap"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/2020/09/transfer-email-to-or-from-exchange-accounts.svg?x17606"
+              alt="Microsoft Exchange"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/2020/09/transfer-email-to-or-from-apple-mailicloud.svg?x17606"
+              alt="Icloud"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 text-center">
+            <img
+              src="https://www.mailjerry.com/wp-content/uploads/2020/09/transfer-email-to-or-from-gmx.svg?x17606"
+              alt="GMX"
+              height="50"
+              class="mb-3 w-100"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+      <div class="container">
+        <h2 class="pricing-title" data-aos="fade-up" data-aos-duration="1000">
+          Choose Your Email Migration Plan
+        </h2>
+        <p
+          class="pricing-subtitle"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          Select the perfect plan to migrate your email securely and efficiently
+          with WefitHost’s expert support.
+        </p>
+        <div class="row justify-content-center">
+          <div
+            class="col-md-4 pricing-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <h3 class="pricing-plan">Basic</h3>
+            <div class="pricing-price">
+              $49 <span class="text-muted">/one-time</span>
+            </div>
+            <ul class="pricing-features">
+              <li>1 Email Account</li>
+              <li>10GB Email Storage</li>
+              <li>Standard Support</li>
+              <li>Free SSL & Spam Protection</li>
+              <li>Zero Downtime</li>
+            </ul>
+            <a href="/get-started" class="btn btn-primary pricing-cta"
+              >Get Started</a
+            >
+          </div>
+          <div
+            class="col-md-4 pricing-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <h3 class="pricing-plan">Pro</h3>
+            <div class="pricing-price">
+              $99 <span class="text-muted">/one-time</span>
+            </div>
+            <ul class="pricing-features">
+              <li>5 Email Accounts</li>
+              <li>20GB Email Storage</li>
+              <li>Priority Support</li>
+              <li>Free SSL & Spam Protection</li>
+              <li>Zero Downtime</li>
+            </ul>
+            <a href="/get-started" class="btn btn-primary pricing-cta"
+              >Get Started</a
+            >
+          </div>
+          <div
+            class="col-md-4 pricing-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="400"
+          >
+            <h3 class="pricing-plan">Enterprise</h3>
+            <div class="pricing-price">
+              $199 <span class="text-muted">/one-time</span>
+            </div>
+            <ul class="pricing-features">
+              <li>Unlimited Email Accounts</li>
+              <li>50GB Email Storage</li>
+              <li>Dedicated Support</li>
+              <li>Free SSL & Spam Protection</li>
+              <li>Zero Downtime</li>
+            </ul>
+            <a href="/get-started" class="btn btn-primary pricing-cta"
+              >Get Started</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+    </script>
+
+    <script>
+      // Counter animation
+      function animateCounter(element, target, duration) {
+        const startTime = performance.now();
+        const formatter = new Intl.NumberFormat("en-US"); // Format numbers with commas
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1); // 0 to 1 over duration
+          const currentValue = Math.floor(progress * target); // Linear interpolation
+          element.textContent = formatter.format(currentValue);
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            element.textContent = formatter.format(target); // Ensure exact final value
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+      }
+
+      // Intersection Observer for counters
+      const counters = document.querySelectorAll(".metric-number");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              const target = parseInt(element.getAttribute("data-count"), 10);
+              animateCounter(element, target, 2000); // 2-second animation
+              observer.unobserve(element); // Stop observing after animation
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      counters.forEach((counter) => observer.observe(counter));
+    </script>
+
+    <script src="nav-foot.js"></script>
+  </body>
+</html>

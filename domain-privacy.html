@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <title>WeFitHost</title>
+
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+            display: none;
+        } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      /* ===== Base Styles ===== */
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #4f46e5;
+        --dark: #111827;
+        --light: #f9fafb;
+        --text-dark: #1e293b;
+        --text-muted: #64748b;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      /* ===== Hero Section ===== */
+      .domain-hero-container {
+        justify-content: space-between;
+      }
+
+      @media screen and (max-width: 992px) {
+        .domain-hero-container {
+          flex-direction: column;
+        }
+      }
+
+      @media screen and (max-width: 992px) and (min-width: 768px) {
+        .badge {
+          display: none;
+        }
+      }
+
+      .domain-hero {
+        background: url(./domain-privacy.jpg), #444;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        padding: 7rem 0 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      .btn-cta {
+        background-color: var(--primary);
+        color: var(--light);
+      }
+
+      .btn-cta:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .domain-hero-container {
+        padding-bottom: 8rem;
+      }
+
+      .domain-hero-content {
+        position: relative;
+        z-index: 2;
+        flex-basis: 70%;
+      }
+
+      .bulk-search-input {
+        resize: none;
+        font-size: 16px !important;
+        color: var(--text-dark);
+        font-weight: 500;
+      }
+
+      .bulk-search-input::placeholder {
+        color: var(--text-muted);
+        /* font-weight: 500; */
+      }
+
+      .domain-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .domain-hero .lead {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        margin-bottom: 2.5rem;
+        /* max-width: 600px; */
+      }
+
+      .domain-hero-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 20%
+          );
+      }
+
+      /* Domain Search Container */
+      .domain-search-container {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+        height: 540px;
+      }
+
+      .domain-search-form {
+        /* position: relative;
+        margin-bottom: 2rem; */
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .domain-search-form h3 {
+        font-size: 1.3rem !important;
+      }
+
+      .btn-search {
+      }
+
+      .section-features h2 {
+        font-size: 2.5rem;
+      }
+
+      .icon-wrapper {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background-color: var(--primary-light);
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-heading {
+        font-size: 17px;
+      }
+
+      .feature-desc {
+        font-size: 17px;
+      }
+
+      .domain-search-form input {
+        padding: 1.25rem 1.5rem;
+        border-radius: 10px;
+        border: 2px solid #e2e8f0;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .domain-search-form input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(107, 99, 255, 0.2);
+        outline: none;
+      }
+
+      .domain-search-form button {
+        padding: 0.75rem 1.75rem;
+        border-radius: 8px;
+        font-weight: 600;
+        border: none;
+        background-color: #6b63ff;
+        transition: background-color 0.3s ease;
+      }
+
+      .domain-search-form button:hover {
+        background-color: #1a237e;
+      }
+
+      .domain-tlds {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .domain-tld {
+        background: white;
+        border-radius: 8px;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .domain-tld:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary);
+        color: var(--primary-dark);
+      }
+
+      /* Section Headers */
+      .section-header {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+      }
+
+      .section-header .lead {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* what are tlds section */
+      .section-what-are-new-tlds {
+        padding: 96px 0;
+      }
+
+      .tlds-box {
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        margin-top: 64px;
+        height: 550px;
+        gap: 4rem;
+      }
+
+      .tlds-box .img-box {
+        background: url(./domain-privacy-info.jpg), #999;
+        background-blend-mode: multiply;
+        background-position: center center;
+        background-size: cover;
+        border-radius: 10px;
+      }
+
+      .tlds-box .text-box {
+        align-self: center;
+      }
+
+      .tlds-box .text-box p {
+        font-size: 17px;
+        font-weight: 500;
+      }
+
+      /* explore section */
+      .section-explore-new-tlds {
+        padding: 96px 0;
+      }
+
+      .explore-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin-top: 68px;
+      }
+
+      .explore-tld-box {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .explore-tld-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tld-icon {
+        font-size: 2.5rem;
+        color: #4f46e5;
+      }
+
+      .tld-desc {
+        font-size: 18px;
+      }
+
+      /* pricing cards */
+      .pricing-grid {
+        padding: 0 9rem;
+      }
+
+      /* Domain Cards */
+      .domain-card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+        background: white;
+      }
+
+      .domain-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+
+      .domain-card-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid #f1f5f9;
+      }
+
+      .domain-card-header h4 {
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0;
+      }
+
+      .domain-item {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid #f1f5f9;
+        display: flex;
+        align-items: center;
+      }
+
+      .domain-item:last-child {
+        border-bottom: none;
+      }
+
+      .domain-name {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        flex: 1;
+      }
+
+      .domain-name .badge {
+        background: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+      }
+
+      .domain-price {
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0 1.5rem;
+        min-width: 80px;
+        text-align: center;
+      }
+
+      .domain-action .btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      /* Feature Sections */
+      .feature-section {
+        padding: 4rem 0;
+      }
+
+      .feature-section.bg-light {
+        background-color: #f8fafc;
+      }
+
+      .feature-content h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+      }
+
+      .feature-content h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .feature-content p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        background: rgba(107, 99, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        font-size: 1.75rem;
+      }
+
+      /* FAQs */
+      .faq-section {
+        padding: 2rem 0;
+        background: #f8fafc;
+      }
+
+      .faq-item {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-header button {
+        width: 100%;
+        text-align: left;
+        padding: 1.25rem 1.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-header button:not(.collapsed) {
+        color: var(--primary);
+        background-color: rgba(107, 99, 255, 0.05);
+      }
+
+      .faq-body {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 991.98px) {
+        .domain-hero {
+          padding: 5rem 0 3rem;
+          text-align: center;
+        }
+
+        .domain-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .domain-hero .lead {
+          font-size: 1.15rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .domain-search-container {
+          padding: 1.75rem;
+        }
+
+        .section-header h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .domain-hero h1 {
+          font-size: 2rem;
+        }
+
+        .domain-item {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+
+        .domain-name,
+        .domain-price,
+        .domain-action {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .domain-price {
+          margin: 0.5rem 0;
+        }
+
+        .feature-section {
+          padding: 4rem 0;
+        }
+
+        .feature-content h3 {
+          font-size: 1.75rem;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .domain-search-form input {
+          padding: 1rem;
+        }
+
+        .domain-search-form button {
+          position: relative;
+          top: auto;
+          right: auto;
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .domain-tld {
+          padding: 0.75rem 1rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+    <!-- Navbar Start File-->
+    <header class="custom-header" data-include="nav.html"></header>
+
+    <div class="mobile-menu-backdrop"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="domain-hero py-10">
+        <div class="domain-hero-pattern"></div>
+        <div class="container">
+          <div class="row align-items-center domain-hero-container">
+            <div
+              class="col-11 order-lg-1 domain-hero-content"
+              data-aos="fade-right"
+            >
+              <span class="badge bg-white text-primary mb-3 py-2 px-3"
+                >Domain Privacy</span
+              >
+              <h1 class="text-secondary">
+                Protect Your Personal Information with Domain Privacy
+              </h1>
+              <p class="lead">
+                Keep your contact details safe from spammers, scammers, and
+                public exposure with private WHOIS protection.
+              </p>
+
+              <div class="d-flex gap-3">
+                <a
+                  href="#section-what-is-domain-privacy"
+                  class="btn btn-outline-light btn-lg px-4"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <div
+              class="col-11 order-lg-2 order-1 mb-5 mb-lg-0 domain-search-row"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <!-- Hero section end -->
+
+      <!-- What are new tlds start -->
+      <section
+        class="section-what-are-new-tlds"
+        id="section-what-is-domain-privacy"
+        data-aos="fade-up"
+      >
+        <div class="container">
+          <div class="text-center mb-7">
+            <h2 class="fw-bold">What Is Domain Privacy?</h2>
+          </div>
+
+          <div class="tlds-box">
+            <div class="img-box"></div>
+            <div class="text-box">
+              <p>
+                When you register a domain name, your personal details, such as
+                full name, email, phone number, address, and sometimes
+                organization info are submitted to the public WHOIS database.
+                This means anyone online can look up and access your
+                information, which, while useful for transparency, also opens
+                the door to privacy risks.
+              </p>
+
+              <p>
+                Domain privacy (also known as WHOIS or privacy protection) helps
+                solve this by replacing your visible data with proxy information
+                provided by your registrar or a third-party service. It acts as
+                a protective barrier, hiding your actual contact details from
+                the public eye.
+              </p>
+
+              <p>
+                This protection helps you avoid spam, cold calls, and phishing
+                attempts, while also safeguarding your identity from cyber
+                threats. It ensures your private details stay secure and out of
+                reach—preserving both your privacy and professional integrity
+                online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- What are new tlds end -->
+
+      <!-- Why domain privacy matters start -->
+      <section class="section-what-are-new-tlds" data-aos="fade-up">
+        <div class="container">
+          <div class="text-center mb-7">
+            <h2 class="fw-bold">Why domain privacy matters</h2>
+          </div>
+
+          <div class="privacy-grid">
+            <div class="privacy-box">
+              <div class="privacy-imgbox">
+                <img
+                  src="./domian_privacy_secure.png"
+                  class="privacy-img"
+                  alt=""
+                />
+              </div>
+              <div class="privacy-textbox">
+                <h3>Prevent Identity Theft</h3>
+                <p>Keep your personal data out of reach from cybercriminals.</p>
+              </div>
+            </div>
+
+            <div class="privacy-box second-box">
+              <div class="privacy-textbox">
+                <h3>Block Unwanted Emails & Calls</h3>
+                <p>Avoid spam, cold calls, and phishing attempts.</p>
+              </div>
+              <div class="privacy-imgbox">
+                <img
+                  src="./domain_privacy_block.png"
+                  class="privacy-img"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div class="privacy-box">
+              <div class="privacy-imgbox">
+                <img
+                  src="./domain_privacy_anonymous.png"
+                  class="privacy-img"
+                  alt=""
+                />
+              </div>
+              <div class="privacy-textbox">
+                <h3>Maintain Anonymity</h3>
+                <p>
+                  Protect your name and contact info from public visibility.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why domain privacy matters end -->
+
+      <style>
+        .privacy-grid {
+          display: grid;
+          grid-template-rows: repeat(3, 1fr);
+        }
+
+        .privacy-box {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+          justify-content: space-around;
+        }
+
+        .privacy-imgbox {
+          height: 100%;
+          flex-grow: 0;
+          flex-basis: 35%;
+        }
+
+        .privacy-img {
+          width: 100%;
+        }
+      </style>
+
+      <!-- Key Features start -->
+      <section
+        class="py-10 py-lg-10 section-features"
+        id="features"
+        data-aos="fade-up"
+      >
+        <div class="container">
+          <div class="text-center mb-7" data-aos="fade-up">
+            <h2 class="fw-bold mb-3">How Domain Privacy Works</h2>
+            <!-- <p class="lead text-muted mx-auto" style="max-width: 700px">
+              More choice. Better fit. Stand out online.
+            </p> -->
+          </div>
+
+          <div class="row g-4">
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body p-4">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-1-square text-primary fs-3"></i>
+                  </div>
+                  <h3 class="feature-heading mb-3">
+                    Register your domain name.
+                  </h3>
+                  <p class="mb-0 feature-desc">
+                    Choose and secure the domain that represents your brand or
+                    personal project, this is your first step in building an
+                    online presence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body p-4">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-2-square text-primary fs-3"></i>
+                  </div>
+                  <h3 class="feature-heading mb-3">Enable Domain Privacy</h3>
+                  <p class="mb-0 feature-desc">
+                    During the registration process or later from your domain
+                    dashboard, simply activate domain privacy protection with a
+                    single click.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body p-4">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-3-square text-primary fs-3"></i>
+                  </div>
+                  <h3 class="feature-heading mb-3">
+                    Your Contact Info Is Replaced
+                  </h3>
+                  <p class="mb-0 feature-desc">
+                    Your personal details in the WHOIS database are replaced
+                    with proxy information provided by the privacy service,
+                    keeping your identity hidden from the public.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-md-6 col-lg-3"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body p-4">
+                  <div class="icon-wrapper">
+                    <i class="bi bi-4-square text-primary fs-3"></i>
+                  </div>
+                  <h3 class="feature-heading mb-3">You Stay in Control</h3>
+                  <p class="mb-0 feature-desc">
+                    While your data stays private, you still retain full
+                    ownership of your domain and can manage it anytime through
+                    your account.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- key features end -->
+
+      <!-- FAQs -->
+      <section class="faq-section py-10" id="faq-section" data-aos="fade-up">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+            <p class="lead text-muted">
+              Get answers to common questions about domain privacy
+            </p>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                    >
+                      What is domain privacy protection?
+                    </button>
+                  </h3>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Domain privacy protection is a service that hides your
+                      personal contact details from the public WHOIS database.
+                      Instead of showing your name, email, phone number, and
+                      address, it displays proxy information—keeping your data
+                      private and secure.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                    >
+                      Is domain privacy protection necessary?
+                    </button>
+                  </h3>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      While not mandatory, it is highly recommended. Without it,
+                      your personal information is publicly accessible and can
+                      be harvested by spammers, telemarketers, or malicious
+                      actors. Domain privacy helps you avoid unwanted contact
+                      and protect your identity online.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                    >
+                      How do I enable domain privacy?
+                    </button>
+                  </h3>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      You can activate domain privacy during the domain
+                      registration process or from your account dashboard
+                      afterward. It’s usually available as an add-on service and
+                      takes effect as soon as it's applied.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                    >
+                      Will domain privacy affect my ownership rights?
+                    </button>
+                  </h3>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      No. Even though proxy details appear publicly, you remain
+                      the legal owner of the domain. Your registrar keeps your
+                      real information on file and you maintain full control
+                      over your domain.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm">
+                  <h3 class="accordion-header" id="headingFive">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFive"
+                    >
+                      Can I still receive important domain-related emails?
+                    </button>
+                  </h3>
+                  <div
+                    id="collapseFive"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFive"
+                    data-bs-parent="#faqAccordion"
+                  >
+                    <div class="accordion-body">
+                      Yes. The privacy service forwards essential messages like
+                      domain renewal notices or inquiries through the proxy
+                      email listed in the WHOIS, so you won’t miss any critical
+                      communications.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center mt-4">
+                <a href="faqs.html" class="btn btn-outline-primary"
+                  >View All FAQs</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Bootstrap components
+        const dropdownElementList = [].slice.call(
+          document.querySelectorAll(".dropdown-toggle")
+        );
+        dropdownElementList.map(function (dropdownToggleEl) {
+          return new bootstrap.Dropdown(dropdownToggleEl);
+        });
+
+        // Initialize accordions
+        const accordionItems = document.querySelectorAll(".faq-item .collapse");
+        accordionItems.forEach((item) => {
+          item.addEventListener("show.bs.collapse", function () {
+            this.parentElement
+              .querySelector(".btn-link")
+              .classList.add("text-primary");
+          });
+          item.addEventListener("hide.bs.collapse", function () {
+            this.parentElement
+              .querySelector(".btn-link")
+              .classList.remove("text-primary");
+          });
+        });
+      });
+
+      function validateDomainSearch() {
+        const input = document.getElementById("searchDomain");
+        let domain = input.value.trim();
+
+        // Remove http:// or https:// if present
+        domain = domain.replace(/^https?:\/\//i, "");
+
+        // Remove www. if present
+        domain = domain.replace(/^www\./i, "");
+
+        // If the input doesn't contain a dot, we'll let the search page handle it
+        if (domain.length > 0) {
+          // Update the input value with cleaned domain
+          input.value = domain;
+          return true;
+        }
+
+        alert("Please enter a valid domain name");
+        return false;
+      }
+    </script>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+
+    <!-- Footer End -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      // Initialize animations
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      });
+    </script>
+
+    <!-- Libs JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+    <script src="nav-foot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+
+
+
+    <!-- JQuery -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+  
+    <title>Complete White Label Hosting Solutions | Your Brand Here</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+:root {
+            --primary-color: #4e73df;
+            --secondary-color: #2e59d9;
+            --accent-color: #f6c23e;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+         /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                display: none;
+            } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                display: none;
+            } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+        
+        /* Section Padding */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-sm {
+            padding: 4rem 0;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.95), rgba(46, 89, 217, 0.95)),
+                        url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-badge:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+        
+        .section-title:hover:after {
+            width: 80px;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(78, 115, 223, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            color: var(--primary-dark);
+        }
+        
+        /* Solution Showcase */
+        .solution-img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .solution-img-container:hover .solution-img {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            border: 2px solid var(--light);
+            transition: all 0.4s ease;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(78, 115, 223, 0.1);
+        }
+        
+        .pricing-feature-list li {
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+            padding-left: 5px;
+        }
+        
+        .pricing-feature-list li:hover {
+            padding-left: 15px;
+            color: var(--primary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(78, 115, 223, 0.95), rgba(46, 89, 217, 0.95)),
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Stats Counter */
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover .stat-value {
+            color: var(--primary-dark);
+        }
+        
+        /* Process Steps */
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .process-step:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .step-number {
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover .step-number {
+            transform: scale(1.1);
+            background: var(--primary-dark);
+        }
+        
+        /* Comparison Table */
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .comparison-table td {
+            vertical-align: middle;
+        }
+        
+        .check-icon {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Tooltip */
+        .tooltip-inner {
+            background: var(--primary);
+            padding: 0.5rem 1rem;
+        }
+        
+        .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before, 
+        .bs-tooltip-top .tooltip-arrow::before {
+            border-top-color: var(--primary);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            section {
+                padding: 4rem 0;
+            }
+            
+            .hero-section {
+                padding: 6rem 0;
+                background-attachment: scroll;
+            }
+            
+            .cta-section {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body data-bs-theme="light">
+    <!-- Navbar -->
+    <header class="custom-header" data-include="nav.html"></header>
+    
+<!-- Back to Top Button -->
+<div class="back-to-top">
+    <i class="bi bi-arrow-up"></i>
+</div>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero-section" id="home">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
+                <span class="badge hero-badge rounded-pill px-3 py-2 mb-3 animate__animated animate__fadeInDown">White Label Solution</span>
+                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeIn">Build Your Hosting Empire Without Infrastructure</h1>
+                <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Complete white-label hosting platform that lets you resell enterprise-grade infrastructure under your own brand with your pricing and support.</p>
+                <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-1s">
+                    <a href="#solutions" class="btn btn-light btn-lg px-4">Explore Solutions</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-4">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Stats Section ===== -->
+<section class="bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="2500">0</div>
+                    <p class="mb-0">Reseller Partners</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="98.9">0</div>
+                    <p class="mb-0">Uptime Percentage</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="45">0</div>
+                    <p class="mb-0">Global Locations</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="24">0</div>
+                    <p class="mb-0">Support Hours</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Key Benefits ===== -->
+<section id="benefits">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">Why White Label Hosting?</h2>
+            <p class="lead mt-3">The complete solution to launch your own hosting brand without the infrastructure costs</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-shield-lock feature-icon mb-4"></i>
+                        <h3>Complete Brand Control</h3>
+                        <p>Your logo, colors, and brand identity on all customer-facing elements including control panels, invoices, and support systems.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-graph-up feature-icon mb-4"></i>
+                        <h3>Instant Scalability</h3>
+                        <p>From your first client to thousands with no infrastructure headaches. We handle all the technical heavy lifting.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-cash-coin feature-icon mb-4"></i>
+                        <h3>Higher Profit Margins</h3>
+                        <p>Keep 100% of your profits with our wholesale pricing model and flexible billing options.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-headset feature-icon mb-4"></i>
+                        <h3>Branded Support</h3>
+                        <p>Your customers will never know we're behind the scenes. Handle support yourself or use our white-label team.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-speedometer2 feature-icon mb-4"></i>
+                        <h3>Enterprise Infrastructure</h3>
+                        <p>Premium hardware, global CDN, DDoS protection, and 99.9% uptime SLA - all under your brand.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-bar-chart feature-icon mb-4"></i>
+                        <h3>Business Analytics</h3>
+                        <p>Comprehensive dashboard showing your revenue, client growth, and server utilization metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Solution Showcase ===== -->
+<section class="bg-light" id="solutions">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title">Complete Hosting Solutions</h2>
+                <p class="lead">Offer your clients a full suite of hosting services under your brand</p>
+                
+                <div class="mt-4">
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                        </div>
+                        <div>
+                            <h4>Shared & WordPress Hosting</h4>
+                            <p>High-performance hosting with cPanel/WHM included. Perfect for small business websites and blogs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                        </div>
+                        <div>
+                            <h4>VPS & Cloud Servers</h4>
+                            <p>Scalable virtual private servers with full root access, multiple OS options, and SSD storage.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                        </div>
+                        <div>
+                            <h4>Dedicated Servers</h4>
+                            <p>Bare metal servers with premium hardware, customizable configurations, and full management options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+                        </div>
+                        <div>
+                            <h4>Email Hosting</h4>
+                            <p>Professional email solutions with your domain, spam protection, and webmail access.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="solution-img-container h-100">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Hosting Solutions Dashboard" 
+                         class="solution-img w-100">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center g-5 mt-5">
+            <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+                <h2 class="section-title">Reseller Control Panel</h2>
+                <p class="lead">Powerful tools to manage your clients and services</p>
+                
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>Custom Branding:</strong> Your logo, colors, and domain on all interfaces</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>Automated Provisioning:</strong> Services deploy instantly when clients sign up</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>Integrated Billing:</strong> Set your own prices with flexible billing cycles</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>Client Management:</strong> Full control over all client accounts and services</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>Real-time Monitoring:</strong> Track resource usage and performance</li>
+                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i> <strong>API Access:</strong> Integrate with your existing systems and workflows</li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                <div class="solution-img-container h-100">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Reseller Control Panel" 
+                         class="solution-img w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== How It Works ===== -->
+<section id="process">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">How Our White Label Solution Works</h2>
+            <p class="lead mt-3">Get started in just a few simple steps</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up & Brand Your Platform</h3>
+                    <p>Choose your plan and customize your control panel with your logo, colors, and domain. Upload your branding assets and configure your settings.</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <h3>Set Your Pricing & Packages</h3>
+                    <p>Create hosting packages with your own pricing structure. Choose from our templates or build completely custom offerings.</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <h3>Onboard Your Clients</h3>
+                    <p>Start selling hosting under your brand. Clients sign up through your website and get instant access to their services.</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <h3>Manage & Grow Your Business</h3>
+                    <p>Use our reseller dashboard to manage clients, monitor usage, and scale your hosting business without technical limitations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Comparison Section ===== -->
+<section class="bg-light" id="comparison">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">White Label vs Building Your Own</h2>
+            <p class="lead mt-3">Why our solution makes more sense for growing hosting businesses</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="table-responsive">
+                    <table class="table comparison-table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">Feature</th>
+                                <th class="text-center">White Label Solution</th>
+                                <th class="text-center">Building Your Own</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Time to Market</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Launch in days</td>
+                                <td class="text-center">Months of development</td>
+                            </tr>
+                            <tr>
+                                <td>Upfront Costs</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Low monthly fee</td>
+                                <td class="text-center">$50,000+ in hardware/software</td>
+                            </tr>
+                            <tr>
+                                <td>Technical Expertise Required</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Minimal</td>
+                                <td class="text-center">Dedicated IT team needed</td>
+                            </tr>
+                            <tr>
+                                <td>Infrastructure Maintenance</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Handled by us</td>
+                                <td class="text-center">Your responsibility</td>
+                            </tr>
+                            <tr>
+                                <td>Scalability</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Instant and unlimited</td>
+                                <td class="text-center">Requires capital investment</td>
+                            </tr>
+                            <tr>
+                                <td>Global Network</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> 45+ locations included</td>
+                                <td class="text-center">Expensive to build</td>
+                            </tr>
+                            <tr>
+                                <td>Feature Updates</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Automatic</td>
+                                <td class="text-center">Your development cost</td>
+                            </tr>
+                            <tr>
+                                <td>Security & Compliance</td>
+                                <td class="text-center"><i class="bi bi-check-circle-fill check-icon"></i> Enterprise-grade included</td>
+                                <td class="text-center">Your responsibility</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Use Cases ===== -->
+<section id="use-cases">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">Who Uses Our White Label Solution?</h2>
+            <p class="lead mt-3">Perfect for these types of businesses</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-building text-primary fs-3"></i>
+                        </div>
+                        <h3>Web Design Agencies</h3>
+                        <p>Bundle hosting with your design services to create recurring revenue and provide a complete solution to clients.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-globe text-primary fs-3"></i>
+                        </div>
+                        <h3>Hosting Resellers</h3>
+                        <p>Grow beyond traditional reseller accounts with full brand control and higher profit margins.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-people-fill text-primary fs-3"></i>
+                        </div>
+                        <h3>Marketing Firms</h3>
+                        <p>Offer hosting as part of your digital marketing packages to increase client retention and revenue.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-laptop text-primary fs-3"></i>
+                        </div>
+                        <h3>Freelancers</h3>
+                        <p>Build your own hosting business without the technical challenges or upfront investment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-box-seam text-primary fs-3"></i>
+                        </div>
+                        <h3>Software Companies</h3>
+                        <p>Bundle hosting with your SaaS or software products to provide a complete solution.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 rounded-circle p-3 mb-4 mx-auto" style="width: 80px; height: 80px;">
+                            <i class="bi bi-currency-dollar text-primary fs-3"></i>
+                        </div>
+                        <h3>Entrepreneurs</h3>
+                        <p>Start your own hosting company with minimal risk and no technical expertise required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="bg-light" id="testimonials">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">Trusted by Resellers Worldwide</h2>
+            <p class="lead mt-3">Hear from successful partners using our white label platform</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card card h-100 p-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <i class="bi bi-quote fs-1 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"We grew our hosting revenue by 300% in the first year thanks to the white label platform. Our clients love the seamless experience under our brand."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                 alt="Testimonial" 
+                                 class="rounded-circle me-3" 
+                                 width="50" 
+                                 height="50">
+                            <div>
+                                <h6 class="mb-0">Michael Chen</h6>
+                                <small class="text-muted">CEO, Hosting Solutions Inc.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card card h-100 p-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <i class="bi bi-quote fs-1 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"The transition was seamless. We now offer enterprise-grade hosting without the infrastructure costs or technical overhead. Game changer for our agency."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                 alt="Testimonial" 
+                                 class="rounded-circle me-3" 
+                                 width="50" 
+                                 height="50">
+                            <div>
+                                <h6 class="mb-0">Sarah Johnson</h6>
+                                <small class="text-muted">Director, Digital Agency</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-card card h-100 p-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <i class="bi bi-quote fs-1 text-primary opacity-25"></i>
+                        </div>
+                        <p class="mb-4">"The profit margins are excellent, and we've been able to focus on sales and marketing while leaving the technical aspects to the experts."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" 
+                                 alt="Testimonial" 
+                                 class="rounded-circle me-3" 
+                                 width="50" 
+                                 height="50">
+                            <div>
+                                <h6 class="mb-0">David Wilson</h6>
+                                <small class="text-muted">Founder, CloudHost Pro</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== Pricing ===== -->
+<section id="pricing">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">Simple, Transparent Pricing</h2>
+            <p class="lead mt-3">Choose the plan that fits your business needs</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class                <div class="pricing-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title">Starter</h3>
+                        <div class="display-4 fw-bold my-4">$49<span class="fs-6 text-muted">/mo</span></div>
+                        <p class="text-muted mb-4">Perfect for freelancers and small agencies</p>
+                        <ul class="list-unstyled pricing-feature-list mb-4">
+                            <li><i class="bi bi-check text-success me-2"></i> Up to 50 client accounts</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 100GB SSD Storage</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 1TB Bandwidth</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Basic Branding</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Email Support</li>
+                            <li><i class="bi bi-x text-muted me-2"></i> <del>White-label Support</del></li>
+                            <li><i class="bi bi-x text-muted me-2"></i> <del>API Access</del></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-card card h-100 border-primary">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h3 class="card-title mb-0">Professional</h3>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="display-4 fw-bold my-4">$99<span class="fs-6 text-muted">/mo</span></div>
+                        <p class="text-muted mb-4">Best for growing hosting businesses</p>
+                        <ul class="list-unstyled pricing-feature-list mb-4">
+                            <li><i class="bi bi-check text-success me-2"></i> Up to 200 client accounts</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 500GB SSD Storage</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 5TB Bandwidth</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Full Branding</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Priority Support</li>
+                            <li><i class="bi bi-check text-success me-2"></i> White-label Support</li>
+                            <li><i class="bi bi-x text-muted me-2"></i> <del>API Access</del></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="pricing-card card h-100">
+                    <div class="card-body text-center p-4">
+                        <h3 class="card-title">Enterprise</h3>
+                        <div class="display-4 fw-bold my-4">$199<span class="fs-6 text-muted">/mo</span></div>
+                        <p class="text-muted mb-4">For large agencies and hosting providers</p>
+                        <ul class="list-unstyled pricing-feature-list mb-4">
+                            <li><i class="bi bi-check text-success me-2"></i> Unlimited client accounts</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 1TB+ SSD Storage</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 10TB+ Bandwidth</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Full Branding</li>
+                            <li><i class="bi bi-check text-success me-2"></i> 24/7 Premium Support</li>
+                            <li><i class="bi bi-check text-success me-2"></i> White-label Support</li>
+                            <li><i class="bi bi-check text-success me-2"></i> Full API Access</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5" data-aos="fade-up">
+            <p class="mb-3">Need custom solutions or higher limits?</p>
+            <a href="#contact" class="btn btn-secondary">Contact Us for Enterprise Plans</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ Section ===== -->
+<section class="bg-light" id="faq">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+            <p class="lead mt-3">Everything you need to know about our white label hosting</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="accordion-header" id="headingOne">
+                            <button class="accordion-button shadow-none rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How white-label is your solution?
+                            </button>
+                        </h3>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Our solution is completely white-label. Your clients will see only your branding throughout the entire experience - from signup to control panel to support. We remain completely invisible to your end users.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button shadow-none rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Can I set my own pricing?
+                            </button>
+                        </h3>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Absolutely! You have full control over pricing. You pay us a wholesale rate and can set your retail prices at whatever level makes sense for your business and market.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="accordion-header" id="headingThree">
+                            <button class="accordion-button shadow-none rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What about technical support?
+                            </button>
+                        </h3>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>You have two options: handle first-line support yourself (we provide training and documentation), or use our white-label support team that will respond under your brand name. For technical issues, our engineering team handles everything behind the scenes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="accordion-header" id="headingFour">
+                            <button class="accordion-button shadow-none rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                How quickly can I get started?
+                            </button>
+                        </h3>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>You can be up and running in as little as 24 hours. After signing up, we'll help you customize your branding and set up your first hosting packages. Most partners are ready to start selling within 1-2 business days.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="accordion-header" id="headingFive">
+                            <button class="accordion-button shadow-none rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                What happens if I need to scale up?
+                            </button>
+                        </h3>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <p>Scaling is seamless with our platform. You can upgrade your plan at any time with no downtime or migration required. Our infrastructure automatically handles increased traffic and resource demands.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA Section ===== -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="zoom-in">
+                <h2 class="display-5 fw-bold mb-4">Ready to Launch Your Hosting Business?</h2>
+                <p class="lead mb-5">Get started with our white label solution today and begin selling hosting under your brand in no time.</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="#" class="btn btn-light btn-lg px-4">Start Free Trial</a>
+                    <a href="#" class="btn btn-outline-light btn-lg px-4">Schedule Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+<!-- Bootstrap 5 JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS (Animate On Scroll) -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom JS -->
+<script>
+    // Initialize AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+    
+    // Back to Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('active');
+        } else {
+            backToTopButton.classList.remove('active');
+        }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    
+    // Animated Counter for Stats
+    const statValues = document.querySelectorAll('.stat-value');
+    const speed = 200;
+    
+    function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const value = Math.floor(progress * (end - start) + start);
+            if (end.toString().includes('.')) {
+                element.textContent = value.toFixed(1);
+            } else {
+                element.textContent = value;
+            }
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    
+    function initCounters() {
+        statValues.forEach(stat => {
+            const target = parseFloat(stat.getAttribute('data-count'));
+            animateValue(stat, 0, target, 2000);
+        });
+    }
+    
+    // Initialize counters when stats section is in view
+    const statsSection = document.querySelector('.bg-light');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                initCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {threshold: 0.5});
+    
+    observer.observe(statsSection);
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+<script src="nav-foot.js"></script>
+</body>
+</html>

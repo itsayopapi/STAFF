@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -9,17 +11,15 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/favicon/tile.xml"
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <!-- Color modes -->
-    <script src="assets/js/vendors/color-modes.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
 
     <!-- Libs CSS -->
     <link
@@ -31,45 +31,53 @@
       rel="stylesheet"
     />
 
-    <!-- Scroll Cue -->
-    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
-
     <!-- Box icons -->
     <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
 
     <!-- FAV ICON -->
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
-    <!-- FONT AWESOME -->
+    <!-- JQuery -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- Media queries Css -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css">
-    <title>WeFitHost</title>
 
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>Client Management | WeFitHost</title>
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <!-- PrismJS for code highlighting -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-okaidia.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
     <style>
       :root {
-        --primary: #6b63ff;
-        --primary-dark: #5a52e0;
-        --secondary: #2d3748;
-        --light: #f8f9fa;
-        --dark: #212529;
-        --danger: #dc3545;
+        --primary-color: #4e73df;
+        --secondary-color: #2e59d9;
+        --accent-color: #f6c23e;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fc;
       }
 
       body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        color: var(--dark);
-        line-height: 1.6;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
       }
 
       /* Header Styles */
@@ -79,6 +87,7 @@
         top: 0;
         z-index: 1020;
         background-color: white;
+
         transition: transform 0.3s ease;
       }
 
@@ -115,8 +124,8 @@
       }
 
       /* .dropdown-toggle::after {
-            display: none;
-        } */
+                display: none;
+            } */
 
       .dropdown-menu {
         border: none;
@@ -241,12 +250,907 @@
       }
 
       .btn-primary {
-        background-color: var(--primary);
-        border-color: var(--primary);
+        background-color: var(--primary-color);
         font-weight: 600;
         border-radius: 10px;
         transition: all 0.3s ease;
         font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                display: none;
+            } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+        border-color: var(--primary-color)
+      }
+
+      .btn-outline-primary{
+        margin-top: 0;
+      }
+      
+      /* Smooth scrolling */
+      html {
+          scroll-behavior: smooth;
+      }
+      
+      /* Hero Section */
+      .hero-section {
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+          color: white;
+          padding: 8rem 0 6rem;
+          position: relative;
+          overflow: hidden;
+          background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
+          background-size: cover;
+          background-position: center;
+          background-blend-mode: overlay;
+      }
+      
+      .hero-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(107, 99, 255, 0.9) 0%, rgba(90, 82, 224, 0.9) 100%);
+          z-index: 1;
+      }
+      
+      .hero-content {
+          position: relative;
+          z-index: 2;
+      }
+      
+      .hero-image-container {
+          position: relative;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          transform: perspective(1000px) rotateY(-10deg) translateZ(50px);
+          transition: transform 0.5s ease, box-shadow 0.5s ease;
+          border: 1px solid rgba(255,255,255,0.2);
+      }
+      
+      .hero-image-container:hover {
+          transform: perspective(1000px) rotateY(0deg) translateZ(0);
+          box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+      }
+      
+      .hero-image-container::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, rgba(107, 99, 255, 0.1) 0%, rgba(90, 82, 224, 0.2) 100%);
+          pointer-events: none;
+      }
+      
+      /* Floating animation */
+      @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
+      }
+      
+      .floating {
+          animation: float 6s ease-in-out infinite;
+      }
+      
+      /* Features Section */
+      .features-section {
+          padding: 6rem 0;
+          background-color: var(--light);
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .features-section::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 300px;
+          height: 300px;
+          background-image: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+          opacity: 0.1;
+          z-index: 0;
+      }
+      
+      .feature-card {
+          background: white;
+          border-radius: 12px;
+          padding: 2.5rem 2rem;
+          height: 100%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border: 1px solid var(--light-gray);
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+      }
+      
+      .feature-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      }
+      
+      .feature-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: var(--primary);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+      }
+      
+      .feature-card:hover::before {
+          transform: scaleX(1);
+      }
+      
+      .feature-icon {
+          width: 80px;
+          height: 80px;
+          background: rgba(107, 99, 255, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+          transition: transform 0.3s ease, background 0.3s ease;
+      }
+      
+      .feature-card:hover .feature-icon {
+          transform: scale(1.1);
+          background: rgba(107, 99, 255, 0.2);
+      }
+      
+      /* Dashboard Preview */
+      .dashboard-section {
+          padding: 6rem 0;
+          background: white;
+          position: relative;
+      }
+      
+      .dashboard-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsMjQ5LDI1MCwxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
+          opacity: 0.5;
+          z-index: 0;
+      }
+      
+      .dashboard-content {
+          position: relative;
+          z-index: 1;
+      }
+      
+      .dashboard-slideshow {
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          border: 1px solid var(--light-gray);
+          position: relative;
+          height: 500px;
+      }
+      
+      .dashboard-slide {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity 1s ease;
+          background-size: cover;
+          background-position: center;
+      }
+      
+      .dashboard-slide.active {
+          opacity: 1;
+      }
+      
+      .slide-indicators {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          z-index: 10;
+      }
+      
+      .slide-indicator {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.5);
+          cursor: pointer;
+          transition: all 0.3s ease;
+      }
+      
+      .slide-indicator.active {
+          background: white;
+          transform: scale(1.2);
+      }
+      
+      .slide-caption {
+          position: absolute;
+          bottom: 50px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          color: white;
+          background: rgba(0,0,0,0.6);
+          padding: 10px;
+          font-size: 0.9rem;
+          border-radius: 0 0 12px 12px;
+      }
+      
+      /* Benefits Section */
+      .benefits-section {
+          padding: 6rem 0;
+          background-color: var(--light);
+          position: relative;
+      }
+      
+      .benefit-item {
+          padding: 2.5rem;
+          background: white;
+          border-radius: 12px;
+          height: 100%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          border: 1px solid var(--light-gray);
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .benefit-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      
+      .benefit-item::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(107, 99, 255, 0.05) 0%, rgba(90, 82, 224, 0.05) 100%);
+          z-index: 0;
+      }
+      
+      .benefit-content {
+          position: relative;
+          z-index: 1;
+      }
+      
+      /* Stats Section */
+      .stats-section {
+          padding: 5rem 0;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          color: white;
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .stats-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+          opacity: 0.5;
+      }
+      
+      .stat-item {
+          text-align: center;
+          padding: 2rem;
+          position: relative;
+          z-index: 1;
+      }
+      
+      .stat-number {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          background: linear-gradient(to right, white, #e0e0ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      
+      .stat-label {
+          font-size: 1.1rem;
+          opacity: 0.9;
+      }
+      
+      /* Testimonials */
+      .testimonial-section {
+          padding: 6rem 0;
+          background: white;
+          position: relative;
+      }
+      
+      .testimonial-card {
+          background: white;
+          border-radius: 12px;
+          padding: 3rem;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+          border: 1px solid var(--light-gray);
+          position: relative;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          height: 100%;
+      }
+      
+      .testimonial-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      }
+      
+      .testimonial-card::before {
+          content: '"';
+          position: absolute;
+          top: 1rem;
+          left: 2rem;
+          font-size: 5rem;
+          font-family: Georgia, serif;
+          color: rgba(107, 99, 255, 0.1);
+          line-height: 1;
+          z-index: 0;
+      }
+      
+      .testimonial-content {
+          position: relative;
+          z-index: 1;
+      }
+      
+      .testimonial-img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid var(--primary-light);
+          transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      
+      .testimonial-card:hover .testimonial-img {
+          transform: scale(1.05);
+          border-color: var(--primary);
+      }
+      
+      .stars {
+          color: var(--warning);
+      }
+      
+      /* Pricing Section */
+      .pricing-section {
+          padding: 6rem 0;
+          background-color: var(--light);
+          position: relative;
+      }
+      
+      .pricing-card {
+          border-radius: 12px;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background: white;
+          position: relative;
+          z-index: 1;
+      }
+      
+      .pricing-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      
+      .pricing-header {
+          padding: 2rem;
+          background: var(--primary);
+          color: white;
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .pricing-header::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, transparent 100%);
+      }
+      
+      .popular-plan .pricing-header {
+          background: var(--primary-dark);
+      }
+      
+      .popular-badge {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: var(--warning);
+          color: var(--dark);
+          padding: 0.25rem 0.75rem;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: 600;
+      }
+      
+      .pricing-body {
+          padding: 2rem;
+          position: relative;
+      }
+      
+      .price {
+          font-size: 3rem;
+          font-weight: 700;
+          color: var(--dark);
+      }
+      
+      .price-period {
+          font-size: 1rem;
+          opacity: 0.8;
+      }
+      
+      .pricing-feature {
+          margin-bottom: 0.75rem;
+          position: relative;
+          padding-left: 1.5rem;
+      }
+      
+      .pricing-feature::before {
+          content: '\f00c';
+          font-family: 'bootstrap-icons';
+          position: absolute;
+          left: 0;
+          color: var(--success);
+      }
+      
+      /* Integration Section */
+      .integration-section {
+          padding: 6rem 0;
+          background: white;
+      }
+      
+      .integration-logo {
+          height: 60px;
+          width: auto;
+          filter: grayscale(100%) opacity(0.7);
+          transition: all 0.3s ease;
+      }
+      
+      .integration-logo:hover {
+          filter: grayscale(0%) opacity(1);
+          transform: scale(1.1);
+      }
+      
+      /* How It Works Section */
+      .how-it-works-section {
+          padding: 6rem 0;
+          background-color: var(--light);
+          position: relative;
+      }
+      
+      .step-card {
+          background: white;
+          border-radius: 12px;
+          padding: 2rem;
+          height: 100%;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+          border: 1px solid var(--light-gray);
+          position: relative;
+          transition: transform 0.3s ease;
+      }
+      
+      .step-card:hover {
+          transform: translateY(-5px);
+      }
+      
+      .step-number {
+          width: 50px;
+          height: 50px;
+          background: var(--primary);
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+      }
+      
+      /* FAQ Section */
+      .faq-section {
+          padding: 6rem 0;
+          background: white;
+      }
+      
+      .accordion-item {
+          margin-bottom: 1rem;
+          border-radius: 8px !important;
+          overflow: hidden;
+          border: 1px solid var(--light-gray) !important;
+      }
+      
+      .accordion-button:not(.collapsed) {
+          background-color: rgba(107, 99, 255, 0.1);
+          color: var(--primary);
+          box-shadow: none;
+      }
+      
+      .accordion-button:focus {
+          box-shadow: 0 0 0 0.25rem rgba(107, 99, 255, 0.25);
+      }
+      
+      .accordion-button::after {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b63ff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+      
+      /* CTA Section */
+      .cta-section {
+          padding: 6rem 0;
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+          color: white;
+          position: relative;
+          overflow: hidden;
+      }
+      
+      .cta-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.1;
+      }
+      
+      .cta-content {
+          position: relative;
+          z-index: 2;
+      }
+      
+      .cta-card {
+          background: white;
+          border-radius: 12px;
+          padding: 3rem;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+          background: rgba(255,255,255,0.95);
+          color: var(--dark);
+      }
+      
+      /* New Animation Styles */
+      @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+      }
+      
+      .pulse-animation {
+          animation: pulse 2s infinite;
+      }
+      
+      /* Enhanced Feature Cards */
+      .feature-card-enhanced {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          z-index: 1;
+      }
+      
+      .feature-card-enhanced::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, rgba(107, 99, 255, 0.1) 0%, rgba(90, 82, 224, 0.05) 100%);
+          z-index: -1;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+      }
+      
+      .feature-card-enhanced:hover::before {
+          opacity: 1;
+      }
+      
+      /* New Testimonial Carousel */
+      .testimonial-carousel .carousel-item {
+          padding: 2rem;
+          transition: all 0.5s ease;
+      }
+      
+      /* New Pricing Card Hover Effect */
+      .pricing-card-enhanced:hover {
+          transform: translateY(-15px) scale(1.02);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      }
+      
+      /* New Section - Case Studies */
+      .case-study-card {
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+      }
+      
+      .case-study-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      }
+      
+      /* New Section - Team */
+      .team-member-card {
+          text-align: center;
+          padding: 2rem;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          background: white;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .team-member-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+      
+      .team-member-img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 5px solid rgba(107, 99, 255, 0.2);
+          margin: 0 auto 1.5rem;
+          transition: all 0.3s ease;
+      }
+      
+      .team-member-card:hover .team-member-img {
+          border-color: var(--primary);
+          transform: scale(1.05);
+      }
+      
+      /* New Section - Resources */
+      .resource-card {
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+          transition: all 0.3s ease;
+          height: 100%;
+      }
+      
+      .resource-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+      
+      .resource-badge {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          background: var(--primary);
+          color: white;
+          padding: 0.25rem 0.75rem;
+          border-radius: 20px;
+          font-size: 0.75rem;
+          font-weight: 600;
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+          .hero-section, .features-section, .dashboard-section, 
+          .benefits-section, .testimonial-section, .cta-section,
+          .stats-section, .pricing-section, .faq-section,
+          .integration-section, .how-it-works-section {
+              padding: 3rem 0;
+          }
+          
+          .hero-section {
+              padding-top: 6rem;
+              text-align: center;
+          }
+          
+          .hero-image-container {
+              margin-top: 2rem;
+              transform: none;
+          }
+          
+          .dashboard-slideshow {
+              height: 350px;
+          }
+          
+          .stat-number {
+              font-size: 2.5rem;
+          }
+      }
+      
+      /* Animation classes */
+      .fade-in {
+          animation: fadeIn 1s ease-in;
+      }
+      
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+      
+      .slide-up {
+          animation: slideUp 0.8s ease-out;
+      }
+      
+      @keyframes slideUp {
+          from { transform: translateY(50px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
       }
     </style>
   </head>
@@ -1040,8 +1944,7 @@
       </div>
     </nav>
   </header>
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -1175,873 +2078,956 @@
     </script>
     <!-- Navbar End -->
 
-        <style>
-            :root {
-                --primary: #6b63ff;
-                --primary-light: #8b85ff;
-                --primary-dark: #5a52e0;
-                --secondary: #2d3748;
-                --light: #f8f9fa;
-                --dark: #212529;
-                --gray: #6c757d;
-                --light-gray: #e9ecef;
-                --success: #28a745;
-                --info: #17a2b8;
-                --warning: #ffc107;
-                --danger: #dc3545;
-            }
-            
-            /* Smooth scrolling */
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            /* Hero Section */
-            .hero-section {
-                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-                color: white;
-                padding: 8rem 0 6rem;
-                position: relative;
-                overflow: hidden;
-                background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80');
-                background-size: cover;
-                background-position: center;
-                background-blend-mode: overlay;
-            }
-            
-            .hero-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to right, rgba(107, 99, 255, 0.9) 0%, rgba(90, 82, 224, 0.9) 100%);
-                z-index: 1;
-            }
-            
-            .hero-content {
-                position: relative;
-                z-index: 2;
-            }
-            
-            .hero-image-container {
-                position: relative;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-                transform: perspective(1000px) rotateY(-10deg) translateZ(50px);
-                transition: transform 0.5s ease, box-shadow 0.5s ease;
-                border: 1px solid rgba(255,255,255,0.2);
-            }
-            
-            .hero-image-container:hover {
-                transform: perspective(1000px) rotateY(0deg) translateZ(0);
-                box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
-            }
-            
-            .hero-image-container::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to bottom, rgba(107, 99, 255, 0.1) 0%, rgba(90, 82, 224, 0.2) 100%);
-                pointer-events: none;
-            }
-            
-            /* Floating animation */
-            @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-15px); }
-                100% { transform: translateY(0px); }
-            }
-            
-            .floating {
-                animation: float 6s ease-in-out infinite;
-            }
-            
-            /* Features Section */
-            .features-section {
-                padding: 6rem 0;
-                background-color: var(--light);
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .features-section::before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                width: 300px;
-                height: 300px;
-                background-image: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
-                opacity: 0.1;
-                z-index: 0;
-            }
-            
-            .feature-card {
-                background: white;
-                border-radius: 12px;
-                padding: 2.5rem 2rem;
-                height: 100%;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                border: 1px solid var(--light-gray);
-                position: relative;
-                z-index: 1;
-                overflow: hidden;
-            }
-            
-            .feature-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-            }
-            
-            .feature-card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 4px;
-                background: var(--primary);
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform 0.3s ease;
-            }
-            
-            .feature-card:hover::before {
-                transform: scaleX(1);
-            }
-            
-            .feature-icon {
-                width: 80px;
-                height: 80px;
-                background: rgba(107, 99, 255, 0.1);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 1.5rem;
-                transition: transform 0.3s ease, background 0.3s ease;
-            }
-            
-            .feature-card:hover .feature-icon {
-                transform: scale(1.1);
-                background: rgba(107, 99, 255, 0.2);
-            }
-            
-            /* Dashboard Preview */
-            .dashboard-section {
-                padding: 6rem 0;
-                background: white;
-                position: relative;
-            }
-            
-            .dashboard-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNDgsMjQ5LDI1MCwxKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==');
-                opacity: 0.5;
-                z-index: 0;
-            }
-            
-            .dashboard-content {
-                position: relative;
-                z-index: 1;
-            }
-            
-            .dashboard-slideshow {
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-                border: 1px solid var(--light-gray);
-                position: relative;
-                height: 500px;
-            }
-            
-            .dashboard-slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                transition: opacity 1s ease;
-                background-size: cover;
-                background-position: center;
-            }
-            
-            .dashboard-slide.active {
-                opacity: 1;
-            }
-            
-            .slide-indicators {
-                position: absolute;
-                bottom: 20px;
-                left: 0;
-                right: 0;
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                z-index: 10;
-            }
-            
-            .slide-indicator {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: rgba(255,255,255,0.5);
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-            
-            .slide-indicator.active {
-                background: white;
-                transform: scale(1.2);
-            }
-            
-            .slide-caption {
-                position: absolute;
-                bottom: 50px;
-                left: 0;
-                right: 0;
-                text-align: center;
-                color: white;
-                background: rgba(0,0,0,0.6);
-                padding: 10px;
-                font-size: 0.9rem;
-                border-radius: 0 0 12px 12px;
-            }
-            
-            /* Benefits Section */
-            .benefits-section {
-                padding: 6rem 0;
-                background-color: var(--light);
-                position: relative;
-            }
-            
-            .benefit-item {
-                padding: 2.5rem;
-                background: white;
-                border-radius: 12px;
-                height: 100%;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                border: 1px solid var(--light-gray);
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .benefit-item:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            }
-            
-            .benefit-item::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, rgba(107, 99, 255, 0.05) 0%, rgba(90, 82, 224, 0.05) 100%);
-                z-index: 0;
-            }
-            
-            .benefit-content {
-                position: relative;
-                z-index: 1;
-            }
-            
-            /* Stats Section */
-            .stats-section {
-                padding: 5rem 0;
-                background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-                color: white;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .stats-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-                opacity: 0.5;
-            }
-            
-            .stat-item {
-                text-align: center;
-                padding: 2rem;
-                position: relative;
-                z-index: 1;
-            }
-            
-            .stat-number {
-                font-size: 3.5rem;
-                font-weight: 700;
-                margin-bottom: 0.5rem;
-                background: linear-gradient(to right, white, #e0e0ff);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-            
-            .stat-label {
-                font-size: 1.1rem;
-                opacity: 0.9;
-            }
-            
-            /* Testimonials */
-            .testimonial-section {
-                padding: 6rem 0;
-                background: white;
-                position: relative;
-            }
-            
-            .testimonial-card {
-                background: white;
-                border-radius: 12px;
-                padding: 3rem;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-                border: 1px solid var(--light-gray);
-                position: relative;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                height: 100%;
-            }
-            
-            .testimonial-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            }
-            
-            .testimonial-card::before {
-                content: '"';
-                position: absolute;
-                top: 1rem;
-                left: 2rem;
-                font-size: 5rem;
-                font-family: Georgia, serif;
-                color: rgba(107, 99, 255, 0.1);
-                line-height: 1;
-                z-index: 0;
-            }
-            
-            .testimonial-content {
-                position: relative;
-                z-index: 1;
-            }
-            
-            .testimonial-img {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 3px solid var(--primary-light);
-                transition: transform 0.3s ease, border-color 0.3s ease;
-            }
-            
-            .testimonial-card:hover .testimonial-img {
-                transform: scale(1.05);
-                border-color: var(--primary);
-            }
-            
-            .stars {
-                color: var(--warning);
-            }
-            
-            /* Pricing Section */
-            .pricing-section {
-                padding: 6rem 0;
-                background-color: var(--light);
-                position: relative;
-            }
-            
-            .pricing-card {
-                border-radius: 12px;
-                overflow: hidden;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                background: white;
-                position: relative;
-                z-index: 1;
-            }
-            
-            .pricing-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            }
-            
-            .pricing-header {
-                padding: 2rem;
-                background: var(--primary);
-                color: white;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .pricing-header::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, transparent 100%);
-            }
-            
-            .popular-plan .pricing-header {
-                background: var(--primary-dark);
-            }
-            
-            .popular-badge {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: var(--warning);
-                color: var(--dark);
-                padding: 0.25rem 0.75rem;
-                border-radius: 20px;
-                font-size: 0.75rem;
-                font-weight: 600;
-            }
-            
-            .pricing-body {
-                padding: 2rem;
-                position: relative;
-            }
-            
-            .price {
-                font-size: 3rem;
-                font-weight: 700;
-                color: var(--dark);
-            }
-            
-            .price-period {
-                font-size: 1rem;
-                opacity: 0.8;
-            }
-            
-            .pricing-feature {
-                margin-bottom: 0.75rem;
-                position: relative;
-                padding-left: 1.5rem;
-            }
-            
-            .pricing-feature::before {
-                content: '\f00c';
-                font-family: 'bootstrap-icons';
-                position: absolute;
-                left: 0;
-                color: var(--success);
-            }
-            
-            /* Integration Section */
-            .integration-section {
-                padding: 6rem 0;
-                background: white;
-            }
-            
-            .integration-logo {
-                height: 60px;
-                width: auto;
-                filter: grayscale(100%) opacity(0.7);
-                transition: all 0.3s ease;
-            }
-            
-            .integration-logo:hover {
-                filter: grayscale(0%) opacity(1);
-                transform: scale(1.1);
-            }
-            
-            /* How It Works Section */
-            .how-it-works-section {
-                padding: 6rem 0;
-                background-color: var(--light);
-                position: relative;
-            }
-            
-            .step-card {
-                background: white;
-                border-radius: 12px;
-                padding: 2rem;
-                height: 100%;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-                border: 1px solid var(--light-gray);
-                position: relative;
-                transition: transform 0.3s ease;
-            }
-            
-            .step-card:hover {
-                transform: translateY(-5px);
-            }
-            
-            .step-number {
-                width: 50px;
-                height: 50px;
-                background: var(--primary);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: bold;
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            /* FAQ Section */
-            .faq-section {
-                padding: 6rem 0;
-                background: white;
-            }
-            
-            .accordion-item {
-                margin-bottom: 1rem;
-                border-radius: 8px !important;
-                overflow: hidden;
-                border: 1px solid var(--light-gray) !important;
-            }
-            
-            .accordion-button:not(.collapsed) {
-                background-color: rgba(107, 99, 255, 0.1);
-                color: var(--primary);
-                box-shadow: none;
-            }
-            
-            .accordion-button:focus {
-                box-shadow: 0 0 0 0.25rem rgba(107, 99, 255, 0.25);
-            }
-            
-            .accordion-button::after {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b63ff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-            }
-            
-            /* CTA Section */
-            .cta-section {
-                padding: 6rem 0;
-                background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-                color: white;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .cta-section::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
-                background-size: cover;
-                background-position: center;
-                opacity: 0.1;
-            }
-            
-            .cta-content {
-                position: relative;
-                z-index: 2;
-            }
-            
-            .cta-card {
-                background: white;
-                border-radius: 12px;
-                padding: 3rem;
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-                background: rgba(255,255,255,0.95);
-                color: var(--dark);
-            }
-            
-            /* Responsive Adjustments */
-            @media (max-width: 768px) {
-                .hero-section, .features-section, .dashboard-section, 
-                .benefits-section, .testimonial-section, .cta-section,
-                .stats-section, .pricing-section, .faq-section,
-                .integration-section, .how-it-works-section {
-                    padding: 3rem 0;
-                }
-                
-                .hero-section {
-                    padding-top: 6rem;
-                    text-align: center;
-                }
-                
-                .hero-image-container {
-                    margin-top: 2rem;
-                    transform: none;
-                }
-                
-                .dashboard-slideshow {
-                    height: 350px;
-                }
-                
-                .stat-number {
-                    font-size: 2.5rem;
-                }
-            }
-            
-            /* Animation classes */
-            .fade-in {
-                animation: fadeIn 1s ease-in;
-            }
-            
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-            
-            .slide-up {
-                animation: slideUp 0.8s ease-out;
-            }
-            
-            @keyframes slideUp {
-                from { transform: translateY(50px); opacity: 0; }
-                to { transform: translateY(0); opacity: 1; }
-            }
-        </style>
-    </head>
-    <body data-bs-theme="light">
-    
-        <main>
-            <!-- 1. Hero Section -->
-            <section class="hero-section">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 hero-content">
-                            <span class="badge bg-white text-primary mb-3 px-3 py-2 fw-normal">NEW RELEASE v3.2</span>
-                            <h1 class="display-4 fw-bold mb-4">Complete Client Management for Hosting Businesses</h1>
-                            <p class="lead mb-4">Our all-in-one platform gives you complete control over client accounts, billing, support, and services with powerful automation to save you time and grow your business.</p>
-                            <div class="d-flex flex-wrap gap-3 mb-5">
-                                <a href="#demo" class="btn btn-light btn-lg px-4 py-3 fw-bold">View Dashboard Demo</a>
-                                <a href="#pricing" class="btn btn-outline-light btn-lg px-4 py-3">See Pricing</a>
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 hero-content">
+                        <span class="badge bg-white text-primary mb-3 px-3 py-2 fw-normal pulse-animation">NEW RELEASE v3.2</span>
+                        <h1 class="display-4 fw-bold mb-4">Complete Client Management for Hosting Businesses</h1>
+                        <p class="lead mb-4">Our all-in-one platform gives you complete control over client accounts, billing, support, and services with powerful automation to save you time and grow your business.</p>
+                        <div class="d-flex flex-wrap gap-3 mb-5">
+                            <a href="#demo" class="btn btn-light btn-lg px-4 py-3 fw-bold">View Dashboard Demo</a>
+                            <a href="#pricing" class="btn btn-outline-light btn-lg px-4 py-3">See Pricing</a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex">
+                                <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle border border-3 border-white" width="40" height="40" alt="User">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="d-flex">
-                                    <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle border border-3 border-white" width="40" height="40" alt="User">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
-                                    <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40" alt="User">
+                            <div class="ms-3">
+                                <div class="stars">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
                                 </div>
-                                <div class="ms-3">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
+                                <small>Trusted by 850+ hosting providers</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="hero-image-container floating">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Client Management Dashboard" 
+                                 class="img-fluid">
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-primary btn-lg rounded-circle pulse-animation" style="width: 70px; height: 70px;">
+                                    <i class="bi bi-play-fill fs-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Video Overview Section -->
+        <section class="py-6 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="fw-bold mb-5">See Our Platform in Action</h2>
+                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-lg">
+                            <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+                        </div>
+                        <div class="mt-5">
+                            <a href="#" class="btn btn-primary btn-lg px-5">Schedule a Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Key Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Powerful Features for Hosting Providers</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to manage your hosting clients efficiently in one powerful platform</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Feature 1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-people-fill fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Client Profiles</h4>
+                            <p class="text-muted">Complete client records with contact info, service history, notes, and activity logs. Segment clients by status, plan type, or custom tags.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>360° client view</li>
+                                <li>Custom fields</li>
+                                <li>Activity timeline</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-server fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Service Management</h4>
+                            <p class="text-muted">Manage all client services from one dashboard - hosting accounts, domains, SSL certificates, and add-ons with bulk actions.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>One-click provisioning</li>
+                                <li>Service monitoring</li>
+                                <li>Automated renewals</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-credit-card fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Billing Automation</h4>
+                            <p class="text-muted">Automated invoicing, payment processing, dunning management, and revenue reporting with support for 15+ payment gateways.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>Recurring billing</li>
+                                <li>Late fee automation</li>
+                                <li>Revenue analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-headset fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Support System</h4>
+                            <p class="text-muted">Integrated ticketing with SLA management, canned responses, client satisfaction ratings, and knowledge base integration.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>Ticket automation</li>
+                                <li>SLA tracking</li>
+                                <li>Client portal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second Row of Features -->
+                <div class="row g-4 mt-2">
+                    <!-- Feature 5 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-graph-up fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Reporting & Analytics</h4>
+                            <p class="text-muted">Comprehensive reports on revenue, client growth, service usage, and support metrics with customizable dashboards.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>Custom reports</li>
+                                <li>Export to PDF/Excel</li>
+                                <li>Scheduled reports</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-envelope fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Email Marketing</h4>
+                            <p class="text-muted">Create and send targeted email campaigns to clients with templates, automation, and performance tracking.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>Pre-built templates</li>
+                                <li>Segmentation</li>
+                                <li>Open/click tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-lock fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Security & Compliance</h4>
+                            <p class="text-muted">Enterprise-grade security with role-based access, audit logs, and compliance tools for GDPR, PCI, and more.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>Two-factor auth</li>
+                                <li>IP whitelisting</li>
+                                <li>Audit trails</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card feature-card-enhanced">
+                            <div class="feature-icon">
+                                <i class="bi bi-puzzle fs-3 text-primary"></i>
+                            </div>
+                            <h4 class="mb-3">Integrations</h4>
+                            <p class="text-muted">Connect with popular tools like WHMCS, cPanel, Plesk, Slack, QuickBooks, and more via API or pre-built connectors.</p>
+                            <ul class="text-muted small ps-3 mt-3">
+                                <li>API access</li>
+                                <li>Zapier integration</li>
+                                <li>Webhooks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Comparison Table -->
+                <div class="mt-6">
+                    <h3 class="text-center mb-4">Compare Feature Sets</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="bg-primary text-white">
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Basic</th>
+                                    <th>Professional</th>
+                                    <th>Enterprise</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Client Management</td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Service Management</td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Billing Automation</td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Support System</td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Advanced Reporting</td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Email Marketing</td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>API Access</td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>White Label</td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                                    <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Dashboard Preview Section -->
+        <section id="demo" class="dashboard-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0 dashboard-content">
+                        <h2 class="fw-bold mb-4">Experience Our Intuitive Dashboard</h2>
+                        <p class="lead text-muted mb-4">Our clean interface puts all the tools you need at your fingertips while minimizing clutter and distractions.</p>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                <i class="bi bi-speedometer2 fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-2">At-a-glance Overview</h5>
+                                <p class="text-muted mb-0">Quickly see key metrics like active clients, revenue, tickets, and server status without digging through reports.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                <i class="bi bi-lightning-charge fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-2">Quick Actions</h5>
+                                <p class="text-muted mb-0">Common tasks like creating invoices, provisioning services, or replying to tickets are just one click away.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
+                                <i class="bi bi-columns-gap fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-2">Customizable Layout</h5>
+                                <p class="text-muted mb-0">Arrange widgets to match your workflow and save different layouts for different team members.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary mt-4 px-4 py-3">Request Personalized Demo</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="dashboard-slideshow">
+                            <!-- Slide 1 -->
+                            <div class="dashboard-slide active" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');">
+                                <div class="slide-caption">Dashboard Overview</div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80');">
+                                <div class="slide-caption">Client Management</div>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');">
+                                <div class="slide-caption">Billing & Invoicing</div>
+                            </div>
+                            
+                            <!-- Slide 4 -->
+                            <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');">
+                                <div class="slide-caption">Support Tickets</div>
+                            </div>
+                        </div>
+                        <div class="slide-indicators">
+                            <div class="slide-indicator active" data-slide="0"></div>
+                            <div class="slide-indicator" data-slide="1"></div>
+                            <div class="slide-indicator" data-slide="2"></div>
+                            <div class="slide-indicator" data-slide="3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="1250">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="98">0</div>
+                            <div class="stat-label">Uptime %</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="24">0</div>
+                            <div class="stat-label">Support Hours</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="15">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Case Studies Section -->
+        <section class="py-6 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Success Stories</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">See how hosting providers like you are growing their businesses with our platform</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="case-study-card">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="img-fluid" alt="Case Study">
+                            <div class="p-4">
+                                <h4>WebHost Pro</h4>
+                                <p class="text-muted">Increased client retention by 35% and reduced support tickets by 40%</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Story</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="case-study-card">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="img-fluid" alt="Case Study">
+                            <div class="p-4">
+                                <h4>Cloud Solutions Inc</h4>
+                                <p class="text-muted">Scaled from 50 to 300 clients in just 6 months</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Story</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="case-study-card">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="img-fluid" alt="Case Study">
+                            <div class="p-4">
+                                <h4>Hosting Masters</h4>
+                                <p class="text-muted">Reduced billing errors by 90% and increased revenue by 25%</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Story</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Testimonials Section -->
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">What Our Clients Say</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">Don't just take our word for it - hear from our satisfied customers</p>
+                </div>
+                
+                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card">
+                                        <div class="testimonial-content text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="testimonial-img mb-4" alt="Testimonial">
+                                            <div class="stars mb-3">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <p class="lead mb-4">"WeFitHost's platform has completely transformed our hosting business. The automation features alone have saved us over 20 hours per week in administrative work, allowing us to focus on growing our client base."</p>
+                                            <h5 class="mb-1">Sarah Johnson</h5>
+                                            <p class="text-muted">CEO, WebHost Pro</p>
+                                        </div>
                                     </div>
-                                    <small>Trusted by 850+ hosting providers</small>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="hero-image-container floating">
-                                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
-                                     alt="Client Management Dashboard" 
-                                     class="img-fluid">
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card">
+                                        <div class="testimonial-content text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img mb-4" alt="Testimonial">
+                                            <div class="stars mb-3">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <p class="lead mb-4">"The client management tools are exceptional. We've been able to provide better service to our clients while actually reducing our support workload. It's been a game-changer for our business."</p>
+                                            <h5 class="mb-1">Michael Chen</h5>
+                                            <p class="text-muted">CTO, Cloud Solutions Inc</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="testimonial-card">
+                                        <div class="testimonial-content text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img mb-4" alt="Testimonial">
+                                            <div class="stars mb-3">
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                                <i class="bi bi-star-fill"></i>
+                                            </div>
+                                            <p class="lead mb-4">"As a small hosting provider, we couldn't believe how affordable and powerful this platform is. It's given us capabilities that previously only the big players could afford."</p>
+                                            <h5 class="mb-1">Emily Rodriguez</h5>
+                                            <p class="text-muted">Founder, Hosting Masters</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Team Section -->
+        <section class="py-6 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Meet Our Team</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">The experts behind our platform ready to support your success</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="team-member-card">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="team-member-img" alt="Team Member">
+                            <h5>Sarah Johnson</h5>
+                            <p class="text-muted mb-2">CEO & Founder</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member-card">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="team-member-img" alt="Team Member">
+                            <h5>Michael Chen</h5>
+                            <p class="text-muted mb-2">CTO</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member-card">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="team-member-img" alt="Team Member">
+                            <h5>Emily Rodriguez</h5>
+                            <p class="text-muted mb-2">Head of Product</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="team-member-card">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="team-member-img" alt="Team Member">
+                            <h5>David Wilson</h5>
+                            <p class="text-muted mb-2">Support Lead</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="bi bi-twitter"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-    
-            <!-- 2. Key Features Section -->
-            <section id="features" class="features-section">
-                <div class="container">
-                    <div class="text-center mb-5">
-                        <h2 class="fw-bold mb-3">Powerful Features for Hosting Providers</h2>
-                        <p class="lead text-muted mx-auto" style="max-width: 700px;">Everything you need to manage your hosting clients efficiently in one powerful platform</p>
-                    </div>
-    
-                    <div class="row g-4">
-                        <!-- Feature 1 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-people-fill fs-3 text-primary"></i>
-                                </div>
-                                <h4 class="mb-3">Client Profiles</h4>
-                                <p class="text-muted">Complete client records with contact info, service history, notes, and activity logs. Segment clients by status, plan type, or custom tags.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>360° client view</li>
-                                    <li>Custom fields</li>
-                                    <li>Activity timeline</li>
-                                </ul>
+            </div>
+        </section>
+
+        <!-- 9. Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Simple, Transparent Pricing</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the plan that fits your business needs</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="pricing-card pricing-card-enhanced">
+                            <div class="pricing-header">
+                                <h4 class="text-white">Starter</h4>
+                                <p class="text-white-50 mb-0">Perfect for small hosting providers</p>
                             </div>
-                        </div>
-    
-                        <!-- Feature 2 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-server fs-3 text-primary"></i>
+                            <div class="pricing-body">
+                                <div class="mb-4">
+                                    <span class="price">$49</span>
+                                    <span class="price-period">/month</span>
                                 </div>
-                                <h4 class="mb-3">Service Management</h4>
-                                <p class="text-muted">Manage all client services from one dashboard - hosting accounts, domains, SSL certificates, and add-ons with bulk actions.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>One-click provisioning</li>
-                                    <li>Service monitoring</li>
-                                    <li>Automated renewals</li>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="pricing-feature">Up to 50 clients</li>
+                                    <li class="pricing-feature">Basic client management</li>
+                                    <li class="pricing-feature">Automated billing</li>
+                                    <li class="pricing-feature">Support ticketing</li>
+                                    <li class="pricing-feature">Email support</li>
                                 </ul>
-                            </div>
-                        </div>
-    
-                        <!-- Feature 3 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-credit-card fs-3 text-primary"></i>
-                                </div>
-                                <h4 class="mb-3">Billing Automation</h4>
-                                <p class="text-muted">Automated invoicing, payment processing, dunning management, and revenue reporting with support for 15+ payment gateways.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>Recurring billing</li>
-                                    <li>Late fee automation</li>
-                                    <li>Revenue analytics</li>
-                                </ul>
-                            </div>
-                        </div>
-    
-                        <!-- Feature 4 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-headset fs-3 text-primary"></i>
-                                </div>
-                                <h4 class="mb-3">Support System</h4>
-                                <p class="text-muted">Integrated ticketing with SLA management, canned responses, client satisfaction ratings, and knowledge base integration.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>Ticket automation</li>
-                                    <li>SLA tracking</li>
-                                    <li>Client portal</li>
-                                </ul>
+                                <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Second Row of Features -->
-                    <div class="row g-4 mt-2">
-                        <!-- Feature 5 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-graph-up fs-3 text-primary"></i>
+                    <div class="col-md-4">
+                        <div class="pricing-card pricing-card-enhanced popular-plan">
+                            <div class="pricing-header">
+                                <span class="popular-badge">Most Popular</span>
+                                <h4 class="text-white">Professional</h4>
+                                <p class="text-white-50 mb-0">For growing hosting businesses</p>
+                            </div>
+                            <div class="pricing-body">
+                                <div class="mb-4">
+                                    <span class="price">$99</span>
+                                    <span class="price-period">/month</span>
                                 </div>
-                                <h4 class="mb-3">Reporting & Analytics</h4>
-                                <p class="text-muted">Comprehensive reports on revenue, client growth, service usage, and support metrics with customizable dashboards.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>Custom reports</li>
-                                    <li>Export to PDF/Excel</li>
-                                    <li>Scheduled reports</li>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="pricing-feature">Up to 200 clients</li>
+                                    <li class="pricing-feature">Advanced client management</li>
+                                    <li class="pricing-feature">Recurring billing</li>
+                                    <li class="pricing-feature">Priority support</li>
+                                    <li class="pricing-feature">Email marketing</li>
+                                    <li class="pricing-feature">Basic reporting</li>
                                 </ul>
+                                <a href="#" class="btn btn-primary w-100">Get Started</a>
                             </div>
                         </div>
-    
-                        <!-- Feature 6 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-envelope fs-3 text-primary"></i>
-                                </div>
-                                <h4 class="mb-3">Email Marketing</h4>
-                                <p class="text-muted">Create and send targeted email campaigns to clients with templates, automation, and performance tracking.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>Pre-built templates</li>
-                                    <li>Segmentation</li>
-                                    <li>Open/click tracking</li>
-                                </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pricing-card pricing-card-enhanced">
+                            <div class="pricing-header">
+                                <h4 class="text-white">Enterprise</h4>
+                                <p class="text-white-50 mb-0">For large hosting providers</p>
                             </div>
-                        </div>
-    
-                        <!-- Feature 7 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-shield-lock fs-3 text-primary"></i>
+                            <div class="pricing-body">
+                                <div class="mb-4">
+                                    <span class="price">$199</span>
+                                    <span class="price-period">/month</span>
                                 </div>
-                                <h4 class="mb-3">Security & Compliance</h4>
-                                <p class="text-muted">Enterprise-grade security with role-based access, audit logs, and compliance tools for GDPR, PCI, and more.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>Two-factor auth</li>
-                                    <li>IP whitelisting</li>
-                                    <li>Audit trails</li>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="pricing-feature">Unlimited clients</li>
+                                    <li class="pricing-feature">Advanced automation</li>
+                                    <li class="pricing-feature">White label options</li>
+                                    <li class="pricing-feature">24/7 priority support</li>
+                                    <li class="pricing-feature">Advanced reporting</li>
+                                    <li class="pricing-feature">API access</li>
                                 </ul>
-                            </div>
-                        </div>
-    
-                        <!-- Feature 8 -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="bi bi-puzzle fs-3 text-primary"></i>
-                                </div>
-                                <h4 class="mb-3">Integrations</h4>
-                                <p class="text-muted">Connect with popular tools like WHMCS, cPanel, Plesk, Slack, QuickBooks, and more via API or pre-built connectors.</p>
-                                <ul class="text-muted small ps-3 mt-3">
-                                    <li>API access</li>
-                                    <li>Zapier integration</li>
-                                    <li>Webhooks</li>
-                                </ul>
+                                <a href="#" class="btn btn-outline-primary w-100">Get Started</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-    
-            <!-- 3. Dashboard Preview Section -->
-            <section id="demo" class="dashboard-section">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 mb-5 mb-lg-0 dashboard-content">
-                            <h2 class="fw-bold mb-4">Experience Our Intuitive Dashboard</h2>
-                            <p class="lead text-muted mb-4">Our clean interface puts all the tools you need at your fingertips while minimizing clutter and distractions.</p>
-                            
-                            <div class="d-flex align-items-start mb-4">
-                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
-                                    <i class="bi bi-speedometer2 fs-4"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">At-a-glance Overview</h5>
-                                    <p class="text-muted mb-0">Quickly see key metrics like active clients, revenue, tickets, and server status without digging through reports.</p>
-                                </div>
+                
+                <div class="text-center mt-5">
+                    <p class="text-muted">Need a custom solution? <a href="#" class="text-primary">Contact our sales team</a> for enterprise pricing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Resources Section -->
+        <section class="py-6 bg-white">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3">Helpful Resources</h2>
+                    <p class="lead text-muted mx-auto" style="max-width: 700px;">Learn how to get the most out of our platform</p>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="resource-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="img-fluid" alt="Resource">
+                                <span class="resource-badge">Guide</span>
                             </div>
-                            
-                            <div class="d-flex align-items-start mb-4">
-                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
-                                    <i class="bi bi-lightning-charge fs-4"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Quick Actions</h5>
-                                    <p class="text-muted mb-0">Common tasks like creating invoices, provisioning services, or replying to tickets are just one click away.</p>
-                                </div>
+                            <div class="p-4">
+                                <h5>Getting Started Guide</h5>
+                                <p class="text-muted">A comprehensive guide to setting up your account and onboarding clients</p>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
                             </div>
-                            
-                            <div class="d-flex align-items-start">
-                                <div class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3">
-                                    <i class="bi bi-columns-gap fs-4"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Customizable Layout</h5>
-                                    <p class="text-muted mb-0">Arrange widgets to match your workflow and save different layouts for different team members.</p>
-                                </div>
-                            </div>
-                            
-                            <a href="#" class="btn btn-primary mt-4 px-4 py-3">Request Personalized Demo</a>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="dashboard-slideshow">
-                                <!-- Slide 1 -->
-                                <div class="dashboard-slide active" style="background-image: url('https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');"></div>
-                                
-                                <!-- Slide 2 -->
-                                <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80');"></div>
-                                
-                                <!-- Slide 3 -->
-                                <div class="dashboard-slide" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb
+                    </div>
+                    <div class="col-md-4">
+                        <div class="resource-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" class="img-fluid" alt="Resource">
+                                <span class="resource-badge">Webinar</span>
+                            </div>
+                            <div class="p-4">
+                                <h5>Automation Masterclass</h5>
+                                <p class="text-muted">Learn how to automate your hosting business workflows to save time</p>
+                                <a href="#" class="btn btn-sm btn-primary">Watch Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="resource-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" class="img-fluid" alt="Resource">
+                                <span class="resource-badge">Checklist</span>
+                            </div>
+                            <div class="p-4">
+                                <h5>Client Onboarding Checklist</h5>
+                                <p class="text-muted">Ensure a smooth client onboarding process with this step-by-step guide</p>
+                                <a href="#" class="btn btn-sm btn-primary">Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-outline-primary">View All Resources</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold mb-3">Frequently Asked Questions</h2>
+                            <p class="lead text-muted">Find answers to common questions about our platform</p>
+                        </div>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What payment methods do you accept?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. For enterprise customers, we can also arrange for annual billing and other payment options.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Is there a free trial available?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes, we offer a 14-day free trial for all our plans. No credit card is required to start your trial, and you'll have access to all features during this period.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Can I migrate my existing clients to your platform?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely! We provide migration tools and services to help you move your existing clients seamlessly. Our support team can assist with the migration process to ensure everything transfers correctly.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        How does the white labeling work?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Our Enterprise plan includes full white labeling capabilities. You can replace our branding with your own, customize the client portal with your logo and colors, and even use your own domain for all client-facing interfaces.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        What kind of support do you offer?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        We offer email support for all plans, with response times under 24 hours. Professional and Enterprise plans include priority support with faster response times, live chat, and phone support during business hours. Enterprise customers get 24/7 priority support.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <p class="text-muted">Still have questions? <a href="#" class="text-primary">Contact our support team</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center cta-content">
+                        <h2 class="fw-bold text-white mb-4">Ready to Transform Your Hosting Business?</h2>
+                        <p class="lead text-white mb-5">Join thousands of hosting providers who are saving time and growing their businesses with our platform.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3">
+                            <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold">Start Free Trial</a>
+                            <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">Contact Sales</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-6">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="./Logo_Wefithost_03.png" alt="WeFitHost Logo" height="40" class="mb-3">
+                    <p class="mb-4">WeFitHost provides powerful tools for hosting providers to manage their clients, automate billing, and deliver exceptional service.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Product</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Pricing</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Demo</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Guides</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="mb-4">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Privacy</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Terms</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5 bg-secondary">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50">© 2023 WeFitHost. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-white-50">Made with <i class="bi bi-heart-fill text-danger"></i> for hosting providers</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add new JavaScript for enhanced interactivity -->
+    <script>
+        // Initialize testimonial carousel
+        const testimonialCarousel = new bootstrap.Carousel('#testimonialCarousel', {
+            interval: 5000,
+            wrap: true
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .pricing-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Dashboard slideshow functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.dashboard-slide');
+        const indicators = document.querySelectorAll('.slide-indicator');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance slides
+        setInterval(nextSlide, 5000);
+        
+        // Manual slide control
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => showSlide(index));
+        });
+        
+        // Animate stats counters
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const count = parseInt(stat.textContent);
+                const increment = target / speed;
+                
+                if(count < target) {
+                    stat.textContent = Math.ceil(count + increment);
+                    setTimeout(animateStats, 1);
+                } else {
+                    stat.textContent = target;
+                }
+            });
+        }
+        
+        // Start counter animation when stats section is in view
+        const statsSection = document.querySelector('.stats-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsSection);
+    </script>
+</body>
+</html>
