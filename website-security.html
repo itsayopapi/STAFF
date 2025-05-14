@@ -1,1040 +1,1965 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
     <title>Enterprise Web Security Solutions | Military-Grade Protection</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        :root {
-            --primary-dark: #0f2027;
-            --primary-mid: #203a43;
-            --primary-light: #2c5364;
-            --accent-danger: #dc3545;
-            --accent-success: #28a745;
-            --accent-warning: #fd7e14;
+      :root {
+        --primary-dark: #0f2027;
+        --primary-mid: #203a43;
+        --primary-light: #2c5364;
+        --accent-danger: #dc3545;
+        --accent-success: #28a745;
+        --accent-warning: #fd7e14;
+      }
+
+      :root {
+        --primary-color: #6b63ff;
+        --secondary-color: #6c757d;
+        --dark-color: #1e293b;
+        --light-color: #f8f9fa;
+        --accent-color: #00c9a7;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #6a11cb 100%
+        );
+      }
+
+      /* Base Typography */
+      body {
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: #212529;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .display-1,
+      .display-2,
+      .display-3,
+      .display-4 {
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      .lead {
+        font-weight: 400;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
-        
-        /* Base Typography */
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: #212529;
+
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
-        
-        h1, h2, h3, h4, h5, .display-1, .display-2, .display-3, .display-4 {
-            font-weight: 700;
-            letter-spacing: -0.025em;
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
         }
-        
-        .lead {
-            font-weight: 400;
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
         }
-        
-        /* Security Hero Section */
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      /* Security Hero Section */
+      .security-hero {
+        background: linear-gradient(
+            135deg,
+            rgba(15, 32, 39, 0.92) 0%,
+            rgba(44, 83, 100, 0.92) 100%
+          ),
+          url("https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        padding: 6rem 0 8rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .security-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 20% 50%,
+          rgba(44, 83, 100, 0.3) 0%,
+          rgba(15, 32, 39, 0.8) 100%
+        );
+        z-index: 0;
+      }
+
+      .security-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-badge {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-badge:hover {
+        transform: translateY(-5px) scale(1.05);
+      }
+
+      /* Threat Indicators */
+      .threat-indicator {
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .threat-indicator::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 0.75rem;
+        height: 0.75rem;
+        background-color: var(--accent-danger);
+        border-radius: 50%;
+      }
+
+      /* Protection Cards */
+      .protection-card {
+        border-left: 4px solid var(--accent-success);
+        transition: all 0.3s ease;
+      }
+
+      .protection-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+      }
+
+      /* Compliance Badges */
+      .compliance-badge {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        opacity: 0.8;
+        transition: all 0.3s ease;
+      }
+
+      .compliance-badge:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.1);
+      }
+
+      /* Animated Elements */
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Gradient Backgrounds */
+      .bg-gradient-dark {
+        background: linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--primary-mid)
+        );
+      }
+
+      .bg-gradient-light {
+        background: linear-gradient(
+          135deg,
+          var(--primary-mid),
+          var(--primary-light)
+        );
+      }
+
+      /* Security Features Grid */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* Timeline Elements */
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--primary-light),
+          var(--accent-success)
+        );
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.25rem;
+        top: 0.25rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--accent-success);
+        border: 3px solid white;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
         .security-hero {
-            background: linear-gradient(135deg, rgba(15, 32, 39, 0.92) 0%, rgba(44, 83, 100, 0.92) 100%), 
-                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 6rem 0 8rem;
-            position: relative;
-            overflow: hidden;
+          padding: 4rem 0 6rem;
+          background-attachment: scroll;
         }
-        
-        .security-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 50%, rgba(44, 83, 100, 0.3) 0%, rgba(15, 32, 39, 0.8) 100%);
-            z-index: 0;
-        }
-        
-        .security-hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
+
         .hero-badge {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+          width: 80px;
+          height: 80px;
         }
-        
-        .hero-badge:hover {
-            transform: translateY(-5px) scale(1.05);
-        }
-        
-        /* Threat Indicators */
-        .threat-indicator {
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .threat-indicator::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.5rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: var(--accent-danger);
-            border-radius: 50%;
-        }
-        
-        /* Protection Cards */
-        .protection-card {
-            border-left: 4px solid var(--accent-success);
-            transition: all 0.3s ease;
-        }
-        
-        .protection-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
-        }
-        
-        /* Compliance Badges */
-        .compliance-badge {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.8;
-            transition: all 0.3s ease;
-        }
-        
-        .compliance-badge:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-        }
-        
-        /* Animated Elements */
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        /* Gradient Backgrounds */
-        .bg-gradient-dark {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-mid));
-        }
-        
-        .bg-gradient-light {
-            background: linear-gradient(135deg, var(--primary-mid), var(--primary-light));
-        }
-        
-        /* Security Features Grid */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        /* Timeline Elements */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-light), var(--accent-success));
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.25rem;
-            top: 0.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: var(--accent-success);
-            border: 3px solid white;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .security-hero {
-                padding: 4rem 0 6rem;
-                background-attachment: scroll;
-            }
-            
-            .hero-badge {
-                width: 80px;
-                height: 80px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="custom-header" data-include="nav.html"></header>
 
-<!-- ======= Hero Section ======= -->
-<section class="security-hero text-white">
-    <div class="container security-hero-content">
+    <!-- ======= Hero Section ======= -->
+    <section class="security-hero text-white">
+      <div class="container security-hero-content">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <span class="badge bg-danger bg-opacity-25 text-white mb-3 px-3 py-2 fw-normal border border-danger border-opacity-25">
-                    <i class="bi bi-shield-lock me-2"></i> ENTERPRISE SECURITY
-                </span>
-                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeIn">Military-Grade Web Protection</h1>
-                <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">24/7 monitored security infrastructure with real-time threat intelligence, automatic DDoS mitigation, and zero-day vulnerability protection</p>
-                
-                <div class="d-flex flex-wrap gap-3 mb-5">
-                    <div class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10">
-                        <div class="bg-success rounded-circle p-1 me-3">
-                            <i class="bi bi-check-lg fs-5"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold">99.99%</div>
-                            <small>Attack Block Rate</small>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10">
-                        <div class="bg-primary rounded-circle p-1 me-3">
-                            <i class="bi bi-lightning-charge fs-5"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold">2.3s</div>
-                            <small>Avg. Response Time</small>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10">
-                        <div class="bg-warning rounded-circle p-1 me-3">
-                            <i class="bi bi-shield-check fs-5"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold">365/24/7</div>
-                            <small>Security Monitoring</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="d-flex flex-wrap gap-4 align-items-center">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="SOC 2 Type II" class="hero-badge rounded-3 shadow animate-float">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="PCI DSS" class="hero-badge rounded-3 shadow animate-float" style="animation-delay: 0.5s;">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="ISO 27001" class="hero-badge rounded-3 shadow animate-float" style="animation-delay: 1s;">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Security Dashboard" class="img-fluid rounded-4 shadow-lg animate__animated animate__fadeIn animate__delay-1s">
-                    <div class="position-absolute bottom-0 start-0 translate-middle-y ms-5">
-                        <div class="bg-primary p-3 rounded-3 shadow">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-white bg-opacity-25 p-2 rounded-circle me-3">
-                                    <i class="bi bi-shield-lock fs-4 text-white"></i>
-                                </div>
-                                <div class="text-white">
-                                    <div class="fw-bold fs-5">1,284</div>
-                                    <small>Threats Blocked Today</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <span
+              class="badge bg-danger bg-opacity-25 text-white mb-3 px-3 py-2 fw-normal border border-danger border-opacity-25"
+            >
+              <i class="bi bi-shield-lock me-2"></i> ENTERPRISE SECURITY
+            </span>
+            <h1
+              class="display-3 fw-bold mb-4 animate__animated animate__fadeIn"
+            >
+              Military-Grade Web Protection
+            </h1>
+            <p
+              class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s"
+            >
+              24/7 monitored security infrastructure with real-time threat
+              intelligence, automatic DDoS mitigation, and zero-day
+              vulnerability protection
+            </p>
 
-<!-- ======= Threat Landscape Section ======= -->
-<section class="py-6 bg-light position-relative">
-    <div class="container py-5">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-danger bg-opacity-10 text-danger mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-exclamation-triangle-fill me-2"></i> CURRENT THREATS
-                </span>
-                <h2 class="display-5 fw-bold mb-3">The Evolving Cyber Threat Landscape</h2>
-                <p class="lead text-muted">Understanding today's most dangerous attack vectors</p>
+            <div class="d-flex flex-wrap gap-3 mb-5">
+              <div
+                class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10"
+              >
+                <div class="bg-success rounded-circle p-1 me-3">
+                  <i class="bi bi-check-lg fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-bold">99.99%</div>
+                  <small>Attack Block Rate</small>
+                </div>
+              </div>
+
+              <div
+                class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10"
+              >
+                <div class="bg-primary rounded-circle p-1 me-3">
+                  <i class="bi bi-lightning-charge fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-bold">2.3s</div>
+                  <small>Avg. Response Time</small>
+                </div>
+              </div>
+
+              <div
+                class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-pill border border-white border-opacity-10"
+              >
+                <div class="bg-warning rounded-circle p-1 me-3">
+                  <i class="bi bi-shield-check fs-5"></i>
+                </div>
+                <div>
+                  <div class="fw-bold">365/24/7</div>
+                  <small>Security Monitoring</small>
+                </div>
+              </div>
             </div>
+
+            <div class="d-flex flex-wrap gap-4 align-items-center">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="SOC 2 Type II"
+                class="hero-badge rounded-3 shadow animate-float"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="PCI DSS"
+                class="hero-badge rounded-3 shadow animate-float"
+                style="animation-delay: 0.5s"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="ISO 27001"
+                class="hero-badge rounded-3 shadow animate-float"
+                style="animation-delay: 1s"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <img
+                src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+                alt="Security Dashboard"
+                class="img-fluid rounded-4 shadow-lg animate__animated animate__fadeIn animate__delay-1s"
+              />
+              <div
+                class="position-absolute bottom-0 start-0 translate-middle-y ms-5"
+              >
+                <div class="bg-primary p-3 rounded-3 shadow">
+                  <div class="d-flex align-items-center">
+                    <div class="bg-white bg-opacity-25 p-2 rounded-circle me-3">
+                      <i class="bi bi-shield-lock fs-4 text-white"></i>
+                    </div>
+                    <div class="text-white">
+                      <div class="fw-bold fs-5">1,284</div>
+                      <small>Threats Blocked Today</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+      </div>
+    </section>
+
+    <!-- ======= Threat Landscape Section ======= -->
+    <section class="py-6 bg-light position-relative">
+      <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-danger bg-opacity-10 text-danger mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-exclamation-triangle-fill me-2"></i> CURRENT
+              THREATS
+            </span>
+            <h2 class="display-5 fw-bold mb-3">
+              The Evolving Cyber Threat Landscape
+            </h2>
+            <p class="lead text-muted">
+              Understanding today's most dangerous attack vectors
+            </p>
+          </div>
+        </div>
+
         <div class="row g-4">
-            <!-- Threat 1 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm threat-indicator">
-                    <div class="card-img-top overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1463&q=80" class="img-fluid w-100" alt="DDoS Attack" style="height: 180px; object-fit: cover;">
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
-                                <i class="bi bi-lightning-charge-fill text-danger"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-0">DDoS Attacks</h3>
-                        </div>
-                        <p class="card-text">Sophisticated volumetric attacks now exceed 2.3 Tbps, targeting network infrastructure and application layers.</p>
-                        <div class="mt-auto">
-                            <small class="text-muted d-flex align-items-center">
-                                <i class="bi bi-arrow-up-right-circle-fill text-danger me-2"></i>
-                                <span>Increased 183% YoY</span>
-                            </small>
-                        </div>
-                    </div>
+          <!-- Threat 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm threat-indicator">
+              <div class="card-img-top overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1463&q=80"
+                  class="img-fluid w-100"
+                  alt="DDoS Attack"
+                  style="height: 180px; object-fit: cover"
+                />
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
+                    <i class="bi bi-lightning-charge-fill text-danger"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-0">DDoS Attacks</h3>
                 </div>
-            </div>
-            
-            <!-- Threat 2 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm threat-indicator">
-                    <div class="card-img-top overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid w-100" alt="Ransomware" style="height: 180px; object-fit: cover;">
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
-                                <i class="bi bi-file-earmark-lock-fill text-danger"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-0">Ransomware</h3>
-                        </div>
-                        <p class="card-text">New variants emerge every 4.2 seconds, with average ransom demands exceeding $250,000 in 2023.</p>
-                        <div class="mt-auto">
-                            <small class="text-muted d-flex align-items-center">
-                                <i class="bi bi-arrow-up-right-circle-fill text-danger me-2"></i>
-                                <span>Up 87% since 2022</span>
-                            </small>
-                        </div>
-                    </div>
+                <p class="card-text">
+                  Sophisticated volumetric attacks now exceed 2.3 Tbps,
+                  targeting network infrastructure and application layers.
+                </p>
+                <div class="mt-auto">
+                  <small class="text-muted d-flex align-items-center">
+                    <i
+                      class="bi bi-arrow-up-right-circle-fill text-danger me-2"
+                    ></i>
+                    <span>Increased 183% YoY</span>
+                  </small>
                 </div>
+              </div>
             </div>
-            
-            <!-- Threat 3 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm threat-indicator">
-                    <div class="card-img-top overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" class="img-fluid w-100" alt="Zero Day" style="height: 180px; object-fit: cover;">
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
-                                <i class="bi bi-bug-fill text-danger"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-0">Zero-Day Exploits</h3>
-                        </div>
-                        <p class="card-text">Average time to weaponize new vulnerabilities has dropped to just 7 days, requiring faster response times.</p>
-                        <div class="mt-auto">
-                            <small class="text-muted d-flex align-items-center">
-                                <i class="bi bi-arrow-up-right-circle-fill text-danger me-2"></i>
-                                <span>57% target web apps</span>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Threat 4 -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm threat-indicator">
-                    <div class="card-img-top overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid w-100" alt="Insider Threats" style="height: 180px; object-fit: cover;">
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
-                                <i class="bi bi-person-fill-gear text-danger"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-0">Insider Threats</h3>
-                        </div>
-                        <p class="card-text">34% of breaches involve internal actors, with privilege escalation being the most common attack vector.</p>
-                        <div class="mt-auto">
-                            <small class="text-muted d-flex align-items-center">
-                                <i class="bi bi-arrow-up-right-circle-fill text-danger me-2"></i>
-                                <span>Often undetected</span>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5 pt-4">
-            <a href="#protection" class="btn btn-primary btn-lg px-4 py-3">
-                <i class="bi bi-shield-check me-2"></i> See Our Protection
-            </a>
-        </div>
-    </div>
-</section>
+          </div>
 
-<!-- ======= Security Architecture Section ======= -->
-<section id="protection" class="py-6 bg-white">
-    <div class="container py-5">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-layers-half me-2"></i> DEFENSE IN DEPTH
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Multi-Layered Security Architecture</h2>
-                <p class="lead text-muted">Protecting every layer of your digital infrastructure</p>
+          <!-- Threat 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm threat-indicator">
+              <div class="card-img-top overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  class="img-fluid w-100"
+                  alt="Ransomware"
+                  style="height: 180px; object-fit: cover"
+                />
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
+                    <i class="bi bi-file-earmark-lock-fill text-danger"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-0">Ransomware</h3>
+                </div>
+                <p class="card-text">
+                  New variants emerge every 4.2 seconds, with average ransom
+                  demands exceeding $250,000 in 2023.
+                </p>
+                <div class="mt-auto">
+                  <small class="text-muted d-flex align-items-center">
+                    <i
+                      class="bi bi-arrow-up-right-circle-fill text-danger me-2"
+                    ></i>
+                    <span>Up 87% since 2022</span>
+                  </small>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- Threat 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm threat-indicator">
+              <div class="card-img-top overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                  class="img-fluid w-100"
+                  alt="Zero Day"
+                  style="height: 180px; object-fit: cover"
+                />
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
+                    <i class="bi bi-bug-fill text-danger"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-0">Zero-Day Exploits</h3>
+                </div>
+                <p class="card-text">
+                  Average time to weaponize new vulnerabilities has dropped to
+                  just 7 days, requiring faster response times.
+                </p>
+                <div class="mt-auto">
+                  <small class="text-muted d-flex align-items-center">
+                    <i
+                      class="bi bi-arrow-up-right-circle-fill text-danger me-2"
+                    ></i>
+                    <span>57% target web apps</span>
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Threat 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 border-0 shadow-sm threat-indicator">
+              <div class="card-img-top overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  class="img-fluid w-100"
+                  alt="Insider Threats"
+                  style="height: 180px; object-fit: cover"
+                />
+              </div>
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
+                    <i class="bi bi-person-fill-gear text-danger"></i>
+                  </div>
+                  <h3 class="h5 fw-bold mb-0">Insider Threats</h3>
+                </div>
+                <p class="card-text">
+                  34% of breaches involve internal actors, with privilege
+                  escalation being the most common attack vector.
+                </p>
+                <div class="mt-auto">
+                  <small class="text-muted d-flex align-items-center">
+                    <i
+                      class="bi bi-arrow-up-right-circle-fill text-danger me-2"
+                    ></i>
+                    <span>Often undetected</span>
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
+        <div class="text-center mt-5 pt-4">
+          <a href="#protection" class="btn btn-primary btn-lg px-4 py-3">
+            <i class="bi bi-shield-check me-2"></i> See Our Protection
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Security Architecture Section ======= -->
+    <section id="protection" class="py-6 bg-white">
+      <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-layers-half me-2"></i> DEFENSE IN DEPTH
+            </span>
+            <h2 class="display-5 fw-bold mb-3">
+              Multi-Layered Security Architecture
+            </h2>
+            <p class="lead text-muted">
+              Protecting every layer of your digital infrastructure
+            </p>
+          </div>
+        </div>
+
         <div class="row g-5 align-items-center">
-            <div class="col-lg-6">
-                <div class="pe-lg-5">
-                    <div class="d-flex mb-5">
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-shield-lock-fill fs-2 text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">Perimeter Defense</h3>
-                            <p class="mb-0">Next-generation firewalls with deep packet inspection, intrusion prevention systems (IPS), and threat intelligence feeds block malicious traffic before it reaches your network.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex mb-5">
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-incognito fs-2 text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">DDoS Mitigation</h3>
-                            <p class="mb-0">Our global anycast network with 15 scrubbing centers absorbs attacks exceeding 10Tbps, with sub-second detection and mitigation of both volumetric and application-layer attacks.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex">
-                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-file-earmark-lock2-fill fs-2 text-primary"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">Web Application Protection</h3>
-                            <p class="mb-0">AI-powered WAF with automatic rule updates protects against OWASP Top 10 vulnerabilities, API attacks, and zero-day exploits with 99.98% accuracy.</p>
-                        </div>
-                    </div>
+          <div class="col-lg-6">
+            <div class="pe-lg-5">
+              <div class="d-flex mb-5">
+                <div
+                  class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i class="bi bi-shield-lock-fill fs-2 text-primary"></i>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="position-relative">
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Security Architecture" class="img-fluid rounded-4 shadow-lg">
-                    <div class="position-absolute top-0 start-0 translate-middle mt-5 ms-n5 d-none d-lg-block">
-                        <div class="bg-white p-3 rounded-3 shadow">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary bg-opacity-10 p-2 rounded-circle me-3">
-                                    <i class="bi bi-shield-check text-primary"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">7,284</div>
-                                    <small class="text-muted">Attacks blocked today</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="position-absolute bottom-0 end-0 translate-middle-y me-n5 d-none d-lg-block">
-                        <div class="bg-white p-3 rounded-3 shadow">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-success bg-opacity-10 p-2 rounded-circle me-3">
-                                    <i class="bi bi-speedometer2 text-success"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">2.3ms</div>
-                                    <small class="text-muted">Avg. response time</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">Perimeter Defense</h3>
+                  <p class="mb-0">
+                    Next-generation firewalls with deep packet inspection,
+                    intrusion prevention systems (IPS), and threat intelligence
+                    feeds block malicious traffic before it reaches your
+                    network.
+                  </p>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+              </div>
 
-<!-- ======= DDoS Protection Section ======= -->
-<section class="py-6 bg-gradient-light text-white">
-    <div class="container py-5">
+              <div class="d-flex mb-5">
+                <div
+                  class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i class="bi bi-incognito fs-2 text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">DDoS Mitigation</h3>
+                  <p class="mb-0">
+                    Our global anycast network with 15 scrubbing centers absorbs
+                    attacks exceeding 10Tbps, with sub-second detection and
+                    mitigation of both volumetric and application-layer attacks.
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <div
+                  class="bg-primary bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i
+                    class="bi bi-file-earmark-lock2-fill fs-2 text-primary"
+                  ></i>
+                </div>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">Web Application Protection</h3>
+                  <p class="mb-0">
+                    AI-powered WAF with automatic rule updates protects against
+                    OWASP Top 10 vulnerabilities, API attacks, and zero-day
+                    exploits with 99.98% accuracy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <img
+                src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+                alt="Security Architecture"
+                class="img-fluid rounded-4 shadow-lg"
+              />
+              <div
+                class="position-absolute top-0 start-0 translate-middle mt-5 ms-n5 d-none d-lg-block"
+              >
+                <div class="bg-white p-3 rounded-3 shadow">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="bg-primary bg-opacity-10 p-2 rounded-circle me-3"
+                    >
+                      <i class="bi bi-shield-check text-primary"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">7,284</div>
+                      <small class="text-muted">Attacks blocked today</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="position-absolute bottom-0 end-0 translate-middle-y me-n5 d-none d-lg-block"
+              >
+                <div class="bg-white p-3 rounded-3 shadow">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="bg-success bg-opacity-10 p-2 rounded-circle me-3"
+                    >
+                      <i class="bi bi-speedometer2 text-success"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold">2.3ms</div>
+                      <small class="text-muted">Avg. response time</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= DDoS Protection Section ======= -->
+    <section class="py-6 bg-gradient-light text-white">
+      <div class="container py-5">
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-white bg-opacity-20 text-white mb-3 px-3 py-2 fw-normal border border-white border-opacity-25">
-                    <i class="bi bi-lightning-charge-fill me-2"></i> TRAFFIC FILTERING
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Advanced DDoS Protection</h2>
-                <p class="lead opacity-75">Multi-layered mitigation for all attack vectors</p>
-            </div>
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-white bg-opacity-20 text-white mb-3 px-3 py-2 fw-normal border border-white border-opacity-25"
+            >
+              <i class="bi bi-lightning-charge-fill me-2"></i> TRAFFIC FILTERING
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Advanced DDoS Protection</h2>
+            <p class="lead opacity-75">
+              Multi-layered mitigation for all attack vectors
+            </p>
+          </div>
         </div>
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 bg-white bg-opacity-10 border-0 protection-card">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="bi bi-hdd-stack-fill fs-3"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-0">Volumetric Attacks</h3>
-                        </div>
-                        <p class="mb-4">Mitigates floods exceeding 10Tbps through our global anycast network with 15 scrubbing centers worldwide.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> UDP/ICMP floods</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> DNS/NTP amplification</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> IP fragment attacks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 bg-white bg-opacity-10 border-0 protection-card">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="bi bi-diagram-3-fill fs-3"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-0">Protocol Attacks</h3>
-                        </div>
-                        <p class="mb-4">Protects against SYN floods, UDP amplification, and other L3/L4 attacks with stateful inspection and protocol validation.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> SYN/ACK floods</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Ping of death</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Smurf attacks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 bg-white bg-opacity-10 border-0 protection-card">
-                    <div class="card-body p-4">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="bi bi-file-earmark-code-fill fs-3"></i>
-                            </div>
-                            <h3 class="h4 fw-bold mb-0">Application Layer</h3>
-                        </div>
-                        <p class="mb-4">Blocks sophisticated L7 attacks like HTTP floods and slowloris with behavioral analysis and AI-driven pattern recognition.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> HTTP/S floods</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Slowloris/RUDY</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> WordPress attacks</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center mt-5 pt-4">
-            <a href="#waf" class="btn btn-outline-light btn-lg px-4 py-3">
-                <i class="bi bi-arrow-down-circle me-2"></i> Continue to WAF Protection
-            </a>
-        </div>
-    </div>
-</section>
 
-<!-- ======= Web Application Firewall Section ======= -->
-<section id="waf" class="py-6 bg-white">
-    <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div
+              class="card h-100 bg-white bg-opacity-10 border-0 protection-card"
+            >
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
+                    <i class="bi bi-hdd-stack-fill fs-3"></i>
+                  </div>
+                  <h3 class="h4 fw-bold mb-0">Volumetric Attacks</h3>
+                </div>
+                <p class="mb-4">
+                  Mitigates floods exceeding 10Tbps through our global anycast
+                  network with 15 scrubbing centers worldwide.
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    UDP/ICMP floods
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    DNS/NTP amplification
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> IP
+                    fragment attacks
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="card h-100 bg-white bg-opacity-10 border-0 protection-card"
+            >
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
+                    <i class="bi bi-diagram-3-fill fs-3"></i>
+                  </div>
+                  <h3 class="h4 fw-bold mb-0">Protocol Attacks</h3>
+                </div>
+                <p class="mb-4">
+                  Protects against SYN floods, UDP amplification, and other
+                  L3/L4 attacks with stateful inspection and protocol
+                  validation.
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    SYN/ACK floods
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Ping of death
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Smurf attacks
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="card h-100 bg-white bg-opacity-10 border-0 protection-card"
+            >
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="bg-white bg-opacity-10 p-3 rounded-circle me-3">
+                    <i class="bi bi-file-earmark-code-fill fs-3"></i>
+                  </div>
+                  <h3 class="h4 fw-bold mb-0">Application Layer</h3>
+                </div>
+                <p class="mb-4">
+                  Blocks sophisticated L7 attacks like HTTP floods and slowloris
+                  with behavioral analysis and AI-driven pattern recognition.
+                </p>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    HTTP/S floods
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Slowloris/RUDY
+                  </li>
+                  <li>
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    WordPress attacks
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 pt-4">
+          <a href="#waf" class="btn btn-outline-light btn-lg px-4 py-3">
+            <i class="bi bi-arrow-down-circle me-2"></i> Continue to WAF
+            Protection
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Web Application Firewall Section ======= -->
+    <section id="waf" class="py-6 bg-white">
+      <div class="container py-5">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="WAF Dashboard" class="img-fluid rounded-4 shadow-lg">
-            </div>
-            <div class="col-lg-6">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-shield-shaded me-2"></i> WEB APPLICATION FIREWALL
-                </span>
-                <h2 class="display-5 fw-bold mb-4">AI-Powered Web Application Protection</h2>
-                <p class="lead mb-5">Defending against the OWASP Top 10 and emerging zero-day threats</p>
-                
-                <div class="accordion accordion-flush" id="wafAccordion">
-                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#waf-feature1">
-                                <i class="bi bi-robot me-3 text-primary"></i> Machine Learning Protection
-                            </button>
-                        </h3>
-                        <div id="waf-feature1" class="accordion-collapse collapse show" data-bs-parent="#wafAccordion">
-                            <div class="accordion-body">
-                                <p>Our WAF uses behavioral analysis and anomaly detection to identify and block emerging threats before rules are officially published, reducing zero-day exposure by 87%.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Detects unknown attack patterns</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Adaptive rule generation</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Continuous learning from global threat data</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#waf-feature2">
-                                <i class="bi bi-shield-lock me-3 text-primary"></i> OWASP Top 10 Coverage
-                            </button>
-                        </h3>
-                        <div id="waf-feature2" class="accordion-collapse collapse" data-bs-parent="#wafAccordion">
-                            <div class="accordion-body">
-                                <p>Comprehensive protection against critical vulnerabilities including SQL injection, XSS, CSRF, and insecure deserialization with virtual patching for known exploits.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 5,000+ pre-configured rules</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Automatic rule updates</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> False positive reduction</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item border-0 shadow-sm rounded-3">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#waf-feature3">
-                                <i class="bi bi-plug me-3 text-primary"></i> API Security
-                            </button>
-                        </h3>
-                        <div id="waf-feature3" class="accordion-collapse collapse" data-bs-parent="#wafAccordion">
-                            <div class="accordion-body">
-                                <p>Specialized protection for REST and GraphQL APIs including JSON validation, rate limiting, and abnormal behavior detection.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Schema validation</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Bot protection</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Credential stuffing prevention</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="WAF Dashboard"
+              class="img-fluid rounded-4 shadow-lg"
+            />
+          </div>
+          <div class="col-lg-6">
+            <span
+              class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-shield-shaded me-2"></i> WEB APPLICATION FIREWALL
+            </span>
+            <h2 class="display-5 fw-bold mb-4">
+              AI-Powered Web Application Protection
+            </h2>
+            <p class="lead mb-5">
+              Defending against the OWASP Top 10 and emerging zero-day threats
+            </p>
 
-<!-- ======= Malware Protection Section ======= -->
-<section class="py-6 bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-danger bg-opacity-10 text-danger mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-bug-fill me-2"></i> MALWARE DEFENSE
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Advanced Malware Protection</h2>
-                <p class="lead text-muted">Real-time scanning and automatic remediation</p>
+            <div class="accordion accordion-flush" id="wafAccordion">
+              <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#waf-feature1"
+                  >
+                    <i class="bi bi-robot me-3 text-primary"></i> Machine
+                    Learning Protection
+                  </button>
+                </h3>
+                <div
+                  id="waf-feature1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#wafAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Our WAF uses behavioral analysis and anomaly detection to
+                      identify and block emerging threats before rules are
+                      officially published, reducing zero-day exposure by 87%.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Detects unknown attack patterns
+                      </li>
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Adaptive rule generation
+                      </li>
+                      <li>
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Continuous learning from global threat data
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 mb-3 shadow-sm rounded-3">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#waf-feature2"
+                  >
+                    <i class="bi bi-shield-lock me-3 text-primary"></i> OWASP
+                    Top 10 Coverage
+                  </button>
+                </h3>
+                <div
+                  id="waf-feature2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#wafAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Comprehensive protection against critical vulnerabilities
+                      including SQL injection, XSS, CSRF, and insecure
+                      deserialization with virtual patching for known exploits.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        5,000+ pre-configured rules
+                      </li>
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Automatic rule updates
+                      </li>
+                      <li>
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        False positive reduction
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 shadow-sm rounded-3">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#waf-feature3"
+                  >
+                    <i class="bi bi-plug me-3 text-primary"></i> API Security
+                  </button>
+                </h3>
+                <div
+                  id="waf-feature3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#wafAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Specialized protection for REST and GraphQL APIs including
+                      JSON validation, rate limiting, and abnormal behavior
+                      detection.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Schema validation
+                      </li>
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Bot protection
+                      </li>
+                      <li>
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Credential stuffing prevention
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        
+      </div>
+    </section>
+
+    <!-- ======= Malware Protection Section ======= -->
+    <section class="py-6 bg-light">
+      <div class="container py-5">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-danger bg-opacity-10 text-danger mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-bug-fill me-2"></i> MALWARE DEFENSE
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Advanced Malware Protection</h2>
+            <p class="lead text-muted">
+              Real-time scanning and automatic remediation
+            </p>
+          </div>
+        </div>
+
         <div class="row g-5 align-items-center">
-            <div class="col-lg-6 order-lg-2">
-                <div class="position-relative">
-                    <img src="https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1402&q=80" alt="Malware Scanning" class="img-fluid rounded-4 shadow-lg">
-                    <div class="position-absolute top-0 start-0 translate-middle mt-5 ms-n5 d-none d-lg-block">
-                        <div class="bg-white p-3 rounded-3 shadow">
-                            <div class="d-flex align-items-center">
-                                <div class="bg-danger bg-opacity-10 p-2 rounded-circle me-3">
-                                    <i class="bi bi-shield-slash-fill text-danger"></i>
-                                </div>
-                                <div>
-                                    <div class="fw-bold">1,284</div>
-                                    <small class="text-muted">Threats blocked today</small>
-                                </div>
-                            </div>
-                        </div>
+          <div class="col-lg-6 order-lg-2">
+            <div class="position-relative">
+              <img
+                src="https://images.unsplash.com/photo-1605792657660-596af9009e82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1402&q=80"
+                alt="Malware Scanning"
+                class="img-fluid rounded-4 shadow-lg"
+              />
+              <div
+                class="position-absolute top-0 start-0 translate-middle mt-5 ms-n5 d-none d-lg-block"
+              >
+                <div class="bg-white p-3 rounded-3 shadow">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="bg-danger bg-opacity-10 p-2 rounded-circle me-3"
+                    >
+                      <i class="bi bi-shield-slash-fill text-danger"></i>
                     </div>
+                    <div>
+                      <div class="fw-bold">1,284</div>
+                      <small class="text-muted">Threats blocked today</small>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-lg-6 order-lg-1">
-                <div class="pe-lg-5">
-                    <div class="d-flex mb-5">
-                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-file-earmark-lock-fill fs-2 text-danger"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">Real-Time File Scanning</h3>
-                            <p class="mb-0">Heuristic analysis detects 99.4% of malware variants, including zero-day threats, with minimal performance impact.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex mb-5">
-                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-activity fs-2 text-danger"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">Behavioral Monitoring</h3>
-                            <p class="mb-0">Identifies suspicious file activities like encryption patterns indicative of ransomware and unauthorized data exfiltration.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex">
-                        <div class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0">
-                            <i class="bi bi-arrow-repeat fs-2 text-danger"></i>
-                        </div>
-                        <div>
-                            <h3 class="h4 fw-bold mb-3">Automatic Remediation</h3>
-                            <p class="mb-0">Infected files are automatically quarantined and clean versions restored from secure, versioned backups.</p>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <div class="pe-lg-5">
+              <div class="d-flex mb-5">
+                <div
+                  class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i class="bi bi-file-earmark-lock-fill fs-2 text-danger"></i>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">Real-Time File Scanning</h3>
+                  <p class="mb-0">
+                    Heuristic analysis detects 99.4% of malware variants,
+                    including zero-day threats, with minimal performance impact.
+                  </p>
+                </div>
+              </div>
 
-<!-- ======= Compliance Section ======= -->
-<section class="py-6 bg-white">
-    <div class="container py-5">
+              <div class="d-flex mb-5">
+                <div
+                  class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i class="bi bi-activity fs-2 text-danger"></i>
+                </div>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">Behavioral Monitoring</h3>
+                  <p class="mb-0">
+                    Identifies suspicious file activities like encryption
+                    patterns indicative of ransomware and unauthorized data
+                    exfiltration.
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <div
+                  class="bg-danger bg-opacity-10 p-3 rounded-circle me-4 flex-shrink-0"
+                >
+                  <i class="bi bi-arrow-repeat fs-2 text-danger"></i>
+                </div>
+                <div>
+                  <h3 class="h4 fw-bold mb-3">Automatic Remediation</h3>
+                  <p class="mb-0">
+                    Infected files are automatically quarantined and clean
+                    versions restored from secure, versioned backups.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Compliance Section ======= -->
+    <section class="py-6 bg-white">
+      <div class="container py-5">
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-success bg-opacity-10 text-success mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-award-fill me-2"></i> CERTIFICATIONS
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Industry Compliance Standards</h2>
-                <p class="lead text-muted">Meeting strict regulatory requirements</p>
-            </div>
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-success bg-opacity-10 text-success mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-award-fill me-2"></i> CERTIFICATIONS
+            </span>
+            <h2 class="display-5 fw-bold mb-3">
+              Industry Compliance Standards
+            </h2>
+            <p class="lead text-muted">
+              Meeting strict regulatory requirements
+            </p>
+          </div>
         </div>
-        
+
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" class="compliance-badge img-fluid mb-4 mx-auto" alt="PCI DSS" style="height: 100px;">
-                    <h3 class="h4 fw-bold mb-3">PCI DSS Level 1</h3>
-                    <p class="mb-4">Full compliance with all 12 requirements for handling payment card data, including quarterly ASV scans and bi-annual penetration tests.</p>
-                    <ul class="list-unstyled text-start">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> SAQ D validation</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Tokenization available</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Secure checkout systems</li>
-                    </ul>
-                </div>
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                class="compliance-badge img-fluid mb-4 mx-auto"
+                alt="PCI DSS"
+                style="height: 100px"
+              />
+              <h3 class="h4 fw-bold mb-3">PCI DSS Level 1</h3>
+              <p class="mb-4">
+                Full compliance with all 12 requirements for handling payment
+                card data, including quarterly ASV scans and bi-annual
+                penetration tests.
+              </p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i> SAQ
+                  D validation
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Tokenization available
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Secure checkout systems
+                </li>
+              </ul>
             </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="compliance-badge img-fluid mb-4 mx-auto" alt="HIPAA" style="height: 100px;">
-                    <h3 class="h4 fw-bold mb-3">HIPAA Compliance</h3>
-                    <p class="mb-4">Secure healthcare data hosting with signed Business Associate Agreements (BAA), encrypted storage, and comprehensive audit logging.</p>
-                    <ul class="list-unstyled text-start">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> PHI access controls</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Audit trail reporting</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Data breach notification</li>
-                    </ul>
-                </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                class="compliance-badge img-fluid mb-4 mx-auto"
+                alt="HIPAA"
+                style="height: 100px"
+              />
+              <h3 class="h4 fw-bold mb-3">HIPAA Compliance</h3>
+              <p class="mb-4">
+                Secure healthcare data hosting with signed Business Associate
+                Agreements (BAA), encrypted storage, and comprehensive audit
+                logging.
+              </p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i> PHI
+                  access controls
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Audit trail reporting
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i> Data
+                  breach notification
+                </li>
+              </ul>
             </div>
-            
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="compliance-badge img-fluid mb-4 mx-auto" alt="GDPR" style="height: 100px;">
-                    <h3 class="h4 fw-bold mb-3">GDPR Ready</h3>
-                    <p class="mb-4">Data protection compliant infrastructure with EU data residency options, right to erasure support, and privacy by design.</p>
-                    <ul class="list-unstyled text-start">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Data processing agreements</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Encryption at rest/transit</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i> Breach notification</li>
-                    </ul>
-                </div>
+          </div>
+
+          <div class="col-md-4">
+            <div
+              class="card h-100 border-0 shadow-sm text-center p-5 hover-shadow-lg"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                class="compliance-badge img-fluid mb-4 mx-auto"
+                alt="GDPR"
+                style="height: 100px"
+              />
+              <h3 class="h4 fw-bold mb-3">GDPR Ready</h3>
+              <p class="mb-4">
+                Data protection compliant infrastructure with EU data residency
+                options, right to erasure support, and privacy by design.
+              </p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i> Data
+                  processing agreements
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Encryption at rest/transit
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Breach notification
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
-        
+
         <div class="text-center mt-5">
-            <div class="d-inline-flex flex-wrap gap-3 align-items-center bg-light p-4 rounded-3">
-                <span class="fw-bold">Additional Certifications:</span>
-                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">SOC 2 Type II</span>
-                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">ISO 27001</span>
-                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FISMA</span>
-                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2">FedRAMP</span>
-            </div>
+          <div
+            class="d-inline-flex flex-wrap gap-3 align-items-center bg-light p-4 rounded-3"
+          >
+            <span class="fw-bold">Additional Certifications:</span>
+            <span
+              class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+              >SOC 2 Type II</span
+            >
+            <span
+              class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+              >ISO 27001</span
+            >
+            <span
+              class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+              >FISMA</span
+            >
+            <span
+              class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2"
+              >FedRAMP</span
+            >
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ======= Case Studies Section ======= -->
-<section class="py-6 bg-light">
-    <div class="container py-5">
+    <!-- ======= Case Studies Section ======= -->
+    <section class="py-6 bg-light">
+      <div class="container py-5">
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-journal-check me-2"></i> CASE STUDIES
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Security Success Stories</h2>
-                <p class="lead text-muted">Real-world protection results from our clients</p>
-            </div>
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-journal-check me-2"></i> CASE STUDIES
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Security Success Stories</h2>
+            <p class="lead text-muted">
+              Real-world protection results from our clients
+            </p>
+          </div>
         </div>
-        
+
         <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="row g-0 h-100">
-                        <div class="col-md-5">
-                            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid h-100" alt="Ecommerce Security" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary rounded-circle p-2 me-3">
-                                        <i class="bi bi-cart-check-fill text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="card-title mb-0 fw-bold">Ecommerce Platform</h5>
-                                        <small class="text-success fw-bold">99.99% Black Friday uptime</small>
-                                    </div>
-                                </div>
-                                <p class="card-text">Protected $28M in transactions during peak traffic while mitigating 4,217 DDoS attempts and blocking 12,000+ credential stuffing attacks.</p>
-                                <div class="mb-4">
-                                    <div class="progress mb-2" style="height: 8px;">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small class="text-muted">95% reduction in security incidents</small>
-                                </div>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Zero successful breaches</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 47% reduction in fraud</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> PCI DSS compliant checkout</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-lg-6">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-md-5">
+                  <img
+                    src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    class="img-fluid h-100"
+                    alt="Ecommerce Security"
+                    style="object-fit: cover"
+                  />
                 </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <div class="row g-0 h-100">
-                        <div class="col-md-5">
-                            <img src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid h-100" alt="Financial Security" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary rounded-circle p-2 me-3">
-                                        <i class="bi bi-bank2 text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="card-title mb-0 fw-bold">Financial Institution</h5>
-                                        <small class="text-success fw-bold">Zero breaches in 5 years</small>
-                                    </div>
-                                </div>
-                                <p class="card-text">Prevented 3 zero-day exploit attempts through advanced threat intelligence and virtual patching system.</p>
-                                <div class="mb-4">
-                                    <div class="progress mb-2" style="height: 8px;">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <small class="text-muted">100% audit compliance</small>
-                                </div>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 2.1s attack response time</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> SOC 2 Type II certified</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i> Automated compliance reporting</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="bg-primary rounded-circle p-2 me-3">
+                        <i class="bi bi-cart-check-fill text-white"></i>
+                      </div>
+                      <div>
+                        <h5 class="card-title mb-0 fw-bold">
+                          Ecommerce Platform
+                        </h5>
+                        <small class="text-success fw-bold"
+                          >99.99% Black Friday uptime</small
+                        >
+                      </div>
                     </div>
+                    <p class="card-text">
+                      Protected $28M in transactions during peak traffic while
+                      mitigating 4,217 DDoS attempts and blocking 12,000+
+                      credential stuffing attacks.
+                    </p>
+                    <div class="mb-4">
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 95%"
+                          aria-valuenow="95"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <small class="text-muted"
+                        >95% reduction in security incidents</small
+                      >
+                    </div>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Zero successful breaches
+                      </li>
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        47% reduction in fraud
+                      </li>
+                      <li>
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        PCI DSS compliant checkout
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-md-5">
+                  <img
+                    src="https://images.unsplash.com/photo-1535320903710-d993d3d77d29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    class="img-fluid h-100"
+                    alt="Financial Security"
+                    style="object-fit: cover"
+                  />
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="bg-primary rounded-circle p-2 me-3">
+                        <i class="bi bi-bank2 text-white"></i>
+                      </div>
+                      <div>
+                        <h5 class="card-title mb-0 fw-bold">
+                          Financial Institution
+                        </h5>
+                        <small class="text-success fw-bold"
+                          >Zero breaches in 5 years</small
+                        >
+                      </div>
+                    </div>
+                    <p class="card-text">
+                      Prevented 3 zero-day exploit attempts through advanced
+                      threat intelligence and virtual patching system.
+                    </p>
+                    <div class="mb-4">
+                      <div class="progress mb-2" style="height: 8px">
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 100%"
+                          aria-valuenow="100"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
+                      </div>
+                      <small class="text-muted">100% audit compliance</small>
+                    </div>
+                    <ul class="list-unstyled">
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        2.1s attack response time
+                      </li>
+                      <li class="mb-2">
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        SOC 2 Type II certified
+                      </li>
+                      <li>
+                        <i
+                          class="bi bi-check-circle-fill text-success me-2"
+                        ></i>
+                        Automated compliance reporting
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <div class="text-center mt-5">
-            <a href="#security-team" class="btn btn-primary btn-lg px-4 py-3">
-                <i class="bi bi-people-fill me-2"></i> Meet Our Security Team
-            </a>
+          <a href="#security-team" class="btn btn-primary btn-lg px-4 py-3">
+            <i class="bi bi-people-fill me-2"></i> Meet Our Security Team
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ======= Security Team Section ======= -->
-<section id="security-team" class="py-6 bg-dark text-white">
-    <div class="container py-5">
+    <!-- ======= Security Team Section ======= -->
+    <section id="security-team" class="py-6 bg-dark text-white">
+      <div class="container py-5">
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-white bg-opacity-20 text-white mb-3 px-3 py-2 fw-normal border border-white border-opacity-25">
-                    <i class="bi bi-people-fill me-2"></i> SECURITY TEAM
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Our Cybersecurity Experts</h2>
-                <p class="lead opacity-75">24/7 protection from certified professionals</p>
-            </div>
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-white bg-opacity-20 text-white mb-3 px-3 py-2 fw-normal border border-white border-opacity-25"
+            >
+              <i class="bi bi-people-fill me-2"></i> SECURITY TEAM
+            </span>
+            <h2 class="display-5 fw-bold mb-3">Our Cybersecurity Experts</h2>
+            <p class="lead opacity-75">
+              24/7 protection from certified professionals
+            </p>
+          </div>
         </div>
-        
+
         <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 bg-white bg-opacity-10 border-0">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Security Analyst" style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5 fw-bold">Sarah Johnson</h3>
-                        <p class="text-muted mb-3">Senior Threat Analyst</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-white bg-opacity-10">CISSP</span>
-                            <span class="badge bg-white bg-opacity-10">CEH</span>
-                            <span class="badge bg-white bg-opacity-10">OSCP</span>
-                        </div>
-                    </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 bg-white bg-opacity-10 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="card-img-top"
+                alt="Security Analyst"
+                style="height: 250px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Sarah Johnson</h3>
+                <p class="text-muted mb-3">Senior Threat Analyst</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-white bg-opacity-10">CISSP</span>
+                  <span class="badge bg-white bg-opacity-10">CEH</span>
+                  <span class="badge bg-white bg-opacity-10">OSCP</span>
                 </div>
+              </div>
             </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 bg-white bg-opacity-10 border-0">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Security Engineer" style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5 fw-bold">Michael Chen</h3>
-                        <p class="text-muted mb-3">Security Architect</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-white bg-opacity-10">CISM</span>
-                            <span class="badge bg-white bg-opacity-10">CCSP</span>
-                            <span class="badge bg-white bg-opacity-10">AWS Security</span>
-                        </div>
-                    </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 bg-white bg-opacity-10 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="card-img-top"
+                alt="Security Engineer"
+                style="height: 250px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Michael Chen</h3>
+                <p class="text-muted mb-3">Security Architect</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-white bg-opacity-10">CISM</span>
+                  <span class="badge bg-white bg-opacity-10">CCSP</span>
+                  <span class="badge bg-white bg-opacity-10">AWS Security</span>
                 </div>
+              </div>
             </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 bg-white bg-opacity-10 border-0">
-                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Forensic Expert" style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5 fw-bold">David Rodriguez</h3>
-                        <p class="text-muted mb-3">Forensic Investigator</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-white bg-opacity-10">GCFA</span>
-                            <span class="badge bg-white bg-opacity-10">GNFA</span>
-                            <span class="badge bg-white bg-opacity-10">CHFI</span>
-                        </div>
-                    </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 bg-white bg-opacity-10 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                class="card-img-top"
+                alt="Forensic Expert"
+                style="height: 250px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h3 class="h5 fw-bold">David Rodriguez</h3>
+                <p class="text-muted mb-3">Forensic Investigator</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-white bg-opacity-10">GCFA</span>
+                  <span class="badge bg-white bg-opacity-10">GNFA</span>
+                  <span class="badge bg-white bg-opacity-10">CHFI</span>
                 </div>
+              </div>
             </div>
-            
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 bg-white bg-opacity-10 border-0">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" class="card-img-top" alt="Compliance Officer" style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h3 class="h5 fw-bold">Emily Wilson</h3>
-                        <p class="text-muted mb-3">Compliance Director</p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="badge bg-white bg-opacity-10">CIPP</span>
-                            <span class="badge bg-white bg-opacity-10">CIPM</span>
-                            <span class="badge bg-white bg-opacity-10">CRISC</span>
-                        </div>
-                    </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="card h-100 bg-white bg-opacity-10 border-0">
+              <img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80"
+                class="card-img-top"
+                alt="Compliance Officer"
+                style="height: 250px; object-fit: cover"
+              />
+              <div class="card-body">
+                <h3 class="h5 fw-bold">Emily Wilson</h3>
+                <p class="text-muted mb-3">Compliance Director</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-white bg-opacity-10">CIPP</span>
+                  <span class="badge bg-white bg-opacity-10">CIPM</span>
+                  <span class="badge bg-white bg-opacity-10">CRISC</span>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-        
+
         <div class="text-center mt-5 pt-4">
-            <a href="#security-operations" class="btn btn-outline-light btn-lg px-4 py-3">
-                <i class="bi bi-arrow-down-circle me-2"></i> See Our Security Operations
-            </a>
+          <a
+            href="#security-operations"
+            class="btn btn-outline-light btn-lg px-4 py-3"
+          >
+            <i class="bi bi-arrow-down-circle me-2"></i> See Our Security
+            Operations
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- ======= Security Operations Section ======= -->
-<section id="security-operations" class="py-6 bg-white">
-    <div class="container py-5">
+    <!-- ======= Security Operations Section ======= -->
+    <section id="security-operations" class="py-6 bg-white">
+      <div class="container py-5">
         <div class="row justify-content-center mb-5">
-            <div class="col-lg-8 text-center">
-                <span class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal">
-                    <i class="bi bi-building-gear me-2"></i> SECURITY OPERATIONS
-                </span>
-                <h2 class="display-5 fw-bold mb-3">Global Security Operations Centers</h2>
-                <p class="lead text-muted">24/7/365 monitoring from multiple continents</p>
-            </div>
+          <div class="col-lg-8 text-center">
+            <span
+              class="badge bg-primary bg-opacity-10 text-primary mb-3 px-3 py-2 fw-normal"
+            >
+              <i class="bi bi-building-gear me-2"></i> SECURITY OPERATIONS
+            </span>
+            <h2 class="display-5 fw-bold mb-3">
+              Global Security Operations Centers
+            </h2>
+            <p class="lead text-muted">
+              24/7/365 monitoring from multiple continents
+            </p>
+          </div>
         </div>
-        
+
         <div class="row g-5">
-            <div class="col-lg-6">
-                <div class="pe-lg-5">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3 class="h4 fw-bold mb-2">Threat Detection</h3>
-                            <p>Our SIEM system processes over 2.3 million security events per second, using machine learning to identify anomalies and potential threats.</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h3 class="h4 fw-bold mb-2">Incident Triage</h3>
-                            <p>Security analysts classify and prioritize alerts using our proprietary scoring system, reducing false positives by 87%.</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h3 class="h4 fw-bold mb-2">Threat Hunting</h3>
-                            <p>Proactive searches for IOCs and anomalous behavior across client environments using YARA rules and behavioral analytics.</p>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <h3 class="h4 fw-bold mb-2">Remediation</h3>
-                            <p>Automated playbooks execute containment procedures while human analysts coordinate with your team for resolution.</p>
-                        </div>
-                    </div>
+          <div class="col-lg-6">
+            <div class="pe-lg-5">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h3 class="h4 fw-bold mb-2">Threat Detection</h3>
+                  <p>
+                    Our SIEM system processes over 2.3 million security events
+                    per second, using machine learning to identify anomalies and
+                    potential threats.
+                  </p>
                 </div>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="position-relative h-100">
-                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Security Operations Center" class="img-fluid rounded-4 shadow-lg h-100" style="object-fit: cover;">
-                    <div class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white p-4 rounded-bottom-4">
-                        <div class="row">
-                            <div class="col-4 text-center">
-                                <div class="fs-3 fw-bold">3</div>
-                                <small>Global SOCs</small>
-                            </div>
-                            <div class="col-4 text-center">
-                                <div class="fs-3 fw-bold">247</div>
-                                <small>Security Staff</small>
-                            </div>
-                            <div class="col-4 text-center">
-                                <div class="fs-3 fw-bold">2.1s</div>
-                                <small>Avg. Response</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- ======= CTA Section ======= -->
-<section class="py-6 bg-primary text-white position-relative overflow-hidden">
-    <div class="container py-5 position-relative z-2">
+                <div class="timeline-item">
+                  <h3 class="h4 fw-bold mb-2">Incident Triage</h3>
+                  <p>
+                    Security analysts classify and prioritize alerts using our
+                    proprietary scoring system, reducing false positives by 87%.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <h3 class="h4 fw-bold mb-2">Threat Hunting</h3>
+                  <p>
+                    Proactive searches for IOCs and anomalous behavior across
+                    client environments using YARA rules and behavioral
+                    analytics.
+                  </p>
+                </div>
+
+                <div class="timeline-item">
+                  <h3 class="h4 fw-bold mb-2">Remediation</h3>
+                  <p>
+                    Automated playbooks execute containment procedures while
+                    human analysts coordinate with your team for resolution.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="position-relative h-100">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Security Operations Center"
+                class="img-fluid rounded-4 shadow-lg h-100"
+                style="object-fit: cover"
+              />
+              <div
+                class="position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-75 text-white p-4 rounded-bottom-4"
+              >
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <div class="fs-3 fw-bold">3</div>
+                    <small>Global SOCs</small>
+                  </div>
+                  <div class="col-4 text-center">
+                    <div class="fs-3 fw-bold">247</div>
+                    <small>Security Staff</small>
+                  </div>
+                  <div class="col-4 text-center">
+                    <div class="fs-3 fw-bold">2.1s</div>
+                    <small>Avg. Response</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CTA Section ======= -->
+    <section
+      class="py-6 bg-primary text-white position-relative overflow-hidden"
+    >
+      <div class="container py-5 position-relative z-2">
         <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <h2 class="display-5 fw-bold mb-4">Ready to Secure Your Digital Assets?</h2>
-                <p class="lead mb-5 opacity-75">Get enterprise-grade protection with 24/7 security monitoring and threat response</p>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <a href="#" class="btn btn-light btn-lg px-4 py-3 fw-bold">
-                        <i class="bi bi-shield-check me-2"></i> Request Security Audit
-                    </a>
-                    <a href="#" class="btn btn-outline-light btn-lg px-4 py-3">
-                        <i class="bi bi-telephone-outbound-fill me-2"></i> Contact Our Team
-                    </a>
-                </div>
+          <div class="col-lg-8">
+            <h2 class="display-5 fw-bold mb-4">
+              Ready to Secure Your Digital Assets?
+            </h2>
+            <p class="lead mb-5 opacity-75">
+              Get enterprise-grade protection with 24/7 security monitoring and
+              threat response
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="#" class="btn btn-light btn-lg px-4 py-3 fw-bold">
+                <i class="bi bi-shield-check me-2"></i> Request Security Audit
+              </a>
+              <a href="#" class="btn btn-outline-light btn-lg px-4 py-3">
+                <i class="bi bi-telephone-outbound-fill me-2"></i> Contact Our
+                Team
+              </a>
             </div>
+          </div>
         </div>
-    </div>
-    <div class="position-absolute top-0 start-0 w-100 h-100 z-1 opacity-10" style="background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;"></div>
-</section>
+      </div>
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100 z-1 opacity-10"
+        style="
+          background: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')
+            center/cover;
+        "
+      ></div>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Animate elements when they come into view
-    document.addEventListener('DOMContentLoaded', function() {
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.threat-indicator, .protection-card, .timeline-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementPosition < windowHeight - 100) {
-                    element.classList.add('animate__animated', 'animate__fadeInUp');
-                }
-            });
+    <div data-include="footer.html"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="back-to-top.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Animate elements when they come into view
+      document.addEventListener("DOMContentLoaded", function () {
+        const animateOnScroll = function () {
+          const elements = document.querySelectorAll(
+            ".threat-indicator, .protection-card, .timeline-item"
+          );
+
+          elements.forEach((element) => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementPosition < windowHeight - 100) {
+              element.classList.add("animate__animated", "animate__fadeInUp");
+            }
+          });
         };
-        
-        window.addEventListener('scroll', animateOnScroll);
+
+        window.addEventListener("scroll", animateOnScroll);
         animateOnScroll(); // Run once on load
-    });
-</script>
-</body>
+      });
+    </script>
+    <script src="nav-foot.js"></script>
+  </body>
 </html>

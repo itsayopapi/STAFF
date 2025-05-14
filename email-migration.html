@@ -580,34 +580,99 @@
         color: var(--primary-color);
       }
 
+      /* Benefits section styles */
+      .benefits-section {
+        padding: 4rem 2rem;
+        background-color: #f8f9fa; /* Light gray background */
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bottom shadow */
+      }
+      .benefits-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 1rem;
+      }
+      .benefits-subtitle {
+        font-size: 1.25rem;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto 3rem;
+      }
+      .benefit-item {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .benefit-icon {
+        font-size: 2.5rem;
+        color: #007bff; /* Bootstrap primary blue */
+        margin-bottom: 1rem;
+      }
+      .benefit-text {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+      .benefits-image {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+      @media (min-width: 768px) {
+        .benefits-layout {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .benefits-left,
+        .benefits-right {
+          flex: 1;
+        }
+        .benefits-image-col {
+          flex: 1;
+          text-align: center;
+        }
+      }
+      @media (max-width: 767px) {
+        .benefits-layout {
+          flex-direction: column;
+          text-align: center;
+        }
+        .benefits-image-col {
+          margin-top: 2rem;
+        }
+      }
+
       @media (max-width: 768px) {
-        .hero-title {
+        .hero-title,
+        .why-migrate-title,
+        .pricing-title,
+        .benefits-title,
+        .process-title {
           font-size: 2rem;
         }
-        .hero-subtitle {
+        .hero-subtitle,
+        .why-migrate-subtitle,
+        .pricing-subtitle,
+        .benefits-subtitle,
+        .process-subtitle {
           font-size: 1rem;
         }
         .metric-number {
           font-size: 2rem;
         }
-        .metric-text {
-          font-size: 0.9rem;
-        }
-
-        .process-title {
-          font-size: 2rem;
-        }
-        .process-subtitle {
-          font-size: 1rem;
-        }
-        .process-step-title {
-          font-size: 1.25rem;
-        }
+        .metric-text,
+        .benefit-text,
+        .pricing-features li,
         .process-step-text {
           font-size: 0.9rem;
         }
-        .process-section {
-          padding: 4rem 1rem;
+        .benefit-title,
+        .pricing-plan,
+        .process-step-title {
+          font-size: 1.25rem;
+        }
+        .pricing-price {
+          font-size: 1.5rem;
         }
       }
 
@@ -660,39 +725,6 @@
       .feature-icon svg {
         width: 40px;
         height: 40px;
-      }
-
-      /* Benefits */
-      .benefit {
-        position: relative;
-        padding-left: 50px;
-      }
-
-      .benefit:before {
-        content: "";
-        position: absolute;
-        left: 20px;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: var(--primary-light);
-      }
-
-      .benefit-item {
-        position: relative;
-        margin-bottom: 30px;
-      }
-
-      .benefit-dot {
-        position: absolute;
-        left: -38px;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: var(--primary);
-        border: 4px solid white;
-        box-shadow: 0 0 0 2px var(--primary);
       }
 
       /* Process Steps */
@@ -1160,7 +1192,7 @@
           </div>
         </div>
         <a
-          href="/learn-more"
+          href="#features"
           class="btn btn-primary cta-button"
           data-aos="zoom-in"
           data-aos-duration="1000"
@@ -1321,86 +1353,665 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing-section">
+    <section class="py-5 py-lg-7" id="pricing">
       <div class="container">
-        <h2 class="pricing-title" data-aos="fade-up" data-aos-duration="1000">
-          Choose Your Email Migration Plan
+        <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="h3 fw-bold mb-4 display-6">
+            Choose Your Email Migration Plan
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Select the perfect plan to migrate your email securely and
+            efficiently with WefitHost’s expert support.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Starter Plan -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="card h-100 shadow-sm pricing-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Basic</h3>
+                <p class="text-muted mb-4">
+                  Perfect for individuals and small projects
+                </p>
+                <h4 class="mb-4">
+                  $49 <small class="text-muted fw-normal">/one-time</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 1
+                    Email Account
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    10GB Email Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Standard Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Free SSL & Spam Protection
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i
+                    >Zero Downtime
+                  </li>
+                </ul>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Plan (Most Popular) -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="card h-100 shadow-lg pricing-card"
+              style="border: 2px solid #6b63ff !important"
+            >
+              <div class="card-header bg-primary text-white py-3 text-center">
+                <span class="badge bg-white text-primary">MOST POPULAR</span>
+              </div>
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Pro</h3>
+                <p class="text-muted mb-4">Ideal for growing businesses</p>
+                <h4 class="mb-4">
+                  $99 <small class="text-muted fw-normal">/one-time</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i> 5
+                    Email Accounts
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    20GB Email Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Priority Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Free SSL & Spam Protection
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Zero Downtime
+                  </li>
+                </ul>
+                <a href="maintenance.html" class="btn btn-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Plan -->
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <div class="card h-100 shadow-sm pricing-card">
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="h4 mb-3">Enterprise</h3>
+                <p class="text-muted mb-4">
+                  Designed for large teams and enterprises
+                </p>
+                <h4 class="mb-4">
+                  $199 <small class="text-muted fw-normal">/one-time</small>
+                </h4>
+                <ul class="list-unstyled mb-4 flex-grow-1">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Unlimited Email Accounts
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    50GB Email Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Dedicated Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Free SSL & Spam Protection
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                    Zero Downtime
+                  </li>
+                </ul>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-primary w-100 mt-auto"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enterprise CTA -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="600">
+          <p class="mb-3">
+            Need a custom email migration solution for your enterprise?
+          </p>
+          <a href="maintenance.html" class="btn btn-primary px-4"
+            >Contact Sales</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="features">
+      <div class="container">
+        <h2
+          class="benefits-title display-6"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          Advantages of WefitHost Email Migration
         </h2>
         <p
-          class="pricing-subtitle"
-          data-aos="fade-up"
+          class="benefits-subtitle"
+          data-aos="zoom-in"
           data-aos-duration="1000"
           data-aos-delay="200"
         >
-          Select the perfect plan to migrate your email securely and efficiently
-          with WefitHost’s expert support.
+          Experience a seamless and secure email migration with WefitHost’s
+          advanced tools and expert support.
         </p>
-        <div class="row justify-content-center">
-          <div
-            class="col-md-4 pricing-card"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <h3 class="pricing-plan">Basic</h3>
-            <div class="pricing-price">
-              $49 <span class="text-muted">/one-time</span>
-            </div>
-            <ul class="pricing-features">
-              <li>1 Email Account</li>
-              <li>10GB Email Storage</li>
-              <li>Standard Support</li>
-              <li>Free SSL & Spam Protection</li>
-              <li>Zero Downtime</li>
-            </ul>
-            <a href="/get-started" class="btn btn-primary pricing-cta"
-              >Get Started</a
+        <div class="benefits-layout">
+          <div class="benefits-left col-md-4">
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
             >
+              <i class="fas fa-sync-alt benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>Email Sync</strong><br />
+                After migration, WefitHost keeps your accounts synchronized with
+                zero downtime.
+              </p>
+            </div>
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <i class="fas fa-folder benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>Emails & Folders</strong><br />
+                Our tool migrates all your emails and folders, including drafts
+                and sent items.
+              </p>
+            </div>
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="600"
+            >
+              <i class="fas fa-heartbeat benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>Health Check</strong><br />
+                WefitHost ensures your new mailbox is ready to receive all your
+                emails.
+              </p>
+            </div>
           </div>
-          <div
-            class="col-md-4 pricing-card"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
-            <h3 class="pricing-plan">Pro</h3>
-            <div class="pricing-price">
-              $99 <span class="text-muted">/one-time</span>
-            </div>
-            <ul class="pricing-features">
-              <li>5 Email Accounts</li>
-              <li>20GB Email Storage</li>
-              <li>Priority Support</li>
-              <li>Free SSL & Spam Protection</li>
-              <li>Zero Downtime</li>
-            </ul>
-            <a href="/get-started" class="btn btn-primary pricing-cta"
-              >Get Started</a
-            >
+          <div class="benefits-image-col col-md-4">
+            <img
+              src="/assets/images/feature/email-migration-image.png"
+              alt="Email Migration Interface"
+              class="benefits-image"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            />
           </div>
-          <div
-            class="col-md-4 pricing-card"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="400"
-          >
-            <h3 class="pricing-plan">Enterprise</h3>
-            <div class="pricing-price">
-              $199 <span class="text-muted">/one-time</span>
-            </div>
-            <ul class="pricing-features">
-              <li>Unlimited Email Accounts</li>
-              <li>50GB Email Storage</li>
-              <li>Dedicated Support</li>
-              <li>Free SSL & Spam Protection</li>
-              <li>Zero Downtime</li>
-            </ul>
-            <a href="/get-started" class="btn btn-primary pricing-cta"
-              >Get Started</a
+          <div class="benefits-right col-md-4">
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="800"
             >
+              <i class="fas fa-lock benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>100% Secure</strong><br />
+                Your emails are private with free SSL and no data storage by
+                WefitHost.
+              </p>
+            </div>
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
+            >
+              <i class="fas fa-magic benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>Auto-Config</strong><br />
+                Our tool automatically recognizes server settings, no manual
+                configuration needed.
+              </p>
+            </div>
+            <div
+              class="benefit-item"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1200"
+            >
+              <i class="fas fa-layer-group benefit-icon"></i>
+              <p class="benefit-text">
+                <strong>No Duplicates</strong><br />
+                WefitHost checks for existing data and prevents duplicate
+                emails.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 py-lg-7 bg-light" id="testimonials">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-6 fw-bold mb-3 text-dark">What Our Clients Say</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Don't just take our word for it - hear from businesses we've helped
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/43.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                  "We were nervous about migrating over five years of emails, but the Wefithost team handled it flawlessly. No lost data, no disruption — just a smooth transition. I highly recommend their migration service to any business!"
+                </p>
+                <h5 class="mb-1">Julia Meyer</h5>
+                <p class="text-muted small">CTO, Vortex Media GmbH (Germany)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                  “Switching email providers used to sound like a nightmare. With Wefithost, it was effortless. Their team was professional, responsive, and ensured everything—from calendars to contacts—was migrated perfectly.”
+                </p>
+                <h5 class="mb-1">Kenji Sato</h5>
+                <p class="text-muted small">
+                  Systems Administrator, Aozora Tech (Japan)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 testimonial-card">
+              <div class="card-body p-4 text-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  alt="Client"
+                  class="testimonial-img mb-3"
+                />
+                <div class="rating mb-3">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <p class="mb-4">
+                 “The support we received during our email migration was outstanding. Wefithost managed the entire process securely, and our staff didn’t even notice the switch. Everything just worked!”
+                </p>
+                <h5 class="mb-1">Isabella Rossi</h5>
+                <p class="text-muted small">
+                  Head of Operations, MedicaGroup Italia (Italy)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5 py-lg-7">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="display-6 fw-bold mb-3">Email Migration Questions</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Answers to common questions about our email Migration services
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <h3 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                  >
+                    What is email migration?
+                  </button>
+                </h3>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                   Email migration is the process of moving your existing emails, contacts, calendars, and other mailbox data from one email service provider to another — such as from Gmail, Yahoo, or another hosting provider to your new email hosting with us.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <h3 class="accordion-header" id="headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                  >
+                    Will I lose any emails during the migration process?
+                  </button>
+                </h3>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingTwo"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    No. Our expert team ensures that all your emails, folders, and associated data are transferred securely and completely. We take every precaution to preserve your email history without any data loss.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <h3 class="accordion-header" id="headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                  >
+                    How long does the email migration take?
+                  </button>
+                </h3>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingThree"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                  The duration of migration depends on the size of your mailbox and the number of accounts involved. In most cases, we complete migrations within 24–72 hours with minimal or no downtime.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <h3 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                  >
+                  Can you migrate multiple email accounts at once?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    Yes, we can migrate multiple email accounts simultaneously, whether it's for a small team or an entire organization. We'll work with you to coordinate and ensure a smooth transition.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingFive">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                  >
+                   Will my email be down during the migration?
+                  </button>
+                </h3>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFive"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    In most cases, your email will continue to work while we migrate the data in the background. We plan the switchover carefully to avoid interruptions and ensure business continuity.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingSix">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix"
+                  >
+                   Do I need technical skills to migrate my email?
+                  </button>
+                </h3>
+                <div
+                  id="collapseSix"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSix"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                   Not at all. Our migration experts handle the entire process for you — from setup to completion. You’ll be guided every step of the way, so no technical experience is required on your part.
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingSeven">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven"
+                  >
+                    Is email migration a secure process?
+                  </button>
+                </h3>
+                <div
+                  id="collapseSeven"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingSeven"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                  Absolutely. We follow industry best practices and use secure transfer protocols to ensure your data is protected at all stages of the migration.
+                  </div>
+                </div>
+              </div>
+
+               <div
+                class="accordion-item mb-3 border-0 shadow-sm"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
+                <h3 class="accordion-header" id="headingEight">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseEight"
+                  >
+                     Can I migrate from any provider?
+                  </button>
+                </h3>
+                <div
+                  id="collapseEight"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingEight"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                 We support migrations from most major providers like Gmail, Yahoo, Outlook, Zoho, cPanel hosting providers, and more. If you’re unsure, our team will evaluate your source provider and confirm compatibility.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="text-center mt-4"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <a href="faqs.html" class="btn btn-outline-primary"
+                >View All FAQs</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 my-5">
+      <div class="container">
+        <div class="cta-section">
+          <div class="row justify-content-center text-center position-relative">
+            <div class="col-lg-10">
+              <h2
+                class="fw-bold mb-4 text-secondary text-center"
+                data-aos="fade-up"
+              >
+                Ready to Make the Move?
+              </h2>
+              <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                Let us help you switch providers with zero stress.
+              </p>
+              <div
+                class="d-flex flex-wrap justify-content-center gap-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <a href="#pricing" class="btn btn-light btn-lg px-4"
+                  >Choose Your Plan</a
+                >
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-light btn-lg px-4"
+                  >Chat With Sales</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div data-include="footer.html"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="back-to-top.js"></script>
+
 
     <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
