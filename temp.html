@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium WordPress Hosting | Lightning Fast & Secure</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #21759b; /* WordPress blue */
+            --primary-dark: #1a6080;
+            --secondary: #2d3748;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #f1f3f5;
+            --wp-blue: #21759b;
+            --wp-light-blue: #d5edf7;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-weight: 800;
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--wp-light-blue);
+            color: var(--wp-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 117, 155, 0.2);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(33, 117, 155, 0.2);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-color: rgba(33, 117, 155, 0.2);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--wp-light-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--wp-blue);
+            font-size: 1.5rem;
+        }
+        
+        .feature-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-desc {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .feature-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* WordPress Showcase Section */
+        .showcase-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .showcase-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .showcase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .showcase-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .showcase-body {
+            padding: 1.5rem;
+        }
+        
+        .showcase-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .showcase-text {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        /* Performance Section */
+        .performance-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .performance-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .performance-graph {
+            height: 300px;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .performance-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .performance-stat {
+            text-align: center;
+        }
+        
+        .performance-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .performance-stat-label {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        /* WordPress Tools Section */
+        .tools-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .tool-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tool-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--wp-light-blue);
+            color: var(--wp-blue);
+            border-radius: 50%;
+            font-size: 2rem;
+        }
+        
+        .tool-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tool-desc {
+            color: var(--gray);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        
+        .toggle-label {
+            margin: 0 1rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--primary);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            position: relative;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(33, 117, 155, 0.15);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-desc {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-price {
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 0.75rem;
+            position: relative;
+            padding-left: 1.75rem;
+        }
+        
+        .pricing-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .pricing-features li.disabled {
+            color: #adb5bd;
+        }
+        
+        .pricing-features li.disabled::before {
+            content: '\f00d';
+            color: #adb5bd;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .testimonial-name {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+        
+        /* WordPress Plugins Section */
+        .plugins-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .plugin-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .plugin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plugin-img {
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .plugin-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plugin-desc {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .plugin-badge {
+            display: inline-block;
+            background-color: var(--wp-light-blue);
+            color: var(--wp-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            border-radius: 12px !important;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-button {
+            font-weight: 600;
+            padding: 1.5rem;
+            border: none;
+            background-color: white;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            color: var(--primary);
+            background-color: white;
+            box-shadow: none;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: transparent;
+        }
+        
+        .accordion-body {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--gray);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #3498c3 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-white {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-white:hover {
+            background-color: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-section::before {
+                width: 100%;
+                height: 50%;
+                top: auto;
+                bottom: 0;
+                border-radius: 1rem 1rem 0 0;
+                opacity: 0.2;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="hero-badge fade-in">Managed WordPress Hosting</span>
+                    <h1 class="hero-title fade-in">Blazing Fast WordPress Hosting</h1>
+                    <p class="hero-subtitle fade-in delay-1">Optimized for speed, security, and scalability. Get your WordPress site running at peak performance with our managed hosting solution.</p>
+                    <div class="d-flex gap-3 fade-in delay-2">
+                        <a href="#" class="btn btn-primary">Get Started</a>
+                        <a href="#" class="btn btn-outline">View Plans</a>
+                    </div>
+                    <div class="mt-4 d-flex align-items-center fade-in delay-3">
+                        <div class="me-3 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>Rated 4.9/5 by 2,500+ WordPress users</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://dovilearn.s3.eu-west-2.amazonaws.com/images/course-images/1642428769567675-how-to-get-started-with-wordpress.jpg" 
+                         alt="WordPress Dashboard" 
+                         class="img-fluid rounded-3 shadow fade-in delay-1"
+                         style="max-height: 400px; width: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item fade-in">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime Guarantee</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item fade-in delay-1">
+                        <div class="stat-number">0.5s</div>
+                        <div class="stat-label">Avg Load Time</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item fade-in delay-2">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">WordPress Support</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item fade-in delay-3">
+                        <div class="stat-number">1-click</div>
+                        <div class="stat-label">WordPress Install</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Everything You Need to Run WordPress at Peak Performance</h2>
+            <p class="section-subtitle fade-in delay-1">Our hosting platform is optimized specifically for WordPress with features you won't find on generic hosting</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="feature-title">Lightning Fast Speed <span class="wp-feature-badge">WordPress</span></h3>
+                        <p class="feature-desc">Built-in caching, SSD storage, and HTTP/2 ensure your WordPress site loads in milliseconds.</p>
+                        <ul class="feature-list">
+                            <li>Free CDN integration</li>
+                            <li>PHP 8.0+ ready</li>
+                            <li>OPcache enabled</li>
+                            <li>Redis Object Cache</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in delay-1">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Enterprise Security <span class="wp-feature-badge">WordPress</span></h3>
+                        <p class="feature-desc">Protect your WordPress site with automated backups, malware scanning, and DDoS protection.</p>
+                        <ul class="feature-list">
+                            <li>Daily WordPress backups</li>
+                            <li>Free SSL certificates</li>
+                            <li>Web application firewall</li>
+                            <li>WordPress core hardening</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card fade-in delay-2">
+                        <div class="feature-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="feature-title">WordPress Optimized <span class="wp-feature-badge">Exclusive</span></h3>
+                        <p class="feature-desc">Automatic updates, staging environments, and WP-CLI pre-installed for WordPress experts.</p>
+                        <ul class="feature-list">
+                            <li>One-click staging</li>
+                            <li>Auto WordPress updates</li>
+                            <li>SSH & WP-CLI access</li>
+                            <li>Plugin performance audits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WordPress Showcase Section -->
+    <section class="showcase-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Beautiful WordPress Sites Built on Our Platform</h2>
+            <p class="section-subtitle fade-in delay-1">See what our customers have created with our WordPress hosting</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="showcase-card fade-in">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="WordPress Business Site" class="showcase-img">
+                        <div class="showcase-body">
+                            <h3 class="showcase-title">Business Website</h3>
+                            <p class="showcase-text">Professional WordPress site with custom theme and WooCommerce integration</p>
+                            <a href="#" class="btn btn-outline">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="showcase-card fade-in delay-1">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="WordPress Blog" class="showcase-img">
+                        <div class="showcase-body">
+                            <h3 class="showcase-title">Professional Blog</h3>
+                            <p class="showcase-text">High-traffic WordPress blog with custom plugins and performance optimization</p>
+                            <a href="#" class="btn btn-outline">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="showcase-card fade-in delay-2">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="WordPress E-commerce" class="showcase-img">
+                        <div class="showcase-body">
+                            <h3 class="showcase-title">E-commerce Store</h3>
+                            <p class="showcase-text">WooCommerce store with thousands of products and seamless checkout</p>
+                            <a href="#" class="btn btn-outline">View Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="performance-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title text-start fade-in">Performance You Can See and Feel</h2>
+                    <p class="mb-4 fade-in delay-1">Our optimized WordPress hosting outperforms traditional shared hosting by up to 300% in load time tests.</p>
+                    
+                    <div class="mt-4 fade-in delay-2">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Our WordPress Hosting</span>
+                            <span class="fw-bold">0.5s</span>
+                        </div>
+                        <div class="progress mb-4" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 25%; background-color: var(--primary);"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Standard Shared Hosting</span>
+                            <span class="fw-bold">2.1s</span>
+                        </div>
+                        <div class="progress mb-4" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%; background-color: #adb5bd;"></div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Competitor WordPress Hosting</span>
+                            <span class="fw-bold">1.4s</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" role="progressbar" style="width: 67%; background-color: #6c757d;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="performance-card fade-in delay-3">
+                        <div class="performance-graph"></div>
+                        <div class="performance-stats">
+                            <div class="performance-stat">
+                                <div class="performance-stat-number">100%</div>
+                                <div class="performance-stat-label">Network</div>
+                            </div>
+                            <div class="performance-stat">
+                                <div class="performance-stat-number">99.98%</div>
+                                <div class="performance-stat-label">Hardware</div>
+                            </div>
+                            <div class="performance-stat">
+                                <div class="performance-stat-number">99.96%</div>
+                                <div class="performance-stat-label">Application</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WordPress Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Included WordPress Tools</h2>
+            <p class="section-subtitle fade-in delay-1">Powerful tools to help you build, manage, and grow your WordPress site</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="tool-item fade-in">
+                        <div class="tool-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3 class="tool-title">1-Click WordPress</h3>
+                        <p class="tool-desc">Install WordPress in seconds with our optimized 1-click installer</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="tool-item fade-in delay-1">
+                        <div class="tool-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3 class="tool-title">Staging Sites</h3>
+                        <p class="tool-desc">Test changes safely with dedicated staging environments</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="tool-item fade-in delay-2">
+                        <div class="tool-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="tool-title">WP-CLI</h3>
+                        <p class="tool-desc">Manage your WordPress site via command line interface</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="tool-item fade-in delay-3">
+                        <div class="tool-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="tool-title">Auto Updates</h3>
+                        <p class="tool-desc">Automatic WordPress core and security updates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle fade-in delay-1">No hidden fees. Cancel anytime.</p>
+            
+            <div class="pricing-toggle fade-in delay-2">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Yearly <span class="badge bg-primary">20% off</span></span>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card fade-in">
+                        <h3 class="pricing-title">Starter</h3>
+                        <p class="pricing-desc">Perfect for personal sites and blogs</p>
+                        <div class="pricing-price">
+                            $<span id="starterPrice">9.99</span> <span class="pricing-period">/<span id="starterPeriod">mo</span></span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>1 WordPress Install</li>
+                            <li>10GB SSD Storage</li>
+                            <li>25,000 Visits/Month</li>
+                            <li>Free SSL Certificate</li>
+                            <li>Basic Backups</li>
+                            <li class="disabled">Staging Environment</li>
+                            <li class="disabled">Premium CDN</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline w-100">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card fade-in delay-1">
+                        <h3 class="pricing-title">Business</h3>
+                        <p class="pricing-desc">Ideal for small businesses</p>
+                        <div class="pricing-price">
+                            $<span id="businessPrice">24.99</span> <span class="pricing-period">/<span id="businessPeriod">mo</span></span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>3 WordPress Installs</li>
+                            <li>30GB SSD Storage</li>
+                            <li>100,000 Visits/Month</li>
+                            <li>Free CDN</li>
+                            <li>Daily Backups</li>
+                            <li>Staging Environment</li>
+                            <li class="disabled">Premium CDN</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline w-100">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card popular fade-in delay-2">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="pricing-title">Professional</h3>
+                        <p class="pricing-desc">For growing businesses</p>
+                        <div class="pricing-price">
+                            $<span id="proPrice">49.99</span> <span class="pricing-period">/<span id="proPeriod">mo</span></span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>10 WordPress Installs</li>
+                            <li>50GB SSD Storage</li>
+                            <li>250,000 Visits/Month</li>
+                            <li>Premium CDN</li>
+                            <li>Daily Backups</li>
+                            <li>Staging Environment</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-card fade-in delay-3">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <p class="pricing-desc">For high-traffic sites</p>
+                        <div class="pricing-price">
+                            $<span id="enterprisePrice">99.99</span> <span class="pricing-period">/<span id="enterprisePeriod">mo</span></span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Unlimited WordPress</li>
+                            <li>100GB SSD Storage</li>
+                            <li>1M+ Visits/Month</li>
+                            <li>Premium CDN</li>
+                            <li>Hourly Backups</li>
+                            <li>Staging Environment</li>
+                            <li>24/7 Priority Support</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline w-100">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 fade-in delay-3">
+                <p class="text-muted">Need custom solutions? <a href="#">Contact our sales team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Trusted by Thousands of WordPress Users</h2>
+            <p class="section-subtitle fade-in delay-1">Don't just take our word for it</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Since switching to this hosting, my WordPress site loads in under a second and I've seen a 40% increase in conversions. Their WordPress experts helped me optimize my WooCommerce store perfectly."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Sarah Johnson" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Sarah Johnson</div>
+                                <div class="testimonial-role">WordPress Store Owner</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in delay-1">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I manage 15+ WordPress client sites on this platform. The staging environments and one-click restore points save me hours of work. Performance is consistently excellent across all sites."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Michael Chen" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Michael Chen</div>
+                                <div class="testimonial-role">WordPress Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card fade-in delay-2">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"When my WordPress blog went viral, this hosting scaled seamlessly to handle the traffic spike. Their 24/7 support team helped me optimize caching settings to handle the load perfectly."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" alt="Emily Rodriguez" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Emily Rodriguez</div>
+                                <div class="testimonial-role">WordPress Blogger</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WordPress Plugins Section -->
+    <section class="plugins-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Pre-installed WordPress Plugins</h2>
+            <p class="section-subtitle fade-in delay-1">We include premium plugins to enhance your WordPress experience</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="plugin-card fade-in">
+                        <span class="plugin-badge">Included</span>
+                        <img src="https://ps.w.org/wordfence/assets/icon-256x256.png" alt="Wordfence" class="plugin-img">
+                        <h3 class="plugin-title">Wordfence Security</h3>
+                        <p class="plugin-desc">Enterprise-grade WordPress security plugin with firewall and malware scanner</p>
+                        <a href="#" class="btn btn-outline w-100">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="plugin-card fade-in delay-1">
+                        <span class="plugin-badge">Included</span>
+                        <img src="https://ps.w.org/wp-rocket/assets/icon-256x256.png" alt="WP Rocket" class="plugin-img">
+                        <h3 class="plugin-title">WP Rocket</h3>
+                        <p class="plugin-desc">Premium caching plugin to dramatically speed up your WordPress site</p>
+                        <a href="#" class="btn btn-outline w-100">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="plugin-card fade-in delay-2">
+                        <span class="plugin-badge">Included</span>
+                        <img src="https://ps.w.org/updraftplus/assets/icon-256x256.png" alt="UpdraftPlus" class="plugin-img">
+                        <h3 class="plugin-title">UpdraftPlus</h3>
+                        <p class="plugin-desc">Backup and restore your WordPress site with this powerful plugin</p>
+                        <a href="#" class="btn btn-outline w-100">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="plugin-card fade-in delay-3">
+                        <span class="plugin-badge">Included</span>
+                        <img src="https://ps.w.org/woocommerce/assets/icon-256x256.png" alt="WooCommerce" class="plugin-img">
+                        <h3 class="plugin-title">WooCommerce</h3>
+                        <p class="plugin-desc">Transform your WordPress site into a powerful e-commerce store</p>
+                        <a href="#" class="btn btn-outline w-100">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <p class="section-subtitle fade-in delay-1">Everything you need to know about our WordPress hosting</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item fade-in">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Is this hosting optimized specifically for WordPress?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Our hosting environment is specifically configured for WordPress performance and security. We include features like automatic WordPress updates, staging environments, WP-CLI access, and server-level caching that's optimized for WordPress.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item fade-in delay-1">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Can I migrate my existing WordPress site?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely. We offer free WordPress migration services for all new customers. Our team will handle the entire migration process for you, ensuring no downtime and that everything works perfectly on our platform.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item fade-in delay-2">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How does your WordPress hosting differ from shared hosting?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Unlike generic shared hosting, our platform is engineered specifically for WordPress. We provide server-level caching, automatic updates, enhanced security protections against WordPress vulnerabilities, staging environments, and expert WordPress support. Performance is typically 3-5x faster than standard shared hosting.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item fade-in delay-3">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Do you offer WordPress-specific support?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, all our support technicians are WordPress experts. They can help with WordPress-specific issues like plugin conflicts, theme customization, performance optimization, and security hardening that generic hosting support teams typically can't assist with.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title fade-in">Ready to Experience Better WordPress Hosting?</h2>
+            <p class="cta-subtitle fade-in delay-1">Join thousands of WordPress users who've made the switch to our optimized hosting platform.</p>
+            <div class="cta-buttons fade-in delay-2">
+                <a href="#" class="btn btn-white">Get Started Now</a>
+                <a href="#" class="btn btn-outline-white">Chat With Our Experts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Pricing toggle functionality
+        document.getElementById('pricingToggle').addEventListener('change', function() {
+            const monthlyPrices = [9.99, 24.99, 49.99, 99.99];
+            const yearlyPrices = [7.99, 19.99, 39.99, 79.99];
+            
+            if(this.checked) {
+                // Switch to yearly pricing
+                document.getElementById('starterPrice').textContent = yearlyPrices[0];
+                document.getElementById('businessPrice').textContent = yearlyPrices[1];
+                document.getElementById('proPrice').textContent = yearlyPrices[2];
+                document.getElementById('enterprisePrice').textContent = yearlyPrices[3];
+                
+                document.querySelectorAll('#starterPeriod, #businessPeriod, #proPeriod, #enterprisePeriod').forEach(el => {
+                    el.textContent = 'yr';
+                });
+            } else {
+                // Switch to monthly pricing
+                document.getElementById('starterPrice').textContent = monthlyPrices[0];
+                document.getElementById('businessPrice').textContent = monthlyPrices[1];
+                document.getElementById('proPrice').textContent = monthlyPrices[2];
+                document.getElementById('enterprisePrice').textContent = monthlyPrices[3];
+                
+                document.querySelectorAll('#starterPeriod, #businessPeriod, #proPeriod, #enterprisePeriod').forEach(el => {
+                    el.textContent = 'mo';
+                });
+            }
+        });
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
