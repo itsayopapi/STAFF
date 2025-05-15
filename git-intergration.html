@@ -405,11 +405,11 @@
       .hero-section {
         background: linear-gradient(135deg, #24292e 0%, #3a424a 100%);
         color: white;
-        padding: 150px 0;
+        padding: 115px 0;
         position: relative;
         overflow: hidden;
       }
-      .hero-section::before {
+      /* .hero-section::after {
         content: "";
         position: absolute;
         top: 0;
@@ -420,14 +420,19 @@
           no-repeat center right;
         background-size: contain;
         opacity: 0.15;
-      }
+      } */
       .feature-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: #0366d6;
       }
       .nav-pills .nav-link.active {
-        background-color: #0366d6;
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .card-img-top{
+        height: 250px;
       }
       .code-block {
         background-color: #f6f8fa;
@@ -474,6 +479,7 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         text-align: center;
         transition: all 0.3s ease;
+        height: 200px;
       }
       .stats-card:hover {
         transform: translateY(-5px);
@@ -482,7 +488,7 @@
       .stats-number {
         font-size: 3rem;
         font-weight: 700;
-        color: #0366d6;
+        color: var(--primary-color);
         margin-bottom: 10px;
       }
       .timeline {
@@ -570,7 +576,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
-            <h1 class="display-3 fw-bold mb-4">Master GitHub Integration</h1>
+            <h1 class="display-3 fw-bold mb-4 text-secondary">Master GitHub Integration</h1>
             <p class="lead fs-4 mb-5">
               The complete guide to integrating GitHub into your development
               workflow with best practices, tools, and automation
@@ -578,7 +584,7 @@
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
               <a
                 href="#getting-started"
-                class="btn btn-primary btn-lg px-4 gap-3"
+                class="btn btn-primary btn-lg px-4"
                 >Get Started</a
               >
               <a
@@ -672,7 +678,7 @@
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
               <img
-                src="https://github.githubassets.com/images/modules/site/home/illo-repo.png"
+                src="/assets/images/feature/create-repo-img.png"
                 class="card-img-top"
                 alt="Create Repository"
               />
@@ -697,7 +703,7 @@
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
               <img
-                src="https://github.githubassets.com/images/modules/site/home/illo-branch.png"
+                src="/assets/images/feature/create-branch-img.png"
                 class="card-img-top"
                 alt="Branching Strategy"
               />
@@ -725,7 +731,7 @@
           <div class="col-md-4">
             <div class="card h-100 border-0 shadow-sm">
               <img
-                src="https://github.githubassets.com/images/modules/site/home/illo-pull-request.png"
+                src="/assets/images/feature/pull-request-img.png"
                 class="card-img-top"
                 alt="Pull Requests"
               />
@@ -755,9 +761,9 @@
                 <div class="row align-items-center">
                   <div class="col-md-6">
                     <img
-                      src="https://github.githubassets.com/images/modules/site/home/illo-cli.png"
+                      src="/assets/images/feature/github-cli.jpg"
                       alt="GitHub CLI"
-                      class="img-fluid rounded"
+                      class="img-fluid rounded h-100"
                     />
                   </div>
                   <div class="col-md-6">
