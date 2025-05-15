@@ -1,1063 +1,1846 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced API Access Control Panel</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+     <!-- JQuery -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Animate on Scroll css -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>Advanced API Access Control Panel</title>
     <style>
-        :root {
-            --primary-color: #4e73df;
-            --secondary-color: #2e59d9;
-            --dark-color: #2c3e50;
-            --light-color: #f8f9fc;
-            --success-color: #1cc88a;
-            --warning-color: #f6c23e;
-            --danger-color: #e74a3b;
+      :root {
+        --primary-color: #6b63ff;
+        --secondary-color: #6c757d;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fc;
+        --success-color: #1cc88a;
+        --warning-color: #f6c23e;
+        --danger-color: #e74a3b;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        scroll-behavior: smooth;
+        background-color: var(--light-color);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-            background-color: var(--light-color);
-            line-height: 1.6;
+
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2165&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 180px 0;
-            margin-bottom: 60px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
         }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
         }
-        
-        .api-key-card {
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--primary-color);
+
+        .mega-menu .row {
+          flex-direction: column;
         }
-        
-        .api-key-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
         }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
         }
-        
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
         }
-        
-        .section {
-            padding: 100px 0;
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
         }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 50px;
-            padding-bottom: 15px;
-            text-align: center;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+                  display: none;
+              } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
-        
-        .section-title:after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
+
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
-        
-        .documentation-code {
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            padding: 15px;
-            font-family: 'Courier New', Courier, monospace;
-            overflow-x: auto;
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
         }
-        
-        .usage-meter {
-            height: 10px;
-            border-radius: 5px;
-            background-color: #e9ecef;
-            margin-bottom: 10px;
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
         }
-        
-        .meter-progress {
-            height: 100%;
-            border-radius: 5px;
-            background-color: var(--primary-color);
+
+        .mega-menu .row {
+          flex-direction: column;
         }
-        
-        .test-console {
-            background-color: #2c3e50;
-            color: white;
-            border-radius: 5px;
-            padding: 20px;
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
         }
-        
-        .console-response {
-            background-color: #34495e;
-            padding: 15px;
-            border-radius: 5px;
-            min-height: 100px;
-            margin-top: 15px;
-            font-family: 'Courier New', Courier, monospace;
-            white-space: pre-wrap;
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
         }
-        
-        .info-card {
-            transition: all 0.3s ease;
-            height: 100%;
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
         }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
         }
-        
-        .integration-logo {
-            height: 60px;
-            margin: 20px;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        
-        .integration-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-bottom: 30px;
-        }
-        
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: -28px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            border: 3px solid white;
-        }
-        
-        .feature-step {
-            display: flex;
-            margin-bottom: 30px;
-        }
-        
-        .feature-step-number {
-            flex: 0 0 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .feature-step-content {
-            flex: 1;
-        }
-        
-        .security-badge {
-            display: inline-block;
-            background: var(--success-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .tab-content {
-            padding: 20px;
-            border-left: 1px solid #dee2e6;
-            border-right: 1px solid #dee2e6;
-            border-bottom: 1px solid #dee2e6;
-            border-radius: 0 0 5px 5px;
-        }
-        
-        .nav-tabs .nav-link.active {
-            font-weight: bold;
-            border-bottom: 3px solid var(--primary-color);
-        }
-        
-        .pricing-card {
-            transition: all 0.3s ease;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .pricing-card .card-header {
-            background: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .pricing-card .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-        
-        .pricing-card .period {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        .pricing-card .list-group-item {
-            border-left: 0;
-            border-right: 0;
-        }
-        
-        .pricing-card .list-group-item:first-child {
-            border-top: 0;
-        }
-        
-        .pricing-card .list-group-item:last-child {
-            border-bottom: 0;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-        
-        .faq-question {
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2165&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 180px 0;
+        margin-bottom: 60px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .card-img-top{
+        height: 300px;
+      }
+
+      .api-key-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      .api-key-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+      }
+
+      .section {
+        padding: 100px 0;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 50px;
+        padding-bottom: 15px;
+        text-align: center;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+
+      .documentation-code {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        padding: 15px;
+        font-family: "Courier New", Courier, monospace;
+        overflow-x: auto;
+      }
+
+      .usage-meter {
+        height: 10px;
+        border-radius: 5px;
+        background-color: #e9ecef;
+        margin-bottom: 10px;
+      }
+
+      .meter-progress {
+        height: 100%;
+        border-radius: 5px;
+        background-color: var(--primary-color);
+      }
+
+      .test-console {
+        background-color: #2c3e50;
+        color: white;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      .console-response {
+        background-color: #34495e;
+        padding: 15px;
+        border-radius: 5px;
+        min-height: 100px;
+        margin-top: 15px;
+        font-family: "Courier New", Courier, monospace;
+        white-space: pre-wrap;
+      }
+
+      .info-card {
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .integration-logo {
+        height: 60px;
+        margin: 20px;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      .integration-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-bottom: 30px;
+      }
+
+      .timeline-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -28px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        border: 3px solid white;
+      }
+
+      .feature-step {
+        display: flex;
+        margin-bottom: 30px;
+      }
+
+      .feature-step-number {
+        flex: 0 0 50px;
+        height: 50px;
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 20px;
+        font-size: 1.5rem;
+      }
+
+      .feature-step-content {
+        flex: 1;
+      }
+
+      .security-badge {
+        display: inline-block;
+        background: var(--success-color);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .tab-content {
+        padding: 20px;
+        border-left: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .nav-tabs .nav-link.active {
+        font-weight: bold;
+        border-bottom: 3px solid var(--primary-color);
+      }
+
+      .pricing-card {
+        transition: all 0.3s ease;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-card .card-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 30px 0;
+        text-align: center;
+      }
+
+      .pricing-card .price {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      .pricing-card .period {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      .pricing-card .list-group-item {
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .pricing-card .list-group-item:first-child {
+        border-top: 0;
+      }
+
+      .pricing-card .list-group-item:last-child {
+        border-bottom: 0;
+      }
+
+      .faq-item {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+        padding-bottom: 20px;
+      }
+
+     
+      .faq-question {
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body data-bs-theme="light">
+  </head>
+  <body data-bs-theme="light">
     <!-- Navbar -->
     <header class="custom-header" data-include="nav.html"></header>
     <!-- Hero Section -->
     <section class="hero-section text-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Advanced API Access Control</h1>
-            <p class="lead mb-5">Programmatically manage your entire hosting infrastructure with our comprehensive REST API</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#api-keys" class="btn btn-primary btn-lg px-4 py-3">
-                    <i class="fas fa-key me-2"></i>Manage API Keys
-                </a>
-                <a href="#documentation" class="btn btn-outline-light btn-lg px-4 py-3">
-                    <i class="fas fa-book me-2"></i>Explore Documentation
-                </a>
-            </div>
+      <div class="container">
+        <h1 class="display-3 fw-bold mb-4 text-secondary">Advanced API Access Control</h1>
+        <p class="lead mb-5">
+          Programmatically manage your entire hosting infrastructure with our
+          comprehensive REST API
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#api-keys" class="btn btn-primary btn-lg px-4 py-3">
+            <i class="fas fa-key me-2"></i>Manage API Keys
+          </a>
+          <a
+            href="#documentation"
+            class="btn btn-outline-light btn-lg px-4 py-3"
+          >
+            <i class="fas fa-book me-2"></i>Explore Documentation
+          </a>
         </div>
+      </div>
     </section>
 
     <!-- Overview Section -->
     <section class="section bg-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="mb-4">Complete Infrastructure Control Through API</h2>
-                    <p class="lead">Our API provides programmatic access to all aspects of your hosting environment, enabling automation, integration, and advanced management capabilities.</p>
-                    <p>With over 150 API endpoints covering servers, networking, storage, security, and billing, you can build custom solutions that perfectly fit your workflow.</p>
-                    <div class="d-flex gap-3 mt-4">
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold text-primary">150+</div>
-                            <div class="text-muted">API Endpoints</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold text-primary">24/7</div>
-                            <div class="text-muted">Support</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="fs-1 fw-bold text-primary">99.9%</div>
-                            <div class="text-muted">Uptime</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                         alt="API Infrastructure" 
-                         class="img-fluid rounded shadow">
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="mb-4">Complete Infrastructure Control Through API</h2>
+            <p class="lead">
+              Our API provides programmatic access to all aspects of your
+              hosting environment, enabling automation, integration, and
+              advanced management capabilities.
+            </p>
+            <p>
+              With over 150 API endpoints covering servers, networking, storage,
+              security, and billing, you can build custom solutions that
+              perfectly fit your workflow.
+            </p>
+            <div class="d-flex gap-3 mt-4">
+              <div class="text-center">
+                <div class="fs-1 fw-bold text-primary">150+</div>
+                <div class="text-muted">API Endpoints</div>
+              </div>
+              <div class="text-center">
+                <div class="fs-1 fw-bold text-primary">24/7</div>
+                <div class="text-muted">Support</div>
+              </div>
+              <div class="text-center">
+                <div class="fs-1 fw-bold text-primary">99.9%</div>
+                <div class="text-muted">Uptime</div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="API Infrastructure"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section class="section">
-        <div class="container">
-            <h2 class="text-center section-title">Powerful API Features</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card info-card h-100">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Server Management">
-                        <div class="card-body">
-                            <h3 class="card-title">Server Management</h3>
-                            <p class="card-text">Full lifecycle control of your servers including creation, configuration, scaling, and termination through simple API calls.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Create and destroy servers</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Resize server resources</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Manage server groups</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card info-card h-100">
-                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Database Control">
-                        <div class="card-body">
-                            <h3 class="card-title">Database Control</h3>
-                            <p class="card-text">Manage databases, users, permissions, and backups programmatically without logging into the dashboard.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Create/manage databases</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>User permission management</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Automated backups</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card info-card h-100">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Security">
-                        <div class="card-body">
-                            <h3 class="card-title">Security Features</h3>
-                            <p class="card-text">Fine-grained permissions and IP restrictions for secure API access with comprehensive audit logging.</p>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Role-based access control</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>IP whitelisting</li>
-                                <li class="list-group-item border-0 ps-0"><i class="fas fa-check text-success me-2"></i>Detailed audit logs</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">Powerful API Features</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card info-card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Server Management"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Server Management</h3>
+                <p class="card-text">
+                  Full lifecycle control of your servers including creation,
+                  configuration, scaling, and termination through simple API
+                  calls.
+                </p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Create and
+                    destroy servers
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Resize server
+                    resources
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Manage server
+                    groups
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card info-card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Database Control"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Database Control</h3>
+                <p class="card-text">
+                  Manage databases, users, permissions, and backups
+                  programmatically without logging into the dashboard.
+                </p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Create/manage
+                    databases
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>User
+                    permission management
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Automated
+                    backups
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card info-card h-100">
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                class="card-img-top"
+                alt="Security"
+              />
+              <div class="card-body">
+                <h3 class="card-title">Security Features</h3>
+                <p class="card-text">
+                  Fine-grained permissions and IP restrictions for secure API
+                  access with comprehensive audit logging.
+                </p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Role-based
+                    access control
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>IP
+                    whitelisting
+                  </li>
+                  <li class="list-group-item border-0 ps-0">
+                    <i class="fas fa-check text-success me-2"></i>Detailed audit
+                    logs
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- API Keys Section -->
     <section id="api-keys" class="section bg-white">
-        <div class="container">
-            <h2 class="text-center section-title">API Key Management</h2>
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <h3>Secure Access Credentials</h3>
-                    <p>API keys authenticate your requests and determine what resources you can access. Each key can be configured with specific permissions and restrictions.</p>
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle me-2"></i>
-                        <strong>Important:</strong> Treat your API keys like passwords. Never expose them in client-side code or public repositories.
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                         alt="API Security" 
-                         class="img-fluid rounded shadow">
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">API Key Management</h2>
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <h3>Secure Access Credentials</h3>
+            <p>
+              API keys authenticate your requests and determine what resources
+              you can access. Each key can be configured with specific
+              permissions and restrictions.
+            </p>
+            <div class="alert alert-warning">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              <strong>Important:</strong> Treat your API keys like passwords.
+              Never expose them in client-side code or public repositories.
             </div>
-            
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createKeyModal">
-                        <i class="fas fa-plus me-2"></i>Generate New API Key
-                    </button>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search keys..." id="keySearch">
-                        <button class="btn btn-outline-secondary" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row" id="apiKeysContainer">
-                <!-- Keys will be added here by JavaScript -->
-            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+              alt="API Security"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
+
+        <div class="row mb-4">
+          <div class="col-md-6">
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#createKeyModal"
+            >
+              <i class="fas fa-plus me-2"></i>Generate New API Key
+            </button>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Search keys..."
+                id="keySearch"
+              />
+              <button class="btn btn-outline-secondary" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="apiKeysContainer">
+          <!-- Keys will be added here by JavaScript -->
+        </div>
+      </div>
     </section>
 
     <!-- Getting Started Section -->
     <section class="section">
-        <div class="container">
-            <h2 class="text-center section-title">Getting Started with Our API</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="feature-step">
-                        <div class="feature-step-number">1</div>
-                        <div class="feature-step-content">
-                            <h4>Generate Your API Key</h4>
-                            <p>Create a new API key with the appropriate permissions for your needs. You can create multiple keys for different applications or environments.</p>
-                        </div>
-                    </div>
-                    <div class="feature-step">
-                        <div class="feature-step-number">2</div>
-                        <div class="feature-step-content">
-                            <h4>Review the Documentation</h4>
-                            <p>Explore our comprehensive API documentation to understand available endpoints, request formats, and response structures.</p>
-                        </div>
-                    </div>
-                    <div class="feature-step">
-                        <div class="feature-step-number">3</div>
-                        <div class="feature-step-content">
-                            <h4>Make Your First Request</h4>
-                            <p>Use the test console or your preferred HTTP client to make your first API call. Start with simple read operations before moving to write operations.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">Quick Start Example</h4>
-                            <p>Here's how to list all your servers using cURL:</p>
-                            <div class="documentation-code mb-3">
-                                <small># List all servers</small><br>
-                                curl -X GET \<br>
-                                -H "Authorization: Bearer YOUR_API_KEY" \<br>
-                                -H "Content-Type: application/json" \<br>
-                                https://api.yourhosting.com/v1/servers
-                            </div>
-                            <p>Example response:</p>
-                            <div class="documentation-code">
-                                <small># Successful response (200 OK)</small><br>
-                                {<br>
-                                &nbsp; "data": [<br>
-                                &nbsp; &nbsp; {<br>
-                                &nbsp; &nbsp; &nbsp; "id": "srv-12345",<br>
-                                &nbsp; &nbsp; &nbsp; "name": "Production Web Server",<br>
-                                &nbsp; &nbsp; &nbsp; "status": "active",<br>
-                                &nbsp; &nbsp; &nbsp; "ip_address": "203.0.113.45"<br>
-                                &nbsp; &nbsp; }<br>
-                                &nbsp; ]<br>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">Getting Started with Our API</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="feature-step">
+              <div class="feature-step-number">1</div>
+              <div class="feature-step-content">
+                <h4>Generate Your API Key</h4>
+                <p>
+                  Create a new API key with the appropriate permissions for your
+                  needs. You can create multiple keys for different applications
+                  or environments.
+                </p>
+              </div>
             </div>
+            <div class="feature-step">
+              <div class="feature-step-number">2</div>
+              <div class="feature-step-content">
+                <h4>Review the Documentation</h4>
+                <p>
+                  Explore our comprehensive API documentation to understand
+                  available endpoints, request formats, and response structures.
+                </p>
+              </div>
+            </div>
+            <div class="feature-step">
+              <div class="feature-step-number">3</div>
+              <div class="feature-step-content">
+                <h4>Make Your First Request</h4>
+                <p>
+                  Use the test console or your preferred HTTP client to make
+                  your first API call. Start with simple read operations before
+                  moving to write operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h4 class="card-title">Quick Start Example</h4>
+                <p>Here's how to list all your servers using cURL:</p>
+                <div class="documentation-code mb-3">
+                  <small># List all servers</small><br />
+                  curl -X GET \<br />
+                  -H "Authorization: Bearer YOUR_API_KEY" \<br />
+                  -H "Content-Type: application/json" \<br />
+                  https://api.yourhosting.com/v1/servers
+                </div>
+                <p>Example response:</p>
+                <div class="documentation-code">
+                  <small># Successful response (200 OK)</small><br />
+                  {<br />
+                  &nbsp; "data": [<br />
+                  &nbsp; &nbsp; {<br />
+                  &nbsp; &nbsp; &nbsp; "id": "srv-12345",<br />
+                  &nbsp; &nbsp; &nbsp; "name": "Production Web Server",<br />
+                  &nbsp; &nbsp; &nbsp; "status": "active",<br />
+                  &nbsp; &nbsp; &nbsp; "ip_address": "203.0.113.45"<br />
+                  &nbsp; &nbsp; }<br />
+                  &nbsp; ]<br />
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Documentation Section -->
     <section id="documentation" class="section bg-white">
-        <div class="container">
-            <h2 class="text-center section-title">API Documentation</h2>
-            
-            <ul class="nav nav-tabs" id="docsTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="rest-tab" data-bs-toggle="tab" data-bs-target="#rest" type="button" role="tab">REST API</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="cli-tab" data-bs-toggle="tab" data-bs-target="#cli" type="button" role="tab">CLI Tool</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="sdks-tab" data-bs-toggle="tab" data-bs-target="#sdks" type="button" role="tab">SDKs</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="webhooks-tab" data-bs-toggle="tab" data-bs-target="#webhooks" type="button" role="tab">Webhooks</button>
-                </li>
-            </ul>
-            
-            <div class="tab-content" id="docsTabContent">
-                <div class="tab-pane fade show active" id="rest" role="tabpanel">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>REST API Reference</h3>
-                            <p>Our REST API follows standard HTTP conventions and uses JSON for all request and response payloads.</p>
-                            <div class="mb-4">
-                                <h5>Base URL</h5>
-                                <div class="documentation-code">https://api.yourhosting.com/v1</div>
-                            </div>
-                            <div class="mb-4">
-                                <h5>Authentication</h5>
-                                <p>Include your API key in the Authorization header:</p>
-                                <div class="documentation-code">Authorization: Bearer YOUR_API_KEY</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                                 alt="API Documentation" 
-                                 class="img-fluid rounded shadow">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <h4>Available Endpoints</h4>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Resource</th>
-                                        <th>Endpoint</th>
-                                        <th>Methods</th>
-                                        <th>Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Servers</td>
-                                        <td>/servers</td>
-                                        <td>GET, POST</td>
-                                        <td>List and create servers</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Server</td>
-                                        <td>/servers/{id}</td>
-                                        <td>GET, PUT, DELETE</td>
-                                        <td>Manage individual server</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Databases</td>
-                                        <td>/databases</td>
-                                        <td>GET, POST</td>
-                                        <td>List and create databases</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DNS Zones</td>
-                                        <td>/dns/zones</td>
-                                        <td>GET, POST</td>
-                                        <td>Manage DNS zones</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DNS Records</td>
-                                        <td>/dns/zones/{id}/records</td>
-                                        <td>GET, POST, PUT, DELETE</td>
-                                        <td>Manage DNS records</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="#" class="btn btn-primary">View Full API Reference</a>
-                        </div>
-                    </div>
+      <div class="container">
+        <h2 class="text-center section-title">API Documentation</h2>
+
+        <ul class="nav nav-tabs" id="docsTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="rest-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#rest"
+              type="button"
+              role="tab"
+            >
+              REST API
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="cli-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#cli"
+              type="button"
+              role="tab"
+            >
+              CLI Tool
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="sdks-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#sdks"
+              type="button"
+              role="tab"
+            >
+              SDKs
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="webhooks-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#webhooks"
+              type="button"
+              role="tab"
+            >
+              Webhooks
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="docsTabContent">
+          <div class="tab-pane fade show active" id="rest" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>REST API Reference</h3>
+                <p>
+                  Our REST API follows standard HTTP conventions and uses JSON
+                  for all request and response payloads.
+                </p>
+                <div class="mb-4">
+                  <h5>Base URL</h5>
+                  <div class="documentation-code">
+                    https://api.yourhosting.com/v1
+                  </div>
                 </div>
-                
-                <div class="tab-pane fade" id="cli" role="tabpanel">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Command Line Interface</h3>
-                            <p>Our official CLI tool provides a convenient way to interact with the API from your terminal.</p>
-                            <div class="mb-4">
-                                <h5>Installation</h5>
-                                <div class="documentation-code">
-                                    # Using npm<br>
-                                    npm install -g yourhosting-cli<br><br>
-                                    
-                                    # Or with curl<br>
-                                    curl -fsSL https://cli.yourhosting.com/install.sh | sh
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h5>Authentication</h5>
-                                <div class="documentation-code">
-                                    # Login with your API key<br>
-                                    yourhosting login YOUR_API_KEY
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1581092921461-39b2f2f8a4b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                                 alt="CLI Tool" 
-                                 class="img-fluid rounded shadow">
-                        </div>
-                    </div>
+                <div class="mb-4">
+                  <h5>Authentication</h5>
+                  <p>Include your API key in the Authorization header:</p>
+                  <div class="documentation-code">
+                    Authorization: Bearer YOUR_API_KEY
+                  </div>
                 </div>
-                
-                <div class="tab-pane fade" id="sdks" role="tabpanel">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Official SDKs</h3>
-                            <p>We provide SDKs for popular programming languages to make integration easier.</p>
-                            
-                            <div class="mb-4">
-                                <h5>Python</h5>
-                                <div class="documentation-code">
-                                    pip install yourhosting-sdk<br><br>
-                                    from yourhosting import Client<br>
-                                    client = Client(api_key="YOUR_API_KEY")<br>
-                                    servers = client.servers.list()
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <h5>JavaScript</h5>
-                                <div class="documentation-code">
-                                    npm install yourhosting-sdk<br><br>
-                                    const YourHosting = require('yourhosting-sdk');<br>
-                                    const client = new YourHosting('YOUR_API_KEY');<br>
-                                    client.servers.list().then(servers => { ... });
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                                 alt="SDKs" 
-                                 class="img-fluid rounded shadow">
-                                 
-                            <div class="mt-4">
-                                <h5>Community SDKs</h5>
-                                <p>Community-maintained libraries for other languages:</p>
-                                <ul>
-                                    <li>Go: github.com/community/yourhosting-go</li>
-                                    <li>Ruby: github.com/community/yourhosting-ruby</li>
-                                    <li>PHP: github.com/community/yourhosting-php</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-pane fade" id="webhooks" role="tabpanel">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3>Webhooks</h3>
-                            <p>Receive real-time notifications about events in your hosting environment.</p>
-                            
-                            <div class="mb-4">
-                                <h5>Available Events</h5>
-                                <ul>
-                                    <li>server.created</li>
-                                    <li>server.deleted</li>
-                                    <li>server.status_changed</li>
-                                    <li>database.backup_completed</li>
-                                    <li>dns.record_updated</li>
-                                    <li>billing.invoice_created</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <h5>Setting Up Webhooks</h5>
-                                <div class="documentation-code">
-                                    POST /webhooks<br>
-                                    {<br>
-                                    &nbsp; "url": "https://your-app.com/webhooks",<br>
-                                    &nbsp; "events": ["server.created", "server.deleted"],<br>
-                                    &nbsp; "secret": "your-signing-secret"<br>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                                 alt="Webhooks" 
-                                 class="img-fluid rounded shadow">
-                                 
-                            <div class="mt-4">
-                                <h5>Webhook Payload Example</h5>
-                                <div class="documentation-code">
-                                    {<br>
-                                    &nbsp; "event": "server.created",<br>
-                                    &nbsp; "data": {<br>
-                                    &nbsp; &nbsp; "id": "srv-12345",<br>
-                                    &nbsp; &nbsp; "name": "My New Server",<br>
-                                    &nbsp; &nbsp; "status": "active"<br>
-                                    &nbsp; },<br>
-                                    &nbsp; "timestamp": "2023-06-15T12:34:56Z"<br>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                  alt="API Documentation"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
             </div>
+            <div class="mt-4">
+              <h4>Available Endpoints</h4>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Resource</th>
+                      <th>Endpoint</th>
+                      <th>Methods</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Servers</td>
+                      <td>/servers</td>
+                      <td>GET, POST</td>
+                      <td>List and create servers</td>
+                    </tr>
+                    <tr>
+                      <td>Server</td>
+                      <td>/servers/{id}</td>
+                      <td>GET, PUT, DELETE</td>
+                      <td>Manage individual server</td>
+                    </tr>
+                    <tr>
+                      <td>Databases</td>
+                      <td>/databases</td>
+                      <td>GET, POST</td>
+                      <td>List and create databases</td>
+                    </tr>
+                    <tr>
+                      <td>DNS Zones</td>
+                      <td>/dns/zones</td>
+                      <td>GET, POST</td>
+                      <td>Manage DNS zones</td>
+                    </tr>
+                    <tr>
+                      <td>DNS Records</td>
+                      <td>/dns/zones/{id}/records</td>
+                      <td>GET, POST, PUT, DELETE</td>
+                      <td>Manage DNS records</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="text-center mt-3">
+                <a href="#" class="btn btn-primary">View Full API Reference</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="cli" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>Command Line Interface</h3>
+                <p>
+                  Our official CLI tool provides a convenient way to interact
+                  with the API from your terminal.
+                </p>
+                <div class="mb-4">
+                  <h5>Installation</h5>
+                  <div class="documentation-code">
+                    # Using npm<br />
+                    npm install -g yourhosting-cli<br /><br />
+
+                    # Or with curl<br />
+                    curl -fsSL https://cli.yourhosting.com/install.sh | sh
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <h5>Authentication</h5>
+                  <div class="documentation-code">
+                    # Login with your API key<br />
+                    yourhosting login YOUR_API_KEY
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="https://images.unsplash.com/photo-1581092921461-39b2f2f8a4b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                  alt="CLI Tool"
+                  class="img-fluid rounded shadow"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="sdks" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>Official SDKs</h3>
+                <p>
+                  We provide SDKs for popular programming languages to make
+                  integration easier.
+                </p>
+
+                <div class="mb-4">
+                  <h5>Python</h5>
+                  <div class="documentation-code">
+                    pip install yourhosting-sdk<br /><br />
+                    from yourhosting import Client<br />
+                    client = Client(api_key="YOUR_API_KEY")<br />
+                    servers = client.servers.list()
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <h5>JavaScript</h5>
+                  <div class="documentation-code">
+                    npm install yourhosting-sdk<br /><br />
+                    const YourHosting = require('yourhosting-sdk');<br />
+                    const client = new YourHosting('YOUR_API_KEY');<br />
+                    client.servers.list().then(servers => { ... });
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                  alt="SDKs"
+                  class="img-fluid rounded shadow"
+                />
+
+                <div class="mt-4">
+                  <h5>Community SDKs</h5>
+                  <p>Community-maintained libraries for other languages:</p>
+                  <ul>
+                    <li>Go: github.com/community/yourhosting-go</li>
+                    <li>Ruby: github.com/community/yourhosting-ruby</li>
+                    <li>PHP: github.com/community/yourhosting-php</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="webhooks" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <h3>Webhooks</h3>
+                <p>
+                  Receive real-time notifications about events in your hosting
+                  environment.
+                </p>
+
+                <div class="mb-4">
+                  <h5>Available Events</h5>
+                  <ul>
+                    <li>server.created</li>
+                    <li>server.deleted</li>
+                    <li>server.status_changed</li>
+                    <li>database.backup_completed</li>
+                    <li>dns.record_updated</li>
+                    <li>billing.invoice_created</li>
+                  </ul>
+                </div>
+
+                <div class="mb-4">
+                  <h5>Setting Up Webhooks</h5>
+                  <div class="documentation-code">
+                    POST /webhooks<br />
+                    {<br />
+                    &nbsp; "url": "https://your-app.com/webhooks",<br />
+                    &nbsp; "events": ["server.created", "server.deleted"],<br />
+                    &nbsp; "secret": "your-signing-secret"<br />
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                  alt="Webhooks"
+                  class="img-fluid rounded shadow"
+                />
+
+                <div class="mt-4">
+                  <h5>Webhook Payload Example</h5>
+                  <div class="documentation-code">
+                    {<br />
+                    &nbsp; "event": "server.created",<br />
+                    &nbsp; "data": {<br />
+                    &nbsp; &nbsp; "id": "srv-12345",<br />
+                    &nbsp; &nbsp; "name": "My New Server",<br />
+                    &nbsp; &nbsp; "status": "active"<br />
+                    &nbsp; },<br />
+                    &nbsp; "timestamp": "2023-06-15T12:34:56Z"<br />
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Usage Analytics Section -->
     <section class="section">
-        <div class="container">
-            <h2 class="text-center section-title">API Usage Analytics</h2>
-            <div class="row mb-5">
-                <div class="col-md-6">
-                    <h3>Monitor Your API Consumption</h3>
-                    <p>Track your API usage to stay within limits and optimize your integration. Usage statistics are updated in real-time.</p>
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle me-2"></i>
-                        API requests are rate limited to 5,000 requests per hour per key. Contact support for higher limits.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                         alt="Analytics" 
-                         class="img-fluid rounded shadow">
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">API Usage Analytics</h2>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            <h3>Monitor Your API Consumption</h3>
+            <p>
+              Track your API usage to stay within limits and optimize your
+              integration. Usage statistics are updated in real-time.
+            </p>
+            <div class="alert alert-info">
+              <i class="fas fa-info-circle me-2"></i>
+              API requests are rate limited to 5,000 requests per hour per key.
+              Contact support for higher limits.
             </div>
-            
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Requests This Month</h5>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>1,420 of 5,000 requests used</span>
-                                <span>28%</span>
-                            </div>
-                            <div class="usage-meter">
-                                <div class="meter-progress" style="width: 28%;"></div>
-                            </div>
-                            <p class="text-muted small mt-2">Reset occurs on the 1st of each month</p>
-                            
-                            <div class="mt-4">
-                                <h5>Historical Usage</h5>
-                                <canvas id="historicalChart" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Endpoint Usage</h5>
-                            <canvas id="endpointChart" height="200"></canvas>
-                            
-                            <div class="mt-4">
-                                <h5>Response Status Codes</h5>
-                                <canvas id="statusChart" height="200"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+              alt="Analytics"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Requests This Month</h5>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>1,420 of 5,000 requests used</span>
+                  <span>28%</span>
+                </div>
+                <div class="usage-meter">
+                  <div class="meter-progress" style="width: 28%"></div>
+                </div>
+                <p class="text-muted small mt-2">
+                  Reset occurs on the 1st of each month
+                </p>
+
+                <div class="mt-4">
+                  <h5>Historical Usage</h5>
+                  <canvas id="historicalChart" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Endpoint Usage</h5>
+                <canvas id="endpointChart" height="200"></canvas>
+
+                <div class="mt-4">
+                  <h5>Response Status Codes</h5>
+                  <canvas id="statusChart" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Integrations Section -->
     <section class="section bg-white">
-        <div class="container">
-            <h2 class="text-center section-title">Popular Integrations</h2>
-            <div class="row mb-5">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3>Extend Your Workflow</h3>
-                    <p>Our API integrates seamlessly with popular development tools and platforms to fit into your existing workflow.</p>
-                    <div class="d-flex flex-wrap align-items-center mt-4">
-                        <img src="https://cdn.worldvectorlogo.com/logos/terraform.svg" class="integration-logo" alt="Terraform" title="Terraform">
-                        <img src="https://cdn.worldvectorlogo.com/logos/ansible.svg" class="integration-logo" alt="Ansible" title="Ansible">
-                        <img src="https://cdn.worldvectorlogo.com/logos/docker.svg" class="integration-logo" alt="Docker" title="Docker">
-                        <img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" class="integration-logo" alt="GitHub" title="GitHub">
-                        <img src="https://cdn.worldvectorlogo.com/logos/gitlab.svg" class="integration-logo" alt="GitLab" title="GitLab">
-                        <img src="https://cdn.worldvectorlogo.com/logos/jenkins-1.svg" class="integration-logo" alt="Jenkins" title="Jenkins">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Terraform Provider</h5>
-                            <p>Manage your infrastructure as code with our official Terraform provider.</p>
-                            <div class="documentation-code mb-3">
-                                terraform {<br>
-                                &nbsp; required_providers {<br>
-                                &nbsp; &nbsp; yourhosting = {<br>
-                                &nbsp; &nbsp; &nbsp; source = "yourhosting/yourhosting"<br>
-                                &nbsp; &nbsp; &nbsp; version = "~> 1.0"<br>
-                                &nbsp; &nbsp; }<br>
-                                &nbsp; }<br>
-                                }<br><br>
-                                
-                                provider "yourhosting" {<br>
-                                &nbsp; api_key = "YOUR_API_KEY"<br>
-                                }
-                            </div>
-                            <a href="#" class="btn btn-outline-primary">View Terraform Documentation</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">Popular Integrations</h2>
+        <div class="row mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h3>Extend Your Workflow</h3>
+            <p>
+              Our API integrates seamlessly with popular development tools and
+              platforms to fit into your existing workflow.
+            </p>
+            <div class="d-flex flex-wrap align-items-center mt-4">
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/terraform.svg"
+                class="integration-logo"
+                alt="Terraform"
+                title="Terraform"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/ansible.svg"
+                class="integration-logo"
+                alt="Ansible"
+                title="Ansible"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/docker.svg"
+                class="integration-logo"
+                alt="Docker"
+                title="Docker"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg"
+                class="integration-logo"
+                alt="GitHub"
+                title="GitHub"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/gitlab.svg"
+                class="integration-logo"
+                alt="GitLab"
+                title="GitLab"
+              />
+              <img
+                src="https://cdn.worldvectorlogo.com/logos/jenkins-1.svg"
+                class="integration-logo"
+                alt="Jenkins"
+                title="Jenkins"
+              />
             </div>
-            
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="https://cdn.worldvectorlogo.com/logos/ansible.svg" height="30" class="me-3" alt="Ansible">
-                                <h5 class="mb-0">Ansible Module</h5>
-                            </div>
-                            <p>Use our Ansible module to automate server provisioning and configuration.</p>
-                            <div class="documentation-code">
-                                - name: Create server<br>
-                                &nbsp; yourhosting_server:<br>
-                                &nbsp; &nbsp; name: "web-server"<br>
-                                &nbsp; &nbsp; plan: "standard-1"<br>
-                                &nbsp; &nbsp; region: "nyc1"<br>
-                                &nbsp; &nbsp; api_key: "{{ yourhosting_api_key }}"<br>
-                                &nbsp; register: server
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Terraform Provider</h5>
+                <p>
+                  Manage your infrastructure as code with our official Terraform
+                  provider.
+                </p>
+                <div class="documentation-code mb-3">
+                  terraform {<br />
+                  &nbsp; required_providers {<br />
+                  &nbsp; &nbsp; yourhosting = {<br />
+                  &nbsp; &nbsp; &nbsp; source = "yourhosting/yourhosting"<br />
+                  &nbsp; &nbsp; &nbsp; version = "~> 1.0"<br />
+                  &nbsp; &nbsp; }<br />
+                  &nbsp; }<br />
+                  }<br /><br />
+
+                  provider "yourhosting" {<br />
+                  &nbsp; api_key = "YOUR_API_KEY"<br />
+                  }
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" height="30" class="me-3" alt="GitHub">
-                                <h5 class="mb-0">GitHub Actions</h5>
-                            </div>
-                            <p>Deploy directly from your GitHub repositories using our GitHub Action.</p>
-                            <div class="documentation-code">
-                                - name: Deploy to YourHosting<br>
-                                &nbsp; uses: yourhosting/action@v1<br>
-                                &nbsp; with:<br>
-                                &nbsp; &nbsp; api-key: ${{ secrets.YOURHOSTING_API_KEY }}<br>
-                                &nbsp; &nbsp; server: production<br>
-                                &nbsp; &nbsp; source: ./dist
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center mb-3">
-                                <img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" height="30" class="me-3" alt="Slack">
-                                <h5 class="mb-0">Slack Notifications</h5>
-                            </div>
-                            <p>Receive alerts in Slack when important events occur in your infrastructure.</p>
-                            <div class="documentation-code">
-                                - name: Send to Slack<br>
-                                &nbsp; uses: slackapi/slack-github-action@v1<br>
-                                &nbsp; with:<br>
-                                &nbsp; &nbsp; channel-id: 'deployments'<br>
-                                &nbsp; &nbsp; slack-message: "Deployment complete"<br>
-                                &nbsp; env:<br>
-                                &nbsp; &nbsp; SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="#" class="btn btn-outline-primary"
+                  >View Terraform Documentation</a
+                >
+              </div>
             </div>
+          </div>
         </div>
+
+        <div class="row mt-4">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="https://cdn.worldvectorlogo.com/logos/ansible.svg"
+                    height="30"
+                    class="me-3"
+                    alt="Ansible"
+                  />
+                  <h5 class="mb-0">Ansible Module</h5>
+                </div>
+                <p>
+                  Use our Ansible module to automate server provisioning and
+                  configuration.
+                </p>
+                <div class="documentation-code">
+                  - name: Create server<br />
+                  &nbsp; yourhosting_server:<br />
+                  &nbsp; &nbsp; name: "web-server"<br />
+                  &nbsp; &nbsp; plan: "standard-1"<br />
+                  &nbsp; &nbsp; region: "nyc1"<br />
+                  &nbsp; &nbsp; api_key: "{{ yourhosting_api_key }}"<br />
+                  &nbsp; register: server
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg"
+                    height="30"
+                    class="me-3"
+                    alt="GitHub"
+                  />
+                  <h5 class="mb-0">GitHub Actions</h5>
+                </div>
+                <p>
+                  Deploy directly from your GitHub repositories using our GitHub
+                  Action.
+                </p>
+                <div class="documentation-code">
+                  - name: Deploy to YourHosting<br />
+                  &nbsp; uses: yourhosting/action@v1<br />
+                  &nbsp; with:<br />
+                  &nbsp; &nbsp; api-key: ${{ secrets.YOURHOSTING_API_KEY }}<br />
+                  &nbsp; &nbsp; server: production<br />
+                  &nbsp; &nbsp; source: ./dist
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <img
+                    src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg"
+                    height="30"
+                    class="me-3"
+                    alt="Slack"
+                  />
+                  <h5 class="mb-0">Slack Notifications</h5>
+                </div>
+                <p>
+                  Receive alerts in Slack when important events occur in your
+                  infrastructure.
+                </p>
+                <div class="documentation-code">
+                  - name: Send to Slack<br />
+                  &nbsp; uses: slackapi/slack-github-action@v1<br />
+                  &nbsp; with:<br />
+                  &nbsp; &nbsp; channel-id: 'deployments'<br />
+                  &nbsp; &nbsp; slack-message: "Deployment complete"<br />
+                  &nbsp; env:<br />
+                  &nbsp; &nbsp; SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Test Console Section -->
     <section class="section">
-        <div class="container">
-            <h2 class="text-center section-title">API Test Console</h2>
-            <div class="row mb-5">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3>Try Our API Directly</h3>
-                    <p>Use our interactive console to test API endpoints without leaving your browser. The console makes real API calls to your account.</p>
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle me-2"></i>
-                        <strong>Note:</strong> Write operations (POST, PUT, DELETE) will make actual changes to your account.
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-                         alt="API Console" 
-                         class="img-fluid rounded shadow">
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">API Test Console</h2>
+        <div class="row mb-5">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h3>Try Our API Directly</h3>
+            <p>
+              Use our interactive console to test API endpoints without leaving
+              your browser. The console makes real API calls to your account.
+            </p>
+            <div class="alert alert-warning">
+              <i class="fas fa-exclamation-triangle me-2"></i>
+              <strong>Note:</strong> Write operations (POST, PUT, DELETE) will
+              make actual changes to your account.
             </div>
-            
-            <div class="test-console">
-                <div class="row mb-3">
-                    <div class="col-md-3">
-                        <select class="form-select bg-dark text-white border-dark" id="httpMethod">
-                            <option value="GET">GET</option>
-                            <option value="POST">POST</option>
-                            <option value="PUT">PUT</option>
-                            <option value="DELETE">DELETE</option>
-                        </select>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="input-group">
-                            <span class="input-group-text bg-dark text-white border-dark">https://api.yourhosting.com/v1/</span>
-                            <input type="text" class="form-control bg-dark text-white border-dark" id="endpointPath" placeholder="servers">
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="requestBody" class="form-label">Request Body (JSON)</label>
-                    <textarea class="form-control bg-dark text-white border-dark" id="requestBody" rows="5" placeholder='{"key": "value"}'></textarea>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="apiKeySelect" class="form-label">API Key</label>
-                        <select class="form-select bg-dark text-white border-dark" id="apiKeySelect">
-                            <option value="sk_prod_abc123xyz456">Production Server (sk_prod_...)</option>
-                            <option value="sk_backup_def789uvw012">Backup System (sk_backup_...)</option>
-                            <option value="sk_stage_ghi345jkl678">Staging Environment (sk_stage_...)</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="responseFormat" class="form-label">Response Format</label>
-                        <select class="form-select bg-dark text-white border-dark" id="responseFormat">
-                            <option value="pretty">Pretty Printed</option>
-                            <option value="raw">Raw JSON</option>
-                        </select>
-                    </div>
-                </div>
-                <button class="btn btn-primary" id="sendRequest">
-                    <i class="fas fa-paper-plane me-2"></i>Send Request
-                </button>
-                <div class="console-response mt-3" id="consoleResponse">
-                    <small class="text-muted">Response will appear here...</small>
-                </div>
-            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+              alt="API Console"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
+
+        <div class="test-console">
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <select
+                class="form-select bg-dark text-secondary border-dark"
+                id="httpMethod"
+              >
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PUT">PUT</option>
+                <option value="DELETE">DELETE</option>
+              </select>
+            </div>
+            <div class="col-md-9">
+              <div class="input-group">
+                <span class="input-group-text bg-dark text-white border-dark"
+                  >https://api.yourhosting.com/v1/</span
+                >
+                <input
+                  type="text"
+                  class="form-control bg-dark text-white border-dark"
+                  id="endpointPath"
+                  placeholder="servers"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="requestBody" class="form-label "
+              >Request Body (JSON)</label
+            >
+            <textarea
+              class="form-control bg-dark text-white border-dark"
+              id="requestBody"
+              rows="5"
+              placeholder='{"key": "value"}'
+            ></textarea>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="apiKeySelect" class="form-label">API Key</label>
+              <select
+                class="form-select bg-dark text-white border-dark"
+                id="apiKeySelect"
+              >
+                <option value="sk_prod_abc123xyz456">
+                  Production Server (sk_prod_...)
+                </option>
+                <option value="sk_backup_def789uvw012">
+                  Backup System (sk_backup_...)
+                </option>
+                <option value="sk_stage_ghi345jkl678">
+                  Staging Environment (sk_stage_...)
+                </option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="responseFormat" class="form-label"
+                >Response Format</label
+              >
+              <select
+                class="form-select bg-dark text-white border-dark"
+                id="responseFormat"
+              >
+                <option value="pretty">Pretty Printed</option>
+                <option value="raw">Raw JSON</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="sendRequest">
+            <i class="fas fa-paper-plane me-2"></i>Send Request
+          </button>
+          <div class="console-response mt-3" id="consoleResponse">
+            <small class="text-muted">Response will appear here...</small>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="section bg-white">
-        <div class="container">
-            <h2 class="text-center section-title">Frequently Asked Questions</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="faq-item">
-                        <div class="faq-question">How do I authenticate with the API?</div>
-                        <p>Include your API key in the Authorization header of each request: <code>Authorization: Bearer YOUR_API_KEY</code>. You can generate API keys in the API Access section of your dashboard.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">What is the rate limit for API requests?</div>
-                        <p>Standard API keys are limited to 5,000 requests per hour. If you need higher limits, please contact our support team to discuss enterprise options.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">How can I secure my API keys?</div>
-                        <p>Always keep your API keys secret. Use IP restrictions to limit where keys can be used from, rotate keys regularly, and never commit keys to version control. Consider using environment variables or secret management tools.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="faq-item">
-                        <div class="faq-question">What happens if I exceed my rate limit?</div>
-                        <p>Requests beyond your rate limit will receive a 429 Too Many Requests response. The response headers will include information about when the limit resets.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">How do webhooks work?</div>
-                        <p>Webhooks allow you to receive real-time notifications about events in your account. You can configure webhooks to send HTTP requests to your server when specific events occur.</p>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Where can I get help with API integration?</div>
-                        <p>Our <a href="#">documentation</a> includes detailed guides and examples. For additional help, you can contact our <a href="#">support team</a> or join our <a href="#">community forum</a> to ask other developers.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center section-title">Frequently Asked Questions</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="faq-item">
+              <div class="faq-question">
+                How do I authenticate with the API?
+              </div>
+              <p>
+                Include your API key in the Authorization header of each
+                request: <code>Authorization: Bearer YOUR_API_KEY</code>. You
+                can generate API keys in the API Access section of your
+                dashboard.
+              </p>
             </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                What is the rate limit for API requests?
+              </div>
+              <p>
+                Standard API keys are limited to 5,000 requests per hour. If you
+                need higher limits, please contact our support team to discuss
+                enterprise options.
+              </p>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How can I secure my API keys?</div>
+              <p>
+                Always keep your API keys secret. Use IP restrictions to limit
+                where keys can be used from, rotate keys regularly, and never
+                commit keys to version control. Consider using environment
+                variables or secret management tools.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="faq-item">
+              <div class="faq-question">
+                What happens if I exceed my rate limit?
+              </div>
+              <p>
+                Requests beyond your rate limit will receive a 429 Too Many
+                Requests response. The response headers will include information
+                about when the limit resets.
+              </p>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How do webhooks work?</div>
+              <p>
+                Webhooks allow you to receive real-time notifications about
+                events in your account. You can configure webhooks to send HTTP
+                requests to your server when specific events occur.
+              </p>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">
+                Where can I get help with API integration?
+              </div>
+              <p>
+                Our <a href="#">documentation</a> includes detailed guides and
+                examples. For additional help, you can contact our
+                <a href="#">support team</a> or join our
+                <a href="#">community forum</a> to ask other developers.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
+
+
     <!-- Create Key Modal -->
-    <div class="modal fade" id="createKeyModal" tabindex="-1" aria-labelledby="createKeyModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createKeyModalLabel">Generate New API Key</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      class="modal fade"
+      id="createKeyModal"
+      tabindex="-1"
+      aria-labelledby="createKeyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createKeyModalLabel">
+              Generate New API Key
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="keyForm">
+              <div class="mb-3">
+                <label for="keyName" class="form-label">Key Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="keyName"
+                  placeholder="e.g., 'Production Server Key'"
+                  required
+                />
+                <div class="form-text">
+                  Give your key a descriptive name to identify its purpose.
                 </div>
-                <div class="modal-body">
-                    <form id="keyForm">
-                        <div class="mb-3">
-                            <label for="keyName" class="form-label">Key Name</label>
-                            <input type="text" class="form-control" id="keyName" placeholder="e.g., 'Production Server Key'" required>
-                            <div class="form-text">Give your key a descriptive name to identify its purpose.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Permissions</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="permRead" checked>
-                                <label class="form-check-label" for="permRead">Read Access</label>
-                                <div class="form-text">View resources (servers, databases, etc.)</div>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="permWrite">
-                                <label class="form-check-label" for="permWrite">Write Access</label>
-                                <div class="form-text">Create, modify, and delete resources</div>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="permBilling">
-                                <label class="form-check-label" for="permBilling">Billing Access</label>
-                                <div class="form-text">View and modify billing information</div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ipRestriction" class="form-label">IP Restrictions (optional)</label>
-                            <input type="text" class="form-control" id="ipRestriction" placeholder="192.168.1.1, 203.0.113.0/24">
-                            <div class="form-text">Comma separated list of IPs/CIDR ranges that can use this key</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="keyExpiry" class="form-label">Expiration (optional)</label>
-                            <input type="date" class="form-control" id="keyExpiry">
-                            <div class="form-text">Key will automatically expire on this date</div>
-                        </div>
-                    </form>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Permissions</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="permRead"
+                    checked
+                  />
+                  <label class="form-check-label" for="permRead"
+                    >Read Access</label
+                  >
+                  <div class="form-text">
+                    View resources (servers, databases, etc.)
+                  </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="generateKey">
-                        <i class="fas fa-key me-2"></i>Generate Key
-                    </button>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="permWrite"
+                  />
+                  <label class="form-check-label" for="permWrite"
+                    >Write Access</label
+                  >
+                  <div class="form-text">
+                    Create, modify, and delete resources
+                  </div>
                 </div>
-            </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="permBilling"
+                  />
+                  <label class="form-check-label" for="permBilling"
+                    >Billing Access</label
+                  >
+                  <div class="form-text">
+                    View and modify billing information
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="ipRestriction" class="form-label"
+                  >IP Restrictions (optional)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ipRestriction"
+                  placeholder="192.168.1.1, 203.0.113.0/24"
+                />
+                <div class="form-text">
+                  Comma separated list of IPs/CIDR ranges that can use this key
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="keyExpiry" class="form-label"
+                  >Expiration (optional)</label
+                >
+                <input type="date" class="form-control" id="keyExpiry" />
+                <div class="form-text">
+                  Key will automatically expire on this date
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="generateKey">
+              <i class="fas fa-key me-2"></i>Generate Key
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Key Details Modal -->
-    <div class="modal fade" id="keyDetailsModal" tabindex="-1" aria-labelledby="keyDetailsModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="keyDetailsModalLabel">API Key Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="keyDetailsContent">
-                    <!-- Content will be filled by JavaScript -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" id="revokeKeyBtn">
-                        <i class="fas fa-trash-alt me-2"></i>Revoke Key
-                    </button>
-                </div>
-            </div>
+    <div
+      class="modal fade"
+      id="keyDetailsModal"
+      tabindex="-1"
+      aria-labelledby="keyDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="keyDetailsModalLabel">
+              API Key Details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="keyDetailsContent">
+            <!-- Content will be filled by JavaScript -->
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-danger" id="revokeKeyBtn">
+              <i class="fas fa-trash-alt me-2"></i>Revoke Key
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
-        <!-- Theme JS -->
+
+    <div data-include="footer.html"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script src="back-to-top.js"></script>
+
+
+
+    <script>
+      // Initialize AOS (Animate On Scroll)
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        offset: 100,
+      });
+    </script>
+
+    <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
     <script src="assets/js/init.js?t=20240403"></script>
     <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
@@ -1067,56 +1850,56 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
     <script>
-        // Sample API keys data
-        const apiKeys = [
-            {
-                id: 'key_1',
-                name: 'Production Server',
-                key: 'sk_prod_abc123xyz456',
-                created: '2023-05-15',
-                lastUsed: '2023-06-10',
-                permissions: ['read', 'write'],
-                ipRestriction: '203.0.113.0/24',
-                usage: 1420
-            },
-            {
-                id: 'key_2',
-                name: 'Backup System',
-                key: 'sk_backup_def789uvw012',
-                created: '2023-04-20',
-                lastUsed: '2023-06-05',
-                permissions: ['read'],
-                ipRestriction: null,
-                usage: 320
-            },
-            {
-                id: 'key_3',
-                name: 'Staging Environment',
-                key: 'sk_stage_ghi345jkl678',
-                created: '2023-06-01',
-                lastUsed: null,
-                permissions: ['read', 'write', 'billing'],
-                ipRestriction: null,
-                usage: 560
-            }
-        ];
+      // Sample API keys data
+      const apiKeys = [
+        {
+          id: "key_1",
+          name: "Production Server",
+          key: "sk_prod_abc123xyz456",
+          created: "2023-05-15",
+          lastUsed: "2023-06-10",
+          permissions: ["read", "write"],
+          ipRestriction: "203.0.113.0/24",
+          usage: 1420,
+        },
+        {
+          id: "key_2",
+          name: "Backup System",
+          key: "sk_backup_def789uvw012",
+          created: "2023-04-20",
+          lastUsed: "2023-06-05",
+          permissions: ["read"],
+          ipRestriction: null,
+          usage: 320,
+        },
+        {
+          id: "key_3",
+          name: "Staging Environment",
+          key: "sk_stage_ghi345jkl678",
+          created: "2023-06-01",
+          lastUsed: null,
+          permissions: ["read", "write", "billing"],
+          ipRestriction: null,
+          usage: 560,
+        },
+      ];
 
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            renderApiKeys();
-            setupCharts();
-            setupEventListeners();
-        });
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", function () {
+        renderApiKeys();
+        setupCharts();
+        setupEventListeners();
+      });
 
-        // Render API keys to the page
-        function renderApiKeys() {
-            const container = document.getElementById('apiKeysContainer');
-            container.innerHTML = '';
-            
-            if (apiKeys.length === 0) {
-                container.innerHTML = `
+      // Render API keys to the page
+      function renderApiKeys() {
+        const container = document.getElementById("apiKeysContainer");
+        container.innerHTML = "";
+
+        if (apiKeys.length === 0) {
+          container.innerHTML = `
                     <div class="col-12 text-center py-5">
                         <i class="fas fa-key fa-3x text-muted mb-3"></i>
                         <h4 class="text-muted">No API Keys Found</h4>
@@ -1126,29 +1909,40 @@
                         </button>
                     </div>
                 `;
-                return;
-            }
-            
-            apiKeys.forEach(key => {
-                const usagePercent = Math.min(100, Math.round((key.usage / 5000) * 100));
-                
-                const keyElement = document.createElement('div');
-                keyElement.className = 'col-md-6 mb-4';
-                keyElement.innerHTML = `
+          return;
+        }
+
+        apiKeys.forEach((key) => {
+          const usagePercent = Math.min(
+            100,
+            Math.round((key.usage / 5000) * 100)
+          );
+
+          const keyElement = document.createElement("div");
+          keyElement.className = "col-md-6 mb-4";
+          keyElement.innerHTML = `
                     <div class="card api-key-card h-100">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-start">
                                 <h5 class="card-title mb-3">${key.name}</h5>
-                                <span class="badge bg-${key.lastUsed ? 'success' : 'secondary'}">
-                                    ${key.lastUsed ? 'Active' : 'Never used'}
+                                <span class="badge bg-${
+                                  key.lastUsed ? "success" : "secondary"
+                                }">
+                                    ${key.lastUsed ? "Active" : "Never used"}
                                 </span>
                             </div>
-                            <p class="text-muted small mb-2">Created: ${key.created}</p>
-                            <p class="text-muted small mb-3">Last used: ${key.lastUsed || 'Never'}</p>
+                            <p class="text-muted small mb-2">Created: ${
+                              key.created
+                            }</p>
+                            <p class="text-muted small mb-3">Last used: ${
+                              key.lastUsed || "Never"
+                            }</p>
                             
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between small mb-1">
-                                    <span>Usage: ${key.usage} of 5,000 requests</span>
+                                    <span>Usage: ${
+                                      key.usage
+                                    } of 5,000 requests</span>
                                     <span>${usagePercent}%</span>
                                 </div>
                                 <div class="usage-meter">
@@ -1157,275 +1951,324 @@
                             </div>
                             
                             <div class="d-flex gap-2">
-                                <button class="btn btn-sm btn-outline-primary view-key-btn" data-key-id="${key.id}">
+                                <button class="btn btn-sm btn-outline-primary view-key-btn" data-key-id="${
+                                  key.id
+                                }">
                                     <i class="fas fa-eye me-1"></i> View
                                 </button>
-                                <button class="btn btn-sm btn-outline-secondary copy-key-btn" data-key="${key.key}">
+                                <button class="btn btn-sm btn-outline-secondary copy-key-btn" data-key="${
+                                  key.key
+                                }">
                                     <i class="fas fa-copy me-1"></i> Copy
                                 </button>
                             </div>
                         </div>
                     </div>
                 `;
-                container.appendChild(keyElement);
+          container.appendChild(keyElement);
+        });
+      }
+
+      // Setup charts
+      function setupCharts() {
+        // Endpoint usage chart
+        const endpointCtx = document
+          .getElementById("endpointChart")
+          .getContext("2d");
+        new Chart(endpointCtx, {
+          type: "bar",
+          data: {
+            labels: ["/servers", "/dns", "/databases", "/users", "/billing"],
+            datasets: [
+              {
+                label: "API Calls",
+                data: [420, 320, 280, 190, 80],
+                backgroundColor: [
+                  "rgba(78, 115, 223, 0.8)",
+                  "rgba(54, 185, 204, 0.8)",
+                  "rgba(76, 192, 192, 0.8)",
+                  "rgba(153, 102, 255, 0.8)",
+                  "rgba(255, 159, 64, 0.8)",
+                ],
+                borderColor: [
+                  "rgba(78, 115, 223, 1)",
+                  "rgba(54, 185, 204, 1)",
+                  "rgba(76, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        // Historical usage chart
+        const historicalCtx = document
+          .getElementById("historicalChart")
+          .getContext("2d");
+        new Chart(historicalCtx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            datasets: [
+              {
+                label: "API Requests",
+                data: [1200, 1900, 1700, 2100, 2300, 1420],
+                borderColor: "rgba(78, 115, 223, 1)",
+                backgroundColor: "rgba(78, 115, 223, 0.1)",
+                fill: true,
+                tension: 0.3,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+
+        // Status code chart
+        const statusCtx = document
+          .getElementById("statusChart")
+          .getContext("2d");
+        new Chart(statusCtx, {
+          type: "doughnut",
+          data: {
+            labels: [
+              "200 OK",
+              "201 Created",
+              "400 Bad Request",
+              "404 Not Found",
+              "429 Rate Limit",
+            ],
+            datasets: [
+              {
+                data: [1200, 150, 50, 10, 10],
+                backgroundColor: [
+                  "rgba(28, 200, 138, 0.8)",
+                  "rgba(28, 200, 138, 0.6)",
+                  "rgba(246, 194, 62, 0.8)",
+                  "rgba(231, 74, 59, 0.6)",
+                  "rgba(231, 74, 59, 0.8)",
+                ],
+                borderColor: [
+                  "rgba(28, 200, 138, 1)",
+                  "rgba(28, 200, 138, 1)",
+                  "rgba(246, 194, 62, 1)",
+                  "rgba(231, 74, 59, 1)",
+                  "rgba(231, 74, 59, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "right",
+              },
+            },
+          },
+        });
+      }
+
+      // Setup event listeners
+      function setupEventListeners() {
+        // View key details
+        document.querySelectorAll(".view-key-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const keyId = this.getAttribute("data-key-id");
+            const key = apiKeys.find((k) => k.id === keyId);
+            showKeyDetails(key);
+          });
+        });
+
+        // Copy key to clipboard
+        document.querySelectorAll(".copy-key-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const key = this.getAttribute("data-key");
+            navigator.clipboard.writeText(key).then(() => {
+              const originalText = this.innerHTML;
+              this.innerHTML = '<i class="fas fa-check me-1"></i> Copied!';
+              setTimeout(() => {
+                this.innerHTML = originalText;
+              }, 2000);
             });
-        }
+          });
+        });
 
-        // Setup charts
-        function setupCharts() {
-            // Endpoint usage chart
-            const endpointCtx = document.getElementById('endpointChart').getContext('2d');
-            new Chart(endpointCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['/servers', '/dns', '/databases', '/users', '/billing'],
-                    datasets: [{
-                        label: 'API Calls',
-                        data: [420, 320, 280, 190, 80],
-                        backgroundColor: [
-                            'rgba(78, 115, 223, 0.8)',
-                            'rgba(54, 185, 204, 0.8)',
-                            'rgba(76, 192, 192, 0.8)',
-                            'rgba(153, 102, 255, 0.8)',
-                            'rgba(255, 159, 64, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(78, 115, 223, 1)',
-                            'rgba(54, 185, 204, 1)',
-                            'rgba(76, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            
-            // Historical usage chart
-            const historicalCtx = document.getElementById('historicalChart').getContext('2d');
-            new Chart(historicalCtx, {
-                type: 'line',
-                data: {
-                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                    datasets: [{
-                        label: 'API Requests',
-                        data: [1200, 1900, 1700, 2100, 2300, 1420],
-                        borderColor: 'rgba(78, 115, 223, 1)',
-                        backgroundColor: 'rgba(78, 115, 223, 0.1)',
-                        fill: true,
-                        tension: 0.3
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            display: false
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-            
-            // Status code chart
-            const statusCtx = document.getElementById('statusChart').getContext('2d');
-            new Chart(statusCtx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['200 OK', '201 Created', '400 Bad Request', '404 Not Found', '429 Rate Limit'],
-                    datasets: [{
-                        data: [1200, 150, 50, 10, 10],
-                        backgroundColor: [
-                            'rgba(28, 200, 138, 0.8)',
-                            'rgba(28, 200, 138, 0.6)',
-                            'rgba(246, 194, 62, 0.8)',
-                            'rgba(231, 74, 59, 0.6)',
-                            'rgba(231, 74, 59, 0.8)'
-                        ],
-                        borderColor: [
-                            'rgba(28, 200, 138, 1)',
-                            'rgba(28, 200, 138, 1)',
-                            'rgba(246, 194, 62, 1)',
-                            'rgba(231, 74, 59, 1)',
-                            'rgba(231, 74, 59, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'right'
-                        }
-                    }
-                }
-            });
-        }
+        // Generate new key
+        document
+          .getElementById("generateKey")
+          .addEventListener("click", function () {
+            const name = document.getElementById("keyName").value;
+            if (!name) {
+              alert("Please enter a key name");
+              return;
+            }
 
-        // Setup event listeners
-        function setupEventListeners() {
-            // View key details
-            document.querySelectorAll('.view-key-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const keyId = this.getAttribute('data-key-id');
-                    const key = apiKeys.find(k => k.id === keyId);
-                    showKeyDetails(key);
-                });
-            });
+            const permissions = [];
+            if (document.getElementById("permRead").checked)
+              permissions.push("read");
+            if (document.getElementById("permWrite").checked)
+              permissions.push("write");
+            if (document.getElementById("permBilling").checked)
+              permissions.push("billing");
 
-            // Copy key to clipboard
-            document.querySelectorAll('.copy-key-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const key = this.getAttribute('data-key');
-                    navigator.clipboard.writeText(key).then(() => {
-                        const originalText = this.innerHTML;
-                        this.innerHTML = '<i class="fas fa-check me-1"></i> Copied!';
-                        setTimeout(() => {
-                            this.innerHTML = originalText;
-                        }, 2000);
-                    });
-                });
-            });
+            const ipRestriction =
+              document.getElementById("ipRestriction").value;
+            const expiry = document.getElementById("keyExpiry").value;
 
-            // Generate new key
-            document.getElementById('generateKey').addEventListener('click', function() {
-                const name = document.getElementById('keyName').value;
-                if (!name) {
-                    alert('Please enter a key name');
-                    return;
-                }
+            // Generate a random key (in a real app, this would come from the server)
+            const randomKey =
+              "sk_new_" +
+              Math.random().toString(36).substring(2, 15) +
+              Math.random().toString(36).substring(2, 15);
 
-                const permissions = [];
-                if (document.getElementById('permRead').checked) permissions.push('read');
-                if (document.getElementById('permWrite').checked) permissions.push('write');
-                if (document.getElementById('permBilling').checked) permissions.push('billing');
+            const newKey = {
+              id: "key_" + (apiKeys.length + 1),
+              name: name,
+              key: randomKey,
+              created: new Date().toISOString().split("T")[0],
+              lastUsed: null,
+              permissions: permissions,
+              ipRestriction: ipRestriction || null,
+              expiry: expiry || null,
+              usage: 0,
+            };
 
-                const ipRestriction = document.getElementById('ipRestriction').value;
-                const expiry = document.getElementById('keyExpiry').value;
+            apiKeys.unshift(newKey);
+            renderApiKeys();
 
-                // Generate a random key (in a real app, this would come from the server)
-                const randomKey = 'sk_new_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-                
-                const newKey = {
-                    id: 'key_' + (apiKeys.length + 1),
-                    name: name,
-                    key: randomKey,
-                    created: new Date().toISOString().split('T')[0],
-                    lastUsed: null,
-                    permissions: permissions,
-                    ipRestriction: ipRestriction || null,
-                    expiry: expiry || null,
-                    usage: 0
-                };
+            // Show the new key in details modal
+            showKeyDetails(newKey);
 
-                apiKeys.unshift(newKey);
+            // Close the create modal
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("createKeyModal")
+            );
+            modal.hide();
+
+            // Reset form
+            document.getElementById("keyForm").reset();
+          });
+
+        // Revoke key
+        document
+          .getElementById("revokeKeyBtn")
+          .addEventListener("click", function () {
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("keyDetailsModal")
+            );
+            const keyId = modal._element
+              .querySelector(".modal-body")
+              .getAttribute("data-key-id");
+
+            const index = apiKeys.findIndex((k) => k.id === keyId);
+            if (index !== -1) {
+              if (
+                confirm(
+                  "Are you sure you want to revoke this API key? This cannot be undone."
+                )
+              ) {
+                apiKeys.splice(index, 1);
                 renderApiKeys();
-                
-                // Show the new key in details modal
-                showKeyDetails(newKey);
-                
-                // Close the create modal
-                const modal = bootstrap.Modal.getInstance(document.getElementById('createKeyModal'));
                 modal.hide();
-                
-                // Reset form
-                document.getElementById('keyForm').reset();
-            });
+              }
+            }
+          });
 
-            // Revoke key
-            document.getElementById('revokeKeyBtn').addEventListener('click', function() {
-                const modal = bootstrap.Modal.getInstance(document.getElementById('keyDetailsModal'));
-                const keyId = modal._element.querySelector('.modal-body').getAttribute('data-key-id');
-                
-                const index = apiKeys.findIndex(k => k.id === keyId);
-                if (index !== -1) {
-                    if (confirm('Are you sure you want to revoke this API key? This cannot be undone.')) {
-                        apiKeys.splice(index, 1);
-                        renderApiKeys();
-                        modal.hide();
-                    }
-                }
-            });
+        // Test console
+        document
+          .getElementById("sendRequest")
+          .addEventListener("click", function () {
+            const method = document.getElementById("httpMethod").value;
+            const path = document.getElementById("endpointPath").value;
+            const body = document.getElementById("requestBody").value;
+            const format = document.getElementById("responseFormat").value;
 
-            // Test console
-            document.getElementById('sendRequest').addEventListener('click', function() {
-                const method = document.getElementById('httpMethod').value;
-                const path = document.getElementById('endpointPath').value;
-                const body = document.getElementById('requestBody').value;
-                const format = document.getElementById('responseFormat').value;
-                
-                if (!path) {
-                    alert('Please enter an endpoint path');
-                    return;
-                }
-                
-                const responseDiv = document.getElementById('consoleResponse');
-                responseDiv.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending request...';
-                
-                // Simulate API request with timeout
-                setTimeout(() => {
-                    let response;
-                    
-                    if (format === 'pretty') {
-                        response = `
+            if (!path) {
+              alert("Please enter an endpoint path");
+              return;
+            }
+
+            const responseDiv = document.getElementById("consoleResponse");
+            responseDiv.innerHTML =
+              '<i class="fas fa-spinner fa-spin me-2"></i> Sending request...';
+
+            // Simulate API request with timeout
+            setTimeout(() => {
+              let response;
+
+              if (format === "pretty") {
+                response = `
 <small class="text-success">${method} https://api.yourhosting.com/v1/${path}</small>
 <small class="text-muted">Status: 200 OK</small>
 <hr>
 <pre>{
   "data": {
     "id": "123",
-    "type": "${path.split('/')[0] || 'resource'}",
+    "type": "${path.split("/")[0] || "resource"}",
     "attributes": {
       "status": "active",
       "created_at": "${new Date().toISOString()}"
     }
   }
 }</pre>`;
-                    } else {
-                        response = `
+              } else {
+                response = `
 <small class="text-success">${method} https://api.yourhosting.com/v1/${path}</small>
 <small class="text-muted">Status: 200 OK</small>
 <hr>
-<pre>{"data":{"id":"123","type":"${path.split('/')[0] || 'resource'}","attributes":{"status":"active","created_at":"${new Date().toISOString()}"}}</pre>`;
-                    }
-                    
-                    responseDiv.innerHTML = response;
-                    
-                    // Update last used for the key
-                    const selectedKeyValue = document.getElementById('apiKeySelect').value;
-                    const key = apiKeys.find(k => k.key === selectedKeyValue);
-                    if (key) {
-                        key.lastUsed = new Date().toISOString().split('T')[0];
-                        renderApiKeys();
-                    }
-                }, 1500);
-            });
-        }
+<pre>{"data":{"id":"123","type":"${
+                  path.split("/")[0] || "resource"
+                }","attributes":{"status":"active","created_at":"${new Date().toISOString()}"}}</pre>`;
+              }
 
-        // Show key details in modal
-        function showKeyDetails(key) {
-            const modalContent = document.getElementById('keyDetailsContent');
-            modalContent.setAttribute('data-key-id', key.id);
-            
-            modalContent.innerHTML = `
+              responseDiv.innerHTML = response;
+
+              // Update last used for the key
+              const selectedKeyValue =
+                document.getElementById("apiKeySelect").value;
+              const key = apiKeys.find((k) => k.key === selectedKeyValue);
+              if (key) {
+                key.lastUsed = new Date().toISOString().split("T")[0];
+                renderApiKeys();
+              }
+            }, 1500);
+          });
+      }
+
+      // Show key details in modal
+      function showKeyDetails(key) {
+        const modalContent = document.getElementById("keyDetailsContent");
+        modalContent.setAttribute("data-key-id", key.id);
+
+        modalContent.innerHTML = `
                 <div class="mb-3">
                     <label class="form-label">Key Name</label>
                     <p class="fw-bold">${key.name}</p>
@@ -1433,7 +2276,9 @@
                 <div class="mb-3">
                     <label class="form-label">API Key</label>
                     <div class="input-group mb-2">
-                        <input type="text" class="form-control" value="${key.key}" readonly id="keyToCopy">
+                        <input type="text" class="form-control" value="${
+                          key.key
+                        }" readonly id="keyToCopy">
                         <button class="btn btn-outline-secondary" type="button" id="copyKeyBtn">
                             <i class="fas fa-copy"></i>
                         </button>
@@ -1443,19 +2288,24 @@
                 <div class="mb-3">
                     <label class="form-label">Permissions</label>
                     <div>
-                        ${key.permissions.map(perm => 
-                            `<span class="badge bg-primary me-1 mb-1">${perm}</span>`
-                        ).join('')}
+                        ${key.permissions
+                          .map(
+                            (perm) =>
+                              `<span class="badge bg-primary me-1 mb-1">${perm}</span>`
+                          )
+                          .join("")}
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label class="form-label">IP Restrictions</label>
-                        <p>${key.ipRestriction || 'None (accessible from any IP)'}</p>
+                        <p>${
+                          key.ipRestriction || "None (accessible from any IP)"
+                        }</p>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Expiration Date</label>
-                        <p>${key.expiry || 'Never'}</p>
+                        <p>${key.expiry || "Never"}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -1465,38 +2315,48 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label">Last Used</label>
-                        <p>${key.lastUsed || 'Never'}</p>
+                        <p>${key.lastUsed || "Never"}</p>
                     </div>
                 </div>
                 <div class="mt-3">
                     <label class="form-label">Usage This Month</label>
                     <div class="d-flex justify-content-between small mb-1">
                         <span>${key.usage} of 5,000 requests</span>
-                        <span>${Math.min(100, Math.round((key.usage / 5000) * 100))}%</span>
+                        <span>${Math.min(
+                          100,
+                          Math.round((key.usage / 5000) * 100)
+                        )}%</span>
                     </div>
                     <div class="usage-meter">
-                        <div class="meter-progress" style="width: ${Math.min(100, Math.round((key.usage / 5000) * 100))}%;"></div>
+                        <div class="meter-progress" style="width: ${Math.min(
+                          100,
+                          Math.round((key.usage / 5000) * 100)
+                        )}%;"></div>
                     </div>
                 </div>
             `;
-            
-            const modal = new bootstrap.Modal(document.getElementById('keyDetailsModal'));
-            modal.show();
-            
-            // Setup copy button in the modal
-            document.getElementById('copyKeyBtn').addEventListener('click', function() {
-                const keyInput = document.getElementById('keyToCopy');
-                keyInput.select();
-                document.execCommand('copy');
-                
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="fas fa-check"></i>';
-                setTimeout(() => {
-                    this.innerHTML = originalText;
-                }, 2000);
-            });
-        }
+
+        const modal = new bootstrap.Modal(
+          document.getElementById("keyDetailsModal")
+        );
+        modal.show();
+
+        // Setup copy button in the modal
+        document
+          .getElementById("copyKeyBtn")
+          .addEventListener("click", function () {
+            const keyInput = document.getElementById("keyToCopy");
+            keyInput.select();
+            document.execCommand("copy");
+
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => {
+              this.innerHTML = originalText;
+            }, 2000);
+          });
+      }
     </script>
     <script src="nav-foot.js"></script>
-</body>
+  </body>
 </html>

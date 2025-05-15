@@ -45,10 +45,6 @@
     <!-- Animate on Scroll css -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Media queries Css -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css" />
-
-    <title>Complete White Label Hosting Solutions | Your Brand Here</title>
     <!-- Bootstrap 5 CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -56,21 +52,20 @@
     />
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
-    />
+   
     <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <!-- AOS (Animate On Scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>Complete White Label Hosting Solutions | Your Brand Here</title>
     <style>
       :root {
-        --primary-color: #4e73df;
+        --primary-color: #6b63ff;
         --secondary-color: #2e59d9;
         --accent-color: #f6c23e;
         --dark-color: #2c3e50;
@@ -419,7 +414,7 @@
 
       /* Section Padding */
       section {
-        padding: 6rem 0;
+        padding: 2rem 0;
       }
 
       .section-sm {
@@ -438,7 +433,7 @@
         background-position: center;
         background-attachment: fixed;
         color: white;
-        padding: 8rem 0;
+        padding: 4rem 0;
         position: relative;
         overflow: hidden;
       }
@@ -564,12 +559,13 @@
         color: white;
         position: relative;
         overflow: hidden;
+        margin-bottom: 1rem;
       }
 
       /* Stats Counter */
       .stat-item {
         text-align: center;
-        padding: 2rem;
+        padding: 1rem;
         transition: all 0.3s ease;
       }
 
@@ -589,13 +585,13 @@
       }
 
       /* Process Steps */
-      .process-step {
+      .label-process-step {
         position: relative;
         padding-left: 3rem;
         margin-bottom: 3rem;
       }
 
-      .process-step:before {
+      .label-process-step:before {
         content: "";
         position: absolute;
         left: 0;
@@ -611,7 +607,7 @@
         top: 0;
         width: 3rem;
         height: 3rem;
-        background: var(--primary);
+        background: var(--primary-color);
         color: white;
         border-radius: 50%;
         display: flex;
@@ -652,36 +648,6 @@
         border-top-color: var(--primary);
       }
 
-      /* Back to Top Button */
-      .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-        box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
-      }
-
-      .back-to-top.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        background: var(--primary-dark);
-        transform: translateY(-5px);
-      }
 
       /* Responsive Adjustments */
       @media (max-width: 992px) {
@@ -704,12 +670,11 @@
     <!-- Navbar -->
     <header class="custom-header" data-include="nav.html"></header>
 
-   
     <!-- ===== Hero Section ===== -->
     <section class="hero-section" id="home">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-8" data-aos="fade-right" data-aos-duration="800">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-duration="800">
             <span
               class="badge hero-badge rounded-pill px-3 py-2 mb-3 animate__animated animate__fadeInDown"
               >White Label Solution</span
@@ -732,10 +697,20 @@
               <a href="#solutions" class="btn btn-light btn-lg px-4"
                 >Explore Solutions</a
               >
-              <a href="#contact" class="btn btn-outline-light btn-lg px-4"
+              <a href="#pricing" class="btn btn-outline-light btn-lg px-4"
                 >Get Started</a
               >
             </div>
+          </div>
+
+           <div
+            class="col-lg-6 hero-image animate__animated animate__fadeIn animate__delay-1s"
+          >
+            <img
+              src="https://img.freepik.com/premium-photo/minimal-portrait-young-african-american-businesswoman-putting-sticker-notes-glass-wall-while-planning-project-office-copy-space_236854-34284.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
+              alt="Email Hosting"
+              class="img-fluid rounded-4 shadow"
+            />
           </div>
         </div>
       </div>
@@ -1010,7 +985,7 @@
 
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="label-process-step" data-aos="fade-up" data-aos-delay="100">
               <div class="step-number">1</div>
               <h3>Sign Up & Brand Your Platform</h3>
               <p>
@@ -1020,7 +995,7 @@
               </p>
             </div>
 
-            <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="label-process-step" data-aos="fade-up" data-aos-delay="200">
               <div class="step-number">2</div>
               <h3>Set Your Pricing & Packages</h3>
               <p>
@@ -1029,7 +1004,7 @@
               </p>
             </div>
 
-            <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="label-process-step" data-aos="fade-up" data-aos-delay="300">
               <div class="step-number">3</div>
               <h3>Onboard Your Clients</h3>
               <p>
@@ -1038,7 +1013,7 @@
               </p>
             </div>
 
-            <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+            <div class="label-process-step" data-aos="fade-up" data-aos-delay="400">
               <div class="step-number">4</div>
               <h3>Manage & Grow Your Business</h3>
               <p>
@@ -1380,7 +1355,7 @@
           <p class="lead mt-3">Choose the plan that fits your business needs</p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class <div class="pricing-card card h-100">
               <div class="card-body text-center p-4">
@@ -1418,7 +1393,7 @@
                     <del>API Access</del>
                   </li>
                 </ul>
-                <a href="#contact" class="btn btn-outline-primary w-100"
+                <a href="maintenance.html" class="btn btn-outline-primary w-100"
                   >Get Started</a
                 >
               </div>
@@ -1465,7 +1440,7 @@
                     <del>API Access</del>
                   </li>
                 </ul>
-                <a href="#contact" class="btn btn-primary w-100">Get Started</a>
+                <a href="maintenance.html" class="btn btn-primary w-100">Get Started</a>
               </div>
             </div>
           </div>
@@ -1509,7 +1484,7 @@
                     Access
                   </li>
                 </ul>
-                <a href="#contact" class="btn btn-outline-primary w-100"
+                <a href="maintenance.html" class="btn btn-outline-primary w-100"
                   >Get Started</a
                 >
               </div>
@@ -1519,7 +1494,7 @@
 
         <div class="text-center mt-5" data-aos="fade-up">
           <p class="mb-3">Need custom solutions or higher limits?</p>
-          <a href="#contact" class="btn btn-secondary"
+          <a href="maintenance.html" class="btn btn-secondary"
             >Contact Us for Enterprise Plans</a
           >
         </div>
@@ -1721,7 +1696,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center" data-aos="zoom-in">
-            <h2 class="display-5 fw-bold mb-4">
+            <h2 class="display-5 fw-bold mb-4 text-secondary">
               Ready to Launch Your Hosting Business?
             </h2>
             <p class="lead mb-5">
@@ -1729,8 +1704,8 @@
               hosting under your brand in no time.
             </p>
             <div class="d-flex gap-3 justify-content-center">
-              <a href="#" class="btn btn-light btn-lg px-4">Start Free Trial</a>
-              <a href="#" class="btn btn-outline-light btn-lg px-4"
+              <a href="maintenance.html" class="btn btn-light btn-lg px-4">Start Free Trial</a>
+              <a href="maintenance.html" class="btn btn-outline-light btn-lg px-4"
                 >Schedule Demo</a
               >
             </div>
@@ -1746,9 +1721,6 @@
       <i class="bi bi-arrow-up"></i>
     </a>
 
-
-
-    
     <script src="back-to-top.js"></script>
 
     <!-- Theme JS -->
@@ -1769,8 +1741,6 @@
         easing: "ease-in-out",
         once: true,
       });
-
-      
 
       // Animated Counter for Stats
       const statValues = document.querySelectorAll(".stat-value");
