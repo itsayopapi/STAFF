@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WP-CLI Enabled | Command-Line Power for WordPress</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-blue: #2962ff;
+            --primary-dark: #0a192f;
+            --terminal-bg: #1e1e1e;
+            --accent-color: #00d1b2;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.7;
+            background: #f8f9fa;
+        }
+        code, .command-box {
+            font-family: 'Fira Code', monospace;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a365d 100%);
+            color: white;
+            padding: 6rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/JDV9DqN.png') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        .hero img {
+            max-width: 180px;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+            transition: transform 0.3s;
+        }
+        .hero img:hover {
+            transform: scale(1.05);
+        }
+        /* Feature Cards */
+        .feature-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: white;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        /* Command Box */
+        .command-box {
+            background: var(--terminal-bg);
+            color: #f8f8f2;
+            padding: 14px 18px;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        .copy-btn {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            cursor: pointer;
+            color: #6c757d;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            color: var(--accent-color);
+        }
+        /* Tabs */
+        .nav-tabs .nav-link {
+            border: none;
+            color: #6c757d;
+            font-weight: 500;
+            padding: 12px 20px;
+        }
+        .nav-tabs .nav-link.active {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+            background: transparent;
+        }
+        /* Images */
+        .img-diagram {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+        .img-diagram:hover {
+            transform: scale(1.02);
+        }
+        /* Stats */
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(0,0,0,0.05);
+            font-family: serif;
+            line-height: 1;
+        }
+        /* Pricing Table */
+        .pricing-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .pricing-header {
+            padding: 25px;
+            text-align: center;
+            background: var(--primary-blue);
+            color: white;
+        }
+        .pricing-body {
+            padding: 25px;
+            background: white;
+        }
+        /* Interactive Terminal */
+        #interactive-terminal {
+            background: var(--terminal-bg);
+            border-radius: 12px;
+            padding: 20px;
+            color: #f8f8f2;
+            font-family: 'Fira Code', monospace;
+            height: 300px;
+            overflow-y: auto;
+            position: relative;
+        }
+        #terminal-output {
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+        #terminal-input {
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: 'Fira Code', monospace;
+            width: 80%;
+            outline: none;
+        }
+        .terminal-prompt {
+            color: var(--accent-color);
+        }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ======= Navigation ======= -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://wp-cli.org/images/wp-cli-logo-blue.png" alt="WP-CLI" height="30" class="me-2">
+                WP-CLI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#commands">Commands</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advanced">Advanced</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://wp-cli.org/" target="_blank" class="btn btn-outline-light">
+                            <i class="fas fa-external-link-alt me-1"></i> Official Docs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======= Hero Section ======= -->
+    <section class="hero">
+        <div class="container position-relative">
+            <img src="https://wp-cli.org/images/wp-cli-logo-blue.png" alt="WP-CLI Logo" class="mb-4 animate__animated animate__fadeIn">
+            <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInUp">Supercharge Your <span class="text-warning">WordPress</span> Workflow</h1>
+            <p class="lead mb-4 fs-4 animate__animated animate__fadeInUp animate__delay-1s">Manage WordPress with the power of the command line</p>
+            <div class="animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="#commands" class="btn btn-light btn-lg px-4 me-2">
+                    <i class="fas fa-terminal me-2"></i>Get Started
+                </a>
+                <a href="#interactive-demo" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-play-circle me-2"></i>Try It Live
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Stats Section ======= -->
+    <section class="py-4 bg-primary text-white">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">10x</div>
+                        <div class="stat-label">Faster Than GUI</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Built-in Commands</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Custom Commands</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Developers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= What is WP-CLI? ======= -->
+    <section id="features" class="container my-5 py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4"><i class="fas fa-question-circle text-primary me-2"></i> What is WP-CLI?</h2>
+                <p class="lead fs-4">WP-CLI is the <strong>official command-line interface</strong> for WordPress.</p>
+                <p>It enables you to interact with your WordPress installation without using a web browser. Developers and system administrators use WP-CLI to:</p>
+                <ul class="list-check">
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Manage plugins, themes, and users</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Perform database operations</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Run custom scripts</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Automate repetitive tasks</li>
+                    <li><i class="fas fa-check-circle text-success me-2"></i> Manage multiple sites at once</li>
+                </ul>
+                <div class="alert alert-info mt-4">
+                    <i class="fas fa-lightbulb me-2"></i> <strong>Did you know?</strong> WP-CLI can process commands up to 10x faster than the WordPress admin dashboard and is used by all major WordPress hosting providers.
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative">
+                    <img src="https://i.imgur.com/JDV9DqN.png" alt="WP-CLI vs Admin Dashboard comparison" class="img-fluid img-diagram">
+                    <div class="position-absolute bottom-0 start-0 m-3">
+                        <span class="badge bg-primary">Performance Comparison</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Why Use WP-CLI? ======= -->
+    <section class="py-5 mb-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5"><i class="fas fa-star text-warning me-2"></i> Why Use WP-CLI?</h2>
+                <p class="lead">Powerful features for developers and administrators</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 p-4">
+                        <div class="feature-icon text-center">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="h4 text-center">Blazing Fast</h3>
+                        <p class="text-center">Execute commands in seconds without browser overhead. No more waiting for admin pages to load.</p>
+                        <div class="text-center mt-3">
+                            <span class="badge bg-primary">Performance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 p-4">
+                        <div class="feature-icon text-center">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="h4 text-center">Automation</h3>
+                        <p class="text-center">Script repetitive tasks and integrate with deployment workflows. Perfect for CI/CD pipelines.</p>
+                        <div class="text-center mt-3">
+                            <span class="badge bg-success">Efficiency</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card card h-100 p-4">
+                        <div class="feature-icon text-center">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="h4 text-center">Server Management</h3>
+                        <p class="text-center">Manage WordPress when GUI isn't available (like on headless servers or during SSH sessions).</p>
+                        <div class="text-center mt-3">
+                            <span class="badge bg-info">Flexibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Interactive Demo ======= -->
+    <section id="interactive-demo" class="container my-5 py-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4"><i class="fas fa-terminal text-primary me-2"></i> Interactive Demo</h2>
+                <p class="lead">Try out WP-CLI commands right in your browser</p>
+                <p>This simulated terminal lets you experience how WP-CLI works. Try these commands:</p>
+                <ul>
+                    <li><code>wp --info</code> - Show WP-CLI environment info</li>
+                    <li><code>wp plugin list</code> - List installed plugins</li>
+                    <li><code>help</code> - Show available commands</li>
+                </ul>
+                <div class="alert alert-warning mt-4">
+                    <i class="fas fa-exclamation-triangle me-2"></i> This is a simulation. Real WP-CLI requires server access.
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="interactive-terminal">
+                    <div id="terminal-output">
+                        WordPress CLI Simulator v1.0<br>
+                        Type 'help' for available commands<br><br>
+                        <span class="terminal-prompt">$</span> <span id="command-line"></span>
+                    </div>
+                    <div class="d-flex align-items-center mt-2">
+                        <span class="terminal-prompt me-2">$</span>
+                        <input type="text" id="terminal-input" placeholder="Type a command..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Basic Commands ======= -->
+    <section id="commands" class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5"><i class="fas fa-code text-primary me-2"></i> Essential WP-CLI Commands</h2>
+            <p class="lead">The most frequently used commands in your workflow</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0"><i class="fas fa-cog me-2"></i> System Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="command-box mb-3">
+                            <span>wp --info</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp --info')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Displays information about your WP-CLI environment including PHP version, WP-CLI version, and WordPress installation details.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp core version</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp core version')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Shows the currently installed WordPress version.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0"><i class="fas fa-users me-2"></i> User Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="command-box mb-3">
+                            <span>wp user list</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp user list')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Displays all users registered on your WordPress site.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp user create username email@example.com --role=editor</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp user create username email@example.com --role=editor')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Create a new user with specified role.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0"><i class="fas fa-plug me-2"></i> Plugin & Theme Management</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="command-box mb-3">
+                            <span>wp plugin list</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp plugin list')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Lists all installed plugins with their status (active/inactive) and version.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp plugin install akismet --activate</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp plugin install akismet --activate')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Install and activate a plugin from WordPress.org repository.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0"><i class="fas fa-database me-2"></i> Database Operations</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="command-box mb-3">
+                            <span>wp db optimize</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp db optimize')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Optimize the WordPress database tables.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp db export backup.sql</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp db export backup.sql')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Create a complete database backup with one command.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <img src="https://i.imgur.com/rXJ9TbU.png" alt="WP-CLI command examples" class="img-fluid img-diagram" style="max-height: 400px;">
+            <p class="text-muted mt-3"><small>Example output of common WP-CLI commands in a terminal environment</small></p>
+        </div>
+    </section>
+
+    <!-- ======= Advanced Features ======= -->
+    <section id="advanced" class="py-5 mb-5 bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5"><i class="fas fa-cogs text-warning me-2"></i> Advanced Features</h2>
+                <p class="lead">Power tools for professional WordPress developers</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded h-100">
+                        <h3 class="h4"><i class="fas fa-database me-2"></i> Database Management</h3>
+                        <div class="command-box mb-3">
+                            <span>wp db query "SELECT * FROM wp_posts WHERE post_type='post';"</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp db query \"SELECT * FROM wp_posts WHERE post_type=\'post\'\"')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Run direct SQL queries on your WordPress database.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp db export backup.sql --add-drop-table</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp db export backup.sql --add-drop-table')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Create a complete database backup with DROP TABLE statements.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded h-100">
+                        <h3 class="h4"><i class="fas fa-magic me-2"></i> Search & Replace</h3>
+                        <div class="command-box mb-3">
+                            <span>wp search-replace 'http://old.com' 'http://new.com' --all-tables</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'http://old.com\' \'http://new.com\' --all-tables')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Safely replace URLs in your database (perfect for migrations).</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp search-replace 'foo' 'bar' --dry-run --verbose</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'foo\' \'bar\' --dry-run --verbose')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Test replacements before actually making changes with detailed output.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded h-100">
+                        <h3 class="h4"><i class="fas fa-code-branch me-2"></i> Multisite Management</h3>
+                        <div class="command-box mb-3">
+                            <span>wp site list --field=url</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp site list --field=url')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>List all sites in a WordPress Multisite network.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp site create --slug=new-site --title="New Site"</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp site create --slug=new-site --title=\"New Site\"')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Create a new site in a Multisite network.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded h-100">
+                        <h3 class="h4"><i class="fas fa-tasks me-2"></i> Cron Management</h3>
+                        <div class="command-box mb-3">
+                            <span>wp cron event list</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp cron event list')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>List all scheduled cron events.</p>
+                        
+                        <div class="command-box mb-3">
+                            <span>wp cron event run hook_name</span>
+                            <span class="copy-btn" onclick="copyToClipboard('wp cron event run hook_name')">
+                                <i class="far fa-copy"></i>
+                            </span>
+                        </div>
+                        <p>Run a specific cron event immediately.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <img src="https://i.imgur.com/5G2VYzG.png" alt="WP-CLI advanced commands" class="img-fluid img-diagram" style="max-height: 350px;">
+                <p class="text-muted mt-3"><small>Advanced WP-CLI commands for professional WordPress management</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Testimonials ======= -->
+    <section class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5"><i class="fas fa-quote-left text-primary me-2"></i> What Developers Say</h2>
+            <p class="lead">Trusted by WordPress professionals worldwide</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John D." class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="mb-0">John D.</h5>
+                            <small class="text-muted">Senior WordPress Developer</small>
+                        </div>
+                    </div>
+                    <p>"WP-CLI has transformed how we manage WordPress sites. What used to take hours in the admin panel now takes minutes. It's an essential tool in our workflow."</p>
+                    <div class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah K." class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="mb-0">Sarah K.</h5>
+                            <small class="text-muted">DevOps Engineer</small>
+                        </div>
+                    </div>
+                    <p>"For automated deployments and server management, WP-CLI is indispensable. We've integrated it into our CI/CD pipeline and the results have been phenomenal."</p>
+                    <div class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael T." class="rounded-circle me-3" width="50">
+                        <div>
+                            <h5 class="mb-0">Michael T.</h5>
+                            <small class="text-muted">Hosting Provider</small>
+                        </div>
+                    </div>
+                    <p>"We provide WP-CLI access to all our customers. It reduces support tickets and empowers users to manage their sites more efficiently."</p>
+                    <div class="text-warning">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Resources ======= -->
+    <section id="resources" class="py-5 mb-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-5"><i class="fas fa-book text-primary me-2"></i> Learning Resources</h2>
+                <p class="lead">Expand your WP-CLI knowledge</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="h5 mb-0"><i class="fas fa-graduation-cap me-2"></i> Documentation</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://wp-cli.org/docs/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Official WP-CLI Docs</a></li>
+                                <li class="mb-2"><a href="https://developer.wordpress.org/cli/commands/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Complete Command Reference</a></li>
+                                <li class="mb-2"><a href="https://make.wordpress.org/cli/handbook/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Contributor Handbook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="h5 mb-0"><i class="fas fa-video me-2"></i> Video Tutorials</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://www.youtube.com/watch?v=lf8Hprqmi1Q" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> WP-CLI Crash Course</a></li>
+                                <li class="mb-2"><a href="https://www.youtube.com/watch?v=1UDWG6r7l1U" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Automating with WP-CLI</a></li>
+                                <li class="mb-2"><a href="https://www.youtube.com/watch?v=4dnqjF9vQ0s" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Custom Commands Tutorial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h3 class="h5 mb-0"><i class="fas fa-book-open me-2"></i> Articles & Guides</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://deliciousbrains.com/wp-cli-wordpress-management/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> WP-CLI for WordPress Management</a></li>
+                                <li class="mb-2"><a href="https://kinsta.com/blog/wp-cli/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Kinsta's WP-CLI Guide</a></li>
+                                <li class="mb-2"><a href="https://www.smashingmagazine.com/2015/09/wp-cli-wordpress-command-line/" target="_blank" class="text-decoration-none"><i class="fas fa-arrow-right text-primary me-2"></i> Smashing Magazine Guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Support ======= -->
+    <section id="support" class="container my-5 py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4"><i class="fas fa-headset text-primary me-2"></i> Need Help?</h2>
+                <p class="lead">We're here to assist with your WP-CLI questions</p>
+                <p>Whether you're just getting started or need help with advanced commands, our support team can help you make the most of WP-CLI.</p>
+                
+                <div class="mt-4">
+                    <a href="https://wp-cli.org/#support" target="_blank" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-question-circle me-2"></i> Community Support
+                    </a>
+                    <a href="https://make.wordpress.org/cli/handbook/contributing/" target="_blank" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-code me-2"></i> Contribute
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://i.imgur.com/7QkG7V0.png" alt="Support illustration" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Security Notice ======= -->
+    <section class="container mb-5">
+        <div class="alert alert-danger">
+            <div class="d-flex align-items-center">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-shield-alt fa-2x me-3"></i>
+                </div>
+                <div>
+                    <h2 class="alert-heading"><i class="fas fa-shield-alt me-2"></i> Important Security Notice</h2>
+                    <p>While this page confirms WP-CLI is working, <strong>it should not be publicly accessible</strong> in production environments.</p>
+                    <hr>
+                    <p class="mb-0"><strong>Recommended actions:</strong></p>
+                    <ul>
+                        <li>Restrict access to this page via <code>.htaccess</code> or server permissions</li>
+                        <li>WP-CLI should only be available via <strong>SSH</strong> to authorized users</li>
+                        <li>Consider removing this page after verification</li>
+                        <li>Implement IP whitelisting for administrative interfaces</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= Footer ======= -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="https://wp-cli.org/images/wp-cli-logo-blue.png" alt="WP-CLI" height="40" class="mb-3">
+                    <p>WP-CLI is the official command-line interface for WordPress.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/wp-cli/wp-cli" target="_blank" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://twitter.com/wpcli" target="_blank" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="https://make.wordpress.org/cli/" target="_blank" class="text-white"><i class="fab fa-wordpress fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://wp-cli.org/docs/" class="text-white text-decoration-none">Documentation</a></li>
+                        <li class="mb-2"><a href="https://make.wordpress.org/cli/handbook/" class="text-white text-decoration-none">Handbook</a></li>
+                        <li class="mb-2"><a href="https://github.com/wp-cli/wp-cli" class="text-white text-decoration-none">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Community</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="https://make.wordpress.org/cli/" class="text-white text-decoration-none">Contributing</a></li>
+                        <li class="mb-2"><a href="https://wordpress.slack.com/messages/C02RP4Y03/" class="text-white text-decoration-none">Slack</a></li>
+                        <li class="mb-2"><a href="https://twitter.com/wpcli" class="text-white text-decoration-none">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5 class="text-uppercase mb-4">About</h5>
+                    <p>WP-CLI is maintained by the WordPress community and contributors worldwide.</p>
+                    <p class="small">Generated on <span id="current-date"></span></p>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center">
+                <p class="small mb-0">WP-CLI is a trademark of the WordPress Foundation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.currentTarget;
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="far fa-copy"></i>';
+                }, 2000);
+            });
+        }
+        
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Interactive terminal simulation
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalOutput = document.getElementById('terminal-output');
+        const commandLine = document.getElementById('command-line');
+        
+        const commands = {
+            'help': 'Available commands: wp --info, wp plugin list, wp user list, clear',
+            'wp --info': 'OS: Linux\nPHP binary: /usr/bin/php\nPHP version: 8.1.2\nWP-CLI version: 2.7.1\nWordPress install: /var/www/html\nWordPress version: 6.2\n',
+            'wp plugin list': '+----------------+----------+--------+---------+\n| name           | status   | update | version |\n+----------------+----------+--------+---------+\n| akismet        | active   | none   | 5.0     |\n| hello-dolly    | inactive | none   | 1.7.2   |\n+----------------+----------+--------+---------+',
+            'wp user list': '+----+------------+---------------------+---------------+\n| ID | user_login | user_email         | display_name  |\n+----+------------+---------------------+---------------+\n| 1  | admin      | admin@example.com  | Administrator |\n+----+------------+---------------------+---------------+',
+            'clear': ''
+        };
+        
+        terminalInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const command = terminalInput.value.trim();
+                commandLine.textContent = command;
+                terminalInput.value = '';
+                
+                if (command === 'clear') {
+                    terminalOutput.innerHTML = '<span class="terminal-prompt">$</span> <span id="command-line"></span>';
+                    commandLine = document.getElementById('command-line');
+                    return;
+                }
+                
+                let output = commands[command] || `Command not found: ${command}. Type 'help' for available commands.`;
+                
+                terminalOutput.innerHTML += `<br><br>${output.replace(/\n/g, '<br>')}<br><br><span class="terminal-prompt">$</span> <span id="command-line"></span>`;
+                
+                // Scroll to bottom
+                const interactiveTerminal = document.getElementById('interactive-terminal');
+                interactiveTerminal.scrollTop = interactiveTerminal.scrollHeight;
+                
+                commandLine = document.getElementById('command-line');
+            }
+        });
+    </script>
+</body>
+</html>
