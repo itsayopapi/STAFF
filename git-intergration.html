@@ -43,7 +43,6 @@
     <title>Smart & Effortless Email Forwarding | wefithost</title>
     <title>Complete GitHub Integration Guide</title>
 
-
     <style>
       :root {
         --primary-color: #6b63ff;
@@ -235,6 +234,12 @@
         font-size: 1.05rem;
       }
 
+      .btn-outline-primary {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: white;
+      }
+
       .navbar {
         padding: 0.8rem 0;
       }
@@ -424,14 +429,15 @@
       .feature-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: #0366d6;
+        color: var(--primary-color);
       }
+
       .nav-pills .nav-link.active {
         background-color: var(--primary-color);
         color: white;
       }
 
-      .card-img-top{
+      .card-img-top {
         height: 250px;
       }
       .code-block {
@@ -566,6 +572,10 @@
       .x-icon {
         color: #dc3545;
       }
+
+      .img-enterprise {
+        height: 200px;
+      }
     </style>
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar-example">
@@ -576,15 +586,15 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
-            <h1 class="display-3 fw-bold mb-4 text-secondary">Master GitHub Integration</h1>
+            <h1 class="display-3 fw-bold mb-4 text-secondary">
+              Master GitHub Integration
+            </h1>
             <p class="lead fs-4 mb-5">
               The complete guide to integrating GitHub into your development
               workflow with best practices, tools, and automation
             </p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <a
-                href="#getting-started"
-                class="btn btn-primary btn-lg px-4"
+              <a href="#getting-started" class="btn btn-primary btn-lg px-4"
                 >Get Started</a
               >
               <a
@@ -967,7 +977,7 @@
           <div class="col-md-6">
             <div class="card border-0 shadow-sm h-100">
               <img
-                src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.png"
+                src="https://miro.medium.com/v2/resize:fit:2000/1*8mUtip6z_oydfLi4P86KUw.png"
                 class="card-img-top"
                 alt="GitHub Actions"
               />
@@ -1110,7 +1120,7 @@
                 <div class="row align-items-center">
                   <div class="col-md-6">
                     <img
-                      src="https://github.githubassets.com/images/modules/site/features/actions-marketplace.png"
+                      src="https://miro.medium.com/v2/resize:fit:1400/1*7HmAqid9IUItu_EMPfRWUQ.png"
                       alt="GitHub Actions Marketplace"
                       class="img-fluid rounded"
                     />
@@ -1157,17 +1167,19 @@
         <div class="row g-4 mb-5">
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
-              <div class="card-body p-4 text-center">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-center align-items-center"
+              >
                 <i class="fas fa-shield-alt feature-icon"></i>
                 <h4>Advanced Security</h4>
-                <p>
+                <p class="text-center">
                   Code scanning, secret scanning, and dependency review to find
                   and fix vulnerabilities.
                 </p>
                 <img
-                  src="https://github.githubassets.com/images/modules/site/features/security-icon.png"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtoqDm1r8-Iu6pXccPj-4e6VCqFOrAQ3izbA&s"
                   alt="GitHub Security"
-                  class="img-fluid my-3"
+                  class="img-fluid my-3 img-enterprise"
                 />
                 <ul class="text-start">
                   <li>Automated vulnerability detection</li>
@@ -1180,17 +1192,19 @@
           </div>
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
-              <div class="card-body p-4 text-center">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-center align-items-center"
+              >
                 <i class="fas fa-server feature-icon"></i>
                 <h4>Enterprise Server</h4>
-                <p>
+                <p class="text-center">
                   GitHub Enterprise Server delivers the power of GitHub in your
                   own environment.
                 </p>
                 <img
-                  src="https://github.githubassets.com/images/modules/site/enterprise/illo-server.png"
+                  src="https://enterprise.github.com/images/opengraph.png"
                   alt="GitHub Enterprise Server"
-                  class="img-fluid my-3"
+                  class="img-fluid my-3 img-enterprise"
                 />
                 <ul class="text-start">
                   <li>Self-hosted solution</li>
@@ -1203,17 +1217,19 @@
           </div>
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
-              <div class="card-body p-4 text-center">
+              <div
+                class="card-body p-4 d-flex flex-column justify-content-center align-items-center"
+              >
                 <i class="fas fa-cloud feature-icon"></i>
                 <h4>Enterprise Cloud</h4>
-                <p>
+                <p class="text-center">
                   GitHub Enterprise Cloud combines the best of GitHub with
                   enterprise features.
                 </p>
                 <img
-                  src="https://github.githubassets.com/images/modules/site/enterprise/illo-cloud.png"
+                  src="/assets/images/feature/github-enterprise-cloud.jpeg"
                   alt="GitHub Enterprise Cloud"
-                  class="img-fluid my-3"
+                  class="img-fluid my-3 img-enterprise"
                 />
                 <ul class="text-start">
                   <li>SAML single sign-on</li>
@@ -1339,6 +1355,7 @@
                 </ul>
                 <a
                   href="https://slack.github.com/"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1366,7 +1383,8 @@
                   <li>Smart commits</li>
                 </ul>
                 <a
-                  href="https://www.atlassian.com/software/jira/features/github-integration"
+                  href="https://marketplace.atlassian.com/apps/1219592/jira-github?tab=overview&hosting=cloud"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1395,6 +1413,7 @@
                 </ul>
                 <a
                   href="https://code.visualstudio.com/docs/editor/github"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1425,6 +1444,7 @@
                 </ul>
                 <a
                   href="https://docs.docker.com/ci-cd/github-actions/"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1452,7 +1472,8 @@
                   <li>CloudFormation</li>
                 </ul>
                 <a
-                  href="https://aws.amazon.com/blogs/devops/github-actions-aws/"
+                  href="https://docs.aws.amazon.com/codebuild/latest/userguide/action-runner.html"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1481,6 +1502,7 @@
                 </ul>
                 <a
                   href="https://github.com/marketplace?type=actions&query=azure+"
+                  target="_blank"
                   class="btn btn-outline-primary mt-2"
                   >Learn More</a
                 >
@@ -1496,7 +1518,7 @@
                 <div class="row align-items-center">
                   <div class="col-md-6">
                     <img
-                      src="https://github.githubassets.com/images/modules/site/home/illo-marketplace.png"
+                      src="https://github.githubassets.com/assets/marketplace-c9f4f4136a4c.png"
                       alt="GitHub Marketplace"
                       class="img-fluid rounded"
                     />
@@ -1516,6 +1538,7 @@
                     </ul>
                     <a
                       href="https://github.com/marketplace"
+                      target="_blank"
                       class="btn btn-outline-primary mt-3"
                       >Browse Marketplace</a
                     >
@@ -1854,11 +1877,11 @@
                     <li>Contribution guidelines</li>
                     <li>License information</li>
                   </ul>
-                  <img
+                  <!-- <img
                     src="https://docs.github.com/assets/cb-38827/images/help/repository/readme-buttons.png"
                     alt="README Example"
                     class="img-fluid rounded mt-2"
-                  />
+                  /> -->
                 </div>
               </div>
               <div class="card border-0 shadow-sm mb-4">
@@ -1889,11 +1912,11 @@
                     <li>Require linear history</li>
                     <li>Include administrators</li>
                   </ul>
-                  <img
+                  <!-- <img
                     src="https://docs.github.com/assets/cb-20363/images/help/repository/branch-protection-rule.png"
                     alt="Branch Protection"
                     class="img-fluid rounded mt-2"
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -1933,11 +1956,11 @@
                     <li>Request specific reviewers</li>
                     <li>Use templates for consistency</li>
                   </ul>
-                  <img
+                  <!-- <img
                     src="https://docs.github.com/assets/cb-33859/images/help/pull_requests/pr-review-view.png"
                     alt="PR Review"
                     class="img-fluid rounded mt-2"
-                  />
+                  /> -->
                 </div>
               </div>
               <div class="card border-0 shadow-sm">
@@ -1951,11 +1974,11 @@
                     <li>Assignees for accountability</li>
                     <li>Templates for bug reports and feature requests</li>
                   </ul>
-                  <img
+                  <!-- <img
                     src="https://docs.github.com/assets/cb-25450/images/help/issues/issues-page.png"
                     alt="GitHub Issues"
                     class="img-fluid rounded mt-2"
-                  />
+                  /> -->
                 </div>
               </div>
             </div>
@@ -1988,8 +2011,9 @@
                 </div>
                 <div class="text-center mt-4">
                   <a
-                    href="https://docs.github.com/en/security"
+                    href="https://docs.github.com/en/code-security"
                     class="btn btn-primary"
+                    target="_blank"
                     >GitHub Security Guide</a
                   >
                 </div>
@@ -2009,9 +2033,7 @@
 
 
 
-    
     <script src="back-to-top.js"></script>
-
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
