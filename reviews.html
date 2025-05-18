@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="msapplication-TileColor" content="#8b3dff" />
-    <meta
-      name="msapplication-config"
-      content="assets/images/favicon/tile.xml"
-    />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
 
     <!-- Color modes -->
     <script src="assets/js/vendors/color-modes.js"></script>
@@ -22,14 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Libs CSS -->
-    <link
-      href="assets/libs/simplebar/dist/simplebar.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
-      rel="stylesheet"
-    />
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
 
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
@@ -44,17 +30,11 @@
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
     <!-- FONT AWESOME -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
-    <title>WeFitHost</title>
+    <title>Customer Reviews | WeFitHost</title>
 
     <style>
       :root {
@@ -64,13 +44,15 @@
         --light: #f8f9fa;
         --dark: #212529;
         --danger: #dc3545;
+        --star-color: #ffb800;
+        --featured-border: #4a6bff;
       }
 
       body {
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         color: var(--dark);
         line-height: 1.6;
+        background-color: #f9fafb;
       }
 
       /* Header Styles */
@@ -114,10 +96,6 @@
       .nav-link:focus {
         color: #6b63ff;
       }
-
-      /* .dropdown-toggle::after {
-              display: none;
-          } */
 
       .dropdown-menu {
         border: none;
@@ -249,12 +227,1058 @@
         transition: all 0.3s ease;
         font-size: 1.05rem;
       }
+
+      /* Reviews Page Specific Styles */
+      .customer-reviews-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        color: #333;
+      }
+
+      /* Hero Section */
+      .reviews-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+        padding: 3rem 0;
+        background: linear-gradient(135deg, rgba(107, 99, 255, 0.05) 0%, rgba(107, 99, 255, 0.02) 100%);
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .reviews-hero::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(107, 99, 255, 0.1) 0%, rgba(107, 99, 255, 0) 70%);
+        border-radius: 50%;
+      }
+
+      .reviews-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(107, 99, 255, 0.08) 0%, rgba(107, 99, 255, 0) 70%);
+        border-radius: 50%;
+      }
+
+      .hero-content {
+        flex: 1;
+        max-width: 600px;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: #1a1a1a;
+        background: linear-gradient(to right, #4a6bff, #6b63ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 2rem;
+        max-width: 90%;
+      }
+
+      .rating-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--primary);
+        padding: 1rem 1.8rem;
+        border-radius: 12px;
+        color: white;
+        box-shadow: 0 10px 20px rgba(107, 99, 255, 0.2);
+      }
+
+      .stars {
+        color: var(--star-color);
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+      }
+
+      .rating-details {
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+
+      .rating-details strong {
+        font-weight: 700;
+      }
+
+      .trustpilot-badge {
+        margin-left: 1rem;
+        padding-left: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .hero-illustration {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-illustration img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transform: perspective(1000px) rotateY(-10deg);
+        transition: transform 0.5s ease;
+      }
+
+      .hero-illustration:hover img {
+        transform: perspective(1000px) rotateY(0deg);
+      }
+
+      /* Service Tabs */
+      .service-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+      }
+
+      .service-tab {
+        padding: 0.8rem 1.5rem;
+        background: white;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        font-weight: 600;
+        color: #555;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .service-tab i {
+        font-size: 1.1rem;
+      }
+
+      .service-tab:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
+
+      .service-tab.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      /* Review Filters */
+      .review-filters-container {
+        margin-bottom: 3rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      .review-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        align-items: center;
+      }
+
+      .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .filter-group label {
+        font-weight: 600;
+        color: #555;
+        font-size: 0.95rem;
+      }
+
+      .filter-select {
+        padding: 0.6rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: white;
+        font-size: 0.95rem;
+        min-width: 180px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .filter-select:hover {
+        border-color: #bbb;
+      }
+
+      .filter-select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(107, 99, 255, 0.2);
+      }
+
+      .search-group {
+        flex: 1;
+        max-width: 400px;
+        position: relative;
+        margin-left: auto;
+      }
+
+      .search-input {
+        padding: 0.7rem 1rem 0.7rem 2.8rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+      }
+
+      .search-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(107, 99, 255, 0.2);
+      }
+
+      .search-group .fa-search {
+        position: absolute;
+        left: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #777;
+        font-size: 1.1rem;
+      }
+
+      .search-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        padding: 0 1.5rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .search-button:hover {
+        background: var(--primary-dark);
+      }
+
+      .review-stats {
+        display: flex;
+        gap: 2rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        flex: 1;
+        padding: 1rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 0.3rem;
+      }
+
+      .stat-label {
+        font-size: 0.95rem;
+        color: #666;
+        font-weight: 500;
+      }
+
+      /* Reviews Grid */
+      .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .review-card {
+        background: white;
+        border: 1px solid #eaeaea;
+        border-radius: 12px;
+        padding: 2rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .review-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--primary);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .review-card:hover::after {
+        opacity: 1;
+      }
+
+      .featured-review {
+        grid-column: 1 / -1;
+        border: 2px solid var(--featured-border);
+        background: linear-gradient(to bottom, rgba(74, 107, 255, 0.03) 0%, rgba(74, 107, 255, 0) 100%);
+      }
+
+      .review-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--featured-border);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+        z-index: 2;
+      }
+
+      .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        align-items: flex-start;
+      }
+
+      .reviewer-info {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      .customer-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .customer-name {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #1a1a1a;
+      }
+
+      .customer-title {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .review-meta {
+        text-align: right;
+      }
+
+      .review-date {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 0.5rem;
+      }
+
+      .review-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+        line-height: 1.3;
+      }
+
+      .review-content p {
+        line-height: 1.7;
+        color: #444;
+        margin-bottom: 1.5rem;
+      }
+
+      .review-tags {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        background: #f0f4ff;
+        color: var(--primary);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .tag:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .review-response {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        display: flex;
+        gap: 1.5rem;
+        border-left: 3px solid var(--primary);
+      }
+
+      .response-avatar {
+        flex-shrink: 0;
+      }
+
+      .response-avatar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+
+      .response-content {
+        font-size: 0.95rem;
+      }
+
+      .response-content strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+
+      .response-content p {
+        margin-bottom: 0;
+        color: #555;
+      }
+
+      /* Service Badge */
+      .service-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      /* Review Rating Breakdown */
+      .rating-breakdown {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        margin-bottom: 3rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      .rating-breakdown h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      .rating-progress {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .rating-label {
+        width: 100px;
+        font-weight: 600;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .progress-container {
+        flex: 1;
+        height: 10px;
+        background: #f0f0f0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 0 1rem;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: var(--star-color);
+        border-radius: 5px;
+      }
+
+      .rating-count {
+        width: 60px;
+        text-align: right;
+        font-size: 0.9rem;
+        color: #888;
+      }
+
+      .average-rating {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+      }
+
+      .average-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        line-height: 1;
+      }
+
+      .average-stars {
+        font-size: 1.8rem;
+        color: var(--star-color);
+        letter-spacing: 3px;
+        margin: 0.5rem 0;
+      }
+
+      .total-reviews {
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .rating-criteria {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .criteria-item {
+        flex: 1;
+        text-align: center;
+        padding: 1.5rem;
+        background: #f9fafb;
+        border-radius: 10px;
+      }
+
+      .criteria-rating {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .criteria-label {
+        font-size: 0.95rem;
+        color: #666;
+        font-weight: 500;
+      }
+
+      /* Pagination */
+      .reviews-pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        margin-bottom: 3rem;
+      }
+
+      .pagination-button {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #ddd;
+        background: white;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-weight: 600;
+      }
+
+      .pagination-button:hover:not(.active):not(:disabled) {
+        background: #f5f5f5;
+        border-color: #bbb;
+      }
+
+      .pagination-button.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+
+      .pagination-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .pagination-ellipsis {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        color: #888;
+      }
+
+      /* CTA Section */
+      .review-cta-section {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        padding: 4rem 3rem;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin-top: 3rem;
+      }
+
+      .review-cta-section::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+      }
+
+      .review-cta-section::after {
+        content: "";
+        position: absolute;
+        bottom: -150px;
+        left: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 650px;
+      }
+
+      .cta-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.3;
+      }
+
+      .cta-text {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .cta-button.primary {
+        background: white;
+        color: var(--primary);
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .cta-button.primary:hover {
+        background: #f0f0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .cta-button.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-button.secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .cta-badge {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 180px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 2;
+      }
+
+      .badge-content {
+        text-align: center;
+      }
+
+      .badge-stars {
+        color: var(--star-color);
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+        margin-bottom: 0.8rem;
+      }
+
+      .badge-text {
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+
+      /* Testimonial Video */
+      .video-testimonial {
+        margin: 3rem 0;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-info {
+        padding: 2rem;
+      }
+
+      .video-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+      }
+
+      .video-description {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .video-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .video-customer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .video-customer img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .video-customer-name {
+        font-weight: 600;
+      }
+
+      .video-customer-title {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .video-date {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+        .hero-title {
+          font-size: 2.4rem;
+        }
+        
+        .reviews-container {
+          grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        }
+      }
+
+      @media (max-width: 992px) {
+        .reviews-hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 3rem 1.5rem;
+        }
+
+        .hero-content {
+          max-width: 100%;
+          margin-bottom: 3rem;
+          padding: 0;
+        }
+
+        .hero-subtitle {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .rating-badge {
+          margin: 0 auto;
+        }
+
+        .hero-illustration {
+          justify-content: center;
+        }
+
+        .review-cta-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 3rem 2rem;
+        }
+
+        .cta-content {
+          margin-bottom: 3rem;
+          max-width: 100%;
+        }
+
+        .cta-buttons {
+          justify-content: center;
+        }
+
+        .rating-criteria {
+          flex-wrap: wrap;
+        }
+
+        .criteria-item {
+          min-width: calc(50% - 1rem);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .customer-reviews-page {
+          padding: 1.5rem 1rem;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .review-filters {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1rem;
+        }
+
+        .search-group {
+          margin-left: 0;
+          max-width: 100%;
+        }
+
+        .reviews-container {
+          grid-template-columns: 1fr;
+        }
+
+        .review-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .stat-item {
+          padding: 1.5rem;
+        }
+
+        .review-card {
+          padding: 1.5rem;
+        }
+
+        .review-title {
+          font-size: 1.2rem;
+        }
+
+        .cta-title {
+          font-size: 1.8rem;
+        }
+
+        .cta-text {
+          font-size: 1rem;
+        }
+
+        .cta-buttons {
+          gap: 1rem;
+        }
+
+        .cta-button {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .rating-breakdown {
+          padding: 1.5rem;
+        }
+
+        .rating-progress {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+
+        .progress-container {
+          width: 100%;
+          margin: 0;
+        }
+
+        .rating-count {
+          text-align: left;
+          width: auto;
+        }
+
+        .average-rating {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .criteria-item {
+          min-width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-title {
+          font-size: 1.8rem;
+        }
+
+        .rating-badge {
+          flex-direction: column;
+          padding: 1rem;
+          text-align: center;
+        }
+
+        .trustpilot-badge {
+          margin-left: 0;
+          padding-left: 0;
+          border-left: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+          padding-top: 0.8rem;
+          margin-top: 0.8rem;
+          width: 100%;
+        }
+
+        .reviewer-info {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+        }
+
+        .review-meta {
+          text-align: left;
+          margin-top: 0.8rem;
+        }
+
+        .review-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .video-meta {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
     </style>
   </head>
 
   <body data-bs-theme="light">
-     <!-- Navbar Start File-->
-     <header class="custom-header" data-include="nav.html"></header>
+    <!-- Navbar Start File-->
+    <header class="custom-header" data-include="nav.html"></header>
 
     <div class="mobile-menu-backdrop"></div>
 
@@ -322,36 +1346,170 @@
       <!-- Hero Section -->
       <section class="reviews-hero">
         <div class="hero-content">
-          <h1 class="hero-title">
-            Trusted by Thousands of Satisfied Customers
-          </h1>
+          <h1 class="hero-title">Trusted by Thousands of Satisfied Customers</h1>
           <p class="hero-subtitle">
-            Don't just take our word for it - hear from businesses who've
-            experienced the WeFitHost difference firsthand.
+            Don't just take our word for it - hear from businesses who've experienced the WeFitHost difference firsthand. 
+            Our customers consistently rate us among the top hosting providers for performance, support, and reliability.
           </p>
           <div class="rating-badge">
             <div class="stars">★★★★★</div>
             <div class="rating-details">
-              <strong>4.8/5</strong> from 122 verified reviews
+              <strong>4.8/5</strong> from 1,284 verified reviews
             </div>
             <div class="trustpilot-badge">
               <img
                 src="https://cdn.trustpilot.net/brand-assets/1.6.0/logo-white.svg"
                 alt="Trustpilot"
                 width="100"
-                class="rounded"
               />
             </div>
           </div>
         </div>
         <div class="hero-illustration">
           <img
-            src="https://media.istockphoto.com/id/1368965646/photo/multi-ethnic-guys-and-girls-taking-selfie-outdoors-with-backlight-happy-life-style-friendship.jpg?b=1&s=612x612&w=0&k=20&c=8varqjy2VLQHBm658rl2hS7MMakLA5iXd7Qvr7L8bx4="
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
             alt="Happy customers"
-            width=""
           />
         </div>
       </section>
+
+      <!-- Service Tabs -->
+      <div class="service-tabs">
+        <div class="service-tab active" data-service="all">
+          <i class="fas fa-server"></i> All Services
+        </div>
+        <div class="service-tab" data-service="shared">
+          <i class="fas fa-share-alt"></i> Shared Hosting
+        </div>
+        <div class="service-tab" data-service="vps">
+          <i class="fas fa-cloud"></i> VPS Hosting
+        </div>
+        <div class="service-tab" data-service="wordpress">
+          <i class="fab fa-wordpress"></i> WordPress Hosting
+        </div>
+        <div class="service-tab" data-service="reseller">
+          <i class="fas fa-users"></i> Reseller Hosting
+        </div>
+        <div class="service-tab" data-service="dedicated">
+          <i class="fas fa-database"></i> Dedicated Servers
+        </div>
+      </div>
+
+      <!-- Rating Breakdown -->
+      <div class="rating-breakdown">
+        <h2>Customer Rating Breakdown</h2>
+        
+        <div class="rating-progress">
+          <div class="rating-label">
+            <span>5 Star</span>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: 78%"></div>
+          </div>
+          <div class="rating-count">1,001 reviews</div>
+        </div>
+        
+        <div class="rating-progress">
+          <div class="rating-label">
+            <span>4 Star</span>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: 15%"></div>
+          </div>
+          <div class="rating-count">193 reviews</div>
+        </div>
+        
+        <div class="rating-progress">
+          <div class="rating-label">
+            <span>3 Star</span>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: 4%"></div>
+          </div>
+          <div class="rating-count">51 reviews</div>
+        </div>
+        
+        <div class="rating-progress">
+          <div class="rating-label">
+            <span>2 Star</span>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: 2%"></div>
+          </div>
+          <div class="rating-count">26 reviews</div>
+        </div>
+        
+        <div class="rating-progress">
+          <div class="rating-label">
+            <span>1 Star</span>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" style="width: 1%"></div>
+          </div>
+          <div class="rating-count">13 reviews</div>
+        </div>
+        
+        <div class="average-rating">
+          <div>
+            <div class="average-number">4.8</div>
+            <div class="average-stars">★★★★★</div>
+            <div class="total-reviews">Based on 1,284 reviews</div>
+          </div>
+          
+          <div class="rating-criteria">
+            <div class="criteria-item">
+              <div class="criteria-rating">4.9</div>
+              <div class="criteria-label">Performance</div>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-rating">4.7</div>
+              <div class="criteria-label">Support</div>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-rating">4.8</div>
+              <div class="criteria-label">Reliability</div>
+            </div>
+            <div class="criteria-item">
+              <div class="criteria-rating">4.6</div>
+              <div class="criteria-label">Value</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Testimonial -->
+      <div class="video-testimonial">
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">How WeFitHost Helped Scale My Business</h3>
+          <p class="video-description">
+            "When my e-commerce store started growing rapidly, WeFitHost's VPS solution provided the perfect balance of performance and affordability. 
+            Their team helped migrate my site seamlessly with zero downtime during peak sales season."
+          </p>
+          <div class="video-meta">
+            <div class="video-customer">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa Thompson">
+              <div>
+                <div class="video-customer-name">Lisa Thompson</div>
+                <div class="video-customer-title">Founder, TrendyBoutique</div>
+              </div>
+            </div>
+            <div class="video-date">Posted: March 10, 2025</div>
+          </div>
+        </div>
+      </div>
 
       <!-- Review Filters -->
       <div class="review-filters-container">
@@ -363,6 +1521,7 @@
               <option value="highest">Highest Rated</option>
               <option value="lowest">Lowest Rated</option>
               <option value="oldest">Oldest First</option>
+              <option value="most-helpful">Most Helpful</option>
             </select>
           </div>
 
@@ -373,6 +1532,20 @@
               <option value="5">5 Stars Only</option>
               <option value="4">4+ Stars</option>
               <option value="3">3+ Stars</option>
+              <option value="1-2">1-2 Stars</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-service">Service:</label>
+            <select id="filter-service" class="filter-select">
+              <option value="all">All Services</option>
+              <option value="shared">Shared Hosting</option>
+              <option value="vps">VPS Hosting</option>
+              <option value="wordpress">WordPress Hosting</option>
+              <option value="reseller">Reseller Hosting</option>
+              <option value="dedicated">Dedicated Servers</option>
+              <option value="domain">Domain Services</option>
             </select>
           </div>
 
@@ -380,6 +1553,7 @@
             <i class="fas fa-search"></i>
             <input
               type="text"
+              id="search-reviews"
               placeholder="Search reviews..."
               class="search-input"
             />
@@ -400,6 +1574,10 @@
             <div class="stat-value">93%</div>
             <div class="stat-label">Would Recommend</div>
           </div>
+          <div class="stat-item">
+            <div class="stat-value">4.8/5</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
         </div>
       </div>
 
@@ -408,6 +1586,9 @@
         <!-- Review Card 1 (Featured) -->
         <div class="review-card featured-review">
           <div class="review-badge">Featured Review</div>
+          <div class="service-badge">
+            <i class="fas fa-cloud"></i> VPS Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -426,30 +1607,34 @@
             </div>
           </div>
           <div class="review-content">
-            <h3 class="review-title">
-              Game-Changing Performance for My Business
-            </h3>
+            <h3 class="review-title">Game-Changing Performance for My Business</h3>
             <p>
-              Switching to WeFitHost was the best decision for my business. My
-              website loads incredibly fast now (under 1s consistently), the
-              security features give me peace of mind, and their support team is
-              always available when I need help. The migration process was
-              seamless - they handled everything!
+              Switching to WeFitHost was the best decision for my business. My website loads incredibly fast now (under 1s consistently), 
+              the security features give me peace of mind, and their support team is always available when I need help. 
+              The migration process was seamless - they handled everything!
             </p>
+            <p>
+              What really stands out is their proactive monitoring. They alerted me to potential issues before they became problems, 
+              and their automatic scaling during traffic spikes has saved me during product launches. The value for money is exceptional 
+              compared to other providers I've used.
+            </p>
+            <div class="review-tags">
+              <span class="tag">Performance</span>
+              <span class="tag">Migration</span>
+              <span class="tag">Support</span>
+            </div>
             <div class="review-response">
               <div class="response-avatar">
                 <img
                   src="./Wefithost Logo Icon-01.png"
                   alt="WeFitHost"
-                  width="32"
                 />
               </div>
               <div class="response-content">
                 <strong>WeFitHost Team</strong>
                 <p>
-                  Thank you, Andrew! We're thrilled to support HostSpecial's
-                  growth and appreciate you taking the time to share your
-                  experience.
+                  Thank you, Andrew! We're thrilled to support HostSpecial's growth and appreciate you taking the time to share your experience. 
+                  Our team is always here to help you scale further as your business continues to grow.
                 </p>
               </div>
             </div>
@@ -458,6 +1643,9 @@
 
         <!-- Review Card 2 -->
         <div class="review-card">
+          <div class="service-badge">
+            <i class="fab fa-wordpress"></i> WordPress Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -478,21 +1666,26 @@
           <div class="review-content">
             <h3 class="review-title">Reliable Hosting with Excellent Uptime</h3>
             <p>
-              I've been with WeFitHost for 2 years now and their uptime is
-              exceptional (99.99% in my experience). The control panel is
-              user-friendly and their WordPress hosting is optimized perfectly.
-              The only reason I'm not giving 5 stars is that their live chat
-              could be available 24/7 instead of just business hours.
+              I've been with WeFitHost for 2 years now and their uptime is exceptional (99.99% in my experience). 
+              The control panel is user-friendly and their WordPress hosting is optimized perfectly with caching and security features built-in.
             </p>
-          </div>
-          <div class="review-tags">
-            <span class="tag">WordPress</span>
-            <span class="tag">Uptime</span>
+            <p>
+              The only reason I'm not giving 5 stars is that their live chat could be available 24/7 instead of just business hours. 
+              That said, their ticket response times are still very good outside business hours.
+            </p>
+            <div class="review-tags">
+              <span class="tag">WordPress</span>
+              <span class="tag">Uptime</span>
+              <span class="tag">Control Panel</span>
+            </div>
           </div>
         </div>
 
         <!-- Review Card 3 -->
         <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-users"></i> Reseller Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -511,25 +1704,29 @@
             </div>
           </div>
           <div class="review-content">
-            <h3 class="review-title">
-              Perfect for Developers Managing Multiple Sites
-            </h3>
+            <h3 class="review-title">Perfect for Developers Managing Multiple Sites</h3>
             <p>
-              As a web developer, I host dozens of client sites with WeFitHost.
-              Their reseller hosting plans are fantastic - great performance,
-              easy management through their custom dashboard, and excellent
-              value. Their support team actually understands technical issues,
+              As a web developer, I host dozens of client sites with WeFitHost. Their reseller hosting plans are fantastic - great performance, 
+              easy management through their custom dashboard, and excellent value. Their support team actually understands technical issues, 
               which is rare in this industry!
             </p>
-          </div>
-          <div class="review-tags">
-            <span class="tag">Reseller Hosting</span>
-            <span class="tag">Developer Friendly</span>
+            <p>
+              The white-label features allow me to present a professional image to my clients, and the resource allocation tools help me 
+              keep everything running smoothly. I've recommended them to several colleagues who have been equally impressed.
+            </p>
+            <div class="review-tags">
+              <span class="tag">Reseller Hosting</span>
+              <span class="tag">Developer Friendly</span>
+              <span class="tag">White-label</span>
+            </div>
           </div>
         </div>
 
         <!-- Review Card 4 -->
         <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-cloud"></i> VPS Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -550,21 +1747,27 @@
           <div class="review-content">
             <h3 class="review-title">Worth Every Penny for My Online Store</h3>
             <p>
-              The VPS hosting from WeFitHost has been rock solid during peak
-              sales periods. I was with another provider before and the
-              difference in performance is night and day. Their managed services
-              save me hours every week - I don't have to worry about server
-              maintenance at all.
+              The VPS hosting from WeFitHost has been rock solid during peak sales periods. I was with another provider before and the 
+              difference in performance is night and day. Their managed services save me hours every week - I don't have to worry about 
+              server maintenance at all.
             </p>
-          </div>
-          <div class="review-tags">
-            <span class="tag">VPS</span>
-            <span class="tag">E-commerce</span>
+            <p>
+              During Black Friday, my site handled 5x the normal traffic without any issues. Their automatic scaling and caching 
+              recommendations made all the difference. The peace of mind is worth the price alone.
+            </p>
+            <div class="review-tags">
+              <span class="tag">VPS</span>
+              <span class="tag">E-commerce</span>
+              <span class="tag">Scalability</span>
+            </div>
           </div>
         </div>
 
         <!-- Review Card 5 -->
         <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-share-alt"></i> Shared Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -583,24 +1786,25 @@
             </div>
           </div>
           <div class="review-content">
-            <h3 class="review-title">
-              Seamless Migration & Immediate Performance Boost
-            </h3>
+            <h3 class="review-title">Seamless Migration & Immediate Performance Boost</h3>
             <p>
-              I was hesitant to switch from my old host, but WeFitHost made the
-              process so easy with their free migration service. My site loads
-              twice as fast now (confirmed by GTmetrix), and I haven't had any
-              downtime in the 6 months I've been with them. Highly recommend!
+              I was hesitant to switch from my old host, but WeFitHost made the process so easy with their free migration service. 
+              My site loads twice as fast now (confirmed by GTmetrix), and I haven't had any downtime in the 6 months I've been with them. 
+              Highly recommend!
             </p>
-          </div>
-          <div class="review-tags">
-            <span class="tag">Migration</span>
-            <span class="tag">Speed</span>
+            <div class="review-tags">
+              <span class="tag">Migration</span>
+              <span class="tag">Speed</span>
+              <span class="tag">Shared Hosting</span>
+            </div>
           </div>
         </div>
 
         <!-- Review Card 6 -->
         <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-share-alt"></i> Shared Hosting
+          </div>
           <div class="review-header">
             <div class="reviewer-info">
               <img
@@ -621,16 +1825,100 @@
           <div class="review-content">
             <h3 class="review-title">Great Value for Portfolio Sites</h3>
             <p>
-              Great hosting at a reasonable price. The shared hosting plans have
-              all the features I need for my photography portfolio site. The
-              only minor issue I've had is that their knowledge base could be
-              more comprehensive, but their support team makes up for it with
-              quick responses.
+              Great hosting at a reasonable price. The shared hosting plans have all the features I need for my photography portfolio site. 
+              The only minor issue I've had is that their knowledge base could be more comprehensive, but their support team makes up for it 
+              with quick responses.
             </p>
+            <p>
+              The one-click WordPress installer and free SSL certificate were easy to set up. My site looks professional and loads quickly 
+              for potential clients viewing my portfolio.
+            </p>
+            <div class="review-tags">
+              <span class="tag">Shared Hosting</span>
+              <span class="tag">Portfolio</span>
+              <span class="tag">WordPress</span>
+            </div>
           </div>
-          <div class="review-tags">
-            <span class="tag">Shared Hosting</span>
-            <span class="tag">Portfolio</span>
+        </div>
+
+        <!-- Review Card 7 -->
+        <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-database"></i> Dedicated Server
+          </div>
+          <div class="review-header">
+            <div class="reviewer-info">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Robert Kim"
+                class="customer-avatar"
+              />
+              <div class="reviewer-details">
+                <div class="customer-name">Robert Kim</div>
+                <div class="customer-title">CTO, SaaS Startup</div>
+              </div>
+            </div>
+            <div class="review-meta">
+              <div class="stars">★★★★★</div>
+              <div class="review-date">November 30, 2024</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <h3 class="review-title">Enterprise-Grade Performance</h3>
+            <p>
+              We migrated our SaaS application to WeFitHost's dedicated servers and saw immediate improvements in performance and reliability. 
+              Their hardware is top-notch, and their network is incredibly fast and stable. The managed services option has allowed our small 
+              team to focus on development rather than infrastructure.
+            </p>
+            <p>
+              The DDoS protection has already saved us during a targeted attack, and their proactive monitoring caught an issue with our 
+              database before it became critical. Highly recommended for demanding applications.
+            </p>
+            <div class="review-tags">
+              <span class="tag">Dedicated</span>
+              <span class="tag">Performance</span>
+              <span class="tag">Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 8 -->
+        <div class="review-card">
+          <div class="service-badge">
+            <i class="fas fa-globe"></i> Domain Services
+          </div>
+          <div class="review-header">
+            <div class="reviewer-info">
+              <img
+                src="https://randomuser.me/api/portraits/women/28.jpg"
+                alt="Amanda Smith"
+                class="customer-avatar"
+              />
+              <div class="reviewer-details">
+                <div class="customer-name">Amanda Smith</div>
+                <div class="customer-title">Freelance Designer</div>
+              </div>
+            </div>
+            <div class="review-meta">
+              <div class="stars">★★★★★</div>
+              <div class="review-date">November 15, 2024</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <h3 class="review-title">Simple Domain Management</h3>
+            <p>
+              I manage dozens of domains for my clients through WeFitHost and their domain management interface is by far the easiest I've used. 
+              Transfers are simple, DNS management is straightforward, and their prices are competitive. The free WHOIS privacy is a nice bonus.
+            </p>
+            <p>
+              Their domain search tools are excellent, helping me find available domains quickly. The bulk management features save me hours 
+              each month compared to other registrars I've used.
+            </p>
+            <div class="review-tags">
+              <span class="tag">Domains</span>
+              <span class="tag">DNS</span>
+              <span class="tag">Management</span>
+            </div>
           </div>
         </div>
       </div>
@@ -653,20 +1941,17 @@
       <!-- CTA Section -->
       <section class="review-cta-section">
         <div class="cta-content">
-          <h2 class="cta-title">Ready to Experience the Difference?</h2>
+          <h2 class="cta-title">Ready to Experience the WeFitHost Difference?</h2>
           <p class="cta-text">
-            Join thousands of satisfied customers who trust WeFitHost for their
-            web hosting needs.
+            Join thousands of satisfied customers who trust WeFitHost for their web hosting needs. 
+            Whether you're launching a personal blog or running enterprise applications, we have the perfect hosting solution for you.
           </p>
           <div class="cta-buttons">
             <button class="cta-button primary" onclick="location.href='/plans'">
-              View Hosting Plans
+              <i class="fas fa-server"></i> View Hosting Plans
             </button>
-            <button
-              class="cta-button secondary"
-              onclick="location.href='/submit-review'"
-            >
-              Share Your Experience
+            <button class="cta-button secondary" onclick="location.href='/submit-review'">
+              <i class="fas fa-pen"></i> Share Your Experience
             </button>
           </div>
         </div>
@@ -678,499 +1963,6 @@
         </div>
       </section>
     </main>
-
-    <style>
-      /* Base Styles */
-      .customer-reviews-page {
-        font-family: "Inter", sans-serif;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-        color: #333;
-      }
-
-      /* Hero Section */
-      .reviews-hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 3rem;
-        padding: 2rem 0;
-      }
-
-      .hero-content {
-        flex: 1;
-        max-width: 600px;
-      }
-
-      .hero-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
-      }
-
-      .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 2rem;
-      }
-
-      .rating-badge {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background: var(--primary);
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        width: 98%;
-      }
-
-      .stars {
-        color: #ffb800;
-        font-size: 1.2rem;
-      }
-
-      .rating-details {
-        font-size: 0.95rem;
-        color: white;
-      }
-
-      .rating-details strong {
-        color: white;
-      }
-
-      .trustpilot-badge {
-        margin-left: 1rem;
-        padding-left: 1rem;
-        border-left: 1px solid #ddd;
-      }
-
-      .hero-illustration {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-      }
-
-      .hero-illustration img {
-        width: 400px;
-      }
-
-      @media screen and (max-width: 768px) {
-        .hero-illustration img {
-          width: 100%;
-          max-width: 300px;
-        }
-      }
-
-      /* Review Filters */
-      .review-filters-container {
-        margin-bottom: 3rem;
-      }
-
-      .review-filters {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        align-items: center;
-      }
-
-      .filter-group {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .filter-select {
-        padding: 0.5rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        background-color: white;
-        font-size: 0.95rem;
-      }
-
-      .search-group {
-        flex: 1;
-        max-width: 400px;
-        position: relative;
-        margin-left: auto;
-      }
-
-      .search-input {
-        padding: 0.5rem 1rem 0.5rem 2.5rem;
-        border: 1px solid #ddd;
-        border-radius: 6px;
-        width: 100%;
-        font-size: 0.95rem;
-      }
-
-      .search-group .fa-search {
-        position: absolute;
-        left: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #777;
-      }
-
-      .search-button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        padding: 0 1rem;
-        background: #4a6bff;
-        color: white;
-        border: none;
-        border-radius: 0 6px 6px 0;
-        cursor: pointer;
-      }
-
-      .review-stats {
-        display: flex;
-        gap: 2rem;
-        padding: 1.5rem;
-        background: #f8f9fa;
-        border-radius: 8px;
-        margin-top: 1.5rem;
-      }
-
-      .stat-item {
-        text-align: center;
-        flex: 1;
-      }
-
-      .stat-value {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #4a6bff;
-        margin-bottom: 0.3rem;
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-        color: #666;
-      }
-
-      /* Reviews Grid */
-      .reviews-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 3rem;
-      }
-
-      .review-card {
-        background: white;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        padding: 1.5rem;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .review-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .featured-review {
-        grid-column: 1 / -1;
-        border: 2px solid #4a6bff;
-        position: relative;
-      }
-
-      .review-badge {
-        position: absolute;
-        top: -12px;
-        right: 20px;
-        background: #4a6bff;
-        color: white;
-        padding: 0.3rem 1rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .review-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-      }
-
-      .reviewer-info {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .customer-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .customer-name {
-        font-weight: 600;
-      }
-
-      .customer-title {
-        font-size: 0.85rem;
-        color: #666;
-      }
-
-      .review-meta {
-        text-align: right;
-      }
-
-      .review-date {
-        font-size: 0.85rem;
-        color: #888;
-        margin-top: 0.3rem;
-      }
-
-      .review-title {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.8rem;
-        color: #1a1a1a;
-      }
-
-      .review-content p {
-        line-height: 1.6;
-        color: #444;
-        margin-bottom: 1rem;
-      }
-
-      .review-tags {
-        display: flex;
-        gap: 0.5rem;
-        margin-top: 1rem;
-      }
-
-      .tag {
-        background: #f0f4ff;
-        color: #4a6bff;
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 500;
-      }
-
-      .review-response {
-        background: #f8f9fa;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-        display: flex;
-        gap: 1rem;
-      }
-
-      .response-avatar {
-        flex-shrink: 0;
-      }
-
-      .response-content {
-        font-size: 0.9rem;
-      }
-
-      .response-content strong {
-        display: block;
-        margin-bottom: 0.3rem;
-      }
-
-      /* Pagination */
-      .reviews-pagination {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 3rem;
-      }
-
-      .pagination-button {
-        width: 40px;
-        height: 40px;
-        border: 1px solid #ddd;
-        background: white;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-
-      .pagination-button:hover:not(.active):not(:disabled) {
-        background: #f5f5f5;
-      }
-
-      .pagination-button.active {
-        background: #4a6bff;
-        color: white;
-        border-color: #4a6bff;
-      }
-
-      .pagination-button:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      .pagination-ellipsis {
-        display: flex;
-        align-items: center;
-        padding: 0 0.5rem;
-      }
-
-      /* CTA Section */
-      .review-cta-section {
-        background: linear-gradient(135deg, #4a6bff 0%, #3a56d4 100%);
-        color: white;
-        padding: 3rem 2rem;
-        border-radius: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta-content {
-        position: relative;
-        z-index: 2;
-        max-width: 600px;
-      }
-
-      .cta-title {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .cta-text {
-        font-size: 1.05rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-        justify-content: start;
-      }
-
-      .cta-button {
-        padding: 0.8rem 1.5rem;
-        border-radius: 6px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-      }
-
-      .cta-button.primary {
-        background: white;
-        color: #4a6bff;
-        border: none;
-      }
-
-      .cta-button.primary:hover {
-        background: #f0f0f0;
-      }
-
-      .cta-button.secondary {
-        background: transparent;
-        color: white;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-      }
-
-      .cta-button.secondary:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-
-      .cta-badge {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-width: 150px;
-      }
-
-      .badge-content {
-        text-align: center;
-      }
-
-      .badge-stars {
-        color: #ffb800;
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .badge-text {
-        color: #4a6bff;
-        font-weight: 600;
-      }
-
-      /* Responsive */
-      @media (max-width: 992px) {
-        .reviews-hero {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .hero-content {
-          max-width: 100%;
-          margin-bottom: 2rem;
-        }
-
-        .rating-badge {
-          margin: 0 auto;
-        }
-
-        .hero-illustration {
-          justify-content: center;
-        }
-
-        .review-cta-section {
-          flex-direction: column;
-          text-align: center;
-        }
-
-        .cta-content {
-          margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .review-filters {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .search-group {
-          margin-left: 0;
-          max-width: 100%;
-        }
-
-        .reviews-container {
-          grid-template-columns: 1fr;
-        }
-
-        .review-stats {
-          flex-direction: column;
-          gap: 1rem;
-        }
-      }
-    </style>
 
     <!-- Footer -->
     <div data-include="footer.html"></div>
@@ -1190,7 +1982,6 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
 
@@ -1206,14 +1997,126 @@
 
         window.addEventListener("scroll", function () {
           if (window.scrollY > 50) {
-            // Change when scrolled 50px
             navbar.classList.add("scrolled");
           } else {
             navbar.classList.remove("scrolled");
           }
         });
+
+        // Service tab filtering
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const reviewCards = document.querySelectorAll('.review-card');
+        
+        serviceTabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            // Update active tab
+            serviceTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            const service = this.dataset.service;
+            
+            // Filter reviews
+            reviewCards.forEach(card => {
+              if (service === 'all') {
+                card.style.display = 'block';
+              } else {
+                const cardService = card.querySelector('.service-badge i').className.split(' ')[1];
+                const serviceMap = {
+                  'fa-share-alt': 'shared',
+                  'fa-cloud': 'vps',
+                  'fa-wordpress': 'wordpress',
+                  'fa-users': 'reseller',
+                  'fa-database': 'dedicated',
+                  'fa-globe': 'domain'
+                };
+                
+                if (serviceMap[cardService] === service) {
+                  card.style.display = 'block';
+                } else {
+                  card.style.display = 'none';
+                }
+              }
+            });
+          });
+        });
+
+        // Review filtering functionality
+        const sortSelect = document.getElementById('sort-reviews');
+        const ratingSelect = document.getElementById('filter-rating');
+        const serviceSelect = document.getElementById('filter-service');
+        const searchInput = document.getElementById('search-reviews');
+        const searchButton = document.querySelector('.search-button');
+        
+        function filterReviews() {
+          const sortValue = sortSelect.value;
+          const ratingValue = ratingSelect.value;
+          const serviceValue = serviceSelect.value;
+          const searchValue = searchInput.value.toLowerCase();
+          
+          // In a real implementation, you would make an AJAX request here
+          // For this demo, we'll just log the filter values
+          console.log('Applying filters:', {
+            sort: sortValue,
+            rating: ratingValue,
+            service: serviceValue,
+            search: searchValue
+          });
+          
+          // Show a message that this is a demo
+          alert('This is a demo. In a real implementation, reviews would be filtered based on your selections.');
+        }
+        
+        // Add event listeners
+        sortSelect.addEventListener('change', filterReviews);
+        ratingSelect.addEventListener('change', filterReviews);
+        serviceSelect.addEventListener('change', filterReviews);
+        searchButton.addEventListener('click', filterReviews);
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            filterReviews();
+          }
+        });
+        
+        // Pagination functionality
+        const paginationButtons = document.querySelectorAll('.pagination-button:not(.prev):not(.next)');
+        
+        paginationButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            paginationButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // In a real implementation, you would load the corresponding page of reviews
+            console.log('Loading page:', this.textContent);
+          });
+        });
+        
+        // Previous/next pagination buttons
+        const prevButton = document.querySelector('.pagination-button.prev');
+        const nextButton = document.querySelector('.pagination-button.next');
+        
+        prevButton.addEventListener('click', function() {
+          if (this.disabled) return;
+          
+          const currentActive = document.querySelector('.pagination-button.active');
+          const prevPage = parseInt(currentActive.textContent) - 1;
+          
+          if (prevPage >= 1) {
+            paginationButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.pagination-button:nth-child(${prevPage + 2})`).classList.add('active');
+          }
+        });
+        
+        nextButton.addEventListener('click', function() {
+          const currentActive = document.querySelector('.pagination-button.active');
+          const nextPage = parseInt(currentActive.textContent) + 1;
+          
+          if (nextPage <= 8) { // Assuming 8 is the last page
+            paginationButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.pagination-button:nth-child(${nextPage + 2})`).classList.add('active');
+          }
+        });
       });
     </script>
-     <script src="nav-foot.js"></script>
+    <script src="nav-foot.js"></script>
   </body>
 </html>

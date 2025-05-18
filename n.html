@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+    <script src="assets/js/vendors/color-modes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    
+    <title>WeFitHost - Client Management Portal</title>
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --primary-light: #f0efff;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+        --warning: #ffc107;
+        --success: #28a745;
+        --info: #17a2b8;
+        --gray: #6c757d;
+        --light-gray: #e9ecef;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: all 0.3s ease;
+      }
+
+      .custom-header.scrolled {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        height: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: var(--secondary);
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: var(--primary);
+      }
+
+      .nav-link.active {
+        color: var(--primary);
+      }
+
+      .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 1.25rem;
+        right: 1.25rem;
+        height: 3px;
+        background-color: var(--primary);
+        border-radius: 3px 3px 0 0;
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: var(--secondary);
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: var(--primary-light);
+        color: var(--primary);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+        padding: 0.75rem 1.75rem;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(107, 99, 255, 0.3);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 500;
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
+        padding: 8rem 0 6rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        max-width: 600px;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: var(--secondary);
+      }
+
+      .hero-title span {
+        color: var(--primary);
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--gray);
+        margin-bottom: 2rem;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+
+      .hero-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(107, 99, 255, 0.1);
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        left: -100px;
+      }
+
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        bottom: 50px;
+        right: 100px;
+      }
+
+      .shape-3 {
+        width: 150px;
+        height: 150px;
+        top: 200px;
+        right: -50px;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 6rem 0;
+        background-color: white;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: var(--secondary);
+      }
+
+      .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--gray);
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border: 1px solid var(--light-gray);
+        text-align: center;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary-light);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--primary-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: var(--primary);
+        font-size: 2rem;
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .feature-description {
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 6rem 0;
+        background-color: var(--light);
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 1.25rem;
+        color: var(--gray);
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        padding: 6rem 0;
+        background-color: white;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin: 1rem;
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+      }
+
+      .testimonial-info h4 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .testimonial-info p {
+        color: var(--gray);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      .testimonial-rating {
+        color: #ffc107;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-quote {
+        color: var(--gray);
+        font-style: italic;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .testimonial-quote::before {
+        content: '"';
+        font-size: 60px;
+        color: rgba(107, 99, 255, 0.1);
+        position: absolute;
+        left: -15px;
+        top: -20px;
+        line-height: 1;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 6rem 0;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-subtitle {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .cta-buttons .btn-outline-primary {
+        color: white;
+        border-color: white;
+      }
+
+      .cta-buttons .btn-outline-primary:hover {
+        background-color: white;
+        color: var(--primary);
+      }
+
+      /* Client Portal Section */
+      .portal-section {
+        padding: 6rem 0;
+        background-color: var(--light);
+      }
+
+      .portal-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 3rem;
+        text-align: center;
+      }
+
+      .portal-icon {
+        font-size: 4rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .portal-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+      }
+
+      .portal-description {
+        font-size: 1.25rem;
+        color: var(--gray);
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Main Content Styles */
+      .main-content {
+        padding: 2rem 0;
+        min-height: calc(100vh - 120px);
+        display: none; /* Hidden initially */
+      }
+
+      /* Dashboard Header */
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .dashboard-title h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        color: var(--secondary);
+      }
+
+      .dashboard-title p {
+        color: var(--gray);
+        margin-bottom: 0;
+      }
+
+      /* Statistics Cards */
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease;
+        border-left: 4px solid var(--primary);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-card.warning {
+        border-left-color: var(--warning);
+      }
+
+      .stat-card.success {
+        border-left-color: var(--success);
+      }
+
+      .stat-card.danger {
+        border-left-color: var(--danger);
+      }
+
+      .stat-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .stat-card-title {
+        font-size: 0.9rem;
+        color: var(--gray);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .stat-card-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-card-change {
+        display: flex;
+        align-items: center;
+        font-size: 0.85rem;
+      }
+
+      .stat-card-change.up {
+        color: var(--success);
+      }
+
+      .stat-card-change.down {
+        color: var(--danger);
+      }
+
+      .stat-card-change i {
+        margin-right: 0.25rem;
+      }
+
+      .stat-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-light);
+        color: var(--primary);
+        font-size: 1.25rem;
+      }
+
+      .stat-card.warning .stat-card-icon {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: var(--warning);
+      }
+
+      .stat-card.success .stat-card-icon {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+
+      .stat-card.danger .stat-card-icon {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+
+      /* Client Grid */
+      .client-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Client Card */
+      .client-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        border: 1px solid transparent;
+      }
+
+      .client-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: var(--primary-light);
+      }
+
+      .client-card-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .client-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+        border: 3px solid var(--light);
+      }
+
+      .client-info h5 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--secondary);
+      }
+
+      .client-info small {
+        color: var(--gray);
+        font-size: 0.85rem;
+      }
+
+      .client-status {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .status-active {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+
+      .status-pending {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: var(--warning);
+      }
+
+      .status-suspended {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+
+      .status-inactive {
+        background-color: rgba(108, 117, 125, 0.1);
+        color: var(--gray);
+      }
+
+      .client-details {
+        margin-bottom: 1rem;
+      }
+
+      .client-detail {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .client-detail-label {
+        color: var(--gray);
+      }
+
+      .client-detail-value {
+        font-weight: 500;
+        color: var(--secondary);
+      }
+
+      .client-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .client-plan {
+        font-size: 0.85rem;
+        color: var(--gray);
+      }
+
+      .client-plan strong {
+        color: var(--secondary);
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .btn-action {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        border: 1px solid var(--light-gray);
+        background: white;
+        color: var(--gray);
+        transition: all 0.2s ease;
+      }
+
+      .btn-action:hover {
+        background: var(--primary-light);
+        color: var(--primary);
+        border-color: var(--primary-light);
+      }
+
+      /* Client Table */
+      .client-table-container {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 2rem;
+      }
+
+      .table-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .table-title {
+        font-weight: 600;
+        color: var(--secondary);
+        margin: 0;
+      }
+
+      .table-actions {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+      }
+
+      .table {
+        margin-bottom: 0;
+      }
+
+      .table th {
+        background: var(--light);
+        color: var(--primary);
+        font-weight: 600;
+        padding: 1rem 1.5rem;
+        white-space: nowrap;
+      }
+
+      .table td {
+        padding: 1rem 1.5rem;
+        vertical-align: middle;
+        border-top: 1px solid var(--light-gray);
+      }
+
+      .table tr:hover td {
+        background-color: var(--primary-light);
+      }
+
+      .client-cell {
+        display: flex;
+        align-items: center;
+      }
+
+      .client-cell-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 0.75rem;
+      }
+
+      .client-cell-info h6 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: var(--secondary);
+      }
+
+      .client-cell-info small {
+        color: var(--gray);
+        font-size: 0.85rem;
+      }
+
+      /* Navigation Dots */
+      .nav-dots {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(107, 99, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .nav-dot.active {
+        background-color: var(--primary);
+        transform: scale(1.3);
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary);
+        color: white;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        z-index: 99;
+        box-shadow: 0 4px 12px rgba(107, 99, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 1199.98px) {
+        .nav-dots {
+          display: none;
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .section-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-section {
+          padding: 6rem 0 4rem;
+          text-align: center;
+        }
+        
+        .hero-title {
+          font-size: 2rem;
+        }
+        
+        .hero-buttons {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .stats-container {
+          grid-template-columns: 1fr;
+        }
+        
+        .client-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--light);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-dark);
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+    <!-- Navbar -->
+    <header class="custom-header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./Wefithost Logo Icon-01.png" alt="WeFitHost Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#stats">Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cta">Get Started</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary ms-2" href="#portal" id="portal-link">Client Portal</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="mobile-menu-backdrop"></div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+      <div class="nav-dot active" data-section="home"></div>
+      <div class="nav-dot" data-section="features"></div>
+      <div class="nav-dot" data-section="stats"></div>
+      <div class="nav-dot" data-section="testimonials"></div>
+      <div class="nav-dot" data-section="cta"></div>
+      <div class="nav-dot" data-section="portal"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="hero-content fade-in">
+              <h1 class="hero-title">Powerful Client Management <span>Made Simple</span></h1>
+              <p class="hero-subtitle">Streamline your hosting business with our all-in-one client management platform designed to save you time and grow your revenue.</p>
+              <div class="hero-buttons">
+                <a href="#cta" class="btn btn-primary">Get Started</a>
+                <a href="#features" class="btn btn-outline-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-image fade-in">
+              <img src="https://via.placeholder.com/600x400" alt="Dashboard Preview" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <h2 class="section-title">Amazing Features</h2>
+        <p class="section-subtitle">Everything you need to manage your hosting clients efficiently and grow your business</p>
+        
+        <div class="features-grid">
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="feature-title">Client Management</h3>
+            <p class="feature-description">Organize all client information in one place with detailed profiles, notes, and interaction history.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+          
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3 class="feature-title">Hosting Control</h3>
+            <p class="feature-description">Manage all hosting accounts, domains, and services from a single dashboard.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+          
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h3 class="feature-title">Billing Automation</h3>
+            <p class="feature-description">Automate invoices, payments, and reminders to save time and reduce errors.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+          
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="feature-title">Support System</h3>
+            <p class="feature-description">Integrated ticketing system to manage all client support requests efficiently.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+          
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="feature-title">Analytics & Reports</h3>
+            <p class="feature-description">Powerful insights into your business performance with customizable reports.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+          
+          <div class="feature-card fade-in">
+            <div class="feature-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-description">Access your client management system from anywhere with our mobile-optimized interface.</p>
+            <a href="#" class="btn btn-outline-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+        <h2 class="section-title">By The Numbers</h2>
+        <p class="section-subtitle">Join thousands of hosting providers who trust our platform to manage their clients</p>
+        
+        <div class="stats-container">
+          <div class="stat-item fade-in">
+            <div class="stat-number" data-count="10000">0</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat-item fade-in">
+            <div class="stat-number" data-count="95">0</div>
+            <div class="stat-label">Retention Rate</div>
+          </div>
+          <div class="stat-item fade-in">
+            <div class="stat-number" data-count="24">0</div>
+            <div class="stat-label">/7 Support</div>
+          </div>
+          <div class="stat-item fade-in">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">New Clients Monthly</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Don't just take our word for it. Here's what our customers have to say about our platform.</p>
+        
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card fade-in">
+              <div class="testimonial-header">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="testimonial-avatar">
+                <div class="testimonial-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>Hosting Business Owner</p>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-quote">This platform has completely transformed how we manage our clients. The automation features alone have saved us dozens of hours each month.</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card fade-in">
+              <div class="testimonial-header">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="testimonial-avatar">
+                <div class="testimonial-info">
+                  <h4>Michael Chen</h4>
+                  <p>IT Services Provider</p>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p class="testimonial-quote">As a solo consultant, I needed a solution that could handle all aspects of client management without being overwhelming. This platform is perfect.</p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 mb-4">
+            <div class="testimonial-card fade-in">
+              <div class="testimonial-header">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-avatar">
+                <div class="testimonial-info">
+                  <h4>Emily Rodriguez</h4>
+                  <p>Web Agency Director</p>
+                </div>
+              </div>
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <p class="testimonial-quote">The client portal and management tools have helped us reduce administrative work by 40% while improving client satisfaction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+      <div class="container">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-subtitle">Join thousands of hosting providers who trust our platform to manage their clients and grow their business.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-light btn-lg">Start Free Trial</a>
+          <a href="#portal" class="btn btn-outline-primary btn-lg">Client Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Portal Section -->
+    <section class="portal-section" id="portal">
+      <div class="container">
+        <div class="portal-container fade-in">
+          <div class="portal-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <h2 class="portal-title">Client Management Portal</h2>
+          <p class="portal-description">Access your complete client management dashboard to view, manage, and support all your hosting clients in one place.</p>
+          <button id="enter-portal" class="btn btn-primary btn-lg">Enter Portal</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content (Hidden Initially) -->
+    <main class="main-content" id="main-content">
+      <div class="container">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+          <div class="dashboard-title">
+            <h1>Client Management</h1>
+            <p>Manage all your hosting clients in one place</p>
+          </div>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addClientModal">
+            <i class="fas fa-plus me-2"></i> Add New Client
+          </button>
+        </div>
+
+        <!-- Statistics Row -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-card-header">
+              <div>
+                <div class="stat-card-title">Active Clients</div>
+                <div class="stat-card-value">142</div>
+                <div class="stat-card-change up">
+                  <i class="fas fa-arrow-up"></i> 12.5% from last month
+                </div>
+              </div>
+              <div class="stat-card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card warning">
+            <div class="stat-card-header">
+              <div>
+                <div class="stat-card-title">Pending Actions</div>
+                <div class="stat-card-value">23</div>
+                <div class="stat-card-change down">
+                  <i class="fas fa-arrow-down"></i> 3.2% from last week
+                </div>
+              </div>
+              <div class="stat-card-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-card-header">
+              <div>
+                <div class="stat-card-title">Monthly Revenue</div>
+                <div class="stat-card-value">$8,742</div>
+                <div class="stat-card-change up">
+                  <i class="fas fa-arrow-up"></i> 8.1% from last month
+                </div>
+              </div>
+              <div class="stat-card-icon">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+            </div>
+          </div>
+          <div class="stat-card danger">
+            <div class="stat-card-header">
+              <div>
+                <div class="stat-card-title">Server Capacity</div>
+                <div class="stat-card-value">85%</div>
+                <div class="stat-card-change down">
+                  <i class="fas fa-arrow-down"></i> 5% from last week
+                </div>
+              </div>
+              <div class="stat-card-icon">
+                <i class="fas fa-server"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Grid -->
+        <div class="client-grid">
+          <!-- Client Card 1 -->
+          <div class="client-card">
+            <div class="client-card-header">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-avatar">
+              <div class="client-info">
+                <h5>John Smith</h5>
+                <small>john@example.com</small>
+              </div>
+            </div>
+            <div class="client-status status-active">
+              <i class="fas fa-circle me-1"></i> Active
+            </div>
+            <div class="client-details">
+              <div class="client-detail">
+                <span class="client-detail-label">Plan:</span>
+                <span class="client-detail-value">Business Hosting</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Domains:</span>
+                <span class="client-detail-value">3</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Renewal:</span>
+                <span class="client-detail-value">2024-03-15</span>
+              </div>
+            </div>
+            <div class="client-actions">
+              <span class="client-plan">Plan expires in <strong>12 days</strong></span>
+              <div class="action-buttons">
+                <button class="btn-action" title="Edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn-action" title="View">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 2 -->
+          <div class="client-card">
+            <div class="client-card-header">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-avatar">
+              <div class="client-info">
+                <h5>Sarah Johnson</h5>
+                <small>sarah@business.com</small>
+              </div>
+            </div>
+            <div class="client-status status-pending">
+              <i class="fas fa-circle me-1"></i> Pending Payment
+            </div>
+            <div class="client-details">
+              <div class="client-detail">
+                <span class="client-detail-label">Plan:</span>
+                <span class="client-detail-value">Enterprise Hosting</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Domains:</span>
+                <span class="client-detail-value">5</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Due Date:</span>
+                <span class="client-detail-value">2024-03-10</span>
+              </div>
+            </div>
+            <div class="client-actions">
+              <span class="client-plan">Payment overdue by <strong>2 days</strong></span>
+              <div class="action-buttons">
+                <button class="btn-action" title="Send Reminder">
+                  <i class="fas fa-bell"></i>
+                </button>
+                <button class="btn-action" title="View">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Card 3 -->
+          <div class="client-card">
+            <div class="client-card-header">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" class="client-avatar">
+              <div class="client-info">
+                <h5>Michael Chen</h5>
+                <small>michael@tech.io</small>
+              </div>
+            </div>
+            <div class="client-status status-suspended">
+              <i class="fas fa-circle me-1"></i> Suspended
+            </div>
+            <div class="client-details">
+              <div class="client-detail">
+                <span class="client-detail-label">Plan:</span>
+                <span class="client-detail-value">Basic Hosting</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Domains:</span>
+                <span class="client-detail-value">1</span>
+              </div>
+              <div class="client-detail">
+                <span class="client-detail-label">Suspended:</span>
+                <span class="client-detail-value">2024-02-28</span>
+              </div>
+            </div>
+            <div class="client-actions">
+              <span class="client-plan">Suspended for <strong>8 days</strong></span>
+              <div class="action-buttons">
+                <button class="btn-action" title="Reactivate">
+                  <i class="fas fa-sync-alt"></i>
+                </button>
+                <button class="btn-action" title="View">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Client Table -->
+        <div class="client-table-container">
+          <div class="table-header">
+            <h5 class="table-title">Recent Clients</h5>
+            <div class="d-flex gap-2">
+              <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control" placeholder="Search clients...">
+              </div>
+              <div class="filter-dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-filter me-2"></i> Filter
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                  <li><a class="dropdown-item" href="#">All Clients</a></li>
+                  <li><a class="dropdown-item" href="#">Active</a></li>
+                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                  <li><a class="dropdown-item" href="#">Suspended</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">High Value</a></li>
+                  <li><a class="dropdown-item" href="#">New This Month</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Services</th>
+                  <th>Status</th>
+                  <th>Last Activity</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-cell-avatar">
+                      <div class="client-cell-info">
+                        <h6>John Smith</h6>
+                        <small>john@example.com</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>3 Hosting Plans</td>
+                  <td>
+                    <span class="client-status status-active">
+                      <i class="fas fa-circle me-1"></i> Active
+                    </span>
+                  </td>
+                  <td>2 hours ago</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-action" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn-action" title="View">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn-action" title="Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-cell-avatar">
+                      <div class="client-cell-info">
+                        <h6>Sarah Johnson</h6>
+                        <small>sarah@business.com</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Enterprise Hosting</td>
+                  <td>
+                    <span class="client-status status-pending">
+                      <i class="fas fa-circle me-1"></i> Pending
+                    </span>
+                  </td>
+                  <td>1 day ago</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-action" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn-action" title="View">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn-action" title="Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <img src="https://randomuser.me/api/portraits/men/67.jpg" class="client-cell-avatar">
+                      <div class="client-cell-info">
+                        <h6>Michael Chen</h6>
+                        <small>michael@tech.io</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Basic Hosting</td>
+                  <td>
+                    <span class="client-status status-suspended">
+                      <i class="fas fa-circle me-1"></i> Suspended
+                    </span>
+                  </td>
+                  <td>1 week ago</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-action" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn-action" title="View">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn-action" title="Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <img src="https://randomuser.me/api/portraits/women/28.jpg" class="client-cell-avatar">
+                      <div class="client-cell-info">
+                        <h6>Emily Rodriguez</h6>
+                        <small>emily@design.co</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>2 Hosting Plans</td>
+                  <td>
+                    <span class="client-status status-active">
+                      <i class="fas fa-circle me-1"></i> Active
+                    </span>
+                  </td>
+                  <td>3 days ago</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-action" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn-action" title="View">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn-action" title="Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <img src="https://randomuser.me/api/portraits/men/75.jpg" class="client-cell-avatar">
+                      <div class="client-cell-info">
+                        <h6>David Wilson</h6>
+                        <small>david@marketing.com</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Business Hosting</td>
+                  <td>
+                    <span class="client-status status-inactive">
+                      <i class="fas fa-circle me-1"></i> Inactive
+                    </span>
+                  </td>
+                  <td>2 weeks ago</td>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn-action" title="Edit">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn-action" title="View">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="btn-action" title="Message">
+                        <i class="fas fa-envelope"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+
+    <!-- Add Client Modal -->
+    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="company" class="form-label">Company (Optional)</label>
+                <input type="text" class="form-control" id="company">
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone">
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="hostingPlan" class="form-label">Hosting Plan</label>
+                  <select class="form-select" id="hostingPlan" required>
+                    <option value="">Select a plan</option>
+                    <option value="basic">Basic Hosting - $9.99/mo</option>
+                    <option value="business">Business Hosting - $19.99/mo</option>
+                    <option value="enterprise">Enterprise Hosting - $49.99/mo</option>
+                    <option value="custom">Custom Plan</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="billingCycle" class="form-label">Billing Cycle</label>
+                  <select class="form-select" id="billingCycle" required>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly (Save 20%)</option>
+                    <option value="biennially">Biennially (Save 30%)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="domain" class="form-label">Domain Name (Optional)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="domain">
+                  <button class="btn btn-outline-secondary" type="button">Check Availability</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label">Notes (Optional)</label>
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+              </div>
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="sendWelcomeEmail" checked>
+                <label class="form-check-label" for="sendWelcomeEmail">
+                  Send welcome email with login details
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Add Client</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h5 class="text-uppercase mb-4">WeFitHost</h5>
+            <p>Premium hosting solutions for businesses of all sizes. Reliable, secure, and scalable infrastructure with 24/7 support.</p>
+            <div class="social-links mt-4">
+              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h6 class="text-uppercase mb-4">Hosting</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Web Hosting</a></li>
+              <li><a href="#" class="text-white">VPS Hosting</a></li>
+              <li><a href="#" class="text-white">Dedicated Servers</a></li>
+              <li><a href="#" class="text-white">Cloud Hosting</a></li>
+              <li><a href="#" class="text-white">WordPress Hosting</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h6 class="text-uppercase mb-4">Domains</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Domain Search</a></li>
+              <li><a href="#" class="text-white">Domain Transfer</a></li>
+              <li><a href="#" class="text-white">Domain Pricing</a></li>
+              <li><a href="#" class="text-white">WHOIS Lookup</a></li>
+              <li><a href="#" class="text-white">Domain Auctions</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h6 class="text-uppercase mb-4">Support</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Knowledge Base</a></li>
+              <li><a href="#" class="text-white">Tutorials</a></li>
+              <li><a href="#" class="text-white">Forums</a></li>
+              <li><a href="#" class="text-white">System Status</a></li>
+              <li><a href="#" class="text-white">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h6 class="text-uppercase mb-4">Company</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">About Us</a></li>
+              <li><a href="#" class="text-white">Careers</a></li>
+              <li><a href="#" class="text-white">Blog</a></li>
+              <li><a href="#" class="text-white">Press</a></li>
+              <li><a href="#" class="text-white">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4 bg-light">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2024 WeFitHost. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+              <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+              <li class="list-inline-item"><a href="#" class="text-white">SLA</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Libs JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        const navbar = document.querySelector(".custom-header");
+
+        window.addEventListener("scroll", function () {
+          const currentScroll = window.pageYOffset;
+          
+          if (currentScroll <= 0) {
+            navbar.classList.remove("scrolled");
+            return;
+          }
+          
+          if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scroll down
+            navbar.classList.add("scrolled");
+          } else if (currentScroll < lastScroll) {
+            // Scroll up
+            navbar.classList.add("scrolled");
+          }
+          
+          lastScroll = currentScroll;
+        });
+
+        // Back to top button
+        const backToTopButton = document.querySelector(".back-to-top");
+        
+        window.addEventListener("scroll", function() {
+          if (window.pageYOffset > 300) {
+            backToTopButton.style.display = "flex";
+          } else {
+            backToTopButton.style.display = "none";
+          }
+        });
+        
+        backToTopButton.addEventListener("click", function(e) {
+          e.preventDefault();
+          window.scrollTo({top: 0, behavior: "smooth"});
+        });
+
+        // Navigation dots functionality
+        const sections = document.querySelectorAll("section");
+        const navDots = document.querySelectorAll(".nav-dot");
+
+        function updateActiveDot() {
+          let currentSection = "";
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop - 200) {
+              currentSection = section.getAttribute("id");
+            }
+          });
+          
+          navDots.forEach(dot => {
+            dot.classList.remove("active");
+            if (dot.dataset.section === currentSection) {
+              dot.classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", updateActiveDot);
+
+        navDots.forEach(dot => {
+          dot.addEventListener("click", function() {
+            const targetSection = document.getElementById(this.dataset.section);
+            window.scrollTo({
+              top: targetSection.offsetTop,
+              behavior: "smooth"
+            });
+          });
+        });
+
+        // Animate numbers in stats section
+        function animateStats() {
+          const statNumbers = document.querySelectorAll(".stat-number[data-count]");
+          
+          statNumbers.forEach(stat => {
+            const target = parseInt(stat.dataset.count);
+            const duration = 2000; // Animation duration in ms
+            const start = 0;
+            const increment = target / (duration / 16); // 60fps
+            
+            let current = start;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                clearInterval(timer);
+                current = target;
+              }
+              stat.textContent = Math.floor(current);
+            }, 16);
+          });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in");
+              
+              // Animate stats when stats section is visible
+              if (entry.target.id === "stats") {
+                animateStats();
+              }
+            }
+          });
+        }, { threshold: 0.1 });
+
+        // Observe elements that should animate on scroll
+        document.querySelectorAll(".fade-in").forEach(el => {
+          observer.observe(el);
+        });
+
+        // Enter portal button functionality
+        const enterPortalBtn = document.getElementById("enter-portal");
+        const portalLink = document.getElementById("portal-link");
+        const mainContent = document.getElementById("main-content");
+        
+        enterPortalBtn.addEventListener("click", function(e) {
+          e.preventDefault();
+          
+          // Hide all sections except main content
+          document.querySelectorAll("section").forEach(section => {
+            section.style.display = "none";
+          });
+          
+          // Show main content
+          mainContent.style.display = "block";
+          
+          // Scroll to top
+          window.scrollTo({top: 0, behavior: "smooth"});
+          
+          // Change portal link to back button
+          portalLink.textContent = "Back to Website";
+          portalLink.href = "#";
+          portalLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            // Show all sections again
+            document.querySelectorAll("section").forEach(section => {
+              section.style.display = "block";
+            });
+            
+            // Hide main content
+            mainContent.style.display = "none";
+            
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: "smooth"});
+            
+            // Change back to portal link
+            portalLink.textContent = "Client Portal";
+            portalLink.href = "#portal";
+          });
+        });
+
+        // Initialize date picker
+        flatpickr("#dueDate", {
+          dateFormat: "Y-m-d",
+          minDate: "today"
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector(".search-box input");
+        if (searchInput) {
+          searchInput.addEventListener("input", function() {
+            const searchTerm = this.value.toLowerCase();
+            const clientCards = document.querySelectorAll(".client-card");
+            const tableRows = document.querySelectorAll(".client-table tbody tr");
+            
+            // Filter cards in grid view
+            clientCards.forEach(card => {
+              const clientName = card.querySelector(".client-info h5").textContent.toLowerCase();
+              const clientEmail = card.querySelector(".client-info small").textContent.toLowerCase();
+              
+              if (clientName.includes(searchTerm) || clientEmail.includes(searchTerm)) {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+            });
+            
+            // Filter rows in table view
+            tableRows.forEach(row => {
+              const clientName = row.querySelector(".client-cell-info h6").textContent.toLowerCase();
+              const clientEmail = row.querySelector(".client-cell-info small").textContent.toLowerCase();
+              
+              if (clientName.includes(searchTerm) || clientEmail.includes(searchTerm)) {
+                row.style.display = "";
+              } else {
+                row.style.display = "none";
+              }
+            });
+          });
+        }
+
+        // Filter dropdown functionality
+        document.querySelectorAll(".filter-dropdown .dropdown-item").forEach(item => {
+          item.addEventListener("click", function(e) {
+            e.preventDefault();
+            const filterType = this.textContent.trim();
+            const dropdownToggle = this.closest(".dropdown-menu").previousElementSibling;
+            dropdownToggle.innerHTML = `<i class="fas fa-filter me-2"></i> ${filterType}`;
+            
+            // Here you would implement actual filtering logic
+            // For now we'll just show a toast notification
+            const toast = new bootstrap.Toast(document.getElementById("filterToast"));
+            toast.show();
+          });
+        });
+
+        // Toast notification for filter
+        const filterToastEl = document.createElement("div");
+        filterToastEl.className = "toast align-items-center text-white bg-primary border-0 position-fixed bottom-0 end-0 m-3";
+        filterToastEl.setAttribute("role", "alert");
+        filterToastEl.setAttribute("aria-live", "assertive");
+        filterToastEl.setAttribute("aria-atomic", "true");
+        filterToastEl.id = "filterToast";
+        filterToastEl.innerHTML = `
+          <div class="d-flex">
+            <div class="toast-body">
+              Filter applied successfully
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        `;
+        document.body.appendChild(filterToastEl);
+      });
+    </script>
+  </body>
+</html>
