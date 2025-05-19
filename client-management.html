@@ -12,11 +12,13 @@
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
     <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
     <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
-    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+    <link rel="icon" href="https://i.imgur.com/Jq5Zf0E.png" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./assets/css/media-queries.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <title>WeFitHost - Client Management Portal</title>
     <style>
@@ -41,6 +43,7 @@
         color: var(--dark);
         line-height: 1.6;
         overflow-x: hidden;
+        background-color: #f8fafc;
       }
 
       /* Header Styles */
@@ -184,6 +187,11 @@
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         animation: float 6s ease-in-out infinite;
+      }
+
+      .hero-image img {
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
       }
 
       @keyframes float {
@@ -339,6 +347,11 @@
         padding: 2rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         margin: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
       }
 
       .testimonial-header {
@@ -353,6 +366,7 @@
         border-radius: 50%;
         object-fit: cover;
         margin-right: 1rem;
+        border: 3px solid var(--primary-light);
       }
 
       .testimonial-info h4 {
@@ -437,6 +451,11 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         padding: 3rem;
         text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .portal-container:hover {
+        transform: scale(1.02);
       }
 
       .portal-icon {
@@ -466,6 +485,7 @@
         padding: 2rem 0;
         min-height: calc(100vh - 120px);
         display: none; /* Hidden initially */
+        background-color: #f8fafc;
       }
 
       /* Dashboard Header */
@@ -763,6 +783,7 @@
 
       .table {
         margin-bottom: 0;
+        width: 100%;
       }
 
       .table th {
@@ -805,6 +826,27 @@
       .client-cell-info small {
         color: var(--gray);
         font-size: 0.85rem;
+      }
+
+      /* Search box */
+      .search-box {
+        position: relative;
+        width: 250px;
+      }
+
+      .search-box i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray);
+      }
+
+      .search-box input {
+        padding-left: 40px;
+        border-radius: 8px;
+        border: 1px solid var(--light-gray);
+        height: 40px;
       }
 
       /* Navigation Dots */
@@ -857,6 +899,25 @@
         transform: translateY(-3px);
       }
 
+      /* Mobile Menu Backdrop */
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1010;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
       /* Responsive Styles */
       @media (max-width: 1199.98px) {
         .nav-dots {
@@ -879,6 +940,10 @@
         
         .section-subtitle {
           font-size: 1.1rem;
+        }
+
+        .search-box {
+          width: 200px;
         }
       }
 
@@ -903,6 +968,27 @@
         
         .client-grid {
           grid-template-columns: 1fr;
+        }
+
+        .dashboard-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .table-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .search-box {
+          width: 100%;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
         }
       }
 
@@ -943,7 +1029,7 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="./Wefithost Logo Icon-01.png" alt="WeFitHost Logo">
+            <img src="https://i.imgur.com/Jq5Zf0E.png" alt="WeFitHost Logo">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -1006,7 +1092,7 @@
           </div>
           <div class="col-lg-6">
             <div class="hero-image fade-in">
-              <img src="https://via.placeholder.com/600x400" alt="Dashboard Preview" class="img-fluid">
+              <img src="https://mymountainmover.com/wp-content/uploads/2024/12/Customer-client-management.webp" alt="Dashboard Preview" class="img-fluid">
             </div>
           </div>
         </div>
@@ -1114,7 +1200,7 @@
           <div class="col-lg-4 mb-4">
             <div class="testimonial-card fade-in">
               <div class="testimonial-header">
-                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="testimonial-avatar">
+                <img src="https://i.imgur.com/8Km9tLL.jpg" class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Sarah Johnson</h4>
                   <p>Hosting Business Owner</p>
@@ -1134,7 +1220,7 @@
           <div class="col-lg-4 mb-4">
             <div class="testimonial-card fade-in">
               <div class="testimonial-header">
-                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="testimonial-avatar">
+                <img src="https://i.imgur.com/lRUnDgx.jpg" class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Michael Chen</h4>
                   <p>IT Services Provider</p>
@@ -1154,7 +1240,7 @@
           <div class="col-lg-4 mb-4">
             <div class="testimonial-card fade-in">
               <div class="testimonial-header">
-                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-avatar">
+                <img src="https://i.imgur.com/5Qzfs7a.jpg" class="testimonial-avatar">
                 <div class="testimonial-info">
                   <h4>Emily Rodriguez</h4>
                   <p>Web Agency Director</p>
@@ -1279,7 +1365,7 @@
           <!-- Client Card 1 -->
           <div class="client-card">
             <div class="client-card-header">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-avatar">
+              <img src="https://i.imgur.com/JvYCQYr.jpg" class="client-avatar">
               <div class="client-info">
                 <h5>John Smith</h5>
                 <small>john@example.com</small>
@@ -1305,10 +1391,10 @@
             <div class="client-actions">
               <span class="client-plan">Plan expires in <strong>12 days</strong></span>
               <div class="action-buttons">
-                <button class="btn-action" title="Edit">
+                <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                   <i class="fas fa-edit"></i>
                 </button>
-                <button class="btn-action" title="View">
+                <button class="btn-action view-client" title="View">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -1318,7 +1404,7 @@
           <!-- Client Card 2 -->
           <div class="client-card">
             <div class="client-card-header">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-avatar">
+              <img src="https://i.imgur.com/8Km9tLL.jpg" class="client-avatar">
               <div class="client-info">
                 <h5>Sarah Johnson</h5>
                 <small>sarah@business.com</small>
@@ -1344,10 +1430,10 @@
             <div class="client-actions">
               <span class="client-plan">Payment overdue by <strong>2 days</strong></span>
               <div class="action-buttons">
-                <button class="btn-action" title="Send Reminder">
+                <button class="btn-action send-reminder" title="Send Reminder">
                   <i class="fas fa-bell"></i>
                 </button>
-                <button class="btn-action" title="View">
+                <button class="btn-action view-client" title="View">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -1357,7 +1443,7 @@
           <!-- Client Card 3 -->
           <div class="client-card">
             <div class="client-card-header">
-              <img src="https://randomuser.me/api/portraits/men/67.jpg" class="client-avatar">
+              <img src="https://i.imgur.com/lRUnDgx.jpg" class="client-avatar">
               <div class="client-info">
                 <h5>Michael Chen</h5>
                 <small>michael@tech.io</small>
@@ -1383,10 +1469,10 @@
             <div class="client-actions">
               <span class="client-plan">Suspended for <strong>8 days</strong></span>
               <div class="action-buttons">
-                <button class="btn-action" title="Reactivate">
+                <button class="btn-action reactivate-client" title="Reactivate">
                   <i class="fas fa-sync-alt"></i>
                 </button>
-                <button class="btn-action" title="View">
+                <button class="btn-action view-client" title="View">
                   <i class="fas fa-eye"></i>
                 </button>
               </div>
@@ -1398,29 +1484,29 @@
         <div class="client-table-container">
           <div class="table-header">
             <h5 class="table-title">Recent Clients</h5>
-            <div class="d-flex gap-2">
+            <div class="table-actions">
               <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" class="form-control" placeholder="Search clients...">
+                <input type="text" class="form-control" placeholder="Search clients..." id="clientSearch">
               </div>
               <div class="filter-dropdown">
                 <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fas fa-filter me-2"></i> Filter
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                  <li><a class="dropdown-item" href="#">All Clients</a></li>
-                  <li><a class="dropdown-item" href="#">Active</a></li>
-                  <li><a class="dropdown-item" href="#">Pending</a></li>
-                  <li><a class="dropdown-item" href="#">Suspended</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="all">All Clients</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="active">Active</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="pending">Pending</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="suspended">Suspended</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">High Value</a></li>
-                  <li><a class="dropdown-item" href="#">New This Month</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="high-value">High Value</a></li>
+                  <li><a class="dropdown-item filter-option" href="#" data-filter="new">New This Month</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="clientTable">
               <thead>
                 <tr>
                   <th>Client</th>
@@ -1431,10 +1517,10 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr data-status="active" data-value="high">
                   <td>
                     <div class="client-cell">
-                      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="client-cell-avatar">
+                      <img src="https://i.imgur.com/JvYCQYr.jpg" class="client-cell-avatar">
                       <div class="client-cell-info">
                         <h6>John Smith</h6>
                         <small>john@example.com</small>
@@ -1450,10 +1536,10 @@
                   <td>2 hours ago</td>
                   <td>
                     <div class="action-buttons">
-                      <button class="btn-action" title="Edit">
+                      <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button class="btn-action" title="View">
+                      <button class="btn-action view-client" title="View">
                         <i class="fas fa-eye"></i>
                       </button>
                       <button class="btn-action" title="Message">
@@ -1462,10 +1548,10 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr data-status="pending" data-value="high">
                   <td>
                     <div class="client-cell">
-                      <img src="https://randomuser.me/api/portraits/women/44.jpg" class="client-cell-avatar">
+                      <img src="https://i.imgur.com/8Km9tLL.jpg" class="client-cell-avatar">
                       <div class="client-cell-info">
                         <h6>Sarah Johnson</h6>
                         <small>sarah@business.com</small>
@@ -1481,10 +1567,10 @@
                   <td>1 day ago</td>
                   <td>
                     <div class="action-buttons">
-                      <button class="btn-action" title="Edit">
+                      <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button class="btn-action" title="View">
+                      <button class="btn-action view-client" title="View">
                         <i class="fas fa-eye"></i>
                       </button>
                       <button class="btn-action" title="Message">
@@ -1493,10 +1579,10 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr data-status="suspended" data-value="low">
                   <td>
                     <div class="client-cell">
-                      <img src="https://randomuser.me/api/portraits/men/67.jpg" class="client-cell-avatar">
+                      <img src="https://i.imgur.com/lRUnDgx.jpg" class="client-cell-avatar">
                       <div class="client-cell-info">
                         <h6>Michael Chen</h6>
                         <small>michael@tech.io</small>
@@ -1512,10 +1598,10 @@
                   <td>1 week ago</td>
                   <td>
                     <div class="action-buttons">
-                      <button class="btn-action" title="Edit">
+                      <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button class="btn-action" title="View">
+                      <button class="btn-action view-client" title="View">
                         <i class="fas fa-eye"></i>
                       </button>
                       <button class="btn-action" title="Message">
@@ -1524,10 +1610,10 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr data-status="active" data-value="medium" data-new="true">
                   <td>
                     <div class="client-cell">
-                      <img src="https://randomuser.me/api/portraits/women/28.jpg" class="client-cell-avatar">
+                      <img src="https://i.imgur.com/5Qzfs7a.jpg" class="client-cell-avatar">
                       <div class="client-cell-info">
                         <h6>Emily Rodriguez</h6>
                         <small>emily@design.co</small>
@@ -1543,10 +1629,10 @@
                   <td>3 days ago</td>
                   <td>
                     <div class="action-buttons">
-                      <button class="btn-action" title="Edit">
+                      <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button class="btn-action" title="View">
+                      <button class="btn-action view-client" title="View">
                         <i class="fas fa-eye"></i>
                       </button>
                       <button class="btn-action" title="Message">
@@ -1555,10 +1641,10 @@
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr data-status="inactive" data-value="low">
                   <td>
                     <div class="client-cell">
-                      <img src="https://randomuser.me/api/portraits/men/75.jpg" class="client-cell-avatar">
+                      <img src="https://i.imgur.com/9Zq7N7A.jpg" class="client-cell-avatar">
                       <div class="client-cell-info">
                         <h6>David Wilson</h6>
                         <small>david@marketing.com</small>
@@ -1574,10 +1660,10 @@
                   <td>2 weeks ago</td>
                   <td>
                     <div class="action-buttons">
-                      <button class="btn-action" title="Edit">
+                      <button class="btn-action" title="Edit" data-bs-toggle="modal" data-bs-target="#editClientModal">
                         <i class="fas fa-edit"></i>
                       </button>
-                      <button class="btn-action" title="View">
+                      <button class="btn-action view-client" title="View">
                         <i class="fas fa-eye"></i>
                       </button>
                       <button class="btn-action" title="Message">
@@ -1621,7 +1707,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form id="addClientForm">
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="firstName" class="form-label">First Name</label>
@@ -1685,82 +1771,260 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Add Client</button>
+            <button type="button" class="btn btn-primary" id="saveClient">Add Client</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <h5 class="text-uppercase mb-4">WeFitHost</h5>
-            <p>Premium hosting solutions for businesses of all sizes. Reliable, secure, and scalable infrastructure with 24/7 support.</p>
-            <div class="social-links mt-4">
-              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- Edit Client Modal -->
+    <div class="modal fade" id="editClientModal" tabindex="-1" aria-labelledby="editClientModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editClientModalLabel">Edit Client</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h6 class="text-uppercase mb-4">Hosting</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Web Hosting</a></li>
-              <li><a href="#" class="text-white">VPS Hosting</a></li>
-              <li><a href="#" class="text-white">Dedicated Servers</a></li>
-              <li><a href="#" class="text-white">Cloud Hosting</a></li>
-              <li><a href="#" class="text-white">WordPress Hosting</a></li>
-            </ul>
+          <div class="modal-body">
+            <form id="editClientForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="editFirstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="editFirstName" value="John" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editLastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="editLastName" value="Smith" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="editEmail" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="editEmail" value="john@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="editCompany" class="form-label">Company (Optional)</label>
+                <input type="text" class="form-control" id="editCompany" value="Tech Solutions Inc.">
+              </div>
+              <div class="mb-3">
+                <label for="editPhone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="editPhone" value="(555) 123-4567">
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="editHostingPlan" class="form-label">Hosting Plan</label>
+                  <select class="form-select" id="editHostingPlan" required>
+                    <option value="basic">Basic Hosting - $9.99/mo</option>
+                    <option value="business" selected>Business Hosting - $19.99/mo</option>
+                    <option value="enterprise">Enterprise Hosting - $49.99/mo</option>
+                    <option value="custom">Custom Plan</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editBillingCycle" class="form-label">Billing Cycle</label>
+                  <select class="form-select" id="editBillingCycle" required>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly" selected>Yearly (Save 20%)</option>
+                    <option value="biennially">Biennially (Save 30%)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="editDomain" class="form-label">Domain Name (Optional)</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="editDomain" value="example.com">
+                  <button class="btn btn-outline-secondary" type="button">Check Availability</button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="editStatus" class="form-label">Status</label>
+                <select class="form-select" id="editStatus" required>
+                  <option value="active" selected>Active</option>
+                  <option value="pending">Pending</option>
+                  <option value="suspended">Suspended</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="editNotes" class="form-label">Notes (Optional)</label>
+                <textarea class="form-control" id="editNotes" rows="3">VIP client - prefers email communication</textarea>
+              </div>
+            </form>
           </div>
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h6 class="text-uppercase mb-4">Domains</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Domain Search</a></li>
-              <li><a href="#" class="text-white">Domain Transfer</a></li>
-              <li><a href="#" class="text-white">Domain Pricing</a></li>
-              <li><a href="#" class="text-white">WHOIS Lookup</a></li>
-              <li><a href="#" class="text-white">Domain Auctions</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h6 class="text-uppercase mb-4">Support</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Knowledge Base</a></li>
-              <li><a href="#" class="text-white">Tutorials</a></li>
-              <li><a href="#" class="text-white">Forums</a></li>
-              <li><a href="#" class="text-white">System Status</a></li>
-              <li><a href="#" class="text-white">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-            <h6 class="text-uppercase mb-4">Company</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">About Us</a></li>
-              <li><a href="#" class="text-white">Careers</a></li>
-              <li><a href="#" class="text-white">Blog</a></li>
-              <li><a href="#" class="text-white">Press</a></li>
-              <li><a href="#" class="text-white">Partners</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr class="my-4 bg-light">
-        <div class="row align-items-center">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="mb-0">&copy; 2024 WeFitHost. All rights reserved.</p>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
-              <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
-              <li class="list-inline-item"><a href="#" class="text-white">SLA</a></li>
-            </ul>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger me-auto" id="deleteClient">Delete Client</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="updateClient">Save Changes</button>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!-- View Client Modal -->
+    <div class="modal fade" id="viewClientModal" tabindex="-1" aria-labelledby="viewClientModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewClientModalLabel">Client Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row mb-4">
+              <div class="col-md-2">
+                <img src="https://i.imgur.com/JvYCQYr.jpg" class="img-fluid rounded-circle" alt="Client Avatar">
+              </div>
+              <div class="col-md-10">
+                <h3>John Smith</h3>
+                <p class="text-muted mb-1">john@example.com</p>
+                <span class="client-status status-active">
+                  <i class="fas fa-circle me-1"></i> Active
+                </span>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-header bg-light">
+                    <h6 class="mb-0">Account Information</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Company</p>
+                      <p>Tech Solutions Inc.</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Phone</p>
+                      <p>(555) 123-4567</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Member Since</p>
+                      <p>March 15, 2022</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Last Login</p>
+                      <p>2 hours ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-header bg-light">
+                    <h6 class="mb-0">Hosting Details</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Current Plan</p>
+                      <p>Business Hosting - $19.99/mo</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Billing Cycle</p>
+                      <p>Yearly (Save 20%)</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Next Billing Date</p>
+                      <p>March 15, 2024</p>
+                    </div>
+                    <div class="mb-3">
+                      <p class="text-muted small mb-1">Payment Method</p>
+                      <p>Visa ending in 4242</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-header bg-light">
+                <h6 class="mb-0">Services</h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Created</th>
+                        <th>Expires</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Business Hosting</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Mar 15, 2022</td>
+                        <td>Mar 15, 2024</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-primary">Manage</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>example.com</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Mar 15, 2022</td>
+                        <td>Mar 15, 2024</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-primary">Manage</button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>SSL Certificate</td>
+                        <td><span class="badge bg-success">Active</span></td>
+                        <td>Mar 15, 2022</td>
+                        <td>Mar 15, 2024</td>
+                        <td>
+                          <button class="btn btn-sm btn-outline-primary">Manage</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm Action</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="confirmationMessage">
+            Are you sure you want to delete this client?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="confirmAction">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto" id="toastTitle">Notification</strong>
+          <small>Just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body" id="toastMessage">
+          Client added successfully!
+        </div>
+      </div>
+    </div>
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
@@ -1768,10 +2032,11 @@
     </a>
 
     <!-- Libs JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
@@ -2002,12 +2267,12 @@
         });
 
         // Search functionality
-        const searchInput = document.querySelector(".search-box input");
+        const searchInput = document.getElementById("clientSearch");
         if (searchInput) {
           searchInput.addEventListener("input", function() {
             const searchTerm = this.value.toLowerCase();
             const clientCards = document.querySelectorAll(".client-card");
-            const tableRows = document.querySelectorAll(".client-table tbody tr");
+            const tableRows = document.querySelectorAll("#clientTable tbody tr");
             
             // Filter cards in grid view
             clientCards.forEach(card => {
@@ -2036,36 +2301,104 @@
         }
 
         // Filter dropdown functionality
-        document.querySelectorAll(".filter-dropdown .dropdown-item").forEach(item => {
+        document.querySelectorAll(".filter-option").forEach(item => {
           item.addEventListener("click", function(e) {
             e.preventDefault();
             const filterType = this.textContent.trim();
+            const filterValue = this.dataset.filter;
             const dropdownToggle = this.closest(".dropdown-menu").previousElementSibling;
             dropdownToggle.innerHTML = `<i class="fas fa-filter me-2"></i> ${filterType}`;
             
-            // Here you would implement actual filtering logic
-            // For now we'll just show a toast notification
-            const toast = new bootstrap.Toast(document.getElementById("filterToast"));
-            toast.show();
+            // Filter table rows
+            const tableRows = document.querySelectorAll("#clientTable tbody tr");
+            tableRows.forEach(row => {
+              if (filterValue === "all") {
+                row.style.display = "";
+              } else if (filterValue === "high-value") {
+                if (row.dataset.value === "high") {
+                  row.style.display = "";
+                } else {
+                  row.style.display = "none";
+                }
+              } else if (filterValue === "new") {
+                if (row.dataset.new === "true") {
+                  row.style.display = "";
+                } else {
+                  row.style.display = "none";
+                }
+              } else {
+                if (row.dataset.status === filterValue) {
+                  row.style.display = "";
+                } else {
+                  row.style.display = "none";
+                }
+              }
+            });
+            
+            // Show toast notification
+            showToast("Filter Applied", `Showing ${filterType} clients`);
           });
         });
 
-        // Toast notification for filter
-        const filterToastEl = document.createElement("div");
-        filterToastEl.className = "toast align-items-center text-white bg-primary border-0 position-fixed bottom-0 end-0 m-3";
-        filterToastEl.setAttribute("role", "alert");
-        filterToastEl.setAttribute("aria-live", "assertive");
-        filterToastEl.setAttribute("aria-atomic", "true");
-        filterToastEl.id = "filterToast";
-        filterToastEl.innerHTML = `
-          <div class="d-flex">
-            <div class="toast-body">
-              Filter applied successfully
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-        `;
-        document.body.appendChild(filterToastEl);
+        // View client modal
+        document.querySelectorAll(".view-client").forEach(button => {
+          button.addEventListener("click", function() {
+            const viewModal = new bootstrap.Modal(document.getElementById('viewClientModal'));
+            viewModal.show();
+          });
+        });
+
+        // Send reminder button
+        document.querySelector(".send-reminder").addEventListener("click", function() {
+          showToast("Reminder Sent", "Payment reminder sent to client");
+        });
+
+        // Reactivate client button
+        document.querySelector(".reactivate-client").addEventListener("click", function() {
+          showToast("Client Reactivated", "Client account has been reactivated");
+        });
+
+        // Save new client
+        document.getElementById("saveClient").addEventListener("click", function() {
+          // In a real app, you would save to database here
+          const addModal = bootstrap.Modal.getInstance(document.getElementById('addClientModal'));
+          addModal.hide();
+          showToast("Client Added", "New client has been added successfully");
+        });
+
+        // Update client
+        document.getElementById("updateClient").addEventListener("click", function() {
+          // In a real app, you would update database here
+          const editModal = bootstrap.Modal.getInstance(document.getElementById('editClientModal'));
+          editModal.hide();
+          showToast("Client Updated", "Client information has been updated");
+        });
+
+        // Delete client
+        document.getElementById("deleteClient").addEventListener("click", function() {
+          const confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+          document.getElementById("confirmationMessage").textContent = "Are you sure you want to delete this client? This action cannot be undone.";
+          document.getElementById("confirmAction").textContent = "Delete Client";
+          
+          document.getElementById("confirmAction").onclick = function() {
+            // In a real app, you would delete from database here
+            const editModal = bootstrap.Modal.getInstance(document.getElementById('editClientModal'));
+            editModal.hide();
+            confirmationModal.hide();
+            showToast("Client Deleted", "Client has been removed from the system");
+          };
+          
+          confirmationModal.show();
+        });
+
+        // Toast notification function
+        function showToast(title, message) {
+          const toastLiveExample = document.getElementById('liveToast');
+          document.getElementById("toastTitle").textContent = title;
+          document.getElementById("toastMessage").textContent = message;
+          const toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();
+        }
       });
     </script>
   </body>
