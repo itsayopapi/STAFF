@@ -1,0 +1,3522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WefitHost | Client Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #93c5fd;
+            --secondary: #4b5563;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --light: #f9fafb;
+            --dark: #111827;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --developer: #6e48aa;
+            --developer-dark: #4b2d7a;
+            --reseller: #0b6e4f;
+            --reseller-dark: #084c36;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f7fa;
+            color: var(--dark);
+        }
+
+        /* Login Page Styles */
+        .login-container {
+            display: flex;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .login-body {
+            padding: 2rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-login {
+            background: var(--primary);
+            border: none;
+            padding: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background: var(--primary-dark);
+        }
+
+        .role-selector {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+        }
+
+        .role-option {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .role-option:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .role-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .role-option.developer.active {
+            background: var(--developer);
+        }
+
+        .role-option.reseller.active {
+            background: var(--reseller);
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background: var(--dark);
+            color: white;
+            min-height: 100vh;
+            width: 250px;
+            position: fixed;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .sidebar.developer {
+            background: var(--developer-dark);
+        }
+
+        .sidebar.reseller {
+            background: var(--reseller-dark);
+        }
+
+        .sidebar-brand {
+            padding: 1.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .sidebar-link {
+            padding: 0.75rem 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .sidebar-link:hover, .sidebar-link.active {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-link i {
+            margin-right: 0.75rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .sidebar-link .badge {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.65rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        /* Role Badge */
+        .role-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .role-developer {
+            background-color: var(--developer);
+        }
+        
+        .role-reseller {
+            background-color: var(--reseller);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        /* Card Styles */
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            background: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: transparent;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .card-header .btn {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        /* Tab System */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Stats Cards */
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-card.developer .stat-number {
+            color: var(--developer);
+        }
+
+        .stat-card.reseller .stat-number {
+            color: var(--reseller);
+        }
+
+        /* Quick Actions */
+        .quick-action {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 8px;
+            background: rgba(37, 99, 235, 0.05);
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .quick-action:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(5px);
+        }
+
+        .quick-action.developer {
+            background: rgba(110, 72, 170, 0.05);
+            color: var(--developer);
+        }
+
+        .quick-action.developer:hover {
+            background: rgba(110, 72, 170, 0.1);
+        }
+
+        .quick-action.reseller {
+            background: rgba(11, 110, 79, 0.05);
+            color: var(--reseller);
+        }
+
+        .quick-action.reseller:hover {
+            background: rgba(11, 110, 79, 0.1);
+        }
+
+        /* Domain Management */
+        .domain-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .domain-active {
+            background: var(--success);
+        }
+
+        .domain-expired {
+            background: var(--danger);
+        }
+
+        .domain-pending {
+            background: var(--warning);
+        }
+
+        /* Server Monitoring */
+        .server-metric {
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        /* Tables */
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th {
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            color: var(--gray);
+            border-top: none;
+            border-bottom-width: 1px;
+        }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+        /* Forms */
+        .form-label {
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .sidebar {
+                margin-left: -250px;
+            }
+            .sidebar.active {
+                margin-left: 0;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        /* Animations */
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Modal Styles */
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding-top: 0;
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        .toast {
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Loading Spinner */
+        .spinner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .spinner {
+            width: 3rem;
+            height: 3rem;
+            border: 0.25em solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border 0.75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Code Blocks */
+        .code-block {
+            background: var(--dark);
+            color: white;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+        }
+
+        /* Tabs */
+        .nav-tabs {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--gray);
+            font-weight: 500;
+            padding: 0.75rem 1.25rem;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            background: transparent;
+        }
+
+        /* Tooltips */
+        .tooltip-inner {
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        /* Charts Container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page (Initially visible) -->
+    <div class="login-container" id="loginPage">
+        <div class="login-card animate__animated animate__fadeIn">
+            <div class="login-header">
+                <h4><i class="bi bi-hdd-network"></i> WefitHost</h4>
+                <p class="mb-0">Client Portal</p>
+            </div>
+            <div class="login-body">
+                <form id="loginForm">
+                    <div class="mb-4">
+                        <div class="role-selector">
+                            <div class="role-option developer active" data-role="developer" onclick="selectRole('developer')">
+                                Developer
+                            </div>
+                            <div class="role-option reseller" data-role="reseller" onclick="selectRole('reseller')">
+                                Reseller
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-login w-100 mb-3">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                    </button>
+                    <div class="text-center">
+                        <a href="#" class="text-muted small">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard (Initially hidden) -->
+    <div id="dashboardPage" style="display: none;">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-hdd-network"></i> WefitHost
+                </div>
+                <span class="role-badge" id="roleBadge"></span>
+            </div>
+            <div class="sidebar-menu" id="sidebarMenu">
+                <!-- Dynamic menu will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <!-- Top Navigation Bar -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <button class="btn btn-outline-secondary d-lg-none" onclick="toggleSidebar()">
+                    <i class="bi bi-list"></i>
+                </button>
+                <h4 id="page-title" class="mb-0">Dashboard</h4>
+                <div>
+                    <button class="btn btn-outline-secondary me-2" onclick="showNotifications()">
+                        <i class="bi bi-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notificationBadge" style="display: none;">
+                            0
+                        </span>
+                    </button>
+                    <div class="dropdown d-inline-block">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> <span id="userName">Account</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#" onclick="switchTab('settings')"><i class="bi bi-person me-2"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showSecurityModal()"><i class="bi bi-lock me-2"></i> Security</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="tab-content active">
+                <!-- Dynamic dashboard content will be inserted here -->
+            </div>
+
+            <!-- Services Tab -->
+            <div id="services" class="tab-content">
+                <!-- Dynamic services content will be inserted here -->
+            </div>
+
+            <!-- Domains Tab -->
+            <div id="domains" class="tab-content">
+                <!-- Dynamic domains content will be inserted here -->
+            </div>
+
+            <!-- Billing Tab -->
+            <div id="billing" class="tab-content">
+                <!-- Dynamic billing content will be inserted here -->
+            </div>
+
+            <!-- Support Tab -->
+            <div id="support" class="tab-content">
+                <!-- Dynamic support content will be inserted here -->
+            </div>
+
+            <!-- Monitoring Tab -->
+            <div id="monitoring" class="tab-content">
+                <!-- Dynamic monitoring content will be inserted here -->
+            </div>
+
+            <!-- Affiliate Tab -->
+            <div id="affiliate" class="tab-content">
+                <!-- Dynamic affiliate content will be inserted here -->
+            </div>
+
+            <!-- API Tab -->
+            <div id="api" class="tab-content">
+                <!-- Dynamic API content will be inserted here -->
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings" class="tab-content">
+                <!-- Dynamic settings content will be inserted here -->
+            </div>
+            
+            <!-- Developer Tools Tab (only for developers) -->
+            <div id="developer-tools" class="tab-content">
+                <!-- Developer tools content will be inserted here -->
+            </div>
+            
+            <!-- Reseller Panel Tab (only for resellers) -->
+            <div id="reseller-panel" class="tab-content">
+                <!-- Reseller panel content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Modals -->
+    <!-- Add Service Modal -->
+    <div class="modal fade" id="addServiceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Service</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addServiceForm">
+                        <div class="mb-3">
+                            <label class="form-label">Service Type</label>
+                            <select class="form-select" id="serviceType" required>
+                                <option value="">Select service type</option>
+                                <option value="shared">Shared Hosting</option>
+                                <option value="vps">VPS Hosting</option>
+                                <option value="dedicated">Dedicated Server</option>
+                                <option value="domain">Domain Registration</option>
+                                <option value="ssl">SSL Certificate</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Plan</label>
+                            <select class="form-select" id="servicePlan" required>
+                                <option value="">Select a plan</option>
+                                <!-- Plans will be loaded dynamically -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Billing Cycle</label>
+                            <select class="form-select" id="billingCycle" required>
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="semiannually">Semi-Annually</option>
+                                <option value="annually">Annually</option>
+                                <option value="biennially">Biennially</option>
+                                <option value="triennially">Triennially</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Domain (if applicable)</label>
+                            <input type="text" class="form-control" id="serviceDomain" placeholder="example.com">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="addNewService()">Add Service</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Domain Modal -->
+    <div class="modal fade" id="registerDomainModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Register New Domain</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerDomainForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Domain Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="domainName" placeholder="example" required>
+                                    <select class="form-select" id="domainTld" style="max-width: 120px;">
+                                        <option value=".com">.com</option>
+                                        <option value=".net">.net</option>
+                                        <option value=".org">.org</option>
+                                        <option value=".io">.io</option>
+                                        <option value=".co">.co</option>
+                                        <option value=".dev">.dev</option>
+                                    </select>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="checkDomainAvailability()">
+                                        Check Availability
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Registration Period</label>
+                                <select class="form-select" id="domainPeriod" required>
+                                    <option value="1">1 Year</option>
+                                    <option value="2">2 Years</option>
+                                    <option value="3">3 Years</option>
+                                    <option value="5">5 Years</option>
+                                    <option value="10">10 Years</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="domainPrivacy" checked>
+                            <label class="form-check-label" for="domainPrivacy">Enable WHOIS Privacy Protection</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="domainAutoRenew" checked>
+                            <label class="form-check-label" for="domainAutoRenew">Enable Auto-Renew</label>
+                        </div>
+                        <div id="domainAvailabilityResult" class="alert" style="display: none;"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="registerDomainBtn" disabled onclick="registerDomain()">Register Domain</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transfer Domain Modal -->
+    <div class="modal fade" id="transferDomainModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Transfer Domain</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="transferDomainForm">
+                        <div class="mb-3">
+                            <label class="form-label">Domain Name</label>
+                            <input type="text" class="form-control" id="transferDomainName" placeholder="example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Authorization Code (EPP)</label>
+                            <input type="text" class="form-control" id="transferAuthCode" placeholder="ABC123-XYZ456" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="transferAutoRenew" checked>
+                            <label class="form-check-label" for="transferAutoRenew">Enable Auto-Renew</label>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> The transfer process may take 5-7 days to complete.
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="initiateDomainTransfer()">Initiate Transfer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Ticket Modal -->
+    <div class="modal fade" id="newTicketModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Support Ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="newTicketForm">
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="ticketSubject" placeholder="Briefly describe your issue" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Department</label>
+                            <select class="form-select" id="ticketDepartment" required>
+                                <option value="">Select department</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="billing">Billing Department</option>
+                                <option value="sales">Sales Questions</option>
+                                <option value="abuse">Abuse Department</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Priority</label>
+                            <select class="form-select" id="ticketPriority" required>
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                                <option value="critical">Critical</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Related Service (optional)</label>
+                            <select class="form-select" id="ticketService">
+                                <option value="">Select service (optional)</option>
+                                <option value="1">Shared Hosting - example.com</option>
+                                <option value="2">VPS Hosting - VPS-2GB</option>
+                                <option value="3">Dedicated Server - DS-1</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" id="ticketMessage" rows="6" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Attachments (optional)</label>
+                            <input type="file" class="form-control" id="ticketAttachments" multiple>
+                            <small class="text-muted">Maximum file size: 10MB. Allowed types: .jpg, .png, .pdf, .txt</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="submitTicket()">Submit Ticket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Ticket Modal -->
+    <div class="modal fade" id="viewTicketModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewTicketTitle">Ticket #TKT-0000</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <div>
+                            <span class="badge bg-secondary" id="ticketStatusBadge">Open</span>
+                            <span class="badge bg-primary ms-2" id="ticketDepartmentBadge">Technical</span>
+                        </div>
+                        <div class="text-muted" id="ticketDate">Created on Oct 23, 2023</div>
+                    </div>
+                    <div class="mb-4">
+                        <h6>Subject: <span id="ticketSubjectText">Loading...</span></h6>
+                        <div class="card mt-2">
+                            <div class="card-body" id="ticketMessageText">
+                                Loading ticket message...
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <h5 class="mb-3">Replies</h5>
+                    <div id="ticketReplies">
+                        <div class="card mb-3">
+                            <div class="card-header d-flex justify-content-between">
+                                <strong>Support Team</strong>
+                                <small class="text-muted">Oct 24, 2023 10:30 AM</small>
+                            </div>
+                            <div class="card-body">
+                                <p>Thank you for your ticket. We're looking into this issue and will get back to you shortly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="mb-3">Add Reply</h6>
+                        <textarea class="form-control mb-2" id="ticketReplyMessage" rows="3" placeholder="Type your reply here..."></textarea>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <input type="file" class="form-control form-control-sm" id="ticketReplyAttachments" style="width: auto;">
+                            </div>
+                            <button class="btn btn-primary btn-sm" onclick="addTicketReply()">Submit Reply</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="closeTicketBtn" onclick="closeTicket()">Close Ticket</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Make Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="mb-3">
+                            <label class="form-label">Invoice</label>
+                            <select class="form-select" id="paymentInvoice" required>
+                                <option value="">Select invoice to pay</option>
+                                <option value="INV-2023-106">INV-2023-106 - $99.00 (Due Nov 15, 2023)</option>
+                                <option value="INV-2023-107">INV-2023-107 - $149.00 (Due Dec 15, 2023)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="">Select payment method</option>
+                                <option value="credit_card">Credit/Debit Card</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="bank_transfer">Bank Transfer</option>
+                                <option value="crypto">Cryptocurrency</option>
+                            </select>
+                        </div>
+                        <div id="creditCardFields" style="display: none;">
+                            <div class="mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="4242 4242 4242 4242">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Expiration Date</label>
+                                    <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cardCvv" placeholder="123">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Name on Card</label>
+                                <input type="text" class="form-control" id="cardName" placeholder="John Doe">
+                            </div>
+                        </div>
+                        <div id="paypalFields" style="display: none;">
+                            <div class="alert alert-info">
+                                <i class="bi bi-info-circle"></i> You will be redirected to PayPal to complete your payment.
+                            </div>
+                        </div>
+                        <div id="bankTransferFields" style="display: none;">
+                            <div class="alert alert-info">
+                                <h6>Bank Transfer Instructions</h6>
+                                <p>Please transfer the payment amount to:</p>
+                                <p><strong>Bank Name:</strong> WefitHost Bank<br>
+                                <strong>Account Name:</strong> WefitHost Inc.<br>
+                                <strong>Account Number:</strong> 1234567890<br>
+                                <strong>SWIFT/BIC:</strong> WEFIUS33</p>
+                                <p>Use your invoice number as the payment reference.</p>
+                            </div>
+                        </div>
+                        <div id="cryptoFields" style="display: none;">
+                            <div class="alert alert-info">
+                                <h6>Cryptocurrency Payment</h6>
+                                <p>Send payment to the following address:</p>
+                                <p><strong>Bitcoin:</strong> 3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5</p>
+                                <p><strong>Ethereum:</strong> 0x71C7656EC7ab88b098defB751B7401B5f6d8976F</p>
+                                <p>Amount will be calculated at current exchange rates when payment is received.</p>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Payment Amount ($)</label>
+                            <input type="number" class="form-control" id="paymentAmount" value="99.00" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitPaymentBtn" onclick="processPayment()">Submit Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Change Password</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="changePasswordForm">
+                        <div class="mb-3">
+                            <label class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword" required>
+                            <div class="form-text">Minimum 8 characters with at least one number and one special character</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <div class="alert alert-danger" id="passwordError" style="display: none;"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="updatePassword()">Update Password</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security Settings Modal -->
+    <div class="modal fade" id="securityModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Security Settings</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-4">
+                        <h6>Two-Factor Authentication</h6>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="mb-1">Status: <strong id="2faStatus">Disabled</strong></p>
+                                <p class="small text-muted mb-0">Add an extra layer of security to your account</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary" id="2faToggleBtn" onclick="toggle2FA()">Enable 2FA</button>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h6>Active Sessions</h6>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <strong>Chrome on Windows</strong>
+                                        <p class="small mb-0">New York, US · Oct 23, 2023 10:30 AM</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-danger">Revoke</button>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <strong>Safari on Mac</strong>
+                                        <p class="small mb-0">San Francisco, US · Oct 22, 2023 2:15 PM</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-danger">Revoke</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Security Notifications</h6>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="loginNotifications" checked>
+                            <label class="form-check-label" for="loginNotifications">Email me about new logins</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="passwordChangeNotifications" checked>
+                            <label class="form-check-label" for="passwordChangeNotifications">Email me about password changes</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2FA Setup Modal -->
+    <div class="modal fade" id="twoFactorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Set Up Two-Factor Authentication</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <img src="https://chart.googleapis.com/chart?chs=200x200&chld=M|0&cht=qr&chl=otpauth://totp/WefitHost:user%40example.com?secret=JBSWY3DPEHPK3PXP&issuer=WefitHost" alt="QR Code" class="img-fluid mb-3">
+                        <p class="small">Scan this QR code with your authenticator app</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Or enter this code manually</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="JBSWY3DPEHPK3PXP" readonly>
+                            <button class="btn btn-outline-secondary" onclick="copy2FACode()">Copy</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter 6-digit code to verify</label>
+                        <input type="text" class="form-control" id="2faCode" placeholder="123456" maxlength="6">
+                    </div>
+                    <div class="alert alert-danger" id="2faError" style="display: none;"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="verify2FACode()">Verify & Enable</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Modal -->
+    <div class="modal fade" id="notificationsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <strong>Invoice Paid</strong>
+                                    <p class="mb-0 small">Your payment for invoice #INV-2023-105 has been processed</p>
+                                </div>
+                                <small class="text-muted">2 hours ago</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <strong>New Login Detected</strong>
+                                    <p class="mb-0 small">New login from Chrome on Windows in New York, US</p>
+                                </div>
+                                <small class="text-muted">1 day ago</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <strong>Ticket Update</strong>
+                                    <p class="mb-0 small">Your support ticket #TKT-1023 has been updated</p>
+                                </div>
+                                <small class="text-muted">2 days ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Mark All as Read</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Application State
+        const appState = {
+            currentUser: null,
+            notifications: [],
+            services: [],
+            domains: [],
+            invoices: [],
+            tickets: [],
+            clients: [],
+            serverStats: {
+                cpu: 25,
+                memory: 65,
+                disk: 85,
+                network: 45
+            },
+            darkMode: false
+        };
+
+        // Mock Database
+        const mockDatabase = {
+            users: {
+                developer: {
+                    id: 1,
+                    name: "Dev User",
+                    email: "dev@example.com",
+                    role: "developer",
+                    company: "CodeCraft Inc.",
+                    stats: {
+                        activeServices: 3,
+                        activeDomains: 5,
+                        dueInvoices: 1,
+                        openTickets: 2,
+                        serverAlerts: 1
+                    },
+                    services: [
+                        { id: 1, name: "Shared Hosting", plan: "Business", status: "active", dueDate: "2023-11-15" },
+                        { id: 2, name: "VPS Hosting", plan: "VPS-2GB", status: "active", dueDate: "2023-11-20" },
+                        { id: 3, name: "Dedicated Server", plan: "DS-1", status: "suspended", dueDate: "2023-10-30" }
+                    ],
+                    domains: [
+                        { id: 1, name: "example.com", regDate: "2022-05-15", expDate: "2024-05-15", status: "active", autoRenew: true },
+                        { id: 2, name: "test.org", regDate: "2023-01-10", expDate: "2024-01-10", status: "active", autoRenew: false },
+                        { id: 3, name: "expired.net", regDate: "2022-08-20", expDate: "2023-08-20", status: "expired", autoRenew: false }
+                    ],
+                    invoices: [
+                        { id: 1, number: "INV-2023-105", date: "2023-10-01", dueDate: "2023-10-15", amount: 99.00, status: "paid" },
+                        { id: 2, number: "INV-2023-106", date: "2023-11-01", dueDate: "2023-11-15", amount: 99.00, status: "unpaid" },
+                        { id: 3, number: "INV-2023-107", date: "2023-12-01", dueDate: "2023-12-15", amount: 149.00, status: "pending" }
+                    ],
+                    tickets: [
+                        { id: 1, number: "TKT-1024", subject: "Email not working", department: "technical", status: "open", lastUpdated: "2 hours ago" },
+                        { id: 2, number: "TKT-1023", subject: "Website migration", department: "technical", status: "resolved", lastUpdated: "3 days ago" },
+                        { id: 3, number: "TKT-1022", subject: "Billing question", department: "billing", status: "in-progress", lastUpdated: "1 week ago" }
+                    ],
+                    notifications: [
+                        { id: 1, title: "Invoice Paid", message: "Your payment for invoice #INV-2023-105 has been processed", date: "2 hours ago", read: false },
+                        { id: 2, title: "New Login Detected", message: "New login from Chrome on Windows in New York, US", date: "1 day ago", read: false },
+                        { id: 3, title: "Ticket Update", message: "Your support ticket #TKT-1023 has been updated", date: "2 days ago", read: true }
+                    ]
+                },
+                reseller: {
+                    id: 2,
+                    name: "Reseller User",
+                    email: "reseller@example.com",
+                    role: "reseller",
+                    company: "Hosting Pros LLC",
+                    stats: {
+                        activeServices: 12,
+                        activeDomains: 8,
+                        dueInvoices: 3,
+                        openTickets: 1,
+                        clients: 5,
+                        monthlyRevenue: 1250,
+                        pendingPayout: 320
+                    },
+                    services: [
+                        { id: 1, name: "Shared Hosting", plan: "Business", status: "active", dueDate: "2023-11-15", client: "Acme Corp" },
+                        { id: 2, name: "VPS Hosting", plan: "VPS-4GB", status: "active", dueDate: "2023-11-20", client: "Beta LLC" },
+                        { id: 3, name: "Shared Hosting", plan: "Starter", status: "pending", dueDate: "2023-12-01", client: "Gamma Inc" }
+                    ],
+                    domains: [
+                        { id: 1, name: "acme.com", regDate: "2022-05-15", expDate: "2024-05-15", status: "active", autoRenew: true, client: "Acme Corp" },
+                        { id: 2, name: "beta.org", regDate: "2023-01-10", expDate: "2024-01-10", status: "active", autoRenew: false, client: "Beta LLC" },
+                        { id: 3, name: "gamma.net", regDate: "2022-08-20", expDate: "2023-08-20", status: "expired", autoRenew: false, client: "Gamma Inc" }
+                    ],
+                    invoices: [
+                        { id: 1, number: "INV-2023-105", date: "2023-10-01", dueDate: "2023-10-15", amount: 120.00, status: "paid", client: "Acme Corp" },
+                        { id: 2, number: "INV-2023-106", date: "2023-11-01", dueDate: "2023-11-15", amount: 85.00, status: "unpaid", client: "Beta LLC" },
+                        { id: 3, number: "INV-2023-107", date: "2023-12-01", dueDate: "2023-12-15", amount: 45.00, status: "pending", client: "Gamma Inc" }
+                    ],
+                    tickets: [
+                        { id: 1, number: "TKT-1024", subject: "Email not working", department: "technical", status: "open", lastUpdated: "2 hours ago", client: "Acme Corp" },
+                        { id: 2, number: "TKT-1023", subject: "Website migration", department: "technical", status: "resolved", lastUpdated: "3 days ago", client: "Beta LLC" }
+                    ],
+                    clients: [
+                        { id: 1, name: "Acme Corp", email: "contact@acme.com", services: 3, status: "active", monthlyRevenue: 120 },
+                        { id: 2, name: "Beta LLC", email: "info@beta.com", services: 2, status: "active", monthlyRevenue: 85 },
+                        { id: 3, name: "Gamma Inc", email: "support@gamma.com", services: 1, status: "pending", monthlyRevenue: 45 }
+                    ],
+                    notifications: [
+                        { id: 1, title: "New Client Signup", message: "Gamma Inc has signed up for your reseller services", date: "3 days ago", read: false },
+                        { id: 2, title: "Commission Earned", message: "You earned $25.00 commission from Acme Corp renewal", date: "1 week ago", read: true },
+                        { id: 3, title: "Payout Processed", message: "Your payout of $320.00 has been processed", date: "2 weeks ago", read: true }
+                    ]
+                }
+            },
+            plans: {
+                shared: [
+                    { id: 1, name: "Starter", price: 9.99, features: ["10GB Storage", "100GB Bandwidth", "10 Email Accounts"] },
+                    { id: 2, name: "Business", price: 19.99, features: ["50GB Storage", "Unlimited Bandwidth", "Unlimited Email Accounts"] },
+                    { id: 3, name: "Enterprise", price: 29.99, features: ["100GB Storage", "Unlimited Bandwidth", "Unlimited Email Accounts", "Free SSL"] }
+                ],
+                vps: [
+                    { id: 1, name: "VPS-1GB", price: 29.99, features: ["1GB RAM", "30GB SSD", "1 CPU Core"] },
+                    { id: 2, name: "VPS-2GB", price: 49.99, features: ["2GB RAM", "60GB SSD", "2 CPU Cores"] },
+                    { id: 3, name: "VPS-4GB", price: 79.99, features: ["4GB RAM", "120GB SSD", "4 CPU Cores"] }
+                ],
+                dedicated: [
+                    { id: 1, name: "DS-1", price: 199.99, features: ["16GB RAM", "500GB SSD", "4 CPU Cores"] },
+                    { id: 2, name: "DS-2", price: 299.99, features: ["32GB RAM", "1TB SSD", "8 CPU Cores"] },
+                    { id: 3, name: "DS-3", price: 499.99, features: ["64GB RAM", "2TB SSD", "16 CPU Cores"] }
+                ]
+            },
+            tldPrices: {
+                ".com": 12.99,
+                ".net": 14.99,
+                ".org": 11.99,
+                ".io": 39.99,
+                ".co": 24.99,
+                ".dev": 19.99
+            }
+        };
+
+        // Menu items configuration
+        const menuItems = {
+            common: [
+                { id: 'dashboard', icon: 'bi-speedometer2', label: 'Dashboard' },
+                { id: 'services', icon: 'bi-server', label: 'My Services' },
+                { id: 'domains', icon: 'bi-globe', label: 'Domains' },
+                { id: 'billing', icon: 'bi-credit-card', label: 'Billing' },
+                { id: 'support', icon: 'bi-ticket-detailed', label: 'Support' },
+                { id: 'settings', icon: 'bi-gear', label: 'Settings' }
+            ],
+            developer: [
+                { id: 'monitoring', icon: 'bi-graph-up', label: 'Monitoring' },
+                { id: 'api', icon: 'bi-code-slash', label: 'API' },
+                { id: 'developer-tools', icon: 'bi-terminal', label: 'Dev Tools' }
+            ],
+            reseller: [
+                { id: 'affiliate', icon: 'bi-coin', label: 'Affiliate' },
+                { id: 'reseller-panel', icon: 'bi-people', label: 'Reseller Panel' }
+            ]
+        };
+
+        // DOM Elements
+        const loginPage = document.getElementById('loginPage');
+        const dashboardPage = document.getElementById('dashboardPage');
+        const loginForm = document.getElementById('loginForm');
+        const roleBadge = document.getElementById('roleBadge');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const userName = document.getElementById('userName');
+        const notificationBadge = document.getElementById('notificationBadge');
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in (from localStorage)
+            const savedUser = localStorage.getItem('wefitHostUser');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                loginUser(user);
+            }
+
+            // Initialize tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Initialize popovers
+            const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            popoverTriggerList.map(function (popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+
+            // Initialize modals
+            const modals = {
+                addService: new bootstrap.Modal(document.getElementById('addServiceModal')),
+                registerDomain: new bootstrap.Modal(document.getElementById('registerDomainModal')),
+                transferDomain: new bootstrap.Modal(document.getElementById('transferDomainModal')),
+                newTicket: new bootstrap.Modal(document.getElementById('newTicketModal')),
+                viewTicket: new bootstrap.Modal(document.getElementById('viewTicketModal')),
+                payment: new bootstrap.Modal(document.getElementById('paymentModal')),
+                changePassword: new bootstrap.Modal(document.getElementById('changePasswordModal')),
+                security: new bootstrap.Modal(document.getElementById('securityModal')),
+                twoFactor: new bootstrap.Modal(document.getElementById('twoFactorModal')),
+                notifications: new bootstrap.Modal(document.getElementById('notificationsModal'))
+            };
+
+            // Store modals in appState for easy access
+            appState.modals = modals;
+
+            // Payment method change handler
+            document.getElementById('paymentMethod').addEventListener('change', function() {
+                const method = this.value;
+                document.getElementById('creditCardFields').style.display = 'none';
+                document.getElementById('paypalFields').style.display = 'none';
+                document.getElementById('bankTransferFields').style.display = 'none';
+                document.getElementById('cryptoFields').style.display = 'none';
+                
+                if (method === 'credit_card') {
+                    document.getElementById('creditCardFields').style.display = 'block';
+                } else if (method === 'paypal') {
+                    document.getElementById('paypalFields').style.display = 'block';
+                } else if (method === 'bank_transfer') {
+                    document.getElementById('bankTransferFields').style.display = 'block';
+                } else if (method === 'crypto') {
+                    document.getElementById('cryptoFields').style.display = 'block';
+                }
+            });
+
+            // Service type change handler
+            document.getElementById('serviceType').addEventListener('change', function() {
+                const type = this.value;
+                const planSelect = document.getElementById('servicePlan');
+                planSelect.innerHTML = '<option value="">Select a plan</option>';
+                
+                if (type === 'shared') {
+                    mockDatabase.plans.shared.forEach(plan => {
+                        planSelect.innerHTML += `<option value="${plan.id}">${plan.name} - $${plan.price}/mo</option>`;
+                    });
+                } else if (type === 'vps') {
+                    mockDatabase.plans.vps.forEach(plan => {
+                        planSelect.innerHTML += `<option value="${plan.id}">${plan.name} - $${plan.price}/mo</option>`;
+                    });
+                } else if (type === 'dedicated') {
+                    mockDatabase.plans.dedicated.forEach(plan => {
+                        planSelect.innerHTML += `<option value="${plan.id}">${plan.name} - $${plan.price}/mo</option>`;
+                    });
+                }
+            });
+        });
+
+        // Select role on login page
+        function selectRole(role) {
+            document.querySelectorAll('.role-option').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelector(`.role-option[data-role="${role}"]`).classList.add('active');
+        }
+
+        // Handle login form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+            const role = document.querySelector('.role-option.active').dataset.role;
+            
+            // Simple validation
+            if (!email || !password) {
+                showToast('Please enter both email and password', 'danger');
+                return;
+            }
+            
+            // Mock authentication
+            const user = mockDatabase.users[role];
+            
+            if (email === user.email && password === 'password123') {
+                // Add role to user object
+                user.role = role;
+                
+                // Remember user if checkbox is checked
+                if (rememberMe) {
+                    localStorage.setItem('wefitHostUser', JSON.stringify(user));
+                }
+                
+                loginUser(user);
+            } else {
+                showToast('Invalid email or password', 'danger');
+            }
+        });
+
+        // Login user and show dashboard
+        function loginUser(user) {
+            appState.currentUser = user;
+            
+            // Update UI
+            loginPage.style.display = 'none';
+            dashboardPage.style.display = 'block';
+            
+            // Initialize dashboard
+            initializeDashboard();
+            
+            // Show welcome message
+            showToast(`Welcome back, ${user.name}!`, 'success');
+            
+            // Update unread notifications badge
+            updateNotificationBadge();
+            
+            // Start monitoring updates for developers
+            if (user.role === 'developer') {
+                startServerMonitoring();
+            }
+        }
+
+        // Logout user
+        function logout() {
+            appState.currentUser = null;
+            localStorage.removeItem('wefitHostUser');
+            
+            // Reset login form
+            loginForm.reset();
+            selectRole('developer');
+            
+            // Show login page
+            loginPage.style.display = 'flex';
+            dashboardPage.style.display = 'none';
+            
+            // Show logout message
+            showToast('You have been logged out', 'info');
+        }
+
+        // Initialize the dashboard based on user role
+        function initializeDashboard() {
+            if (!appState.currentUser) return;
+            
+            const user = appState.currentUser;
+            
+            // Set role badge
+            roleBadge.textContent = user.role.charAt(0).toUpperCase() + user.role.slice(1);
+            roleBadge.className = 'role-badge';
+            roleBadge.classList.add(`role-${user.role}`);
+            
+            // Set user name
+            userName.textContent = user.name;
+            
+            // Set sidebar color based on role
+            const sidebar = document.getElementById('sidebar');
+            sidebar.className = 'sidebar';
+            sidebar.classList.add(user.role);
+            
+            // Build sidebar menu
+            sidebarMenu.innerHTML = '';
+            
+            // Add common menu items
+            menuItems.common.forEach(item => {
+                sidebarMenu.appendChild(createMenuItem(item));
+            });
+            
+            // Add role-specific menu items
+            if (user.role === 'developer') {
+                menuItems.developer.forEach(item => {
+                    sidebarMenu.appendChild(createMenuItem(item));
+                });
+            } else if (user.role === 'reseller') {
+                menuItems.reseller.forEach(item => {
+                    sidebarMenu.appendChild(createMenuItem(item));
+                });
+            }
+            
+            // Load dashboard content based on role
+            loadDashboardContent();
+        }
+
+        // Create a menu item element
+        function createMenuItem(item) {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.className = 'sidebar-link';
+            link.setAttribute('onclick', `switchTab('${item.id}')`);
+            
+            link.innerHTML = `
+                <i class="bi ${item.icon}"></i> ${item.label}
+            `;
+            
+            // Add notification badge for support tab if there are open tickets
+            if (item.id === 'support' && appState.currentUser.stats.openTickets > 0) {
+                link.innerHTML += `<span class="badge bg-danger">${appState.currentUser.stats.openTickets}</span>`;
+            }
+            
+            // Add notification badge for monitoring tab if there are server alerts (developers only)
+            if (item.id === 'monitoring' && appState.currentUser.role === 'developer' && appState.currentUser.stats.serverAlerts > 0) {
+                link.innerHTML += `<span class="badge bg-danger">${appState.currentUser.stats.serverAlerts}</span>`;
+            }
+            
+            return link;
+        }
+
+        // Load dashboard content based on user role
+        function loadDashboardContent() {
+            if (!appState.currentUser) return;
+            
+            const user = appState.currentUser;
+            const dashboardContent = document.getElementById('dashboard');
+            
+            if (user.role === 'developer') {
+                dashboardContent.innerHTML = `
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card developer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Active Services</div>
+                                        <div class="stat-number">${user.stats.activeServices}</div>
+                                    </div>
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-server text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card developer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Active Domains</div>
+                                        <div class="stat-number">${user.stats.activeDomains}</div>
+                                    </div>
+                                    <div class="bg-success bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-globe text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card developer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Due Invoices</div>
+                                        <div class="stat-number">${user.stats.dueInvoices}</div>
+                                    </div>
+                                    <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-receipt text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card developer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Server Alerts</div>
+                                        <div class="stat-number">${user.stats.serverAlerts}</div>
+                                    </div>
+                                    <div class="bg-danger bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-exclamation-triangle text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Recent Activity</h5>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group list-group-flush">
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                                <span>Invoice #105 paid successfully</span>
+                                            </div>
+                                            <small class="text-muted">2 hours ago</small>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-server text-primary me-2"></i>
+                                                <span>New VPS server provisioned</span>
+                                            </div>
+                                            <small class="text-muted">1 day ago</small>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-ticket-detailed text-warning me-2"></i>
+                                                <span>Support ticket #TKT-104 opened</span>
+                                            </div>
+                                            <small class="text-muted">2 days ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Developer Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="quick-action developer" onclick="switchTab('developer-tools')">
+                                        <i class="bi bi-terminal me-2"></i> Open Developer Tools
+                                    </a>
+                                    <a href="#" class="quick-action developer" onclick="switchTab('api')">
+                                        <i class="bi bi-code-slash me-2"></i> API Documentation
+                                    </a>
+                                    <a href="#" class="quick-action developer" onclick="switchTab('monitoring')">
+                                        <i class="bi bi-graph-up me-2"></i> Server Monitoring
+                                    </a>
+                                    <a href="#" class="quick-action developer" onclick="switchTab('support')">
+                                        <i class="bi bi-ticket-detailed me-2"></i> Open Support Ticket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (user.role === 'reseller') {
+                dashboardContent.innerHTML = `
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card reseller">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Client Accounts</div>
+                                        <div class="stat-number">${user.stats.clients}</div>
+                                    </div>
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-people text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card reseller">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Active Services</div>
+                                        <div class="stat-number">${user.stats.activeServices}</div>
+                                    </div>
+                                    <div class="bg-success bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-server text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card reseller">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Monthly Revenue</div>
+                                        <div class="stat-number">$${user.stats.monthlyRevenue}</div>
+                                    </div>
+                                    <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-currency-dollar text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card reseller">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Pending Payout</div>
+                                        <div class="stat-number">$${user.stats.pendingPayout}</div>
+                                    </div>
+                                    <div class="bg-info bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-wallet2 text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Reseller Statistics</h5>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <h6>Monthly Revenue</h6>
+                                            <div class="progress mb-3">
+                                                <div class="progress-bar bg-success" style="width: ${(user.stats.monthlyRevenue / 2000) * 100}%"></div>
+                                            </div>
+                                            <small class="text-muted">$${user.stats.monthlyRevenue} of $2,000 target</small>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <h6>Client Growth</h6>
+                                            <div class="progress mb-3">
+                                                <div class="progress-bar bg-primary" style="width: ${(user.stats.clients / 10) * 100}%"></div>
+                                            </div>
+                                            <small class="text-muted">${user.stats.clients} of 10 target clients</small>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Client</th>
+                                                    <th>Services</th>
+                                                    <th>Status</th>
+                                                    <th>Monthly Revenue</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${user.clients.map(client => `
+                                                    <tr>
+                                                        <td>${client.name}</td>
+                                                        <td>${client.services}</td>
+                                                        <td><span class="badge bg-${client.status === 'active' ? 'success' : 'warning'}">${client.status.charAt(0).toUpperCase() + client.status.slice(1)}</span></td>
+                                                        <td>$${client.monthlyRevenue}</td>
+                                                    </tr>
+                                                `).join('')}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Reseller Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="quick-action reseller" onclick="switchTab('reseller-panel')">
+                                        <i class="bi bi-people me-2"></i> Manage Clients
+                                    </a>
+                                    <a href="#" class="quick-action reseller" onclick="switchTab('affiliate')">
+                                        <i class="bi bi-coin me-2"></i> Affiliate Program
+                                    </a>
+                                    <a href="#" class="quick-action reseller" onclick="showAddServiceModal()">
+                                        <i class="bi bi-plus-circle me-2"></i> Add Client Service
+                                    </a>
+                                    <a href="#" class="quick-action reseller" onclick="showNewTicketModal()">
+                                        <i class="bi bi-ticket-detailed me-2"></i> Client Support
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Commission Summary</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Earned This Month:</span>
+                                        <strong>$${user.stats.monthlyRevenue * 0.3}</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span>Pending Payout:</span>
+                                        <strong>$${user.stats.pendingPayout}</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>Next Payout:</span>
+                                        <strong>${new Date(new Date().getFullYear(), new Date().getMonth() + 1, 15).toLocaleDateString()}</strong>
+                                    </div>
+                                    <button class="btn btn-primary w-100 mt-3" onclick="requestPayout()">
+                                        Request Payout
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Regular client dashboard
+                dashboardContent.innerHTML = `
+                    <div class="row mb-4">
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Active Services</div>
+                                        <div class="stat-number">${user.stats.activeServices}</div>
+                                    </div>
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-server text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Active Domains</div>
+                                        <div class="stat-number">${user.stats.activeDomains}</div>
+                                    </div>
+                                    <div class="bg-success bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-globe text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Due Invoices</div>
+                                        <div class="stat-number">${user.stats.dueInvoices}</div>
+                                    </div>
+                                    <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-receipt text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="stat-card">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="text-muted small">Open Tickets</div>
+                                        <div class="stat-number">${user.stats.openTickets}</div>
+                                    </div>
+                                    <div class="bg-danger bg-opacity-10 p-3 rounded">
+                                        <i class="bi bi-ticket-detailed text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Recent Activity</h5>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">View All</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group list-group-flush">
+                                        ${user.notifications.slice(0, 3).map(notification => `
+                                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <i class="bi ${notification.title.includes('Invoice') ? 'bi-check-circle-fill text-success' : 
+                                                      notification.title.includes('Login') ? 'bi-shield-lock text-info' : 
+                                                      'bi-ticket-detailed text-warning'} me-2"></i>
+                                                    <span>${notification.message}</span>
+                                                </div>
+                                                <small class="text-muted">${notification.date}</small>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="quick-action" onclick="showAddServiceModal()">
+                                        <i class="bi bi-plus-circle me-2"></i> Add New Service
+                                    </a>
+                                    <a href="#" class="quick-action" onclick="showRegisterDomainModal()">
+                                        <i class="bi bi-globe me-2"></i> Register Domain
+                                    </a>
+                                    <a href="#" class="quick-action" onclick="showPaymentModal()">
+                                        <i class="bi bi-credit-card me-2"></i> Make Payment
+                                    </a>
+                                    <a href="#" class="quick-action" onclick="showNewTicketModal()">
+                                        <i class="bi bi-ticket-detailed me-2"></i> Open Ticket
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Load other tab contents
+            loadTabContent('services', generateServicesContent());
+            loadTabContent('domains', generateDomainsContent());
+            loadTabContent('billing', generateBillingContent());
+            loadTabContent('support', generateSupportContent());
+            
+            if (user.role === 'developer') {
+                loadTabContent('monitoring', generateMonitoringContent());
+                loadTabContent('api', generateApiContent());
+                loadTabContent('developer-tools', generateDeveloperToolsContent());
+            }
+            
+            if (user.role === 'reseller') {
+                loadTabContent('affiliate', generateAffiliateContent());
+                loadTabContent('reseller-panel', generateResellerPanelContent());
+            }
+            
+            loadTabContent('settings', generateSettingsContent());
+        }
+
+        // Generate content for different tabs
+        function generateServicesContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">${user.role === 'reseller' ? 'Client' : 'My'} Hosting Services</h5>
+                        <button class="btn btn-primary btn-sm" onclick="showAddServiceModal()">
+                            <i class="bi bi-plus"></i> Add Service
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        ${user.role === 'reseller' ? '<th>Client</th>' : ''}
+                                        <th>Service</th>
+                                        <th>Plan</th>
+                                        <th>Status</th>
+                                        <th>Next Due Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${user.services.map(service => `
+                                        <tr>
+                                            ${user.role === 'reseller' ? `<td>${service.client}</td>` : ''}
+                                            <td>${service.name}</td>
+                                            <td>${service.plan}</td>
+                                            <td><span class="badge bg-${service.status === 'active' ? 'success' : service.status === 'suspended' ? 'warning' : 'secondary'}">${service.status.charAt(0).toUpperCase() + service.status.slice(1)}</span></td>
+                                            <td>${service.dueDate}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="manageService(${service.id})">
+                                                    <i class="bi bi-gear"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-${service.status === 'suspended' ? 'success' : 'secondary'}" onclick="renewService(${service.id})">
+                                                    <i class="bi bi-arrow-repeat"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateDomainsContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Domain Management</h5>
+                        <div>
+                            <button class="btn btn-primary btn-sm me-2" onclick="showRegisterDomainModal()">
+                                <i class="bi bi-plus"></i> Register
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm" onclick="showTransferDomainModal()">
+                                <i class="bi bi-box-arrow-in-down"></i> Transfer
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        ${user.role === 'reseller' ? '<th>Client</th>' : ''}
+                                        <th>Domain</th>
+                                        <th>Registration Date</th>
+                                        <th>Expiry Date</th>
+                                        <th>Status</th>
+                                        <th>Auto-Renew</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${user.domains.map(domain => `
+                                        <tr>
+                                            ${user.role === 'reseller' ? `<td>${domain.client}</td>` : ''}
+                                            <td>${domain.name}</td>
+                                            <td>${domain.regDate}</td>
+                                            <td>${domain.expDate}</td>
+                                            <td><span class="domain-status domain-${domain.status}"></span> ${domain.status.charAt(0).toUpperCase() + domain.status.slice(1)}</td>
+                                            <td><div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" ${domain.autoRenew ? 'checked' : ''} ${domain.status === 'expired' ? 'disabled' : ''} onchange="toggleDomainAutoRenew(${domain.id}, this.checked)">
+                                            </div></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="manageDomain(${domain.id})">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary" onclick="manageDns(${domain.id})">
+                                                    <i class="bi bi-dns"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateBillingContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Billing & Invoices</h5>
+                        <button class="btn btn-primary btn-sm" onclick="showPaymentModal()">
+                            <i class="bi bi-credit-card"></i> Make Payment
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        ${user.role === 'reseller' ? '<th>Client</th>' : ''}
+                                        <th>Invoice #</th>
+                                        <th>Date</th>
+                                        <th>Due Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${user.invoices.map(invoice => `
+                                        <tr>
+                                            ${user.role === 'reseller' ? `<td>${invoice.client}</td>` : ''}
+                                            <td>${invoice.number}</td>
+                                            <td>${invoice.date}</td>
+                                            <td>${invoice.dueDate}</td>
+                                            <td>$${invoice.amount.toFixed(2)}</td>
+                                            <td><span class="badge bg-${invoice.status === 'paid' ? 'success' : invoice.status === 'unpaid' ? 'warning' : 'secondary'}">${invoice.status.charAt(0).toUpperCase() + invoice.status.slice(1)}</span></td>
+                                            <td>
+                                                ${invoice.status === 'unpaid' ? `
+                                                    <button class="btn btn-sm btn-primary" onclick="payInvoice('${invoice.number}')">
+                                                        <i class="bi bi-credit-card"></i> Pay
+                                                    </button>
+                                                ` : `
+                                                    <button class="btn btn-sm btn-outline-primary" onclick="downloadInvoice('${invoice.number}')">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                `}
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateSupportContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Support Tickets</h5>
+                        <button class="btn btn-primary btn-sm" onclick="showNewTicketModal()">
+                            <i class="bi bi-plus"></i> New Ticket
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        ${user.role === 'reseller' ? '<th>Client</th>' : ''}
+                                        <th>Ticket #</th>
+                                        <th>Subject</th>
+                                        <th>Department</th>
+                                        <th>Status</th>
+                                        <th>Last Updated</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${user.tickets.map(ticket => `
+                                        <tr>
+                                            ${user.role === 'reseller' ? `<td>${ticket.client}</td>` : ''}
+                                            <td>${ticket.number}</td>
+                                            <td>${ticket.subject}</td>
+                                            <td>${ticket.department.charAt(0).toUpperCase() + ticket.department.slice(1)}</td>
+                                            <td><span class="badge bg-${ticket.status === 'open' ? 'warning' : ticket.status === 'resolved' ? 'success' : 'info'}">${ticket.status.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</span></td>
+                                            <td>${ticket.lastUpdated}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary" onclick="viewTicket(${ticket.id})">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateMonitoringContent() {
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Server Monitoring</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Real-time server performance metrics (updated every 5 minutes)
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="server-metric">
+                                    <div class="metric-label">
+                                        <span>CPU Usage</span>
+                                        <span>${appState.serverStats.cpu}%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-${appState.serverStats.cpu > 80 ? 'danger' : appState.serverStats.cpu > 60 ? 'warning' : 'success'}" style="width: ${appState.serverStats.cpu}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="server-metric">
+                                    <div class="metric-label">
+                                        <span>Memory Usage</span>
+                                        <span>${appState.serverStats.memory}%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-${appState.serverStats.memory > 80 ? 'danger' : appState.serverStats.memory > 60 ? 'warning' : 'success'}" style="width: ${appState.serverStats.memory}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="server-metric">
+                                    <div class="metric-label">
+                                        <span>Disk Space</span>
+                                        <span>${appState.serverStats.disk}%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-${appState.serverStats.disk > 80 ? 'danger' : appState.serverStats.disk > 60 ? 'warning' : 'success'}" style="width: ${appState.serverStats.disk}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="server-metric">
+                                    <div class="metric-label">
+                                        <span>Network Traffic</span>
+                                        <span>${appState.serverStats.network}%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-${appState.serverStats.network > 80 ? 'danger' : appState.serverStats.network > 60 ? 'warning' : 'info'}" style="width: ${appState.serverStats.network}%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">Recent Events</h5>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><i class="bi bi-exclamation-triangle-fill text-warning me-2"></i> CPU spike detected</span>
+                                    <small class="text-muted">2 minutes ago</small>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><i class="bi bi-check-circle-fill text-success me-2"></i> Backup completed</span>
+                                    <small class="text-muted">1 hour ago</small>
+                                </div>
+                            </div>
+                            <div class="list-group-item">
+                                <div class="d-flex justify-content-between">
+                                    <span><i class="bi bi-arrow-repeat text-primary me-2"></i> Server rebooted</span>
+                                    <small class="text-muted">3 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateAffiliateContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Affiliate Program</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card reseller">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="text-muted small">Total Referrals</div>
+                                            <div class="stat-number">24</div>
+                                        </div>
+                                        <div class="bg-primary bg-opacity-10 p-3 rounded">
+                                            <i class="bi bi-people text-primary"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card reseller">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="text-muted small">Earned Commissions</div>
+                                            <div class="stat-number">$${user.stats.monthlyRevenue * 0.3}</div>
+                                        </div>
+                                        <div class="bg-success bg-opacity-10 p-3 rounded">
+                                            <i class="bi bi-currency-dollar text-success"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card reseller">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="text-muted small">Pending Payout</div>
+                                            <div class="stat-number">$${user.stats.pendingPayout}</div>
+                                        </div>
+                                        <div class="bg-warning bg-opacity-10 p-3 rounded">
+                                            <i class="bi bi-hourglass text-warning"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-3">Your Affiliate Link</h5>
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" value="https://wefithost.com/ref/${user.name.toLowerCase().replace(/\s+/g, '')}" readonly>
+                            <button class="btn btn-outline-secondary" onclick="copyAffiliateLink()">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                        </div>
+                        
+                        <h5 class="mb-3">Recent Referrals</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Referral</th>
+                                        <th>Plan</th>
+                                        <th>Commission</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2023-10-05</td>
+                                        <td>John Smith</td>
+                                        <td>Business Hosting</td>
+                                        <td>$25.00</td>
+                                        <td><span class="badge bg-success">Paid</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-10-10</td>
+                                        <td>Sarah Johnson</td>
+                                        <td>VPS Hosting</td>
+                                        <td>$50.00</td>
+                                        <td><span class="badge bg-warning">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2023-10-15</td>
+                                        <td>Michael Brown</td>
+                                        <td>Dedicated Server</td>
+                                        <td>$100.00</td>
+                                        <td><span class="badge bg-secondary">Processing</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateApiContent() {
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">API & Developer Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info mb-4">
+                            <i class="bi bi-info-circle"></i> Use our API to automate your hosting management.
+                        </div>
+                        
+                        <h5 class="mb-3">API Key</h5>
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" value="sk_live_${Math.random().toString(36).substring(2, 18)}" readonly>
+                            <button class="btn btn-outline-secondary" onclick="copyApiKey()">
+                                <i class="bi bi-clipboard"></i> Copy
+                            </button>
+                            <button class="btn btn-outline-danger" onclick="regenerateApiKey()">
+                                <i class="bi bi-arrow-repeat"></i> Regenerate
+                            </button>
+                        </div>
+                        
+                        <h5 class="mb-3">Example API Request</h5>
+                        <div class="code-block mb-4">
+                            <pre><code>// List all services
+fetch('https://api.wefithost.com/v1/services', {
+    headers: {
+        'Authorization': 'Bearer YOUR_API_KEY'
+    }
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+                        </div>
+                        
+                        <h5 class="mb-3">API Documentation</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="bi bi-file-earmark-text me-2"></i> Full API Docs
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="bi bi-github me-2"></i> GitHub Examples
+                            </a>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="bi bi-terminal me-2"></i> CLI Tool
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateDeveloperToolsContent() {
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Developer Tools</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info mb-4">
+                            <i class="bi bi-info-circle"></i> Advanced tools for developers to manage their hosting environment.
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-terminal text-primary" style="font-size: 2.5rem;"></i>
+                                        <h5 class="mt-3">SSH Access</h5>
+                                        <p class="text-muted">Connect directly to your servers via SSH</p>
+                                        <button class="btn btn-outline-primary" onclick="launchSSHConsole()">
+                                            <i class="bi bi-terminal me-2"></i> Launch SSH Console
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-database text-success" style="font-size: 2.5rem;"></i>
+                                        <h5 class="mt-3">Database Manager</h5>
+                                        <p class="text-muted">Manage MySQL, PostgreSQL, and MongoDB databases</p>
+                                        <button class="btn btn-outline-success" onclick="openDatabaseManager()">
+                                            <i class="bi bi-database me-2"></i> Open Database Manager
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-git text-warning" style="font-size: 2.5rem;"></i>
+                                        <h5 class="mt-3">Git Deployment</h5>
+                                        <p class="text-muted">Set up automatic Git deployments</p>
+                                        <button class="btn btn-outline-warning" onclick="configureGit()">
+                                            <i class="bi bi-git me-2"></i> Configure Git
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="bi bi-code-square text-info" style="font-size: 2.5rem;"></i>
+                                        <h5 class="mt-3">Web IDE</h5>
+                                        <p class="text-muted">Edit files directly in your browser</p>
+                                        <button class="btn btn-outline-info" onclick="openWebIDE()">
+                                            <i class="bi bi-code-square me-2"></i> Open Web IDE
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-3">Server Logs</h5>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <select class="form-select" onchange="loadServerLog(this.value)">
+                                        <option>Apache Access Log</option>
+                                        <option>Apache Error Log</option>
+                                        <option>PHP Error Log</option>
+                                        <option>MySQL Error Log</option>
+                                    </select>
+                                </div>
+                                <div class="code-block" style="max-height: 300px; overflow-y: auto;">
+                                    <pre>[Mon Oct 23 12:34:56.789123 2023] [ssl:warn] [pid 12345] AH01909: example.com:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Oct 23 12:34:56.852963 2023] [mpm_prefork:notice] [pid 12345] AH00163: Apache/2.4.41 (Ubuntu) OpenSSL/1.1.1 configured -- resuming normal operations
+[Mon Oct 23 12:34:56.853021 2023] [core:notice] [pid 12345] AH00094: Command line: '/usr/sbin/apache2'
+192.168.1.1 - - [23/Oct/2023:12:35:01 +0000] "GET / HTTP/1.1" 200 1234 "-" "Mozilla/5.0 ..."
+192.168.1.2 - - [23/Oct/2023:12:35:02 +0000] "GET /favicon.ico HTTP/1.1" 404 123 "-" "Mozilla/5.0 ..."</pre>
+                                </div>
+                                <div class="mt-3 d-flex justify-content-between">
+                                    <button class="btn btn-sm btn-outline-secondary" onclick="downloadLog()">
+                                        <i class="bi bi-download me-2"></i> Download Log
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" onclick="clearLog()">
+                                        <i class="bi bi-trash me-2"></i> Clear Log
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateResellerPanelContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Reseller Panel</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info mb-4">
+                            <i class="bi bi-info-circle"></i> Manage your clients and reseller account.
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">Create New Client</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="newClientForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">Client Name</label>
+                                                <input type="text" class="form-control" id="clientName" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="clientEmail" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Initial Service</label>
+                                                <select class="form-select" id="clientService" required>
+                                                    <option value="">Select a service</option>
+                                                    <option value="shared_starter">Shared Hosting - Starter</option>
+                                                    <option value="shared_business">Shared Hosting - Business</option>
+                                                    <option value="vps_2gb">VPS Hosting - 2GB</option>
+                                                    <option value="vps_4gb">VPS Hosting - 4GB</option>
+                                                </select>
+                                            </div>
+                                            <button type="button" class="btn btn-primary w-100" onclick="createClient()">
+                                                <i class="bi bi-person-plus me-2"></i> Create Client
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-header">
+                                        <h6 class="mb-0">Reseller Statistics</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Total Clients:</span>
+                                            <strong>${user.stats.clients}</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Active Services:</span>
+                                            <strong>${user.stats.activeServices}</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Monthly Revenue:</span>
+                                            <strong>$${user.stats.monthlyRevenue}</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-3">
+                                            <span>Commission Rate:</span>
+                                            <strong>30%</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span>Next Payout:</span>
+                                            <strong>${new Date(new Date().getFullYear(), new Date().getMonth() + 1, 15).toLocaleDateString()}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mb-3">Your Clients</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Client</th>
+                                        <th>Contact</th>
+                                        <th>Services</th>
+                                        <th>Status</th>
+                                        <th>Monthly</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${user.clients.map(client => `
+                                        <tr>
+                                            <td>${client.name}</td>
+                                            <td>${client.email}</td>
+                                            <td>${client.services}</td>
+                                            <td><span class="badge bg-${client.status === 'active' ? 'success' : 'warning'}">${client.status.charAt(0).toUpperCase() + client.status.slice(1)}</span></td>
+                                            <td>$${client.monthlyRevenue}</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary me-1" onclick="manageClient(${client.id})">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-secondary" onclick="emailClient(${client.id})">
+                                                    <i class="bi bi-envelope"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateSettingsContent() {
+            const user = appState.currentUser;
+            return `
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Account Settings</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="settingsForm">
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <h5 class="mb-3">Profile Information</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="profileName" value="${user.name}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="profileEmail" value="${user.email}" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="profileCompany" value="${user.company || ''}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="mb-3">Security</h5>
+                                    <div class="mb-3">
+                                        <label class="form-label">Two-Factor Authentication</label>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span id="2faStatusText">Disabled</span>
+                                            <button type="button" class="btn btn-sm btn-primary" onclick="show2FAModal()">
+                                                Enable 2FA
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password</label>
+                                        <button type="button" class="btn btn-outline-secondary w-100" onclick="showChangePasswordModal()">
+                                            Change Password
+                                        </button>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Sessions</label>
+                                        <button type="button" class="btn btn-outline-secondary w-100" onclick="showSecurityModal()">
+                                            Manage Active Sessions
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary" onclick="updateProfile()">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Load content into a specific tab
+        function loadTabContent(tabId, content) {
+            const tab = document.getElementById(tabId);
+            if (tab) {
+                tab.innerHTML = content;
+                
+                // Initialize any charts if needed
+                if (tabId === 'monitoring') {
+                    initializeServerCharts();
+                }
+            }
+        }
+
+        // Switch between tabs
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update active sidebar link
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Update page title
+            const tabTitles = {
+                'dashboard': 'Dashboard',
+                'services': 'My Services',
+                'domains': 'Domain Management',
+                'billing': 'Billing & Invoices',
+                'support': 'Support Tickets',
+                'monitoring': 'Server Monitoring',
+                'affiliate': 'Affiliate Program',
+                'api': 'API & Developer',
+                'settings': 'Account Settings',
+                'developer-tools': 'Developer Tools',
+                'reseller-panel': 'Reseller Panel'
+            };
+            document.getElementById('page-title').textContent = tabTitles[tabId];
+            
+            // Close sidebar on mobile after selection
+            if (window.innerWidth < 992) {
+                toggleSidebar();
+            }
+            
+            // Prevent default anchor behavior
+            if (event) {
+                event.preventDefault();
+            }
+        }
+
+        // Toggle sidebar on mobile
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'info') {
+            const toastContainer = document.getElementById('toastContainer');
+            const toastId = 'toast-' + Date.now();
+            
+            const toast = document.createElement('div');
+            toast.className = `toast show align-items-center text-white bg-${type} border-0`;
+            toast.role = 'alert';
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+            toast.id = toastId;
+            
+            toast.innerHTML = `
+                <div class="d-flex">
+                    <div class="toast-body">
+                        ${message}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Auto remove toast after 5 seconds
+            setTimeout(() => {
+                const toastElement = document.getElementById(toastId);
+                if (toastElement) {
+                    toastElement.classList.remove('show');
+                    setTimeout(() => toastElement.remove(), 300);
+                }
+            }, 5000);
+        }
+
+        // Update notification badge
+        function updateNotificationBadge() {
+            if (!appState.currentUser) return;
+            
+            const unreadCount = appState.currentUser.notifications.filter(n => !n.read).length;
+            
+            if (unreadCount > 0) {
+                notificationBadge.textContent = unreadCount;
+                notificationBadge.style.display = 'block';
+            } else {
+                notificationBadge.style.display = 'none';
+            }
+        }
+
+        // Show notifications modal
+        function showNotifications() {
+            if (appState.modals && appState.modals.notifications) {
+                appState.modals.notifications.show();
+            }
+        }
+
+        // Show add service modal
+        function showAddServiceModal() {
+            if (appState.modals && appState.modals.addService) {
+                appState.modals.addService.show();
+            }
+        }
+
+        // Add new service
+        function addNewService() {
+            const type = document.getElementById('serviceType').value;
+            const plan = document.getElementById('servicePlan').value;
+            const billingCycle = document.getElementById('billingCycle').value;
+            const domain = document.getElementById('serviceDomain').value;
+            
+            if (!type || !plan || !billingCycle) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            showToast('New service added successfully', 'success');
+            
+            if (appState.modals && appState.modals.addService) {
+                appState.modals.addService.hide();
+            }
+            
+            // Refresh services tab
+            loadTabContent('services', generateServicesContent());
+            
+            // Update dashboard stats
+            appState.currentUser.stats.activeServices++;
+            loadDashboardContent();
+        }
+
+        // Manage service
+        function manageService(serviceId) {
+            showToast(`Managing service #${serviceId}`, 'info');
+            // In a real app, this would open a service management page
+        }
+
+        // Renew service
+        function renewService(serviceId) {
+            showToast(`Renewing service #${serviceId}`, 'info');
+            // In a real app, this would open a renewal dialog
+        }
+
+        // Show register domain modal
+        function showRegisterDomainModal() {
+            if (appState.modals && appState.modals.registerDomain) {
+                document.getElementById('domainName').value = '';
+                document.getElementById('domainAvailabilityResult').style.display = 'none';
+                document.getElementById('registerDomainBtn').disabled = true;
+                appState.modals.registerDomain.show();
+            }
+        }
+
+        // Check domain availability
+        function checkDomainAvailability() {
+            const domainName = document.getElementById('domainName').value;
+            const tld = document.getElementById('domainTld').value;
+            
+            if (!domainName) {
+                showToast('Please enter a domain name', 'danger');
+                return;
+            }
+            
+            const fullDomain = domainName + tld;
+            const resultDiv = document.getElementById('domainAvailabilityResult');
+            
+            // Simulate API call
+            setTimeout(() => {
+                const isAvailable = Math.random() > 0.3; // 70% chance of being available
+                
+                if (isAvailable) {
+                    resultDiv.className = 'alert alert-success';
+                    resultDiv.innerHTML = `
+                        <i class="bi bi-check-circle-fill"></i> 
+                        <strong>${fullDomain}</strong> is available for registration!
+                        <div class="mt-2">Price: $${mockDatabase.tldPrices[tld].toFixed(2)}/year</div>
+                    `;
+                    document.getElementById('registerDomainBtn').disabled = false;
+                } else {
+                    resultDiv.className = 'alert alert-danger';
+                    resultDiv.innerHTML = `
+                        <i class="bi bi-x-circle-fill"></i> 
+                        <strong>${fullDomain}</strong> is not available for registration.
+                    `;
+                    document.getElementById('registerDomainBtn').disabled = true;
+                }
+                
+                resultDiv.style.display = 'block';
+            }, 1000);
+        }
+
+        // Register domain
+        function registerDomain() {
+            const domainName = document.getElementById('domainName').value;
+            const tld = document.getElementById('domainTld').value;
+            const period = document.getElementById('domainPeriod').value;
+            const privacy = document.getElementById('domainPrivacy').checked;
+            const autoRenew = document.getElementById('domainAutoRenew').checked;
+            
+            const fullDomain = domainName + tld;
+            const price = mockDatabase.tldPrices[tld] * period;
+            
+            // In a real app, this would make an API call
+            showToast(`Domain ${fullDomain} registered successfully for $${price.toFixed(2)}`, 'success');
+            
+            if (appState.modals && appState.modals.registerDomain) {
+                appState.modals.registerDomain.hide();
+            }
+            
+            // Add domain to user's domains
+            const newDomain = {
+                id: Date.now(),
+                name: fullDomain,
+                regDate: new Date().toISOString().split('T')[0],
+                expDate: new Date(new Date().setFullYear(new Date().getFullYear() + parseInt(period))).toISOString().split('T')[0],
+                status: 'active',
+                autoRenew: autoRenew
+            };
+            
+            if (appState.currentUser.role === 'reseller') {
+                newDomain.client = 'New Client';
+            }
+            
+            appState.currentUser.domains.push(newDomain);
+            appState.currentUser.stats.activeDomains++;
+            
+            // Refresh domains tab
+            loadTabContent('domains', generateDomainsContent());
+            loadDashboardContent();
+        }
+
+        // Show transfer domain modal
+        function showTransferDomainModal() {
+            if (appState.modals && appState.modals.transferDomain) {
+                appState.modals.transferDomain.show();
+            }
+        }
+
+        // Initiate domain transfer
+        function initiateDomainTransfer() {
+            const domain = document.getElementById('transferDomainName').value;
+            const authCode = document.getElementById('transferAuthCode').value;
+            const autoRenew = document.getElementById('transferAutoRenew').checked;
+            
+            if (!domain || !authCode) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            showToast(`Transfer initiated for ${domain}. This may take 5-7 days to complete.`, 'success');
+            
+            if (appState.modals && appState.modals.transferDomain) {
+                appState.modals.transferDomain.hide();
+            }
+        }
+
+        // Toggle domain auto-renew
+        function toggleDomainAutoRenew(domainId, enabled) {
+            const domain = appState.currentUser.domains.find(d => d.id === domainId);
+            if (domain) {
+                domain.autoRenew = enabled;
+                showToast(`Auto-renew for domain ${domain.name} ${enabled ? 'enabled' : 'disabled'}`, 'success');
+            }
+        }
+
+        // Manage domain
+        function manageDomain(domainId) {
+            const domain = appState.currentUser.domains.find(d => d.id === domainId);
+            if (domain) {
+                showToast(`Managing domain ${domain.name}`, 'info');
+                // In a real app, this would open a domain management page
+            }
+        }
+
+        // Manage DNS
+        function manageDns(domainId) {
+            const domain = appState.currentUser.domains.find(d => d.id === domainId);
+            if (domain) {
+                showToast(`Managing DNS for ${domain.name}`, 'info');
+                // In a real app, this would open a DNS management page
+            }
+        }
+
+        // Show payment modal
+        function showPaymentModal() {
+            if (appState.modals && appState.modals.payment) {
+                appState.modals.payment.show();
+            }
+        }
+
+        // Process payment
+        function processPayment() {
+            const invoice = document.getElementById('paymentInvoice').value;
+            const method = document.getElementById('paymentMethod').value;
+            const amount = document.getElementById('paymentAmount').value;
+            
+            if (!invoice || !method || !amount) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            showToast(`Payment of $${amount} processed successfully for ${invoice}`, 'success');
+            
+            // Update invoice status
+            const paidInvoice = appState.currentUser.invoices.find(i => i.number === invoice);
+            if (paidInvoice) {
+                paidInvoice.status = 'paid';
+                appState.currentUser.stats.dueInvoices--;
+            }
+            
+            if (appState.modals && appState.modals.payment) {
+                appState.modals.payment.hide();
+            }
+            
+            // Refresh billing tab
+            loadTabContent('billing', generateBillingContent());
+            loadDashboardContent();
+        }
+
+        // Pay invoice
+        function payInvoice(invoiceNumber) {
+            document.getElementById('paymentInvoice').value = invoiceNumber;
+            showPaymentModal();
+        }
+
+        // Download invoice
+        function downloadInvoice(invoiceNumber) {
+            showToast(`Downloading invoice ${invoiceNumber}`, 'info');
+            // In a real app, this would generate and download the invoice PDF
+        }
+
+        // Show new ticket modal
+        function showNewTicketModal() {
+            if (appState.modals && appState.modals.newTicket) {
+                document.getElementById('newTicketForm').reset();
+                appState.modals.newTicket.show();
+            }
+        }
+
+        // Submit ticket
+        function submitTicket() {
+            const subject = document.getElementById('ticketSubject').value;
+            const department = document.getElementById('ticketDepartment').value;
+            const priority = document.getElementById('ticketPriority').value;
+            const service = document.getElementById('ticketService').value;
+            const message = document.getElementById('ticketMessage').value;
+            
+            if (!subject || !department || !priority || !message) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            const newTicket = {
+                id: Date.now(),
+                number: 'TKT-' + Math.floor(1000 + Math.random() * 9000),
+                subject: subject,
+                department: department,
+                priority: priority,
+                status: 'open',
+                lastUpdated: 'Just now',
+                message: message
+            };
+            
+            if (appState.currentUser.role === 'reseller') {
+                newTicket.client = 'Client';
+            }
+            
+            appState.currentUser.tickets.unshift(newTicket);
+            appState.currentUser.stats.openTickets++;
+            
+            showToast(`Ticket #${newTicket.number} created successfully`, 'success');
+            
+            if (appState.modals && appState.modals.newTicket) {
+                appState.modals.newTicket.hide();
+            }
+            
+            // Refresh support tab
+            loadTabContent('support', generateSupportContent());
+            loadDashboardContent();
+        }
+
+        // View ticket
+        function viewTicket(ticketId) {
+            const ticket = appState.currentUser.tickets.find(t => t.id === ticketId);
+            if (!ticket) return;
+            
+            document.getElementById('viewTicketTitle').textContent = `Ticket ${ticket.number}`;
+            document.getElementById('ticketStatusBadge').textContent = ticket.status.charAt(0).toUpperCase() + ticket.status.slice(1);
+            document.getElementById('ticketStatusBadge').className = `badge bg-${
+                ticket.status === 'open' ? 'warning' : 
+                ticket.status === 'resolved' ? 'success' : 'info'
+            }`;
+            document.getElementById('ticketDepartmentBadge').textContent = ticket.department.charAt(0).toUpperCase() + ticket.department.slice(1);
+            document.getElementById('ticketDate').textContent = `Created on ${new Date().toLocaleDateString()}`;
+            document.getElementById('ticketSubjectText').textContent = ticket.subject;
+            document.getElementById('ticketMessageText').textContent = ticket.message;
+            
+            if (ticket.status === 'resolved') {
+                document.getElementById('closeTicketBtn').style.display = 'none';
+            } else {
+                document.getElementById('closeTicketBtn').style.display = 'block';
+            }
+            
+            if (appState.modals && appState.modals.viewTicket) {
+                appState.modals.viewTicket.show();
+            }
+        }
+
+        // Add ticket reply
+        function addTicketReply() {
+            const message = document.getElementById('ticketReplyMessage').value;
+            
+            if (!message) {
+                showToast('Please enter a reply message', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            const repliesContainer = document.getElementById('ticketReplies');
+            const newReply = document.createElement('div');
+            newReply.className = 'card mb-3';
+            newReply.innerHTML = `
+                <div class="card-header d-flex justify-content-between">
+                    <strong>${appState.currentUser.name}</strong>
+                    <small class="text-muted">${new Date().toLocaleString()}</small>
+                </div>
+                <div class="card-body">
+                    <p>${message}</p>
+                </div>
+            `;
+            
+            repliesContainer.prepend(newReply);
+            document.getElementById('ticketReplyMessage').value = '';
+            
+            showToast('Reply added successfully', 'success');
+        }
+
+        // Close ticket
+        function closeTicket() {
+            const ticketNumber = document.getElementById('viewTicketTitle').textContent.split(' ')[1];
+            const ticket = appState.currentUser.tickets.find(t => t.number === ticketNumber);
+            
+            if (ticket) {
+                ticket.status = 'resolved';
+                appState.currentUser.stats.openTickets--;
+                
+                showToast(`Ticket ${ticket.number} closed successfully`, 'success');
+                
+                if (appState.modals && appState.modals.viewTicket) {
+                    appState.modals.viewTicket.hide();
+                }
+                
+                // Refresh support tab
+                loadTabContent('support', generateSupportContent());
+                loadDashboardContent();
+            }
+        }
+
+        // Show change password modal
+        function showChangePasswordModal() {
+            if (appState.modals && appState.modals.changePassword) {
+                document.getElementById('changePasswordForm').reset();
+                document.getElementById('passwordError').style.display = 'none';
+                appState.modals.changePassword.show();
+            }
+        }
+
+        // Update password
+        function updatePassword() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorDiv = document.getElementById('passwordError');
+            
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                errorDiv.textContent = 'Please fill all fields';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (newPassword !== confirmPassword) {
+                errorDiv.textContent = 'New passwords do not match';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            if (newPassword.length < 8) {
+                errorDiv.textContent = 'Password must be at least 8 characters';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            // In a real app, this would verify current password and update via API
+            showToast('Password updated successfully', 'success');
+            
+            if (appState.modals && appState.modals.changePassword) {
+                appState.modals.changePassword.hide();
+            }
+        }
+
+        // Show security modal
+        function showSecurityModal() {
+            if (appState.modals && appState.modals.security) {
+                appState.modals.security.show();
+            }
+        }
+
+        // Toggle 2FA
+        function toggle2FA() {
+            if (appState.modals && appState.modals.twoFactor) {
+                appState.modals.twoFactor.show();
+            }
+        }
+
+        // Show 2FA modal
+        function show2FAModal() {
+            if (appState.modals && appState.modals.twoFactor) {
+                appState.modals.twoFactor.show();
+            }
+        }
+
+        // Copy 2FA code
+        function copy2FACode() {
+            navigator.clipboard.writeText('JBSWY3DPEHPK3PXP');
+            showToast('2FA code copied to clipboard', 'success');
+        }
+
+        // Verify 2FA code
+        function verify2FACode() {
+            const code = document.getElementById('2faCode').value;
+            const errorDiv = document.getElementById('2faError');
+            
+            if (!code || code.length !== 6) {
+                errorDiv.textContent = 'Please enter a valid 6-digit code';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            // In a real app, this would verify the code with the authenticator
+            showToast('Two-factor authentication enabled successfully', 'success');
+            
+            if (appState.modals && appState.modals.twoFactor) {
+                appState.modals.twoFactor.hide();
+            }
+            
+            // Update 2FA status in settings
+            document.getElementById('2faStatusText').textContent = 'Enabled';
+        }
+
+        // Copy functions
+        function copyAffiliateLink() {
+            const link = `https://wefithost.com/ref/${appState.currentUser.name.toLowerCase().replace(/\s+/g, '')}`;
+            navigator.clipboard.writeText(link);
+            showToast('Affiliate link copied to clipboard!', 'success');
+        }
+        
+        function copyApiKey() {
+            const apiKey = document.querySelector('#api input[type="text"]').value;
+            navigator.clipboard.writeText(apiKey);
+            showToast('API key copied to clipboard!', 'success');
+        }
+        
+        function regenerateApiKey() {
+            if (confirm('Are you sure you want to regenerate your API key? This will invalidate the current key.')) {
+                const newKey = 'sk_live_' + Math.random().toString(36).substring(2, 18);
+                document.querySelector('#api input[type="text"]').value = newKey;
+                showToast('New API key generated!', 'success');
+            }
+        }
+
+        // Developer tools functions
+        function launchSSHConsole() {
+            showToast('Launching SSH console...', 'info');
+            // In a real app, this would open an SSH terminal
+        }
+
+        function openDatabaseManager() {
+            showToast('Opening database manager...', 'info');
+            // In a real app, this would open a database management interface
+        }
+
+        function configureGit() {
+            showToast('Opening Git configuration...', 'info');
+            // In a real app, this would open a Git setup wizard
+        }
+
+        function openWebIDE() {
+            showToast('Opening Web IDE...', 'info');
+            // In a real app, this would open a code editor interface
+        }
+
+        function loadServerLog(logType) {
+            showToast(`Loading ${logType}...`, 'info');
+            // In a real app, this would fetch and display the selected log
+        }
+
+        function downloadLog() {
+            showToast('Downloading log file...', 'info');
+            // In a real app, this would download the current log
+        }
+
+        function clearLog() {
+            if (confirm('Are you sure you want to clear this log file?')) {
+                showToast('Log file cleared', 'success');
+                // In a real app, this would clear the log file
+            }
+        }
+
+        // Reseller functions
+        function createClient() {
+            const name = document.getElementById('clientName').value;
+            const email = document.getElementById('clientEmail').value;
+            const service = document.getElementById('clientService').value;
+            
+            if (!name || !email || !service) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            const newClient = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                services: 1,
+                status: 'pending',
+                monthlyRevenue: 9.99 // Default for starter plan
+            };
+            
+            appState.currentUser.clients.push(newClient);
+            appState.currentUser.stats.clients++;
+            
+            showToast(`Client ${name} created successfully`, 'success');
+            
+            // Refresh reseller panel
+            loadTabContent('reseller-panel', generateResellerPanelContent());
+            loadDashboardContent();
+        }
+
+        function manageClient(clientId) {
+            const client = appState.currentUser.clients.find(c => c.id === clientId);
+            if (client) {
+                showToast(`Managing client ${client.name}`, 'info');
+                // In a real app, this would open a client management page
+            }
+        }
+
+        function emailClient(clientId) {
+            const client = appState.currentUser.clients.find(c => c.id === clientId);
+            if (client) {
+                showToast(`Opening email to ${client.email}`, 'info');
+                // In a real app, this would open the default email client
+            }
+        }
+
+        function requestPayout() {
+            showToast('Payout request submitted successfully', 'success');
+            // In a real app, this would initiate a payout request
+        }
+
+        // Update profile
+        function updateProfile() {
+            const name = document.getElementById('profileName').value;
+            const email = document.getElementById('profileEmail').value;
+            const company = document.getElementById('profileCompany').value;
+            
+            if (!name || !email) {
+                showToast('Please fill all required fields', 'danger');
+                return;
+            }
+            
+            // In a real app, this would make an API call
+            appState.currentUser.name = name;
+            appState.currentUser.email = email;
+            appState.currentUser.company = company;
+            
+            showToast('Profile updated successfully', 'success');
+            
+            // Update user name in navbar
+            userName.textContent = name;
+        }
+
+        // Initialize server monitoring charts
+        function initializeServerCharts() {
+            // CPU Usage Chart
+            const cpuCtx = document.createElement('canvas');
+            cpuCtx.id = 'cpuChart';
+            document.querySelector('#monitoring .card-body').insertBefore(cpuCtx, document.querySelector('#monitoring .card-body').firstChild);
+            
+            new Chart(cpuCtx, {
+                type: 'line',
+                data: {
+                    labels: Array(24).fill().map((_, i) => `${i}:00`),
+                    datasets: [{
+                        label: 'CPU Usage %',
+                        data: Array(24).fill().map(() => Math.floor(Math.random() * 100)),
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'CPU Usage (24h)'
+                        }
+                    }
+                }
+            });
+            
+            // Memory Usage Chart
+            const memoryCtx = document.createElement('canvas');
+            memoryCtx.id = 'memoryChart';
+            document.querySelector('#monitoring .card-body').insertBefore(memoryCtx, document.querySelector('#monitoring .alert'));
+            
+            new Chart(memoryCtx, {
+                type: 'line',
+                data: {
+                    labels: Array(24).fill().map((_, i) => `${i}:00`),
+                    datasets: [{
+                        label: 'Memory Usage %',
+                        data: Array(24).fill().map(() => Math.floor(Math.random() * 100)),
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Memory Usage (24h)'
+                        }
+                    }
+                }
+            });
+        }
+
+        // Simulate server monitoring updates
+        function startServerMonitoring() {
+            setInterval(() => {
+                // Randomly update server stats
+                appState.serverStats = {
+                    cpu: Math.min(100, Math.max(0, appState.serverStats.cpu + (Math.random() * 10 - 5))),
+                    memory: Math.min(100, Math.max(0, appState.serverStats.memory + (Math.random() * 10 - 5))),
+                    disk: Math.min(100, Math.max(0, appState.serverStats.disk + (Math.random() * 2 - 1))),
+                    network: Math.min(100, Math.max(0, appState.serverStats.network + (Math.random() * 15 - 7.5)))
+                };
+                
+                // Update monitoring tab if it's active
+                if (document.getElementById('monitoring').classList.contains('active')) {
+                    loadTabContent('monitoring', generateMonitoringContent());
+                }
+                
+                // Generate random server events
+                if (Math.random() > 0.9) {
+                    const events = [
+                        'CPU spike detected',
+                        'Memory usage high',
+                        'Backup completed',
+                        'Security scan finished',
+                        'New login detected'
+                    ];
+                    
+                    const event = events[Math.floor(Math.random() * events.length)];
+                    showToast(`Server event: ${event}`, 'info');
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

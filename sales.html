@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wefithost Advanced Sales Training</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3a4f7a;
+            --secondary-color: #4f8d88;
+            --accent-color: #ff8e6e;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+            --light-text: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .training-section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-header {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .step-number {
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(58, 79, 122, 0.3);
+        }
+        
+        .tab-content {
+            padding: 2rem;
+            background: white;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            color: var(--light-text);
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            background: transparent;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .nav-tabs .nav-link:hover:not(.active) {
+            color: var(--dark-text);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 79, 122, 0.05);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(58, 79, 122, 0.1);
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .bg-light-custom {
+            background-color: var(--light-bg);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #2c3d5f;
+            border-color: #2c3d5f;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background-color: #e67e5e;
+            border-color: #e67e5e;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            top: -150px;
+            right: -150px;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary-color);
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--accent-color);
+            top: 50%;
+            left: -75px;
+        }
+        
+        .shape-4 {
+            width: 250px;
+            height: 250px;
+            background: var(--secondary-color);
+            bottom: -125px;
+            right: -125px;
+        }
+        
+        .knowledge-check {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .checklist-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .checklist-item:before {
+            content: '\f26a';
+            font-family: bootstrap-icons;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+        
+        .floating-nav {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+        
+        .floating-nav .nav-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-nav .nav-link:hover, .floating-nav .nav-link.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 992px) {
+            .floating-nav {
+                display: none;
+            }
+            
+            .training-section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating Navigation -->
+<div class="floating-nav d-none d-lg-flex flex-column">
+    <a class="nav-link active" href="#welcome"><i class="bi bi-house"></i></a>
+    <a class="nav-link" href="#product-mastery"><i class="bi bi-layers"></i></a>
+    <a class="nav-link" href="#sales-methodology"><i class="bi bi-diagram-3"></i></a>
+    <a class="nav-link" href="#customer-insights"><i class="bi bi-people"></i></a>
+    <a class="nav-link" href="#objection-expert"><i class="bi bi-shield-exclamation"></i></a>
+    <a class="nav-link" href="#advanced-techniques"><i class="bi bi-graph-up-arrow"></i></a>
+    <a class="nav-link" href="#tools-resources"><i class="bi bi-tools"></i></a>
+    <a class="nav-link" href="#certification"><i class="bi bi-award"></i></a>
+</div>
+
+<!-- Welcome Section -->
+<section id="welcome" class="training-section bg-light-custom">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Wefithost <span class="text-primary">Advanced</span> Sales Training</h1>
+                <p class="lead mb-4">Master the complete sales cycle for web hosting and software solutions with our intensive training program designed to transform you into a top-performing sales professional.</p>
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <button class="btn btn-primary-custom btn-lg px-4" data-bs-toggle="modal" data-bs-target="#enrollModal">Enroll Now</button>
+                    <button class="btn btn-outline-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#curriculumModal">View Full Curriculum</button>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" class="rounded-circle border border-3 border-white" width="50" height="50" alt="Trainer">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-3 border-white ms-n3" width="50" height="50" alt="Trainer">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle border border-3 border-white ms-n3" width="50" height="50" alt="Trainer">
+                    </div>
+                    <div class="ms-3">
+                        <p class="mb-0 fw-bold">Expert Instructors</p>
+                        <p class="mb-0 small text-muted">15+ years industry experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-5 mt-lg-0">
+                <div class="card feature-card border-0">
+                    <div class="card-body p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                        <h3 class="mb-3">Proven Results</h3>
+                        <div class="row g-3 text-start">
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded-3 shadow-sm">
+                                    <h2 class="text-primary mb-0">87%</h2>
+                                    <p class="mb-0 small">Increase in close rates</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded-3 shadow-sm">
+                                    <h2 class="text-primary mb-0">2.3x</h2>
+                                    <p class="mb-0 small">Higher average deal size</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded-3 shadow-sm">
+                                    <h2 class="text-primary mb-0">64%</h2>
+                                    <p class="mb-0 small">Reduction in sales cycle</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 bg-white rounded-3 shadow-sm">
+                                    <h2 class="text-primary mb-0">92%</h2>
+                                    <p class="mb-0 small">Customer retention rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Mastery Section -->
+<section id="product-mastery" class="training-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Product Mastery</h2>
+            <p class="lead">Deep dive into Wefithost's complete product portfolio and technical architecture</p>
+        </div>
+        
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-hdd-stack"></i>
+                        </div>
+                        <h5 class="mb-3">Hosting Infrastructure</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Data center locations</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Server specifications</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Network architecture</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Redundancy measures</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-share"></i>
+                        </div>
+                        <h5 class="mb-3">Hosting Solutions</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Shared hosting</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> VPS configurations</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Cloud clusters</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Dedicated servers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h5 class="mb-3">Software Products</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> SaaS platforms</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Licensed software</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> API solutions</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Custom development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                        <h5 class="mb-3">Value-Add Services</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Security suite</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Performance tools</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Migration services</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Premium support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Technical Specifications</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Feature</th>
+                                        <th>Shared</th>
+                                        <th>VPS</th>
+                                        <th>Cloud</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>CPU Cores</td>
+                                        <td>Shared</td>
+                                        <td>1-8 dedicated</td>
+                                        <td>Auto-scaling</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RAM</td>
+                                        <td>1GB</td>
+                                        <td>2-32GB</td>
+                                        <td>Flexible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Storage</td>
+                                        <td>50GB SSD</td>
+                                        <td>50-500GB SSD</td>
+                                        <td>Elastic</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bandwidth</td>
+                                        <td>Unmetered</td>
+                                        <td>2-10TB</td>
+                                        <td>Flexible</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Uptime SLA</td>
+                                        <td>99.9%</td>
+                                        <td>99.95%</td>
+                                        <td>99.99%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Competitive Advantages</h4>
+                        <div class="accordion" id="advantagesAccordion">
+                            <div class="accordion-item border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage1">
+                                        Proprietary Control Panel
+                                    </button>
+                                </h2>
+                                <div id="advantage1" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Our custom-built control panel offers intuitive management that reduces customer support requests by 40% compared to industry standard cPanel. Key features include:</p>
+                                        <ul>
+                                            <li>One-click application deployments</li>
+                                            <li>Real-time resource monitoring</li>
+                                            <li>Integrated security center</li>
+                                            <li>Automated backup management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage2">
+                                        Global Anycast Network
+                                    </button>
+                                </h2>
+                                <div id="advantage2" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Our network infrastructure delivers content 30% faster than competitors through:</p>
+                                        <ul>
+                                            <li>12 global edge locations</li>
+                                            <li>Anycast DNS and CDN</li>
+                                            <li>Dedicated fiber routes</li>
+                                            <li>BGP optimized routing</li>
+                                        </ul>
+                                        <p class="mb-0">This results in consistent sub-50ms latency worldwide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage3">
+                                        Security Architecture
+                                    </button>
+                                </h2>
+                                <div id="advantage3" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
+                                    <div class="accordion-body">
+                                        <p>Enterprise-grade security measures that prevent 99.99% of attacks:</p>
+                                        <ul>
+                                            <li>Web application firewall with machine learning</li>
+                                            <li>Real-time DDoS mitigation (up to 2Tbps)</li>
+                                            <li>Isolated container technology</li>
+                                            <li>Automated vulnerability scanning</li>
+                                        </ul>
+                                        <p class="mb-0">All backed by our $1M security guarantee.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Technical Knowledge Assessment</h4>
+                        <form id="technicalQuiz">
+                            <div class="mb-4 knowledge-check">
+                                <h5>1. A customer is experiencing intermittent downtime with their current shared hosting provider. They're considering upgrading but are unsure whether to choose VPS or Cloud hosting. How would you explain the key differences?</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">
+                                        "VPS gives you dedicated resources at a fixed cost, while Cloud offers elastic scalability but with variable pricing based on usage."
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">
+                                        "They're essentially the same thing with different marketing names."
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">
+                                        "Cloud is always better because it's more modern technology."
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4 knowledge-check">
+                                <h5>2. A prospect asks about our security measures compared to AWS. Which of these is NOT a valid differentiator to mention?</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
+                                    <label class="form-check-label" for="q2a">
+                                        "We include enterprise-grade WAF and DDoS protection standard on all plans"
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                                    <label class="form-check-label" for="q2b">
+                                        "Our security team provides personalized consultation rather than just documentation"
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                                    <label class="form-check-label" for="q2c">
+                                        "We have more data centers than AWS globally"
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4 knowledge-check">
+                                <h5>3. When explaining our proprietary control panel to a non-technical customer, which analogy would be most effective?</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                                    <label class="form-check-label" for="q3a">
+                                        "It's like the dashboard of your car - everything you need to control is in one intuitive place"
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                                    <label class="form-check-label" for="q3b">
+                                        "It uses a MySQL backend with PHP middleware and React frontend"
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                                    <label class="form-check-label" for="q3c">
+                                        "Think of it as cPanel but with different colors"
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary-custom">Submit Assessment</button>
+                            <div id="quizResult" class="mt-3 alert d-none"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sales Methodology Section -->
+<section id="sales-methodology" class="training-section bg-light-custom">
+    <div class="floating-shapes">
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    <div class="container">
+        <div class="section-header">
+            <h2>Sales Methodology</h2>
+            <p class="lead">Master the Wefithost 7-Step Sales Process for maximum conversion rates</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Prospecting & Qualification</h4>
+                        <p>Identify high-potential leads through targeted outreach, inbound channels, and partner referrals. Use our ICP scoring matrix to prioritize opportunities.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>LinkedIn outreach templates</li>
+                                <li>Cold email sequences</li>
+                                <li>BANT qualification framework</li>
+                                <li>CRM scoring automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Discovery & Needs Analysis</h4>
+                        <p>Conduct deep discovery to uncover pain points, current solutions, and business objectives. Use our proprietary questioning framework.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Technical environment mapping</li>
+                                <li>Stakeholder identification</li>
+                                <li>ROI potential assessment</li>
+                                <li>Decision process clarification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Solution Design</h4>
+                        <p>Architect the optimal hosting/software solution based on discovered needs. Leverage our solution configurator tool.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Technical requirements matching</li>
+                                <li>Resource sizing calculator</li>
+                                <li>Integration planning</li>
+                                <li>Migration pathway development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Value Demonstration</h4>
+                        <p>Showcase the solution through tailored demos, case studies, and proof points that address specific needs.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Interactive demo environment</li>
+                                <li>ROI calculator</li>
+                                <li>Competitive benchmarking</li>
+                                <li>Customer success stories</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h4>Objection Resolution</h4>
+                        <p>Address concerns using our objection handling playbook and negotiation frameworks.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Price justification toolkit</li>
+                                <li>Technical objection responses</li>
+                                <li>Risk mitigation strategies</li>
+                                <li>Concession planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h4>Closing & Commitment</h4>
+                        <p>Secure the deal using our proven closing techniques tailored to different buyer personas.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Trial conversion strategies</li>
+                                <li>Contract negotiation playbook</li>
+                                <li>Executive summary creation</li>
+                                <li>Implementation planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">7</div>
+                        <h4>Onboarding & Expansion</h4>
+                        <p>Ensure successful implementation and identify expansion opportunities through proactive account management.</p>
+                        <div class="mt-3">
+                            <h6>Key Activities:</h6>
+                            <ul>
+                                <li>Technical onboarding checklist</li>
+                                <li>Quarterly business reviews</li>
+                                <li>Upsell/cross-sell triggers</li>
+                                <li>Customer success partnership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Sales Process Metrics</h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Stage</th>
+                                        <th>Target Duration</th>
+                                        <th>Conversion Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Prospecting</td>
+                                        <td>1-3 days</td>
+                                        <td>25% to Qualified</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Discovery</td>
+                                        <td>1-2 weeks</td>
+                                        <td>60% to Solution</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Solution Design</td>
+                                        <td>3-7 days</td>
+                                        <td>75% to Demo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Demonstration</td>
+                                        <td>1-2 weeks</td>
+                                        <td>50% to Proposal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Proposal</td>
+                                        <td>1-2 weeks</td>
+                                        <td>40% to Closed Won</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-3"><small>Enterprise deals may have longer cycles. SMB targets are 30% faster.</small></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <h4 class="mb-4">Process Optimization Tools</h4>
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Discovery Question Bank
+                                <span class="badge bg-primary rounded-pill">45+ questions</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Solution Configurator
+                                <span class="badge bg-primary rounded-pill">Interactive tool</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Demo Script Library
+                                <span class="badge bg-primary rounded-pill">12 scripts</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Proposal Templates
+                                <span class="badge bg-primary rounded-pill">8 templates</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Closing Playbook
+                                <span class="badge bg-primary rounded-pill">7 techniques</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Insights Section -->
+<section id="customer-insights" class="training-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Customer Insights</h2>
+            <p class="lead">Understand buyer personas, pain points, and decision drivers</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="personaTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="startup-tab" data-bs-toggle="tab" data-bs-target="#startup" type="button" role="tab">Startups</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="smb-tab" data-bs-toggle="tab" data-bs-target="#smb" type="button" role="tab">SMBs</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="enterprise-tab" data-bs-toggle="tab" data-bs-target="#enterprise" type="button" role="tab">Enterprise</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="
