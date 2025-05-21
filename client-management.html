@@ -1,1021 +1,1630 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WefitHost | Enterprise Client Management for Hosting Providers</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>
+      WefitHost | Enterprise Client Management for Hosting Providers
+    </title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #93c5fd;
-            --secondary: #4b5563;
-            --success: #10b981;
-            --danger: #ef4444;
-            --warning: #f59e0b;
-            --info: #3b82f6;
-            --light: #f9fafb;
-            --dark: #111827;
-            --gray: #6b7280;
-            --gray-light: #e5e7eb;
+      :root {
+        --primary: #6b63ff;
+        --primary-color: #5a52e0;
+        --primary-dark: #1d4ed8;
+        --primary-light: #93c5fd;
+        --secondary: #4b5563;
+        --success: #10b981;
+        --danger: #ef4444;
+        --warning: #f59e0b;
+        --info: #3b82f6;
+        --light: #f9fafb;
+        --dark: #111827;
+        --gray: #6b7280;
+        --gray-light: #e5e7eb;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #6a11cb 100%
+        );
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.7;
+        color: var(--dark);
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .display-1 {
+        font-weight: 900;
+        letter-spacing: -0.05em;
+      }
+
+      .lead-lg {
+        font-size: 1.4rem;
+      }
+
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      /* .dropdown-toggle::after {
+              display: none;
+          } */
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
         }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.7;
-            color: var(--dark);
-            overflow-x: hidden;
+        .navbar-collapse.show {
+          transform: translateX(0);
         }
 
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 800;
-            line-height: 1.3;
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+
+      /* Section Styling */
+      .section {
+        padding: 6rem 0;
+        position: relative;
+      }
+
+      .section-sm {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-title:after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 5px;
+        background: var(--primary);
+        margin: 1.5rem 0;
+        border-radius: 3px;
+      }
+
+      .section-title.center:after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-subtitle {
+        font-size: 1.25rem;
+        color: var(--secondary);
+        margin-bottom: 3rem;
+        font-weight: 400;
+      }
+
+      .bg-gradient-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+      }
+
+      .bg-light-alt {
+        background-color: #f8fafc;
+      }
+
+      .bg-dark-alt {
+        background-color: #1f2937;
+      }
+
+      .hero-section {
+        background: var(--gradient);
+        color: white;
+        padding: 4rem 0 10rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .hero-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 0L0 0 892.25 114.72 1200 0z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: rotate(180deg);
+      }
+
+      .hero-section a {
+        text-decoration: none;
+        text-shadow: none;
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 4rem 0 8rem !important;
+          text-align: left;
+        }
+      }
+
+      /* Cards */
+      .card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 2.5rem;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 900;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        line-height: 1;
+      }
+
+      /* Dashboard Preview */
+      .dashboard-preview {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
+
+      .dashboard-preview:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* Features Grid */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-item {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon-sm {
+        font-size: 1.75rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        width: 60px;
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(37, 99, 235, 0.1);
+        border-radius: 12px;
+      }
+
+      /* Tabs */
+      .nav-tabs .nav-link {
+        border: none;
+        padding: 1rem 1.5rem;
+        font-weight: 600;
+        color: var(--secondary);
+        border-bottom: 3px solid transparent;
+      }
+
+      .nav-tabs .nav-link.active {
+        color: var(--primary);
+        background: transparent;
+        border-bottom: 3px solid var(--primary);
+      }
+
+      .nav-tabs .nav-link:hover {
+        border-color: transparent;
+        color: var(--primary);
+      }
+
+      /* Buttons */
+      .btn {
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+        border-color: var(--primary-dark);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Quick Access */
+      .quick-access-btn {
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        background: rgba(37, 99, 235, 0.05);
+        color: var(--primary);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-bottom: 0.75rem;
+        border: 1px solid rgba(37, 99, 235, 0.1);
+      }
+
+      .quick-access-btn:hover {
+        background: rgba(37, 99, 235, 0.1);
+        text-decoration: none;
+        transform: translateX(5px);
+      }
+
+      .quick-access-btn i {
+        margin-right: 1rem;
+        font-size: 1.25rem;
+      }
+
+      /* Integration Logos */
+      .integration-logo {
+        height: 50px;
+        width: 100px;
+        margin: 1.5rem;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        filter: grayscale(100%);
+      }
+
+      .integration-logo:hover {
+        opacity: 1;
+        filter: grayscale(0%);
+        transform: scale(1.1);
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
+
+      .testimonial-card:before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+        font-size: 5rem;
+        color: rgba(37, 99, 235, 0.1);
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--primary-light);
+      }
+
+      /* Pricing */
+      .pricing-card {
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 450px;
+      }
+
+      .pricing-card.popular {
+        border: 2px solid var(--primary);
+        transform: scale(1.02);
+      }
+
+      .pricing-card.popular .pricing-header {
+        background: var(--primary);
+        color: white;
+      }
+
+      .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-header {
+        padding: 2rem;
+        background: var(--light);
+        text-align: center;
+      }
+
+      .pricing-price {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .pricing-features {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .pricing-features li {
+        padding: 0.75rem 2rem;
+        border-bottom: 1px solid var(--gray-light);
+      }
+
+      .pricing-features li:last-child {
+        border-bottom: none;
+      }
+
+      /* FAQ */
+      .accordion-button {
+        font-weight: 600;
+        padding: 1.25rem;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: rgba(37, 99, 235, 0.05);
+        color: var(--primary);
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(37, 99, 235, 0.1);
+      }
+
+      /* Animations */
+      .animate-up {
+        animation: fadeInUp 1s ease;
+      }
+
+      .animate-delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .animate-delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .animate-delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .section {
+          padding: 4rem 0;
         }
 
         .display-1 {
-            font-weight: 900;
-            letter-spacing: -0.05em;
+          font-size: 3.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 6rem 0 4rem;
+        }
+
+        .display-1 {
+          font-size: 2.5rem;
         }
 
         .lead-lg {
-            font-size: 1.4rem;
+          font-size: 1.2rem;
         }
-
-        /* Section Styling */
-        .section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .section-sm {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            position: relative;
-            margin-bottom: 2.5rem;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 5px;
-            background: var(--primary);
-            margin: 1.5rem 0;
-            border-radius: 3px;
-        }
-
-        .section-title.center:after {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--secondary);
-            margin-bottom: 3rem;
-            font-weight: 400;
-        }
-
-        .bg-gradient-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        }
-
-        .bg-light-alt {
-            background-color: #f8fafc;
-        }
-
-        .bg-dark-alt {
-            background-color: #1f2937;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(29, 78, 216, 0.95)), 
-                        url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
-            padding: 10rem 0 8rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-shape {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M1200 0L0 0 892.25 114.72 1200 0z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
-            background-size: cover;
-            background-repeat: no-repeat;
-            transform: rotate(180deg);
-        }
-
-        /* Cards */
-        .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2.5rem;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            line-height: 1;
-        }
-
-        /* Dashboard Preview */
-        .dashboard-preview {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .dashboard-preview:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-            pointer-events: none;
-        }
-
-        /* Features Grid */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-item {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon-sm {
-            font-size: 1.75rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            width: 60px;
-            height: 60px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 12px;
-        }
-
-        /* Tabs */
-        .nav-tabs .nav-link {
-            border: none;
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-            color: var(--secondary);
-            border-bottom: 3px solid transparent;
-        }
-
-        .nav-tabs .nav-link.active {
-            color: var(--primary);
-            background: transparent;
-            border-bottom: 3px solid var(--primary);
-        }
-
-        .nav-tabs .nav-link:hover {
-            border-color: transparent;
-            color: var(--primary);
-        }
-
-        /* Buttons */
-        .btn {
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-lg {
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .btn-outline-primary:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* Quick Access */
-        .quick-access-btn {
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            background: rgba(37, 99, 235, 0.05);
-            color: var(--primary);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-bottom: 0.75rem;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-
-        .quick-access-btn:hover {
-            background: rgba(37, 99, 235, 0.1);
-            text-decoration: none;
-            transform: translateX(5px);
-        }
-
-        .quick-access-btn i {
-            margin-right: 1rem;
-            font-size: 1.25rem;
-        }
-
-        /* Integration Logos */
-        .integration-logo {
-            height: 50px;
-            margin: 1.5rem;
-            opacity: 0.7;
-            transition: all 0.3s ease;
-            filter: grayscale(100%);
-        }
-
-        .integration-logo:hover {
-            opacity: 1;
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        }
-
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        .testimonial-card:before {
-            content: '"';
-            position: absolute;
-            top: 1rem;
-            left: 1.5rem;
-            font-size: 5rem;
-            color: rgba(37, 99, 235, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-light);
-        }
-
-        /* Pricing */
-        .pricing-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card.popular {
-            border: 2px solid var(--primary);
-            transform: scale(1.02);
-        }
-
-        .pricing-card.popular .pricing-header {
-            background: var(--primary);
-            color: white;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .pricing-header {
-            padding: 2rem;
-            background: var(--light);
-            text-align: center;
-        }
-
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        .pricing-features {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .pricing-features li {
-            padding: 0.75rem 2rem;
-            border-bottom: 1px solid var(--gray-light);
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        /* FAQ */
-        .accordion-button {
-            font-weight: 600;
-            padding: 1.25rem;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(37, 99, 235, 0.05);
-            color: var(--primary);
-        }
-
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(37, 99, 235, 0.1);
-        }
-
-        /* Animations */
-        .animate-up {
-            animation: fadeInUp 1s ease;
-        }
-
-        .animate-delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .animate-delay-2 {
-            animation-delay: 0.4s;
-        }
-
-        .animate-delay-3 {
-            animation-delay: 0.6s;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .display-1 {
-                font-size: 3.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 6rem 0 4rem;
-            }
-            
-            .display-1 {
-                font-size: 2.5rem;
-            }
-            
-            .lead-lg {
-                font-size: 1.2rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- Navbar Start File-->
+    <header class="custom-header" data-include="nav.html"></header>
+
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-1 fw-bold mb-4 animate__animated animate__fadeInUp">Enterprise Client Management for Hosting Businesses</h1>
-                    <p class="lead lead-lg mb-5 animate__animated animate__fadeInUp animate__delay-1s">WefitHost provides the most comprehensive platform to manage clients, automate operations, and scale your hosting business with confidence.</p>
-                    <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-2s">
-                        <a href="client-portal.html" class="btn btn-light btn-lg px-4">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Access Client Portal
-                        </a>
-                        <a href="#features" class="btn btn-outline-light btn-lg px-4">
-                            Explore Features
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-none d-lg-block animate__animated animate__fadeIn animate__delay-1s">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E12AQHrw-p8uJ0Mwg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1699653031004?e=2147483647&v=beta&t=MTd1_nfozHIOn7Yp_80nwQOMqcMEQ36c6YL-WUV5w8Y" alt="Dashboard preview" class="img-fluid rounded-3 shadow-lg">
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1
+              class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp text-secondary"
+            >
+              Enterprise Client Management for Hosting Businesses
+            </h1>
+            <p
+              class="lead lead-lg mb-5 animate__animated animate__fadeInUp animate__delay-1s"
+            >
+              WefitHost provides the most comprehensive platform to manage
+              clients, automate operations, and scale your hosting business with
+              confidence.
+            </p>
+            <div
+              class="d-flex flex-wrap gap-3 animate__animated animate__fadeInUp animate__delay-2s"
+            >
+              <a href="client-portal.html" class="btn btn-light btn-lg px-4">
+                <i class="bi bi-box-arrow-in-right me-2"></i> Access Client
+                Portal
+              </a>
+              <a href="#features" class="btn btn-outline-light btn-lg px-4">
+                Explore Features
+              </a>
             </div>
+          </div>
+          <div
+            class="col-lg-6 d-none d-lg-block animate__animated animate__fadeIn animate__delay-1s"
+          >
+            <img
+              src="https://media.licdn.com/dms/image/v2/D4E12AQHrw-p8uJ0Mwg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1699653031004?e=2147483647&v=beta&t=MTd1_nfozHIOn7Yp_80nwQOMqcMEQ36c6YL-WUV5w8Y"
+              alt="Dashboard preview"
+              class="img-fluid rounded-3 shadow-lg"
+            />
+          </div>
         </div>
-        <div class="hero-shape"></div>
+      </div>
+      <div class="hero-shape"></div>
     </section>
 
     <!-- Client Portal Section -->
     <section id="portal" class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="section-title">WefitHost Client Portal</h2>
-                    <p class="lead">Your complete command center for hosting business management, accessible anytime, anywhere.</p>
-                    
-                    <div class="my-5">
-                        <h4 class="fw-bold mb-4">Portal Highlights:</h4>
-                        <div class="d-flex mb-4">
-                            <div class="me-4">
-                                <div class="feature-icon-sm">
-                                    <i class="bi bi-speedometer2"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h5 class="fw-bold">Unified Dashboard</h5>
-                                <p class="mb-0">Real-time overview of all client activities, services, and financial metrics in one intuitive interface.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-4">
-                            <div class="me-4">
-                                <div class="feature-icon-sm">
-                                    <i class="bi bi-robot"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h5 class="fw-bold">Smart Automation</h5>
-                                <p class="mb-0">Automate billing, provisioning, notifications, and routine client communications.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="me-4">
-                                <div class="feature-icon-sm">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <h5 class="fw-bold">Enterprise Security</h5>
-                                <p class="mb-0">Military-grade encryption, 2FA, audit logging, and role-based access controls.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-5">
-                        <a href="client-portal.html" class="btn btn-primary btn-lg px-4 me-3">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Login to Portal
-                        </a>
-                        <a href="#demo" class="btn btn-outline-secondary btn-lg px-4">Request Demo</a>
-                    </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 class="section-title display-6">WefitHost Client Portal</h2>
+            <p class="lead">
+              Your complete command center for hosting business management,
+              accessible anytime, anywhere.
+            </p>
+
+            <div class="my-5">
+              <h4 class="fw-bold mb-4">Portal Highlights:</h4>
+              <div class="d-flex mb-4">
+                <div class="me-4">
+                  <div class="feature-icon-sm">
+                    <i class="bi bi-speedometer2"></i>
+                  </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="dashboard-preview mb-5">
-                        <img src="https://www.wrike.com/tp/storage/uploads/189361e6-d9e3-4710-93c1-a85a91257c24/scheme-client-management-22x.png" alt="Dashboard preview" class="img-fluid">
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5 class="fw-bold mb-3">Quick Access:</h5>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-people-fill"></i> Client Management
-                            </a>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-credit-card"></i> Billing Center
-                            </a>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-ticket-detailed"></i> Support System
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <h5 class="fw-bold mb-3">Resources:</h5>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-file-earmark-text"></i> Documentation
-                            </a>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-collection-play"></i> Video Tutorials
-                            </a>
-                            <a href="#" class="quick-access-btn">
-                                <i class="bi bi-question-circle"></i> Help Center
-                            </a>
-                        </div>
-                    </div>
+                <div>
+                  <h5 class="fw-bold">Unified Dashboard</h5>
+                  <p class="mb-0">
+                    Real-time overview of all client activities, services, and
+                    financial metrics in one intuitive interface.
+                  </p>
                 </div>
+              </div>
+              <div class="d-flex mb-4">
+                <div class="me-4">
+                  <div class="feature-icon-sm">
+                    <i class="bi bi-robot"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="fw-bold">Smart Automation</h5>
+                  <p class="mb-0">
+                    Automate billing, provisioning, notifications, and routine
+                    client communications.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="me-4">
+                  <div class="feature-icon-sm">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="fw-bold">Enterprise Security</h5>
+                  <p class="mb-0">
+                    Military-grade encryption, 2FA, audit logging, and
+                    role-based access controls.
+                  </p>
+                </div>
+              </div>
             </div>
+
+            <div class="mt-5">
+              <a
+                href="client-portal.html"
+                class="btn btn-primary btn-lg px-4 me-3"
+              >
+                <i class="bi bi-box-arrow-in-right me-2"></i> Login to Portal
+              </a>
+              <a
+                href="#demo"
+                class="btn btn-outline-secondary text-dark btn-lg px-4"
+                >Request Demo</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="dashboard-preview mb-5">
+              <img
+                src="https://www.wrike.com/tp/storage/uploads/189361e6-d9e3-4710-93c1-a85a91257c24/scheme-client-management-22x.png"
+                alt="Dashboard preview"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="fw-bold mb-3">Quick Access:</h5>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-people-fill"></i> Client Management
+                </a>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-credit-card"></i> Billing Center
+                </a>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-ticket-detailed"></i> Support System
+                </a>
+              </div>
+              <div class="col-md-6">
+                <h5 class="fw-bold mb-3">Resources:</h5>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-file-earmark-text"></i> Documentation
+                </a>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-collection-play"></i> Video Tutorials
+                </a>
+                <a href="#" class="quick-access-btn">
+                  <i class="bi bi-question-circle"></i> Help Center
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <section class="section bg-light-alt">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">3,250+</div>
-                        <h5>Hosting Providers</h5>
-                        <p class="mb-0">Trust our platform worldwide</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">99.99%</div>
-                        <h5>Uptime</h5>
-                        <p class="mb-0">Guaranteed reliability</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">45+</div>
-                        <h5>Countries</h5>
-                        <p class="mb-0">Global client base</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">24/7</div>
-                        <h5>Support</h5>
-                        <p class="mb-0">Expert assistance</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">3,250+</div>
+              <h5>Hosting Providers</h5>
+              <p class="mb-0">Trust our platform worldwide</p>
             </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">99.99%</div>
+              <h5>Uptime</h5>
+              <p class="mb-0">Guaranteed reliability</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">45+</div>
+              <h5>Countries</h5>
+              <p class="mb-0">Global client base</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="stat-card">
+              <div class="stat-number">24/7</div>
+              <h5>Support</h5>
+              <p class="mb-0">Expert assistance</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title center">Complete Client Management Solution</h2>
-                <p class="section-subtitle">Everything you need to efficiently manage your hosting clients and grow your business</p>
-            </div>
-            
-            <ul class="nav nav-tabs justify-content-center mb-5" id="features-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="client-tab" data-bs-toggle="pill" data-bs-target="#client" type="button" role="tab">Client Management</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="billing-tab" data-bs-toggle="pill" data-bs-target="#billing" type="button" role="tab">Billing & Invoicing</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="support-tab" data-bs-toggle="pill" data-bs-target="#support" type="button" role="tab">Support System</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="automation-tab" data-bs-toggle="pill" data-bs-target="#automation" type="button" role="tab">Automation</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="reporting-tab" data-bs-toggle="pill" data-bs-target="#reporting" type="button" role="tab">Reporting</button>
-                </li>
-            </ul>
-            
-            <div class="tab-content" id="features-tabContent">
-                <div class="tab-pane fade show active" id="client" role="tabpanel">
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-person-badge"></i>
-                                </div>
-                                <h3>Client Profiles</h3>
-                                <p>Comprehensive client records with contact details, service history, notes, and communication logs all in one place.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Custom fields and tags</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Client segmentation</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Activity timeline</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-diagram-3"></i>
-                                </div>
-                                <h3>Reseller Management</h3>
-                                <p>Tools specifically designed for hosting resellers to manage their sub-accounts and clients.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Hierarchical structure</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> White-label branding</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Commission tracking</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-shield-lock"></i>
-                                </div>
-                                <h3>Security & Access</h3>
-                                <p>Robust security features to protect your business and client data.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Two-factor authentication</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Role-based permissions</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> IP access restrictions</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Audit logging</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-pane fade" id="billing" role="tabpanel">
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-credit-card-2-back"></i>
-                                </div>
-                                <h3>Recurring Billing</h3>
-                                <p>Automate your entire billing process with flexible invoicing and payment collection.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Multiple payment gateways</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Subscription management</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Dunning system</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-receipt"></i>
-                                </div>
-                                <h3>Invoicing</h3>
-                                <p>Professional invoices with customizable templates and automated delivery.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Branded invoice templates</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Recurring invoice schedules</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Multi-currency support</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card p-4">
-                                <div class="card-icon">
-                                    <i class="bi bi-graph-up-arrow"></i>
-                                </div>
-                                <h3>Revenue Tracking</h3>
-                                <p>Monitor your income streams and financial performance in real-time.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Revenue reports</li>
-                                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Tax automation</li>
-                                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Payout management</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional tab panes would follow the same pattern -->
-                <!-- Support System, Automation, and Reporting sections -->
-                
-            </div>
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title center display-6">
+            Complete Client Management Solution
+          </h2>
+          <p class="section-subtitle">
+            Everything you need to efficiently manage your hosting clients and
+            grow your business
+          </p>
         </div>
+
+        <ul
+          class="nav nav-tabs justify-content-center mb-5"
+          id="features-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="client-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#client"
+              type="button"
+              role="tab"
+            >
+              Client Management
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="billing-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#billing"
+              type="button"
+              role="tab"
+            >
+              Billing & Invoicing
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="support-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#support"
+              type="button"
+              role="tab"
+            >
+              Support System
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="automation-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#automation"
+              type="button"
+              role="tab"
+            >
+              Automation
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="reporting-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#reporting"
+              type="button"
+              role="tab"
+            >
+              Reporting
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="features-tabContent">
+          <div class="tab-pane fade show active" id="client" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-person-badge"></i>
+                  </div>
+                  <h3>Client Profiles</h3>
+                  <p>
+                    Comprehensive client records with contact details, service
+                    history, notes, and communication logs all in one place.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Custom fields and tags
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Client segmentation
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Activity timeline
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-diagram-3"></i>
+                  </div>
+                  <h3>Reseller Management</h3>
+                  <p>
+                    Tools specifically designed for hosting resellers to manage
+                    their sub-accounts and clients.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Hierarchical structure
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      White-label branding
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Commission tracking
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-shield-lock"></i>
+                  </div>
+                  <h3>Security & Access</h3>
+                  <p>
+                    Robust security features to protect your business and client
+                    data.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Two-factor authentication
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Role-based permissions
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      IP access restrictions
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Audit logging
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="billing" role="tabpanel">
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-credit-card-2-back"></i>
+                  </div>
+                  <h3>Recurring Billing</h3>
+                  <p>
+                    Automate your entire billing process with flexible invoicing
+                    and payment collection.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Multiple payment gateways
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Subscription management
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Dunning system
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-receipt"></i>
+                  </div>
+                  <h3>Invoicing</h3>
+                  <p>
+                    Professional invoices with customizable templates and
+                    automated delivery.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Branded invoice templates
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Recurring invoice schedules
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Multi-currency support
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card p-4">
+                  <div class="card-icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                  </div>
+                  <h3>Revenue Tracking</h3>
+                  <p>
+                    Monitor your income streams and financial performance in
+                    real-time.
+                  </p>
+                  <ul class="list-unstyled">
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Revenue reports
+                    </li>
+                    <li class="mb-2">
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Tax automation
+                    </li>
+                    <li>
+                      <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                      Payout management
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional tab panes would follow the same pattern -->
+          <!-- Support System, Automation, and Reporting sections -->
+        </div>
+      </div>
     </section>
 
     <!-- Integration Section -->
     <section class="section bg-light-alt">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title center">Seamless Integrations</h2>
-                <p class="section-subtitle">Connect with the tools you already use to streamline your workflow</p>
-            </div>
-            
-            <div class="d-flex flex-wrap justify-content-center align-items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/cPanel_logo.svg/1200px-cPanel_logo.svg.png" class="integration-logo" alt="cPanel">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cloudflare_logo.svg/1200px-Cloudflare_logo.svg.png" class="integration-logo" alt="Cloudflare">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Logo_Plesk.svg/1200px-Logo_Plesk.svg.png" class="integration-logo" alt="Plesk">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Stripe_Logo%2C_revised_2016.svg/1200px-Stripe_Logo%2C_revised_2016.svg.png" class="integration-logo" alt="Stripe">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/PayPal_logo.svg/1200px-PayPal_logo.svg.png" class="integration-logo" alt="PayPal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/WHM_logo.svg/1200px-WHM_logo.svg.png" class="integration-logo" alt="WHM">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png" class="integration-logo" alt="Laravel">
-                <!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" class="integration-logo" alt="AWS"> -->
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-outline-primary btn-lg px-4">
-                    <i class="bi bi-plug me-2"></i> View All Integrations
-                </a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title center display-6">Seamless Integrations</h2>
+          <p class="section-subtitle">
+            Connect with the tools you already use to streamline your workflow
+          </p>
         </div>
+
+        <div class="d-flex flex-wrap justify-content-center align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/c2/CPanel_logo.svg"
+            class="integration-logo"
+            alt="cPanel"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cloudflare_Logo.svg"
+            class="integration-logo"
+            alt="Cloudflare"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Logo-plesk.png"
+            class="integration-logo"
+            alt="Plesk"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
+            class="integration-logo"
+            alt="Stripe"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Paypal_Servise.jpg"
+            class="integration-logo"
+            alt="PayPal"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png"
+            class="integration-logo"
+            alt="AWS"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png"
+            class="integration-logo"
+            alt="Laravel"
+          />
+          <!--<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png" class="integration-logo" alt="AWS"> -->
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="tech.html" class="btn btn-outline-primary btn-lg px-4">
+            <i class="bi bi-plug me-2"></i> View All Integrations
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="section">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title center">Trusted by Hosting Providers Worldwide</h2>
-                <p class="section-subtitle">See what our customers say about WefitHost Client Management</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <p class="mb-4">"WefitHost has transformed how we manage our 500+ hosting clients. The automation features alone have saved us over 20 hours per week in manual work."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="testimonial-avatar me-3" alt="Sarah Johnson">
-                            <div>
-                                <h5 class="fw-bold mb-1">Sarah Johnson</h5>
-                                <p class="mb-0 text-muted">CEO, HostRight Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <p class="mb-4">"As a reseller, the white-label capabilities are game-changing. Our clients think this is our custom system, and the professional interface builds trust."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-avatar me-3" alt="Michael Chen">
-                            <div>
-                                <h5 class="fw-bold mb-1">Michael Chen</h5>
-                                <p class="mb-0 text-muted">Founder, CloudResell Pro</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <p class="mb-4">"The reporting features give us incredible insights into our business. We've grown revenue by 35% since implementing WefitHost's client management tools."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-avatar me-3" alt="Emma Rodriguez">
-                            <div>
-                                <h5 class="fw-bold mb-1">Emma Rodriguez</h5>
-                                <p class="mb-0 text-muted">Director, WebScale Hosting</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title center display-6">
+            Trusted by Hosting Providers Worldwide
+          </h2>
+          <p class="section-subtitle">
+            See what our customers say about WefitHost Client Management
+          </p>
         </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <p class="mb-4">
+                "WefitHost has transformed how we manage our 500+ hosting
+                clients. The automation features alone have saved us over 20
+                hours per week in manual work."
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/43.jpg"
+                  class="testimonial-avatar me-3"
+                  alt="Sarah Johnson"
+                />
+                <div>
+                  <h5 class="fw-bold mb-1">Sarah Johnson</h5>
+                  <p class="mb-0 text-muted">CEO, HostRight Solutions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <p class="mb-4">
+                "As a reseller, the white-label capabilities are game-changing.
+                Our clients think this is our custom system, and the
+                professional interface builds trust."
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  class="testimonial-avatar me-3"
+                  alt="Michael Chen"
+                />
+                <div>
+                  <h5 class="fw-bold mb-1">Michael Chen</h5>
+                  <p class="mb-0 text-muted">Founder, CloudResell Pro</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <p class="mb-4">
+                "The reporting features give us incredible insights into our
+                business. We've grown revenue by 35% since implementing
+                WefitHost's client management tools."
+              </p>
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://randomuser.me/api/portraits/women/65.jpg"
+                  class="testimonial-avatar me-3"
+                  alt="Emma Rodriguez"
+                />
+                <div>
+                  <h5 class="fw-bold mb-1">Emma Rodriguez</h5>
+                  <p class="mb-0 text-muted">Director, WebScale Hosting</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Pricing Section -->
     <section class="section bg-light-alt">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title center">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Choose the plan that fits your business needs</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="fw-bold">Starter</h3>
-                            <div class="pricing-price">$29<span class="fs-6">/mo</span></div>
-                            <p class="mb-0">For small hosting businesses</p>
-                        </div>
-                        <div class="p-4">
-                            <ul class="pricing-features">
-                                <li>Up to 50 clients</li>
-                                <li>Basic billing automation</li>
-                                <li>Email support</li>
-                                <li>Standard reporting</li>
-                                <li>5 staff accounts</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pricing-card popular">
-                        <div class="pricing-header">
-                            <span class="badge bg-white text-primary mb-2">Most Popular</span>
-                            <h3 class="fw-bold">Professional</h3>
-                            <div class="pricing-price">$79<span class="fs-6">/mo</span></div>
-                            <p class="mb-0">For growing hosting providers</p>
-                        </div>
-                        <div class="p-4">
-                            <ul class="pricing-features">
-                                <li>Up to 500 clients</li>
-                                <li>Advanced automation</li>
-                                <li>Priority support</li>
-                                <li>Enhanced reporting</li>
-                                <li>20 staff accounts</li>
-                                <li>White-label option</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary w-100 mt-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="pricing-card">
-                        <div class="pricing-header">
-                            <h3 class="fw-bold">Enterprise</h3>
-                            <div class="pricing-price">$199<span class="fs-6">/mo</span></div>
-                            <p class="mb-0">For large hosting businesses</p>
-                        </div>
-                        <div class="p-4">
-                            <ul class="pricing-features">
-                                <li>Unlimited clients</li>
-                                <li>Full automation suite</li>
-                                <li>24/7 premium support</li>
-                                <li>Advanced analytics</li>
-                                <li>Unlimited staff</li>
-                                <li>API access</li>
-                                <li>Dedicated account manager</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <p class="mb-3">Need a custom solution for your hosting business?</p>
-                <a href="#" class="btn btn-link">Contact our sales team <i class="bi bi-arrow-right"></i></a>
-            </div>
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-title center display-6">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="section-subtitle">
+            Choose the plan that fits your business needs
+          </p>
         </div>
+
+        <div class="row g-4 d-flex align-items-stretch">
+          <div class="col-md-4 d-flex flex-column">
+            <div class="pricing-card d-flex flex-column flex-grow-1">
+              <div class="pricing-header">
+                <h3 class="fw-bold">Starter</h3>
+                <div class="pricing-price">
+                  $29<span class="fs-6">/mo</span>
+                </div>
+                <p class="mb-0">For small hosting businesses</p>
+              </div>
+              <div class="p-4">
+                <ul class="pricing-features flex-grow-1">
+                  <li>Up to 50 clients</li>
+                  <li>Basic billing automation</li>
+                  <li>Email support</li>
+                  <li>Standard reporting</li>
+                  <li>5 staff accounts</li>
+                </ul>
+                <a href="https://my.wefithost.com" class="btn btn-outline-primary w-100 mt-3"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex flex-column">
+            <div class="pricing-card popular d-flex flex-column flex-grow-1">
+              <div class="pricing-header">
+                <span class="badge bg-white text-primary mb-2"
+                  >Most Popular</span
+                >
+                <h3 class="fw-bold">Professional</h3>
+                <div class="pricing-price">
+                  $79<span class="fs-6">/mo</span>
+                </div>
+                <p class="mb-0">For growing hosting providers</p>
+              </div>
+              <div class="p-4">
+                <ul class="pricing-features flex-grow-1">
+                  <li>Up to 500 clients</li>
+                  <li>Advanced automation</li>
+                  <li>Priority support</li>
+                  <li>Enhanced reporting</li>
+                  <li>20 staff accounts</li>
+                  <li>White-label option</li>
+                </ul>
+                <a href="https://my.wefithost.com" class="btn btn-primary w-100 mt-3">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex flex-column">
+            <div class="pricing-card d-flex flex-column flex-grow-1">
+              <div class="pricing-header">
+                <h3 class="fw-bold">Enterprise</h3>
+                <div class="pricing-price">
+                  $199<span class="fs-6">/mo</span>
+                </div>
+                <p class="mb-0">For large hosting businesses</p>
+              </div>
+              <div class="p-4">
+                <ul class="pricing-features flex-grow-1">
+                  <li>Unlimited clients</li>
+                  <li>Full automation suite</li>
+                  <li>24/7 premium support</li>
+                  <li>Advanced analytics</li>
+                  <li>Unlimited staff</li>
+                  <li>API access</li>
+                  <li>Dedicated account manager</li>
+                </ul>
+                <a href="https://my.wefithost.com" class="btn btn-outline-primary w-100 mt-3"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="mb-3">Need a custom solution for your hosting business?</p>
+          <a href="contact-us.html" class="btn btn-link"
+            >Contact our sales team <i class="bi bi-arrow-right"></i
+          ></a>
+        </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 mb-5 mb-lg-0">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="lead">Find answers to common questions about WefitHost Client Management.</p>
-                    <p>Can't find what you're looking for? <a href="#">Contact our support team</a> for assistance.</p>
-                    
-                    <div class="mt-5">
-                        <h4 class="fw-bold mb-3">Still have questions?</h4>
-                        <a href="#" class="btn btn-primary px-4 me-2">
-                            <i class="bi bi-chat-square-text me-2"></i> Live Chat
-                        </a>
-                        <a href="#" class="btn btn-outline-secondary px-4">
-                            <i class="bi bi-envelope me-2"></i> Email Us
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item border-0 mb-3">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    How does the client portal integrate with my existing hosting infrastructure?
-                                </button>
-                            </h3>
-                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>The WefitHost Client Portal offers seamless integration with all major hosting control panels including cPanel, WHM, Plesk, and DirectAdmin through our API connectors. You can also integrate with custom solutions using our comprehensive API documentation.</p>
-                                    <p>Setup typically takes less than 30 minutes, and our team provides free migration assistance to help move your existing client data into the system.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item border-0 mb-3">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                    Can I white-label the portal for my reseller business?
-                                </button>
-                            </h3>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes, our Professional and Enterprise plans include complete white-labeling capabilities. You can:</p>
-                                    <ul>
-                                        <li>Replace all WefitHost branding with your own logo and colors</li>
-                                        <li>Use your own domain name</li>
-                                        <li>Customize email templates with your branding</li>
-                                        <li>Remove all references to WefitHost from the client-facing interface</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Additional FAQ items would follow the same pattern -->
-                        
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 class="section-title display-6">Frequently Asked Questions</h2>
+            <p class="lead">
+              Find answers to common questions about WefitHost Client
+              Management.
+            </p>
+            <p>
+              Can't find what you're looking for?
+              <a href="contact-us.html">Contact our support team</a> for
+              assistance.
+            </p>
+
+            <div class="mt-5">
+              <h4 class="fw-bold mb-3">Still have questions?</h4>
+              <button
+                class="btn btn-primary px-4 me-2"
+                onclick="Tawk_API.toggle()"
+              >
+                <i class="bi bi-chat-square-text me-2"></i> Live Chat
+              </button>
+              <a
+                href="maintenance.html"
+                class="btn btn-outline-secondary px-4 text-dark"
+              >
+                <i class="bi bi-envelope me-2"></i> Email Us
+              </a>
             </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item border-0 mb-3">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button shadow-none rounded-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq1"
+                  >
+                    How does the client portal integrate with my existing
+                    hosting infrastructure?
+                  </button>
+                </h3>
+                <div
+                  id="faq1"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      The WefitHost Client Portal offers seamless integration
+                      with all major hosting control panels including cPanel,
+                      WHM, Plesk, and DirectAdmin through our API connectors.
+                      You can also integrate with custom solutions using our
+                      comprehensive API documentation.
+                    </p>
+                    <p>
+                      Setup typically takes less than 30 minutes, and our team
+                      provides free migration assistance to help move your
+                      existing client data into the system.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item border-0 mb-3">
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button shadow-none rounded-3 collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faq2"
+                  >
+                    Can I white-label the portal for my reseller business?
+                  </button>
+                </h3>
+                <div
+                  id="faq2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAccordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Yes, our Professional and Enterprise plans include
+                      complete white-labeling capabilities. You can:
+                    </p>
+                    <ul>
+                      <li>
+                        Replace all WefitHost branding with your own logo and
+                        colors
+                      </li>
+                      <li>Use your own domain name</li>
+                      <li>Customize email templates with your branding</li>
+                      <li>
+                        Remove all references to WefitHost from the
+                        client-facing interface
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional FAQ items would follow the same pattern -->
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Demo Section -->
     <section id="demo" class="section bg-gradient-primary text-white">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title text-white">Ready to See It In Action?</h2>
-                    <p class="lead">Schedule a personalized demo to see how WefitHost can transform your client management.</p>
-                    <p>Our experts will walk you through the platform, answer your questions, and show you how to customize it for your specific business needs.</p>
-                    
-                    <div class="mt-5">
-                        <a href="#" class="btn btn-light btn-lg px-4 me-3">
-                            <i class="bi bi-calendar-check me-2"></i> Schedule Demo
-                        </a>
-                        <a href="#" class="btn btn-outline-light btn-lg px-4">
-                            <i class="bi bi-play-circle me-2"></i> Watch Overview
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="WefitHost Demo" allowfullscreen></iframe>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 class="section-title text-white display-6">
+              Ready to See It In Action?
+            </h2>
+            <p class="lead">
+              Schedule a personalized demo to see how WefitHost can transform
+              your client management.
+            </p>
+            <p>
+              Our experts will walk you through the platform, answer your
+              questions, and show you how to customize it for your specific
+              business needs.
+            </p>
+
+            <div class="mt-5">
+              <a href="maintenance.html" class="btn btn-light btn-lg px-4 me-3">
+                <i class="bi bi-calendar-check me-2"></i> Schedule Demo
+              </a>
+              <a
+                href="maintenance.html"
+                class="btn btn-outline-light btn-lg px-4"
+              >
+                <i class="bi bi-play-circle me-2"></i> Watch Overview
+              </a>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="WefitHost Demo"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Final CTA Section -->
     <section class="section-sm">
-        <div class="container">
-            <div class="card shadow-lg">
-                <div class="card-body p-5 text-center">
-                    <h2 class="mb-4">Start Managing Your Hosting Clients More Efficiently Today</h2>
-                    <p class="lead mb-5">Join thousands of hosting providers who trust WefitHost for their client management needs.</p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="client-portal.html" class="btn btn-primary btn-lg px-4">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Access Client Portal
-                        </a>
-                        <a href="contact-us.html" class="btn btn-outline-secondary btn-lg px-4">
-                            <i class="bi bi-phone me-2"></i> Contact Sales
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="card shadow-lg">
+          <div class="card-body p-5 text-center">
+            <h2 class="mb-4 display-6">
+              Start Managing Your Hosting Clients More Efficiently Today
+            </h2>
+            <p class="lead mb-5">
+              Join thousands of hosting providers who trust WefitHost for their
+              client management needs.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              <a href="client-portal.html" class="btn btn-primary btn-lg px-4">
+                <i class="bi bi-box-arrow-in-right me-2"></i> Access Client
+                Portal
+              </a>
+              <a
+                href="contact-us.html"
+                class="btn btn-outline-secondary btn-lg px-4 text-dark"
+              >
+                <i class="bi bi-phone me-2"></i> Contact Sales
+              </a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
+
+    <div data-include="footer.html"></div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+
+
+
+    <script src="back-to-top.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Animate elements when they come into view
+      function animateOnScroll() {
+        const elements = document.querySelectorAll(
+          ".animate-up, .animate-delay-1, .animate-delay-2, .animate-delay-3"
+        );
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.classList.add("animate__animated", "animate__fadeInUp");
+          }
         });
+      }
 
-        // Animate elements when they come into view
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate-up, .animate-delay-1, .animate-delay-2, .animate-delay-3');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if(elementPosition < screenPosition) {
-                    element.classList.add('animate__animated', 'animate__fadeInUp');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        document.addEventListener('DOMContentLoaded', animateOnScroll);
+      window.addEventListener("scroll", animateOnScroll);
+      document.addEventListener("DOMContentLoaded", animateOnScroll);
     </script>
-</body>
+    <script src="tawkto.js"></script>
+    <script src="nav-foot.js"></script>
+  </body>
 </html>
