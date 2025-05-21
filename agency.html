@@ -248,6 +248,14 @@
         transition: all 0.3s ease;
         font-size: 1.05rem;
       }
+
+      .btn-outline-primary {
+        margin-top: 0;
+      }
+
+      .card-body {
+        padding: 1rem 1rem;
+      }
     </style>
   </head>
 
@@ -255,7 +263,7 @@
     <!-- Navbar Start File-->
     <header class="custom-header" data-include="nav.html"></header>
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -391,7 +399,7 @@
     <style>
       /* Minimal custom CSS */
       :root {
-        --primary: #4e73df;
+        --primary: #6b63ff;
         --primary-dark: #2e59d9;
         --secondary: #f6c23e;
         --dark: #2c3e50;
@@ -412,7 +420,7 @@
           var(--primary-dark) 100%
         );
         color: white;
-        padding: 8rem 0 6rem;
+        padding: 4rem 0;
         position: relative;
         overflow: hidden;
       }
@@ -454,6 +462,8 @@
       .pricing-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 0.5rem 2rem 0 rgba(58, 59, 69, 0.2);
+        cursor: pointer;
+        border: 2px solid var(--primary);
       }
 
       .pricing-card .card-header {
@@ -467,7 +477,6 @@
         background-color: var(--primary);
         border-color: var(--primary);
         font-weight: 500;
-        
       }
 
       .btn-primary:hover {
@@ -546,6 +555,7 @@
 
       .nav-pills .nav-link.active {
         background-color: var(--primary);
+        color: white;
       }
 
       .nav-pills .nav-link {
@@ -618,7 +628,7 @@
 
       @media (max-width: 768px) {
         .hero-section {
-          padding: 6rem 0 4rem;
+          padding: 4rem 0;
         }
 
         .hero-section::before {
@@ -630,6 +640,15 @@
           max-height: 200px;
           margin-top: 1rem;
         }
+      }
+
+      .how-img {
+        height: 250px;
+      }
+
+      .form-check-input {
+        transform: scale(1.8);
+        margin-right: 1.2rem;
       }
     </style>
 
@@ -646,7 +665,7 @@
       <div class="container position-relative">
         <div class="row align-items-center">
           <div class="col-lg-7">
-            <h1 class="display-4 fw-bold mb-4">
+            <h1 class="display-4 fw-bold mb-4 text-secondary">
               Premium White Label Hosting for Digital Agencies
             </h1>
             <p class="lead mb-4">
@@ -743,21 +762,21 @@
           </div>
           <div class="col-auto">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Squarespace_logo_and_wordmark.svg/1200px-Squarespace_logo_and_wordmark.svg.png"
+              src="https://cdn.iconscout.com/icon/free/png-256/free-squarespace-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-6-pack-logos-icons-3146768.png"
               alt="Squarespace Agency"
               class="client-logo"
             />
           </div>
           <div class="col-auto">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Webflow_logo.svg/1200px-Webflow_logo.svg.png"
+              src="https://cdn.prod.website-files.com/63a9fb94e473f36dbe99c1b1/6724e1dfaf3fff3cb7517075_LA24.56%20(2).jpg"
               alt="Webflow Agency"
               class="client-logo"
             />
           </div>
           <div class="col-auto">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/HubSpot_Logo.svg/1200px-HubSpot_Logo.svg.png"
+              src="https://images.seeklogo.com/logo-png/27/1/hubspot-logo-png_seeklogo-273533.png"
               alt="HubSpot Agency"
               class="client-logo"
             />
@@ -806,7 +825,9 @@
     <section id="features" class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Agency-Focused Features</h2>
+          <h2 class="fw-bold section-title text-dark display-6">
+            Agency-Focused Features
+          </h2>
           <p class="lead text-muted">
             Everything you need to manage client websites efficiently and
             professionally
@@ -983,7 +1004,7 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h2 class="fw-bold section-title mb-4">
+            <h2 class="fw-bold section-title mb-4 display-6">
               Your Brand, Your Platform
             </h2>
             <p class="lead">
@@ -1041,7 +1062,7 @@
                 alt="Branded dashboard"
                 class="img-fluid rounded shadow-lg"
               />
-              <div class="position-absolute top-0 start-0 translate-middle">
+              <div class="position-absolute top-0 start-0">
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                   alt="Mobile view"
@@ -1060,7 +1081,9 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">How AgencyPro Hosting Works</h2>
+          <h2 class="fw-bold section-title text-dark display-6">
+            How AgencyPro Hosting Works
+          </h2>
           <p class="lead text-muted">
             Get started quickly and see results immediately
           </p>
@@ -1071,7 +1094,7 @@
             <div class="card h-100 border-0 shadow-sm">
               <div class="card-body text-center p-4">
                 <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center"
+                  class="bg-primary bg-opacity-10 text-secondary rounded-circle d-inline-flex align-items-center justify-content-center"
                   style="width: 80px; height: 80px"
                 >
                   <span class="display-5 fw-bold">1</span>
@@ -1085,7 +1108,7 @@
                   <img
                     src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80"
                     alt="Brand setup"
-                    class="img-fluid rounded"
+                    class="img-fluid rounded how-img"
                   />
                 </div>
               </div>
@@ -1095,7 +1118,7 @@
             <div class="card h-100 border-0 shadow-sm">
               <div class="card-body text-center p-4">
                 <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center"
+                  class="bg-primary bg-opacity-10 text-secondary rounded-circle d-inline-flex align-items-center justify-content-center"
                   style="width: 80px; height: 80px"
                 >
                   <span class="display-5 fw-bold">2</span>
@@ -1110,7 +1133,7 @@
                   <img
                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                     alt="Migration"
-                    class="img-fluid rounded"
+                    class="img-fluid rounded how-img"
                   />
                 </div>
               </div>
@@ -1120,7 +1143,7 @@
             <div class="card h-100 border-0 shadow-sm">
               <div class="card-body text-center p-4">
                 <div
-                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center"
+                  class="bg-primary bg-opacity-10 text-secondary rounded-circle d-inline-flex align-items-center justify-content-center"
                   style="width: 80px; height: 80px"
                 >
                   <span class="display-5 fw-bold">3</span>
@@ -1135,7 +1158,7 @@
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
                     alt="Management"
-                    class="img-fluid rounded"
+                    class="img-fluid rounded how-img"
                   />
                 </div>
               </div>
@@ -1155,7 +1178,7 @@
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Platform Features</h2>
+          <h2 class="fw-bold section-title display-6">Platform Features</h2>
           <p class="lead text-muted">
             Explore the powerful tools built for agency workflows
           </p>
@@ -1473,7 +1496,9 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Seamless Integrations</h2>
+          <h2 class="fw-bold section-title text-dark display-6">
+            Seamless Integrations
+          </h2>
           <p class="lead text-muted">Connect with the tools you already use</p>
         </div>
 
@@ -1488,12 +1513,12 @@
                 class="integration-logo"
               />
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/3/39/Shopify_logo_2018.svg"
+                src="https://cdn3.iconfinder.com/data/icons/social-media-2068/64/_shopping-512.png"
                 alt="Shopify"
                 class="integration-logo"
               />
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/0e/WooCommerce_logo.svg"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR74Iq0CI_MM7z9jv_dmBHNftwsJi10FfxwVg&s"
                 alt="WooCommerce"
                 class="integration-logo"
               />
@@ -1538,7 +1563,9 @@
     <section id="pricing" class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Simple, Transparent Pricing</h2>
+          <h2 class="fw-bold section-title display-6">
+            Simple, Transparent Pricing
+          </h2>
           <p class="lead text-muted">
             Choose the plan that fits your agency's needs
           </p>
@@ -1562,19 +1589,24 @@
 
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="pricing-card card h-100">
+            <div class="pricing-card card h-100 d-flex flex-column">
               <div class="card-header">
                 <h3 class="text-white mb-0">Starter</h3>
               </div>
-              <div class="card-body text-center p-4">
+              <div
+                class="card-body text-center p-4 d-flex flex-column flex-grow-1"
+              >
                 <div class="display-4 fw-bold my-4">
-                  <span class="monthly-price">$29</span>
-                  <span class="annual-price d-none">$23</span>
-                  <span class="fs-6 text-muted">/mo</span>
+                  <span class="monthly-price"
+                    >$29 <span class="fs-6 text-muted">/mo</span></span
+                  >
+                  <span class="annual-price d-none"
+                    >$220.8 <span class="fs-6 text-muted">/yr</span></span
+                  >
                 </div>
                 <p class="text-muted">Perfect for small agencies</p>
                 <hr />
-                <ul class="list-unstyled mb-4">
+                <ul class="list-unstyled mb-4 flex-grow-1">
                   <li class="mb-2">
                     <i class="fas fa-check text-primary me-2"></i> 10 Websites
                   </li>
@@ -1600,27 +1632,37 @@
                     <i class="fas fa-check text-primary me-2"></i> Daily Backups
                   </li>
                 </ul>
-                <button class="btn btn-outline-primary w-100">
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-primary w-100 mt-auto"
+                >
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="pricing-card card h-100 border-primary border-2">
+            <div
+              class="pricing-card card h-100 border-primary border-2 d-flex flex-column"
+            >
               <div class="card-header">
                 <h3 class="text-white mb-0">Professional</h3>
                 <span class="badge bg-white text-primary">Most Popular</span>
               </div>
-              <div class="card-body text-center p-4">
+              <div
+                class="card-body text-center p-4 d-flex flex-column flex-grow-1"
+              >
                 <div class="display-4 fw-bold my-4">
-                  <span class="monthly-price">$79</span>
-                  <span class="annual-price d-none">$63</span>
-                  <span class="fs-6 text-muted">/mo</span>
+                  <span class="monthly-price"
+                    >$79 <span class="fs-6 text-muted">/mo</span></span
+                  >
+                  <span class="annual-price d-none"
+                    >$604.8 <span class="fs-6 text-muted">/yr</span></span
+                  >
                 </div>
                 <p class="text-muted">For growing agencies</p>
                 <hr />
-                <ul class="list-unstyled mb-4">
+                <ul class="list-unstyled mb-4 flex-grow-1">
                   <li class="mb-2">
                     <i class="fas fa-check text-primary me-2"></i> 30 Websites
                   </li>
@@ -1651,24 +1693,31 @@
                     Scanning
                   </li>
                 </ul>
-                <button class="btn btn-primary w-100">Get Started</button>
+                <a href="maintenance.html" class="btn btn-primary w-100 mt-auto"
+                  >Get Started</a
+                >
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="pricing-card card h-100">
+            <div class="pricing-card card h-100 d-flex flex-column">
               <div class="card-header">
                 <h3 class="text-white mb-0">Enterprise</h3>
               </div>
-              <div class="card-body text-center p-4">
+              <div
+                class="card-body text-center p-4 d-flex flex-column flex-grow-1"
+              >
                 <div class="display-4 fw-bold my-4">
-                  <span class="monthly-price">$199</span>
-                  <span class="annual-price d-none">$159</span>
-                  <span class="fs-6 text-muted">/mo</span>
+                  <span class="monthly-price"
+                    >$199 <span class="fs-6 text-muted">/mo</span></span
+                  >
+                  <span class="annual-price d-none"
+                    >$1526.4 <span class="fs-6 text-muted">/yr</span></span
+                  >
                 </div>
                 <p class="text-muted">For large agencies</p>
                 <hr />
-                <ul class="list-unstyled mb-4">
+                <ul class="list-unstyled mb-4 flex-grow-1">
                   <li class="mb-2">
                     <i class="fas fa-check text-primary me-2"></i> 100 Websites
                   </li>
@@ -1700,9 +1749,12 @@
                     Solutions
                   </li>
                 </ul>
-                <button class="btn btn-outline-primary w-100">
+                <a
+                  href="maintenance.html"
+                  class="btn btn-outline-primary w-100 mt-auto"
+                >
                   Get Started
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -1723,7 +1775,9 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Plan Comparison</h2>
+          <h2 class="fw-bold section-title text-dark display-6">
+            Plan Comparison
+          </h2>
           <p class="lead text-muted">
             See how our plans stack up against each other
           </p>
@@ -1731,7 +1785,10 @@
 
         <div class="table-responsive">
           <table class="table table-bordered">
-            <thead class="table-light">
+            <thead
+              class=""
+              style="background-color: #f5a623; color: white; border: none"
+            >
               <tr>
                 <th style="width: 30%">Feature</th>
                 <th class="text-center">Starter</th>
@@ -1826,7 +1883,9 @@
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Trusted by Top Agencies</h2>
+          <h2 class="fw-bold section-title display-6">
+            Trusted by Top Agencies
+          </h2>
           <p class="lead text-muted">What our partners say about us</p>
         </div>
 
@@ -1936,7 +1995,7 @@
         </div>
 
         <div class="text-center mt-5">
-          <a href="#" class="btn btn-outline-primary"
+          <a href="maintenance.html" class="btn btn-outline-primary"
             >Read More Success Stories</a
           >
         </div>
@@ -1947,7 +2006,9 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Agency Success Stories</h2>
+          <h2 class="fw-bold section-title text-dark display-6">
+            Agency Success Stories
+          </h2>
           <p class="lead text-muted">
             Learn how agencies like yours are thriving with AgencyPro Hosting
           </p>
@@ -1961,7 +2022,9 @@
                 class="card-img-top"
                 alt="CreativeMind Team"
               />
-              <div class="card-body">
+              <div
+                class="card-body d-flex flex-column flex-grow-1 justify-content-between"
+              >
                 <h5 class="card-title">CreativeMind Agency</h5>
                 <p class="card-text">
                   How a mid-sized agency scaled to 150+ client sites while
@@ -1969,7 +2032,7 @@
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="badge bg-primary">Web Development</div>
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-sm btn-outline-primary"
                     >Read Case Study</a
                   >
                 </div>
@@ -1983,7 +2046,9 @@
                 class="card-img-top"
                 alt="Digital Bloom Dashboard"
               />
-              <div class="card-body">
+              <div
+                class="card-body d-flex flex-column flex-grow-1 justify-content-between"
+              >
                 <h5 class="card-title">Digital Bloom</h5>
                 <p class="card-text">
                   A boutique agency increased revenue by 35% with white-label
@@ -1991,7 +2056,7 @@
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="badge bg-primary">Digital Marketing</div>
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-sm btn-outline-primary"
                     >Read Case Study</a
                   >
                 </div>
@@ -2005,7 +2070,9 @@
                 class="card-img-top"
                 alt="PixelPerfect Office"
               />
-              <div class="card-body">
+              <div
+                class="card-body d-flex flex-column flex-grow-1 justify-content-between"
+              >
                 <h5 class="card-title">PixelPerfect</h5>
                 <p class="card-text">
                   Enterprise agency reduced downtime to zero and improved client
@@ -2013,7 +2080,7 @@
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="badge bg-primary">Enterprise Solutions</div>
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-sm btn-outline-primary"
                     >Read Case Study</a
                   >
                 </div>
@@ -2023,7 +2090,9 @@
         </div>
 
         <div class="text-center mt-5">
-          <a href="#" class="btn btn-primary">View All Case Studies</a>
+          <a href="maintenance.html" class="btn btn-primary"
+            >View All Case Studies</a
+          >
         </div>
       </div>
     </section>
@@ -2034,7 +2103,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6">
             <div class="pe-lg-5">
-              <h2 class="fw-bold section-title mb-4">
+              <h2 class="fw-bold section-title mb-4 display-6">
                 Case Study: CreativeMind Agency
               </h2>
               <p class="lead">
@@ -2045,7 +2114,7 @@
               <div class="mb-4">
                 <div class="d-flex align-items-center mb-3">
                   <div
-                    class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3"
+                    class="bg-primary bg-opacity-10 text-secondary rounded p-2 me-3"
                   >
                     <i class="fas fa-chart-line fa-2x"></i>
                   </div>
@@ -2058,7 +2127,7 @@
                 </div>
                 <div class="d-flex align-items-center mb-3">
                   <div
-                    class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3"
+                    class="bg-primary bg-opacity-10 text-secondary rounded p-2 me-3"
                   >
                     <i class="fas fa-clock fa-2x"></i>
                   </div>
@@ -2071,7 +2140,7 @@
                 </div>
                 <div class="d-flex align-items-center">
                   <div
-                    class="bg-primary bg-opacity-10 text-primary rounded p-2 me-3"
+                    class="bg-primary bg-opacity-10 text-secondary rounded p-2 me-3"
                   >
                     <i class="fas fa-dollar-sign fa-2x"></i>
                   </div>
@@ -2111,7 +2180,7 @@
                 </ul>
               </div>
 
-              <a href="#" class="btn btn-primary mt-3"
+              <a href="maintenance.html" class="btn btn-primary mt-3"
                 >Download Full Case Study</a
               >
             </div>
@@ -2157,7 +2226,9 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="fw-bold section-title">Frequently Asked Questions</h2>
+          <h2 class="fw-bold section-title text-dark">
+            Frequently Asked Questions
+          </h2>
           <p class="lead text-muted">
             Find answers to common questions about AgencyPro Hosting
           </p>
@@ -2190,24 +2261,29 @@
                     </p>
                     <ul>
                       <li>
-                        <strong>White-label branding:</strong> Present the
-                        hosting as your own service
+                        <strong class="text-dark">White-label branding:</strong>
+                        Present the hosting as your own service
                       </li>
                       <li>
-                        <strong>Centralized management:</strong> Control all
-                        client sites from one dashboard
+                        <strong class="text-dark"
+                          >Centralized management:</strong
+                        >
+                        Control all client sites from one dashboard
                       </li>
                       <li>
-                        <strong>Client access controls:</strong> Granular
-                        permissions for clients and team members
+                        <strong class="text-dark"
+                          >Client access controls:</strong
+                        >
+                        Granular permissions for clients and team members
                       </li>
                       <li>
-                        <strong>Bulk actions:</strong> Update or manage multiple
-                        sites simultaneously
+                        <strong class="text-dark">Bulk actions:</strong> Update
+                        or manage multiple sites simultaneously
                       </li>
                       <li>
-                        <strong>Business tools:</strong> Client reporting,
-                        billing integration, and team collaboration
+                        <strong class="text-dark">Business tools:</strong>
+                        Client reporting, billing integration, and team
+                        collaboration
                       </li>
                     </ul>
                     <p class="mb-0">
@@ -2427,10 +2503,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10 text-center">
-            <h2 class="display-5 fw-bold mb-4">
+            <h2 class="display-5 fw-bold mb-4 text-secondary">
               See AgencyPro Hosting in Action
             </h2>
-            <p class="lead mb-5">
+            <p class="lead mb-5 text-secondary">
               Schedule a personalized demo to see how our platform can transform
               your agency's hosting services.
             </p>
@@ -2490,7 +2566,7 @@
                 <div class="row g-4">
                   <div class="col-md-6">
                     <div class="h-100 p-4 bg-light rounded">
-                      <h4 class="mb-3">Start Free Trial</h4>
+                      <h4 class="mb-3 text-dark">Start Free Trial</h4>
                       <p>
                         Try AgencyPro Hosting risk-free for 14 days. No credit
                         card required.
@@ -2505,7 +2581,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="h-100 p-4 bg-light rounded">
-                      <h4 class="mb-3">Contact Sales</h4>
+                      <h4 class="mb-3 text-dark">Contact Sales</h4>
                       <p>Have questions? Our experts are ready to help.</p>
                       <a href="#" class="btn btn-outline-primary w-100"
                         >Contact Us</a
@@ -2526,7 +2602,7 @@
     </section>
 
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <!-- Smooth scroll for anchor links -->
     <script>
       // Smooth scrolling for anchor links
@@ -2591,17 +2667,15 @@
       window.addEventListener("scroll", animateOnScroll);
     </script>
 
-     <!-- Footer -->
-     <div data-include="footer.html"></div>
-     <!-- Back to Top Button -->
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
       <i class="bi bi-arrow-up"></i>
     </a>
 
-    
-
     <!-- Add this right before closing body tag -->
-    <div class="live-chat-wrapper">
+    <!-- <div class="live-chat-wrapper">
       <button
         id="chatToggle"
         class="chat-btn btn btn-success rounded-pill shadow-lg p-3"
@@ -2637,9 +2711,9 @@
       >
         <i class="fas fa-business-time me-1"></i> View Hours
       </button>
-    </div>
+    </div> -->
 
-    <style>
+    <!-- <style>
       /* Core Chat Widget Styles */
       .live-chat-wrapper {
         position: fixed;
@@ -2831,8 +2905,9 @@
           right: -10px;
         }
       }
-    </style>
-   
+    </style> -->
+
+    <script src="tawkto.js"></script>
     <script>
       // ========================
       // CONFIGURATION

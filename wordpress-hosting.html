@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Premium WordPress Hosting | Lightning Fast & Secure</title>
 
-        <!-- FAV ICON -->
+    <!-- FAV ICON -->
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
     <!-- Bootstrap CSS -->
     <link
@@ -33,23 +33,25 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
 
     <style>
       :root {
-        --primary: #21759b; /* WordPress blue */
-        --primary-dark: #1a6080;
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
         --secondary: #2d3748;
         --light: #f8f9fa;
         --dark: #212529;
         --gray: #6c757d;
         --light-gray: #f1f3f5;
-        --wp-blue: #21759b;
-        --wp-light-blue: #d5edf7;
+        --wp-blue: #6b63ff;
+        --wp-light-blue: rgba(107, 99, 255, 0.1);
       }
 
       body {
@@ -100,7 +102,6 @@
       .btn-primary {
         background-color: var(--primary);
         border-color: var(--primary);
-        padding: 0.75rem 1.5rem;
         font-weight: 600;
         border-radius: 8px;
         transition: all 0.3s ease;
@@ -108,7 +109,7 @@
 
       .btn-primary:hover {
         background-color: var(--primary-dark);
-        border-color: var(--primary-dark);
+        border-color: var(--primary);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(33, 117, 155, 0.2);
       }
@@ -118,7 +119,6 @@
         color: var(--primary);
         background: transparent;
         font-weight: 600;
-        padding: 0.75rem 1.5rem;
         border-radius: 8px;
         transition: all 0.3s ease;
       }
@@ -162,10 +162,95 @@
 
       /* Features Section */
       .features-section {
-        padding: 5rem 0;
+        padding: 4rem 0;
         background-color: var(--light-gray);
       }
 
+      /* Swiper and feature card styles */
+      .features-slider {
+        padding: 2rem 0;
+      }
+
+      .swiper-wrapper {
+        padding-bottom: 20px;
+      }
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: auto; 
+      }
+      .feature-card {
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        min-height: 400px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%; 
+      }
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 0.5rem;
+        text-align: start;
+      }
+      .wp-feature-badge {
+        display: inline-block;
+        background-color: var(--primary);
+        color: #fff;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        margin-left: 0.5rem;
+      }
+      .feature-desc {
+        font-size: 1rem;
+        color: #6c757d;
+        margin-bottom: 1rem;
+        text-align: start;
+        flex-grow: 0; 
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: start; 
+        align-items: start;
+      }
+      .feature-list li {
+        font-size: 0.9rem;
+        color: #6c757d;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      @media (max-width: 768px) {
+        .feature-card {
+          min-height: 350px; /* Slightly smaller on mobile */
+        }
+        .feature-title {
+          font-size: 1.25rem;
+        }
+        .feature-desc {
+          font-size: 0.9rem;
+        }
+        .feature-list li {
+          font-size: 0.85rem;
+        }
+      }
       .section-title {
         font-weight: 800;
         font-size: 2.5rem;
@@ -243,7 +328,6 @@
         left: 0;
         color: var(--primary);
       }
-
 
       /* WordPress Showcase Section */
       .showcase-section {
@@ -437,7 +521,7 @@
       .pricing-card {
         background: white;
         border-radius: 12px;
-        padding: 2.5rem;
+        padding: 1rem;
         transition: all 0.3s ease;
         border: 1px solid rgba(0, 0, 0, 0.05);
         height: 100%;
@@ -1236,247 +1320,248 @@
     <!-- HOSTING FEATURE END -->
 
     <!-- Features Section with Slider -->
-<section class="features-section">
-  <div class="container">
-    <h2 class="section-title fade-in">
-      Everything You Need to Run WordPress at Peak Performance
-    </h2>
-    <p class="section-subtitle fade-in delay-1">
-      Our hosting platform is optimized specifically for WordPress with
-      features you won't find on generic hosting
-    </p>
-
-    <!-- Slider Container -->
-    <div class="swiper features-slider fade-in delay-2">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3 class="feature-title">
-              Lightning Fast Speed
-              <span class="wp-feature-badge">WordPress</span>
-            </h3>
-            <p class="feature-desc">
-              Built-in caching, SSD storage, and HTTP/2 ensure your WordPress
-              site loads in milliseconds.
-            </p>
-            <ul class="feature-list">
-              <li>Free CDN integration</li>
-              <li>PHP 8.0+ ready</li>
-              <li>OPcache enabled</li>
-              <li>Redis Object Cache</li>
-            </ul>
-          </div>
+    <section class="features-section">
+      <div class="container">
+        <div class="w-60">
+          <h2 class="section-title fade-in text-center">
+            Everything You Need to Run WordPress at Peak Performance
+          </h2>
+          <p class="section-subtitle fade-in delay-1">
+            Our hosting platform is optimized specifically for WordPress with
+            features you won't find on generic hosting
+          </p>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
+        <!-- Slider Container -->
+        <div class="swiper features-slider fade-in delay-2">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="feature-title">
+                  Lightning Fast Speed
+                  <span class="wp-feature-badge">WordPress</span>
+                </h3>
+                <p class="feature-desc">
+                  Built-in caching, SSD storage, and HTTP/2 ensure your
+                  WordPress site loads in milliseconds.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>Free CDN integration</li>
+                  <li>PHP 8.0+ ready</li>
+                  <li>OPcache enabled</li>
+                  <li>Redis Object Cache</li>
+                </ul>
+              </div>
             </div>
-            <h3 class="feature-title">
-              Enterprise Security
-              <span class="wp-feature-badge">WordPress</span>
-            </h3>
-            <p class="feature-desc">
-              Protect your WordPress site with automated backups, malware
-              scanning, and DDoS protection.
-            </p>
-            <ul class="feature-list">
-              <li>Daily WordPress backups</li>
-              <li>Free SSL certificates</li>
-              <li>Web application firewall</li>
-              <li>WordPress core hardening</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Slide 3 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fab fa-wordpress"></i>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">
+                  Enterprise Security
+                  <span class="wp-feature-badge">WordPress</span>
+                </h3>
+                <p class="feature-desc">
+                  Protect your WordPress site with automated backups, malware
+                  scanning, and DDoS protection.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>Daily WordPress backups</li>
+                  <li>Free SSL certificates</li>
+                  <li>Web application firewall</li>
+                  <li>WordPress core hardening</li>
+                </ul>
+              </div>
             </div>
-            <h3 class="feature-title">
-              WordPress Optimized
-              <span class="wp-feature-badge">Exclusive</span>
-            </h3>
-            <p class="feature-desc">
-              Automatic updates, staging environments, and WP-CLI
-              pre-installed for WordPress experts.
-            </p>
-            <ul class="feature-list">
-              <li>One-click staging</li>
-              <li>Auto WordPress updates</li>
-              <li>SSH & WP-CLI access</li>
-              <li>Plugin performance audits</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Slide 4 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-server"></i>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fab fa-wordpress"></i>
+                </div>
+                <h3 class="feature-title">
+                  WordPress Optimized
+                  <span class="wp-feature-badge">Exclusive</span>
+                </h3>
+                <p class="feature-desc">
+                  Automatic updates, staging environments, and WP-CLI
+                  pre-installed for WordPress experts.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>One-click staging</li>
+                  <li>Auto WordPress updates</li>
+                  <li>SSH & WP-CLI access</li>
+                  <li>Plugin performance audits</li>
+                </ul>
+              </div>
             </div>
-            <h3 class="feature-title">
-              Scalable Resources
-              <span class="wp-feature-badge">Flexible</span>
-            </h3>
-            <p class="feature-desc">
-              Easily scale your WordPress resources based on traffic needs with zero downtime.
-            </p>
-            <ul class="feature-list">
-              <li>Automatic vertical scaling</li>
-              <li>Resource monitoring</li>
-              <li>Burstable CPU/RAM</li>
-              <li>Traffic spike protection</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Slide 5 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-headset"></i>
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3 class="feature-title">
+                  Scalable Resources
+                  <span class="wp-feature-badge">Flexible</span>
+                </h3>
+                <p class="feature-desc">
+                  Easily scale your WordPress resources based on traffic needs
+                  with zero downtime.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>Automatic vertical scaling</li>
+                  <li>Resource monitoring</li>
+                  <li>Burstable CPU/RAM</li>
+                  <li>Traffic spike protection</li>
+                </ul>
+              </div>
             </div>
-            <h3 class="feature-title">
-              WordPress Experts 24/7
-              <span class="wp-feature-badge">Support</span>
-            </h3>
-            <p class="feature-desc">
-              Get instant help from WordPress-certified technicians anytime.
-            </p>
-            <ul class="feature-list">
-              <li>2-minute response time</li>
-              <li>Plugin troubleshooting</li>
-              <li>Free migration help</li>
-              <li>Performance optimization</li>
-            </ul>
-          </div>
-        </div>
 
-        <!-- Slide 6 -->
-        <div class="swiper-slide">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-chart-line"></i>
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="feature-title">
+                  WordPress Experts 24/7
+                  <span class="wp-feature-badge">Support</span>
+                </h3>
+                <p class="feature-desc">
+                  Get instant help from WordPress-certified technicians anytime.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>2-minute response time</li>
+                  <li>Plugin troubleshooting</li>
+                  <li>Free migration help</li>
+                  <li>Performance optimization</li>
+                </ul>
+              </div>
             </div>
-            <h3 class="feature-title">
-              Advanced Analytics
-              <span class="wp-feature-badge">Insights</span>
-            </h3>
-            <p class="feature-desc">
-              Detailed performance metrics and visitor analytics in your dashboard.
-            </p>
-            <ul class="feature-list">
-              <li>Real-time traffic monitoring</li>
-              <li>Performance charts</li>
-              <li>SEO ranking tracker</li>
-              <li>Conversion analytics</li>
-            </ul>
+
+            <!-- Slide 6 -->
+            <div class="swiper-slide">
+              <div class="feature-card d-flex flex-column flex-grow-1">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="feature-title">
+                  Advanced Analytics
+                  <span class="wp-feature-badge">Insights</span>
+                </h3>
+                <p class="feature-desc">
+                  Detailed performance metrics and visitor analytics in your
+                  dashboard.
+                </p>
+                <ul class="feature-list flex-grow-1">
+                  <li>Real-time traffic monitoring</li>
+                  <li>Performance charts</li>
+                  <li>SEO ranking tracker</li>
+                  <li>Conversion analytics</li>
+                </ul>
+              </div>
+            </div>
           </div>
+
+          <!-- Navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- Pagination dots -->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
+    </section>
 
-      <!-- Navigation buttons -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      
-      <!-- Pagination dots -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
+    <!-- Add Swiper JS before closing body -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- Add Swiper JS before closing body -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const swiper = new Swiper(".features-slider", {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            576: {
+              slidesPerView: 2,
+            },
+            992: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      });
+    </script>
 
-<!-- Initialize Swiper -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.features-slider', {
-      slidesPerView: 1,
-      spaceBetween: 20,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        576: {
-          slidesPerView: 2,
-        },
-        992: {
-          slidesPerView: 3,
+    <!-- Add this CSS to style the slider navigation -->
+    <style>
+      .features-slider {
+        padding: 20px 40px;
+        position: relative;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--primary);
+        background: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .swiper-pagination-bullet {
+        background: #ccc;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--primary);
+      }
+
+      @media (max-width: 767px) {
+        .features-slider {
+          padding: 20px 0;
         }
       }
-    });
-  });
-</script>
-
-<!-- Add this CSS to style the slider navigation -->
-<style>
-  .features-slider {
-    padding: 20px 40px;
-    position: relative;
-  }
-  
-  .swiper-button-next, 
-  .swiper-button-prev {
-    color: var(--primary);
-    background: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .swiper-button-next:hover, 
-  .swiper-button-prev:hover {
-    background: var(--primary);
-    color: white;
-  }
-  
-  .swiper-button-next::after, 
-  .swiper-button-prev::after {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .swiper-pagination-bullet {
-    background: #ccc;
-    opacity: 1;
-  }
-  
-  .swiper-pagination-bullet-active {
-    background: var(--primary);
-  }
-  
-  @media (max-width: 767px) {
-    .features-slider {
-      padding: 20px 0;
-    }
-  }
-</style>
-
-
-    
+    </style>
 
     <!-- WordPress Showcase Section -->
     <section class="showcase-section">
@@ -1502,7 +1587,7 @@
                   Professional WordPress site with custom theme and WooCommerce
                   integration
                 </p>
-                <a href="#" class="btn btn-outline">View Case Study</a>
+                <a href="maintenance.html" class="btn btn-outline">View Case Study</a>
               </div>
             </div>
           </div>
@@ -1520,7 +1605,7 @@
                   High-traffic WordPress blog with custom plugins and
                   performance optimization
                 </p>
-                <a href="#" class="btn btn-outline">View Case Study</a>
+                <a href="maintenance.html" class="btn btn-outline">View Case Study</a>
               </div>
             </div>
           </div>
@@ -1538,7 +1623,7 @@
                   WooCommerce store with thousands of products and seamless
                   checkout
                 </p>
-                <a href="#" class="btn btn-outline">View Case Study</a>
+                <a href="maintenance.html" class="btn btn-outline">View Case Study</a>
               </div>
             </div>
           </div>
@@ -1702,7 +1787,7 @@
 
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
-            <div class="pricing-card fade-in">
+            <div class="pricing-card fade-in d-flex flex-column flex-grow-1">
               <h3 class="pricing-title">Starter</h3>
               <p class="pricing-desc">Perfect for personal sites and blogs</p>
               <div class="pricing-price">
@@ -1711,7 +1796,7 @@
                   >/<span id="starterPeriod">mo</span></span
                 >
               </div>
-              <ul class="pricing-features">
+              <ul class="pricing-features flex-grow-1">
                 <li>1 WordPress Install</li>
                 <li>10GB SSD Storage</li>
                 <li>25,000 Visits/Month</li>
@@ -1720,12 +1805,12 @@
                 <li class="disabled">Staging Environment</li>
                 <li class="disabled">Premium CDN</li>
               </ul>
-              <a href="#" class="btn btn-outline w-100">Get Started</a>
+              <a href="https://my.wefithost.com/order-wordpress-hosting" class="btn btn-outline w-100">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="pricing-card fade-in delay-1">
+            <div class="pricing-card fade-in delay-1  d-flex flex-column flex-grow-1">
               <h3 class="pricing-title">Business</h3>
               <p class="pricing-desc">Ideal for small businesses</p>
               <div class="pricing-price">
@@ -1734,7 +1819,7 @@
                   >/<span id="businessPeriod">mo</span></span
                 >
               </div>
-              <ul class="pricing-features">
+              <ul class="pricing-features flex-grow-1">
                 <li>3 WordPress Installs</li>
                 <li>30GB SSD Storage</li>
                 <li>100,000 Visits/Month</li>
@@ -1743,12 +1828,12 @@
                 <li>Staging Environment</li>
                 <li class="disabled">Premium CDN</li>
               </ul>
-              <a href="#" class="btn btn-outline w-100">Get Started</a>
+              <a href="https://my.wefithost.com/order-wordpress-hosting" class="btn btn-outline w-100">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="pricing-card popular fade-in delay-2">
+            <div class="pricing-card popular fade-in delay-2  d-flex flex-column flex-grow-1">
               <div class="popular-badge">Most Popular</div>
               <h3 class="pricing-title">Professional</h3>
               <p class="pricing-desc">For growing businesses</p>
@@ -1758,7 +1843,7 @@
                   >/<span id="proPeriod">mo</span></span
                 >
               </div>
-              <ul class="pricing-features">
+              <ul class="pricing-features flex-grow-1">
                 <li>10 WordPress Installs</li>
                 <li>50GB SSD Storage</li>
                 <li>250,000 Visits/Month</li>
@@ -1767,12 +1852,12 @@
                 <li>Staging Environment</li>
                 <li>Priority Support</li>
               </ul>
-              <a href="#" class="btn btn-primary w-100">Get Started</a>
+              <a href="https://my.wefithost.com/order-wordpress-hosting" class="btn btn-primary w-100">Get Started</a>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="pricing-card fade-in delay-3">
+            <div class="pricing-card fade-in delay-3  d-flex flex-column flex-grow-1">
               <h3 class="pricing-title">Enterprise</h3>
               <p class="pricing-desc">For high-traffic sites</p>
               <div class="pricing-price">
@@ -1781,7 +1866,7 @@
                   >/<span id="enterprisePeriod">mo</span></span
                 >
               </div>
-              <ul class="pricing-features">
+              <ul class="pricing-features flex-grow-1">
                 <li>Unlimited WordPress</li>
                 <li>100GB SSD Storage</li>
                 <li>1M+ Visits/Month</li>
@@ -1790,14 +1875,14 @@
                 <li>Staging Environment</li>
                 <li>24/7 Priority Support</li>
               </ul>
-              <a href="#" class="btn btn-outline w-100">Get Started</a>
+              <a href="https://my.wefithost.com/order-wordpress-hosting" class="btn btn-outline w-100">Get Started</a>
             </div>
           </div>
         </div>
 
         <div class="text-center mt-5 fade-in delay-3">
           <p class="text-muted">
-            Need custom solutions? <a href="#">Contact our sales team</a>
+            Need custom solutions? <a href="maintenance.html">Contact our sales team</a>
           </p>
         </div>
       </div>
@@ -1926,7 +2011,7 @@
                 Enterprise-grade WordPress security plugin with firewall and
                 malware scanner
               </p>
-              <a href="#" class="btn btn-outline w-100">Learn More</a>
+              <a href="maintenance.html" class="btn btn-outline w-100">Learn More</a>
             </div>
           </div>
 
@@ -1943,7 +2028,7 @@
                 Premium caching plugin to dramatically speed up your WordPress
                 site
               </p>
-              <a href="#" class="btn btn-outline w-100">Learn More</a>
+              <a href="maintenance.html" class="btn btn-outline w-100">Learn More</a>
             </div>
           </div>
 
@@ -1959,7 +2044,7 @@
               <p class="plugin-desc">
                 Backup and restore your WordPress site with this powerful plugin
               </p>
-              <a href="#" class="btn btn-outline w-100">Learn More</a>
+              <a href="maintenance.html" class="btn btn-outline w-100">Learn More</a>
             </div>
           </div>
 
@@ -1975,7 +2060,7 @@
               <p class="plugin-desc">
                 Transform your WordPress site into a powerful e-commerce store
               </p>
-              <a href="#" class="btn btn-outline w-100">Learn More</a>
+              <a href="maintenance.html" class="btn btn-outline w-100">Learn More</a>
             </div>
           </div>
         </div>
@@ -2117,7 +2202,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2 class="cta-title fade-in">
+        <h2 class="cta-title fade-in text-white">
           Ready to Experience Better WordPress Hosting?
         </h2>
         <p class="cta-subtitle fade-in delay-1">
@@ -2125,8 +2210,8 @@
           optimized hosting platform.
         </p>
         <div class="cta-buttons fade-in delay-2">
-          <a href="#" class="btn btn-white">Get Started Now</a>
-          <a href="#" class="btn btn-outline-white">Chat With Our Experts</a>
+          <a href="#pricing" class="btn btn-white">Get Started Now</a>
+          <a href="maintenance.html" class="btn btn-outline-white">Chat With Our Experts</a>
         </div>
       </div>
     </section>
@@ -2141,8 +2226,8 @@
       document
         .getElementById("pricingToggle")
         .addEventListener("change", function () {
-          const monthlyPrices = [9.99, 24.99, 49.99, 99.99];
-          const yearlyPrices = [7.99, 19.99, 39.99, 79.99];
+          const monthlyPrices = [2.25, 3.89, 6.89, 11.99];
+          const yearlyPrices = [21.60, 37.34, 66.14, 115.10];
 
           if (this.checked) {
             // Switch to yearly pricing
