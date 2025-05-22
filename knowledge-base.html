@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>WeFitHost | Knowledge Base</title>
+
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+      
+      /* Knowledge Base Styles */
+      .knowledge-hero {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+      }
+      
+      .knowledge-hero h1 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      
+      .knowledge-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+      
+      .search-container {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+      }
+      
+      .search-container input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        font-size: 1.1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      .search-container button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+      }
+      
+      .kb-section {
+        padding: 4rem 0;
+      }
+      
+      .kb-categories {
+        background: #f9f9ff;
+      }
+      
+      .category-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+        border: 1px solid #eee;
+      }
+      
+      .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: var(--primary);
+      }
+      
+      .category-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+      }
+      
+      .article-card {
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #eee;
+        transition: all 0.2s ease;
+      }
+      
+      .article-card:hover {
+        background: #f9f9ff;
+        border-color: var(--primary);
+      }
+      
+      .article-card h5 {
+        margin-bottom: 0.5rem;
+      }
+      
+      .article-card p {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      
+      .popular-articles .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      
+      .view-all {
+        color: var(--primary);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      
+      .view-all:hover {
+        text-decoration: underline;
+      }
+      
+      .contact-support {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+        border-radius: 12px;
+        padding: 3rem;
+      }
+      
+      .contact-support h3 {
+        margin-bottom: 1.5rem;
+      }
+      
+      .contact-support p {
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+      
+      /* FAQ Styles */
+      .accordion-button:not(.collapsed) {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+      
+      .accordion-button:focus {
+        box-shadow: 0 0 0 0.25rem rgba(107, 99, 255, 0.25);
+      }
+      
+      .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236b63ff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .knowledge-hero {
+          padding: 3rem 0;
+        }
+        
+        .kb-section {
+          padding: 2rem 0;
+        }
+        
+        .contact-support {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+    <!-- Navbar Start -->
+    <header class="custom-header" data-include="nav.html"></header>
+    <div class="mobile-menu-backdrop"></div>
+    <!-- Navbar End -->
+
+    <!-- Knowledge Base Hero Section -->
+    <section class="knowledge-hero">
+      <div class="container">
+        <h1>How can we help you today?</h1>
+        <p>Find answers to common questions, browse documentation, or contact our support team.</p>
+        <div class="search-container">
+          <input type="text" placeholder="Search the knowledge base...">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Knowledge Base Categories -->
+    <section class="kb-section kb-categories">
+      <div class="container">
+        <h2 class="text-center mb-5">Browse by Category</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h4>Web Hosting</h4>
+              <p>Guides and documentation for our web hosting services, including setup, management, and troubleshooting.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>Software Hosting</h4>
+              <p>Learn how to deploy and manage your applications with our software hosting solutions.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <h4>Billing & Accounts</h4>
+              <p>Information about payments, invoices, subscriptions, and account management.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Security</h4>
+              <p>Best practices for securing your hosting environment and protecting your data.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h4>Troubleshooting</h4>
+              <p>Solutions for common issues and problems you might encounter with our services.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h4>Performance</h4>
+              <p>Tips and tricks for optimizing your website or application performance.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary mt-3">View Articles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Articles -->
+    <section class="kb-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular Articles</h2>
+          <a href="#" class="view-all">View all articles →</a>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>How to migrate your website to WeFitHost</h5>
+              <p>A step-by-step guide to transferring your website from another host to WeFitHost with minimal downtime.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>Setting up SSL certificates for your domain</h5>
+              <p>Learn how to secure your website with HTTPS using our free Let's Encrypt SSL certificates.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>Connecting to your server via SSH</h5>
+              <p>Detailed instructions for establishing a secure SSH connection to your hosting environment.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>Managing DNS records in WeFitHost</h5>
+              <p>How to configure DNS settings for your domain, including A, CNAME, MX, and TXT records.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>Backup and restore procedures</h5>
+              <p>Learn how to create backups of your website and restore them when needed.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="article-card">
+              <h5>Scaling your hosting plan</h5>
+              <p>When and how to upgrade your hosting plan to accommodate growing traffic.</p>
+              <a href="#" class="text-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="kb-section">
+      <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                What makes WeFitHost different from other hosting providers?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                WeFitHost specializes in both web and software hosting with a focus on performance and developer-friendly features. Our infrastructure is optimized for speed, we offer transparent pricing with no hidden fees, and our support team consists of technical experts available 24/7 to help with both basic and advanced issues.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What kind of support do you offer?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We provide 24/7 support through live chat, email, and phone. Our average response time is under 15 minutes for critical issues. We also offer extensive documentation (like this knowledge base), video tutorials, and community forums where you can get help from other users.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Can I upgrade or downgrade my plan later?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, you can change your plan at any time through your control panel. Upgrades take effect immediately, while downgrades take effect at the end of your current billing cycle. There are no penalties for changing plans.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Do you offer a money-back guarantee?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                We offer a 30-day money-back guarantee on all shared hosting plans. If you're not satisfied with our service within the first 30 days, you'll receive a full refund. This doesn't apply to domain registrations, dedicated servers, or any add-on services.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                How do I transfer my domain to WeFitHost?
+              </button>
+            </h3>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Domain transfers are straightforward. First, unlock your domain at your current registrar and obtain the authorization code. Then initiate the transfer through your WeFitHost control panel. We'll guide you through each step. Note that your domain must be at least 60 days old to be transferred.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section class="kb-section">
+      <div class="container">
+        <div class="contact-support">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h3>Still need help?</h3>
+              <p>Our support team is available 24/7 to assist you with any questions or issues you might have.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <a href="#" class="btn btn-light btn-lg">Contact Support</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <script>
+      // Toggle yearly/monthly pricing
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButtons = document.querySelectorAll(".tab__price");
+        const pricingCards = document.querySelectorAll(".card-plan");
+
+        const pricingData = [
+          { monthly: 15.63, yearly: (15.63 * 12 * 0.8).toFixed(2) }, // Starter
+          { monthly: 19.63, yearly: (19.63 * 12 * 0.8).toFixed(2) }, // Professional
+          { monthly: 68.63, yearly: (68.63 * 12 * 0.8).toFixed(2) }, // Business
+        ];
+
+        function updatePricing(selectedPlan) {
+          pricingCards.forEach((card, index) => {
+            toggleButtons.forEach((btn) => btn.classList.remove("active"));
+
+            const activeButton = Array.from(toggleButtons).find(
+              (btn) => btn.getAttribute("data-tab") === selectedPlan
+            );
+            if (activeButton) {
+              activeButton.classList.add("active");
+            }
+
+            const priceWrapper = card.querySelector(".card-plan__price");
+            const priceSpan = priceWrapper.querySelector("span");
+            const periodSub = priceWrapper.querySelector("sub");
+
+            if (selectedPlan === "yearly") {
+              priceSpan.textContent = pricingData[index].yearly;
+              periodSub.textContent = "/YEAR";
+            } else {
+              priceSpan.textContent = pricingData[index].monthly;
+              periodSub.textContent = "/MONTH";
+            }
+          });
+        }
+
+        updatePricing("monthly"); // Set default to monthly
+
+        toggleButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const selectedPlan = this.getAttribute("data-tab");
+            updatePricing(selectedPlan);
+          });
+        });
+      });
+    </script>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".pricing-swiper", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: false,
+
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          observer: true,
+          observeParents: true,
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      });
+
+      //Fix sizing when switching tabs
+      document.querySelectorAll(".tab__price").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          setTimeout(() => {
+            swiper.update(); // force recalculate size
+          }, 100); // short delay to let DOM render
+        });
+      });
+    </script>
+
+    <!-- Libs JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+    <script src="back-to-top.js"></script>
+    <script src="nav-foot.js"></script>
+  </body>
+</html>

@@ -3,45 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wefithost Advanced Sales Training</title>
+    <title>Wefithost | Advanced Sales Training</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
         :root {
-            --primary-color: #3a4f7a;
-            --secondary-color: #4f8d88;
-            --accent-color: #ff8e6e;
-            --light-bg: #f8f9fa;
-            --dark-text: #212529;
-            --light-text: #6c757d;
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
         }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-text);
+            color: var(--dark);
             line-height: 1.7;
-            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .training-section {
-            padding: 5rem 0;
+            padding: 6rem 0;
             position: relative;
         }
         
         .section-header {
-            position: relative;
-            margin-bottom: 3rem;
             text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
         }
         
         .section-header h2 {
             font-weight: 700;
+            color: var(--primary);
             position: relative;
             display: inline-block;
             padding-bottom: 1rem;
         }
         
-        .section-header h2:after {
+        .section-header h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -49,44 +73,63 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
         }
         
-        .feature-card {
+        .section-header p.lead {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            color: #7f8c8d;
+        }
+        
+        .product-card {
             border: none;
             border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             height: 100%;
         }
         
-        .feature-card:hover {
+        .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .product-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-card .card-body {
+            padding: 2rem;
+        }
+        
+        .product-card .card-title {
+            font-weight: 600;
+            color: var(--primary);
         }
         
         .feature-icon {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--secondary);
             margin-bottom: 1.5rem;
         }
         
         .process-step {
             position: relative;
             padding-left: 3rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
         
-        .process-step:before {
+        .process-step::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
         }
         
         .step-number {
@@ -95,85 +138,140 @@
             top: 0;
             width: 3rem;
             height: 3rem;
-            background: var(--primary-color);
+            background: var(--secondary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(58, 79, 122, 0.3);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
         
-        .tab-content {
-            padding: 2rem;
-            background: white;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .nav-tabs .nav-link {
+        .persona-card {
             border: none;
-            color: var(--light-text);
-            font-weight: 600;
-            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            height: 100%;
         }
         
-        .nav-tabs .nav-link.active {
-            color: var(--primary-color);
-            background: transparent;
-            border-bottom: 3px solid var(--primary-color);
+        .persona-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        .nav-tabs .nav-link:hover:not(.active) {
-            color: var(--dark-text);
+        .persona-card .card-img-top {
+            height: 250px;
+            object-fit: cover;
         }
         
-        .accordion-button:not(.collapsed) {
-            background-color: rgba(58, 79, 122, 0.05);
-            color: var(--primary-color);
+        .persona-card .card-body {
+            padding: 2rem;
+        }
+        
+        .persona-card .card-title {
             font-weight: 600;
+            color: var(--primary);
         }
         
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(58, 79, 122, 0.1);
+        .checklist-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
         }
         
-        .progress {
-            height: 10px;
-            border-radius: 5px;
+        .checklist-item::before {
+            content: '\f26a';
+            font-family: bootstrap-icons;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
         }
         
-        .progress-bar {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        .infographic-img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            width: 100%;
+            height: auto;
         }
         
-        .bg-light-custom {
-            background-color: var(--light-bg);
+        .objection-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .objection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .objection-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .objection-card .card-body {
+            padding: 2rem;
+        }
+        
+        .tool-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .tool-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .tool-card .card-body {
+            padding: 2rem;
         }
         
         .btn-primary-custom {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: var(--secondary);
+            border-color: var(--secondary);
             color: white;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
         }
         
         .btn-primary-custom:hover {
-            background-color: #2c3d5f;
-            border-color: #2c3d5f;
-        }
-        
-        .btn-accent {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
+            background-color: #2980b9;
+            border-color: #2980b9;
             color: white;
         }
         
-        .btn-accent:hover {
-            background-color: #e67e5e;
-            border-color: #e67e5e;
+        .btn-outline-custom {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .bg-light-custom {
+            background-color: var(--light);
         }
         
         .floating-shapes {
@@ -195,7 +293,7 @@
         .shape-1 {
             width: 300px;
             height: 300px;
-            background: var(--primary-color);
+            background: var(--secondary);
             top: -150px;
             right: -150px;
         }
@@ -203,169 +301,49 @@
         .shape-2 {
             width: 200px;
             height: 200px;
-            background: var(--secondary-color);
+            background: var(--accent);
             bottom: -100px;
             left: -100px;
         }
         
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            background: var(--accent-color);
-            top: 50%;
-            left: -75px;
-        }
-        
-        .shape-4 {
-            width: 250px;
-            height: 250px;
-            background: var(--secondary-color);
-            bottom: -125px;
-            right: -125px;
-        }
-        
-        .knowledge-check {
-            border-left: 4px solid var(--primary-color);
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .checklist-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .checklist-item:before {
-            content: '\f26a';
-            font-family: bootstrap-icons;
-            position: absolute;
-            left: 0;
-            color: var(--secondary-color);
-        }
-        
-        .floating-nav {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-        }
-        
-        .floating-nav .nav-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: white;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .floating-nav .nav-link:hover, .floating-nav .nav-link.active {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        @media (max-width: 992px) {
-            .floating-nav {
-                display: none;
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 5rem 0;
             }
             
             .training-section {
-                padding: 3rem 0;
+                padding: 4rem 0;
             }
         }
     </style>
 </head>
 <body>
 
-<!-- Floating Navigation -->
-<div class="floating-nav d-none d-lg-flex flex-column">
-    <a class="nav-link active" href="#welcome"><i class="bi bi-house"></i></a>
-    <a class="nav-link" href="#product-mastery"><i class="bi bi-layers"></i></a>
-    <a class="nav-link" href="#sales-methodology"><i class="bi bi-diagram-3"></i></a>
-    <a class="nav-link" href="#customer-insights"><i class="bi bi-people"></i></a>
-    <a class="nav-link" href="#objection-expert"><i class="bi bi-shield-exclamation"></i></a>
-    <a class="nav-link" href="#advanced-techniques"><i class="bi bi-graph-up-arrow"></i></a>
-    <a class="nav-link" href="#tools-resources"><i class="bi bi-tools"></i></a>
-    <a class="nav-link" href="#certification"><i class="bi bi-award"></i></a>
-</div>
-
-<!-- Welcome Section -->
-<section id="welcome" class="training-section bg-light-custom">
+<!-- Hero Section -->
+<section class="hero-section">
     <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
     </div>
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold mb-4">Wefithost <span class="text-primary">Advanced</span> Sales Training</h1>
-                <p class="lead mb-4">Master the complete sales cycle for web hosting and software solutions with our intensive training program designed to transform you into a top-performing sales professional.</p>
-                <div class="d-flex flex-wrap gap-3 mb-5">
-                    <button class="btn btn-primary-custom btn-lg px-4" data-bs-toggle="modal" data-bs-target="#enrollModal">Enroll Now</button>
-                    <button class="btn btn-outline-primary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#curriculumModal">View Full Curriculum</button>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="d-flex">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" class="rounded-circle border border-3 border-white" width="50" height="50" alt="Trainer">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle border border-3 border-white ms-n3" width="50" height="50" alt="Trainer">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle border border-3 border-white ms-n3" width="50" height="50" alt="Trainer">
-                    </div>
-                    <div class="ms-3">
-                        <p class="mb-0 fw-bold">Expert Instructors</p>
-                        <p class="mb-0 small text-muted">15+ years industry experience</p>
-                    </div>
+            <div class="col-lg-6 hero-content">
+                <h1 class="display-4 fw-bold mb-4">Wefithost Sales Excellence Training</h1>
+                <p class="lead mb-5">Master the art of selling web hosting and software solutions with our comprehensive training program designed to transform you into a top-performing sales professional.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-primary-custom btn-lg">Start Training</button>
+                    <button class="btn btn-outline-light btn-lg">Download Resources</button>
                 </div>
             </div>
-            <div class="col-lg-6 mt-5 mt-lg-0">
-                <div class="card feature-card border-0">
-                    <div class="card-body p-4 text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-bar-chart-line"></i>
-                        </div>
-                        <h3 class="mb-3">Proven Results</h3>
-                        <div class="row g-3 text-start">
-                            <div class="col-6">
-                                <div class="p-3 bg-white rounded-3 shadow-sm">
-                                    <h2 class="text-primary mb-0">87%</h2>
-                                    <p class="mb-0 small">Increase in close rates</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 bg-white rounded-3 shadow-sm">
-                                    <h2 class="text-primary mb-0">2.3x</h2>
-                                    <p class="mb-0 small">Higher average deal size</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 bg-white rounded-3 shadow-sm">
-                                    <h2 class="text-primary mb-0">64%</h2>
-                                    <p class="mb-0 small">Reduction in sales cycle</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="p-3 bg-white rounded-3 shadow-sm">
-                                    <h2 class="text-primary mb-0">92%</h2>
-                                    <p class="mb-0 small">Customer retention rate</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-6 hero-content mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sales Team" class="img-fluid rounded-3 shadow-lg">
             </div>
         </div>
     </div>
 </section>
 
 <!-- Product Mastery Section -->
-<section id="product-mastery" class="training-section">
+<section class="training-section">
     <div class="container">
         <div class="section-header">
             <h2>Product Mastery</h2>
@@ -374,68 +352,64 @@
         
         <div class="row g-4 mb-5">
             <div class="col-md-6 col-lg-3">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4">
-                        <div class="feature-icon">
-                            <i class="bi bi-hdd-stack"></i>
-                        </div>
-                        <h5 class="mb-3">Hosting Infrastructure</h5>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="card-img-top" alt="Shared Hosting">
+                    <div class="card-body">
+                        <h5 class="card-title">Shared Hosting</h5>
+                        <p class="card-text">Perfect for small websites and blogs with our managed platform.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Data center locations</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Server specifications</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Network architecture</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Redundancy measures</li>
+                            <li class="checklist-item">1-click WordPress installs</li>
+                            <li class="checklist-item">Free SSL certificates</li>
+                            <li class="checklist-item">24/7 monitoring</li>
+                            <li class="checklist-item">99.9% uptime guarantee</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
             <div class="col-md-6 col-lg-3">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4">
-                        <div class="feature-icon">
-                            <i class="bi bi-share"></i>
-                        </div>
-                        <h5 class="mb-3">Hosting Solutions</h5>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" class="card-img-top" alt="VPS Hosting">
+                    <div class="card-body">
+                        <h5 class="card-title">VPS Hosting</h5>
+                        <p class="card-text">Dedicated resources with root access for growing sites.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Shared hosting</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> VPS configurations</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Cloud clusters</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Dedicated servers</li>
+                            <li class="checklist-item">SSD storage</li>
+                            <li class="checklist-item">Choice of OS</li>
+                            <li class="checklist-item">Scalable resources</li>
+                            <li class="checklist-item">99.95% uptime SLA</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
             <div class="col-md-6 col-lg-3">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4">
-                        <div class="feature-icon">
-                            <i class="bi bi-code-square"></i>
-                        </div>
-                        <h5 class="mb-3">Software Products</h5>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="Cloud Hosting">
+                    <div class="card-body">
+                        <h5 class="card-title">Cloud Hosting</h5>
+                        <p class="card-text">Elastic resources that scale with your traffic needs.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> SaaS platforms</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Licensed software</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> API solutions</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Custom development</li>
+                            <li class="checklist-item">Auto-scaling</li>
+                            <li class="checklist-item">Global CDN</li>
+                            <li class="checklist-item">Load balancing</li>
+                            <li class="checklist-item">99.99% uptime SLA</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
             <div class="col-md-6 col-lg-3">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4">
-                        <div class="feature-icon">
-                            <i class="bi bi-plus-circle"></i>
-                        </div>
-                        <h5 class="mb-3">Value-Add Services</h5>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Dedicated Servers">
+                    <div class="card-body">
+                        <h5 class="card-title">Dedicated Servers</h5>
+                        <p class="card-text">Full physical servers for maximum performance.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Security suite</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Performance tools</li>
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Migration services</li>
-                            <li><i class="bi bi-check-circle-fill text-success me-2"></i> Premium support</li>
+                            <li class="checklist-item">Enterprise hardware</li>
+                            <li class="checklist-item">Custom configurations</li>
+                            <li class="checklist-item">99.99% uptime</li>
+                            <li class="checklist-item">24/7 monitoring</li>
                         </ul>
                     </div>
                 </div>
@@ -444,327 +418,128 @@
         
         <div class="row">
             <div class="col-lg-6">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Technical Specifications</h4>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Feature</th>
-                                        <th>Shared</th>
-                                        <th>VPS</th>
-                                        <th>Cloud</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>CPU Cores</td>
-                                        <td>Shared</td>
-                                        <td>1-8 dedicated</td>
-                                        <td>Auto-scaling</td>
-                                    </tr>
-                                    <tr>
-                                        <td>RAM</td>
-                                        <td>1GB</td>
-                                        <td>2-32GB</td>
-                                        <td>Flexible</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Storage</td>
-                                        <td>50GB SSD</td>
-                                        <td>50-500GB SSD</td>
-                                        <td>Elastic</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bandwidth</td>
-                                        <td>Unmetered</td>
-                                        <td>2-10TB</td>
-                                        <td>Flexible</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Uptime SLA</td>
-                                        <td>99.9%</td>
-                                        <td>99.95%</td>
-                                        <td>99.99%</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Performance Comparison">
+                <h3>Performance Benchmarks</h3>
+                <p>Our optimized infrastructure delivers 40% faster page loads compared to standard hosting solutions. The benchmarks show consistent performance across all hosting tiers, with cloud hosting providing the most scalable solution for high-traffic sites.</p>
+                <ul>
+                    <li class="checklist-item">SSD storage across all plans</li>
+                    <li class="checklist-item">LiteSpeed web server technology</li>
+                    <li class="checklist-item">HTTP/3 and QUIC protocol support</li>
+                    <li class="checklist-item">Global CDN with 200+ edge locations</li>
+                </ul>
             </div>
             
-            <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Competitive Advantages</h4>
-                        <div class="accordion" id="advantagesAccordion">
-                            <div class="accordion-item border-0 mb-3">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage1">
-                                        Proprietary Control Panel
-                                    </button>
-                                </h2>
-                                <div id="advantage1" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
-                                    <div class="accordion-body">
-                                        <p>Our custom-built control panel offers intuitive management that reduces customer support requests by 40% compared to industry standard cPanel. Key features include:</p>
-                                        <ul>
-                                            <li>One-click application deployments</li>
-                                            <li>Real-time resource monitoring</li>
-                                            <li>Integrated security center</li>
-                                            <li>Automated backup management</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item border-0 mb-3">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage2">
-                                        Global Anycast Network
-                                    </button>
-                                </h2>
-                                <div id="advantage2" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
-                                    <div class="accordion-body">
-                                        <p>Our network infrastructure delivers content 30% faster than competitors through:</p>
-                                        <ul>
-                                            <li>12 global edge locations</li>
-                                            <li>Anycast DNS and CDN</li>
-                                            <li>Dedicated fiber routes</li>
-                                            <li>BGP optimized routing</li>
-                                        </ul>
-                                        <p class="mb-0">This results in consistent sub-50ms latency worldwide.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="accordion-item border-0">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advantage3">
-                                        Security Architecture
-                                    </button>
-                                </h2>
-                                <div id="advantage3" class="accordion-collapse collapse" data-bs-parent="#advantagesAccordion">
-                                    <div class="accordion-body">
-                                        <p>Enterprise-grade security measures that prevent 99.99% of attacks:</p>
-                                        <ul>
-                                            <li>Web application firewall with machine learning</li>
-                                            <li>Real-time DDoS mitigation (up to 2Tbps)</li>
-                                            <li>Isolated container technology</li>
-                                            <li>Automated vulnerability scanning</li>
-                                        </ul>
-                                        <p class="mb-0">All backed by our $1M security guarantee.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Technical Knowledge Assessment</h4>
-                        <form id="technicalQuiz">
-                            <div class="mb-4 knowledge-check">
-                                <h5>1. A customer is experiencing intermittent downtime with their current shared hosting provider. They're considering upgrading but are unsure whether to choose VPS or Cloud hosting. How would you explain the key differences?</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
-                                    <label class="form-check-label" for="q1a">
-                                        "VPS gives you dedicated resources at a fixed cost, while Cloud offers elastic scalability but with variable pricing based on usage."
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
-                                    <label class="form-check-label" for="q1b">
-                                        "They're essentially the same thing with different marketing names."
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
-                                    <label class="form-check-label" for="q1c">
-                                        "Cloud is always better because it's more modern technology."
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4 knowledge-check">
-                                <h5>2. A prospect asks about our security measures compared to AWS. Which of these is NOT a valid differentiator to mention?</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
-                                    <label class="form-check-label" for="q2a">
-                                        "We include enterprise-grade WAF and DDoS protection standard on all plans"
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
-                                    <label class="form-check-label" for="q2b">
-                                        "Our security team provides personalized consultation rather than just documentation"
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
-                                    <label class="form-check-label" for="q2c">
-                                        "We have more data centers than AWS globally"
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-4 knowledge-check">
-                                <h5>3. When explaining our proprietary control panel to a non-technical customer, which analogy would be most effective?</h5>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
-                                    <label class="form-check-label" for="q3a">
-                                        "It's like the dashboard of your car - everything you need to control is in one intuitive place"
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
-                                    <label class="form-check-label" for="q3b">
-                                        "It uses a MySQL backend with PHP middleware and React frontend"
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
-                                    <label class="form-check-label" for="q3c">
-                                        "Think of it as cPanel but with different colors"
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary-custom">Submit Assessment</button>
-                            <div id="quizResult" class="mt-3 alert d-none"></div>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Security Features">
+                <h3>Security Architecture</h3>
+                <p>Multi-layered security protects against 99.99% of threats with our comprehensive security suite included in all hosting plans at no additional cost.</p>
+                <ul>
+                    <li class="checklist-item">Web Application Firewall (WAF)</li>
+                    <li class="checklist-item">Real-time DDoS protection</li>
+                    <li class="checklist-item">Automated malware scanning</li>
+                    <li class="checklist-item">Free SSL certificates</li>
+                    <li class="checklist-item">Isolated container technology</li>
+                    <li class="checklist-item">$1M security guarantee</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Sales Methodology Section -->
-<section id="sales-methodology" class="training-section bg-light-custom">
-    <div class="floating-shapes">
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-    </div>
+<section class="training-section bg-light-custom">
     <div class="container">
         <div class="section-header">
             <h2>Sales Methodology</h2>
-            <p class="lead">Master the Wefithost 7-Step Sales Process for maximum conversion rates</p>
+            <p class="lead">Our proven 7-step sales process for hosting and software solutions</p>
         </div>
         
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h4>Prospecting & Qualification</h4>
-                        <p>Identify high-potential leads through targeted outreach, inbound channels, and partner referrals. Use our ICP scoring matrix to prioritize opportunities.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>LinkedIn outreach templates</li>
-                                <li>Cold email sequences</li>
-                                <li>BANT qualification framework</li>
-                                <li>CRM scoring automation</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h4>Discovery & Needs Analysis</h4>
-                        <p>Conduct deep discovery to uncover pain points, current solutions, and business objectives. Use our proprietary questioning framework.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Technical environment mapping</li>
-                                <li>Stakeholder identification</li>
-                                <li>ROI potential assessment</li>
-                                <li>Decision process clarification</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h4>Solution Design</h4>
-                        <p>Architect the optimal hosting/software solution based on discovered needs. Leverage our solution configurator tool.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Technical requirements matching</li>
-                                <li>Resource sizing calculator</li>
-                                <li>Integration planning</li>
-                                <li>Migration pathway development</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h4>Value Demonstration</h4>
-                        <p>Showcase the solution through tailored demos, case studies, and proof points that address specific needs.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Interactive demo environment</li>
-                                <li>ROI calculator</li>
-                                <li>Competitive benchmarking</li>
-                                <li>Customer success stories</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">5</div>
-                        <h4>Objection Resolution</h4>
-                        <p>Address concerns using our objection handling playbook and negotiation frameworks.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Price justification toolkit</li>
-                                <li>Technical objection responses</li>
-                                <li>Risk mitigation strategies</li>
-                                <li>Concession planning</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">6</div>
-                        <h4>Closing & Commitment</h4>
-                        <p>Secure the deal using our proven closing techniques tailored to different buyer personas.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Trial conversion strategies</li>
-                                <li>Contract negotiation playbook</li>
-                                <li>Executive summary creation</li>
-                                <li>Implementation planning</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-number">7</div>
-                        <h4>Onboarding & Expansion</h4>
-                        <p>Ensure successful implementation and identify expansion opportunities through proactive account management.</p>
-                        <div class="mt-3">
-                            <h6>Key Activities:</h6>
-                            <ul>
-                                <li>Technical onboarding checklist</li>
-                                <li>Quarterly business reviews</li>
-                                <li>Upsell/cross-sell triggers</li>
-                                <li>Customer success partnership</li>
-                            </ul>
-                        </div>
-                    </div>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Sales Process">
+                
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Prospecting & Qualification</h3>
+                    <p>Identify high-potential leads through targeted outreach, inbound channels, and partner referrals. Use our Ideal Customer Profile (ICP) framework to prioritize opportunities.</p>
+                    <ul>
+                        <li class="checklist-item">LinkedIn outreach templates</li>
+                        <li class="checklist-item">Cold email sequences</li>
+                        <li class="checklist-item">BANT qualification framework</li>
+                        <li class="checklist-item">CRM scoring automation</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Discovery & Needs Analysis</h3>
+                    <p>Conduct deep discovery to uncover pain points, current solutions, and business objectives. Use our proprietary questioning framework to identify technical requirements and business drivers.</p>
+                    <ul>
+                        <li class="checklist-item">Technical environment mapping</li>
+                        <li class="checklist-item">Stakeholder identification</li>
+                        <li class="checklist-item">ROI potential assessment</li>
+                        <li class="checklist-item">Decision process clarification</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Solution Design</h3>
+                    <p>Architect the optimal hosting/software solution based on discovered needs. Leverage our solution configurator tool to match technical requirements with the perfect product mix.</p>
+                    <ul>
+                        <li class="checklist-item">Resource sizing calculator</li>
+                        <li class="checklist-item">Integration planning</li>
+                        <li class="checklist-item">Migration pathway development</li>
+                        <li class="checklist-item">Security requirements mapping</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Value Demonstration</h3>
+                    <p>Showcase the solution through tailored demos, case studies, and proof points that address specific pain points. Highlight key differentiators and ROI potential.</p>
+                    <ul>
+                        <li class="checklist-item">Interactive demo environment</li>
+                        <li class="checklist-item">ROI calculator</li>
+                        <li class="checklist-item">Competitive benchmarking</li>
+                        <li class="checklist-item">Customer success stories</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Objection Resolution</h3>
+                    <p>Address concerns using our objection handling playbook and negotiation frameworks. Turn objections into opportunities to reinforce value.</p>
+                    <ul>
+                        <li class="checklist-item">Price justification toolkit</li>
+                        <li class="checklist-item">Technical objection responses</li>
+                        <li class="checklist-item">Risk mitigation strategies</li>
+                        <li class="checklist-item">Concession planning</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Closing & Commitment</h3>
+                    <p>Secure the deal using our proven closing techniques tailored to different buyer personas. Overcome final hurdles and gain commitment.</p>
+                    <ul>
+                        <li class="checklist-item">Trial conversion strategies</li>
+                        <li class="checklist-item">Contract negotiation playbook</li>
+                        <li class="checklist-item">Executive summary creation</li>
+                        <li class="checklist-item">Implementation planning</li>
+                    </ul>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">7</div>
+                    <h3>Onboarding & Expansion</h3>
+                    <p>Ensure successful implementation and identify expansion opportunities through proactive account management. Build the foundation for long-term customer success.</p>
+                    <ul>
+                        <li class="checklist-item">Technical onboarding checklist</li>
+                        <li class="checklist-item">Quarterly business reviews</li>
+                        <li class="checklist-item">Upsell/cross-sell triggers</li>
+                        <li class="checklist-item">Customer success partnership</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -773,7 +548,7 @@
             <div class="col-lg-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">Sales Process Metrics</h4>
+                        <h3 class="mb-4">Sales Process Metrics</h3>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -820,7 +595,7 @@
             <div class="col-lg-6 mt-4 mt-lg-0">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">Process Optimization Tools</h4>
+                        <h3 class="mb-4">Process Optimization Tools</h3>
                         <div class="list-group list-group-flush">
                             <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 Discovery Question Bank
@@ -851,503 +626,498 @@
 </section>
 
 <!-- Customer Insights Section -->
-<section id="customer-insights" class="training-section">
+<section class="training-section">
     <div class="container">
         <div class="section-header">
             <h2>Customer Insights</h2>
             <p class="lead">Understand buyer personas, pain points, and decision drivers</p>
         </div>
         
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav nav-tabs" id="personaTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="startup-tab" data-bs-toggle="tab" data-bs-target="#startup" type="button" role="tab">Startups</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="smb-tab" data-bs-toggle="tab" data-bs-target="#smb" type="button" role="tab">SMBs</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="enterprise-tab" data-bs-toggle="tab" data-bs-target="#enterprise" type="button" role="tab">Enterprise</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="agency-tab" data-bs-toggle="tab" data-bs-target="#agency" type="button" role="tab">Agencies</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="developer-tab" data-bs-toggle="tab" data-bs-target="#developer" type="button" role="tab">Developers</button>
-                    </li>
-                </ul>
-                
-                <div class="tab-content" id="personaTabContent">
-                    <div class="tab-pane fade show active" id="startup" role="tabpanel">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="mb-3">Profile</h4>
-                                <p>Early-stage companies (Seed to Series A) with limited technical resources but high growth potential. Typically have founder-led technology decisions.</p>
-                                
-                                <h4 class="mt-4 mb-3">Key Characteristics</h4>
-                                <ul>
-                                    <li><strong>Team Size:</strong> 1-10 employees</li>
-                                    <li><strong>Budget:</strong> Limited but flexible for the right value</li>
-                                    <li><strong>Technical Level:</strong> Mixed (often non-technical founders)</li>
-                                    <li><strong>Growth Stage:</strong> Product development to early traction</li>
-                                </ul>
-                                
-                                <h4 class="mt-4 mb-3">Common Pain Points</h4>
-                                <ul>
-                                    <li>Uncertain infrastructure needs as they scale</li>
-                                    <li>Limited DevOps expertise in-house</li>
-                                    <li>Budget constraints but need reliability</li>
-                                    <li>Time constraints on technical founders</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <h4 class="mb-3">Recommended Solutions</h4>
-                                <ul>
-                                    <li><strong>Starter:</strong> Managed WordPress hosting with easy scaling</li>
-                                    <li><strong>Growth:</strong> Cloud VPS with auto-scaling</li>
-                                    <li><strong>Tech-heavy:</strong> Developer-centric cloud with API access</li>
-                                    <li><strong>Add-ons:</strong> Staging environments, backup solutions</li>
-                                </ul>
-                                
-                                <h4 class="mt-4 mb-3">Sales Approach</h4>
-                                <ul>
-                                    <li>Focus on time savings for founders</li>
-                                    <li>Emphasize easy scaling without migrations</li>
-                                    <li>Highlight startup discount programs</li>
-                                    <li>Provide technical documentation for developers</li>
-                                </ul>
-                                
-                                <h4 class="mt-4 mb-3">Key Objections</h4>
-                                <ul>
-                                    <li>"We'll just use AWS/Azure"</li>
-                                    <li>"We can't afford managed services"</li>
-                                    <li>"Our current solution is 'good enough'"</li>
-                                </ul>
-                                
-                                <h4 class="mt-4 mb-3">Success Story</h4>
-                                <p><strong>FinTech Startup:</strong> Migrated from DIY AWS setup to our managed cloud, reducing infrastructure management time by 80% and cutting costs by 35% while improving reliability.</p>
-                            </div>
-                        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="persona-card">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Startup Founder">
+                    <div class="card-body">
+                        <h5 class="card-title">Startup Founder</h5>
+                        <p class="text-muted small">Tech | SaaS | E-commerce</p>
+                        <p><strong>Key Characteristics:</strong></p>
+                        <ul>
+                            <li class="checklist-item">1-10 employees</li>
+                            <li class="checklist-item">Limited budget</li>
+                            <li class="checklist-item">Growth-focused</li>
+                            <li class="checklist-item">Technical founder</li>
+                        </ul>
+                        <p><strong>Pain Points:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Uncertain infrastructure needs</li>
+                            <li class="checklist-item">Limited DevOps expertise</li>
+                            <li class="checklist-item">Time constraints</li>
+                        </ul>
+                        <p><strong>Recommended Solutions:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Managed cloud hosting</li>
+                            <li class="checklist-item">Auto-scaling</li>
+                            <li class="checklist-item">Startup discount program</li>
+                        </ul>
                     </div>
-                    
-                    <div class="tab-pane fade" id="smb" role="tabpanel">
-                        <!-- Similar detailed content for SMB persona -->
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h4 class="mb-3">Profile</h4>
-                                <p>Established small to medium businesses with 10-250 employees, typically with an online presence that's critical to operations.</p>
-                                
-                                <h4 class="mt-4 mb-3">Key Characteristics</h4>
-                                <ul>
-                                    <li><strong>Team Size:</strong> 10-250 employees</li>
-                                    <li><strong>Budget:</strong> Moderate with clear ROI expectations</li>
-                                    <li><strong>Technical Level:</strong> Limited in-house expertise</li>
-                                    <li><strong>Growth Stage:</strong> Stable operations with growth goals</li>
-                                </ul>
-                                
-                                <h4 class="mt-4 mb-3">Common Pain Points</h4>
-                                <ul>
-                                    <li>Outdated hosting infrastructure</li>
-                                    <li>Security concerns</li>
-                                    <li>Poor website performance</li>
-                                    <li>Lack of technical support</li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <!-- More SMB content -->
-                            </div>
-                        </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="persona-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="IT Manager">
+                    <div class="card-body">
+                        <h5 class="card-title">IT Manager</h5>
+                        <p class="text-muted small">Enterprise | Mid-market</p>
+                        <p><strong>Key Characteristics:</strong></p>
+                        <ul>
+                            <li class="checklist-item">50-1000 employees</li>
+                            <li class="checklist-item">Budget-conscious</li>
+                            <li class="checklist-item">Risk-averse</li>
+                            <li class="checklist-item">Process-oriented</li>
+                        </ul>
+                        <p><strong>Pain Points:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Legacy infrastructure</li>
+                            <li class="checklist-item">Security concerns</li>
+                            <li class="checklist-item">Budget constraints</li>
+                        </ul>
+                        <p><strong>Recommended Solutions:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Managed VPS</li>
+                            <li class="checklist-item">Security suite</li>
+                            <li class="checklist-item">Premium support</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Additional tab panes for other personas -->
-                    
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="persona-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" class="card-img-top" alt="Web Developer">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Developer</h5>
+                        <p class="text-muted small">Agency | Freelancer</p>
+                        <p><strong>Key Characteristics:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Technical expertise</li>
+                            <li class="checklist-item">Multiple clients</li>
+                            <li class="checklist-item">Performance-focused</li>
+                            <li class="checklist-item">Control needs</li>
+                        </ul>
+                        <p><strong>Pain Points:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Limited root access</li>
+                            <li class="checklist-item">Poor performance</li>
+                            <li class="checklist-item">Complex management</li>
+                        </ul>
+                        <p><strong>Recommended Solutions:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Developer cloud</li>
+                            <li class="checklist-item">SSH access</li>
+                            <li class="checklist-item">Staging environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="persona-card">
+                    <img src="https://images.unsplash.com/photo-1573497019709-293846ab88e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="Marketing Director">
+                    <div class="card-body">
+                        <h5 class="card-title">Marketing Director</h5>
+                        <p class="text-muted small">E-commerce | Content</p>
+                        <p><strong>Key Characteristics:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Non-technical</li>
+                            <li class="checklist-item">ROI-focused</li>
+                            <li class="checklist-item">Team management</li>
+                            <li class="checklist-item">Performance metrics</li>
+                        </ul>
+                        <p><strong>Pain Points:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Slow site speed</li>
+                            <li class="checklist-item">Downtime</li>
+                            <li class="checklist-item">Poor SEO performance</li>
+                        </ul>
+                        <p><strong>Recommended Solutions:</strong></p>
+                        <ul>
+                            <li class="checklist-item">Managed WordPress</li>
+                            <li class="checklist-item">CDN integration</li>
+                            <li class="checklist-item">SEO tools</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
         
         <div class="row mt-5">
             <div class="col-lg-6">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Decision-Making Analysis</h4>
-                        <h5 class="mt-3">Economic Buyers</h5>
-                        <ul>
-                            <li>CFOs - Focus on TCO and ROI</li>
-                            <li>Business Owners - Value reliability</li>
-                            <li>Ops Managers - Care about uptime</li>
-                        </ul>
-                        
-                        <h5 class="mt-4">Technical Buyers</h5>
-                        <ul>
-                            <li>CTOs - Evaluate architecture</li>
-                            <li>Developers - API/SDK quality</li>
-                            <li>IT Managers - Ease of management</li>
-                        </ul>
-                        
-                        <h5 class="mt-4">User Buyers</h5>
-                        <ul>
-                            <li>Marketers - Need CMS features</li>
-                            <li>Content Teams - Editing tools</li>
-                            <li>Support Staff - Help resources</li>
-                        </ul>
-                    </div>
-                </div>
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Buyer Journey">
+                <h3>Buyer Decision Journey</h3>
+                <p>Understanding how different personas evaluate hosting solutions helps tailor your approach at each stage of their journey from awareness to purchase and beyond.</p>
+                <ol>
+                    <li class="checklist-item">Awareness: Recognize pain points</li>
+                    <li class="checklist-item">Consideration: Research alternatives</li>
+                    <li class="checklist-item">Decision: Evaluate proposals</li>
+                    <li class="checklist-item">Onboarding: Implement solution</li>
+                    <li class="checklist-item">Expansion: Add services</li>
+                </ol>
             </div>
             
-            <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Customer Journey Mapping</h4>
-                        <div class="process-steps">
-                            <div class="process-step">
-                                <div class="step-number">1</div>
-                                <h5>Awareness</h5>
-                                <p>Recognize pain points with current solution through performance issues, security scares, or scaling challenges.</p>
-                            </div>
-                            
-                            <div class="process-step">
-                                <div class="step-number">2</div>
-                                <h5>Consideration</h5>
-                                <p>Research alternatives, compare features, read reviews, and talk to peers.</p>
-                            </div>
-                            
-                            <div class="process-step">
-                                <div class="step-number">3</div>
-                                <h5>Decision</h5>
-                                <p>Evaluate proposals, conduct demos, check references, and negotiate terms.</p>
-                            </div>
-                            
-                            <div class="process-step">
-                                <div class="step-number">4</div>
-                                <h5>Onboarding</h5>
-                                <p>Migrate services, configure environment, train teams, and optimize setup.</p>
-                            </div>
-                            
-                            <div class="process-step">
-                                <div class="step-number">5</div>
-                                <h5>Expansion</h5>
-                                <p>Add services, upgrade plans, and integrate additional solutions over time.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Decision Factors">
+                <h3>Decision Factors by Persona</h3>
+                <p>Each persona prioritizes different factors when selecting a hosting provider. Tailor your messaging accordingly.</p>
+                <ul>
+                    <li class="checklist-item"><strong>Startup Founder:</strong> Scalability, cost, ease of use</li>
+                    <li class="checklist-item"><strong>IT Manager:</strong> Reliability, security, support</li>
+                    <li class="checklist-item"><strong>Web Developer:</strong> Performance, control, APIs</li>
+                    <li class="checklist-item"><strong>Marketing Director:</strong> Speed, uptime, SEO</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Objection Handling Section -->
-<section id="objection-expert" class="training-section bg-light-custom">
+<section class="training-section bg-light-custom">
     <div class="container">
         <div class="section-header">
-            <h2>Objection Handling Mastery</h2>
+            <h2>Objection Handling</h2>
             <p class="lead">Advanced techniques to overcome even the toughest objections</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="objection-card">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" class="card-img-top" alt="Price Objection">
+                    <div class="card-body">
+                        <h5 class="card-title">"Your prices are too high"</h5>
+                        <p><strong>Response Strategy:</strong></p>
+                        <ol>
+                            <li class="checklist-item"><strong>Acknowledge:</strong> "I understand budget is important..."</li>
+                            <li class="checklist-item"><strong>Reframe:</strong> "When you look at total cost of ownership..."</li>
+                            <li class="checklist-item"><strong>Compare:</strong> "Compared to managing this yourself..."</li>
+                            <li class="checklist-item"><strong>Justify:</strong> "The premium comes from these value-adds..."</li>
+                            <li class="checklist-item"><strong>Option:</strong> "We have budget-friendly options..."</li>
+                        </ol>
+                        <p><strong>Verbatim Examples:</strong></p>
+                        <ul>
+                            <li class="checklist-item">"Our customers find they actually save money through..."</li>
+                            <li class="checklist-item">"Let me show our ROI calculator..."</li>
+                            <li class="checklist-item">"Would operational expense vs capital expense help?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="objection-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="Migration Objection">
+                    <div class="card-body">
+                        <h5 class="card-title">"Migrating is too complicated"</h5>
+                        <p><strong>Response Strategy:</strong></p>
+                        <ol>
+                            <li class="checklist-item"><strong>Empathize:</strong> "I understand change can be daunting..."</li>
+                            <li class="checklist-item"><strong>Assure:</strong> "We've migrated 5,000+ sites..."</li>
+                            <li class="checklist-item"><strong>Detail:</strong> "Our process includes..."</li>
+                            <li class="checklist-item"><strong>Guarantee:</strong> "We guarantee zero downtime..."</li>
+                            <li class="checklist-item"><strong>Support:</strong> "Our team handles everything..."</li>
+                        </ol>
+                        <p><strong>Verbatim Examples:</strong></p>
+                        <ul>
+                            <li class="checklist-item">"We completely handle migrations for free..."</li>
+                            <li class="checklist-item">"Here's our step-by-step migration checklist..."</li>
+                            <li class="checklist-item">"We'll schedule at your convenience..."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="objection-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Feature Objection">
+                    <div class="card-body">
+                        <h5 class="card-title">"You're missing [specific feature]"</h5>
+                        <p><strong>Response Strategy:</strong></p>
+                        <ol>
+                            <li class="checklist-item"><strong>Acknowledge:</strong> "That's valuable feedback..."</li>
+                            <li class="checklist-item"><strong>Redirect:</strong> "Our platform provides [alternative]..."</li>
+                            <li class="checklist-item"><strong>Explore:</strong> "How are you using that feature?"</li>
+                            <li class="checklist-item"><strong>Roadmap:</strong> "We're adding features like..."</li>
+                            <li class="checklist-item"><strong>Custom:</strong> "We can customize a solution..."</li>
+                        </ol>
+                        <p><strong>Verbatim Examples:</strong></p>
+                        <ul>
+                            <li class="checklist-item">"While we don't have that exact feature..."</li>
+                            <li class="checklist-item">"Many customers use [alternative] instead..."</li>
+                            <li class="checklist-item">"That's on our roadmap for Q3..."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="objection-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="Competitor Objection">
+                    <div class="card-body">
+                        <h5 class="card-title">"We're happy with our current provider"</h5>
+                        <p><strong>Response Strategy:</strong></p>
+                        <ol>
+                            <li class="checklist-item"><strong>Validate:</strong> "That's great to hear..."</li>
+                            <li class="checklist-item"><strong>Differentiate:</strong> "Many customers switched for..."</li>
+                            <li class="checklist-item"><strong>Compare:</strong> "Would you be open to a comparison?"</li>
+                            <li class="checklist-item"><strong>Probe:</strong> "What do you like about them?"</li>
+                            <li class="checklist-item"><strong>Offer:</strong> "We can do a free trial..."</li>
+                        </ol>
+                        <p><strong>Verbatim Examples:</strong></p>
+                        <ul>
+                            <li class="checklist-item">"What would make you consider switching?"</li>
+                            <li class="checklist-item">"Here's how we compare on key metrics..."</li>
+                            <li class="checklist-item">"Many clients kept their old provider as backup..."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Objection Framework">
+                <h3>Objection Handling Framework</h3>
+                <ol>
+                    <li class="checklist-item"><strong>Listen:</strong> Let them fully express the objection</li>
+                    <li class="checklist-item"><strong>Acknowledge:</strong> Validate their concern</li>
+                    <li class="checklist-item"><strong>Clarify:</strong> Ask probing questions</li>
+                    <li class="checklist-item"><strong>Respond:</strong> Address with facts/alternatives</li>
+                    <li class="checklist-item"><strong>Confirm:</strong> Check if resolved</li>
+                </ol>
+            </div>
+            
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Objection Types">
+                <h3>Common Objection Types</h3>
+                <ul>
+                    <li class="checklist-item"><strong>Price:</strong> 45% of objections</li>
+                    <li class="checklist-item"><strong>Features:</strong> 30% of objections</li>
+                    <li class="checklist-item"><strong>Trust:</strong> 15% of objections</li>
+                    <li class="checklist-item"><strong>Timing:</strong> 10% of objections</li>
+                </ul>
+                <h4 class="mt-4">Prevention Strategies</h4>
+                <ul>
+                    <li class="checklist-item">Address likely objections proactively</li>
+                    <li class="checklist-item">Provide comparisons early</li>
+                    <li class="checklist-item">Share case studies</li>
+                    <li class="checklist-item">Offer risk-reducers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Competitive Differentiation Section -->
+<section class="training-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Competitive Differentiation</h2>
+            <p class="lead">How we stand out against major hosting providers</p>
         </div>
         
         <div class="row">
             <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Competitive Comparison">
+                <h3>Key Differentiators</h3>
+                <ul>
+                    <li class="checklist-item"><strong>Performance:</strong> 40% faster page loads than industry average</li>
+                    <li class="checklist-item"><strong>Support:</strong> 24/7 expert support with <2 min response time</li>
+                    <li class="checklist-item"><strong>Security:</strong> Enterprise-grade protection included</li>
+                    <li class="checklist-item"><strong>Control Panel:</strong> Proprietary intuitive interface</li>
+                    <li class="checklist-item"><strong>Migration:</strong> Free expert migration services</li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">Common Objections Framework</h4>
+                        <h3 class="mb-4">Competitor Battle Cards</h3>
                         
-                        <div class="accordion" id="objectionAccordion">
+                        <div class="accordion" id="competitorAccordion">
                             <div class="accordion-item mb-3">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#priceObjection">
-                                        "Your prices are too high"
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aws">
+                                        AWS Comparison
                                     </button>
                                 </h2>
-                                <div id="priceObjection" class="accordion-collapse collapse" data-bs-parent="#objectionAccordion">
+                                <div id="aws" class="accordion-collapse collapse" data-bs-parent="#competitorAccordion">
                                     <div class="accordion-body">
-                                        <h5>Response Strategy:</h5>
-                                        <p><strong>1. Acknowledge:</strong> "I understand budget is always a consideration..."</p>
-                                        <p><strong>2. Reframe:</strong> "When you look at total cost of ownership including..."</p>
-                                        <p><strong>3. Compare:</strong> "Compared to managing this yourself or using XYZ provider..."</p>
-                                        <p><strong>4. Justify:</strong> "The premium comes from these specific value-adds..."</p>
-                                        <p><strong>5. Option:</strong> "We do have some more budget-friendly options if..."</p>
-                                        
-                                        <h5 class="mt-3">Verbatim Examples:</h5>
+                                        <p><strong>Key Advantages Over AWS:</strong></p>
                                         <ul>
-                                            <li>"Our customers find that while our upfront cost may be slightly higher, they actually save money through..."</li>
-                                            <li>"Let me show you our ROI calculator that demonstrates how this pays for itself within X months..."</li>
-                                            <li>"Would it help if we structured this as an operational expense rather than capital expenditure?"</li>
+                                            <li class="checklist-item">Simpler management interface</li>
+                                            <li class="checklist-item">Predictable pricing vs. variable cloud costs</li>
+                                            <li class="checklist-item">Included expert support</li>
+                                            <li class="checklist-item">Optimized for web hosting workloads</li>
+                                        </ul>
+                                        <p><strong>When AWS Might Be Better:</strong></p>
+                                        <ul>
+                                            <li class="checklist-item">Need for 100+ server instances</li>
+                                            <li class="checklist-item">Specialized machine learning needs</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             
-                            <!-- Additional objection accordion items -->
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Objection Handling Methodology</h4>
-                        
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h5>Listen Fully</h5>
-                            <p>Allow the customer to completely express their concern without interruption. Pay attention to both stated and unstated objections.</p>
-                            <div class="checklist-item">Use active listening techniques</div>
-                            <div class="checklist-item">Note exact phrasing used</div>
-                            <div class="checklist-item">Identify emotional vs logical objections</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <h5>Validate & Empathize</h5>
-                            <p>Acknowledge the validity of their concern and demonstrate understanding.</p>
-                            <div class="checklist-item">"I completely understand why that would be important"</div>
-                            <div class="checklist-item">"Many of our customers initially had the same concern"</div>
-                            <div class="checklist-item">"That's a very good question"</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <h5>Clarify & Explore</h5>
-                            <p>Ask probing questions to uncover the root of the objection.</p>
-                            <div class="checklist-item">"What specifically about X concerns you?"</div>
-                            <div class="checklist-item">"How has this impacted your business?"</div>
-                            <div class="checklist-item">"What would an ideal solution look like?"</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <h5>Respond Strategically</h5>
-                            <p>Address the concern using appropriate techniques.</p>
-                            <div class="checklist-item">Reframe to value proposition</div>
-                            <div class="checklist-item">Provide evidence/testimonials</div>
-                            <div class="checklist-item">Offer alternatives/options</div>
-                        </div>
-                        
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <h5>Confirm Resolution</h5>
-                            <p>Verify that the objection has been satisfactorily addressed.</p>
-                            <div class="checklist-item">"Does that address your concern?"</div>
-                            <div class="checklist-item">"How does this solution sound to you?"</div>
-                            <div class="checklist-item">"Are you comfortable moving forward?"</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Objection Handling Simulation</h4>
-                        
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="mb-3">
-                                    <label for="objectionType" class="form-label">Select objection type:</label>
-                                    <select class="form-select" id="objectionType">
-                                        <option value="price">Price/Cost</option>
-                                        <option value="timing">Timing</option>
-                                        <option value="features">Missing Features</option>
-                                        <option value="competitor">Competitor Comparison</option>
-                                        <option value="trust">Trust/Reputation</option>
-                                        <option value="custom">Enter Custom Objection</option>
-                                    </select>
+                            <div class="accordion-item mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#godaddy">
+                                        GoDaddy Comparison
+                                    </button>
+                                </h2>
+                                <div id="godaddy" class="accordion-collapse collapse" data-bs-parent="#competitorAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>Key Advantages Over GoDaddy:</strong></p>
+                                        <ul>
+                                            <li class="checklist-item">Higher performance infrastructure</li>
+                                            <li class="checklist-item">More advanced security features</li>
+                                            <li class="checklist-item">Better support response times</li>
+                                            <li class="checklist-item">More scalable solutions</li>
+                                        </ul>
+                                        <p><strong>When GoDaddy Might Be Better:</strong></p>
+                                        <ul>
+                                            <li class="checklist-item">Very small personal websites</li>
+                                            <li class="checklist-item">Domain-only purchases</li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                
-                                <div class="mb-3" id="customObjectionGroup" style="display: none;">
-                                    <label for="customObjection" class="form-label">Enter the exact objection:</label>
-                                    <textarea class="form-control" id="customObjection" rows="2"></textarea>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <label for="customerType" class="form-label">Customer type:</label>
-                                    <select class="form-select" id="customerType">
-                                        <option value="startup">Startup</option>
-                                        <option value="smb">SMB</option>
-                                        <option value="enterprise">Enterprise</option>
-                                        <option value="agency">Agency</option>
-                                    </select>
-                                </div>
-                                
-                                <button class="btn btn-primary-custom" id="generateResponse">Generate Response</button>
                             </div>
                             
-                            <div class="col-lg-6 mt-4 mt-lg-0">
-                                <div class="p-4 bg-white rounded-3 border" id="responseContainer" style="display: none;">
-                                    <h5>Recommended Response:</h5>
-                                    <div id="generatedResponse"></div>
-                                    
-                                    <h5 class="mt-4">Techniques Used:</h5>
-                                    <ul id="techniquesList"></ul>
-                                    
-                                    <h5 class="mt-4">Follow-up Questions:</h5>
-                                    <ul id="followupList"></ul>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#siteground">
+                                        SiteGround Comparison
+                                    </button>
+                                </h2>
+                                <div id="siteground" class="accordion-collapse collapse" data-bs-parent="#competitorAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>Key Advantages Over SiteGround:</strong></p>
+                                        <ul>
+                                            <li class="checklist-item">More data center locations</li>
+                                            <li class="checklist-item">Higher resource allocations</li>
+                                            <li class="checklist-item">Better enterprise options</li>
+                                            <li class="checklist-item">More developer-friendly</li>
+                                        </ul>
+                                        <p><strong>When SiteGround Might Be Better:</strong></p>
+                                        <ul>
+                                            <li class="checklist-item">Basic WordPress sites</li>
+                                            <li class="checklist-item">Small business brochure sites</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Advanced Techniques Section -->
-<section id="advanced-techniques" class="training-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Advanced Sales Techniques</h2>
-            <p class="lead">Master sophisticated strategies for complex sales scenarios</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4">
-                        <div class="feature-icon">
-                            <i class="bi bi-currency-exchange"></i>
-                        </div>
-                        <h5 class="mb-3">Value-Based Pricing</h5>
-                        <p>Move beyond feature-price comparisons to articulate total economic impact.</p>
-                        <ul>
-                            <li>ROI calculation frameworks</li>
-                            <li>TCO vs. competitor analysis</li>
-                            <li>Business outcome pricing</li>
-                            <li>Expense reclassification</li>
-                        </ul>
-                        <button class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#pricingModal">Learn Techniques</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Additional technique cards -->
-            
         </div>
         
         <div class="row mt-5">
             <div class="col-lg-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">Enterprise Sales Playbook</h4>
-                        
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h5>Account Mapping</h5>
-                            <p>Identify all stakeholders, influencers, and decision-makers across the organization.</p>
-                            <div class="checklist-item">Org chart development</div>
-                            <div class="checklist-item">Power vs. influence matrix</div>
-                            <div class="checklist-item">Relationship mapping</div>
-                        </div>
-                        
-                        <!-- Additional enterprise steps -->
-                        
+                        <h3 class="mb-4">Competitive Response Toolkit</h3>
+                        <ul>
+                            <li class="checklist-item"><strong>Feature Comparison Matrix:</strong> Detailed side-by-side</li>
+                            <li class="checklist-item"><strong>Performance Benchmarks:</strong> Real-world test results</li>
+                            <li class="checklist-item"><strong>TCO Calculator:</strong> Show total cost differences</li>
+                            <li class="checklist-item"><strong>Migration Guides:</strong> How to switch from competitors</li>
+                            <li class="checklist-item"><strong>Customer Testimonials:</strong> Why they switched to us</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="card border-0 shadow-sm h-100">
-                    <div class="card-body p-4">
-                        <h4 class="mb-4">Competitive Battle Cards</h4>
-                        
-                        <ul class="nav nav-tabs" id="competitorTabs" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="aws-tab" data-bs-toggle="tab" data-bs-target="#aws" type="button" role="tab">AWS</button>
-                            </li>
-                            <!-- Additional competitor tabs -->
-                        </ul>
-                        
-                        <div class="tab-content p-3" id="competitorTabContent">
-                            <div class="tab-pane fade show active" id="aws" role="tabpanel">
-                                <h5>Key Differentiators</h5>
-                                <ul>
-                                    <li><strong>Simplicity:</strong> Our managed services vs. their DIY approach</li>
-                                    <li><strong>Pricing:</strong> Predictable flat-rate vs. variable cloud costs</li>
-                                    <li><strong>Support:</strong> Included expert support vs. premium add-on</li>
-                                </ul>
-                                
-                                <h5 class="mt-4">Common Objections</h5>
-                                <ul>
-                                    <li>"AWS is the industry standard"</li>
-                                    <li>"We need the flexibility of AWS"</li>
-                                    <li>"Our team already knows AWS"</li>
-                                </ul>
-                                
-                                <h5 class="mt-4">Counter Strategies</h5>
-                                <ul>
-                                    <li>Highlight hidden costs of AWS management</li>
-                                    <li>Show TCO comparisons for typical workloads</li>
-                                    <li>Demonstrate hybrid cloud capabilities</li>
-                                </ul>
-                            </div>
-                            
-                            <!-- Additional competitor content -->
-                        </div>
-                    </div>
-                </div>
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="infographic-img" alt="Switching Benefits">
+                <h3>Switching Benefits</h3>
+                <ul>
+                    <li class="checklist-item"><strong>Performance:</strong> 40% faster page loads</li>
+                    <li class="checklist-item"><strong>Uptime:</strong> 99.99% vs industry 99.9%</li>
+                    <li class="checklist-item"><strong>Support:</strong> 2 min response vs 30+ min</li>
+                    <li class="checklist-item"><strong>Security:</strong> Enterprise protection included</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Tools & Resources Section -->
-<section id="tools-resources" class="training-section bg-light-custom">
+<!-- Sales Tools Section -->
+<section class="training-section bg-light-custom">
     <div class="container">
         <div class="section-header">
-            <h2>Tools & Resources</h2>
-            <p class="lead">Everything you need to sell Wefithost solutions effectively</p>
+            <h2>Sales Tools</h2>
+            <p class="lead">Resources to help you sell more effectively</p>
         </div>
         
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
-                <div class="card feature-card h-100">
-                    <div class="card-body p-4 text-center">
-                        <div class="feature-icon">
-                            <i class="bi bi-laptop"></i>
-                        </div>
-                        <h5 class="mb-3">Demo Environment</h5>
-                        <p>Full access to our interactive demo platform with pre-configured scenarios.</p>
-                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#demoModal">Launch Demo</button>
+                <div class="tool-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Demo Environment">
+                    <div class="card-body">
+                        <h5 class="card-title">Demo Environment</h5>
+                        <p class="card-text">Full access to our interactive demo platform with pre-configured scenarios for different hosting types.</p>
+                        <button class="btn btn-outline-primary">Launch Demo</button>
                     </div>
                 </div>
             </div>
             
-            <!-- Additional tool cards -->
+            <div class="col-md-6 col-lg-3">
+                <div class="tool-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="ROI Calculator">
+                    <div class="card-body">
+                        <h5 class="card-title">ROI Calculator</h5>
+                        <p class="card-text">Interactive tool to demonstrate cost savings and performance improvements for prospects.</p>
+                        <button class="btn btn-outline-primary">Open Calculator</button>
+                    </div>
+                </div>
+            </div>
             
+            <div class="col-md-6 col-lg-3">
+                <div class="tool-card">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" class="card-img-top" alt="Proposal Generator">
+                    <div class="card-body">
+                        <h5 class="card-title">Proposal Generator</h5>
+                        <p class="card-text">Customizable templates with automated pricing based on selected solutions.</p>
+                        <button class="btn btn-outline-primary">Create Proposal</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3">
+                <div class="tool-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Competitor Comparison">
+                    <div class="card-body">
+                        <h5 class="card-title">Competitor Comparison</h5>
+                        <p class="card-text">Detailed feature-by-feature comparisons against major hosting providers.</p>
+                        <button class="btn btn-outline-primary">View Comparisons</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="row mt-5">
             <div class="col-lg-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">Sales Collateral Library</h4>
-                        
-                        <div class="accordion" id="collateralAccordion">
-                            <div class="accordion-item mb-3">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#productCollateral">
-                                        Product Collateral
-                                    </button>
-                                </h2>
-                                <div id="productCollateral" class="accordion-collapse collapse" data-bs-parent="#collateralAccordion">
-                                    <div class="accordion-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                Product Datasheets
-                                                <span class="badge bg-primary rounded-pill">12 files</span>
-                                            </li>
-                                            <!-- Additional product collateral -->
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Additional collateral categories -->
-                        </div>
+                        <h3 class="mb-4">CRM Best Practices</h3>
+                        <ul>
+                            <li class="checklist-item">Log all customer interactions within 24 hours</li>
+                            <li class="checklist-item">Update opportunity stages weekly minimum</li>
+                            <li class="checklist-item">Tag conversations by product interest</li>
+                            <li class="checklist-item">Document customer pain points</li>
+                            <li class="checklist-item">Track competitor mentions</li>
+                            <li class="checklist-item">Set follow-up reminders immediately</li>
+                            <li class="checklist-item">Use standardized naming conventions</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -1355,33 +1125,28 @@
             <div class="col-lg-6 mt-4 mt-lg-0">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body p-4">
-                        <h4 class="mb-4">CRM Excellence</h4>
-                        
-                        <h5 class="mt-3">Best Practices</h5>
-                        <ul>
-                            <li>Log all customer interactions within 24 hours</li>
-                            <li>Update opportunity stages weekly at minimum</li>
-                            <li>Tag conversations by product interest</li>
-                            <li>Document customer pain points</li>
-                        </ul>
-                        
-                        <h5 class="mt-4">Required Fields</h5>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Field</th>
-                                        <th>Importance</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Decision Process</td>
-                                        <td>Critical</td>
-                                    </tr>
-                                    <!-- Additional CRM fields -->
-                                </tbody>
-                            </table>
+                        <h3 class="mb-4">Script Library</h3>
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Cold Outreach Templates
+                                <span class="badge bg-primary rounded-pill">12</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Discovery Call Questions
+                                <span class="badge bg-primary rounded-pill">45</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Demo Presentation Scripts
+                                <span class="badge bg-primary rounded-pill">8</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Renewal Conversation Guides
+                                <span class="badge bg-primary rounded-pill">5</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                Upsell/Cross-sell Prompts
+                                <span class="badge bg-primary rounded-pill">22</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1391,24 +1156,22 @@
 </section>
 
 <!-- Certification Section -->
-<section id="certification" class="training-section">
+<section class="training-section">
     <div class="container">
         <div class="section-header">
             <h2>Certification Program</h2>
-            <p class="lead">Validate your expertise and earn Wefithost sales credentials</p>
+            <p class="lead">Validate your expertise with Wefithost sales credentials</p>
         </div>
         
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <div class="text-center mb-4">
-                            <i class="bi bi-award-fill feature-icon"></i>
-                            <h3 class="mb-3">Wefithost Certified Sales Professional</h3>
-                            <p class="lead">The industry-recognized credential for hosting and software sales excellence</p>
-                        </div>
+                    <div class="card-body p-5 text-center">
+                        <i class="bi bi-award-fill display-4 text-primary mb-4"></i>
+                        <h2 class="mb-3">Wefithost Certified Sales Professional</h2>
+                        <p class="lead mb-5">The industry-recognized credential for hosting and software sales excellence</p>
                         
-                        <div class="row g-4">
+                        <div class="row text-start">
                             <div class="col-md-6">
                                 <h4 class="mb-3">Certification Path</h4>
                                 
@@ -1418,31 +1181,42 @@
                                     <p>Master all Wefithost solutions and technical architecture</p>
                                 </div>
                                 
-                                <!-- Additional certification steps -->
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <h5>Sales Methodology</h5>
+                                    <p>Demonstrate proficiency in our 7-step sales process</p>
+                                </div>
+                                
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <h5>Objection Handling</h5>
+                                    <p>Show mastery of advanced objection resolution techniques</p>
+                                </div>
                             </div>
                             
                             <div class="col-md-6">
                                 <h4 class="mb-3">Exam Details</h4>
                                 <ul>
-                                    <li><strong>Format:</strong> Online proctored exam</li>
-                                    <li><strong>Duration:</strong> 2 hours</li>
-                                    <li><strong>Questions:</strong> 75 multiple-choice</li>
-                                    <li><strong>Passing Score:</strong> 80%</li>
-                                    <li><strong>Validity:</strong> 2 years</li>
+                                    <li class="checklist-item"><strong>Format:</strong> Online proctored exam</li>
+                                    <li class="checklist-item"><strong>Duration:</strong> 2 hours</li>
+                                    <li class="checklist-item"><strong>Questions:</strong> 75 multiple-choice</li>
+                                    <li class="checklist-item"><strong>Passing Score:</strong> 80%</li>
+                                    <li class="checklist-item"><strong>Validity:</strong> 2 years</li>
                                 </ul>
                                 
                                 <h4 class="mt-4">Benefits</h4>
                                 <ul>
-                                    <li>Digital badge for email/LinkedIn</li>
-                                    <li>Listing in certified professional directory</li>
-                                    <li>Priority access to new product training</li>
-                                    <li>Eligibility for advanced certifications</li>
+                                    <li class="checklist-item">Digital badge for email/LinkedIn</li>
+                                    <li class="checklist-item">Listing in certified professional directory</li>
+                                    <li class="checklist-item">Priority access to new product training</li>
+                                    <li class="checklist-item">Eligibility for advanced certifications</li>
+                                    <li class="checklist-item">Higher commission rates</li>
                                 </ul>
                             </div>
                         </div>
                         
-                        <div class="text-center mt-5">
-                            <button class="btn btn-primary-custom btn-lg px-5" data-bs-toggle="modal" data-bs-target="#certificationModal">Apply for Certification</button>
+                        <div class="mt-5">
+                            <button class="btn btn-primary btn-lg px-5">Apply for Certification</button>
                         </div>
                     </div>
                 </div>
@@ -1451,162 +1225,6 @@
     </div>
 </section>
 
-<!-- Final CTA Section -->
-<section class="training-section bg-primary text-white">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h2 class="mb-4">Ready to Transform Your Sales Performance?</h2>
-                <p class="lead mb-5">Join hundreds of Wefithost sales professionals who have doubled their close rates and deal sizes.</p>
-                <div class="d-flex flex-wrap gap-3 justify-content-center">
-                    <button class="btn btn-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#enrollModal">Enroll Now</button>
-                    <button class="btn btn-outline-light btn-lg px-5" data-bs-toggle="modal" data-bs-target="#demoModal">Schedule Demo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- All Modals -->
-<div class="modal fade" id="enrollModal" tabindex="-1" aria-hidden="true">
-    <!-- Modal content -->
-</div>
-
-<!-- Additional modals for tools, certification, etc. -->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Comprehensive JavaScript for all interactive elements
-    document.addEventListener('DOMContentLoaded', function() {
-        // Quiz functionality
-        document.getElementById('technicalQuiz').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Calculate score
-            let score = 0;
-            const answers = {
-                q1: 'a',
-                q2: 'c',
-                q3: 'a'
-            };
-            
-            for (let i = 1; i <= 3; i++) {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                if (selected && selected.value === answers[`q${i}`]) {
-                    score++;
-                }
-            }
-            
-            // Display results
-            const resultDiv = document.getElementById('quizResult');
-            resultDiv.classList.remove('d-none', 'alert-success', 'alert-danger');
-            
-            if (score === 3) {
-                resultDiv.classList.add('alert-success');
-                resultDiv.innerHTML = '<strong>Excellent!</strong> You scored 3/3. You have mastered the product knowledge.';
-            } else if (score > 0) {
-                resultDiv.classList.add('alert-success');
-                resultDiv.innerHTML = `<strong>Good job!</strong> You scored ${score}/3. Review the incorrect answers to improve.`;
-            } else {
-                resultDiv.classList.add('alert-danger');
-                resultDiv.innerHTML = 'Please review the product materials and try again.';
-            }
-            
-            resultDiv.scrollIntoView({ behavior: 'smooth' });
-        });
-        
-        // Objection handling simulator
-        document.getElementById('objectionType').addEventListener('change', function() {
-            if (this.value === 'custom') {
-                document.getElementById('customObjectionGroup').style.display = 'block';
-            } else {
-                document.getElementById('customObjectionGroup').style.display = 'none';
-            }
-        });
-        
-        document.getElementById('generateResponse').addEventListener('click', function() {
-            const objectionType = document.getElementById('objectionType').value;
-            const customerType = document.getElementById('customerType').value;
-            let objectionText = '';
-            
-            if (objectionType === 'custom') {
-                objectionText = document.getElementById('customObjection').value.trim();
-                if (!objectionText) {
-                    alert('Please enter a custom objection');
-                    return;
-                }
-            }
-            
-            // Generate response based on selections
-            let response = '';
-            let techniques = [];
-            let followups = [];
-            
-            // Sample responses (in a real app this would be more sophisticated)
-            if (objectionType === 'price' || (objectionType === 'custom' && objectionText.toLowerCase().includes('price'))) {
-                response = `"I completely understand that budget is an important consideration. Many of our customers initially had the same concern, but found that when they look at the total cost of ownership including <strong>reduced management overhead</strong>, <strong>higher performance</strong>, and <strong>included premium support</strong>, our solution actually delivers better value than cheaper alternatives. Would it help if we walked through a detailed ROI analysis specific to your situation?"`;
-                
-                techniques = [
-                    "Acknowledged the concern without agreement",
-                    "Reframed from price to value",
-                    "Offered proof points",
-                    "Proposed next steps"
-                ];
-                
-                followups = [
-                    "What budget range were you expecting to stay within?",
-                    "How are you currently measuring the ROI of your hosting solution?",
-                    "Would a phased implementation help with budget concerns?"
-                ];
-            } 
-            // Additional objection response scenarios
-            
-            // Display the generated response
-            document.getElementById('generatedResponse').innerHTML = response;
-            document.getElementById('techniquesList').innerHTML = techniques.map(t => `<li>${t}</li>`).join('');
-            document.getElementById('followupList').innerHTML = followups.map(f => `<li>${f}</li>`).join('');
-            document.getElementById('responseContainer').style.display = 'block';
-        });
-        
-        // Floating nav highlighting
-        const sections = document.querySelectorAll('.training-section');
-        const navLinks = document.querySelectorAll('.floating-nav .nav-link');
-        
-        window.addEventListener('scroll', function() {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= sectionTop - 300) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // Prevent anchor links from jumping
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('data-bs-toggle')) return;
-                
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Access premium marketing resources including templates, guides, and tools from WeFitHost to boost your marketing performance." />
+
+    <meta name="msapplication-TileColor" content="#8b3dff" />
+    <meta
+      name="msapplication-config"
+      content="assets/images/favicon/tile.xml"
+    />
+
+    <!-- Color modes -->
+    <script src="assets/js/vendors/color-modes.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Libs CSS -->
+    <link
+      href="assets/libs/simplebar/dist/simplebar.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Scroll Cue -->
+    <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
+
+    <!-- Box icons -->
+    <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="assets/css/theme.min.css?t=20240403" />
+
+    <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Media queries Css -->
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+
+    <title>WeFitHost | Marketing Resources</title>
+
+    <style>
+      :root {
+        --primary: #6b63ff;
+        --primary-dark: #5a52e0;
+        --secondary: #2d3748;
+        --light: #f8f9fa;
+        --dark: #212529;
+        --danger: #dc3545;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .custom-header {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .custom-header.scrolled-up {
+        transform: translateY(0);
+      }
+
+      .custom-header.scrolled-down {
+        transform: translateY(-100%);
+      }
+
+      .navbar {
+        padding: 0.8rem 0;
+      }
+
+      .navbar-brand img {
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+
+      .nav-link {
+        font-weight: 500;
+        color: #333;
+        padding: 1rem 1.25rem;
+        transition: all 0.2s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus {
+        color: #6b63ff;
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        color: #333;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0.15rem 0.5rem;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #6b63ff;
+      }
+
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        margin-top: 0;
+        border: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .dropdown-header {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        padding: 0.5rem 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+
+      .mobile-menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1020;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-menu-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbar-collapse {
+          position: fixed;
+          top: 72px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: 1010;
+          overflow-y: auto;
+          padding: 1.5rem;
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .navbar-collapse.show {
+          transform: translateX(0);
+        }
+
+        .dropdown-menu {
+          box-shadow: none;
+          border-left: 3px solid var(--primary);
+          margin-left: 1rem;
+        }
+
+        .mega-dropdown .dropdown-menu {
+          width: auto;
+        }
+
+        .mega-menu .row {
+          flex-direction: column;
+        }
+
+        .mega-menu .col-md-4,
+        .mega-menu .col-md-6 {
+          width: 100%;
+          padding: 0;
+        }
+
+        .mega-menu .p-3 {
+          padding: 1rem 0 !important;
+        }
+
+        .dropdown-toggle i.bi-chevron-down {
+          transition: transform 0.3s ease;
+        }
+
+        .dropdown-toggle[aria-expanded="true"] i.bi-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        font-weight: 600;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 1.05rem;
+      }
+      
+      /*MARKETING RESOURCES PAGE STYLES*/
+      /* Hero Section */
+      .marketing-hero {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+        padding: 6rem 0 5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .marketing-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('assets/images/marketing-resources-hero-bg.jpg') no-repeat center center;
+        background-size: cover;
+        opacity: 0.1;
+      }
+      
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .hero-image {
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+      
+      .hero-image:hover {
+        transform: translateY(-5px);
+      }
+      
+      /* Section styling */
+      .resource-section {
+        padding: 5rem 0;
+      }
+      
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .section-header h2 {
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .section-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary);
+      }
+      
+      .resource-card {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border: none;
+      }
+      
+      .resource-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      
+      .card-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+      
+      /* Download buttons */
+      .download-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 0.5rem 1.25rem;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      
+      .download-btn:hover {
+        background: var(--primary-dark);
+        color: white;
+        transform: translateY(-2px);
+      }
+      
+      .download-btn i {
+        margin-right: 0.5rem;
+      }
+      
+      /* Featured Resources */
+      .featured-resources {
+        background-color: #f9f9ff;
+      }
+      
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .testimonial-card img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 1rem;
+      }
+      
+      /* Stats */
+      .stats-section {
+        background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+        color: white;
+      }
+      
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      
+      .stat-label {
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+      
+      /* FAQ */
+      .accordion-button:not(.collapsed) {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+      }
+      
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: rgba(107, 99, 255, 0.25);
+      }
+      
+      /* Resource Grid */
+      .resource-grid .card-img-top {
+        height: 180px;
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .resource-badge {
+        background-color: rgba(107, 99, 255, 0.1);
+        color: var(--primary);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 50px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        background-color: var(--primary);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+      }
+      
+      .cta-section::after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+      }
+      
+      /* Section Images */
+      .section-image {
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .marketing-hero {
+          padding: 4rem 0;
+          text-align: center;
+        }
+        
+        .resource-section {
+          padding: 3rem 0;
+        }
+        
+        .section-header h2::after {
+          bottom: -8px;
+        }
+        
+        .stat-item {
+          padding: 1rem;
+        }
+        
+        .stat-number {
+          font-size: 2rem;
+        }
+      }
+      
+      /* Animation */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      /* Counter animation */
+      @keyframes counter {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .counter-animate {
+        animation: counter 0.5s ease-out forwards;
+      }
+    </style>
+  </head>
+
+  <body data-bs-theme="light">
+      <!-- Navbar Start File-->
+      <header class="custom-header" data-include="nav.html"></header>
+    <div class="mobile-menu-backdrop"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+        const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+        // Initialize Bootstrap Collapse
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+
+        // Toggle menu and backdrop
+        navbarToggler.addEventListener("click", function () {
+          const isExpanded = this.getAttribute("aria-expanded") === "true";
+          this.setAttribute("aria-expanded", !isExpanded);
+
+          if (!isExpanded) {
+            bsCollapse.show();
+            backdrop.classList.add("show");
+            document.body.style.overflow = "hidden";
+          } else {
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+
+        // Close menu when clicking backdrop
+        backdrop.addEventListener("click", function () {
+          navbarToggler.setAttribute("aria-expanded", "false");
+          bsCollapse.hide();
+          this.classList.remove("show");
+          document.body.style.overflow = "";
+        });
+
+        // Close menu when clicking a nav link (for mobile)
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          link.addEventListener("click", function () {
+            if (window.innerWidth < 992) {
+              navbarToggler.setAttribute("aria-expanded", "false");
+              bsCollapse.hide();
+              backdrop.classList.remove("show");
+              document.body.style.overflow = "";
+            }
+          });
+        });
+
+        // Close menu when resizing to desktop
+        window.addEventListener("resize", function () {
+          if (window.innerWidth >= 992) {
+            navbarToggler.setAttribute("aria-expanded", "false");
+            bsCollapse.hide();
+            backdrop.classList.remove("show");
+            document.body.style.overflow = "";
+          }
+        });
+        
+        // Counter animation for stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const target = +entry.target.getAttribute('data-target');
+              const count = +entry.target.innerText.replace('+', '');
+              const increment = target / 100;
+              
+              if (count < target) {
+                let current = 0;
+                const timer = setInterval(() => {
+                  current += increment;
+                  if (current >= target) {
+                    clearInterval(timer);
+                    entry.target.innerText = target + (entry.target.getAttribute('data-target').includes('+') ? '+' : '');
+                  } else {
+                    entry.target.innerText = Math.floor(current);
+                  }
+                }, 10);
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(number => {
+          const targetValue = number.innerText.replace('+', '');
+          number.setAttribute('data-target', targetValue);
+          number.innerText = '0';
+          observer.observe(number);
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+
+<main>
+  <!-- Hero with Gradient Background -->
+  <section class="marketing-hero">
+    <div class="container py-5">
+      <div class="row align-items-center hero-content">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-white mb-4">Power Your Marketing with Premium Resources</h1>
+          <p class="lead text-white mb-4">Access our library of high-converting templates, guides, and tools to accelerate your marketing success. Everything you need to grow your business in one place.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#resources" class="btn btn-light btn-lg px-4 rounded-pill fw-bold">Explore Resources</a>
+            <a href="#templates" class="btn btn-outline-light btn-lg px-4 rounded-pill">View Templates</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <img src="https://miro.medium.com/v2/resize:fit:1400/0*jJDg8Zrrpkd6QaH8" alt="Marketing resources including templates, guides and tools" class="img-fluid hero-image floating" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-5 stats-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-6 col-md-3">
+          <div class="stat-item py-3">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-label">Downloads Monthly</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item py-3">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Premium Resources</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item py-3">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item py-3">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Categories -->
+  <section id="resources" class="py-6 bg-white">
+    <div class="container">
+      <div class="section-header">
+        <h2>Curated Marketing Assets</h2>
+        <p class="text-muted mx-auto" style="max-width: 700px;">Access our comprehensive library designed to help you at every stage of your marketing journey</p>
+      </div>
+
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-6">
+          <img src="https://www.repindia.com/wp-content/uploads/2024/01/Digital-Marketing-Tools.jpg" alt="Marketing resource categories" class="img-fluid section-image" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <!-- Guides -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4 text-center">
+                  <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <i class="fas fa-book-open"></i>
+                  </div>
+                  <h3 class="h5 mb-3">Strategy Guides</h3>
+                  <p class="text-muted mb-4">Comprehensive playbooks covering all aspects of digital marketing from SEO to paid advertising</p>
+                  <a href="#guides" class="btn btn-outline-primary w-100">Explore Guides</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Templates -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4 text-center">
+                  <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <i class="fas fa-file-alt"></i>
+                  </div>
+                  <h3 class="h5 mb-3">Ready Templates</h3>
+                  <p class="text-muted mb-4">Professionally designed templates for campaigns, content, emails and landing pages</p>
+                  <a href="#templates" class="btn btn-outline-primary w-100">Browse Templates</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4 text-center">
+                  <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <i class="fas fa-tools"></i>
+                  </div>
+                  <h3 class="h5 mb-3">Marketing Tools</h3>
+                  <p class="text-muted mb-4">Calculators, planners and worksheets to streamline your workflow and planning</p>
+                  <a href="#tools" class="btn btn-outline-primary w-100">Discover Tools</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Webinars -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4 text-center">
+                  <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle mb-4 mx-auto">
+                    <i class="fas fa-video"></i>
+                  </div>
+                  <h3 class="h5 mb-3">Training Webinars</h3>
+                  <p class="text-muted mb-4">Expert-led sessions to level up your marketing skills with actionable strategies</p>
+                  <a href="#webinars" class="btn btn-outline-primary w-100">View Webinars</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Resources -->
+  <section class="py-6 featured-resources">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Resources</h2>
+        <p class="text-muted mx-auto" style="max-width: 700px;">Our most popular downloads trusted by thousands of marketers worldwide</p>
+      </div>
+
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-5">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT04NZ_jPgu4Hj6l3jfXwch7w9PRlze7nZ1HQ&s" alt="Featured marketing resources" class="img-fluid section-image" loading="lazy">
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-4 resource-grid">
+            <!-- Resource 1 -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-img-top" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT04NZ_jPgu4Hj6l3jfXwch7w9PRlze7nZ1HQ&s');">
+                  <div class="resource-badge">Guide</div>
+                </div>
+                <div class="card-body">
+                  <h3 class="h5 mb-3">2024 Digital Marketing Playbook</h3>
+                  <p class="text-muted mb-4">Complete guide covering SEO, content, social media, and paid advertising strategies for the modern marketer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted small"><i class="far fa-file-pdf me-1"></i> PDF, 2.4MB</span>
+                    <a href="#" class="btn btn-sm btn-primary">Download Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Resource 2 -->
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-img-top" style="background-image: url('https://itcryons.com/wp-content/uploads/2019/12/Digital-Marketing.png');">
+                  <div class="resource-badge">Template</div>
+                </div>
+                <div class="card-body">
+                  <h3 class="h5 mb-3">Social Media Content Calendar</h3>
+                  <p class="text-muted mb-4">Complete planning template for all major platforms with post scheduling and performance tracking.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="text-muted small"><i class="far fa-file-excel me-1"></i> Excel, 1.1MB</span>
+                    <a href="#" class="btn btn-sm btn-primary">Download Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-primary px-5 py-3">Browse All Resources</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section id="guides" class="py-6 bg-white">
+    <div class="container">
+      <div class="section-header">
+        <h2>Marketing Strategy Guides</h2>
+        <p class="text-muted mx-auto" style="max-width: 700px;">Comprehensive playbooks to help you master every aspect of digital marketing</p>
+      </div>
+      
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img src="assets/images/marketing-guides.jpg" alt="Marketing strategy guides" class="img-fluid section-image" loading="lazy">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3">
+                      <i class="fas fa-chart-line fa-lg"></i>
+                    </div>
+                    <h3 class="h5 mb-0">SEO Mastery</h3>
+                  </div>
+                  <p class="text-muted">Learn how to optimize your website for search engines and drive organic traffic with our step-by-step SEO guide.</p>
+                  <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">Beginner</span>
+                    <span class="badge bg-light text-dark">32 pages</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <a href="#" class="btn btn-sm btn-primary">Download Guide</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3">
+                      <i class="fas fa-envelope-open-text fa-lg"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Email Marketing</h3>
+                  </div>
+                  <p class="text-muted">Discover how to build effective email campaigns that convert with our comprehensive email marketing playbook.</p>
+                  <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">Intermediate</span>
+                    <span class="badge bg-light text-dark">28 pages</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <a href="#" class="btn btn-sm btn-primary">Download Guide</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3">
+                      <i class="fas fa-ad fa-lg"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Paid Advertising</h3>
+                  </div>
+                  <p class="text-muted">Master Google Ads, Facebook Ads, and LinkedIn Ads with our complete paid media strategy guide.</p>
+                  <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">Advanced</span>
+                    <span class="badge bg-light text-dark">45 pages</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <a href="#" class="btn btn-sm btn-primary">Download Guide</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded me-3">
+                      <i class="fas fa-users fa-lg"></i>
+                    </div>
+                    <h3 class="h5 mb-0">Social Media</h3>
+                  </div>
+                  <p class="text-muted">Complete guide to building an effective social media strategy across all major platforms.</p>
+                  <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">Intermediate</span>
+                    <span class="badge bg-light text-dark">36 pages</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <a href="#" class="btn btn-sm btn-primary">Download Guide</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-6 bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Marketers Say</h2>
+        <p class="text-muted mx-auto" style="max-width: 700px;">Hear from professionals who transformed their marketing with our resources</p>
+      </div>
+      
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <img src="assets/images/marketing-testimonials.jpg" alt="Happy marketers using our resources" class="img-fluid section-image" loading="lazy">
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="testimonial-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="assets/images/testimonial-1.jpg" alt="Sarah Johnson" loading="lazy">
+                  <div>
+                    <h4 class="h6 mb-0">Sarah Johnson</h4>
+                    <small class="text-muted">Marketing Director</small>
+                  </div>
+                </div>
+                <p class="mb-0">"The social media templates saved me hours of work each week. The designs are professional and conversion-focused."</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="testimonial-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="assets/images/testimonial-2.jpg" alt="Michael Chen" loading="lazy">
+                  <div>
+                    <h4 class="h6 mb-0">Michael Chen</h4>
+                    <small class="text-muted">SEO Specialist</small>
+                  </div>
+                </div>
+                <p class="mb-0">"The SEO guide helped us increase organic traffic by 78% in just 3 months. Worth every penny!"</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="testimonial-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="assets/images/testimonial-3.jpg" alt="Emma Rodriguez" loading="lazy">
+                  <div>
+                    <h4 class="h6 mb-0">Emma Rodriguez</h4>
+                    <small class="text-muted">Content Manager</small>
+                  </div>
+                </div>
+                <p class="mb-0">"The content planning worksheets revolutionized our editorial calendar. We're now publishing more strategic content."</p>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="testimonial-card h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="assets/images/testimonial-4.jpg" alt="David Wilson" loading="lazy">
+                  <div>
+                    <h4 class="h6 mb-0">David Wilson</h4>
+                    <small class="text-muted">Digital Marketing Manager</small>
+                  </div>
+                </div>
+                <p class="mb-0">"The email templates increased our open rates by 42% and click-through rates by 35%. Game changer!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-6 cta-section">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-4 text-white">Ready to Transform Your Marketing?</h2>
+          <p class="lead mb-5 mx-auto text-white">Join 10,000+ marketers who are accelerating their success with our premium resources</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="#" class="btn btn-light btn-lg px-5 rounded-pill fw-bold">Get Started Now</a>
+            <a href="#" class="btn btn-outline-light btn-lg px-5 rounded-pill">Browse Resources</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <!-- Footer End -->
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Libs JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="assets/libs/headhesive/dist/headhesive.min.js"></script>
+
+    <!-- Theme JS -->
+    <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/init.js?t=20240403"></script>
+    <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
+    <script src="assets/js/vendors/scrollcue.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let navbar = document.querySelector(".navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) { // Change when scrolled 50px
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+    <script src="back-to-top.js"></script>
+    <script src="nav-foot.js"></script>
+  </body>
+</html>

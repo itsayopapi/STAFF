@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Primary Meta Tags -->
+    <title>Free Website Migration Service | WeFitHost</title>
+    <meta name="description" content="Let our experts migrate your website for FREE with zero downtime. Hassle-free transfers for WordPress, Joomla, Shopify, and more.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./Wefithost-Logo-Icon-01.png" type="image/png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6b63ff;
+            --primary-dark: #5a52e0;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* ===== Hero Section ===== */
+        .migration-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .migration-hero h1 {
+            font-weight: 800;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Benefits Section ===== */
+        .benefits-section {
+            padding: 6rem 0;
+            background: #f9f9ff;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(107, 99, 255, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== Why Choose Us ===== */
+        .why-choose-us {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .feature-img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* ===== Supported Platforms ===== */
+        .platforms-section {
+            padding: 6rem 0;
+            background: #f9f9ff;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(107, 99, 255, 0.15);
+        }
+
+        .platform-card img {
+            height: 60px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .platform-card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ===== Process Section ===== */
+        .process-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #6b63ff 0%, #8b3dff 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 5rem;
+            margin-bottom: 3rem;
+            z-index: 1;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5rem;
+        }
+
+        /* ===== Migration Form ===== */
+        .migration-form-section {
+            padding: 6rem 0;
+            background: #f9f9ff;
+        }
+
+        .migration-form {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(107, 99, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(107, 99, 255, 0.25);
+        }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 768px) {
+            .migration-hero {
+                padding: 5rem 0;
+            }
+            .migration-hero h1 {
+                font-size: 2.5rem;
+            }
+            .process-step {
+                padding-left: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Included from your existing file) -->
+    <header class="custom-header" data-include="nav.html"></header>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="migration-hero">
+        <div class="container">
+            <div class="guarantee-badge">
+                <i class="fas fa-badge-check me-2"></i> FREE WITH ALL HOSTING PLANS
+            </div>
+            <h1>Professional Website Migration Service</h1>
+            <p class="lead fs-4 mb-4">Let our experts handle your website transfer with zero downtime and no stress</p>
+            <a href="#migrate-now" class="btn btn-primary btn-lg px-5 py-3 fs-5">
+                <i class="fas fa-paper-plane me-2"></i> Request Free Migration
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== Benefits Section ===== -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Why Choose Our Migration Service?</h2>
+                <p class="lead text-muted">We make switching hosts effortless so you can focus on your business</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Zero Downtime</h3>
+                        <p class="text-muted">We carefully plan migrations to ensure your website remains available to visitors throughout the entire process with our advanced DNS management techniques.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>100% Free</h3>
+                        <p class="text-muted">Unlike other hosts who charge $50-$150 per migration, we include this professional service at no extra cost with all our hosting plans.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Expert Handling</h3>
+                        <p class="text-muted">Our certified migration specialists have successfully transferred over 15,000 websites across all major platforms and custom setups.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Why Choose Us ===== -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="WeFitHost Migration Team" class="img-fluid feature-img">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">The WeFitHost Migration Advantage</h2>
+                    <p class="lead text-muted mb-4">We don't just move your website - we optimize it for better performance on our high-speed infrastructure.</p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="fas fa-bolt fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="h5">Performance Boost</h4>
+                            <p class="text-muted mb-0">Average 40% faster load times after migration to our optimized servers with LiteSpeed caching and HTTP/3 support.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="fas fa-shield-alt fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="h5">Enhanced Security</h4>
+                            <p class="text-muted mb-0">Free SSL certificates, DDoS protection, and malware scanning included with all migrations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="fas fa-headset fs-4"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="h5">Dedicated Support</h4>
+                            <p class="text-muted mb-0">24/7 migration specialists available via live chat, email, and phone throughout your transfer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Supported Platforms ===== -->
+    <section class="platforms-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Supported Platforms & Technologies</h2>
+                <p class="lead text-muted">We specialize in migrating all popular CMS and custom websites</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg" alt="WordPress">
+                        <h5>WordPress</h5>
+                        <p class="small text-muted mb-0">Including WooCommerce, Multisite, and custom builds</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Joomla_Logo.svg" alt="Joomla">
+                        <h5>Joomla</h5>
+                        <p class="small text-muted mb-0">All versions with extensions</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Drupal_logo.svg" alt="Drupal">
+                        <h5>Drupal</h5>
+                        <p class="small text-muted mb-0">Including Drupal Commerce</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Magento-2-logo.png" alt="Magento">
+                        <h5>Magento</h5>
+                        <p class="small text-muted mb-0">1.x and 2.x versions</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                        <h5>Shopify</h5>
+                        <p class="small text-muted mb-0">Store migrations</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/PHP_Logo.svg" alt="PHP">
+                        <h5>Custom PHP</h5>
+                        <p class="small text-muted mb-0">Framework or custom code</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js">
+                        <h5>Node.js</h5>
+                        <p class="small text-muted mb-0">Application migrations</p>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-md-3">
+                    <div class="platform-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Other">
+                        <h5>Other Platforms</h5>
+                        <p class="small text-muted mb-0">Contact us about your stack</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <div class="alert alert-primary d-inline-flex align-items-center">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <span>Don't see your platform? We've successfully migrated hundreds of custom solutions - <a href="#migrate-now" class="alert-link">contact us</a> for details!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Process Section ===== -->
+    <section class="process-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Our Migration Process</h2>
+                <p class="lead opacity-75">A seamless, stress-free transfer in 5 simple steps</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Initial Request & Analysis</h3>
+                        <p class="opacity-75 mb-0">You submit your migration request and our specialists analyze your current setup to create a customized migration plan.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Pre-Migration Backup</h3>
+                        <p class="opacity-75 mb-0">We create complete backups of your website and databases before making any changes.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Secure Data Transfer</h3>
+                        <p class="opacity-75 mb-0">All files and databases are transferred using encrypted connections to our high-performance servers.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Thorough Testing</h3>
+                        <p class="opacity-75 mb-0">We test all functionality including forms, eCommerce features, and database connections.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>DNS Update & Launch</h3>
+                        <p class="opacity-75 mb-0">We coordinate the final DNS switch during low-traffic periods for minimal disruption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">What Our Customers Say</h2>
+                <p class="lead text-muted">Hear from businesses who've used our migration service</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-img">
+                            <div>
+                                <h5 class="mb-1">Sarah J.</h5>
+                                <p class="text-muted small mb-0">Ecommerce Store Owner</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"WeFitHost migrated our WooCommerce store with zero downtime during peak season. Their team handled everything perfectly and our site actually loaded faster after the move!"</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-img">
+                            <div>
+                                <h5 class="mb-1">Michael T.</h5>
+                                <p class="text-muted small mb-0">Marketing Agency Director</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"We've migrated 27 client websites to WeFitHost this year. Their migration specialists are the most professional we've worked with - they even fixed issues our previous host caused."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K." class="testimonial-img">
+                            <div>
+                                <h5 class="mb-1">Priya K.</h5>
+                                <p class="text-muted small mb-0">Nonprofit Web Manager</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="mb-0">"Our donation platform couldn't afford downtime during our annual fundraiser. WeFitHost executed a flawless migration with no interruptions to our critical systems."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Migration Form ===== -->
+    <section class="migration-form-section" id="migrate-now">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="migration-form">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-5 mb-lg-0">
+                                <h2 class="display-5 fw-bold mb-4">Ready to Migrate?</h2>
+                                <p class="lead mb-4">Complete this form and our migration team will contact you within <strong>24 hours</strong> to begin your transfer.</p>
+                                
+                                <div class="d-flex mb-4">
+                                    <div class="me-3">
+                                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block">
+                                            <i class="fas fa-check fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="h5">No Risk Guarantee</h4>
+                                        <p class="text-muted mb-0">If you're not completely satisfied, we'll help you revert at no charge.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block">
+                                            <i class="fas fa-lock fs-4"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="h5">Secure Process</h4>
+                                        <p class="text-muted mb-0">All transfers use encrypted connections and temporary access credentials.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control form-control-lg" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="tel" class="form-control form-control-lg" placeholder="Phone Number (Optional)">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Current Domain (e.g., yoursite.com)" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <select class="form-select form-select-lg" required>
+                                            <option value="">Select Your Current Platform</option>
+                                            <option>WordPress</option>
+                                            <option>Joomla</option>
+                                            <option>Drupal</option>
+                                            <option>Magento</option>
+                                            <option>Shopify</option>
+                                            <option>Custom Website</option>
+                                            <option>Other (Please Specify)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <textarea class="form-control" rows="3" placeholder="Any special requirements? (eCommerce, membership site, etc.)"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 py-3">
+                                        <i class="fas fa-paper-plane me-2"></i> Submit Migration Request
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Migration FAQs</h2>
+                <p class="lead text-muted">Answers to common questions about our service</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    <strong>How long does the migration process take?</strong>
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Most standard website migrations are completed within <strong>24-48 hours</strong> after we receive all necessary access credentials. The timeline depends on:</p>
+                                    <ul>
+                                        <li>Website size and complexity</li>
+                                        <li>Database size</li>
+                                        <li>Special functionality (eCommerce, memberships, etc.)</li>
+                                    </ul>
+                                    <p class="mb-0">Our team will provide a specific timeline after reviewing your setup. We prioritize business-critical sites that can't afford extended downtime.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <strong>Will my website experience any downtime?</strong>
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We implement a <strong>zero-downtime migration strategy</strong>:</p>
+                                    <ol>
+                                        <li>Your site remains fully operational on your current host throughout the process</li>
+                                        <li>We test everything on our servers before making any DNS changes</li>
+                                        <li>The final DNS update typically results in just <strong>5-15 minutes</strong> of downtime during propagation</li>
+                                    </ol>
+                                    <p class="mb-0">For mission-critical sites, we can schedule the final switch during your lowest traffic periods.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <strong>What information do you need to perform the migration?</strong>
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We typically require:</p>
+                                    <ul>
+                                        <li><strong>FTP/SFTP access</strong> to your current hosting account</li>
+                                        <li><strong>Database credentials</strong> (if applicable)</li>
+                                        <li><strong>Control panel access</strong> (cPanel, Plesk, etc.) if available</li>
+                                    </ul>
+                                    <p class="mb-0">For security, we recommend creating <strong>temporary credentials</strong> that you can revoke after migration. Our team will guide you through this process and never ask for unnecessary access.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <strong>Can you migrate my email accounts too?</strong>
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes! We offer <strong>complete email migration services</strong> at no additional cost. This includes:</p>
+                                    <ul>
+                                        <li>All mailboxes and aliases</li>
+                                        <li>Email forwarding rules</li>
+                                        <li>Autoresponders</li>
+                                        <li>Contacts and calendars (where supported)</li>
+                                    </ul>
+                                    <p class="mb-0">Email migrations require brief downtime during MX record updates, which we coordinate with you in advance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <strong>What if I'm not happy with the migration?</strong>
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We stand behind our service with a <strong>100% satisfaction guarantee</strong>:</p>
+                                    <ul>
+                                        <li>We'll address any issues at no additional cost</li>
+                                        <li>If you're not completely satisfied, we'll help you revert to your previous host</li>
+                                        <li>No questions asked - your satisfaction is our priority</li>
+                                    </ul>
+                                    <p class="mb-0">In our experience, over 99% of clients are thrilled with their migration results and the improved performance on our infrastructure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Included from your existing file) -->
+    <div data-include="footer.html"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top btn btn-primary btn-lg rounded-circle position-fixed" style="bottom: 30px; right: 30px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</body>
+</html>

@@ -10,7 +10,8 @@
       href="assets/libs/bootstrap-icons/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
-
+ <!-- FAV ICON -->
+    <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -221,65 +222,327 @@
         code, .command-box {
             font-family: 'Fira Code', monospace;
         }
-        /* Hero Section */
+h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        /* ======= Hero Section ======= */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(145deg, #2b5876 0%, #4e4376 100%);
             color: white;
-            padding: 5rem 0;
+            padding: 6rem 0 4rem;
             text-align: center;
-            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 4rem;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-logo {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-logo .logo-img {
+            max-width: 180px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-logo:hover .logo-img {
+            transform: scale(1.05);
+        }
+        
+        .version-badge {
+            position: absolute;
+            top: -10px;
+            right: -15px;
+            background: #4CAF50;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .hero-title {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title-main {
+            display: block;
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #a7d8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-title-sub {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
             margin-bottom: 3rem;
         }
-        .hero img {
-            max-width: 150px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        
+        .btn-primary {
+            background-color: #4285F4;
+            border-color: #4285F4;
+            transition: all 0.3s ease;
         }
-        /* Cards */
+        
+        .btn-primary:hover {
+            background-color: #3367D6;
+            border-color: #3367D6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD43B;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-terminal {
+            background: #1E1E1E;
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        
+        .terminal-header {
+            background: #3C3C3C;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .terminal-button.red { background: #FF5F56; }
+        .terminal-button.yellow { background: #FFBD2E; }
+        .terminal-button.green { background: #27C93F; }
+        
+        .terminal-title {
+            margin-left: 15px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        .terminal-body {
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+        }
+        
+        .terminal-prompt {
+            color: #4CAF50;
+        }
+        
+        .terminal-output {
+            color: #E0E0E0;
+        }
+        
+        /* ======= Content Sections ======= */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
         .feature-card {
+            transition: all 0.3s ease;
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
+        
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
+        
         .feature-icon {
             font-size: 2.5rem;
-            color: var(--primary-blue);
+            color: var(--primary-color);
             margin-bottom: 1rem;
-            width: 100%;
         }
-        /* Command Box */
+        
+        /* ======= Command Boxes ======= */
         .command-box {
-            background: var(--terminal-bg);
+            background: #2d2d2d;
             color: #f8f8f2;
             padding: 12px 15px;
-            border-radius: 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
             position: relative;
-            margin-bottom: 10px;
+            overflow-x: auto;
         }
+        
         .copy-btn {
             position: absolute;
             right: 10px;
             top: 10px;
             cursor: pointer;
-            color: #6c757d;
+            color: #aaa;
+            transition: color 0.2s;
         }
+        
         .copy-btn:hover {
-            color: white;
+            color: #fff;
         }
-        /* Tabs */
+        
+        /* ======= Tabs ======= */
+        .nav-tabs .nav-link {
+            color: #555;
+            font-weight: 600;
+        }
+        
         .nav-tabs .nav-link.active {
-            font-weight: bold;
-            border-bottom: 3px solid var(--primary-blue);
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
         }
-        /* Responsive Images */
-        .img-diagram {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        
+        /* ======= Tables ======= */
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .command-table th {
+            background-color: #f8f9fa;
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 600;
+        }
+        
+        .command-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .command-table tr:hover td {
+            background-color: #f8f9fa;
+        }
+        
+        /* ======= Alert Boxes ======= */
+        .alert-note {
+            background-color: #e7f5ff;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .alert-warning {
+            background-color: #fff4e6;
+            border-left: 4px solid var(--warning-color);
+        }
+        
+        .alert-danger {
+            background-color: #ffebee;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .alert-success {
+            background-color: #ebfbee;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        /* ======= Responsive Adjustments ======= */
+        @media (max-width: 768px) {
+            .hero-title-main {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title-sub {
+                font-size: 1.4rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-terminal {
+                margin: 2rem auto 0;
+            }
+            
+            .command-box {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
         }
     </style>
 </head>
@@ -347,253 +610,1327 @@
     </script>
     <!-- Navbar End -->
 
-
+</head>
+<body>
     <!-- ======= Hero Section ======= -->
     <section class="hero">
         <div class="container">
-            <img src="https://wp-cli.org/images/wp-cli-logo-blue.png" alt="WP-CLI Logo" class="mb-4">
-            <h1 class="display-3 fw-bold mb-3 text-white">WP-CLI is <span class="text-warning">Enabled</span></h1>
-            <p class="lead mb-4">Manage WordPress with the power of the command line</p>
-            <a href="#basic-commands" class="btn btn-light btn-lg px-4 me-2">
-                <i class="fas fa-terminal me-2"></i>Get Started
-            </a>
-            <a href="https://wp-cli.org/" target="_blank" class="btn btn-outline-light btn-lg px-4">
-                <i class="fas fa-book me-2"></i>Official Docs
-            </a>
-        </div>
-    </section>
-
-    <!-- ======= What is WP-CLI? ======= -->
-    <section class="container mb-5">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="fw-bold mb-4"><i class="fas fa-question-circle text-primary me-2"></i> What is WP-CLI?</h2>
-                <p class="lead">WP-CLI is the <strong>official command-line interface</strong> for WordPress.</p>
-                <p>It enables you to interact with your WordPress installation without using a web browser. Developers and system administrators use WP-CLI to:</p>
-                <ul>
-                    <li>Manage plugins, themes, and users</li>
-                    <li>Perform database operations</li>
-                    <li>Run custom scripts</li>
-                    <li>Automate repetitive tasks</li>
-                </ul>
-                <div class="alert alert-info mt-4">
-                    <i class="fas fa-lightbulb me-2"></i> <strong>Did you know?</strong> WP-CLI can process commands up to 10x faster than the WordPress admin dashboard.
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="https://wp-cli.org/images/wp-cli-logo-blue.png" alt="WP-CLI Logo" class="logo-img">
+                    <div class="version-badge">v3.0.0</div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <img src="https://i.imgur.com/JDV9DqN.png" alt="WP-CLI vs Admin Dashboard comparison" class="img-fluid img-diagram">
-                <p class="text-muted text-center mt-2"><small>WP-CLI executes commands significantly faster than the admin interface</small></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======= Why Use WP-CLI? ======= -->
-    <section class="bg-light py-5 mb-5">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5"><i class="fas fa-star text-warning me-2"></i> Why Use WP-CLI?</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card card h-100 p-4">
-                        <div class="feature-icon text-center">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <h3 class="h5 text-center">Blazing Fast</h3>
-                        <p class="text-center">Execute commands in seconds without browser overhead. No more waiting for admin pages to load.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card card h-100 p-4">
-                        <div class="feature-icon text-center">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3 class="h5 text-center">Automation</h3>
-                        <p class="text-center">Script repetitive tasks and integrate with deployment workflows. Perfect for CI/CD pipelines.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card card h-100 p-4">
-                        <div class="feature-icon text-center">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3 class="h5 text-center">Server Management</h3>
-                        <p class="text-center">Manage WordPress when GUI isn't available (like on headless servers or during SSH sessions).</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======= Basic Commands ======= -->
-    <section id="basic-commands" class="container mb-5">
-        <h2 class="fw-bold mb-4"><i class="fas fa-code text-primary me-2"></i> Essential WP-CLI Commands</h2>
-        <p class="lead mb-4">These are the most frequently used commands:</p>
-        
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="command-box mb-3">
-                    <span>wp --info</span>
-                    <span class="copy-btn" onclick="copyToClipboard('wp --info')">
-                        <i class="far fa-copy"></i>
-                    </span>
-                </div>
-                <p>Displays information about your WP-CLI environment including PHP version, WP-CLI version, and WordPress installation details.</p>
                 
-                <div class="command-box mb-3">
-                    <span>wp core version</span>
-                    <span class="copy-btn" onclick="copyToClipboard('wp core version')">
-                        <i class="far fa-copy"></i>
-                    </span>
-                </div>
-                <p>Shows the currently installed WordPress version.</p>
-            </div>
-            
-            <div class="col-lg-6">
-                <div class="command-box mb-3">
-                    <span>wp plugin list</span>
-                    <span class="copy-btn" onclick="copyToClipboard('wp plugin list')">
-                        <i class="far fa-copy"></i>
-                    </span>
-                </div>
-                <p>Lists all installed plugins with their status (active/inactive) and version.</p>
+                <h1 class="hero-title">
+                    <span class="hero-title-main">The Complete WP-CLI Guide</span>
+                    <span class="hero-title-sub">Master WordPress from the Command Line</span>
+                </h1>
                 
-                <div class="command-box mb-3">
-                    <span>wp user list</span>
-                    <span class="copy-btn" onclick="copyToClipboard('wp user list')">
-                        <i class="far fa-copy"></i>
-                    </span>
+                <p class="hero-description">
+                    WP-CLI is the official command-line interface for WordPress that revolutionizes how you manage WordPress sites.
+                    This comprehensive guide covers everything from basic commands to advanced scripting techniques.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#getting-started" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                    <a href="#command-reference" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-terminal me-2"></i>Command Reference
+                    </a>
+                    <a href="#advanced-usage" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-cogs me-2"></i>Advanced Usage
+                    </a>
                 </div>
-                <p>Displays all users registered on your WordPress site.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10M+</div>
+                        <div class="stat-label">Downloads</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Commands</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Open Source</div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div class="text-center mt-4">
-            <img src="https://i.imgur.com/rXJ9TbU.png" alt="WP-CLI command examples" class="img-fluid img-diagram" style="max-height: 300px;">
-            <p class="text-muted mt-2"><small>Example output of common WP-CLI commands</small></p>
-        </div>
-    </section>
-
-    <!-- ======= Advanced Features ======= -->
-    <section class="bg-dark text-white py-5 mb-5">
-        <div class="container">
-            <h2 class="fw-bold mb-5 text-center text-white"><i class="fas fa-cogs text-warning me-2"></i> Advanced Features</h2>
-            
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="p-4 rounded" style="background-color: rgba(108,117,125, 1);">
-                        <h3 class="h4"><i class="fas fa-database me-2"></i> Database Management</h3>
-                        <div class="command-box mb-3">
-                            <span>wp db query "SELECT * FROM wp_posts WHERE post_type='post';"</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp db query \"SELECT * FROM wp_posts WHERE post_type=\'post\'\"')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                        <p>Run direct SQL queries on your WordPress database.</p>
-                        
-                        <div class="command-box mb-3">
-                            <span>wp db export backup.sql</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp db export backup.sql')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                        <p>Create a complete database backup with one command.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="p-4 rounded" style="background-color: rgba(108,117,125, 1);">
-                        <h3 class="h4"><i class="fas fa-magic me-2"></i> Search & Replace</h3>
-                        <div class="command-box mb-3">
-                            <span>wp search-replace 'http://old.com' 'http://new.com'</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'http://old.com\' \'http://new.com\'')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                        <p>Safely replace URLs in your database (perfect for migrations).</p>
-                        
-                        <div class="command-box mb-3">
-                            <span>wp search-replace 'foo' 'bar' --dry-run</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'foo\' \'bar\' --dry-run')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                        <p>Test replacements before actually making changes (<code>--dry-run</code> flag).</p>
-                    </div>
-                </div>
+        <div class="hero-terminal">
+            <div class="terminal-header">
+                <div class="terminal-button red"></div>
+                <div class="terminal-button yellow"></div>
+                <div class="terminal-button green"></div>
+                <span class="terminal-title">wp-cli</span>
             </div>
-            
-            <div class="text-center mt-4">
-                <img src="https://i.imgur.com/5G2VYzG.png" alt="WP-CLI advanced commands" class="img-fluid img-diagram" style="max-height: 250px;">
+            <div class="terminal-body">
+                <span class="terminal-prompt">$ wp --info</span><br>
+                <span class="terminal-output">OS: Linux 5.15.0-76-generic #83-Ubuntu</span><br>
+                <span class="terminal-output">PHP: 8.1.2-1ubuntu2.14</span><br>
+                <span class="terminal-output">WP-CLI: 2.8.1</span><br>
+                <span class="terminal-prompt">$ wp plugin update --all --minor</span><br>
+                <span class="terminal-output">Updating WooCommerce (7.6.0 to 7.6.1)...</span><br>
+                <span class="terminal-output">Success: Updated 1 of 12 plugins.</span><br>
+                <span class="terminal-prompt">$ wp cache flush</span><br>
+                <span class="terminal-output">Success: The cache was flushed.</span>
             </div>
         </div>
     </section>
 
-    <!-- ======= Troubleshooting ======= -->
-    <section class="container mb-5">
-        <h2 class="fw-bold mb-4"><i class="fas fa-bug text-danger me-2"></i> Troubleshooting</h2>
-        
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header bg-light">
-                        <h3 class="h4 mb-0">Common Errors</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="h5 text-danger">"Error: This does not seem to be a WordPress installation."</h4>
-                        <p>Solution: Run the command from your WordPress root directory or use <code>--path=/path/to/wordpress</code>.</p>
-                        
-                        <h4 class="h5 text-danger mt-3">"PHP Fatal error: Allowed memory size exhausted"</h4>
-                        <p>Solution: Increase PHP memory limit by adding to <code>wp-config.php</code>:</p>
-                        <div class="command-box">
-                            <span>define('WP_MEMORY_LIMIT', '256M');</span>
-                            <span class="copy-btn" onclick="copyToClipboard('define(\'WP_MEMORY_LIMIT\', \'256M\');')">
-                                <i class="far fa-copy"></i>
-                            </span>
+    <div class="container">
+        <!-- ======= Table of Contents ======= -->
+        <section class="mb-5">
+            <div class="card">
+                <div class="card-header bg-light">
+                    <h2 class="h4 mb-0"><i class="fas fa-list-ul me-2"></i> Table of Contents</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#getting-started"><i class="fas fa-chevron-right me-2"></i>Getting Started</a></li>
+                                <li class="mb-2"><a href="#installation"><i class="fas fa-chevron-right me-2"></i>Installation</a></li>
+                                <li class="mb-2"><a href="#basic-usage"><i class="fas fa-chevron-right me-2"></i>Basic Usage</a></li>
+                                <li class="mb-2"><a href="#command-reference"><i class="fas fa-chevron-right me-2"></i>Command Reference</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#advanced-usage"><i class="fas fa-chevron-right me-2"></i>Advanced Usage</a></li>
+                                <li class="mb-2"><a href="#scripting"><i class="fas fa-chevron-right me-2"></i>Scripting</a></li>
+                                <li class="mb-2"><a href="#troubleshooting"><i class="fas fa-chevron-right me-2"></i>Troubleshooting</a></li>
+                                <li class="mb-2"><a href="#security"><i class="fas fa-chevron-right me-2"></i>Security</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#best-practices"><i class="fas fa-chevron-right me-2"></i>Best Practices</a></li>
+                                <li class="mb-2"><a href="#integrations"><i class="fas fa-chevron-right me-2"></i>Integrations</a></li>
+                                <li class="mb-2"><a href="#faq"><i class="fas fa-chevron-right me-2"></i>FAQ</a></li>
+                                <li class="mb-2"><a href="#resources"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- ======= Getting Started ======= -->
+        <section id="getting-started" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-rocket me-2"></i> Getting Started with WP-CLI</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>What is WP-CLI?</h3>
+                    <p>WP-CLI is the official command-line interface for WordPress. It provides a complete alternative to the WordPress admin dashboard, allowing you to manage your WordPress installation through terminal commands.</p>
+                    
+                    <div class="alert alert-note">
+                        <p><strong>Key Benefits:</strong></p>
+                        <ul>
+                            <li>Execute commands up to 10x faster than the admin interface</li>
+                            <li>Automate repetitive tasks with scripts</li>
+                            <li>Manage WordPress when GUI isn't available (headless servers)</li>
+                            <li>Integrate with deployment workflows and CI/CD pipelines</li>
+                            <li>Perform bulk operations with single commands</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Use Cases</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="h5"><i class="fas fa-server me-2"></i> Development</h4>
+                            <p>Quickly set up local environments, manage plugins/themes, and run tests.</p>
+                            
+                            <h4 class="h5 mt-3"><i class="fas fa-cloud me-2"></i> Staging/Production</h4>
+                            <p>Deploy updates, manage users, and perform maintenance tasks.</p>
+                            
+                            <h4 class="h5 mt-3"><i class="fas fa-robot me-2"></i> Automation</h4>
+                            <p>Create scripts for backups, migrations, and scheduled tasks.</p>
+                            
+                            <h4 class="h5 mt-3"><i class="fas fa-tachometer-alt me-2"></i> Performance</h4>
+                            <p>Execute resource-intensive operations without browser overhead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Installation ======= -->
+        <section id="installation" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-download me-2"></i> Installation</h2>
+            
+            <div class="alert alert-warning">
+                <p><strong>Requirements:</strong> PHP 5.6 or later, WordPress 3.7 or later, UNIX-like environment (Linux, macOS, WSL on Windows)</p>
             </div>
             
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header bg-light">
-                        <h3 class="h4 mb-0">Debugging Tips</h3>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="h5 text-primary">Enable Debug Mode</h4>
-                        <div class="command-box mb-2">
-                            <span>wp config set WP_DEBUG true --raw</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp config set WP_DEBUG true --raw')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                        
-                        <h4 class="h5 text-primary mt-3">Check PHP Error Log</h4>
-                        <div class="command-box">
-                            <span>wp eval 'echo ini_get("error_log");'</span>
-                            <span class="copy-btn" onclick="copyToClipboard('wp eval \'echo ini_get("error_log");\'')">
-                                <i class="far fa-copy"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======= Security Notice ======= -->
-    <section class="container mb-5">
-        <div class="alert alert-danger">
-            <h2 class="alert-heading"><i class="fas fa-shield-alt me-2"></i> Important Security Notice</h2>
-            <p>While this page confirms WP-CLI is working, <strong>it should not be publicly accessible</strong> in production environments.</p>
-            <hr>
-            <p class="mb-0"><strong>Recommended actions:</strong></p>
-            <ul>
-                <li>Restrict access to this page via <code>.htaccess</code> or server permissions</li>
-                <li>WP-CLI should only be available via <strong>SSH</strong> to authorized users</li>
-                <li>Consider removing this page after verification</li>
+            <h3>Installation Methods</h3>
+            
+            <ul class="nav nav-tabs mb-3" id="installTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="linux-tab" data-bs-toggle="tab" data-bs-target="#linux" type="button" role="tab">Linux/macOS</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows" type="button" role="tab">Windows (WSL)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="docker-tab" data-bs-toggle="tab" data-bs-target="#docker" type="button" role="tab">Docker</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="manual-tab" data-bs-toggle="tab" data-bs-target="#manual" type="button" role="tab">Manual</button>
+                </li>
             </ul>
-        </div>
-    </section>
+            
+            <div class="tab-content" id="installTabsContent">
+                <div class="tab-pane fade show active" id="linux" role="tabpanel">
+                    <p>The recommended installation method for Linux and macOS:</p>
+                    <div class="command-box">
+                        <span>curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar</span>
+                        <span class="copy-btn" onclick="copyToClipboard('curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span>chmod +x wp-cli.phar</span>
+                        <span class="copy-btn" onclick="copyToClipboard('chmod +x wp-cli.phar')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span>sudo mv wp-cli.phar /usr/local/bin/wp</span>
+                        <span class="copy-btn" onclick="copyToClipboard('sudo mv wp-cli.phar /usr/local/bin/wp')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <p>Verify installation:</p>
+                    <div class="command-box">
+                        <span>wp --info</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp --info')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="windows" role="tabpanel">
+                    <p>For Windows, we recommend using Windows Subsystem for Linux (WSL):</p>
+                    <ol>
+                        <li>Install WSL (Windows Subsystem for Linux) from Microsoft Store</li>
+                        <li>Launch Ubuntu or your preferred Linux distribution</li>
+                        <li>Follow the Linux installation instructions above</li>
+                    </ol>
+                    <div class="alert alert-note">
+                        <p>Native Windows support is limited. For full functionality, use WSL or a virtual machine.</p>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="docker" role="tabpanel">
+                    <p>Run WP-CLI in a Docker container:</p>
+                    <div class="command-box">
+                        <span>docker run -it --rm --volumes-from your-wordpress-container --network container:your-wordpress-container wordpress:cli wp --info</span>
+                        <span class="copy-btn" onclick="copyToClipboard('docker run -it --rm --volumes-from your-wordpress-container --network container:your-wordpress-container wordpress:cli wp --info')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <p>For regular usage, create an alias:</p>
+                    <div class="command-box">
+                        <span>alias wp="docker run -it --rm --volumes-from your-wordpress-container --network container:your-wordpress-container wordpress:cli wp"</span>
+                        <span class="copy-btn" onclick="copyToClipboard('alias wp=\"docker run -it --rm --volumes-from your-wordpress-container --network container:your-wordpress-container wordpress:cli wp\"')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="manual" role="tabpanel">
+                    <p>Manual installation steps:</p>
+                    <ol>
+                        <li>Download the latest WP-CLI phar file</li>
+                        <li>Place it in your PATH (e.g., /usr/local/bin)</li>
+                        <li>Make it executable</li>
+                    </ol>
+                    <div class="command-box">
+                        <span># Download latest release<br>wget https://github.com/wp-cli/wp-cli/releases/download/v2.8.1/wp-cli-2.8.1.phar -O wp-cli.phar<br><br># Make executable<br>chmod +x wp-cli.phar<br><br># Move to PATH<br>sudo mv wp-cli.phar /usr/local/bin/wp</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wget https://github.com/wp-cli/wp-cli/releases/download/v2.8.1/wp-cli-2.8.1.phar -O wp-cli.phar\nchmod +x wp-cli.phar\nsudo mv wp-cli.phar /usr/local/bin/wp')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Updating WP-CLI</h3>
+            <p>To update to the latest version:</p>
+            <div class="command-box">
+                <span>wp cli update</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp cli update')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Installing Tab Completion</h3>
+            <p>For bash/zsh command completion:</p>
+            <div class="command-box">
+                <span># Download bash completion script<br>curl -O https://raw.githubusercontent.com/wp-cli/wp-cli/v2.8.1/utils/wp-completion.bash<br><br># Add to your .bashrc or .zshrc<br>echo "source ~/wp-completion.bash" >> ~/.bashrc<br>source ~/.bashrc</span>
+                <span class="copy-btn" onclick="copyToClipboard('curl -O https://raw.githubusercontent.com/wp-cli/wp-cli/v2.8.1/utils/wp-completion.bash\necho \"source ~/wp-completion.bash\" >> ~/.bashrc\nsource ~/.bashrc')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+        </section>
+
+        <!-- ======= Basic Usage ======= -->
+        <section id="basic-usage" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-terminal me-2"></i> Basic Usage</h2>
+            
+            <h3>Command Structure</h3>
+            <p>WP-CLI commands follow this pattern:</p>
+            <div class="command-box">
+                <span>wp &lt;command&gt; &lt;subcommand&gt; [--&lt;flag&gt;=&lt;value&gt;] [&lt;arguments&gt;]</span>
+            </div>
+            
+            <h3 class="mt-4">Getting Help</h3>
+            <p>To see available commands:</p>
+            <div class="command-box">
+                <span>wp help</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp help')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <p>For help with a specific command:</p>
+            <div class="command-box">
+                <span>wp help &lt;command&gt;</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp help &lt;command&gt;')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Common Flags</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>--path=&lt;path&gt;</code></td>
+                        <td>Path to WordPress installation</td>
+                    </tr>
+                    <tr>
+                        <td><code>--url=&lt;url&gt;</code></td>
+                        <td>Pretend request came from given URL</td>
+                    </tr>
+                    <tr>
+                        <td><code>--user=&lt;id|login|email&gt;</code></td>
+                        <td>Run command as a specific user</td>
+                    </tr>
+                    <tr>
+                        <td><code>--skip-plugins[=&lt;plugins&gt;]</code></td>
+                        <td>Skip loading all or some plugins</td>
+                    </tr>
+                    <tr>
+                        <td><code>--skip-themes[=&lt;themes&gt;]</code></td>
+                        <td>Skip loading all or some themes</td>
+                    </tr>
+                    <tr>
+                        <td><code>--require=&lt;path&gt;</code></td>
+                        <td>Load PHP file before running command</td>
+                    </tr>
+                    <tr>
+                        <td><code>--debug[=&lt;group&gt;]</code></td>
+                        <td>Show all PHP errors or specific debug group</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="mt-4">Environment Configuration</h3>
+            <p>You can configure default parameters in <code>wp-cli.yml</code>:</p>
+            <div class="command-box">
+                <span># Sample wp-cli.yml<br>path: /var/www/wordpress<br>disabled_commands:<br>  - db drop<br>  - plugin delete</span>
+                <span class="copy-btn" onclick="copyToClipboard('# Sample wp-cli.yml\npath: /var/www/wordpress\ndisabled_commands:\n  - db drop\n  - plugin delete')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+        </section>
+
+        <!-- ======= Command Reference ======= -->
+        <section id="command-reference" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-book me-2"></i> Command Reference</h2>
+            
+            <div class="alert alert-note">
+                <p>This section covers the most commonly used commands. For a complete reference, run <code>wp help</code> or visit the <a href="https://developer.wordpress.org/cli/commands/" target="_blank">official documentation</a>.</p>
+            </div>
+            
+            <ul class="nav nav-tabs mb-3" id="commandTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="core-tab" data-bs-toggle="tab" data-bs-target="#core" type="button" role="tab">Core</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="plugin-tab" data-bs-toggle="tab" data-bs-target="#plugin" type="button" role="tab">Plugins</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="theme-tab" data-bs-toggle="tab" data-bs-target="#theme" type="button" role="tab">Themes</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="db-tab" data-bs-toggle="tab" data-bs-target="#db" type="button" role="tab">Database</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab">Users</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="commandTabsContent">
+                <div class="tab-pane fade show active" id="core" role="tabpanel">
+                    <h3>Core Commands</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>wp core version</code></td>
+                                <td>Display WordPress version</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core download</code></td>
+                                <td>Download WordPress core files</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core install</code></td>
+                                <td>Run WordPress installation</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core update</code></td>
+                                <td>Update WordPress to latest version</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core update-db</code></td>
+                                <td>Update WordPress database</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core verify-checksums</code></td>
+                                <td>Verify WordPress files against checksums</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core is-installed</code></td>
+                                <td>Check if WordPress is installed</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp core language install &lt;language&gt;</code></td>
+                                <td>Install language pack</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 class="mt-4">Examples</h4>
+                    <div class="command-box">
+                        <span># Install WordPress<br>wp core install --url=example.com --title="My Site" --admin_user=admin --admin_password=strongpassword --admin_email=admin@example.com</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp core install --url=example.com --title=\"My Site\" --admin_user=admin --admin_password=strongpassword --admin_email=admin@example.com')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span># Update WordPress to latest version<br>wp core update</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp core update')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="plugin" role="tabpanel">
+                    <h3>Plugin Commands</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>wp plugin list</code></td>
+                                <td>List installed plugins</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin install &lt;plugin&gt;</code></td>
+                                <td>Install a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin activate &lt;plugin&gt;</code></td>
+                                <td>Activate a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin deactivate &lt;plugin&gt;</code></td>
+                                <td>Deactivate a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin update &lt;plugin&gt;</code></td>
+                                <td>Update a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin delete &lt;plugin&gt;</code></td>
+                                <td>Delete a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin get &lt;plugin&gt;</code></td>
+                                <td>Get details about a plugin</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp plugin search &lt;term&gt;</code></td>
+                                <td>Search WordPress plugin directory</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 class="mt-4">Examples</h4>
+                    <div class="command-box">
+                        <span># Install and activate WooCommerce<br>wp plugin install woocommerce --activate</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp plugin install woocommerce --activate')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span># Update all plugins except specific ones<br>wp plugin update --all --exclude=akismet,hello-dolly</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp plugin update --all --exclude=akismet,hello-dolly')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="theme" role="tabpanel">
+                    <h3>Theme Commands</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>wp theme list</code></td>
+                                <td>List installed themes</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme install &lt;theme&gt;</code></td>
+                                <td>Install a theme</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme activate &lt;theme&gt;</code></td>
+                                <td>Activate a theme</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme delete &lt;theme&gt;</code></td>
+                                <td>Delete a theme</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme update &lt;theme&gt;</code></td>
+                                <td>Update a theme</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme get &lt;theme&gt;</code></td>
+                                <td>Get details about a theme</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme search &lt;term&gt;</code></td>
+                                <td>Search WordPress theme directory</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp theme mod get &lt;name&gt;</code></td>
+                                <td>Get theme modification value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 class="mt-4">Examples</h4>
+                    <div class="command-box">
+                        <span># Install and activate a theme<br>wp theme install twentytwentythree --activate</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp theme install twentytwentythree --activate')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span># Update all themes<br>wp theme update --all</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp theme update --all')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="db" role="tabpanel">
+                    <h3>Database Commands</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>wp db create</code></td>
+                                <td>Create database if it doesn't exist</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db drop</code></td>
+                                <td>Delete the database</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db reset</code></td>
+                                <td>Empty the database</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db export &lt;file&gt;</code></td>
+                                <td>Export database to SQL file</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db import &lt;file&gt;</code></td>
+                                <td>Import SQL file into database</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db query &lt;sql&gt;</code></td>
+                                <td>Execute SQL query</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db optimize</code></td>
+                                <td>Optimize database tables</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db repair</code></td>
+                                <td>Repair database tables</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db cli</code></td>
+                                <td>Open database CLI</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp db size</code></td>
+                                <td>Show database size</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 class="mt-4">Examples</h4>
+                    <div class="command-box">
+                        <span># Export database with timestamp<br>wp db export $(date +%Y-%m-%d-%H%M%S).sql</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp db export $(date +%Y-%m-%d-%H%M%S).sql')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span># Search and replace URLs (for migrations)<br>wp search-replace 'http://old.com' 'http://new.com' --all-tables --precise</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'http://old.com\' \'http://new.com\' --all-tables --precise')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="user" role="tabpanel">
+                    <h3>User Commands</h3>
+                    <table class="command-table">
+                        <thead>
+                            <tr>
+                                <th>Command</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>wp user list</code></td>
+                                <td>List users</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user get &lt;user&gt;</code></td>
+                                <td>Get user details</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user create &lt;login&gt; &lt;email&gt;</code></td>
+                                <td>Create a new user</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user delete &lt;user&gt;</code></td>
+                                <td>Delete a user</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user update &lt;user&gt;</code></td>
+                                <td>Update user properties</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user set-role &lt;user&gt; &lt;role&gt;</code></td>
+                                <td>Set user role</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user generate</code></td>
+                                <td>Generate random users</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user import-csv &lt;file&gt;</code></td>
+                                <td>Import users from CSV</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user session list &lt;user&gt;</code></td>
+                                <td>List user sessions</td>
+                            </tr>
+                            <tr>
+                                <td><code>wp user session destroy &lt;user&gt;</code></td>
+                                <td>Destroy user sessions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 class="mt-4">Examples</h4>
+                    <div class="command-box">
+                        <span># Create admin user<br>wp user create admin admin@example.com --role=administrator --user_pass=securepassword</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp user create admin admin@example.com --role=administrator --user_pass=securepassword')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <div class="command-box">
+                        <span># Reset user password<br>wp user update 2 --user_pass=newpassword</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp user update 2 --user_pass=newpassword')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Advanced Usage ======= -->
+        <section id="advanced-usage" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-cogs me-2"></i> Advanced Usage</h2>
+            
+            <h3>Custom Commands</h3>
+            <p>You can create your own WP-CLI commands by creating a custom PHP class:</p>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0">Example: Hello World Command</h4>
+                </div>
+                <div class="card-body">
+                    <pre><code class="language-php">&lt;?php
+/**
+ * Hello World command for WP-CLI
+ */
+class Hello_World_Command {
+    /**
+     * Prints a hello world message
+     *
+     * ## OPTIONS
+     * &lt;name&gt;: The name to greet
+     * 
+     * ## EXAMPLES
+     * wp hello-world John
+     */
+    public function __invoke( $args ) {
+        WP_CLI::success( "Hello, " . $args[0] . "!" );
+    }
+}
+
+// Register the command
+WP_CLI::add_command( 'hello-world', 'Hello_World_Command' );</code></pre>
+                </div>
+            </div>
+            
+            <p>Save this as a PHP file in your plugin or theme, then require it in your <code>wp-cli.yml</code>:</p>
+            <div class="command-box">
+                <span>require:<br>  - wp-content/plugins/my-plugin/wp-cli-commands.php</span>
+                <span class="copy-btn" onclick="copyToClipboard('require:\n  - wp-content/plugins/my-plugin/wp-cli-commands.php')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Bulk Operations</h3>
+            <p>WP-CLI excels at performing bulk operations. For example, to update all plugins except specific ones:</p>
+            <div class="command-box">
+                <span>wp plugin update --all --exclude=akismet,hello-dolly</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp plugin update --all --exclude=akismet,hello-dolly')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <p>To find and replace content across all posts:</p>
+            <div class="command-box">
+                <span>wp search-replace 'old text' 'new text' wp_posts --precise</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp search-replace \'old text\' \'new text\' wp_posts --precise')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Using WP-CLI in Scripts</h3>
+            <p>You can chain commands together in bash scripts:</p>
+            <div class="command-box">
+                <span>#!/bin/bash<br><br># Backup database<br>wp db export backup-$(date +%Y-%m-%d).sql<br><br># Update all plugins<br>wp plugin update --all<br><br># Clear cache<br>wp cache flush</span>
+                <span class="copy-btn" onclick="copyToClipboard('#!/bin/bash\n\n# Backup database\nwp db export backup-$(date +%Y-%m-%d).sql\n\n# Update all plugins\nwp plugin update --all\n\n# Clear cache\nwp cache flush')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Integration with Cron</h3>
+            <p>Schedule regular WP-CLI tasks with cron:</p>
+            <div class="command-box">
+                <span># Edit crontab<br>crontab -e<br><br># Add this line to run daily at 2am<br>0 2 * * * cd /path/to/wordpress && wp plugin update --all</span>
+                <span class="copy-btn" onclick="copyToClipboard('0 2 * * * cd /path/to/wordpress && wp plugin update --all')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+        </section>
+
+        <!-- ======= Scripting ======= -->
+        <section id="scripting" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-code me-2"></i> Scripting with WP-CLI</h2>
+            
+            <h3>Basic Scripting</h3>
+            <p>WP-CLI can be used in shell scripts to automate complex workflows:</p>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0">Example: Site Backup Script</h4>
+                </div>
+                <div class="card-body">
+                    <pre><code class="language-bash">#!/bin/bash
+
+# Configuration
+SITE_PATH="/var/www/wordpress"
+BACKUP_DIR="/backups/wordpress"
+DATE=$(date +%Y-%m-%d-%H%M%S)
+
+# Create backup directory if it doesn't exist
+mkdir -p "$BACKUP_DIR"
+
+# Change to site directory
+cd "$SITE_PATH" || exit
+
+# Export database
+wp db export "$BACKUP_DIR/db-backup-$DATE.sql"
+
+# Create archive of WordPress files
+tar -czf "$BACKUP_DIR/files-backup-$DATE.tar.gz" .
+
+# Clean up backups older than 30 days
+find "$BACKUP_DIR" -type f -mtime +30 -delete
+
+echo "Backup completed: $BACKUP_DIR/files-backup-$DATE.tar.gz"</code></pre>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Using WP-CLI in PHP</h3>
+            <p>You can execute WP-CLI commands from PHP scripts:</p>
+            
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h4 class="mb-0">Example: PHP Script Using WP-CLI</h4>
+                </div>
+                <div class="card-body">
+                    <pre><code class="language-php">&lt;?php
+/**
+ * Execute WP-CLI command from PHP
+ */
+function execute_wp_cli($command) {
+    $output = [];
+    $return_var = 0;
+    
+    // Change to WordPress directory
+    chdir('/path/to/wordpress');
+    
+    // Execute command
+    exec("wp $command", $output, $return_var);
+    
+    if ($return_var !== 0) {
+        throw new Exception("WP-CLI command failed: " . implode("\n", $output));
+    }
+    
+    return $output;
+}
+
+// Example usage
+try {
+    $plugins = execute_wp_cli('plugin list --format=json');
+    $plugins = json_decode(implode("\n", $plugins), true);
+    
+    foreach ($plugins as $plugin) {
+        if ($plugin['update'] === 'available') {
+            execute_wp_cli("plugin update {$plugin['name']}");
+            echo "Updated plugin: {$plugin['name']}\n";
+        }
+    }
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}</code></pre>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Advanced Scripting Techniques</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h5">JSON Output</h4>
+                            <p>Many commands support <code>--format=json</code> for easier parsing:</p>
+                            <div class="command-box">
+                                <span>wp plugin list --format=json</span>
+                                <span class="copy-btn" onclick="copyToClipboard('wp plugin list --format=json')">
+                                    <i class="far fa-copy"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h5">Batch Processing</h4>
+                            <p>Process items in batches with <code>--page</code> and <code>--per-page</code>:</p>
+                            <div class="command-box">
+                                <span>wp user list --page=1 --per-page=100</span>
+                                <span class="copy-btn" onclick="copyToClipboard('wp user list --page=1 --per-page=100')">
+                                    <i class="far fa-copy"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Troubleshooting ======= -->
+        <section id="troubleshooting" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-bug me-2"></i> Troubleshooting</h2>
+            
+            <h3>Common Issues</h3>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">"Error: This does not seem to be a WordPress installation."</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Solution:</strong> Run the command from your WordPress root directory or specify the path:</p>
+                    <div class="command-box">
+                        <span>wp --path=/path/to/wordpress &lt;command&gt;</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp --path=/path/to/wordpress &lt;command&gt;')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">"PHP Fatal error: Allowed memory size exhausted"</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Solution:</strong> Increase PHP memory limit:</p>
+                    <div class="command-box">
+                        <span>wp config set WP_MEMORY_LIMIT 256M --raw</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp config set WP_MEMORY_LIMIT 256M --raw')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                    <p class="mt-2">Or run WP-CLI with increased memory:</p>
+                    <div class="command-box">
+                        <span>php -d memory_limit=256M $(which wp) &lt;command&gt;</span>
+                        <span class="copy-btn" onclick="copyToClipboard('php -d memory_limit=256M $(which wp) &lt;command&gt;')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">"Error: Failed to connect to database"</h4>
+                </div>
+                <div class="card-body">
+                    <p><strong>Solution:</strong> Verify your database credentials in <code>wp-config.php</code>:</p>
+                    <div class="command-box">
+                        <span>wp config get DB_NAME<br>wp config get DB_USER<br>wp config get DB_PASSWORD<br>wp config get DB_HOST</span>
+                        <span class="copy-btn" onclick="copyToClipboard('wp config get DB_NAME\nwp config get DB_USER\nwp config get DB_PASSWORD\nwp config get DB_HOST')">
+                            <i class="far fa-copy"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Debugging</h3>
+            <p>Enable debug mode to get more detailed error information:</p>
+            <div class="command-box">
+                <span>wp --debug &lt;command&gt;</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp --debug &lt;command&gt;')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <p>Check PHP error logs:</p>
+            <div class="command-box">
+                <span>wp eval 'echo ini_get("error_log");'</span>
+                <span class="copy-btn" onclick="copyToClipboard('wp eval \'echo ini_get("error_log");\'')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+        </section>
+
+        <!-- ======= Security ======= -->
+        <section id="security" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-shield-alt me-2"></i> Security</h2>
+            
+            <div class="alert alert-danger">
+                <p><strong>Important:</strong> WP-CLI provides powerful access to your WordPress installation and should be properly secured.</p>
+            </div>
+            
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Restrict access:</strong> Only trusted users should have SSH access to your server</li>
+                <li><strong>Use strong passwords:</strong> For both system accounts and WordPress users</li>
+                <li><strong>Disable this page:</strong> Remove or password-protect this status page in production</li>
+                <li><strong>Monitor usage:</strong> Review command history for suspicious activity</li>
+                <li><strong>Keep updated:</strong> Regularly update WP-CLI to the latest version</li>
+            </ul>
+            
+            <h3 class="mt-4">Securing WP-CLI</h3>
+            <p>Disable dangerous commands in <code>wp-cli.yml</code>:</p>
+            <div class="command-box">
+                <span>disabled_commands:<br>  - db drop<br>  - plugin delete<br>  - theme delete<br>  - user delete</span>
+                <span class="copy-btn" onclick="copyToClipboard('disabled_commands:\n  - db drop\n  - plugin delete\n  - theme delete\n  - user delete')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <p>Restrict WP-CLI to specific users via sudoers file:</p>
+            <div class="command-box">
+                <span># Allow only specific users to run WP-CLI<br>username ALL=(ALL) NOPASSWD: /usr/local/bin/wp</span>
+                <span class="copy-btn" onclick="copyToClipboard('username ALL=(ALL) NOPASSWD: /usr/local/bin/wp')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+            
+            <h3 class="mt-4">Audit Logging</h3>
+            <p>Log all WP-CLI commands for auditing:</p>
+            <div class="command-box">
+                <span># Add to ~/.bashrc or ~/.zshrc<br>wp_cli_log() {<br>  echo "$(date "+%Y-%m-%d %H:%M:%S") $(whoami) $(pwd) wp $@" >> /var/log/wp-cli.log<br>  command wp "$@"<br>}<br>alias wp=wp_cli_log</span>
+                <span class="copy-btn" onclick="copyToClipboard('# Add to ~/.bashrc or ~/.zshrc\nwp_cli_log() {\n  echo \"$(date \"+%Y-%m-%d %H:%M:%S\") $(whoami) $(pwd) wp $@\" >> /var/log/wp-cli.log\n  command wp \"$@\"\n}\nalias wp=wp_cli_log')">
+                    <i class="far fa-copy"></i>
+                </span>
+            </div>
+        </section>
+
+        <!-- ======= Best Practices ======= -->
+        <section id="best-practices" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-check-circle me-2"></i> Best Practices</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h4">General Usage</h3>
+                            <ul>
+                                <li>Always test commands in staging before production</li>
+                                <li>Use <code>--dry-run</code> for potentially destructive operations</li>
+                                <li>Create backups before major changes</li>
+                                <li>Document frequently used commands</li>
+                                <li>Use version control for custom commands</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h4">Performance Tips</h3>
+                            <ul>
+                                <li>Use <code>--skip-plugins</code> for faster execution</li>
+                                <li>Process large datasets in batches</li>
+                                <li>Schedule resource-intensive tasks during low-traffic periods</li>
+                                <li>Consider using <code>wp eval-file</code> for complex operations</li>
+                                <li>Disable WP_DEBUG in production</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">Workflow Recommendations</h3>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="h5">Development Workflow</h4>
+                    <ol>
+                        <li>Create local environment with <code>wp core install</code></li>
+                        <li>Install required plugins/themes</li>
+                        <li>Configure settings via <code>wp option</code> commands</li>
+                        <li>Export database with <code>wp db export</code></li>
+                        <li>Commit changes to version control</li>
+                    </ol>
+                    
+                    <h4 class="h5 mt-4">Deployment Workflow</h4>
+                    <ol>
+                        <li>Pull latest code from repository</li>
+                        <li>Import database with <code>wp db import</code></li>
+                        <li>Run search-replace for URLs if needed</li>
+                        <li>Update plugins/themes</li>
+                        <li>Clear cache with <code>wp cache flush</code></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Integrations ======= -->
+        <section id="integrations" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-plug me-2"></i> Integrations</h2>
+            
+            <h3>Popular Tools</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h5"><i class="fab fa-docker me-2"></i> Docker</h4>
+                            <p>Use the official WP-CLI Docker image:</p>
+                            <div class="command-box">
+                                <span>docker run -it --rm wordpress:cli wp --info</span>
+                                <span class="copy-btn" onclick="copyToClipboard('docker run -it --rm wordpress:cli wp --info')">
+                                    <i class="far fa-copy"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h5"><i class="fab fa-git-alt me-2"></i> Git Hooks</h4>
+                            <p>Run WP-CLI commands in Git hooks:</p>
+                            <div class="command-box">
+                                <span># .git/hooks/post-merge<br>#!/bin/sh<br>wp core update-db</span>
+                                <span class="copy-btn" onclick="copyToClipboard('#!/bin/sh\nwp core update-db')">
+                                    <i class="far fa-copy"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="h5"><i class="fas fa-server me-2"></i> CI/CD</h4>
+                            <p>Example GitHub Actions workflow:</p>
+                            <div class="command-box">
+                                <span># .github/workflows/deploy.yml<br>jobs:<br>  deploy:<br>    steps:<br>      - name: Update plugins<br>        run: wp plugin update --all</span>
+                                <span class="copy-btn" onclick="copyToClipboard('# .github/workflows/deploy.yml\njobs:\n  deploy:\n    steps:\n      - name: Update plugins\n        run: wp plugin update --all')">
+                                    <i class="far fa-copy"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="mt-4">WP-CLI Packages</h3>
+            <p>Extend WP-CLI functionality with community packages:</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Description</th>
+                        <th>Install</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>wp-cli/dist-archive-command</code></td>
+                        <td>Create WordPress distribution archives</td>
+                        <td><code>wp package install wp-cli/dist-archive-command</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>wp-cli/doctor-command</code></td>
+                        <td>Diagnose WordPress issues</td>
+                        <td><code>wp package install wp-cli/doctor-command</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>wp-cli/profile-command</code></td>
+                        <td>Profile WordPress performance</td>
+                        <td><code>wp package install wp-cli/profile-command</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>wp-cli/restful</code></td>
+                        <td>RESTful WP-CLI commands</td>
+                        <td><code>wp package install wp-cli/restful</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ======= FAQ ======= -->
+        <section id="faq" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-question-circle me-2"></i> Frequently Asked Questions</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            How do I know if WP-CLI is installed correctly?
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Run <code>wp --info</code> to verify installation. You should see information about your PHP, WordPress, and WP-CLI versions.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Can I use WP-CLI on shared hosting?
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Some shared hosts support WP-CLI. Check with your hosting provider. If SSH access isn't available, you might be able to use WP-CLI through a PHP script.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            How do I update WP-CLI to the latest version?
+                        </button>
+                    </h3>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Run <code>wp cli update</code>. You can also specify a version with <code>wp cli update --version=2.8.1</code>.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            Can I undo a WP-CLI command?
+                        </button>
+                    </h3>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Many WP-CLI commands are irreversible. Always use <code>--dry-run</code> first to test commands, and maintain regular backups.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                            How do I manage multiple WordPress sites?
+                        </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Use the <code>--path</code> parameter to specify different installations, or create a bash script to loop through sites. Some users create aliases for frequently used sites.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Resources ======= -->
+        <section id="resources" class="mb-5">
+            <h2 class="section-title"><i class="fas fa-book-open me-2"></i> Additional Resources</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h4">Official Documentation</h3>
+                            <ul>
+                                <li><a href="https://wp-cli.org/" target="_blank">WP-CLI Homepage</a></li>
+                                <li><a href="https://developer.wordpress.org/cli/commands/" target="_blank">Command Reference</a></li>
+                                <li><a href="https://make.wordpress.org/cli/handbook/" target="_blank">WP-CLI Handbook</a></li>
+                                <li><a href="https://github.com/wp-cli/wp-cli" target="_blank">GitHub Repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="h4">Community Resources</h3>
+                            <ul>
+                                <li><a href="https://github.com/wp-cli/wp-cli/wiki/Community-Packages" target="_blank">Community Packages</a></li>
+                                <li><a href="https://runcommand.io/" target="_blank">Runcommand (Premium WP-CLI tools)</a></li>
+                                <li><a href="https://www.smashingmagazine.com/2015/09/wp-cli-wordpress-command-line/" target="_blank">Smashing Magazine Guide</a></li>
+                                <li><a href="https://deliciousbrains.com/wp-cli-wordpress/" target="_blank">Delicious Brains Tutorial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3 class="h4">Books</h3>
+                    <ul>
+                        <li><a href="https://www.amazon.com/WP-CLI-Complete-WordPress-Command-Line/dp/1973273005" target="_blank">"WP-CLI: The Complete WordPress Command-Line Guide"</a></li>
+                        <li><a href="https://leanpub.com/wp-cli" target="_blank">"WP-CLI for Power Users"</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= Footer ======= -->
+        <footer class="py-5 text-center text-muted">
+            <p>This documentation page was generated by WP-CLI on <?php echo date('F j, Y'); ?></p>
+            <p>For security reasons, this page should not be publicly accessible in production environments.</p>
+            <p class="mb-0">WP-CLI is released under the MIT license.</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-php.min.js"></script>
+    
+    <script>
+        // Copy to clipboard functionality
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                // Show tooltip or notification
+                alert('Copied to clipboard: ' + text);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+        
+        // Add active class to current section in TOC
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.list-unstyled a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 300)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 
     <!-- Footer -->
     <div data-include="footer.html"></div>
