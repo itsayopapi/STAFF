@@ -17,12 +17,8 @@
       content="assets/images/favicon/tile.xml"
     />
 
-
-
     <!-- Scroll Cue -->
     <link rel="stylesheet" href="assets/libs/scrollcue/scrollCue.css" />
-
-
 
     <!-- Libs CSS -->
     <link
@@ -43,9 +39,6 @@
     <!-- FAV ICON -->
     <link rel="icon" href="./Wefithost Logo Icon-01.png" type="image/png" />
 
-
-
-
     <!-- JQuery -->
     <link
       rel="stylesheet"
@@ -57,25 +50,32 @@
 
     <!-- Media queries Css -->
     <link rel="stylesheet" href="./assets/css/media-queries.css" />
-    <title>WebHost Pro | Premium Web Hosting & eCommerce Solutions</title>
+    <title>WefitHost | Web Stores</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
-        :root {
-            --primary-color: #4e73df;
-            --secondary-color: #2e59d9;
-            --accent-color: #f6c23e;
-            --dark-color: #2c3e50;
-            --light-color: #f8f9fc;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-        }
+      :root {
+        --primary-color: #6b63ff;
+        --primary: #6b63ff;
+        --secondary-color: #2e59d9;
+        --accent-color: #f6c23e;
+        --dark-color: #2c3e50;
+        --light-color: #f8f9fc;
+      }
 
-         /* Header Styles */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
       .custom-header {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
         position: sticky;
@@ -409,998 +409,1627 @@
         transition: all 0.3s ease;
         font-size: 1.05rem;
       }
-        
+
+      .btn-outline-primary {
+        border-color: var(--primary-color);
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+            135deg,
+            rgba(46, 89, 217, 0.9) 0%,
+            rgba(78, 115, 223, 0.9) 100%
+          ),
+          url("https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1800&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 80vh;
+        position: relative;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.2) 1px,
+          transparent 1px
+        );
+        background-size: 20px 20px;
+        z-index: 1;
+      }
+
+      .feature-card {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+        background: linear-gradient(135deg, #f8f9fc 0%, #e9ecef 100%);
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+      .nav-pills .nav-link.active {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .integration-logo {
+        width: 140px;
+        height: auto;
+        transition: all 0.3s ease;
+        filter: grayscale(100%) brightness(1.5);
+      }
+
+      .integration-logo:hover {
+        filter: none;
+        transform: scale(1.1);
+      }
+
+      .testimonial-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border: 4px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .pricing-card {
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .pricing-card:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 15px 30px rgba(78, 115, 223, 0.2);
+      }
+
+      .pricing-card.popular {
+        border-color: var(--accent-color);
+        position: relative;
+      }
+
+      .pricing-card .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .pricing-card ul{
+        flex-grow: 1;
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background-color: var(--accent-color);
+        color: var(--dark-color);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 3px 10px rgba(246, 194, 62, 0.3);
+      }
+
+      .stats-item {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stats-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .stats-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+      }
+
+      .nav-pills .nav-link.active {
+        background-color: var(--primary-color);
+      }
+
+      .tab-content {
+        background: white;
+        border-radius: 0 0 12px 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .comparison-table th {
+        background-color: var(--light-color);
+      }
+
+      .comparison-table .feature-name {
+        font-weight: bold;
+        color: var(--dark-color);
+      }
+
+      .comparison-table .yes {
+        color: #28a745;
+        font-weight: bold;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .shape {
+        position: absolute;
+        opacity: 0.1;
+        border-radius: 50%;
+      }
+
+      .shape-1 {
+        width: 300px;
+        height: 300px;
+        background: var(--accent-color);
+        top: -150px;
+        right: -150px;
+      }
+
+      .shape-2 {
+        width: 200px;
+        height: 200px;
+        background: var(--primary-color);
+        bottom: -100px;
+        left: -100px;
+      }
+
+      @media (max-width: 768px) {
         .hero-bg {
-            background: linear-gradient(135deg, rgba(46,89,217,0.9) 0%, rgba(78,115,223,0.9) 100%), 
-                        url('https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?auto=format&fit=crop&w=1800&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 80vh;
-            position: relative;
+          min-height: 90vh;
+          background-attachment: scroll;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
-            background-size: 20px 20px;
-            z-index: 1;
-        }
-        
-        .feature-card {
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            background: linear-gradient(135deg, #f8f9fc 0%, #e9ecef 100%);
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-        
+
         .integration-logo {
-            width: 140px;
-            height: auto;
-            transition: all 0.3s ease;
-            filter: grayscale(100%) brightness(1.5);
+          width: 100px;
         }
-        
-        .integration-logo:hover {
-            filter: none;
-            transform: scale(1.1);
-        }
-        
-        .testimonial-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .pricing-card {
-            border: 3px solid transparent;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        
-        .pricing-card:hover {
-            border-color: var(--primary-color);
-            box-shadow: 0 15px 30px rgba(78,115,223,0.2);
-        }
-        
-        .pricing-card.popular {
-            border-color: var(--accent-color);
-            position: relative;
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            box-shadow: 0 3px 10px rgba(246,194,62,0.3);
-        }
-        
-        .stats-item {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .stats-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-        
-        .nav-pills .nav-link.active {
-            background-color: var(--primary-color);
-        }
-        
-        .tab-content {
-            background: white;
-            border-radius: 0 0 12px 12px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .comparison-table th {
-            background-color: var(--light-color);
-        }
-        
-        .comparison-table .feature-name {
-            font-weight: bold;
-            color: var(--dark-color);
-        }
-        
-        .comparison-table .yes {
-            color: #28a745;
-            font-weight: bold;
-        }
-        
-        
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-        
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-        
-        .shape {
-            position: absolute;
-            opacity: 0.1;
-            border-radius: 50%;
-        }
-        
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            background: var(--accent-color);
-            top: -150px;
-            right: -150px;
-        }
-        
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            background: var(--primary-color);
-            bottom: -100px;
-            left: -100px;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-bg {
-                min-height: 90vh;
-                background-attachment: scroll;
-            }
-            
-            .integration-logo {
-                width: 100px;
-            }
-        }
+      }
     </style>
-<body data-bs-theme="light">
+  </head>
+  <body data-bs-theme="light">
     <!-- Navbar -->
     <header class="custom-header" data-include="nav.html"></header>
-    
-<!-- Hero Section -->
-<section class="hero-bg text-white d-flex align-items-center pt-5">
-    <div class="hero-pattern"></div>
-    <div class="floating-shapes">
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white d-flex align-items-center pt-5">
+      <div class="hero-pattern"></div>
+      <div class="floating-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
-    </div>
-    <div class="container hero-content py-5">
+      </div>
+      <div class="container hero-content py-5">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Build Your Digital Presence with Confidence</h1>
-                <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">Professional websites and eCommerce stores with industry-leading performance, security, and support.</p>
-                <div class="d-flex flex-wrap gap-3 animate__animated animate__fadeIn animate__delay-1s">
-                    <a href="#pricing" class="btn btn-light btn-lg px-4 py-3">
-                        <i class="fas fa-tags me-2"></i> View Plans
-                    </a>
-                    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3">
-                        <i class="fas fa-phone-alt me-2"></i> Contact Sales
-                    </a>
-                </div>
-                <div class="d-flex align-items-center mt-4 animate__animated animate__fadeIn animate__delay-2s">
-                    <div class="d-flex me-3">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="User" class="rounded-circle border border-3 border-white" width="40" height="40">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="User" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40">
-                        <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="User" class="rounded-circle border border-3 border-white ms-n2" width="40" height="40">
-                    </div>
-                    <div>
-                        <p class="mb-0 small">Trusted by <strong>25,000+</strong> businesses worldwide</p>
-                        <div class="text-warning">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="ms-1">4.8/5 (2,450 reviews)</span>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1
+              class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown text-secondary"
+            >
+              Build Your Digital Presence with Confidence
+            </h1>
+            <p
+              class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s"
+            >
+              Professional websites and eCommerce stores with industry-leading
+              performance, security, and support.
+            </p>
+            <div
+              class="d-flex flex-wrap gap-3 animate__animated animate__fadeIn animate__delay-1s"
+            >
+              <a href="#pricing" class="btn btn-light btn-lg px-4 py-3">
+                <i class="fas fa-tags me-2"></i> View Plans
+              </a>
+              <a
+                href="contact-us.html"
+                class="btn btn-outline-light btn-lg px-4 py-3"
+              >
+                <i class="fas fa-phone-alt me-2"></i> Contact Sales
+              </a>
             </div>
-            <div class="col-lg-6 animate__animated animate__fadeInRight animate__delay-1s">
-                <div class="position-relative">
-                    <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Website Builder Interface" class="img-fluid rounded-4 shadow-lg">
-                    <div class="position-absolute bottom-0 start-0 translate-middle-y ms-4">
-                        <div class="bg-white text-dark p-3 rounded-3 shadow-sm">
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="bg-success rounded-circle me-2" style="width: 10px; height: 10px;"></div>
-                                <small class="fw-bold">99.9% Uptime</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-primary rounded-circle me-2" style="width: 10px; height: 10px;"></div>
-                                <small class="fw-bold">24/7 Support</small>
-                            </div>
-                        </div>
-                    </div>
+            <div
+              class="d-flex align-items-center mt-4 animate__animated animate__fadeIn animate__delay-2s"
+            >
+              <div class="d-flex me-3">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white"
+                  width="40"
+                  height="40"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white ms-n2"
+                  width="40"
+                  height="40"
+                />
+                <img
+                  src="https://randomuser.me/api/portraits/women/63.jpg"
+                  alt="User"
+                  class="rounded-circle border border-3 border-white ms-n2"
+                  width="40"
+                  height="40"
+                />
+              </div>
+              <div>
+                <p class="mb-0 small">
+                  Trusted by <strong>25,000+</strong> businesses worldwide
+                </p>
+                <div class="text-warning">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="ms-1">4.8/5 (2,450 reviews)</span>
                 </div>
+              </div>
             </div>
+          </div>
+          <div
+            class="col-lg-6 animate__animated animate__fadeInRight animate__delay-1s"
+          >
+            <div class="position-relative">
+              <img
+                src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=1000&q=80"
+                alt="Website Builder Interface"
+                class="img-fluid rounded-4 shadow-lg"
+              />
+              <div
+                class="position-absolute bottom-0 start-0 translate-middle-y ms-4"
+              >
+                <div class="bg-white text-dark p-3 rounded-3 shadow-sm">
+                  <div class="d-flex align-items-center mb-2">
+                    <div
+                      class="bg-success rounded-circle me-2"
+                      style="width: 10px; height: 10px"
+                    ></div>
+                    <small class="fw-bold">99.9% Uptime</small>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="bg-primary rounded-circle me-2"
+                      style="width: 10px; height: 10px"
+                    ></div>
+                    <small class="fw-bold">24/7 Support</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Stats Section -->
-<section class="py-5 bg-light">
-    <div class="container">
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
         <div class="row g-4">
-            <div class="col-md-3">
-                <div class="stats-item">
-                    <div class="stats-number">99.9%</div>
-                    <p class="mb-0 text-muted">Uptime Guarantee</p>
-                </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="stats-number">99.9%</div>
+              <p class="mb-0 text-muted">Uptime Guarantee</p>
             </div>
-            <div class="col-md-3">
-                <div class="stats-item">
-                    <div class="stats-number">25K+</div>
-                    <p class="mb-0 text-muted">Happy Customers</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="stats-number">25K+</div>
+              <p class="mb-0 text-muted">Happy Customers</p>
             </div>
-            <div class="col-md-3">
-                <div class="stats-item">
-                    <div class="stats-number">24/7</div>
-                    <p class="mb-0 text-muted">Expert Support</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="stats-number">24/7</div>
+              <p class="mb-0 text-muted">Expert Support</p>
             </div>
-            <div class="col-md-3">
-                <div class="stats-item">
-                    <div class="stats-number">45s</div>
-                    <p class="mb-0 text-muted">Average Response Time</p>
-                </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stats-item">
+              <div class="stats-number">45s</div>
+              <p class="mb-0 text-muted">Average Response Time</p>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Features Grid -->
-<section class="py-5" id="features">
-    <div class="container">
+    <!-- Features Grid -->
+    <section class="py-5" id="features">
+      <div class="container">
         <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Everything You Need to Succeed Online</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">From blazing-fast hosting to powerful eCommerce tools, we've got you covered at every step of your online journey.</p>
+          <h2 class="display-6 fw-bold mb-3">
+            Everything You Need to Succeed Online
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            From blazing-fast hosting to powerful eCommerce tools, we've got you
+            covered at every step of your online journey.
+          </p>
         </div>
         <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">Mobile-Optimized</h3>
-                        <p class="text-muted">Create websites that look stunning on all devices with our adaptive templates and responsive design tools.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">Mobile-Optimized</h3>
+                <p class="text-muted">
+                  Create websites that look stunning on all devices with our
+                  adaptive templates and responsive design tools.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">Lightning Fast</h3>
-                        <p class="text-muted">SSD-powered servers and global CDN ensure your site loads in milliseconds, keeping visitors engaged.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">Lightning Fast</h3>
+                <p class="text-muted">
+                  SSD-powered servers and global CDN ensure your site loads in
+                  milliseconds, keeping visitors engaged.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">Military-Grade Security</h3>
-                        <p class="text-muted">Free SSL certificates, DDoS protection, and malware scanning keep your site and visitors safe.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-lock"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">Military-Grade Security</h3>
+                <p class="text-muted">
+                  Free SSL certificates, DDoS protection, and malware scanning
+                  keep your site and visitors safe.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">eCommerce Ready</h3>
-                        <p class="text-muted">Built-in WooCommerce integration with payment gateways, inventory management, and tax tools.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">eCommerce Ready</h3>
+                <p class="text-muted">
+                  Built-in WooCommerce integration with payment gateways,
+                  inventory management, and tax tools.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">Daily Backups</h3>
-                        <p class="text-muted">Automatic daily backups with 30-day retention, plus on-demand backup and restore options.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">Daily Backups</h3>
+                <p class="text-muted">
+                  Automatic daily backups with 30-day retention, plus on-demand
+                  backup and restore options.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card h-100 feature-card p-4">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div class="card-body text-center">
-                        <h3 class="h4">24/7 Support</h3>
-                        <p class="text-muted">Our expert support team is available round the clock via chat, phone, and email.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 feature-card p-4">
+              <div class="feature-icon mx-auto">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div class="card-body text-center">
+                <h3 class="h4">24/7 Support</h3>
+                <p class="text-muted">
+                  Our expert support team is available round the clock via chat,
+                  phone, and email.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary"
+                  >Learn More</a
+                >
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Website vs Store Comparison -->
-<section class="py-5 bg-light">
-    <div class="container">
+    <!-- Website vs Store Comparison -->
+    <section class="py-5 bg-light">
+      <div class="container">
         <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Website or Online Store?</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect solution for your needs with our flexible hosting options.</p>
+          <h2 class="display-6 fw-bold mb-3 text-dark">
+            Website or Online Store?
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Choose the perfect solution for your needs with our flexible hosting
+            options.
+          </p>
         </div>
-        
-        <ul class="nav nav-pills mb-4 justify-content-center" id="comparison-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="features-tab" data-bs-toggle="pill" data-bs-target="#features-tab-pane" type="button">Feature Comparison</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="use-cases-tab" data-bs-toggle="pill" data-bs-target="#use-cases-tab-pane" type="button">Use Cases</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="migration-tab" data-bs-toggle="pill" data-bs-target="#migration-tab-pane" type="button">Migration Options</button>
-            </li>
+
+        <ul
+          class="nav nav-pills mb-4 justify-content-center"
+          id="comparison-tab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="features-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#features-tab-pane"
+              type="button"
+            >
+              Feature Comparison
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="use-cases-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#use-cases-tab-pane"
+              type="button"
+            >
+              Use Cases
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="migration-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#migration-tab-pane"
+              type="button"
+            >
+              Migration Options
+            </button>
+          </li>
         </ul>
-        
-        <div class="tab-content" id="comparison-tabContent">
-            <div class="tab-pane fade show active" id="features-tab-pane" role="tabpanel">
-                <div class="table-responsive">
-                    <table class="table comparison-table">
-                        <thead>
-                            <tr>
-                                <th scope="col" style="width: 30%;">Feature</th>
-                                <th scope="col" class="text-center">Basic Website</th>
-                                <th scope="col" class="text-center">eCommerce Store</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="feature-name">Storage Space</td>
-                                <td class="text-center">10 GB SSD</td>
-                                <td class="text-center">Unlimited SSD</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Bandwidth</td>
-                                <td class="text-center">Unmetered</td>
-                                <td class="text-center">Unmetered</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Free Domain</td>
-                                <td class="text-center yes"><i class="fas fa-check"></i></td>
-                                <td class="text-center yes"><i class="fas fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">SSL Certificate</td>
-                                <td class="text-center yes"><i class="fas fa-check"></i></td>
-                                <td class="text-center yes"><i class="fas fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Email Accounts</td>
-                                <td class="text-center">5</td>
-                                <td class="text-center">Unlimited</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">eCommerce Features</td>
-                                <td class="text-center"><i class="fas fa-times text-muted"></i></td>
-                                <td class="text-center yes"><i class="fas fa-check"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Product Listings</td>
-                                <td class="text-center"><i class="fas fa-times text-muted"></i></td>
-                                <td class="text-center">Unlimited</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-name">Payment Gateways</td>
-                                <td class="text-center"><i class="fas fa-times text-muted"></i></td>
-                                <td class="text-center">20+ Options</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="use-cases-tab-pane" role="tabpanel">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <h4 class="mb-4"><i class="fas fa-globe text-primary me-2"></i> Basic Website</h4>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Personal blogs and portfolios</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Small business websites</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Non-profit organization sites</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Informational websites</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Landing pages</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <h4 class="mb-4"><i class="fas fa-store text-primary me-2"></i> eCommerce Store</h4>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Online retail stores</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Digital product sales</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Subscription services</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Dropshipping businesses</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Marketplace platforms</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="migration-tab-pane" role="tabpanel">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <h4 class="mb-4"><i class="fas fa-globe text-primary me-2"></i> Website Migration</h4>
-                                <p>We'll seamlessly transfer your existing website to our platform with zero downtime.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Free migration service</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> WordPress, Joomla, Drupal support</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Custom HTML/CSS sites</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> DNS management included</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card h-100 border-0">
-                            <div class="card-body">
-                                <h4 class="mb-4"><i class="fas fa-store text-primary me-2"></i> Store Migration</h4>
-                                <p>Specialized eCommerce migration with product data, customer info, and order history.</p>
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> WooCommerce, Shopify, Magento</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Payment gateway configuration</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> SEO preservation</li>
-                                    <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i> Performance optimization</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Integration Showcase -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Seamless Integrations</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Connect with the tools you already use to streamline your workflow.</p>
+        <div class="tab-content" id="comparison-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="features-tab-pane"
+            role="tabpanel"
+          >
+            <div class="table-responsive">
+              <table class="table comparison-table">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 30%">Feature</th>
+                    <th scope="col" class="text-center">Basic Website</th>
+                    <th scope="col" class="text-center">eCommerce Store</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="feature-name">Storage Space</td>
+                    <td class="text-center">10 GB SSD</td>
+                    <td class="text-center">Unlimited SSD</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">Bandwidth</td>
+                    <td class="text-center">Unmetered</td>
+                    <td class="text-center">Unmetered</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">Free Domain</td>
+                    <td class="text-center yes">
+                      <i class="fas fa-check"></i>
+                    </td>
+                    <td class="text-center yes">
+                      <i class="fas fa-check"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">SSL Certificate</td>
+                    <td class="text-center yes">
+                      <i class="fas fa-check"></i>
+                    </td>
+                    <td class="text-center yes">
+                      <i class="fas fa-check"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">Email Accounts</td>
+                    <td class="text-center">5</td>
+                    <td class="text-center">Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">eCommerce Features</td>
+                    <td class="text-center">
+                      <i class="fas fa-times text-muted"></i>
+                    </td>
+                    <td class="text-center yes">
+                      <i class="fas fa-check"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">Product Listings</td>
+                    <td class="text-center">
+                      <i class="fas fa-times text-muted"></i>
+                    </td>
+                    <td class="text-center">Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-name">Payment Gateways</td>
+                    <td class="text-center">
+                      <i class="fas fa-times text-muted"></i>
+                    </td>
+                    <td class="text-center">20+ Options</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="use-cases-tab-pane" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="mb-4">
+                      <i class="fas fa-globe text-primary me-2"></i> Basic
+                      Website
+                    </h4>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Personal blogs and portfolios
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Small business websites
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Non-profit organization sites
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Informational websites
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Landing pages
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="mb-4">
+                      <i class="fas fa-store text-primary me-2"></i> eCommerce
+                      Store
+                    </h4>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Online retail stores
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Digital product sales
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Subscription services
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Dropshipping businesses
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Marketplace platforms
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="migration-tab-pane" role="tabpanel">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="mb-4">
+                      <i class="fas fa-globe text-primary me-2"></i> Website
+                      Migration
+                    </h4>
+                    <p>
+                      We'll seamlessly transfer your existing website to our
+                      platform with zero downtime.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Free migration service
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        WordPress, Joomla, Drupal support
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Custom HTML/CSS sites
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        DNS management included
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100 border-0">
+                  <div class="card-body">
+                    <h4 class="mb-4">
+                      <i class="fas fa-store text-primary me-2"></i> Store
+                      Migration
+                    </h4>
+                    <p>
+                      Specialized eCommerce migration with product data,
+                      customer info, and order history.
+                    </p>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        WooCommerce, Shopify, Magento
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Payment gateway configuration
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        SEO preservation
+                      </li>
+                      <li class="mb-3">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Performance optimization
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-5">
-            <img src="https://images.seeklogo.com/logo-png/28/2/wordpress-black-logo-png_seeklogo-287395.png" class="integration-logo" alt="WordPress">
-            <img src="https://wpsso.com/wp-content/uploads/2019/03/woocommerce-logo-1200x675-cropped.png" class="integration-logo" alt="WooCommerce">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="integration-logo" alt="PayPal">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png" class="integration-logo" alt="Google">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" class="integration-logo" alt="Microsoft Azure">
-            <img src="https://www.svgrepo.com/show/306646/react.svg" class="integration-logo" alt="React">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" class="integration-logo" alt="Slack">
-            <img src="https://www.svgrepo.com/show/452053/mailchimp.svg" class="integration-logo" alt="Mailchimp">
+      </div>
+    </section>
+
+    <!-- Integration Showcase -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">Seamless Integrations</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Connect with the tools you already use to streamline your workflow.
+          </p>
+        </div>
+        <div
+          class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-5"
+        >
+          <img
+            src="https://images.seeklogo.com/logo-png/28/2/wordpress-black-logo-png_seeklogo-287395.png"
+            class="integration-logo"
+            alt="WordPress"
+          />
+          <img
+            src="https://wpsso.com/wp-content/uploads/2019/03/woocommerce-logo-1200x675-cropped.png"
+            class="integration-logo"
+            alt="WooCommerce"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+            class="integration-logo"
+            alt="PayPal"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png"
+            class="integration-logo"
+            alt="Google"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
+            class="integration-logo"
+            alt="Microsoft Azure"
+          />
+          <img
+            src="https://www.svgrepo.com/show/306646/react.svg"
+            class="integration-logo"
+            alt="React"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg"
+            class="integration-logo"
+            alt="Slack"
+          />
+          <img
+            src="https://www.svgrepo.com/show/452053/mailchimp.svg"
+            class="integration-logo"
+            alt="Mailchimp"
+          />
         </div>
         <div class="text-center">
-            <a href="#" class="btn btn-outline-primary btn-lg px-4">
-                <i class="fas fa-plug me-2"></i> View All Integrations
-            </a>
+          <a
+            href="maintenance.html"
+            class="btn btn-outline-primary btn-lg px-4"
+          >
+            <i class="fas fa-plug me-2"></i> View All Integrations
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Demo Video Section -->
-<section class="py-5 bg-dark text-white">
-    <div class="container">
+    <!-- Demo Video Section -->
+    <section class="py-5 bg-dark text-white">
+      <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <h2 class="display-5 fw-bold mb-4">See Our Platform in Action</h2>
-                <p class="lead mb-4">Watch our quick demo to see how easy it is to build and manage your website with WebHost Pro.</p>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> No technical skills required</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Hundreds of customizable templates</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Drag-and-drop interface</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Real-time previews</li>
-                </ul>
-                <a href="#pricing" class="btn btn-primary btn-lg px-4 mt-3">
-                    <i class="fas fa-rocket me-2"></i> Get Started Today
-                </a>
-            </div>
-            <div class="col-lg-6">
-                <div class="ratio ratio-16x9">
-                    <div class="bg-secondary rounded-3 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-play-circle display-3 text-primary"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Testimonials Carousel -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">What Our Customers Say</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Don't just take our word for it - hear from businesses like yours.</p>
-        </div>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-5 text-center">
-                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="testimonial-img rounded-circle mb-4">
-                                    <div class="mb-4">
-                                        <div class="text-warning mb-2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <blockquote class="blockquote">
-                                            <p class="lead">"Switching to WebHost Pro was the best decision for our online store. Our site loads twice as fast, and the support team helped us migrate everything perfectly."</p>
-                                            <footer class="blockquote-footer mt-3">Sarah Johnson, <cite>Founder of Boutique Finds</cite></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-5 text-center">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-img rounded-circle mb-4">
-                                    <div class="mb-4">
-                                        <div class="text-warning mb-2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                        <blockquote class="blockquote">
-                                            <p class="lead">"The eCommerce tools have helped us scale our business effortlessly. We've seen a 40% increase in conversions since moving our store to WebHost Pro."</p>
-                                            <footer class="blockquote-footer mt-3">Michael Chen, <cite>CEO of TechGadgets</cite></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-5 text-center">
-                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="testimonial-img rounded-circle mb-4">
-                                    <div class="mb-4">
-                                        <div class="text-warning mb-2">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                        <blockquote class="blockquote">
-                                            <p class="lead">"As a small business owner, I needed an affordable solution that didn't compromise on quality. WebHost Pro delivered exactly that with their amazing support."</p>
-                                            <footer class="blockquote-footer mt-3">Emily Rodriguez, <cite>Owner of Bloom Floral</cite></footer>
-                                        </blockquote>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-primary rounded-circle p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-<!-- Case Studies -->
-<section class="py-5">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Success Stories</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Discover how businesses transformed their online presence with our solutions.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Case Study">
-                    <div class="card-body">
-                        <span class="badge bg-primary mb-2">eCommerce</span>
-                        <h3 class="h4">Boutique Fashion Store</h3>
-                        <p class="text-muted">How a small boutique increased online sales by 220% with our WooCommerce solution.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary stretched-link">Read Case Study</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Case Study">
-                    <div class="card-body">
-                        <span class="badge bg-success mb-2">Startup</span>
-                        <h3 class="h4">Tech SaaS Platform</h3>
-                        <p class="text-muted">Scaling infrastructure to handle 10,000+ users with our cloud hosting.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary stretched-link">Read Case Study</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Case Study">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark mb-2">Non-Profit</span>
-                        <h3 class="h4">Community Organization</h3>
-                        <p class="text-muted">Building an engaging online presence with limited technical resources.</p>
-                        <a href="#" class="btn btn-sm btn-outline-primary stretched-link">Read Case Study</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="#" class="btn btn-primary px-4">
-                <i class="fas fa-book-open me-2"></i> View All Case Studies
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 class="display-6 fw-bold mb-4 text-secondary">
+              See Our Platform in Action
+            </h2>
+            <p class="lead mb-4">
+              Watch our quick demo to see how easy it is to build and manage
+              your website with WebHost Pro.
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-primary me-2"></i> No
+                technical skills required
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-primary me-2"></i> Hundreds
+                of customizable templates
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-primary me-2"></i>
+                Drag-and-drop interface
+              </li>
+              <li class="mb-3">
+                <i class="fas fa-check-circle text-primary me-2"></i> Real-time
+                previews
+              </li>
+            </ul>
+            <a href="#pricing" class="btn btn-primary btn-lg px-4 mt-3">
+              <i class="fas fa-rocket me-2"></i> Get Started Today
             </a>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="py-5 bg-light" id="pricing">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Simple, Transparent Pricing</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Choose the perfect plan for your needs. Scale up or down as your business grows.</p>
-            <div class="d-flex justify-content-center mt-4">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-outline-primary active">Monthly</button>
-                    <button type="button" class="btn btn-outline-primary">Yearly (Save 20%)</button>
-                </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <div
+                class="bg-secondary rounded-3 d-flex align-items-center justify-content-center"
+              >
+                <i class="fas fa-play-circle display-3 text-primary"></i>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold mb-3 text-dark">
+            What Our Customers Say
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Don't just take our word for it - hear from businesses like yours.
+          </p>
+        </div>
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5 text-center">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/43.jpg"
+                        alt="Client"
+                        class="testimonial-img rounded-circle mb-4"
+                      />
+                      <div class="mb-4">
+                        <div class="text-warning mb-2">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote class="blockquote">
+                          <p class="lead">
+                            "Switching to WebHost Pro was the best decision for
+                            our online store. Our site loads twice as fast, and
+                            the support team helped us migrate everything
+                            perfectly."
+                          </p>
+                          <footer class="blockquote-footer mt-3">
+                            Sarah Johnson,
+                            <cite>Founder of Boutique Finds</cite>
+                          </footer>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5 text-center">
+                      <img
+                        src="https://randomuser.me/api/portraits/men/32.jpg"
+                        alt="Client"
+                        class="testimonial-img rounded-circle mb-4"
+                      />
+                      <div class="mb-4">
+                        <div class="text-warning mb-2">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote class="blockquote">
+                          <p class="lead">
+                            "The eCommerce tools have helped us scale our
+                            business effortlessly. We've seen a 40% increase in
+                            conversions since moving our store to WebHost Pro."
+                          </p>
+                          <footer class="blockquote-footer mt-3">
+                            Michael Chen, <cite>CEO of TechGadgets</cite>
+                          </footer>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body p-5 text-center">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/68.jpg"
+                        alt="Client"
+                        class="testimonial-img rounded-circle mb-4"
+                      />
+                      <div class="mb-4">
+                        <div class="text-warning mb-2">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <blockquote class="blockquote">
+                          <p class="lead">
+                            "As a small business owner, I needed an affordable
+                            solution that didn't compromise on quality. WebHost
+                            Pro delivered exactly that with their amazing
+                            support."
+                          </p>
+                          <footer class="blockquote-footer mt-3">
+                            Emily Rodriguez, <cite>Owner of Bloom Floral</cite>
+                          </footer>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-primary text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+              aria-hidden="true"
+              ><i class="bi bi-chevron-left"></i
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-primary rounded-circle d-flex justify-content-center align-items-center p-2"
+              aria-hidden="true"
+              ><i class="bi bi-chevron-right"></i
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold mb-3">Success Stories</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Discover how businesses transformed their online presence with our
+            solutions.
+          </p>
         </div>
         <div class="row g-4">
-            <div class="col-lg-4">
-                <div class="card pricing-card h-100">
-                    <div class="card-body p-4">
-                        <h5 class="card-title">Starter</h5>
-                        <p class="text-muted">Perfect for personal websites and blogs</p>
-                        <div class="display-4 fw-bold mb-3">$9.99<span class="fs-6 text-muted fw-normal">/mo</span></div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 Website</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10 GB SSD Storage</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unmetered Bandwidth</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Free SSL Certificate</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>5 Email Accounts</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>24/7 Support</li>
-                            <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i>eCommerce Features</li>
-                        </ul>
-                        <button class="btn btn-outline-primary w-100">Start Now</button>
-                    </div>
-                </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-primary mb-2">eCommerce</span>
+                <h3 class="h4">Boutique Fashion Store</h3>
+                <p class="text-muted">
+                  How a small boutique increased online sales by 220% with our
+                  WooCommerce solution.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary stretched-link"
+                  >Read Case Study</a
+                >
+              </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card pricing-card h-100 popular">
-                    <div class="popular-badge">MOST POPULAR</div>
-                    <div class="card-body p-4">
-                        <h5 class="card-title">Business</h5>
-                        <p class="text-muted">Ideal for growing businesses and online stores</p>
-                        <div class="display-4 fw-bold mb-3">$24.99<span class="fs-6 text-muted fw-normal">/mo</span></div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited Websites</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited SSD Storage</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unmetered Bandwidth</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Free SSL Certificate</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited Email Accounts</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>24/7 Priority Support</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Basic eCommerce Features</li>
-                        </ul>
-                        <button class="btn btn-primary w-100">Get Started</button>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-success mb-2">Startup</span>
+                <h3 class="h4">Tech SaaS Platform</h3>
+                <p class="text-muted">
+                  Scaling infrastructure to handle 10,000+ users with our cloud
+                  hosting.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary stretched-link"
+                  >Read Case Study</a
+                >
+              </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card pricing-card h-100">
-                    <div class="card-body p-4">
-                        <h5 class="card-title">Enterprise</h5>
-                        <p class="text-muted">For high-traffic sites and advanced stores</p>
-                        <div class="display-4 fw-bold mb-3">$49.99<span class="fs-6 text-muted fw-normal">/mo</span></div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited Websites</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited NVMe Storage</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unmetered Premium Bandwidth</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Free SSL Certificate</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Unlimited Email Accounts</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>24/7 VIP Support</li>
-                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Advanced eCommerce Features</li>
-                        </ul>
-                        <button class="btn btn-outline-primary w-100">Contact Sales</button>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80"
+                class="card-img-top"
+                alt="Case Study"
+              />
+              <div class="card-body">
+                <span class="badge bg-warning text-dark mb-2">Non-Profit</span>
+                <h3 class="h4">Community Organization</h3>
+                <p class="text-muted">
+                  Building an engaging online presence with limited technical
+                  resources.
+                </p>
+                <a
+                  href="maintenance.html"
+                  class="btn btn-sm btn-outline-primary stretched-link"
+                  >Read Case Study</a
+                >
+              </div>
             </div>
+          </div>
         </div>
         <div class="text-center mt-5">
-            <p class="text-muted">Need custom solutions? <a href="#">Contact our enterprise team</a> for tailored hosting packages.</p>
+          <a href="maintenance.html" class="btn btn-primary px-4">
+            <i class="fas fa-book-open me-2"></i> View All Case Studies
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- FAQ Section -->
-<section class="py-5">
-    <div class="container">
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light" id="pricing">
+      <div class="container">
         <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Find answers to common questions about our hosting services.</p>
+          <h2 class="display-6 fw-bold mb-3 text-dark">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Choose the perfect plan for your needs. Scale up or down as your
+            business grows.
+          </p>
+          <div class="d-flex justify-content-center mt-4">
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-outline-primary active"
+                data-mode="monthly"
+              >
+                Monthly
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                data-mode="yearly"
+              >
+                Yearly (Save 20%)
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card pricing-card h-100">
+              <div class="card-body p-4">
+                <h5 class="card-title">Starter</h5>
+                <p class="text-muted">
+                  Perfect for personal websites and blogs
+                </p>
+                <div class="display-4 fw-bold mb-3">
+                  $<span class="price-value" data-index="0">9.99</span
+                  ><span class="fs-6 text-muted fw-normal"
+                    >/<span class="price-period">mo</span></span
+                  >
+                </div>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>1 Website
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>10 GB SSD
+                    Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unmetered
+                    Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Free SSL
+                    Certificate
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>5 Email
+                    Accounts
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>24/7 Support
+                  </li>
+                  <li class="mb-2 text-muted">
+                    <i class="fas fa-times me-2"></i>eCommerce Features
+                  </li>
+                </ul>
+                <a
+                  href="https://my.wefithost.com"
+                  class="btn btn-outline-primary w-100"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card pricing-card h-100 popular">
+              <div class="popular-badge">MOST POPULAR</div>
+              <div class="card-body p-4">
+                <h5 class="card-title">Business</h5>
+                <p class="text-muted">
+                  Ideal for growing businesses and online stores
+                </p>
+                <div class="display-4 fw-bold mb-3">
+                  $<span class="price-value" data-index="1">24.99</span>
+                  <span class="fs-6 text-muted fw-normal"
+                    >/<span class="price-period">mo</span></span
+                  >
+                </div>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited
+                    Websites
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited SSD
+                    Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unmetered
+                    Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Free SSL
+                    Certificate
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited
+                    Email Accounts
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>24/7 Priority
+                    Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Basic
+                    eCommerce Features
+                  </li>
+                </ul>
+                <a href="https://my.wefithost.com" class="btn btn-primary w-100"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card pricing-card h-100">
+              <div class="card-body p-4">
+                <h5 class="card-title">Enterprise</h5>
+                <p class="text-muted">
+                  For high-traffic sites and advanced stores
+                </p>
+                <div class="display-4 fw-bold mb-3">
+                  $<span class="price-value" data-index="2">49.99</span>
+                  <span class="fs-6 text-muted fw-normal"
+                    >/<span class="price-period">mo</span></span
+                  >
+                </div>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited
+                    Websites
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited NVMe
+                    Storage
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unmetered
+                    Premium Bandwidth
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Free SSL
+                    Certificate
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Unlimited
+                    Email Accounts
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>24/7 VIP
+                    Support
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check text-success me-2"></i>Advanced
+                    eCommerce Features
+                  </li>
+                </ul>
+                <button class="btn btn-outline-primary w-100">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <p class="text-muted">
+            Need custom solutions?
+            <a href="contact-us.html">Contact our enterprise team</a> for tailored hosting
+            packages.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+          <p class="lead text-muted mx-auto" style="max-width: 700px">
+            Find answers to common questions about our hosting services.
+          </p>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-                <div class="accordion mb-4" id="faqAccordion1">
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question1">
-                                How long does setup take?
-                            </button>
-                        </h3>
-                        <div id="question1" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>Most websites are ready within minutes of signup. For more complex migrations or custom setups, our team typically completes the process within 24-48 hours with zero downtime for your existing site.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question2">
-                                Do you offer website migration services?
-                            </button>
-                        </h3>
-                        <div id="question2" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>Yes! We provide free migration services for all new customers. Our expert team will handle the entire process, ensuring all your content, databases, and configurations are transferred seamlessly to our platform.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question3">
-                                What payment methods do you accept?
-                            </button>
-                        </h3>
-                        <div id="question3" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, and bank transfers. Enterprise customers can also request invoice billing with net-30 terms.</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-lg-6">
+            <div class="accordion mb-4" id="faqAccordion1">
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question1"
+                  >
+                    How long does setup take?
+                  </button>
+                </h3>
+                <div id="question1" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Most websites are ready within minutes of signup. For more
+                      complex migrations or custom setups, our team typically
+                      completes the process within 24-48 hours with zero
+                      downtime for your existing site.
+                    </p>
+                  </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="accordion mb-4" id="faqAccordion2">
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question4">
-                                Is there a money-back guarantee?
-                            </button>
-                        </h3>
-                        <div id="question4" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>Absolutely. We offer a 30-day money-back guarantee on all hosting plans. If you're not completely satisfied, we'll refund your payment with no questions asked.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question5">
-                                How does your uptime guarantee work?
-                            </button>
-                        </h3>
-                        <div id="question5" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>We guarantee 99.9% uptime for all hosting plans. If we fall below this threshold in any given month, we'll credit your account with 5% of your monthly fee for every hour of downtime beyond the allowed 0.1%.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden">
-                        <h3 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question6">
-                                Can I upgrade or downgrade my plan later?
-                            </button>
-                        </h3>
-                        <div id="question6" class="accordion-collapse collapse">
-                            <div class="accordion-body">
-                                <p>Yes, you can change plans at any time with just a few clicks. Upgrades take effect immediately, while downgrades apply at your next billing cycle. There are no penalties or fees for changing your plan.</p>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question2"
+                  >
+                    Do you offer website migration services?
+                  </button>
+                </h3>
+                <div id="question2" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Yes! We provide free migration services for all new
+                      customers. Our expert team will handle the entire process,
+                      ensuring all your content, databases, and configurations
+                      are transferred seamlessly to our platform.
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question3"
+                  >
+                    What payment methods do you accept?
+                  </button>
+                </h3>
+                <div id="question3" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      We accept all major credit cards (Visa, Mastercard,
+                      American Express, Discover), PayPal, and bank transfers.
+                      Enterprise customers can also request invoice billing with
+                      net-30 terms.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="accordion mb-4" id="faqAccordion2">
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question4"
+                  >
+                    Is there a money-back guarantee?
+                  </button>
+                </h3>
+                <div id="question4" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely. We offer a 30-day money-back guarantee on all
+                      hosting plans. If you're not completely satisfied, we'll
+                      refund your payment with no questions asked.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question5"
+                  >
+                    How does your uptime guarantee work?
+                  </button>
+                </h3>
+                <div id="question5" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      We guarantee 99.9% uptime for all hosting plans. If we
+                      fall below this threshold in any given month, we'll credit
+                      your account with 5% of your monthly fee for every hour of
+                      downtime beyond the allowed 0.1%.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="accordion-item border-0 shadow-sm mb-3 rounded-3 overflow-hidden"
+              >
+                <h3 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#question6"
+                  >
+                    Can I upgrade or downgrade my plan later?
+                  </button>
+                </h3>
+                <div id="question6" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <p>
+                      Yes, you can change plans at any time with just a few
+                      clicks. Upgrades take effect immediately, while downgrades
+                      apply at your next billing cycle. There are no penalties
+                      or fees for changing your plan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="text-center mt-4">
-            <p>Still have questions? <a href="#">Contact our support team</a> for assistance.</p>
+          <p>
+            Still have questions? <a href="contact-us.html">Contact our support team</a> for
+            assistance.
+          </p>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- CTA Section -->
-<section class="py-5 cta-section text-white">
-    <div class="cta-pattern"></div>
-    <div class="container py-5 text-center">
-        <h2 class="display-5 fw-bold mb-4">Ready to Launch Your Website?</h2>
-        <p class="lead mb-5 mx-auto" style="max-width: 700px;">Join thousands of businesses who trust WebHost Pro for their online presence. Get started today with our risk-free 30-day trial.</p>
+    <!-- CTA Section -->
+    <section class="py-5 cta-section text-white mb-5">
+      
+      <div class="container py-5 text-center">
+        <h2 class="display-5 fw-bold mb-4 text-secondary">Ready to Launch Your Website?</h2>
+        <p class="lead mb-5 mx-auto" style="max-width: 700px">
+          Join thousands of businesses who trust WebHost Pro for their online
+          presence. Get started today with our risk-free 30-day trial.
+        </p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="#" class="btn btn-light btn-lg px-5 py-3">
-                <i class="fas fa-rocket me-2"></i> Get Started Now
-            </a>
-            <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">
-                <i class="fas fa-phone-alt me-2"></i> Schedule a Demo
-            </a>
+          <a href="#pricing" class="btn btn-light btn-lg px-5 py-3">
+            <i class="fas fa-rocket me-2"></i> Get Started Now
+          </a>
+          <a href="maintenance.html" class="btn btn-outline-light btn-lg px-5 py-3">
+            <i class="fas fa-phone-alt me-2"></i> Schedule a Demo
+          </a>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<div data-include="footer.html"></div>
+    <div data-include="footer.html"></div>
     <!-- Theme JS -->
     <script src="assets/js/theme.min.js"></script>
     <script src="assets/js/init.js?t=20240403"></script>
     <script src="assets/libs/scrollcue/scrollCue.min.js"></script>
     <script src="assets/js/vendors/scrollcue.js"></script>
 
-<!-- Back to Top Button -->
-<div class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
-</div>
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    // Back to top button
-    const backToTopButton = document.querySelector('.back-to-top');
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('active');
-        } else {
-            backToTopButton.classList.remove('active');
+    <!-- Pricing Toggle Script -->
+    <script>
+      // Initialize pricing toggle functionality
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".btn-group .btn");
+        const priceValues = document.querySelectorAll(".price-value");
+        const pricePeriods = document.querySelectorAll(".price-period");
+
+        // Define price arrays
+        const monthlyPrices = [9.99, 24.99, 49.99]; // Monthly prices
+        const yearlyPrices = monthlyPrices.map((price) =>
+          (price * 12 * 0.8).toFixed(2)
+        ); // Yearly prices with 20% discount
+
+        // Set initial state to monthly
+        let currentMode = "monthly";
+        buttons.forEach((btn) => {
+          if (btn.classList.contains("active")) {
+            currentMode = btn.getAttribute("data-mode");
+            updatePrices(currentMode);
+          }
+        });
+
+        // Add click event listeners
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            currentMode = btn.getAttribute("data-mode");
+            updatePrices(currentMode);
+          });
+        });
+
+        // Function to update prices based on mode
+        function updatePrices(mode) {
+          priceValues.forEach((price, index) => {
+            const value =
+              mode === "monthly" ? monthlyPrices[index] : yearlyPrices[index];
+            price.textContent = Number(value).toFixed(2); // Ensure 2 decimal places
+          });
+          pricePeriods.forEach((period) => {
+            period.textContent = mode === "monthly" ? "mo" : "yr";
+          });
         }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Animate elements when they come into view
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.feature-card, .stats-item, .pricing-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('animate__animated', 'animate__fadeInUp');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-</script>
+      });
+    </script>
 
-<script src="nav-foot.js"></script>
- <script src="tawkto.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Animate elements when they come into view
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(
+          ".feature-card, .stats-item, .pricing-card"
+        );
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.classList.add("animate__animated", "animate__fadeInUp");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
+    </script>
+
+    <script src="nav-foot.js"></script>
+    <script src="tawkto.js"></script>
+  </body>
 </html>
