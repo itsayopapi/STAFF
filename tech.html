@@ -102,7 +102,7 @@
     <!-- Custom CSS -->
     <style>
       :root {
-        --primary-color: #4e73df;
+        --primary-color: #6b63ff;
         --secondary-color: #2e59d9;
         --accent-color: #f6c23e;
         --dark-color: #2c3e50;
@@ -447,10 +447,10 @@
         border-radius: 10px;
         transition: all 0.3s ease;
         font-size: 1.05rem;
-        border-color: var(--primary-color)
+        border-color: var(--primary-color);
       }
 
-      .btn-outline-primary{
+      .btn-outline-primary {
         margin-top: 0;
       }
 
@@ -494,6 +494,8 @@
         padding: 1rem 1.5rem;
         border: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-bottom-right-radius: 50px !important;
+        border-top-right-radius: 50px !important;
       }
 
       .tech-search .btn {
@@ -501,7 +503,11 @@
         padding: 0.75rem 1.5rem;
         position: absolute;
         right: 5px;
-        top: 5px;
+        top: 3px;
+      }
+
+      .hero-section a {
+        text-decoration: none;
       }
 
       /* Section Titles */
@@ -740,6 +746,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 0.5rem;
+        color: white;
       }
 
       .metric-label {
@@ -812,37 +819,7 @@
         max-height: 500px;
       }
 
-      /* Back to Top Button */
-      .back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--primary-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 999;
-        box-shadow: 0 5px 15px rgba(78, 115, 223, 0.3);
-      }
-
-      .back-to-top.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .back-to-top:hover {
-        background: var(--secondary-color);
-        transform: translateY(-5px);
-      }
-
+    
       /* Responsive Adjustments */
       @media (max-width: 768px) {
         .hero-section {
@@ -858,15 +835,13 @@
         }
       }
 
-     .carousel-control-prev{
-      left: -25px;
-     }
+      .carousel-control-prev {
+        left: -25px;
+      }
 
-     .carousel-control-next{
-      right: -25px;
-     }
-
-      
+      .carousel-control-next {
+        right: -25px;
+      }
     </style>
   </head>
   <body data-bs-theme="light">
@@ -897,7 +872,7 @@
               <div class="input-group">
                 <input
                   type="text"
-                  class="form-control"
+                  class="form-control tech-form-input"
                   placeholder="Search for frameworks, databases, or deployment guides..."
                   id="techSearch"
                 />
@@ -1067,7 +1042,7 @@
                   <a href="#deployment-guides" class="btn btn-primary"
                     >See Deployment Guides</a
                   >
-                  <a href="#" class="btn btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-outline-primary"
                     >Frontend Documentation</a
                   >
                 </div>
@@ -1115,7 +1090,9 @@
                   <a href="#deployment-guides" class="btn btn-primary"
                     >Backend Examples</a
                   >
-                  <a href="#" class="btn btn-outline-primary"
+                  <a
+                    href="api-access.html#documentation"
+                    class="btn btn-outline-primary"
                     >API Documentation</a
                   >
                 </div>
@@ -1162,7 +1139,7 @@
                   <a href="#deployment-guides" class="btn btn-primary"
                     >Static Site Docs</a
                   >
-                  <a href="#" class="btn btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-outline-primary"
                     >JAMstack Examples</a
                   >
                 </div>
@@ -1208,14 +1185,14 @@
                   <a href="#deployment-guides" class="btn btn-primary"
                     >Database Setup</a
                   >
-                  <a href="#" class="btn btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-outline-primary"
                     >Database Documentation</a
                   >
                 </div>
               </div>
               <div class="col-md-6">
                 <img
-                  src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  src="https://img.freepik.com/premium-vector/grab-this-creative-isometric-icon-cloud-computing-network_203633-1698.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
                   class="img-fluid rounded-3 shadow"
                   alt="Database"
                   loading="lazy"
@@ -1255,14 +1232,14 @@
                   <a href="#deployment-guides" class="btn btn-primary"
                     >AI Deployment</a
                   >
-                  <a href="#" class="btn btn-outline-primary"
+                  <a href="maintenance.html" class="btn btn-outline-primary"
                     >AI Documentation</a
                   >
                 </div>
               </div>
               <div class="col-md-6">
                 <img
-                  src="https://images.unsplash.com/photo-1677442135136-760c813a743d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  src="https://img.freepik.com/premium-photo/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-faas_31965-524462.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_hybrid&w=740"
                   class="img-fluid rounded-3 shadow"
                   alt="AI Code"
                   loading="lazy"
@@ -1393,10 +1370,9 @@
               data-bs-target="#frameworksCarousel"
               data-bs-slide="prev"
             >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ><i class="bi bi-chevron-left fs-3 text-primary"></i></span>
+              <span class="carousel-control-prev-icon" aria-hidden="true"
+                ><i class="bi bi-chevron-left fs-3 text-primary"></i
+              ></span>
               <span class="visually-hidden">Previous</span>
             </button>
             <button
@@ -1405,10 +1381,9 @@
               data-bs-target="#frameworksCarousel"
               data-bs-slide="next"
             >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ><i class="bi bi-chevron-right fs-3 text-primary"></i></span>
+              <span class="carousel-control-next-icon" aria-hidden="true"
+                ><i class="bi bi-chevron-right fs-3 text-primary"></i
+              ></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
@@ -1763,7 +1738,9 @@ wefithost deploy</code></pre>
         </div>
 
         <div class="text-center mt-4">
-          <a href="#" class="btn btn-primary">View All Deployment Guides</a>
+          <a href="maintenance.html" class="btn btn-primary"
+            >View All Deployment Guides</a
+          >
         </div>
       </section>
 
@@ -2003,7 +1980,7 @@ wefithost deploy</code></pre>
             </thead>
             <tbody>
               <tr>
-                <td><i class='bx bxl-nodejs'></i> Node.js</td>
+                <td><i class="bx bxl-nodejs"></i> Node.js</td>
                 <td>16.x, 18.x, 20.x</td>
                 <td>
                   <span
@@ -2022,7 +1999,7 @@ wefithost deploy</code></pre>
                 </td>
               </tr>
               <tr>
-                <td><i class='bx bxl-python' ></i> Python</td>
+                <td><i class="bx bxl-python"></i> Python</td>
                 <td>3.8 - 3.11</td>
                 <td>
                   <span
@@ -2060,7 +2037,7 @@ wefithost deploy</code></pre>
                 </td>
               </tr>
               <tr>
-                <td><i class='bx bxl-go-lang'></i> Go</td>
+                <td><i class="bx bxl-go-lang"></i> Go</td>
                 <td>1.18+</td>
                 <td>
                   <span
@@ -2079,7 +2056,7 @@ wefithost deploy</code></pre>
                 </td>
               </tr>
               <tr>
-                <td><i class='bx bxl-php' ></i> PHP</td>
+                <td><i class="bx bxl-php"></i> PHP</td>
                 <td>8.0+</td>
                 <td>
                   <span class="compatibility-badge bg-danger" title="No"></span>
@@ -2095,7 +2072,7 @@ wefithost deploy</code></pre>
                 </td>
               </tr>
               <tr>
-                <td><i class='bx bxl-java' ></i> Java</td>
+                <td><i class="bx bxl-java"></i> Java</td>
                 <td>11, 17</td>
                 <td>
                   <span class="compatibility-badge bg-danger" title="No"></span>
@@ -2127,7 +2104,9 @@ wefithost deploy</code></pre>
             <div class="col-md-3">
               <div class="metric-item">
                 <div class="metric-value">2.5x</div>
-                <div class="metric-label text-white">Faster Node.js cold starts</div>
+                <div class="metric-label text-white">
+                  Faster Node.js cold starts
+                </div>
               </div>
             </div>
             <div class="col-md-3">
@@ -2203,7 +2182,9 @@ wefithost deploy</code></pre>
                   real-time analytics and user management.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a
+                    href="maintenance.html"
+                    class="btn btn-sm btn-outline-primary"
                     >View Case Study</a
                   >
                   <small class="text-muted">Acme Inc.</small>
@@ -2231,7 +2212,9 @@ wefithost deploy</code></pre>
                   auto-scaling and edge caching.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a
+                    href="maintenance.html"
+                    class="btn btn-sm btn-outline-primary"
                     >View Case Study</a
                   >
                   <small class="text-muted">ShopFast</small>
@@ -2259,7 +2242,9 @@ wefithost deploy</code></pre>
                   real-time predictions.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="#" class="btn btn-sm btn-outline-primary"
+                  <a
+                    href="maintenance.html"
+                    class="btn btn-sm btn-outline-primary"
                     >View Case Study</a
                   >
                   <small class="text-muted">AI Labs</small>
@@ -2270,7 +2255,9 @@ wefithost deploy</code></pre>
         </div>
 
         <div class="text-center mt-4">
-          <a href="#" class="btn btn-primary">View All Case Studies</a>
+          <a href="maintenance.html" class="btn btn-primary"
+            >View All Case Studies</a
+          >
         </div>
       </section>
 
@@ -2536,7 +2523,7 @@ wefithost deploy</code></pre>
         </div>
 
         <div class="text-center mt-4">
-          <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+          <a href="faqs.html" class="btn btn-outline-primary">View All FAQs</a>
         </div>
       </section>
 
@@ -2547,20 +2534,24 @@ wefithost deploy</code></pre>
           Join thousands of developers who deploy their applications with ease.
         </p>
         <div class="d-flex justify-content-center gap-3">
-          <a href="#" class="btn btn-primary btn-lg px-4"
+          <a href="https://my.wefithost.com" class="btn btn-primary btn-lg px-4"
             >Get Started for Free</a
           >
-          <a href="#" class="btn btn-outline-primary btn-lg px-4"
+          <a href="contact-us.html" class="btn btn-outline-primary btn-lg px-4"
             >Contact Sales</a
           >
         </div>
       </section>
     </div>
 
+    <div data-include="footer.html"></div>
+
     <!-- Back to Top Button -->
     <div class="back-to-top">
       <i class="bi bi-arrow-up"></i>
     </div>
+
+    <script src="back-to-top.js"></script>
 
     <!-- Bootstrap & PrismJS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -2580,24 +2571,7 @@ wefithost deploy</code></pre>
 
     <!-- Custom JS -->
     <script>
-      // Back to top button
-      const backToTopButton = document.querySelector(".back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add("active");
-        } else {
-          backToTopButton.classList.remove("active");
-        }
-      });
-
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-
+     
       // FAQ Accordion
       document.querySelectorAll(".faq-question").forEach((question) => {
         question.addEventListener("click", () => {
@@ -3063,8 +3037,8 @@ wefithost deploy</code></pre>
         });
       });
     </script>
+    <script src="tawkto.js"></script>
 
-    <div data-include="footer.html"></div>
     <script src="nav-foot.js"></script>
   </body>
 </html>
