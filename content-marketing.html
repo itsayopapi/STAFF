@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wefithost Content Marketing | Resources, Guides & Insights</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        /* Hero Section */
+        .content-hero {
+            background: linear-gradient(135deg, var(--primary), #1a2a3a);
+            color: white;
+            padding: 8rem 0 6rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .content-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .content-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content-hero-title {
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating-img {
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+        
+        /* Section Styling */
+        .content-section {
+            padding: 6rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-weight: 800;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .section-header p.lead {
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            color: #6c757d;
+        }
+        
+        /* Resource Cards */
+        .resource-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .resource-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .resource-card .card-body {
+            padding: 2rem;
+        }
+        
+        .resource-card .card-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .resource-card .card-text {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge-topic {
+            background-color: var(--secondary);
+            color: white;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary), #2980b9);
+            color: white;
+            padding: 6rem 0;
+            border-radius: 16px;
+        }
+        
+        /* Buttons */
+        .btn-primary-custom {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-outline-custom {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-hero {
+                padding: 6rem 0 4rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .content-section {
+                padding: 4rem 0;
+            }
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="content-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 content-hero-content animate-on-scroll">
+                <h1 class="content-hero-title display-3 fw-bold mb-4">Wefithost Content Hub</h1>
+                <p class="lead mb-5">Expert insights, guides, and resources to help you succeed with web hosting, cloud solutions, and online business growth.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <button class="btn btn-primary-custom btn-lg">Explore Resources</button>
+                    <button class="btn btn-outline-light btn-lg">Subscribe for Updates</button>
+                </div>
+            </div>
+            <div class="col-lg-6 content-hero-content mt-5 mt-lg-0 animate-on-scroll" data-delay="100">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Content Marketing" class="img-fluid rounded-4 shadow-lg floating-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Resources Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2>Featured Resources</h2>
+            <p class="lead">Discover our most popular guides, tutorials, and industry insights</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="resource-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="Cloud Hosting Guide">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">Cloud Hosting</span>
+                        <h5 class="card-title">The Complete Guide to Cloud Hosting in 2024</h5>
+                        <p class="card-text">Learn how to choose the right cloud hosting solution for scalability, security, and performance.</p>
+                        <a href="#" class="btn btn-outline-primary">Read Guide</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="100">
+                <div class="resource-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="card-img-top" alt="WordPress Optimization">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">WordPress</span>
+                        <h5 class="card-title">10 Essential WordPress Speed Optimization Tips</h5>
+                        <p class="card-text">Boost your WordPress site performance with these expert-approved techniques.</p>
+                        <a href="#" class="btn btn-outline-primary">Read Article</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="200">
+                <div class="resource-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="card-img-top" alt="Web Security">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">Security</span>
+                        <h5 class="card-title">Protecting Your Website: The 2024 Security Checklist</h5>
+                        <p class="card-text">Essential security measures every website owner should implement.</p>
+                        <a href="#" class="btn btn-outline-primary">Read Checklist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5 animate-on-scroll">
+            <button class="btn btn-primary-custom btn-lg">View All Resources</button>
+        </div>
+    </div>
+</section>
+
+<!-- Content Categories Section -->
+<section class="content-section bg-light">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2>Explore by Topic</h2>
+            <p class="lead">Find the perfect resources for your needs</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-cloud fs-1 text-primary mb-3"></i>
+                        <h4>Cloud Hosting</h4>
+                        <p class="text-muted">Scalable solutions for growing businesses</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-wordpress fs-1 text-primary mb-3"></i>
+                        <h4>WordPress</h4>
+                        <p class="text-muted">Optimization, security, and management</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-shield-lock fs-1 text-primary mb-3"></i>
+                        <h4>Security</h4>
+                        <p class="text-muted">Protecting your online assets</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-graph-up fs-1 text-primary mb-3"></i>
+                        <h4>Performance</h4>
+                        <p class="text-muted">Speed optimization techniques</p>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Articles Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2>Latest Articles</h2>
+            <p class="lead">Fresh insights and industry trends</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="img-fluid rounded-start h-100 object-cover" alt="Server Infrastructure">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <span class="badge-topic mb-2">Infrastructure</span>
+                                <h5 class="card-title">How to Choose Between VPS and Dedicated Hosting</h5>
+                                <p class="card-text">A comprehensive comparison to help you select the right solution for your business needs.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">June 15, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 animate-on-scroll" data-delay="100">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="img-fluid rounded-start h-100 object-cover" alt="Website Migration">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <span class="badge-topic mb-2">Migration</span>
+                                <h5 class="card-title">The Stress-Free Guide to Website Migration</h5>
+                                <p class="card-text">Step-by-step instructions to move your site without downtime or data loss.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">June 8, 2024</small>
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">SSL</span>
+                        <h5 class="card-title">Why Every Website Needs SSL in 2024</h5>
+                        <p class="card-text">Security, SEO, and trust benefits of HTTPS.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">May 30, 2024</small>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">CDN</span>
+                        <h5 class="card-title">How a CDN Can Boost Your Global Performance</h5>
+                        <p class="card-text">Reduce latency and improve load times worldwide.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">May 22, 2024</small>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">Backups</span>
+                        <h5 class="card-title">The 3-2-1 Backup Rule Explained</h5>
+                        <p class="card-text">Never lose critical data with this proven strategy.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">May 15, 2024</small>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <span class="badge-topic mb-2">E-commerce</span>
+                        <h5 class="card-title">Optimizing WooCommerce for Peak Performance</h5>
+                        <p class="card-text">Speed up your online store and boost conversions.</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <small class="text-muted">May 8, 2024</small>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter CTA Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="cta-section text-center p-5 animate-on-scroll">
+                    <h2 class="text-white mb-4">Get the Latest Hosting Insights</h2>
+                    <p class="lead text-white mb-5">Subscribe to our newsletter for exclusive content, tips, and special offers.</p>
+                    <form class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-light btn-lg w-100">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5>Wefithost Content Hub</h5>
+                <p class="text-muted">Expert resources to help you succeed online.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h6>Resources</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">Blog</a></li>
+                            <li><a href="#" class="text-muted">Guides</a></li>
+                            <li><a href="#" class="text-muted">Tutorials</a></li>
+                            <li><a href="#" class="text-muted">Case Studies</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h6>Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">About Us</a></li>
+                            <li><a href="#" class="text-muted">Contact</a></li>
+                            <li><a href="#" class="text-muted">Careers</a></li>
+                            <li><a href="#" class="text-muted">Partners</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Legal</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">Terms of Service</a></li>
+                            <li><a href="#" class="text-muted">Privacy Policy</a></li>
+                            <li><a href="#" class="text-muted">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="text-center text-muted">
+            <small>© 2024 Wefithost. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                    }, delay);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+</body>
+</html>
