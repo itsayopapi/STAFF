@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24/7 Premium Support | WEFITHOST</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary: #00cc99;
+            --dark: #1a1a2e;
+            --light: #f8f9ff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-hero {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+        
+        .btn-outline-light {
+            border-width: 2px;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-text {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Support Channels */
+        .channels-section {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+        
+        .channel-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .channel-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .channel-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .channel-subtitle {
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .status-online {
+            background: rgba(0, 204, 153, 0.1);
+            color: var(--secondary);
+        }
+        
+        .status-busy {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .status-offline {
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+        }
+        
+        .channel-detail {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+        
+        .channel-detail strong {
+            color: var(--dark);
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            padding: 6rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1800&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Plans Section */
+        .plans-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid var(--light-gray);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan-card.popular {
+            border: 2px solid var(--primary);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 2rem;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .plan-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        .plan-feature {
+            margin-bottom: 0.75rem;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--gray);
+        }
+        
+        .plan-feature:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        .plan-feature.disabled {
+            opacity: 0.5;
+        }
+        
+        .plan-feature.disabled:before {
+            content: '\f00d';
+            color: #ff6b6b;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            border: 3px solid var(--light);
+        }
+        
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial-rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .accordion-item {
+            border: none;
+            margin-bottom: 1rem;
+            background: transparent;
+        }
+        
+        .accordion-button {
+            background: white;
+            border-radius: 8px !important;
+            padding: 1.25rem 1.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(0, 102, 255, 0.25);
+            border-color: var(--primary);
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
+            border-top: none;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 70vh;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.4rem;
+            }
+            
+            .hero-buttons .btn {
+                display: block;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn-outline-light {
+                margin-top: 1rem;
+                margin-left: 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stat-item {
+                width: 50%;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">24/7/365 Support</span>
+                <h1 class="hero-title">Premium Priority Support for Your Business</h1>
+                <p class="hero-subtitle">Get instant access to our senior support team with guaranteed response times under 15 minutes. When your business can't afford downtime, we're here to help.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-hero me-2">Contact Support Now</a>
+                    <a href="#plans" class="btn btn-outline-light btn-hero">Upgrade Your Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Our Priority Support?</h2>
+                <p class="section-subtitle">Experience the difference with our dedicated priority support services designed for businesses that can't afford downtime</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h3 class="feature-title">Guaranteed Response Times</h3>
+                        <p class="feature-text">Under 15 minutes for critical issues via phone, chat, or ticket - 24/7/365.</p>
+                        <a href="#contact" class="text-primary">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="feature-title">Senior Technicians</h3>
+                        <p class="feature-text">Direct access to our most experienced engineers, not junior support staff.</p>
+                        <a href="#contact" class="text-primary">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="feature-title">Server-Side Access</h3>
+                        <p class="feature-text">Full root/administrative access to resolve issues at the server level.</p>
+                        <a href="#contact" class="text-primary">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Security Priority</h3>
+                        <p class="feature-text">Immediate response to security threats, DDoS attacks, and malware.</p>
+                        <a href="#contact" class="text-primary">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Channels Section -->
+    <section class="channels-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Reach Priority Support</h2>
+                <p class="section-subtitle">Choose the contact method that works best for your urgent needs with real-time availability status</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="channel-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="channel-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="channel-title">Phone Support</h3>
+                                <p class="channel-subtitle">Immediate Assistance</p>
+                            </div>
+                        </div>
+                        <div class="status-badge status-online">
+                            <i class="fas fa-circle"></i> All Agents Available
+                        </div>
+                        <p class="channel-detail"><strong>Hotline:</strong> +1 (800) 555-1234</p>
+                        <p class="channel-detail"><strong>Current Wait:</strong> < 1 minute</p>
+                        <p class="channel-detail">Direct connection to senior technicians for critical issues requiring immediate attention.</p>
+                        <a href="tel:+18005551234" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-phone-alt me-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="channel-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="channel-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div>
+                                <h3 class="channel-title">Live Chat</h3>
+                                <p class="channel-subtitle">Real-Time Help</p>
+                            </div>
+                        </div>
+                        <div class="status-badge status-online">
+                            <i class="fas fa-circle"></i> 5 Agents Online
+                        </div>
+                        <p class="channel-detail"><strong>Average Wait:</strong> < 2 minutes</p>
+                        <p class="channel-detail"><strong>Hours:</strong> 24/7/365</p>
+                        <p class="channel-detail">Instant messaging with our support team for quick resolution of urgent technical issues.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-comment-dots me-2"></i> Start Chat
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="channel-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="channel-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="channel-title">Priority Ticket</h3>
+                                <p class="channel-subtitle">Guaranteed Response</p>
+                            </div>
+                        </div>
+                        <div class="status-badge status-online">
+                            <i class="fas fa-circle"></i> Normal Queue Time
+                        </div>
+                        <p class="channel-detail"><strong>Response Time:</strong> < 15 minutes</p>
+                        <p class="channel-detail"><strong>Resolution:</strong> Typically < 1 hour</p>
+                        <p class="channel-detail">Submit detailed tickets for complex issues that require thorough investigation.</p>
+                        <a href="#" class="btn btn-primary w-100 mt-3">
+                            <i class="fas fa-ticket-alt me-2"></i> Submit Ticket
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-white">Our Support By The Numbers</h2>
+                <p class="section-subtitle text-white-50">Backed by a dedicated team of senior technicians available around the clock</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Availability</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">< 15m</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Technicians</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans-section" id="plans">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Priority Support Plans</h2>
+                <p class="section-subtitle">Choose the level of support that matches your business needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="plan-card">
+                        <h3 class="plan-title">Business Hosting</h3>
+                        <div class="plan-price">$14.99<span>/month</span></div>
+                        <ul class="list-unstyled">
+                            <li class="plan-feature">24/7 Priority Support</li>
+                            <li class="plan-feature">Response: <15 minutes</li>
+                            <li class="plan-feature">Phone & Live Chat Access</li>
+                            <li class="plan-feature">5 Urgent Tickets/Month</li>
+                            <li class="plan-feature disabled">Dedicated Manager</li>
+                            <li class="plan-feature disabled">Unlimited Urgent Tickets</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="plan-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h3 class="plan-title">Enterprise Hosting</h3>
+                        <div class="plan-price">$29.99<span>/month</span></div>
+                        <ul class="list-unstyled">
+                            <li class="plan-feature">24/7 VIP Support</li>
+                            <li class="plan-feature">Response: <5 minutes</li>
+                            <li class="plan-feature">All Contact Methods</li>
+                            <li class="plan-feature">Unlimited Urgent Tickets</li>
+                            <li class="plan-feature">Dedicated Account Manager</li>
+                            <li class="plan-feature">Advanced Security Monitoring</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="plan-card">
+                        <h3 class="plan-title">Priority Add-on</h3>
+                        <div class="plan-price">$9.99<span>/month</span></div>
+                        <ul class="list-unstyled">
+                            <li class="plan-feature">Add to Any Plan</li>
+                            <li class="plan-feature">Response: <15 minutes</li>
+                            <li class="plan-feature">Phone Support Access</li>
+                            <li class="plan-feature">10 Urgent Tickets/Month</li>
+                            <li class="plan-feature disabled">Dedicated Manager</li>
+                            <li class="plan-feature disabled">Unlimited Urgent Tickets</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100 mt-3">Add to Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Thousands of Businesses</h2>
+                <p class="section-subtitle">Don't just take our word for it - hear from businesses who rely on our Priority Support</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="testimonial-img">
+                            <div>
+                                <div class="testimonial-author">Sarah Johnson</div>
+                                <div class="testimonial-role">E-commerce Store Owner</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"During Black Friday, our site crashed under heavy traffic. Priority Support had us back online in 12 minutes - saving thousands in lost sales!"</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="testimonial-img">
+                            <div>
+                                <div class="testimonial-author">Michael Thompson</div>
+                                <div class="testimonial-role">Marketing Agency Director</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"We manage 50+ client websites. The direct phone line to senior technicians has been invaluable for urgent issues outside business hours."</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily R." class="testimonial-img">
+                            <div>
+                                <div class="testimonial-author">Emily Rodriguez</div>
+                                <div class="testimonial-role">Blog Network Owner</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"When our sites were hit by malware at 3 AM, Priority Support not only fixed it immediately but implemented new security measures."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to common questions about our Priority Support service</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What qualifies as a "critical" issue for Priority Support?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Critical issues that qualify for immediate Priority Support response include:</p>
+                                    <ul>
+                                        <li>Complete website or server downtime</li>
+                                        <li>Security breaches, hacking attempts, or malware infections</li>
+                                        <li>Database corruption or failure</li>
+                                        <li>Payment processing or e-commerce functionality failures</li>
+                                        <li>DNS or email delivery issues affecting your business</li>
+                                        <li>Server resource exhaustion causing performance degradation</li>
+                                    </ul>
+                                    <p>For non-critical issues like general questions or feature requests, we recommend using our standard support channels to keep Priority Support available for urgent needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How does Priority Support differ from standard support?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Priority Support provides several key advantages over our standard support:</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Feature</th>
+                                                <th>Priority Support</th>
+                                                <th>Standard Support</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Availability</td>
+                                                <td>24/7 Senior Technicians</td>
+                                                <td>24/7 General Support</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Response Time</td>
+                                                <td><15 minutes</td>
+                                                <td>4-6 hours</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact Methods</td>
+                                                <td>Phone, Chat, Ticket</td>
+                                                <td>Chat, Ticket</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Technician Level</td>
+                                                <td>Tier 3 Senior Engineers</td>
+                                                <td>Tier 1/Tier 2 Support</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Issue Priority</td>
+                                                <td>Immediate Escalation</td>
+                                                <td>Standard Queue</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Server Access</td>
+                                                <td>Full root/admin access</td>
+                                                <td>Limited access</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Can I add Priority Support to my existing hosting plan?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes! Our <strong>Priority Support Add-on</strong> ($9.99/month) can be added to any existing hosting plan and includes:</p>
+                                    <ul>
+                                        <li>24/7 phone support access to senior technicians</li>
+                                        <li>Under 15-minute response guarantee for critical issues</li>
+                                        <li>10 urgent support tickets per month</li>
+                                        <li>Live chat priority queue access</li>
+                                        <li>Server-side troubleshooting for critical issues</li>
+                                    </ul>
+                                    <p>This add-on is ideal for businesses that need occasional urgent support but don't require the full features of our Business or Enterprise hosting plans. You can add Priority Support to your plan through your WEFITHOST client area.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    What are your guaranteed response times?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Our guaranteed response times for Priority Support:</p>
+                                    <ul>
+                                        <li><strong>Phone Support:</strong> Immediate answer during business hours, under 2 minute wait 24/7</li>
+                                        <li><strong>Live Chat:</strong> Under 

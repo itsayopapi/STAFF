@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Design Live Support | Web & Software Hosting Solutions</title>
+    <meta name="description" content="Get 24/7 live support for your design, web hosting, and software development needs from our expert team.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom CSS - Extensive styling for all components */
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --success-color: #4cc9f0;
+            --warning-color: #f8961e;
+            --danger-color: #f72585;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+            --transition-base: all 0.3s ease-in-out;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #f8fafc;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .support-card {
+            transition: var(--transition-base);
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .support-card .card-body {
+            padding: 2rem;
+        }
+        
+        .support-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(67, 97, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .support-card .icon-wrapper i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .feature-box {
+            padding: 2.5rem;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-5px);
+        }
+        
+        .feature-box .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+        
+        .resource-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .resource-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+        
+        .testimonial-card .quote-icon {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .testimonial-card .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .accordion-item {
+            border: none;
+            border-radius: 8px !important;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .accordion-button {
+            font-weight: 600;
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            padding: 1.5rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(67, 97, 238, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .badge {
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+        
+        .stats-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+        }
+        
+        .stats-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .stats-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .team-card img {
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .team-card .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .team-card .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(67, 97, 238, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0.25rem;
+            color: var(--primary-color);
+            transition: var(--transition-base);
+        }
+        
+        .team-card .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .pricing-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .pricing-card .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+        }
+        
+        .pricing-card .period {
+            font-size: 1rem;
+            color: #64748b;
+        }
+        
+        .pricing-card .list-unstyled li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+        }
+        
+        .pricing-card.popular .card-header {
+            background-color: var(--secondary-color);
+        }
+        
+        .blog-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-base);
+            margin-bottom: 2rem;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .blog-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .blog-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .blog-card .post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+        
+        .blog-card .post-meta i {
+            margin-right: 0.5rem;
+        }
+        
+        .client-logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: var(--transition-base);
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .client-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .tooltip-inner {
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+        }
+        
+        .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before, 
+        .bs-tooltip-top .tooltip-arrow::before {
+            border-top-color: var(--primary-color);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                margin-bottom: 2rem;
+            }
+            
+            .feature-box, .stats-item {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-section {
+                padding: 2.5rem 0;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+            
+            .btn, .btn-outline-primary {
+                padding: 0.625rem 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        /* Additional utility classes */
+        .rounded-lg {
+            border-radius: 12px;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .bg-light {
+            background-color: var(--light-color) !important;
+        }
+        
+        .bg-dark {
+            background-color: var(--dark-color) !important;
+        }
+        
+        .z-index-1 {
+            z-index: 1;
+        }
+        
+        .overflow-hidden {
+            overflow: hidden;
+        }
+        
+        .hover-scale {
+            transition: var(--transition-base);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <span class="badge bg-light text-primary mb-3 animate-fadeInUp">24/7 Support Available</span>
+                    <h1 class="hero-title display-4 fw-bold mb-4 animate-fadeInUp delay-100">Professional Design & Hosting Support</h1>
+                    <p class="lead mb-5 animate-fadeInUp delay-200">Get instant assistance from our expert team for all your web design, software development, and hosting needs.</p>
+                    <div class="d-flex flex-wrap gap-3 animate-fadeInUp delay-300">
+                        <a href="#contact" class="btn btn-light btn-lg">Contact Support</a>
+                        <a href="#services" class="btn btn-outline-light btn-lg">Our Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block animate-fadeInUp delay-200">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Design Support Team" class="img-fluid rounded-lg hover-scale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Options Section -->
+    <section id="services" class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>How We Can Help You</h2>
+                <p class="lead">Choose the support option that fits your needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="support-card card">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Live Chat Support">
+                        <div class="card-body">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3 class="card-title">Live Chat Support</h3>
+                            <p class="card-text">Connect instantly with our support team for real-time assistance with your design and hosting issues.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Average response time: 2 minutes</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Available 24/7/365</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Screen sharing available</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Start Chat Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="support-card card">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Video Call Support">
+                        <div class="card-body">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 class="card-title">Video Call Support</h3>
+                            <p class="card-text">Get face-to-face assistance with complex design and development challenges through scheduled video calls.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> One-on-one expert sessions</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Screen sharing and remote assistance</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Available Mon-Fri, 9am-9pm EST</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Schedule a Call</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="support-card card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Ticket System">
+                        <div class="card-body">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <h3 class="card-title">Priority Ticket System</h3>
+                            <p class="card-text">Submit detailed requests for complex issues that require in-depth investigation and resolution.</p>
+                            <ul class="list-unstyled mb-4">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Guaranteed response within 1 hour</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Dedicated support agent</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> Progress tracking</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Submit a Ticket</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Support Features</h2>
+                <p class="lead">Everything you need for seamless design and hosting</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Design Assistance</h3>
+                        <p>Get expert help with UI/UX design, color schemes, typography, and layout optimization for your websites and applications.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Responsive design troubleshooting</li>
+                            <li><i class="fas fa-check text-success me-2"></i> CSS/SCSS support</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Design system consultation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Hosting Support</h3>
+                        <p>Comprehensive assistance with server configuration, deployment, performance optimization, and troubleshooting.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Server migration help</li>
+                            <li><i class="fas fa-check text-success me-2"></i> SSL certificate setup</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Database optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Development Help</h3>
+                        <p>Expert guidance for frontend and backend development challenges across multiple frameworks and languages.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> JavaScript/TypeScript support</li>
+                            <li><i class="fas fa-check text-success me-2"></i> API integration help</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Debugging assistance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Optimization</h3>
+                        <p>Ensure your designs work perfectly across all devices with our mobile-first optimization support.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Responsive breakpoint help</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Touch interaction design</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO & Analytics</h3>
+                        <p>Improve your site's visibility and track performance with our SEO and analytics implementation support.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> SEO audit assistance</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Google Analytics setup</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Structured data implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Support</h3>
+                        <p>Protect your applications and websites with our security best practices and vulnerability assessment.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Security audit help</li>
+                            <li><i class="fas fa-check text-success me-2"></i> HTTPS implementation</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Firewall configuration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 py-lg-7 bg-dark text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stats-item">
+                        <div class="number">24/7</div>
+                        <p>Support Availability</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stats-item">
+                        <div class="number">98%</div>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stats-item">
+                        <div class="number">5,000+</div>
+                        <p>Clients Supported</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stats-item">
+                        <div class="number">2m</div>
+                        <p>Avg. Response Time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Design & Hosting Resources</h2>
+                <p class="lead">Tools and materials to help you succeed</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" class="card-img-top" alt="Design Templates">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Free</span>
+                            <h3 class="card-title">Design Templates</h3>
+                            <p class="card-text">Download our collection of professionally designed templates for websites, dashboards, and mobile apps.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">View Templates</a>
+                                <small class="text-muted">Updated weekly</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1936&q=80" class="card-img-top" alt="Video Tutorials">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Free</span>
+                            <h3 class="card-title">Video Tutorials</h3>
+                            <p class="card-text">Learn best practices for design and hosting with our comprehensive video tutorial library.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Watch Videos</a>
+                                <small class="text-muted">150+ tutorials</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Hosting Guides">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Premium</span>
+                            <h3 class="card-title">Hosting Guides</h3>
+                            <p class="card-text">In-depth technical documentation for optimizing your hosting environment and server configuration.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Read Guides</a>
+                                <small class="text-muted">Expert level</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="UI Kits">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Free</span>
+                            <h3 class="card-title">UI Kits</h3>
+                            <p class="card-text">Complete UI kits for popular frameworks like React, Vue, and Angular to jumpstart your projects.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Download Kits</a>
+                                <small class="text-muted">10+ kits available</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Code Snippets">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Free</span>
+                            <h3 class="card-title">Code Snippets</h3>
+                            <p class="card-text">Ready-to-use code snippets for common design patterns and hosting configurations.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Browse Snippets</a>
+                                <small class="text-muted">300+ snippets</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="resource-card card">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Webinars">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Premium</span>
+                            <h3 class="card-title">Live Webinars</h3>
+                            <p class="card-text">Join our monthly webinars on advanced design techniques and hosting best practices.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-sm btn-outline-primary">Register Now</a>
+                                <small class="text-muted">Next webinar: June 15</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary btn-lg">View All Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p class="lead">Trusted by designers and developers worldwide</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate-fadeInUp">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="mb-4">The design support team helped us completely revamp our e-commerce platform's UI, resulting in a 35% increase in conversions. Their expertise in responsive design is unmatched.</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Lead Designer, ShopEase</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-100">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="mb-4">When we migrated our hosting infrastructure, their support team was available 24/7 to help with every step. The server optimization tips alone cut our load times by 60%.</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                            <div>
+                                <h5 class="mb-0">Michael Chen</h5>
+                                <small class="text-muted">CTO, TechNova</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate-fadeInUp delay-200">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="mb-4">Their design system consultation helped us establish consistency across all our products. The live chat support is incredibly responsive - we never wait more than a few minutes.</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma Rodriguez">
+                            <div>
+                                <h5 class="mb-0">Emma Rodriguez</h5>
+                                <small class="text-muted">Product Manager, DesignCo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p class="lead">Find quick answers to common questions</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What types of design issues can you help with?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our team can assist with a wide range of design challenges including UI/UX issues, responsive design troubleshooting, color theory and accessibility, typography, layout optimization, design system implementation, prototyping, and more. We support all major design tools like Figma, Adobe XD, Sketch, and Photoshop.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How quickly can I expect a response from support?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Response times vary by support channel:
+                                    <ul>
+                                        <li><strong>Live Chat:</strong> Typically under 2 minutes during business hours, slightly longer overnight</li>
+                                        <li><strong>Video Calls:</strong> Scheduled within 1 business day for standard requests</li>
+                                        <li><strong>Support Tickets:</strong> Initial response within 1 hour for priority tickets, 4 hours for standard tickets</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do you provide hosting support for all platforms?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer comprehensive hosting support for all major platforms including:
+                                    <ul>
+                                        <li>Traditional shared hosting (cPanel, Plesk)</li>
+                                        <li>Cloud hosting (AWS, Google Cloud, Azure, DigitalOcean)</li>
+                                        <li>WordPress hosting (including WooCommerce)</li>
+                                        <li>VPS and dedicated servers</li>
+                                        <li>Serverless architectures</li>
+                                        <li>Container-based deployments (Docker, Kubernetes)</li>
+                                    </ul>
+                                    We can also help with migrations between different hosting environments.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can you help debug custom JavaScript code?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely. Our support team includes JavaScript experts who can help with:
+                                    <ul>
+                                        <li>Debugging complex frontend issues</li>
+                                        <li>Performance optimization</li>
+                                        <li>Framework-specific problems (React, Vue, Angular, etc.)</li>
+                                        <li>API integration challenges</li>
+                                        <li>Browser compatibility issues</li>
+                                        <li>Build tool configuration (Webpack, Babel, etc.)</li>
+                                    </ul>
+                                    For extensive code reviews or architectural advice, we recommend scheduling a video call session.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What's included in your premium support plans?
+                                </button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our premium support plans offer enhanced services including:
+                                    <ul>
+                                        <li>Dedicated support engineer</li>
+                                        <li>Guaranteed 15-minute response time for critical issues</li>
+                                        <li>Monthly design/development reviews</li>
+                                        <li>Priority access to new resources and templates</li>
+                                        <li>Extended video call sessions (up to 2 hours)</li>
+                                        <li>Exclusive webinars and training sessions</li>
+                                        <li>Advanced security audits</li>
+                                        <li>Performance optimization consultations</li>
+                                    </ul>
+                                    Premium plans start at $199/month with custom enterprise options available.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5 py-lg-7">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Support Team</h2>
+                <p class="lead">Experts ready to help with your design and hosting needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 animate-fadeInUp">
+                    <div class="team-card card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Alex Johnson">
+                        <div class="card-body text-center">
+                            <h4 class="card-title mb-1">Alex Johnson</h4>
+                            <p class="text-muted mb-3">UI/UX Design Specialist</p>
+                            <p class="card-text small">10+ years experience in product design and design systems. Expert in Figma and Adobe Creative Suite.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 animate-fadeInUp delay-100">
+                    <div class="team-card card">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Sarah Kim">
+                        <div class="card-body text-center">
+                            <h4 class="card-title mb-1">Sarah Kim</h4>
+                            <p class="text-muted mb-3">Frontend Development Expert</p>
+                            <p class="card-text small">Specializes in React, Vue, and responsive CSS architectures. Passionate about performance optimization.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-codepen"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 animate-fadeInUp delay-200">
+                    <div class="team-card card">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Michael Chen">
+                        <div class="card-body text-center">
+                            <h4 class="card-title mb-1">Michael Chen</h4>
+                            <p class="text-muted mb-3">Hosting & DevOps Engineer</p>
+                            <p class="card-text small">Cloud infrastructure specialist with deep expertise in AWS, Docker, and CI/CD pipelines.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-aws"></i></a>
+                                <a href="#"><i class="fab fa-docker"></i></a>
+                                <a href="#"><i class="fab fa-linux"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 animate-fadeInUp delay-300">
+                    <div class="team-card card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=988&q=80" class="card-img-top" alt="David Wilson">
+                        <div class="card-body text-center">
+                            <h4 class="card-title mb-1">David Wilson</h4>
+                            <p class="text-muted mb-3">Full Stack Developer</p>
+                            <p class="card-text small">Expert in JavaScript, Python, and database optimization. Helps bridge design and backend systems.</p>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-js"></i></a>
+                                <a href="#"><i class="fab fa-python"></i></a>
+                                <a href="#"><i class="fab fa-node-js"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 py-lg-7 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p class="lead">We're here to help with your design and hosting questions</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6 animate-fadeInUp">
+                    <div class="contact-form">
+                        <h3 class="mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="" selected disabled>Select a topic</option>
+                                    <option value="design">Design Support</option>
+                                    <option value="hosting">Hosting Support</option>
+                                    <option value="development">Development Help</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Describe your issue or question..." required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate-fadeInUp delay-100">
+                    <div class="p-4 bg-white rounded shadow-sm h-100">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <div class="mb-4">
+                            <h5 class="mb-3"><i class="fas fa-map-marker-alt text-primary me-2"></i> Our Office</h5>
+                            <p>123 Design Street, Suite 456<br>San Francisco, CA 94107</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="mb-3"><i class="fas fa-envelope text-primary me-2"></i> Email Us</h5>
+                            <p><a href="mailto:support@prodesign.com">support@prodesign.com</a><br>
+                            <a href="mailto:sales@prodesign.com">sales@prodesign.com</a></p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="mb-3"><i class="fas fa-phone-alt text-primary me-2"></i> Call Us</h5>
+                            <p>+1 (800) 123-4567<br>Mon-Fri, 9am-6pm PST</p>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="mb-3"><i class="fas fa-comments text-primary me-2"></i> Live Chat</h5>
+                            <p>Available 24/7 for all customers<br>Look for the chat icon in the corner</p>
+                        </div>
+                        <div>
+                            <h5 class="mb-3"><i class="fas fa-share-alt text-primary me-2"></i> Follow Us</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fab fa-dribbble fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fab fa-github fa-lg"></i></a>
+                                <a href="#" class="text-primary"><i class="fab fa-youtube fa-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Scroll to top button functionality
+        const scrollTop = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
+            }
+        });
+        
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fadeInUp');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animate-fadeInUp');
+                }
+            });
+        }
+        
+        // Run once on page load
+        animateOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Form submission handling
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the data to a server
+                console.log('Form submitted:', { name, email, subject, message });
+                
+                // Show success message
+                alert('Thank you for your message! Our team will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

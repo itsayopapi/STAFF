@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analyzer Pro | Complete Website SEO Checker</title>
+    <meta name="description" content="Free comprehensive SEO analysis tool to check your website's search engine optimization health, performance, and ranking factors.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #1cc88a;
+            --dark-color: #5a5c69;
+            --light-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            background-color: var(--secondary-color);
+        }
+        
+        .seo-score {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .analysis-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .issue-badge {
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+        
+        .critical {
+            background-color: #e74a3b;
+            color: white;
+        }
+        
+        .warning {
+            background-color: #f6c23e;
+            color: #000;
+        }
+        
+        .good {
+            background-color: #1cc88a;
+            color: white;
+        }
+        
+        .info {
+            background-color: #36b9cc;
+            color: white;
+        }
+        
+        .tab-content {
+            padding: 2rem 0;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+        
+        .nav-pills .nav-link {
+            color: var(--dark-color);
+        }
+        
+        .keyword-chip {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .keyword-chip.primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .backlink-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .tooltip-inner {
+            max-width: 300px;
+            padding: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 0;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-search-location me-2"></i>
+                SEO Analyzer Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#analyzer">Analyzer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reports">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#analyzer">Free Analysis <i class="fas fa-arrow-right ms-1"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Complete SEO Analysis for Your Website</h1>
+                    <p class="lead mb-4">Get a comprehensive SEO report with actionable insights to improve your search engine rankings and drive more organic traffic.</p>
+                    
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="Enter your website URL">
+                        <button class="btn btn-light btn-lg" type="button">Analyze Now</button>
+                    </div>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <div class="d-flex">
+                                <i class="fas fa-star text-warning me-1"></i>
+                                <i class="fas fa-star text-warning me-1"></i>
+                                <i class="fas fa-star text-warning me-1"></i>
+                                <i class="fas fa-star text-warning me-1"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <small class="text-white-50">4.9/5 from 2,500+ reviews</small>
+                        </div>
+                        <div>
+                            <i class="fas fa-check-circle text-success me-1"></i>
+                            <span class="text-white">Trusted by 50,000+ marketers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="SEO Analysis Dashboard" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <p class="text-center text-muted mb-4">TRUSTED BY INDUSTRY LEADERS</p>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6 col-md-2 mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Google" class="img-fluid" style="filter: grayscale(100%) opacity(60%); height: 30px;">
+                </div>
+                <div class="col-6 col-md-2 mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1200px-Apple_logo_black.svg.png" alt="Apple" class="img-fluid" style="filter: grayscale(100%) opacity(60%); height: 30px;">
+                </div>
+                <div class="col-6 col-md-2 mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" alt="Amazon" class="img-fluid" style="filter: grayscale(100%) opacity(60%); height: 30px;">
+                </div>
+                <div class="col-6 col-md-2 mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png" alt="Netflix" class="img-fluid" style="filter: grayscale(100%) opacity(60%); height: 30px;">
+                </div>
+                <div class="col-6 col-md-2 mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" class="img-fluid" style="filter: grayscale(100%) opacity(60%); height: 30px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Comprehensive SEO Analysis</h2>
+                <p class="lead text-muted">Our tool checks 50+ critical SEO factors to give you a complete picture of your website's health</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="card-title">Keyword Analysis</h4>
+                            <p class="card-text">Identify high-value keywords, track rankings, and discover new opportunities to target.</p>
+                            <ul class="text-start text-muted">
+                                <li>Keyword difficulty scoring</li>
+                                <li>Search volume data</li>
+                                <li>Competitor keyword gaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h4 class="card-title">Performance Audit</h4>
+                            <p class="card-text">Measure and improve your site speed, mobile usability, and Core Web Vitals.</p>
+                            <ul class="text-start text-muted">
+                                <li>Page load time analysis</li>
+                                <li>Mobile responsiveness</li>
+                                <li>Lighthouse metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4 class="card-title">Backlink Profile</h4>
+                            <p class="card-text">Analyze your backlinks, find toxic links, and discover new linking opportunities.</p>
+                            <ul class="text-start text-muted">
+                                <li>Referring domains analysis</li>
+                                <li>Anchor text distribution</li>
+                                <li>Link quality scoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4 class="card-title">Content Optimization</h4>
+                            <p class="card-text">Improve your content with readability scores, keyword usage, and structure analysis.</p>
+                            <ul class="text-start text-muted">
+                                <li>Readability scoring</li>
+                                <li>Content length analysis</li>
+                                <li>Semantic keyword suggestions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4 class="card-title">Technical SEO</h4>
+                            <p class="card-text">Find and fix technical issues that hurt your search engine visibility.</p>
+                            <ul class="text-start text-muted">
+                                <li>Crawlability analysis</li>
+                                <li>Indexation issues</li>
+                                <li>Structured data validation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card card h-100">
+                        <div class="card-body p-4 text-center">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="card-title">Competitor Analysis</h4>
+                            <p class="card-text">Benchmark against competitors and identify opportunities to outperform them.</p>
+                            <ul class="text-start text-muted">
+                                <li>Competitor backlink analysis</li>
+                                <li>Keyword gap identification</li>
+                                <li>Content strategy comparison</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Analyzer Tool Section -->
+    <section class="py-5 bg-light" id="analyzer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Get Your Free SEO Report</h2>
+                    <p class="lead mb-4">Enter your website URL to receive a comprehensive SEO analysis with actionable recommendations.</p>
+                    
+                    <div class="card shadow-sm">
+                        <div class="card-body p-4">
+                            <form id="seoAnalyzerForm">
+                                <div class="mb-3">
+                                    <label for="websiteUrl" class="form-label">Website URL</label>
+                                    <input type="url" class="form-control form-control-lg" id="websiteUrl" placeholder="https://www.yourwebsite.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="targetKeyword" class="form-label">Main Keyword (Optional)</label>
+                                    <input type="text" class="form-control" id="targetKeyword" placeholder="e.g. best seo tools">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="competitorUrl" class="form-label">Competitor URL (Optional)</label>
+                                    <input type="url" class="form-control" id="competitorUrl" placeholder="https://www.competitor.com">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-search me-2"></i> Analyze Website
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-lock text-success me-2"></i>
+                            <span class="text-muted">We don't store your data. Your analysis is private.</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-bolt text-warning me-2"></i>
+                            <span class="text-muted">Analysis typically takes 30-60 seconds to complete.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="sticky-top" style="top: 20px;">
+                        <div class="card shadow-sm">
+                            <div class="card-body p-4">
+                                <h5 class="card-title mb-3">Example SEO Report</h5>
+                                
+                                <div class="text-center mb-4">
+                                    <div class="seo-score mb-2">87</div>
+                                    <div class="mb-3">
+                                        <span class="issue-badge good me-2">Excellent</span>
+                                        <span class="text-muted">Overall SEO Score</span>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: 87%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row text-center">
+                                    <div class="col-4">
+                                        <div class="mb-2">
+                                            <i class="fas fa-check-circle text-success fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-1">24</h5>
+                                        <small class="text-muted">Optimized</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-2">
+                                            <i class="fas fa-exclamation-triangle text-warning fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-1">5</h5>
+                                        <small class="text-muted">Warnings</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-2">
+                                            <i class="fas fa-times-circle text-danger fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-1">3</h5>
+                                        <small class="text-muted">Critical</small>
+                                    </div>
+                                </div>
+                                
+                                <hr class="my-4">
+                                
+                                <h6 class="mb-3">Key Metrics</h6>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Page Speed</span>
+                                        <span>82/100</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 82%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Mobile Friendly</span>
+                                        <span>95/100</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>SEO Structure</span>
+                                        <span>76/100</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 76%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Content Quality</span>
+                                        <span>88/100</span>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#" class="btn btn-outline-primary w-100 mt-3">
+                                    <i class="fas fa-download me-2"></i> Download Full Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Report Section -->
+    <section class="py-5" id="reports">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Detailed SEO Analysis Reports</h2>
+                <p class="lead text-muted">See exactly what's working and what needs improvement on your website</p>
+            </div>
+            
+            <ul class="nav nav-pills mb-4 justify-content-center" id="reportTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="pill" data-bs-target="#overview" type="button">Overview</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="technical-tab" data-bs-toggle="pill" data-bs-target="#technical" type="button">Technical</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="content-tab" data-bs-toggle="pill" data-bs-target="#content" type="button">Content</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="backlinks-tab" data-bs-toggle="pill" data-bs-target="#backlinks" type="button">Backlinks</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="competitors-tab" data-bs-toggle="pill" data-bs-target="#competitors" type="button">Competitors</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="reportTabsContent">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="d-flex justify-content-between align-items-center mb-4">
+                                    <span>SEO Health Score</span>
+                                    <span class="issue-badge good">87/100</span>
+                                </h4>
+                                <p>Your website has a strong SEO foundation with some areas for improvement. The score is calculated based on 50+ SEO factors across technical, content, and off-page SEO.</p>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-6 mb-3">
+                                        <h6>Technical SEO</h6>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 82%"></div>
+                                        </div>
+                                        <small class="text-muted">82/100</small>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Content Quality</h6>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                                        </div>
+                                        <small class="text-muted">88/100</small>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>User Experience</h6>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 79%"></div>
+                                        </div>
+                                        <small class="text-muted">79/100</small>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <h6>Backlink Profile</h6>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                                        </div>
+                                        <small class="text-muted">75/100</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="d-flex justify-content-between align-items-center mb-4">
+                                    <span>Top Issues to Fix</span>
+                                    <span class="badge bg-danger">3 Critical</span>
+                                </h4>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Missing Meta Descriptions</h5>
+                                            <p class="mb-0">12 pages are missing meta descriptions which hurt click-through rates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Slow Page Speed</h5>
+                                            <p class="mb-0">Your homepage takes 3.8s to load (goal: under 2s).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Broken Links</h5>
+                                            <p class="mb-0">7 broken internal links found that hurt user experience.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Duplicate Content</h5>
+                                            <p class="mb-0">3 pages with similar content that may confuse search engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Keyword Performance</h4>
+                                <p>Your website is ranking for 245 keywords in the top 100 Google search results.</p>
+                                
+                                <div class="row text-center mt-4">
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">18</div>
+                                        <small class="text-muted">Top 3 Positions</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">42</div>
+                                        <small class="text-muted">Top 10 Positions</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">185</div>
+                                        <small class="text-muted">Top 100 Positions</small>
+                                    </div>
+                                </div>
+                                
+                                <h5 class="mt-4 mb-3">Top Ranking Keywords</h5>
+                                <div>
+                                    <span class="keyword-chip primary">seo analysis tool</span>
+                                    <span class="keyword-chip primary">website checker</span>
+                                    <span class="keyword-chip">free seo audit</span>
+                                    <span class="keyword-chip">seo optimization</span>
+                                    <span class="keyword-chip">website ranking</span>
+                                    <span class="keyword-chip">improve seo</span>
+                                    <span class="keyword-chip">seo report</span>
+                                    <span class="keyword-chip">search engine optimization</span>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Traffic Estimation</h4>
+                                <p>Based on your current rankings, we estimate your monthly organic search traffic.</p>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-6">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <div class="text-muted mb-2">Monthly Visitors</div>
+                                                <div class="h3 mb-0">12,450</div>
+                                                <small class="text-success">+8.2% last month</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="card bg-light">
+                                            <div class="card-body text-center">
+                                                <div class="text-muted mb-2">Monthly Clicks</div>
+                                                <div class="h3 mb-0">9,870</div>
+                                                <small class="text-success">+6.5% last month</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-3">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Traffic Growth Chart" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="technical" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Crawlability & Indexing</h4>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Robots.txt Configured</h5>
+                                            <p class="mb-0">Your robots.txt file is properly configured and accessible.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">XML Sitemap Found</h5>
+                                            <p class="mb-0">Your sitemap is properly formatted and submitted to search engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Noindex Pages</h5>
+                                            <p class="mb-0">5 important pages are accidentally set to noindex.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Crawl Errors</h5>
+                                            <p class="mb-0">12 URLs returning 4xx/5xx status codes found.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Site Structure</h4>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">HTTPS Secure</h5>
+                                            <p class="mb-0">Your site uses HTTPS with a valid SSL certificate.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Canonical Issues</h5>
+                                            <p class="mb-0">3 pages have incorrect canonical tags.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">URL Structure</h5>
+                                            <p class="mb-0">Some URLs contain unnecessary parameters.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Page Speed Analysis</h4>
+                                <p>Your website's speed affects both user experience and search rankings.</p>
+                                
+                                <div class="row text-center mt-4">
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">3.8s</div>
+                                        <small class="text-muted">Load Time</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">82</div>
+                                        <small class="text-muted">PageSpeed Score</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">2.1MB</div>
+                                        <small class="text-muted">Page Size</small>
+                                    </div>
+                                </div>
+                                
+                                <h5 class="mt-4 mb-3">Core Web Vitals</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Metric</th>
+                                                <th>Your Value</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Largest Contentful Paint</td>
+                                                <td>2.4s</td>
+                                                <td><span class="issue-badge warning">Needs Improvement</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>First Input Delay</td>
+                                                <td>45ms</td>
+                                                <td><span class="issue-badge good">Good</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cumulative Layout Shift</td>
+                                                <td>0.12</td>
+                                                <td><span class="issue-badge good">Good</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <h5 class="mt-4 mb-3">Speed Opportunities</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Optimize Images
+                                        <span class="badge bg-primary rounded-pill">Potential savings: 0.8s</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Eliminate Render-Blocking Resources
+                                        <span class="badge bg-primary rounded-pill">Potential savings: 0.5s</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Reduce JavaScript Execution Time
+                                        <span class="badge bg-primary rounded-pill">Potential savings: 0.3s</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="content" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Content Quality</h4>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Content Length</h5>
+                                            <p class="mb-0">Average content length is 1,250 words (above recommended 1,000 words).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Readability</h5>
+                                            <p class="mb-0">Average Flesch Reading Ease score of 65 (good for general audiences).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Keyword Optimization</h5>
+                                            <p class="mb-0">12 pages could better optimize for target keywords.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Duplicate Content</h5>
+                                            <p class="mb-0">3 pages with similar content that may confuse search engines.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">On-Page Elements</h4>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Title Tags</h5>
+                                            <p class="mb-0">92% of pages have optimized title tags under 60 characters.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Meta Descriptions</h5>
+                                            <p class="mb-0">12 pages missing meta descriptions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Header Tags</h5>
+                                            <p class="mb-0">8 pages have missing or improperly structured H1 tags.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Image Alt Text</h5>
+                                            <p class="mb-0">23 images missing alt attributes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Content Gaps & Opportunities</h4>
+                                <p>Based on competitor analysis and search volume data, these topics could drive more traffic.</p>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"How to do SEO" Guide</h5>
+                                        <p class="text-muted">Search volume: 12,000/mo | Difficulty: Medium</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking for this:</span>
+                                            <span class="badge bg-primary rounded-pill">8</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>SEO Tools Comparison</h5>
+                                        <p class="text-muted">Search volume: 8,500/mo | Difficulty: High</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking for this:</span>
+                                            <span class="badge bg-primary rounded-pill">12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>Local SEO Strategies</h5>
+                                        <p class="text-muted">Search volume: 6,200/mo | Difficulty: Low</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking for this:</span>
+                                            <span class="badge bg-primary rounded-pill">5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>SEO for Ecommerce</h5>
+                                        <p class="text-muted">Search volume: 9,800/mo | Difficulty: Medium</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking for this:</span>
+                                            <span class="badge bg-primary rounded-pill">7</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Internal Linking</h4>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Link Structure</h5>
+                                            <p class="mb-0">Good internal linking structure with clear hierarchy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Orphan Pages</h5>
+                                            <p class="mb-0">7 pages not linked from anywhere in your site.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Anchor Text Diversity</h5>
+                                            <p class="mb-0">Could improve with more keyword-rich anchor texts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Broken Links</h5>
+                                            <p class="mb-0">7 broken internal links found.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="backlinks" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Backlink Profile</h4>
+                                
+                                <div class="row text-center mb-4">
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">1,245</div>
+                                        <small class="text-muted">Total Backlinks</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">328</div>
+                                        <small class="text-muted">Referring Domains</small>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="display-6 text-primary">42</div>
+                                        <small class="text-muted">Authority Links</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-success">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-check-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Natural Link Profile</h5>
+                                            <p class="mb-0">Your backlinks appear natural and diverse.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-warning">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Anchor Text Distribution</h5>
+                                            <p class="mb-0">Could improve with more branded/anchor text variety.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="alert alert-danger">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-exclamation-circle fa-2x me-3"></i>
+                                        <div>
+                                            <h5 class="alert-heading mb-1">Toxic Links</h5>
+                                            <p class="mb-0">12 potentially harmful backlinks detected.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Link Growth</h4>
+                                <p>Your backlink profile growth over the last 6 months.</p>
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Backlink Growth Chart" class="img-fluid rounded">
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Top Backlinks</h4>
+                                <p>Most valuable links pointing to your website.</p>
+                                
+                                <div class="backlink-item">
+                                    <h5>Forbes.com</h5>
+                                    <p class="text-muted">"One of the top SEO tools for marketers in 2023"</p>
+                                    <div class="d-flex">
+                                        <span class="me-3"><i class="fas fa-globe me-1"></i> DA: 95</span>
+                                        <span class="me-3"><i class="fas fa-link me-1"></i> Dofollow</span>
+                                        <span><i class="fas fa-anchor me-1"></i> Branded</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="backlink-item">
+                                    <h5>TechCrunch.com</h5>
+                                    <p class="text-muted">"How this SEO tool helps businesses grow organically"</p>
+                                    <div class="d-flex">
+                                        <span class="me-3"><i class="fas fa-globe me-1"></i> DA: 93</span>
+                                        <span class="me-3"><i class="fas fa-link me-1"></i> Dofollow</span>
+                                        <span><i class="fas fa-anchor me-1"></i> Natural</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="backlink-item">
+                                    <h5>Moz.com/blog</h5>
+                                    <p class="text-muted">"Comparing the top 5 SEO analysis tools"</p>
+                                    <div class="d-flex">
+                                        <span class="me-3"><i class="fas fa-globe me-1"></i> DA: 91</span>
+                                        <span class="me-3"><i class="fas fa-link me-1"></i> Dofollow</span>
+                                        <span><i class="fas fa-anchor me-1"></i> Keyword</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="backlink-item">
+                                    <h5>SearchEngineLand.com</h5>
+                                    <p class="text-muted">"Why every SEO should be using this tool"</p>
+                                    <div class="d-flex">
+                                        <span class="me-3"><i class="fas fa-globe me-1"></i> DA: 89</span>
+                                        <span class="me-3"><i class="fas fa-link me-1"></i> Dofollow</span>
+                                        <span><i class="fas fa-anchor me-1"></i> Branded</span>
+                                    </div>
+                                </div>
+                                
+                                <a href="#" class="btn btn-outline-primary mt-3">View All 1,245 Backlinks</a>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Link Building Opportunities</h4>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>Guest Post on Marketing Blogs</h5>
+                                        <p class="text-muted">15 high-quality marketing blogs accept guest posts in your niche.</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View List</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>Resource Page Links</h5>
+                                        <p class="text-muted">8 resource pages in your industry that could link to your content.</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View List</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>Unlinked Mentions</h5>
+                                        <p class="text-muted">23 websites mention your brand but don't link to you.</p>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View List</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="competitors" role="tabpanel">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Competitor Benchmarking</h4>
+                                <p>How you compare to 3 key competitors in your space.</p>
+                                
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Metric</th>
+                                                <th>Your Site</th>
+                                                <th>Competitor A</th>
+                                                <th>Competitor B</th>
+                                                <th>Competitor C</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Domain Authority</td>
+                                                <td>58</td>
+                                                <td>62</td>
+                                                <td>55</td>
+                                                <td>49</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Backlinks</td>
+                                                <td>1,245</td>
+                                                <td>2,156</td>
+                                                <td>987</td>
+                                                <td>1,532</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Referring Domains</td>
+                                                <td>328</td>
+                                                <td>512</td>
+                                                <td>287</td>
+                                                <td>421</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ranking Keywords</td>
+                                                <td>245</td>
+                                                <td>387</td>
+                                                <td>198</td>
+                                                <td>312</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Traffic Estimate</td>
+                                                <td>12,450</td>
+                                                <td>21,780</td>
+                                                <td>9,870</td>
+                                                <td>15,620</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Competitor Backlink Comparison</h4>
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Competitor Backlink Chart" class="img-fluid rounded">
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Keyword Gaps</h4>
+                                <p>Keywords your competitors rank for that you don't.</p>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"best seo tools 2023"</h5>
+                                        <p class="text-muted">Search volume: 14,800/mo | Difficulty: High</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking:</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"how to improve website ranking"</h5>
+                                        <p class="text-muted">Search volume: 9,200/mo | Difficulty: Medium</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking:</span>
+                                            <span class="badge bg-primary rounded-pill">2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"free keyword research tool"</h5>
+                                        <p class="text-muted">Search volume: 8,700/mo | Difficulty: Medium</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking:</span>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>"on page seo checklist"</h5>
+                                        <p class="text-muted">Search volume: 6,500/mo | Difficulty: Low</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span>Competitors ranking:</span>
+                                            <span class="badge bg-primary rounded-pill">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <a href="#" class="btn btn-outline-primary mt-3">View All 147 Keyword Gaps</a>
+                            </div>
+                            
+                            <div class="analysis-section">
+                                <h4 class="mb-4">Content Opportunities</h4>
+                                <p>Top-performing content from competitors that you could create better versions of.</p>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"Ultimate SEO Guide"</h5>
+                                        <p class="text-muted">Competitor A | Estimated traffic: 4,200/mo</p>
+                                        <p>Their guide is comprehensive but lacks video tutorials and interactive elements.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5>"SEO Case Studies"</h5>
+                                        <p class="text-muted">Competitor B | Estimated traffic: 3,800/mo</p>
+                                        <p>Their case studies are text-heavy without enough data visualization.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5>"Monthly SEO News Roundup"</h5>
+                                        <p class="text-muted">Competitor C | Estimated traffic: 2,900/mo</p>
+                                        <p>Their roundup is published monthly but lacks expert commentary.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light" id="how-it-works">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How Our SEO Analyzer Works</h2>
+                <p class="lead text-muted">Get actionable insights in just 3 simple steps</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-search fa-2x"></i>
+                            </div>
+                            <h4 class="card-title">1. Enter Your URL</h4>
+                            <p class="card-text">Simply enter your website URL and optionally a target keyword or competitor URL for comparison.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-cogs fa-2x"></i>
+                            </div>
+                            <h4 class="card-title">2. We Analyze</h4>
+                            <p class="card-text">Our system crawls your site and checks 50+ SEO factors in about 30-60 seconds.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card border-0 bg-transparent">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <h4 class="card-title">3. Get Your Report</h4>
+                            <p class="card-text">Receive a detailed report with prioritized recommendations to improve your SEO.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="SEO Analysis Process" class="img-fluid rounded shadow" style="max-height: 400px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Users Say</h2>
+                <p class="lead text-muted">Trusted by marketers, SEO specialists, and business owners worldwide</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="User" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Sarah Johnson</h5>
+                                    <p class="text-muted mb-0">Marketing Director</p>
+                                    <div class="d-flex text-warning mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"This SEO analyzer helped us identify critical issues we didn't even know existed. After implementing the recommendations, our organic traffic increased by 68% in just 3 months!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Michael Chen</h5>
+                                    <p class="text-muted mb-0">SEO Consultant</p>
+                                    <div class="d-flex text-warning mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"I use this tool with all my clients. The comprehensive reports save me hours of manual work and the competitor analysis features are incredibly valuable for strategy development."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Emily Rodriguez</h5>
+                                    <p class="text-muted mb-0">Ecommerce Owner</p>
+                                    <div class="d-flex text-warning mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"As a small business owner, I can't afford expensive SEO tools. This free analyzer gives me everything I need to compete with bigger players in my niche. Highly recommended!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Happy Users" class="img-fluid rounded shadow" style="max-height: 400px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light" id="pricing">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Simple, Transparent Pricing</h2>
+                <p class="lead text-muted">Choose the plan that fits your needs</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4 text-center">
+                            <h5 class="card-title">Starter</h5>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$0</span>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 1 Free Analysis per day</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Basic SEO Report</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 50+ SEO Factors Checked</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Page Speed Analysis</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Competitor Analysis</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Backlink Analysis</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Keyword Tracking</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body p-4 text-center">
+                            <div class="badge bg-primary mb-3">Most Popular</div>
+                            <h5 class="card-title">Professional</h5>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$29</span>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 50 Analyses per month</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Advanced SEO Report</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 100+ SEO Factors Checked</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Competitor Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Basic Backlink Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 10 Keyword Tracking</li>
+                                <li class="mb-2 text-muted"><i class="fas fa-times me-2"></i> Historical Data</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body p-4 text-center">
+                            <h5 class="card-title">Agency</h5>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold">$99</span>
+                                <span class="text-muted">/month</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unlimited Analyses</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Premium SEO Report</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 200+ SEO Factors Checked</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Advanced Competitor Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Full Backlink Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unlimited Keyword Tracking</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Historical Data & Trends</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-muted">Need custom solutions for your enterprise? <a href="#">Contact our sales team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5" id="faq">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="lead text-muted">Find answers to common questions about our SEO analyzer</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    How accurate is the SEO analysis?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Our SEO analyzer uses industry-standard metrics and data from multiple sources to provide highly accurate analysis. We check 50+ SEO factors including technical elements, content quality, backlinks, and user experience metrics.</p>
+                                    <p>While no tool can guarantee 100% accuracy (as search algorithms constantly change), our analysis correlates strongly with actual search performance based on feedback from thousands of users.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How often should I run an SEO analysis?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We recommend running a full SEO analysis at least once a month to monitor your website's health and identify new opportunities. However, the ideal frequency depends on your website:</p>
+                                    <ul>
+                                        <li><strong>New websites:</strong> Weekly for the first 3 months</li>
+                                        <li><strong>Active blogs/content sites:</strong> Every 2 weeks</li>
+                                        <li><strong>Static business websites:</strong> Monthly</li>
+                                        <li><strong>After major updates:</strong> Immediately after significant changes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Is my data private and secure?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes, we take your privacy and data security very seriously:</p>
+                                    <ul>
+                                        <li>We don't store your website content or sensitive data</li>
+                                        <li>All analyses are encrypted in transit</li>
+                                        <li>We don't share your data with third parties</li>
+                                        <li>You can request deletion of your analysis history at any time</li>
+                                    </ul>
+                                    <p>For paid plans, we use industry-standard security measures to protect your payment information and account details.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    How is this different from Google Search Console?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>While Google Search Console provides valuable data straight from Google, our SEO analyzer offers several advantages:</p>
+                                    <ul>
+                                        <li><strong>More comprehensive:</strong> We check 50+ factors beyond what GSC reports</li>
+                                        <li><strong>Actionable recommendations:</strong> We don't just show problems, we explain how to fix them</li>
+                                        <li><strong>Competitor analysis:</strong> Compare your performance against competitors</li>
+                                        <li><strong>Historical tracking:</strong> Paid plans include trend analysis over time</li>
+                                        <li><strong>Simplified reporting:</strong> We consolidate complex data into easy-to-understand insights</li>
+                                    </ul>
+                                    <p>For best results, we recommend using both tools together.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    Can I analyze password-protected or local websites?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Our analyzer can only access publicly available websites that are reachable from the open internet. This means:</p>
+                                    <ul>
+                                        <li><strong>Password-protected sites:</strong> Cannot be analyzed unless you provide access credentials (available in paid plans)</li>
+                                        <li><strong>Local development sites:</strong> Must be publicly accessible to be analyzed</li>
+                                        <li><strong>Intranet sites:</strong> Cannot be analyzed as they're not publicly accessible</li>
+                                        <li><strong>Staging environments:</strong> Can be analyzed if made publicly available</li>
+                                    </ul>
+                                    <p>For local development, we recommend using tools like Lighthouse directly in your browser.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-5 bg-light" id="resources">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">SEO Resources & Guides</h2>
+                <p class="lead text-muted">Learn how to improve your website's search performance</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="SEO Guide">
+                        <div class="card-body">
+                            <h5 class="card-title">The Complete SEO Checklist for 2023</h5>
+                            <p class="card-text">A step-by-step guide to optimizing your website for search engines, covering technical SEO, content, and link building strategies.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="SEO Trends">
+                        <div class="card-body">
+                            <h5 class="card-title">Top 10 SEO Trends to Watch</h5>
+                            <p class="card-text">Discover the most important SEO trends and algorithm updates that will impact your rankings in 2023 and beyond.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="Keyword Research">
+                        <div class="card-body">
+                            <h5 class="card-title">Advanced Keyword Research Techniques</h5>
+                            <p class="card-text">Learn professional keyword research methods to find low-competition, high-traffic keywords for your niche.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="Technical SEO">
+                        <div class="card-body">
+                            <h5 class="card-title">Technical SEO: The Ultimate Guide</h5>
+                            <p class="card-text">A deep dive into technical SEO factors that affect crawling, indexing, and rendering of your website.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="Content SEO">
+                        <div class="card-body">
+                            <h5 class="card-title">Content Optimization for SEO</h5>
+                            <p class="card-text">How to create and optimize content that ranks well in search engines and engages your audience.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="card-img-top" alt="Link Building">
+                        <div class="card-body">
+                            <h5 class="card-title">White Hat Link Building Strategies</h5>
+                            <p class="card-text">Effective, ethical methods to build high-quality backlinks that improve your search rankings.</p>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <a href="#" class="btn btn-sm btn-outline-primary">Read Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary">View All Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Ready to Improve Your SEO?</h2>
+                    <p class="lead mb-0">Get your free SEO analysis today and start optimizing your website for better rankings and more traffic.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#analyzer" class="btn btn-light btn-lg px-4">Analyze Your Website Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Tooltip initialization
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+        
+        // Form submission
+        document.getElementById('seoAnalyzerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real implementation, this would send the data to your backend
+            alert('Analysis started! This would connect to the SEO analysis API in a real implementation.');
+            // You would then redirect to the results page or show loading + results
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

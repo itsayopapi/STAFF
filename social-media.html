@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wefithost Social Media Management | Grow Your Online Presence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --social: #3b5998;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        /* Hero Section */
+        .social-hero {
+            background: linear-gradient(135deg, var(--social), #1a2a3a);
+            color: white;
+            padding: 8rem 0 6rem;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .social-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .social-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-hero-title {
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Platform Icons */
+        .platform-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .facebook-bg { background-color: #3b5998; }
+        .instagram-bg { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .twitter-bg { background-color: #1da1f2; }
+        .linkedin-bg { background-color: #0077b5; }
+        .youtube-bg { background-color: #ff0000; }
+        .tiktok-bg { background-color: #000000; }
+        
+        /* Service Cards */
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            background: white;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-card .card-body {
+            padding: 2rem;
+        }
+        
+        .service-card .card-title {
+            font-weight: 700;
+            color: var(--social);
+        }
+        
+        /* Pricing Cards */
+        .pricing-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            background: white;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--social), #8e44ad);
+            color: white;
+        }
+        
+        .pricing-popular {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        
+        .pricing-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0;
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .pricing-feature {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pricing-feature::before {
+            content: '\f26a';
+            font-family: bootstrap-icons;
+            position: absolute;
+            left: 0;
+            color: var(--social);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            border-radius: 16px;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 4rem;
+            line-height: 1;
+            color: rgba(59, 89, 152, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .author-info h5 {
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            color: #6c757d;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Stats */
+        .stat-card {
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--social);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        /* Buttons */
+        .btn-social {
+            background-color: var(--social);
+            border-color: var(--social);
+            color: white;
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 89, 152, 0.3);
+        }
+        
+        .btn-social:hover {
+            background-color: #2d4373;
+            border-color: #2d4373;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 89, 152, 0.4);
+        }
+        
+        .btn-outline-social {
+            border-color: var(--social);
+            color: var(--social);
+            font-weight: 600;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-social:hover {
+            background-color: var(--social);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 89, 152, 0.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .social-hero {
+                padding: 6rem 0 4rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="social-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 social-hero-content animate-on-scroll">
+                <h1 class="social-hero-title display-3 fw-bold mb-4">Wefithost Social Media Management</h1>
+                <p class="lead mb-5">We grow your brand's online presence with data-driven strategies that deliver real results.</p>
+                <div class="d-flex flex-wrap gap-3 mb-5">
+                    <button class="btn btn-social btn-lg">Get Started</button>
+                    <button class="btn btn-outline-light btn-lg">See Our Work</button>
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div class="platform-icon facebook-bg"><i class="bi bi-facebook"></i></div>
+                    <div class="platform-icon instagram-bg"><i class="bi bi-instagram"></i></div>
+                    <div class="platform-icon twitter-bg"><i class="bi bi-twitter"></i></div>
+                    <div class="platform-icon linkedin-bg"><i class="bi bi-linkedin"></i></div>
+                    <div class="platform-icon youtube-bg"><i class="bi bi-youtube"></i></div>
+                    <div class="platform-icon tiktok-bg"><i class="bi bi-tiktok"></i></div>
+                </div>
+            </div>
+            <div class="col-lg-6 social-hero-content mt-5 mt-lg-0 animate-on-scroll" data-delay="100">
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Social Media Management" class="img-fluid rounded-4 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3 animate-on-scroll">
+                <div class="stat-card">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">Engagement Growth</div>
+                    <p class="text-muted mt-2 mb-0"><small>Average increase for clients</small></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="100">
+                <div class="stat-card">
+                    <div class="stat-number">2.5x</div>
+                    <div class="stat-label">More Followers</div>
+                    <p class="text-muted mt-2 mb-0"><small>Compared to previous growth</small></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="200">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Campaigns Managed</div>
+                    <p class="text-muted mt-2 mb-0"><small>Across all industries</small></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 animate-on-scroll" data-delay="300">
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Monitoring</div>
+                    <p class="text-muted mt-2 mb-0"><small>Always-on social presence</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-6">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <h2>Our Social Media Services</h2>
+            <p class="lead">Comprehensive solutions tailored to your business goals</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="card-img-top" alt="Content Creation">
+                    <div class="card-body">
+                        <h5 class="card-title">Content Creation & Curation</h5>
+                        <p class="card-text">Professional graphics, videos, and captions that align with your brand voice.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Custom visual content</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Engaging copywriting</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Content calendar</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-social w-100 mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="100">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Social Media Strategy">
+                    <div class="card-body">
+                        <h5 class="card-title">Social Media Strategy</h5>
+                        <p class="card-text">Data-driven plans to grow your audience and achieve business objectives.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Platform-specific strategies</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Competitor analysis</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Performance metrics</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-social w-100 mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="200">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="Paid Advertising">
+                    <div class="card-body">
+                        <h5 class="card-title">Paid Social Advertising</h5>
+                        <p class="card-text">Targeted campaigns that drive conversions and maximize ROI.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Facebook/Instagram ads</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> LinkedIn campaigns</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Conversion tracking</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline-social w-100 mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="py-6 bg-light">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="lead">Choose the plan that fits your needs</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 animate-on-scroll">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">$499</div>
+                        <p class="pricing-period">per month</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="list-unstyled">
+                            <li class="pricing-feature">3 social media platforms</li>
+                            <li class="pricing-feature">12 posts per month</li>
+                            <li class="pricing-feature">Basic content creation</li>
+                            <li class="pricing-feature">Monthly analytics report</li>
+                            <li class="pricing-feature">Email support</li>
+                        </ul>
+                        <button class="btn btn-outline-social w-100 mt-3">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 animate-on-scroll" data-delay="100">
+                <div class="pricing-card">
+                    <div class="pricing-popular">Most Popular</div>
+                    <div class="pricing-header" style="background: linear-gradient(135deg, var(--social), #2d4373);">
+                        <h3 class="pricing-title">Professional</h3>
+                        <div class="pricing-price">$999</div>
+                        <p class="pricing-period">per month</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="list-unstyled">
+                            <li class="pricing-feature">5 social media platforms</li>
+                            <li class="pricing-feature">20 posts per month</li>
+                            <li class="pricing-feature">Premium content creation</li>
+                            <li class="pricing-feature">Weekly analytics report</li>
+                            <li class="pricing-feature">Dedicated account manager</li>
+                            <li class="pricing-feature">Basic ad management</li>
+                        </ul>
+                        <button class="btn btn-social w-100 mt-3">Get Started</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 animate-on-scroll" data-delay="200">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">$1,999</div>
+                        <p class="pricing-period">per month</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="list-unstyled">
+                            <li class="pricing-feature">Unlimited platforms</li>
+                            <li class="pricing-feature">40+ posts per month</li>
+                            <li class="pricing-feature">Custom content strategy</li>
+                            <li class="pricing-feature">Daily monitoring</li>
+                            <li class="pricing-feature">Advanced ad campaigns</li>
+                            <li class="pricing-feature">24/7 priority support</li>
+                        </ul>
+                        <button class="btn btn-outline-social w-100 mt-3">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-6">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <h2>What Our Clients Say</h2>
+            <p class="lead">Success stories from businesses we've helped grow</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4 animate-on-scroll">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Wefithost's social team tripled our Instagram engagement in just 3 months. Their content strategy perfectly captured our brand voice while reaching new audiences.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                        <div class="author-info">
+                            <h5>Sarah Johnson</h5>
+                            <p>Marketing Director, EcoGoods</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="100">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a startup, we didn't have bandwidth for social media. Wefithost became our outsourced marketing team, delivering consistent growth and high-quality leads.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Chen">
+                        <div class="author-info">
+                            <h5>David Chen</h5>
+                            <p>CEO, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 animate-on-scroll" data-delay="200">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Their paid advertising expertise delivered a 5x return on our ad spend. The detailed reporting showed exactly how our budget was being optimized.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria Rodriguez">
+                        <div class="author-info">
+                            <h5>Maria Rodriguez</h5>
+                            <p>E-commerce Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-6" style="background: linear-gradient(135deg, var(--social), #2d4373); color: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center animate-on-scroll">
+                <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Social Presence?</h2>
+                <p class="lead mb-5">Schedule a free consultation with our social media experts.</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <button class="btn btn-light btn-lg px-5">Get Started</button>
+                    <button class="btn btn-outline-light btn-lg px-5">Book a Call</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-6 bg-light">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
+            <h2>Frequently Asked Questions</h2>
+            <p class="lead">Everything you need to know about our services</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8 animate-on-scroll">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How quickly will I see results?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Most clients see initial engagement improvements within 30 days, with steady growth in followers and conversions over 3-6 months. Paid advertising campaigns can deliver immediate results.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Do you create all content in-house?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, our team includes professional designers, videographers, and copywriters who create all content tailored to your brand. We also provide content strategy and curation services.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Can I review posts before they go live?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Absolutely. We provide a content calendar for approval and can implement your review process. Most clients grant us publishing authority after the first month of collaboration.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                What makes Wefithost different from other agencies?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                We combine technical hosting expertise with social media mastery, offering integrated solutions for online businesses. Our data-driven approach focuses on metrics that actually impact your bottom line.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h5>Wefithost Social Media</h5>
+                <p class="text-muted">Data-driven social media management for businesses that want to grow.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter fs-4"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h6>Services</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">Content Creation</a></li>
+                            <li><a href="#" class="text-muted">Social Media Management</a></li>
+                            <li><a href="#" class="text-muted">Paid Advertising</a></li>
+                            <li><a href="#" class="text-muted">Analytics & Reporting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4 mb-md-0">
+                        <h6>Company</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">About Us</a></li>
+                            <li><a href="#" class="text-muted">Case Studies</a></li>
+                            <li><a href="#" class="text-muted">Careers</a></li>
+                            <li><a href="#" class="text-muted">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Legal</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">Terms of Service</a></li>
+                            <li><a href="#" class="text-muted">Privacy Policy</a></li>
+                            <li><a href="#" class="text-muted">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 bg-secondary">
+        <div class="text-center text-muted">
+            <small>© 2024 Wefithost. All rights reserved.</small>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                    }, delay);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    });
+</script>
+</body>
+</html>
